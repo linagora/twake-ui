@@ -33,6 +33,7 @@ lerna-debug.log*
 .env
 .env.local
 .env.*.local
+.npmrc
 
 # Temporary files
 *.tmp

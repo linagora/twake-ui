@@ -1,5 +1,5 @@
 {
-  "name": "twake-mui",
+  "name": "@linagora/twake-mui",
   "version": "1.0.0",
   "description": "MUI v7 theme system for Twake applications",
   "main": "dist/index.js",
@@ -50,7 +50,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/twake/twake-ui.git",
+    "url": "https://github.com/linagora/twake-ui.git",
     "directory": "packages/twake-mui"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
