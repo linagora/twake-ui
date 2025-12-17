@@ -1,5 +1,5 @@
 {
-  "name": "@linagora/twake-mui",
+  "name": "twake-mui",
   "version": "1.0.0",
   "description": "MUI v7 theme system for Twake applications",
   "main": "dist/index.js",
@@ -31,12 +31,11 @@
   ],
   "author": "Twake",
   "license": "MIT",
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/material": "^7.1.2"
-  },
-  "peerDependencies": {
+    "@mui/material": "^7.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

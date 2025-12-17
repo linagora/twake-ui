@@ -1,7 +1,8 @@
 import { createTheme, ThemeOptions } from "@mui/material/styles";
-import { makePalette } from "../palette/makePalette";
-import { makeTypography } from "../typography/makeTypography";
-import { makeLightOverrides } from "../overrides/makeLightOverrides";
+import { makePalette } from "./makePalette";
+import { makeTypography } from "./makeTypography";
+import { makeLightOverrides } from "./makeLightOverrides";
+import { makeDarkOverrides } from "./makeDarkOverrides";
 
 const themesCommonConfig: Partial<ThemeOptions> = {
   shape: {
@@ -21,8 +22,8 @@ const themesCommonConfig: Partial<ThemeOptions> = {
   },
 };
 
-export const makeTheme = () => {
-  const palette = makePalette();
+export const makeTheme = (mode: "light" | "dark" = "light") => {
+  const palette = makePalette(mode);
   const typography = makeTypography();
 
   const theme = createTheme({
@@ -31,7 +32,8 @@ export const makeTheme = () => {
     typography,
   });
 
-  const components = makeLightOverrides(theme);
+  const components =
+    mode === "dark" ? makeDarkOverrides(theme) : makeLightOverrides(theme);
 
   return createTheme({
     ...theme,

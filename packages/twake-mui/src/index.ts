@@ -1,5 +1,14 @@
-export { TwakeMuiThemeProvider, theme } from "./theme/ThemeProvider";
-export type { TwakeTheme } from "./theme/theme";
-export { makeTheme } from "./theme/makeTheme";
-export { makePalette } from "./palette/makePalette";
-export { makeTypography } from "./typography/makeTypography";
+export * from "@mui/material";
+export {
+  createTheme,
+  ThemeProvider,
+  styled,
+  alpha,
+  darken,
+  lighten,
+  useTheme,
+} from "@mui/material/styles";
+export { default as Autocomplete } from "@mui/material/Autocomplete";
+export { TwakeMuiThemeProvider } from "./components/ThemeProvider";
+export { theme } from "./lib/theme";
+export type { TwakeTheme } from "./lib/theme";

@@ -1,10 +1,13 @@
 import { Theme, Components } from "@mui/material/styles";
+import { radius } from "../radius";
 
 export const dialogOverrides = (theme: Theme): Components["MuiDialog"] => {
   return {
     styleOverrides: {
       paper: {
-        // Dialog paper overrides will be implemented later
+        borderRadius: radius.md,
+        boxShadow:
+          "0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 4px 8px 3px rgba(0, 0, 0, 0.15)",
       },
     },
   };
@@ -16,7 +19,7 @@ export const dialogTitleOverrides = (
   return {
     styleOverrides: {
       root: {
-        // DialogTitle overrides will be implemented later
+        padding: "11px 32px",
       },
     },
   };
@@ -28,7 +31,7 @@ export const dialogContentOverrides = (
   return {
     styleOverrides: {
       root: {
-        // DialogContent overrides will be implemented later
+        padding: "24px 32px",
       },
     },
   };
@@ -40,7 +43,7 @@ export const dialogActionsOverrides = (
   return {
     styleOverrides: {
       root: {
-        // DialogActions overrides will be implemented later
+        padding: "16px 32px",
       },
     },
   };

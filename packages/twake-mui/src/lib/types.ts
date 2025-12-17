@@ -1,3 +1,6 @@
+import { TypographyVariantsOptions } from "@mui/material/styles";
+
+// Palette Types
 export interface PaletteColor {
   50: string;
   100: string;
@@ -69,3 +72,47 @@ export interface PaletteJson {
   Info: Omit<PaletteColor, "ContrastText">;
   Grey: GreyPalette;
 }
+
+// Typography Types
+export type TypographyOptions = TypographyVariantsOptions;
+
+declare module "@mui/material/TextField" {
+  interface TextFieldPropsSizeOverrides {
+    large: true;
+  }
+}
+
+declare module "@mui/material/InputBase" {
+  interface InputBasePropsSizeOverrides {
+    large: true;
+  }
+}
+
+export interface TypographyConfig {
+  fontFamily?: string;
+  fontSize?: number;
+  fontWeight?: number | string;
+  lineHeight?: number | string;
+  letterSpacing?: string;
+  textTransform?: "none" | "uppercase" | "lowercase" | "capitalize";
+}
+
+export interface TypographyVariants {
+  h1: TypographyConfig;
+  h2: TypographyConfig;
+  h3: TypographyConfig;
+  h4: TypographyConfig;
+  h5: TypographyConfig;
+  h6: TypographyConfig;
+  subtitle1: TypographyConfig;
+  subtitle2: TypographyConfig;
+  body1: TypographyConfig;
+  body2: TypographyConfig;
+  button: TypographyConfig;
+  buttonLarge: TypographyConfig;
+  buttonSmall: TypographyConfig;
+  caption: TypographyConfig;
+  overline: TypographyConfig;
+}
+
+export type MakeTypography = () => TypographyOptions;

@@ -4,9 +4,9 @@ import { PaletteJson } from "./types";
 
 const paletteData = paletteJson as PaletteJson;
 
-export const makePalette = (): PaletteOptions => {
+export const makePalette = (mode: "light" | "dark" = "light"): PaletteOptions => {
   return {
-    mode: "light",
+    mode,
     primary: {
       light: paletteData.Primary[300],
       main: paletteData.Primary[600],
