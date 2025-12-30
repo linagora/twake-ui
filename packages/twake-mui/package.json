@@ -1,6 +1,6 @@
 {
   "name": "twake-mui",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "MUI v7 theme system for Twake applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,6 +9,14 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    }
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": false
     }
   },
   "files": [
@@ -31,7 +39,10 @@
   ],
   "author": "Twake",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
