@@ -13,6 +13,7 @@ import {
   dialogActionsOverrides,
 } from "./overrides/dialogOverrides";
 import { popoverOverrides } from "./overrides/popoverOverrides";
+import { avatarOverrides } from "./overrides/avatarOverrides";
 
 export const makeDarkOverrides = (theme: Theme): Components => {
   return {
@@ -26,6 +27,7 @@ export const makeDarkOverrides = (theme: Theme): Components => {
     MuiDialogContent: dialogContentOverrides(theme),
     MuiDialogActions: dialogActionsOverrides(theme),
     MuiPopover: popoverOverrides(theme),
+    MuiAvatar: avatarOverrides(theme),
     MuiTypography: {
       styleOverrides: {
         root: {
