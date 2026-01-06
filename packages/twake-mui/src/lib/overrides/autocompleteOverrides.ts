@@ -1,25 +1,26 @@
-import { Theme, Components } from "@mui/material/styles";
-import { radius } from "../radius";
+import { Components } from '@mui/material/styles'
 
-export const autocompleteOverrides = (theme: Theme): Components["MuiAutocomplete"] => {
+import { radius } from '../radius'
+
+export const autocompleteOverrides = (): Components['MuiAutocomplete'] => {
   return {
     styleOverrides: {
       root: {
         // Using "&&" to increase CSS specificity
-        "&&": {
-          "& .MuiOutlinedInput-root": {
-            paddingLeft: "16px",
+        '&&': {
+          '& .MuiOutlinedInput-root': {
+            paddingLeft: '16px',
             borderRadius: radius.sm,
-            "& fieldset.MuiOutlinedInput-notchedOutline": {
-              borderRadius: radius.sm,
-            },
-          },
-        },
+            '& fieldset.MuiOutlinedInput-notchedOutline': {
+              borderRadius: radius.sm
+            }
+          }
+        }
       },
       // Styling for chips in Autocomplete
       tag: {
-        margin: "2px",
-      },
-    },
-  };
-};
+        margin: '2px'
+      }
+    }
+  }
+}

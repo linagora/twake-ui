@@ -1,6 +1,7 @@
-import { makeTheme } from "./makeTheme";
-import { Theme } from "@mui/material/styles";
+import { Theme } from '@mui/material/styles'
 
-export const theme: Theme = makeTheme();
+import { makeTheme } from './makeTheme'
 
-export type TwakeTheme = Theme;
+export const theme: Theme = makeTheme()
+
+export type TwakeTheme = Theme
