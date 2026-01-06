@@ -58,7 +58,8 @@ export const makePalette = (mode: "light" | "dark" = "light"): PaletteOptions =>
       A200: paletteData.Grey.A200,
       A400: paletteData.Grey.A400,
       A700: paletteData.Grey.A700,
-    },
+      A900: paletteData.Grey.A900,
+    } as any,
     text: {
       primary: "#000000",
       secondary: "#717D96",

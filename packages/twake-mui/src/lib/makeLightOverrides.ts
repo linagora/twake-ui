@@ -13,6 +13,11 @@ import {
   dialogActionsOverrides,
 } from "./overrides/dialogOverrides";
 import { popoverOverrides } from "./overrides/popoverOverrides";
+import { avatarOverrides } from "./overrides/avatarOverrides";
+import {
+  toggleButtonGroupOverrides,
+  toggleButtonOverrides,
+} from "./overrides/toggleButtonOverrides";
 
 export const makeLightOverrides = (theme: Theme): Components => {
   return {
@@ -26,6 +31,9 @@ export const makeLightOverrides = (theme: Theme): Components => {
     MuiDialogContent: dialogContentOverrides(theme),
     MuiDialogActions: dialogActionsOverrides(theme),
     MuiPopover: popoverOverrides(theme),
+    MuiAvatar: avatarOverrides(theme),
+    MuiToggleButtonGroup: toggleButtonGroupOverrides(theme),
+    MuiToggleButton: toggleButtonOverrides(theme),
     MuiTypography: {
       styleOverrides: {
         root: {

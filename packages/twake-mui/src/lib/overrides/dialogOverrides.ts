@@ -19,7 +19,11 @@ export const dialogTitleOverrides = (
   return {
     styleOverrides: {
       root: {
-        padding: "11px 32px",
+        padding: "12px 32px",
+        fontSize: 17,
+        fontWeight: 400,
+        lineHeight: 1.273,
+        letterSpacing: "0",
       },
     },
   };
