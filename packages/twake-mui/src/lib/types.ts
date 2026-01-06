@@ -31,6 +31,7 @@ export interface GreyPalette {
   A200: string;
   A400: string;
   A700: string;
+  A900: string;
 }
 
 export interface TextPalette {
