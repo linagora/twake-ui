@@ -23,17 +23,17 @@ import {
 export const makeLightOverrides = (theme: Theme): Components => {
   return {
     MuiButton: buttonOverrides(theme),
-    MuiTextField: textFieldOverrides(theme),
-    MuiOutlinedInput: outlinedInputOverrides(theme),
-    MuiInputBase: inputBaseOverrides(theme),
-    MuiAutocomplete: autocompleteOverrides(theme),
-    MuiDialog: dialogOverrides(theme),
-    MuiDialogTitle: dialogTitleOverrides(theme),
-    MuiDialogContent: dialogContentOverrides(theme),
-    MuiDialogActions: dialogActionsOverrides(theme),
-    MuiPopover: popoverOverrides(theme),
+    MuiTextField: textFieldOverrides(),
+    MuiOutlinedInput: outlinedInputOverrides(),
+    MuiInputBase: inputBaseOverrides(),
+    MuiAutocomplete: autocompleteOverrides(),
+    MuiDialog: dialogOverrides(),
+    MuiDialogTitle: dialogTitleOverrides(),
+    MuiDialogContent: dialogContentOverrides(),
+    MuiDialogActions: dialogActionsOverrides(),
+    MuiPopover: popoverOverrides(),
     MuiAvatar: avatarOverrides(theme),
-    MuiToggleButtonGroup: toggleButtonGroupOverrides(theme),
+    MuiToggleButtonGroup: toggleButtonGroupOverrides(),
     MuiToggleButton: toggleButtonOverrides(theme),
     MuiTypography: {
       styleOverrides: {

@@ -38,6 +38,9 @@ export const toggleButtonOverrides = (
             color: theme.palette.primary.main
           }
         }
+      },
+      sizeMedium: {
+        padding: '9px 24px'
       }
     }
   }
