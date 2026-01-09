@@ -72,11 +72,11 @@ export const buttonOverrides = (theme: Theme): Components['MuiButton'] => {
         paddingBottom: '7px'
       },
       sizeMedium: {
-        padding: '8px 24px'
+        padding: '9px 24px'
       },
       containedSizeMedium: {
-        paddingTop: '9px',
-        paddingBottom: '9px'
+        paddingTop: '10px',
+        paddingBottom: '10px'
       },
       sizeLarge: {
         padding: '12px 32px'
