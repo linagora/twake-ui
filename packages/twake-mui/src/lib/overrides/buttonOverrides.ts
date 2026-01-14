@@ -47,7 +47,7 @@ export const buttonOverrides = (theme: Theme): Components['MuiButton'] => {
         }
       },
       outlined: {
-        backgroundColor: '#fff',
+        backgroundColor: theme.palette.background.paper,
         borderColor: alpha(paletteData.Grey.A900, 0.28),
         color: alpha(theme.palette.text.primary, 0.9),
         '&:hover': {
@@ -56,7 +56,7 @@ export const buttonOverrides = (theme: Theme): Components['MuiButton'] => {
           borderColor: alpha(theme.palette.primary.main, 0.32)
         },
         '&.Mui-disabled': {
-          backgroundColor: '#fff',
+          backgroundColor: theme.palette.background.paper,
           color: alpha(theme.palette.grey[900], 0.38),
           borderColor: alpha(paletteData.Grey.A900, 0.28)
         }
@@ -72,11 +72,11 @@ export const buttonOverrides = (theme: Theme): Components['MuiButton'] => {
         paddingBottom: '7px'
       },
       sizeMedium: {
-        padding: '8px 24px'
+        padding: '9px 24px'
       },
       containedSizeMedium: {
-        paddingTop: '9px',
-        paddingBottom: '9px'
+        paddingTop: '10px',
+        paddingBottom: '10px'
       },
       sizeLarge: {
         padding: '12px 32px'
