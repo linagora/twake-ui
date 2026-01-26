@@ -17,9 +17,7 @@ import { TwakeMuiThemeProvider } from "twake-mui";
 
 function App() {
   return (
-    <TwakeMuiThemeProvider>
-      {/* Your application */}
-    </TwakeMuiThemeProvider>
+    <TwakeMuiThemeProvider>{/* Your application */}</TwakeMuiThemeProvider>
   );
 }
 ```
@@ -48,6 +46,7 @@ function MyComponent() {
 ### Button
 
 Pre-styled button variants:
+
 - `contained`: Primary button style
 - `outlined`: Outlined button style
 - `text`: Text button style
@@ -55,6 +54,7 @@ Pre-styled button variants:
 ### TextField
 
 Pre-styled text field with:
+
 - Outlined input styles
 - Error states
 - Focus states
@@ -63,12 +63,14 @@ Pre-styled text field with:
 ### Dialog/Modal
 
 Pre-styled dialog components:
+
 - Dialog paper styles
 - DialogTitle, DialogContent, DialogActions styles
 
 ## Typography Variants
 
 All standard MUI typography variants are available:
+
 - h1-h6
 - body1, body2
 - button

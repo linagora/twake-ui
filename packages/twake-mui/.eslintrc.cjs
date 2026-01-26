@@ -1,10 +1,10 @@
 module.exports = {
-  extends: ['cozy-app/react'],
+  extends: ["cozy-app/react"],
   rules: {
-    'no-console': 1,
+    "no-console": 1,
   },
   parserOptions: {
-    project: ['./tsconfig.json'],
-    tsconfigRootDir: __dirname
+    project: ["./tsconfig.json"],
+    tsconfigRootDir: __dirname,
   },
-}
+};

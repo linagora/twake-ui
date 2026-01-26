@@ -13,6 +13,14 @@ export const autocompleteOverrides = (): Components['MuiAutocomplete'] => {
             borderRadius: radius.sm,
             '& fieldset.MuiOutlinedInput-notchedOutline': {
               borderRadius: radius.sm
+            },
+            '&.MuiInputBase-sizeSmall': {
+              paddingTop: '8px',
+              paddingBottom: '8px',
+              paddingLeft: '16px',
+              '& .MuiAutocomplete-input': {
+                padding: '0px 4px 0px 8px'
+              }
             }
           }
         }
