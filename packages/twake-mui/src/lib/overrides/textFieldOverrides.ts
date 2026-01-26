@@ -82,8 +82,10 @@ export const selectOverrides = (): Components['MuiSelect'] => {
           '&.MuiInputBase-sizeSmall': {
             '& .MuiSelect-select': {
               padding: '11px 16px',
-              '&:has(svg)': {
-                padding: '9px 16px'
+              // Note: :has() selector removed due to jsdom compatibility in tests
+              // If SVG is present, padding should be handled via component-level sx prop
+              '& svg': {
+                marginRight: '8px'
               }
             }
           }
