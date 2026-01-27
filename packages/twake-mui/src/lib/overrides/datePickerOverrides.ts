@@ -10,6 +10,12 @@ export const datePickerOverrides = (theme: Theme): Components => {
   return {
     MuiCssBaseline: {
       styleOverrides: {
+        '.MuiDateCalendar-root.MuiDateCalendar-root': {
+          width: '230px',
+          maxWidth: '230px',
+          height: '300px',
+          maxHeight: '300px'
+        },
         '.MuiDateCalendar-root .MuiDayCalendar-slideTransition': {
           minHeight: '208px'
         },
@@ -60,6 +66,19 @@ export const datePickerOverrides = (theme: Theme): Components => {
           margin: '0',
           color: alpha(paletteData.Grey.A900, 0.9)
         },
+        '.MuiDateCalendar-root .MuiPickersDay-root.Mui-selected': {
+          backgroundColor: theme.palette.primary.main,
+          '&:hover': {
+            backgroundColor: theme.palette.primary.dark
+          }
+        },
+        '.MuiDateCalendar-root .MuiButtonBase-root.MuiPickersDay-root.Mui-selected':
+          {
+            backgroundColor: `${theme.palette.primary.main}`,
+            '&:hover': {
+              backgroundColor: `${theme.palette.primary.dark}`
+            }
+          },
         '.MuiDateCalendar-root .MuiMonthCalendar-root': {
           width: '215px'
         },
