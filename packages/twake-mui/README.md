@@ -2,6 +2,8 @@
 
 MUI v7 theme system for Twake Calendar and other Twake applications.
 
+**Current version:** 1.1.6
+
 ## Installation
 
 ```bash
