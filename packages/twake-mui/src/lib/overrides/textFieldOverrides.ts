@@ -27,6 +27,13 @@ export const outlinedInputOverrides = (): Components['MuiOutlinedInput'] => {
         borderRadius: radius.sm,
         '&.Mui-focused fieldset': {
           borderWidth: '1px'
+        },
+        '& input::placeholder': {
+          color: '#8C9CAF',
+          opacity: 1
+        },
+        '& .MuiSvgIcon-root': {
+          fontSize: '18px'
         }
       },
       input: {
@@ -35,7 +42,11 @@ export const outlinedInputOverrides = (): Components['MuiOutlinedInput'] => {
         lineHeight: '24px'
       },
       inputSizeSmall: {
-        padding: '8px 16px' // Small: 40px height
+        padding: '8px 16px',
+        fontSize: '14px',
+        fontWeight: 400,
+        lineHeight: '20px',
+        minHeight: '26px'
       }
     },
     variants: [
@@ -57,6 +68,27 @@ export const inputBaseOverrides = (): Components['MuiInputBase'] => {
       root: {
         '&.MuiInputBase-sizeLarge': {
           fontSize: '16px'
+        }
+      }
+    }
+  }
+}
+
+export const selectOverrides = (): Components['MuiSelect'] => {
+  return {
+    styleOverrides: {
+      root: {
+        '&.MuiOutlinedInput-root': {
+          '&.MuiInputBase-sizeSmall': {
+            '& .MuiSelect-select': {
+              padding: '11px 16px',
+              // Note: :has() selector removed due to jsdom compatibility in tests
+              // If SVG is present, padding should be handled via component-level sx prop
+              '& svg': {
+                marginRight: '8px'
+              }
+            }
+          }
         }
       }
     }

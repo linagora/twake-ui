@@ -4,6 +4,7 @@ import { makeDarkOverrides } from './makeDarkOverrides'
 import { makeLightOverrides } from './makeLightOverrides'
 import { makePalette } from './makePalette'
 import { makeTypography } from './makeTypography'
+// DatePicker styles are applied through component overrides
 
 const themesCommonConfig: Partial<ThemeOptions> = {
   shape: {
@@ -38,6 +39,7 @@ export const makeTheme = (
   const components =
     mode === 'dark' ? makeDarkOverrides(theme) : makeLightOverrides(theme)
 
+  // Create the final theme with components
   return createTheme({
     ...theme,
     components
