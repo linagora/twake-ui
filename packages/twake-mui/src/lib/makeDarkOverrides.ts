@@ -57,6 +57,7 @@ export const makeDarkOverrides = (theme: Theme): Components => {
       }
     },
     ...datePickerOverridesResult,
+    MuiAccordion: accordionOverridesResult.MuiAccordion,
     MuiAccordionSummary: accordionOverridesResult.MuiAccordionSummary,
     MuiCssBaseline: {
       styleOverrides: {

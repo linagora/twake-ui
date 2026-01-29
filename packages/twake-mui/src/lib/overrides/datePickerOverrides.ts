@@ -1,10 +1,5 @@
 import { Theme, Components, alpha } from '@mui/material/styles'
 
-import paletteJson from '../palette.json'
-import { PaletteJson } from '../types'
-
-const paletteData = paletteJson as PaletteJson
-
 // DatePicker component overrides using nested selectors for higher specificity
 export const datePickerOverrides = (theme: Theme): Components => {
   return {
@@ -29,13 +24,13 @@ export const datePickerOverrides = (theme: Theme): Components => {
           fontStyle: 'normal',
           fontWeight: 600,
           lineHeight: '20px',
-          color: alpha(paletteData.Grey[900], 0.9)
+          color: alpha(theme.palette.grey[900], 0.9)
         },
         '.MuiDateCalendar-root .MuiPickersCalendarHeader-switchViewButton': {
           padding: '0',
           width: '32px',
           height: '32px',
-          color: paletteData.Grey.A900
+          color: theme.palette.grey[900]
         },
         '.MuiDateCalendar-root .MuiPickersCalendarHeader-switchViewIcon': {
           fontSize: '15px'
@@ -44,7 +39,7 @@ export const datePickerOverrides = (theme: Theme): Components => {
           padding: '0',
           width: '32px',
           height: '32px',
-          color: alpha(paletteData.Grey.A900, 0.48)
+          color: alpha(theme.palette.grey[900], 0.48)
         },
         '.MuiDateCalendar-root .MuiDayCalendar-weekDayLabel': {
           fontSize: '10px',
@@ -54,7 +49,7 @@ export const datePickerOverrides = (theme: Theme): Components => {
           height: '32px',
           width: '32px',
           margin: '0',
-          color: alpha(paletteData.Grey.A900, 0.48)
+          color: alpha(theme.palette.grey[900], 0.48)
         },
         '.MuiDateCalendar-root .MuiPickersDay-root': {
           fontSize: '10px',
@@ -64,7 +59,7 @@ export const datePickerOverrides = (theme: Theme): Components => {
           height: '32px',
           width: '32px',
           margin: '0',
-          color: alpha(paletteData.Grey.A900, 0.9)
+          color: alpha(theme.palette.grey[900], 0.9)
         },
         '.MuiDateCalendar-root .MuiPickersDay-root.Mui-selected': {
           backgroundColor: theme.palette.primary.main,
@@ -92,15 +87,57 @@ export const datePickerOverrides = (theme: Theme): Components => {
           background: 'transparent'
         },
         '.MuiDateCalendar-root .MuiMonthCalendar-button.Mui-selected': {
+          color: theme.palette.primary.contrastText,
           background: theme.palette.primary.main,
           '&:hover': {
+            background: theme.palette.primary.dark
+          },
+          '&:focus': {
             background: theme.palette.primary.dark
           }
         },
         '.MuiDateCalendar-root .MuiMonthCalendar-button.Mui-selected[tabindex="0"]':
           {
+            color: theme.palette.primary.contrastText,
             background: theme.palette.primary.main,
             '&:hover': {
+              background: theme.palette.primary.dark
+            },
+            '&:focus': {
+              background: theme.palette.primary.dark
+            }
+          },
+        '.MuiDateCalendar-root .MuiYearCalendar-root': {
+          width: '245px',
+          maxWidth: '245px'
+        },
+        '.MuiDateCalendar-root .MuiYearCalendar-button': {
+          fontSize: '14px',
+          lineHeight: 1,
+          height: '30px',
+          width: '55px'
+        },
+        '.MuiDateCalendar-root .MuiYearCalendar-button[tabindex="0"]': {
+          background: 'transparent'
+        },
+        '.MuiDateCalendar-root .MuiYearCalendar-button.Mui-selected': {
+          color: theme.palette.primary.contrastText,
+          background: theme.palette.primary.main,
+          '&:hover': {
+            background: theme.palette.primary.dark
+          },
+          '&:focus': {
+            background: theme.palette.primary.dark
+          }
+        },
+        '.MuiDateCalendar-root .MuiYearCalendar-button.Mui-selected[tabindex="0"]':
+          {
+            color: theme.palette.primary.contrastText,
+            background: theme.palette.primary.main,
+            '&:hover': {
+              background: theme.palette.primary.dark
+            },
+            '&:focus': {
               background: theme.palette.primary.dark
             }
           }
