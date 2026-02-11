@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0]
+
+### Changed
+
+- DatePicker/TimePicker: DigitalClock selected item uses theme primary color (and contrastText) instead of default blue; hover uses primary.dark
+- MuiSelect: removed fontWeight 500 from select display (.MuiSelect-select)
+
+## [1.1.9]
+
+### Changed
+
+- MuiSelect: removed custom fieldset borderColor (selectBorderColor) from theme overrides; outline now uses MUI default
+
+## [1.1.8]
+
+### Changed
+
+- Maintenance release
+
 ## [1.1.7]
 
 ### Changed
