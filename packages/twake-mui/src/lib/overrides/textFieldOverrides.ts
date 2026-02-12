@@ -79,9 +79,14 @@ export const selectOverrides = (): Components['MuiSelect'] => {
     styleOverrides: {
       root: {
         '&.MuiOutlinedInput-root': {
+          '& .MuiSvgIcon-root': {
+            fontSize: '25px'
+          },
           '&.MuiInputBase-sizeSmall': {
             '& .MuiSelect-select': {
-              padding: '11px 16px',
+              padding: '10px 25px 10px 15px',
+              fontSize: '14px',
+              lineHeight: '20px',
               // Note: :has() selector removed due to jsdom compatibility in tests
               // If SVG is present, padding should be handled via component-level sx prop
               '& svg': {

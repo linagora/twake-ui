@@ -140,7 +140,14 @@ export const datePickerOverrides = (theme: Theme): Components => {
             '&:focus': {
               background: theme.palette.primary.dark
             }
+          },
+        '.MuiButtonBase-root.MuiMenuItem-root.MuiDigitalClock-item.Mui-selected': {
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.primary.contrastText,
+          '&:hover': {
+            backgroundColor: theme.palette.primary.dark
           }
+        }
       }
     }
   }
