@@ -10,6 +10,10 @@ export const dialogOverrides = (): Components['MuiDialog'] => {
         boxShadow:
           '0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 4px 8px 3px rgba(0, 0, 0, 0.15)',
         maxWidth: '570px'
+      },
+      paperFullScreen: {
+        borderRadius: 0,
+        maxWidth: '100%'
       }
     }
   }
