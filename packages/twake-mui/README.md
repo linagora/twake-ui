@@ -70,6 +70,43 @@ This package is part of the `twake-ui` monorepo.
 npm run build
 ```
 
+### Storybook
+
+Use Storybook for isolated component development and visual testing:
+
+```bash
+# Start Storybook development server
+npm run doc
+
+# Build static Storybook
+npm run build:doc
+```
+
+Stories are located in:
+- `src/components/**/*.stories.tsx` - Component stories (e.g., Avatar)
+- `src/stories/*.stories.tsx` - Override showcase stories (Button, Input, Dialog, etc.)
+
+Access Storybook at http://localhost:6006
+
+### Visual Regression Testing
+
+We use Argos for visual regression testing. Screenshots are automatically captured from Storybook stories during CI.
+
+To run visual tests locally (requires ARGOS_TOKEN):
+
+```bash
+npm run build:doc
+npm run screenshots
+```
+
+To add visual regression coverage to a story:
+
+```typescript
+export const MyStory = {
+  tags: ['argos']
+}
+```
+
 ### Local Development
 
 To use this package locally in another project:
@@ -91,6 +128,23 @@ Or use file path in package.json:
   }
 }
 ```
+
+### About dependencies
+
+Because of inter-dependencies between these packages:
+- `storybook`, `@storybook/*`
+- `vite`, `@vitejs/*`
+- `vitest`, `@vitest/*`
+- `@argos-ci/*`, `playwright`
+
+you may encounter problem to install packages. So you can:
+
+```bash
+rm -rf node_modules packages/twake-mui/node_modules package-lock.json
+npm install
+```
+
+We can maybe use **pnpm** in the future that support hoisting disabling via `.npmrc`
 
 ## License
 

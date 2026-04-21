@@ -57,6 +57,38 @@ semantic-release runs per changed package:
    - `"publishConfig": { "access": "public" }`
    - `"files": ["dist", "CHANGELOG.md", "README.md"]`
 
+## Storybook
+
+Inside `packages` folder:
+
+```bash
+# Start Storybook development server
+npm run doc
+
+# Build static Storybook for deployment
+npm run build:doc
+
+# Run visual regression tests with Argos
+npm run screenshots
+```
+
+Stories are located in:
+- `packages/twake-mui/src/components/**/*.stories.tsx` - Component stories (e.g., Avatar)
+- `packages/twake-mui/src/stories/*.stories.tsx` - Override showcase stories
+
+### Visual Regression Testing
+
+The project uses Argos for visual regression testing. Screenshots are automatically
+captured from Storybook stories during CI and compared against baselines.
+
+To add a story to visual regression tests, add `argos` tag to your story:
+
+```typescript
+export const MyStory = {
+  tags: ['argos']
+}
+```
+
 ## CI/CD Notes
 
 - **Runs on**: PRs and push to main
