@@ -11,6 +11,8 @@ build/
 # Testing
 coverage/
 .nyc_output/
+screenshots/
+storybook-static/
 
 # IDE
 .idea/
