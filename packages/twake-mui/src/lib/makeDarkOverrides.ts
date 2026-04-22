@@ -1,55 +1,10 @@
 import { Theme, Components, alpha } from '@mui/material/styles'
+import { merge } from 'lodash'
 
-import { accordionOverrides } from './overrides/accordionOverrides'
-import { autocompleteOverrides } from './overrides/autocompleteOverrides'
-import { avatarOverrides } from './overrides/avatarOverrides'
-import { backdropOverrides } from './overrides/backdropOverrides'
-import { buttonOverrides } from './overrides/buttonOverrides'
-import { checkboxOverrides } from './overrides/checkboxOverrides'
-import { datePickerOverrides } from './overrides/datePickerOverrides'
-import {
-  dialogOverrides,
-  dialogTitleOverrides,
-  dialogContentOverrides,
-  dialogActionsOverrides
-} from './overrides/dialogOverrides'
-import { iconButtonOverrides } from './overrides/iconButtonOverrides'
-import { menuItemOverrides } from './overrides/menuItemOverrides'
-import { popoverOverrides } from './overrides/popoverOverrides'
-import { swipeableDrawerOverrides } from './overrides/swipeableDrawerOverrides'
-import {
-  textFieldOverrides,
-  outlinedInputOverrides,
-  inputBaseOverrides,
-  selectOverrides
-} from './overrides/textFieldOverrides'
-import {
-  toggleButtonGroupOverrides,
-  toggleButtonOverrides
-} from './overrides/toggleButtonOverrides'
+import { makeLightOverrides } from './makeLightOverrides'
 
 export const makeDarkOverrides = (theme: Theme): Components => {
-  const datePickerOverridesResult = datePickerOverrides(theme)
-  const accordionOverridesResult = accordionOverrides(theme)
-
-  return {
-    MuiButton: buttonOverrides(theme),
-    MuiTextField: textFieldOverrides(),
-    MuiOutlinedInput: outlinedInputOverrides(),
-    MuiInputBase: inputBaseOverrides(),
-    MuiSelect: selectOverrides(),
-    MuiAutocomplete: autocompleteOverrides(),
-    MuiDialog: dialogOverrides(),
-    MuiDialogTitle: dialogTitleOverrides(),
-    MuiDialogContent: dialogContentOverrides(),
-    MuiDialogActions: dialogActionsOverrides(),
-    MuiPopover: popoverOverrides(),
-    MuiAvatar: avatarOverrides(theme),
-    MuiToggleButtonGroup: toggleButtonGroupOverrides(),
-    MuiToggleButton: toggleButtonOverrides(theme),
-    MuiIconButton: iconButtonOverrides(),
-    MuiCheckbox: checkboxOverrides(),
-    MuiBackdrop: backdropOverrides(theme),
+  const makeOverridesForDarkTheme = (theme: Theme): Components => ({
     MuiTypography: {
       styleOverrides: {
         root: {
@@ -59,23 +14,13 @@ export const makeDarkOverrides = (theme: Theme): Components => {
           // Typography caption overrides will be implemented later
         }
       }
-    },
-    ...datePickerOverridesResult,
-    MuiAccordion: accordionOverridesResult.MuiAccordion,
-    MuiAccordionSummary: accordionOverridesResult.MuiAccordionSummary,
-    MuiCssBaseline: {
-      styleOverrides: {
-        ...((datePickerOverridesResult.MuiCssBaseline?.styleOverrides as Record<
-          string,
-          unknown
-        >) || {}),
-        ...((accordionOverridesResult.MuiCssBaseline?.styleOverrides as Record<
-          string,
-          unknown
-        >) || {})
-      }
-    },
-    MuiMenuItem: menuItemOverrides(theme),
-    MuiSwipeableDrawer: swipeableDrawerOverrides(theme)
-  }
+    }
+  })
+
+  const DarkOverrides: Components = merge(
+    makeLightOverrides(theme),
+    makeOverridesForDarkTheme(theme)
+  )
+
+  return DarkOverrides
 }
