@@ -1,4 +1,4 @@
-name: Deploy Twake-Mui doc to GitHub Pages
+name: Deploy Twake-Mui doc
 
 on:
   push:
