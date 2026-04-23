@@ -22,7 +22,63 @@ export const makeLightOverrides = (theme: Theme): Components => {
           },
           '&:focus': {
             boxShadow: 'none'
-          }
+          },
+          variants: [
+            {
+              props: { variant: 'contained', color: 'secondary' },
+              style: {
+                backgroundColor: theme.palette.secondary.main,
+                color: alpha(theme.palette.text.primary, 0.9),
+                borderRadius: radius.sm,
+                '&:hover': {
+                  backgroundColor: paletteData.Secondary[700],
+                  color: alpha(theme.palette.text.primary, 0.9)
+                },
+                '&.Mui-disabled': {
+                  backgroundColor: theme.palette.action.disabledBackground
+                }
+              }
+            },
+            {
+              props: { size: 'small' },
+              style: {
+                padding: '6px 16px'
+              }
+            },
+            {
+              props: { size: 'medium' },
+              style: {
+                padding: '9px 24px'
+              }
+            },
+            {
+              props: { size: 'large' },
+              style: {
+                padding: '12px 32px'
+              }
+            },
+            {
+              props: { variant: 'contained', size: 'small' },
+              style: {
+                paddingTop: '7px',
+                paddingBottom: '7px'
+              }
+            },
+            {
+              props: { variant: 'contained', size: 'medium' },
+              style: {
+                paddingTop: '10px',
+                paddingBottom: '10px'
+              }
+            },
+            {
+              props: { variant: 'contained', size: 'large' },
+              style: {
+                paddingTop: '13px',
+                paddingBottom: '13px'
+              }
+            }
+          ]
         },
         contained: {
           boxShadow: 'none',
@@ -34,18 +90,6 @@ export const makeLightOverrides = (theme: Theme): Components => {
           },
           '&:focus': {
             boxShadow: 'none'
-          }
-        },
-        containedSecondary: {
-          backgroundColor: theme.palette.secondary.main,
-          color: alpha(theme.palette.text.primary, 0.9),
-          borderRadius: radius.sm,
-          '&:hover': {
-            backgroundColor: paletteData.Secondary[700],
-            color: alpha(theme.palette.text.primary, 0.9)
-          },
-          '&.Mui-disabled': {
-            backgroundColor: theme.palette.action.disabledBackground
           }
         },
         outlined: {
@@ -62,30 +106,6 @@ export const makeLightOverrides = (theme: Theme): Components => {
             color: alpha(theme.palette.grey[900], 0.38),
             borderColor: alpha(paletteData.Grey.A900, 0.28)
           }
-        },
-        text: {
-          // Text button overrides
-        },
-        sizeSmall: {
-          padding: '6px 16px'
-        },
-        containedSizeSmall: {
-          paddingTop: '7px',
-          paddingBottom: '7px'
-        },
-        sizeMedium: {
-          padding: '9px 24px'
-        },
-        containedSizeMedium: {
-          paddingTop: '10px',
-          paddingBottom: '10px'
-        },
-        sizeLarge: {
-          padding: '12px 32px'
-        },
-        containedSizeLarge: {
-          paddingTop: '13px',
-          paddingBottom: '13px'
         }
       }
     },
@@ -122,14 +142,19 @@ export const makeLightOverrides = (theme: Theme): Components => {
         input: {
           padding: '11px 16px', // Default medium: 48px height
           height: 'auto',
-          lineHeight: '24px'
-        },
-        inputSizeSmall: {
-          padding: '8px 16px',
-          fontSize: '14px',
-          fontWeight: 400,
-          lineHeight: '20px',
-          minHeight: '26px'
+          lineHeight: '24px',
+          variants: [
+            {
+              props: { size: 'small' },
+              style: {
+                padding: '8px 16px',
+                fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: '20px',
+                minHeight: '26px'
+              }
+            }
+          ]
         }
       },
       variants: [
@@ -326,11 +351,16 @@ export const makeLightOverrides = (theme: Theme): Components => {
           },
           '&.innerBorder': {
             boxShadow: `inset 0px 0px 0px 1px ${theme.palette.divider}`
-          }
-        },
-        colorDefault: {
-          backgroundColor: theme.palette.background.paper,
-          color: theme.palette.text.secondary
+          },
+          variants: [
+            {
+              props: { color: 'default' },
+              style: {
+                backgroundColor: theme.palette.background.paper,
+                color: theme.palette.text.secondary
+              }
+            }
+          ]
         }
       }
     },
@@ -364,10 +394,15 @@ export const makeLightOverrides = (theme: Theme): Components => {
             '& svg, & .MuiSvgIcon-root': {
               color: theme.palette.primary.main
             }
-          }
-        },
-        sizeMedium: {
-          padding: '9px 24px'
+          },
+          variants: [
+            {
+              props: { size: 'medium' },
+              style: {
+                padding: '9px 24px'
+              }
+            }
+          ]
         }
       }
     },
