@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/linagora/twake-ui/compare/v1.6.0...v1.6.1) (2026-05-06)
+
+
+### Bug Fixes
+
+* trigger release ([be0544c](https://github.com/linagora/twake-ui/commit/be0544c8603365348ea02b9c5af59ce4254f7fc1))
+
 # [1.6.0](https://github.com/linagora/twake-ui/compare/v1.5.0...v1.6.0) (2026-04-22)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@linagora/twake-mui",
   "type": "module",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "MUI v7 theme system for Twake applications",
   "author": "Twake",
   "license": "MIT",
