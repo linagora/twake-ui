@@ -1,3 +1,23 @@
+# [2.0.0](https://github.com/linagora/twake-ui/compare/v1.6.1...v2.0.0) (2026-06-10)
+
+
+* Merge pull request [#23](https://github.com/linagora/twake-ui/issues/23) from linagora/migrate-to-mui-v9 ([a0103e7](https://github.com/linagora/twake-ui/commit/a0103e76cc988ceb49611beaa72cd3df09425673))
+
+
+### Bug Fixes
+
+* **CI:** use NPM_TOKEN_IN_VAULT for publishing ([967b795](https://github.com/linagora/twake-ui/commit/967b7956d3e13d3ba744ea674606646ccf7e85e3))
+
+
+### Features
+
+* makePalette now has palette as an argument and is exported into the lib ([5a9850f](https://github.com/linagora/twake-ui/commit/5a9850f21dd9befec6a20d652ee306478c943a20))
+
+
+### BREAKING CHANGES
+
+* updated to mui v9
+
 ## [1.6.1](https://github.com/linagora/twake-ui/compare/v1.6.0...v1.6.1) (2026-05-06)
 
 
