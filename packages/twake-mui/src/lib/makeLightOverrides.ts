@@ -247,11 +247,11 @@ export const makeLightOverrides = (
     MuiDialogTitle: {
       styleOverrides: {
         root: {
+          ...theme.typography.h3,
           padding: '12px 32px',
-          fontSize: 17,
-          fontWeight: 400,
-          lineHeight: 1.273,
-          letterSpacing: '0'
+          [theme.breakpoints.down('sm')]: {
+            ...theme.typography.h4
+          }
         }
       }
     },
