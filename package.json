@@ -1,6 +1,6 @@
 {
   "name": "twake-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Twake UI monorepo - Shared UI components and theme system for Twake applications",
   "author": "Twake",
@@ -41,9 +41,15 @@
     "typescript": "5.5.2"
   },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"],
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
     "rules": {
-      "subject-case": [2, "always", "sentence-case"]
+      "subject-case": [
+        2,
+        "always",
+        "sentence-case"
+      ]
     }
   }
 }
