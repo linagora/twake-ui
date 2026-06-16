@@ -1,0 +1,22 @@
+{
+  "plugins": [
+    "@release-it/conventional-changelog",
+    "@release-it-plugins/workspaces"
+  ],
+  "git": {
+    "commitMessage": "chore(release): ${version}",
+    "push": true
+  },
+  "github": {
+    "release": true
+  },
+  "npm": {
+    "publish": true,
+    "skipChecks": true
+  },
+  "workspaces": {
+    "workspaces": ["packages/*"],
+    "publish": true,
+    "skipChecks": true
+  }
+}

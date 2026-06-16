@@ -7,23 +7,11 @@ Monorepo containing shared UI packages for Twake applications.
 ```
 twake-ui/
 ├── packages/
-│   ├── twake-mui/          # MUI v7 theme system
+│   ├── twake-mui/          # MUI theme system
 │   └── ...                 # Other packages (to be added)
 ├── package.json            # Root workspace config
 └── README.md
 ```
-
-## Packages
-
-### twake-mui
-
-MUI v7 theme system for Twake Calendar and other Twake applications.
-
-- Provides palette, typography, and component overrides
-- Focuses on Button, TextField, Dialog/Modal components
-- References cozy-ui structure but optimized for MUI v7
-
-See [packages/twake-mui/README.md](packages/twake-mui/README.md) for more details.
 
 ## Development
 
@@ -63,50 +51,33 @@ npm run <script> --workspace=twake-mui
 
 ## Release Management
 
-This monorepo uses **semantic-release** with independent versioning for each package. The release process is fully automated via GitHub Actions.
+This monorepo uses **release-it** with independent versioning for each package. The release process is fully automated via GitHub Actions.
 
 ### How it works
 
 ```text
 PR merged to main
     ↓
-CI/CD runs scripts/release.sh
+CI runs `release-it --ci`
     ↓
-Detects which packages have changes
+Detects changed packages since their last tag
     ↓
-Runs semantic-release only on modified packages
-    ↓
-Version bump + npm publish + GitHub release
+For each changed package:
+    - Bumps version (conventional commits)
+    - Updates CHANGELOG.md
+    - Publishes to npm
+    - Creates separate GitHub release
 ```
 
-### Testing releases locally (dry-run)
+### Dry-run
 
 ```bash
-# Test dry-run for a specific package
-npm run release:dry -- twake-mui
-
-# This shows:
-# - Next version number
-# - Release notes
-# - Commits analyzed
-# Without publishing anything!
+npm run release:dry
 ```
 
 ## Adding New Packages
 
-When adding a new package to the monorepo, you only need to add one file:
-
-### 1. Create `.releaserc.json` in your package
-
-```bash
-cp packages/twake-mui/.releaserc.json packages/your-new-package/
-```
-
-That's it! The `scripts/release.sh` will automatically detect your new package and handle releases.
-
-### Required package.json fields
-
-Ensure your `package.json` includes:
+Create your package in `packages/<name>/` with the required `package.json` fields:
 
 ```json
 {
@@ -122,6 +93,8 @@ Ensure your `package.json` includes:
   ]
 }
 ```
+
+No additional release config needed — release-it auto-detects new packages from the workspaces.
 
 ## License
 

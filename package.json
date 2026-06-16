@@ -29,16 +29,15 @@
     "lint": "npm run lint --workspaces",
     "lint:fix": "npm run lint --workspaces --if-present -- --fix",
     "clean": "npm run clean --workspaces && rm -rf node_modules",
-    "release": "./scripts/release.sh",
-    "release:dry": "./scripts/release-dry-run.sh"
+    "release": "release-it --ci",
+    "release:dry": "release-it --ci --dry-run"
   },
   "devDependencies": {
     "@commitlint/cli": "21.0.2",
     "@commitlint/config-conventional": "21.0.2",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^11.0.6",
-    "semantic-release": "^24.2.9",
+    "@release-it-plugins/workspaces": "5.0.3",
+    "@release-it/conventional-changelog": "11.0.1",
+    "release-it": "19.2.4",
     "typescript": "5.5.2"
   },
   "commitlint": {

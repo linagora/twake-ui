@@ -37,15 +37,15 @@ npm run release:dry -- twake-mui
 ```text
 PR merged to main
     ↓
-CI runs `npm run release` (calls scripts/release.sh)
+CI runs `release-it --ci`
     ↓
-Script detects changed packages via git tags
+release-it detects changed packages since their last tag
     ↓
-semantic-release runs per changed package:
-    - Updates version
-    - Generates CHANGELOG.md
+For each changed package:
+    - Bumps version (conventional commits)
+    - Updates CHANGELOG.md
     - Publishes to npm
-    - Creates GitHub release
+    - Creates separate GitHub release
 ```
 
 ## Adding New Packages

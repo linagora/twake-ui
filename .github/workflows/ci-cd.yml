@@ -7,7 +7,7 @@ on:
       - main
 
 permissions:
-  contents: write # Required for semantic-release to create tags and GitHub releases
+  contents: write # Required for release-it to create tags and GitHub releases
 
 jobs:
   commitlint:
@@ -38,7 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          fetch-depth: 0 # Full git history required for semantic-release (changelog, tags, commits analysis)
+          fetch-depth: 0 # Full git history required for release-it (changelog, tags, commits analysis)
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
