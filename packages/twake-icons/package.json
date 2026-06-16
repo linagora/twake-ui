@@ -37,8 +37,11 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc",
+    "check:barrel": "node scripts/check-barrel.mjs",
+    "build": "npm run build:barrel && tsc",
+    "build:barrel": "node scripts/generate-barrel.mjs",
     "build:doc": "storybook build --output-dir storybook-static",
+    "build:icons": "npm run svgo && npm run makeSvgr && npm run sprite",
     "start": "tsc --watch",
     "clean": "rm -rf dist",
     "lint": "eslint src --ext .ts,.tsx",
@@ -47,7 +50,6 @@
     "svgo": "svgo -r --folder assets",
     "makeSvgr": "scripts/generate-svgr.sh",
     "sprite": "scripts/make-sprite.sh",
-    "build:icons": "npm run svgo && npm run makeSvgr && npm run sprite",
     "doc": "storybook dev -p 6007"
   },
   "peerDependencies": {
