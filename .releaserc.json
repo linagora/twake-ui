@@ -3,7 +3,9 @@
     "@release-it/conventional-changelog",
     "@release-it-plugins/workspaces"
   ],
-  "npm": false,
+  "npm": {
+    "publish": false
+  },
   "git": {
     "commitMessage": "chore(release): bump package versions",
     "commit": true,
