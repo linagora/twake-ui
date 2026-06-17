@@ -1,11 +1,15 @@
 {
-  "plugins": [
-    "@release-it/conventional-changelog",
-    "@release-it-plugins/workspaces"
-  ],
-  "npm": {
-    "publish": false
+  "plugins": {
+    "@release-it/conventional-changelog": true,
+    "@release-it-plugins/workspaces": {
+      "publish": true,
+      "skipChecks": true,
+      "additionalManifests": {
+        "versionUpdates": []
+      }
+    }
   },
+  "npm": false,
   "git": {
     "commitMessage": "chore(release): bump package versions",
     "commit": true,
@@ -14,13 +18,5 @@
   },
   "github": {
     "release": false
-  },
-  "workspaces": {
-    "workspaces": ["packages/*"],
-    "publish": true,
-    "skipChecks": true,
-    "additionalManifests": {
-      "versionUpdates": []
-    }
   }
 }
