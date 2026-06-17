@@ -16,7 +16,7 @@ npm run lint
 npm run lint --workspace=twake-mui
 
 # Test dry-run release (safe, no publish)
-npm run release:dry -- twake-mui
+npm run release:dry
 ```
 
 ## Critical Rules
@@ -28,7 +28,7 @@ npm run release:dry -- twake-mui
 ## Architecture
 
 - **Monorepo**: npm workspaces with independent versioning
-- **Packages location**: `packages/*` (currently only `twake-mui`)
+- **Packages location**: `packages/*` (currently `twake-mui` and `twake-icons`)
 - **Package naming**: All packages use `@linagora/` scope
 - **Build output**: Each package outputs to `dist/` (TypeScript compilation)
 
@@ -37,25 +37,26 @@ npm run release:dry -- twake-mui
 ```text
 PR merged to main
     ↓
-CI runs `release-it --ci`
+CI runs `multi-semantic-release`
     ↓
-release-it detects changed packages since their last tag
+MSR detects changed packages since their last tag
     ↓
 For each changed package:
     - Bumps version (conventional commits)
     - Updates CHANGELOG.md
     - Publishes to npm
+    - Creates git tag (e.g. @linagora/twake-mui@2.0.1)
     - Creates separate GitHub release
 ```
 
 ## Adding New Packages
 
 1. Create package in `packages/<name>/`
-2. Copy config: `cp packages/twake-mui/.releaserc.json packages/<name>/`
-3. Required in `package.json`:
+2. Required in `package.json`:
    - `"name": "@linagora/<name>"`
    - `"publishConfig": { "access": "public" }`
    - `"files": ["dist", "CHANGELOG.md", "README.md"]`
+3. No per-package config needed — the root `.releaserc.json` applies to all workspaces
 
 ## Storybook
 

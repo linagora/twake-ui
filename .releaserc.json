@@ -1,22 +1,14 @@
 {
-  "plugins": {
-    "@release-it/conventional-changelog": true,
-    "@release-it-plugins/workspaces": {
-      "publish": true,
-      "skipChecks": true,
-      "additionalManifests": {
-        "versionUpdates": []
-      }
-    }
-  },
-  "npm": false,
-  "git": {
-    "commitMessage": "chore(release): bump package versions",
-    "commit": true,
-    "tag": false,
-    "push": true
-  },
-  "github": {
-    "release": false
-  }
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    ["@semantic-release/changelog", { "changelogFile": "CHANGELOG.md" }],
+    "@semantic-release/npm",
+    ["@semantic-release/git", {
+      "assets": ["CHANGELOG.md", "package.json"],
+      "message": "chore(release): bump package versions"
+    }],
+    "@semantic-release/github"
+  ]
 }

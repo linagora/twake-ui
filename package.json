@@ -1,6 +1,7 @@
 {
   "name": "twake-ui",
   "private": true,
+  "version": "0.1.4",
   "description": "Twake UI monorepo - Shared UI components and theme system for Twake applications",
   "author": "Twake",
   "license": "MIT",
@@ -28,15 +29,15 @@
     "lint": "npm run lint --workspaces",
     "lint:fix": "npm run lint --workspaces --if-present -- --fix",
     "clean": "npm run clean --workspaces && rm -rf node_modules",
-    "release": "release-it --ci",
-    "release:dry": "release-it --ci --dry-run"
+    "release": "multi-semantic-release",
+    "release:dry": "multi-semantic-release --dry-run"
   },
   "devDependencies": {
     "@commitlint/cli": "21.0.2",
     "@commitlint/config-conventional": "21.0.2",
-    "@release-it-plugins/workspaces": "5.0.3",
-    "@release-it/conventional-changelog": "11.0.1",
-    "release-it": "19.2.4",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "multi-semantic-release": "3.1.0",
     "typescript": "5.5.2"
   },
   "commitlint": {
@@ -50,6 +51,5 @@
         "sentence-case"
       ]
     }
-  },
-  "version": "0.1.4"
+  }
 }
