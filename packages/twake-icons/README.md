@@ -44,7 +44,7 @@ import { Icon, Sprite } from '@linagora/twake-icons'
 
 ## How to add an icon
 
-Icons are sourced from `cozy-ui`. To add or update icons:
+Add the new icon in `/assets` folder, then optimize it and create the SVGr component and the Sprite:
 
 1. **Optimize SVGs:**
    ```bash
