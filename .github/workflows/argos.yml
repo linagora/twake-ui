@@ -3,8 +3,12 @@ name: Argos
 on:
   push:
     branches: [main]
+    paths:
+      - 'packages/twake-mui/**'
   pull_request:
     branches: [main]
+    paths:
+      - 'packages/twake-mui/**'
 
 jobs:
   argos:
