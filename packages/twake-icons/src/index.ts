@@ -1,4 +1,5 @@
 export { default as Icon } from './Icon'
 export { default as Sprite } from './Icon/Sprite'
+export { getFileTypeIcon } from './utils/getFileTypeIcon'
 export type { IconProps } from './Icon'
 export * from './Icons'
