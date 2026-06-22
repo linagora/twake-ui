@@ -1,3 +1,10 @@
+# @linagora/twake-icons [2.6.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.5.0...@linagora/twake-icons@2.6.0) (2026-06-22)
+
+
+### Features
+
+* **twake-icons:** Change TS config to target ES2019 ([3ddd5c5](https://github.com/linagora/twake-ui/commit/3ddd5c56e0cb3fadd7fd8b5ef17b9034fbbce828))
+
 # @linagora/twake-icons [2.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.4.1...@linagora/twake-icons@2.5.0) (2026-06-22)
 
 
