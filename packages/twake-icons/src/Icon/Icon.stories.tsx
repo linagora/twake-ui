@@ -17,7 +17,11 @@ const meta: Meta<typeof Icon> = {
     size: { control: { type: 'range', min: 8, max: 96, step: 1 } },
     color: { control: { type: 'color' } },
     rotate: { control: { type: 'range', min: 0, max: 360, step: 15 } },
+    width: { control: 'text' },
+    height: { control: 'text' },
     spin: { control: 'boolean' },
+    preserveColor: { control: 'boolean' },
+    style: { control: 'object' }
   },
   args: {
     icon: 'Check',
@@ -35,5 +39,9 @@ export const Interactive: Story = {
     color: undefined,
     rotate: 0,
     spin: false,
+    preserveColor: undefined,
+    width: undefined,
+    height: undefined,
+    style: undefined
   },
 }

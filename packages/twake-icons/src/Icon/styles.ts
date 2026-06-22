@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import { type CSSProperties } from 'react'
 
 // Inject spin keyframes once at module load (SSR-safe)
 if (typeof document !== 'undefined') {
@@ -10,12 +10,6 @@ if (typeof document !== 'undefined') {
     }
   `
   document.head.appendChild(style)
-}
-
-export const iconBaseStyle: CSSProperties = {
-  fill: 'currentColor',
-  // Fix blurry icons on Firefox
-  transform: 'translateZ(0)'
 }
 
 export const iconSpinStyle: CSSProperties = {

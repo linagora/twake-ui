@@ -1,92 +1,110 @@
 import React, {
-  type SVGAttributes,
   type CSSProperties,
   type ComponentType,
-  type ReactElement
+  type ReactElement,
+  type SVGAttributes
 } from 'react'
 
-import { iconBaseStyle, iconSpinStyle } from './styles'
+import { iconSpinStyle } from './styles'
 
-export interface IconProps extends SVGAttributes<SVGElement> {
-  icon: string | ComponentType<SVGAttributes<SVGElement>> | ReactElement
+const DEFAULT_SIZE = '16'
+
+const iconStyle: CSSProperties = {
+  fill: 'currentColor',
+  transform: 'translateZ(0)'
+}
+
+function makeSvgObject(
+  icon: string
+): ComponentType<SVGAttributes<SVGSVGElement>> {
+  const anchor = icon.startsWith('#') ? icon : `#${icon}`
+
+  function SvgObject(props: SVGAttributes<SVGSVGElement>): ReactElement {
+    return (
+      <svg {...props}>
+        <use href={anchor} />
+      </svg>
+    )
+  }
+  SvgObject.displayName = 'SvgObject'
+  return SvgObject
+}
+
+function isFunction(
+  value: unknown
+): value is ComponentType<SVGAttributes<SVGSVGElement>> {
+  return typeof value === 'function'
+}
+
+export interface IconProps extends SVGAttributes<SVGSVGElement> {
+  icon: string | ComponentType<SVGAttributes<SVGSVGElement>> | ReactElement
+  width?: number | string
+  height?: number | string
   size?: number | string
   color?: string
+  preserveColor?: boolean
   rotate?: number
   spin?: boolean
 }
 
-function isComponentType(
-  value: unknown
-): value is ComponentType<SVGAttributes<SVGElement>> {
-  return typeof value === 'function'
-}
+function Icon(props: IconProps): ReactElement | null {
+  const {
+    icon,
+    width,
+    height,
+    color,
+    style,
+    className,
+    preserveColor,
+    rotate,
+    size,
+    spin,
+    ...restProps
+  } = props
 
-function Icon({
-  icon,
-  color,
-  style,
-  className,
-  rotate,
-  size,
-  spin,
-  ...restProps
-}: IconProps): ReactElement | null {
   if (!icon) return null
 
-  if (React.isValidElement(icon)) return icon
-
-  const resolvedSizeNum =
-    typeof size === 'number' ? size : parseInt(String(size ?? 16), 10) || 16
-
-  const selfStyle: CSSProperties = { ...iconBaseStyle, ...style }
-
-  if (color) {
-    selfStyle.fill = color
+  if (React.isValidElement(icon)) {
+    const isIconComp = icon.type === Icon
+    const isImg = icon.type === 'img'
+    if (isIconComp || isImg) return icon
   }
 
-  if (rotate) {
-    selfStyle.transform = `rotate(${rotate}deg)`
-  }
+  const isPngPath = typeof icon === 'string' && icon.includes('.png')
 
-  if (spin) {
-    selfStyle.animation = iconSpinStyle.animation
-  }
-
-  const styleWithSize: CSSProperties = {
-    ...selfStyle,
-    width: resolvedSizeNum,
-    height: resolvedSizeNum
-  }
-
-  if (isComponentType(icon)) {
-    const Svg = icon
+  if (isPngPath)
     return (
-      <Svg
+      <img
+        src={icon}
         className={className}
-        style={styleWithSize}
-        width={resolvedSizeNum}
-        height={resolvedSizeNum}
-        {...restProps}
+        style={style}
+        width={width || size || DEFAULT_SIZE}
+        height={height || size || DEFAULT_SIZE}
+        {...(restProps as React.ImgHTMLAttributes<HTMLImageElement>)}
       />
     )
+
+  const Svg = isFunction(icon) ? icon : makeSvgObject(icon as string)
+
+  const _style: CSSProperties = {
+    ...iconStyle,
+    ...style,
+    ...(color ? { fill: color } : {}),
+    ...(preserveColor ? { fill: 'inherit' } : {}),
+    ...(rotate ? { transform: `rotate(${rotate}deg)` } : {}),
+    ...(spin ? iconSpinStyle : {})
   }
 
-  if (typeof icon !== 'string') return null
-
-  if (typeof icon !== 'string') return null
-
-  const anchor = icon.includes('#') ? icon : `#${icon}`
-  return (
-    <svg
+  return Svg ? (
+    // eslint-disable-next-line react-hooks/static-components
+    <Svg
       className={className}
-      style={styleWithSize}
-      width={resolvedSizeNum}
-      height={resolvedSizeNum}
+      style={_style}
+      width={width || size || DEFAULT_SIZE}
+      height={height || size || DEFAULT_SIZE}
       {...restProps}
-    >
-      <use href={anchor} />
-    </svg>
-  )
+    />
+  ) : null
 }
 
 export default Icon
