@@ -5,14 +5,9 @@ import React, {
   type SVGAttributes
 } from 'react'
 
-import { iconSpinStyle } from './styles'
+import './styles'
 
 const DEFAULT_SIZE = '16'
-
-const iconStyle: CSSProperties = {
-  fill: 'currentColor',
-  transform: 'translateZ(0)'
-}
 
 function makeSvgObject(
   icon: string
@@ -87,18 +82,20 @@ function Icon(props: IconProps): ReactElement | null {
   const Svg = isFunction(icon) ? icon : makeSvgObject(icon as string)
 
   const _style: CSSProperties = {
-    ...iconStyle,
     ...style,
     ...(color ? { fill: color } : {}),
-    ...(preserveColor ? { fill: 'inherit' } : {}),
-    ...(rotate ? { transform: `rotate(${rotate}deg)` } : {}),
-    ...(spin ? iconSpinStyle : {})
+    ...(rotate ? { transform: `rotate(${rotate}deg)` } : {})
   }
+
+  const baseClass = preserveColor ? 'twake-icon--preserveColor' : 'twake-icon'
+  const iconClass = [baseClass, spin && 'twake-icon--spin', className]
+    .filter(Boolean)
+    .join(' ')
 
   return Svg ? (
     // eslint-disable-next-line react-hooks/static-components
     <Svg
-      className={className}
+      className={iconClass}
       style={_style}
       width={width || size || DEFAULT_SIZE}
       height={height || size || DEFAULT_SIZE}
