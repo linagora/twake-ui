@@ -1,3 +1,10 @@
+## @linagora/twake-icons [2.6.4](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.6.3...@linagora/twake-icons@2.6.4) (2026-06-24)
+
+
+### Bug Fixes
+
+* **twake-icons:** Ensure runtime style injection survives the build ([902e6e9](https://github.com/linagora/twake-ui/commit/902e6e9bb0498438c7fc0872bb8b334211626440))
+
 ## @linagora/twake-icons [2.6.3](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.6.2...@linagora/twake-icons@2.6.3) (2026-06-24)
 
 
