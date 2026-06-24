@@ -22,10 +22,12 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": [
     "dist/Icon/styles.js"
@@ -40,7 +42,7 @@
   },
   "scripts": {
     "check:barrel": "node scripts/check-barrel.mjs",
-    "build": "npm run build:barrel && tsc",
+    "build": "npm run build:barrel && tsup",
     "build:barrel": "node scripts/generate-barrel.mjs",
     "build:doc": "storybook build --output-dir storybook-static",
     "build:icons": "npm run svgo && npm run makeSvgr && npm run sprite",
@@ -73,6 +75,7 @@
     "storybook": "10.4.5",
     "svgo": "4.0.1",
     "svgstore-cli": "2.0.1",
+    "tsup": "8.5.1",
     "vite": "8.0.16",
     "vitest": "4.1.5"
   },
