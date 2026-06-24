@@ -1,7 +1,7 @@
 {
   "name": "@linagora/twake-icons",
   "type": "module",
-  "version": "2.6.2",
+  "version": "2.6.3",
   "description": "Icon library for Twake applications — SVG icons and illustrations",
   "author": "Twake",
   "license": "MIT",

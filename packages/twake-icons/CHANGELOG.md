@@ -1,3 +1,10 @@
+## @linagora/twake-icons [2.6.3](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.6.2...@linagora/twake-icons@2.6.3) (2026-06-24)
+
+
+### Bug Fixes
+
+* Add CJS entry point for require() compatibility ([ff452bb](https://github.com/linagora/twake-ui/commit/ff452bbf2dfa76caccd5f770cd69342e34c35a52))
+
 ## @linagora/twake-icons [2.6.2](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.6.1...@linagora/twake-icons@2.6.2) (2026-06-22)
 
 
