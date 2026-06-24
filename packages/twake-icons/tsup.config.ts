@@ -6,5 +6,6 @@ export default defineConfig({
   dts: true,
   clean: true,
   outDir: 'dist',
-  treeshake: false
+  treeshake: false,
+  noExternal: ['mime']
 })
