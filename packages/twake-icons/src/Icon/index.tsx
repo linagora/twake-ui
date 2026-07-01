@@ -60,9 +60,7 @@ function Icon(props: IconProps): ReactElement | null {
   if (!icon) return null
 
   if (React.isValidElement(icon)) {
-    const isIconComp = icon.type === Icon
-    const isImg = icon.type === 'img'
-    if (isIconComp || isImg) return icon
+    return icon
   }
 
   const isPngPath = typeof icon === 'string' && icon.includes('.png')
