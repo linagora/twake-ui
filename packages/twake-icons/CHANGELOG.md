@@ -1,3 +1,10 @@
+# @linagora/twake-icons [2.7.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.6.7...@linagora/twake-icons@2.7.0) (2026-07-21)
+
+
+### Features
+
+* Add calendar today icon ([f6c0af6](https://github.com/linagora/twake-ui/commit/f6c0af650fb2fac3d356b7a0a91da3a7d81444b0))
+
 ## @linagora/twake-icons [2.6.7](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.6.6...@linagora/twake-icons@2.6.7) (2026-07-01)
 
 
