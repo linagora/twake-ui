@@ -562,6 +562,18 @@ export const makeLightOverrides = (
         }
       }
     },
+    MuiTooltip: {
+      defaultProps: { arrow: true },
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: alpha(theme.palette.grey[800], 0.9),
+          fontSize: '1rem',
+          lineHeight: 1.3,
+          borderRadius: '4px',
+          padding: '8px 12px'
+        }
+      }
+    },
     MuiCssBaseline: {
       styleOverrides: {
         '.MuiAccordion-root .MuiListItem-root': {
