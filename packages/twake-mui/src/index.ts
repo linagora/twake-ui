@@ -1,4 +1,5 @@
 export * from '@mui/material'
+export * from '@mui/lab'
 export {
   createTheme,
   ThemeProvider,
