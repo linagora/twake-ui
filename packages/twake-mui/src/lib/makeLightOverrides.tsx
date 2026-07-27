@@ -1,5 +1,5 @@
 import { menuItemClasses } from '@mui/material/MenuItem'
-import { Theme, ThemeOptions, alpha } from '@mui/material/styles'
+import { Theme, ThemeOptions, alpha, darken } from '@mui/material/styles'
 import React from 'react'
 
 import paletteJson from './palette.json'
@@ -500,6 +500,65 @@ export const makeLightOverrides = (
           '&.Mui-expanded': {
             margin: '0.75rem 0'
           }
+        }
+      }
+    },
+    MuiFab: {
+      defaultProps: { size: 'medium' },
+      styleOverrides: {
+        root: {
+          borderRadius: 28,
+          width: 96,
+          height: 96,
+          color: theme.palette.text.primary,
+          backgroundColor: theme.palette.background.paper,
+          '&:hover': {
+            backgroundColor: darken(theme.palette.background.paper, 0.05)
+          },
+          '@media (hover: none)': {
+            backgroundColor: theme.palette.background.paper
+          }
+        },
+        primary: {
+          color: theme.palette.primary.dark,
+          backgroundColor: theme.palette.primary.light,
+          '&:hover': {
+            backgroundColor: darken(theme.palette.primary.light, 0.05)
+          },
+          '@media (hover: none)': {
+            backgroundColor: theme.palette.primary.light
+          }
+        },
+        extended: {
+          borderRadius: 16,
+          width: 'auto',
+          height: 56,
+          minWidth: 56,
+          padding: '0 20px',
+          '&.MuiFab-sizeSmall': {
+            borderRadius: 16,
+            width: 'auto',
+            height: 42,
+            minWidth: 42,
+            padding: '0 12px'
+          },
+          '&.MuiFab-sizeMedium': {
+            borderRadius: 16,
+            width: 'auto',
+            height: 48,
+            minWidth: 48,
+            padding: '0 16px'
+          }
+        },
+        sizeSmall: {
+          borderRadius: 12,
+          width: 40,
+          height: 40
+        },
+        sizeMedium: {
+          borderRadius: 16,
+          width: 56,
+          height: 56
         }
       }
     },
