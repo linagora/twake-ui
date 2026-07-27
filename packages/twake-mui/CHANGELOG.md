@@ -1,3 +1,15 @@
+# @linagora/twake-mui [3.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@2.0.0...@linagora/twake-mui@3.0.0) (2026-07-27)
+
+
+### Features
+
+* **twake-mui:** Export mui/lab components and upgrade mui ([9b1d516](https://github.com/linagora/twake-ui/commit/9b1d5162464daa8bfbb8da74c001c0ade3bf0cf4))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** You must have `"@mui/material": "^9.2.0"` and "@mui/lab": "^9.0.0-beta.6"
+
 # [2.0.0](https://github.com/linagora/twake-ui/compare/v1.6.1...v2.0.0) (2026-06-10)
 
 
