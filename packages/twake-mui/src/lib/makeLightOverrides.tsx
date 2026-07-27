@@ -1,9 +1,11 @@
 import { menuItemClasses } from '@mui/material/MenuItem'
 import { Theme, ThemeOptions, alpha } from '@mui/material/styles'
+import React from 'react'
 
 import paletteJson from './palette.json'
 import { radius } from './radius'
 import { PaletteJson } from './types'
+import AccordionExpandIcon from '../components/AccordionExpandIcon'
 
 const paletteData = paletteJson as PaletteJson
 
@@ -462,30 +464,41 @@ export const makeLightOverrides = (
       }
     },
     MuiAccordionSummary: {
+      defaultProps: { expandIcon: <AccordionExpandIcon /> },
       styleOverrides: {
         root: {
-          padding: '0',
-          minHeight: '32px',
+          backgroundColor: theme.palette.grey[100],
+          textTransform: 'uppercase',
+          fontWeight: 'bold',
+          fontSize: '0.875rem',
+          minHeight: '3.5rem',
+          padding: 0,
+          color: theme.palette.text.primary,
           '&.Mui-expanded': {
-            minHeight: '32px'
-          }
-        },
-        content: {
-          fontSize: '14px',
-          fontWeight: 500,
-          lineHeight: '20px',
-          color: alpha(paletteData.Grey[900], 0.9),
-          margin: 0,
-          '&.Mui-expanded': {
-            margin: 0
+            minHeight: '3.5rem'
           }
         },
         expandIconWrapper: {
-          padding: '4px',
-          color: alpha(paletteData.Grey[900], 0.48),
-          borderRadius: '50%',
-          '&:hover': {
-            backgroundColor: alpha(paletteData.Primary.A400 as string, 0.04)
+          order: 0,
+          '&&': {
+            marginLeft: '0.3125rem'
+          },
+          transform: 'rotate(-90deg)',
+          '&.Mui-expanded': {
+            marginLeft: '0.3125rem',
+            transform: 'rotate(0deg)'
+          }
+        },
+        content: {
+          margin: '0.75rem 0',
+          paddingLeft: '0.5rem',
+          paddingRight: '0.25rem',
+          order: 1,
+          '& > :last-child': {
+            paddingRight: 0
+          },
+          '&.Mui-expanded': {
+            margin: '0.75rem 0'
           }
         }
       }
