@@ -115,8 +115,6 @@ export interface TypographyVariants {
   body1: TypographyConfig
   body2: TypographyConfig
   button: TypographyConfig
-  buttonLarge: TypographyConfig
-  buttonSmall: TypographyConfig
   caption: TypographyConfig
   overline: TypographyConfig
 }

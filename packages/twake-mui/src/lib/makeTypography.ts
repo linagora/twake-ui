@@ -18,96 +18,77 @@ export const makeTypography = (): TypographyVariantsOptions => {
     h1: {
       fontSize: 45,
       fontWeight: 600,
-      lineHeight: 1.156,
-      letterSpacing: '0'
+      lineHeight: 1.087
     },
     h2: {
       fontSize: 32,
       fontWeight: 600,
-      lineHeight: 1.25,
-      letterSpacing: '0'
+      lineHeight: 1.313
     },
     h3: {
       fontSize: 24,
       fontWeight: 600,
-      lineHeight: 1.333,
-      letterSpacing: '0'
+      lineHeight: 1.167
     },
     h4: {
       fontSize: 22,
       fontWeight: 600,
-      lineHeight: 1.273,
-      letterSpacing: '0'
+      lineHeight: 1.167
     },
     h5: {
       fontSize: 16,
       fontWeight: 600,
-      lineHeight: 1.5,
-      letterSpacing: '0'
+      lineHeight: 1.313,
+      letterSpacing: '0.15px'
     },
     h6: {
       fontSize: 14,
       fontWeight: 500,
-      lineHeight: 1.429,
-      letterSpacing: '0'
+      lineHeight: 1.313,
+      letterSpacing: '0.1px'
     },
     subtitle1: {
       fontSize: 14,
       fontWeight: 500,
-      lineHeight: 1.143,
-      letterSpacing: '0.5px'
+      lineHeight: 1.358,
+      letterSpacing: '0.1px'
     },
     subtitle2: {
       fontSize: 14,
       fontWeight: 600,
-      lineHeight: 1.429,
+      lineHeight: 1.334,
       letterSpacing: '0.25px'
     },
     body1: {
       fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.5,
+      lineHeight: 1.313,
       letterSpacing: '-0.15px'
     },
     body2: {
       fontSize: 14,
-      fontWeight: 400,
-      lineHeight: 1.429,
+      fontWeight: 500,
+      lineHeight: 1.313,
       letterSpacing: '0.25px'
     },
     button: {
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.429,
-      textTransform: 'none',
-      letterSpacing: '0.1px'
-    },
-    buttonLarge: {
       fontSize: 16,
       fontWeight: 500,
-      lineHeight: 1.5,
-      textTransform: 'none',
-      letterSpacing: '0.15px'
-    },
-    buttonSmall: {
-      fontSize: 11,
-      fontWeight: 500,
-      lineHeight: 1.455,
-      textTransform: 'none',
-      letterSpacing: '0.5px'
+      lineHeight: 1.313,
+      textTransform: 'inherit'
     },
     caption: {
       fontSize: 12,
       fontWeight: 500,
-      lineHeight: 1.333,
+      lineHeight: 1.313,
       letterSpacing: '0.5px'
     },
     overline: {
       fontSize: 11,
       fontWeight: 500,
-      lineHeight: 1.455,
-      letterSpacing: '0.4px',
-      textTransform: 'none'
+      lineHeight: '16px',
+      letterSpacing: '0.5px',
+      textTransform: 'inherit'
     }
   } as TypographyVariantsOptions
 }
