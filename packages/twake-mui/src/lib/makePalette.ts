@@ -1,4 +1,4 @@
-import { PaletteOptions } from '@mui/material/styles'
+import { PaletteOptions, alpha } from '@mui/material/styles'
 
 import paletteJson from './palette.json'
 import { PaletteJson } from './types'
@@ -65,9 +65,18 @@ export const makePalette = (
       A900: palette.Grey.A900
     } as PaletteOptions['grey'],
     text: {
-      primary: '#000000',
-      secondary: '#717D96',
-      disabled: '#C5C7CA'
+      primary:
+        mode === 'dark'
+          ? palette.Common['white']
+          : alpha(palette.Grey[900], 0.9),
+      secondary:
+        mode === 'dark'
+          ? alpha(palette.Common['white'], 0.64)
+          : alpha(palette.Grey['900'], 0.64),
+      disabled:
+        mode === 'dark'
+          ? alpha(palette.Common['white'], 0.4)
+          : alpha(palette.Grey['900'], 0.32)
     },
     background: {
       default: '#FFFFFF',

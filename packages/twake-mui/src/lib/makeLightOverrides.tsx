@@ -1,9 +1,11 @@
 import { menuItemClasses } from '@mui/material/MenuItem'
-import { Theme, ThemeOptions, alpha } from '@mui/material/styles'
+import { Theme, ThemeOptions, alpha, darken } from '@mui/material/styles'
+import React from 'react'
 
 import paletteJson from './palette.json'
 import { radius } from './radius'
 import { PaletteJson } from './types'
+import AccordionExpandIcon from '../components/AccordionExpandIcon'
 
 const paletteData = paletteJson as PaletteJson
 
@@ -442,16 +444,6 @@ export const makeLightOverrides = (
         }
       }
     },
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          color: alpha(theme.palette.grey[900], 0.9)
-        },
-        caption: {
-          // Typography caption overrides will be implemented later
-        }
-      }
-    },
     MuiAccordion: {
       styleOverrides: {
         root: {
@@ -462,31 +454,113 @@ export const makeLightOverrides = (
       }
     },
     MuiAccordionSummary: {
+      defaultProps: { expandIcon: <AccordionExpandIcon /> },
       styleOverrides: {
         root: {
-          padding: '0',
-          minHeight: '32px',
+          backgroundColor: theme.palette.grey[100],
+          textTransform: 'uppercase',
+          fontWeight: 'bold',
+          fontSize: '0.875rem',
+          minHeight: '3.5rem',
+          padding: 0,
+          color: theme.palette.text.primary,
           '&.Mui-expanded': {
-            minHeight: '32px'
-          }
-        },
-        content: {
-          fontSize: '14px',
-          fontWeight: 500,
-          lineHeight: '20px',
-          color: alpha(paletteData.Grey[900], 0.9),
-          margin: 0,
-          '&.Mui-expanded': {
-            margin: 0
+            minHeight: '3.5rem'
           }
         },
         expandIconWrapper: {
-          padding: '4px',
-          color: alpha(paletteData.Grey[900], 0.48),
-          borderRadius: '50%',
-          '&:hover': {
-            backgroundColor: alpha(paletteData.Primary.A400 as string, 0.04)
+          order: 0,
+          '&&': {
+            marginLeft: '0.3125rem'
+          },
+          transform: 'rotate(-90deg)',
+          '&.Mui-expanded': {
+            marginLeft: '0.3125rem',
+            transform: 'rotate(0deg)'
           }
+        },
+        content: {
+          margin: '0.75rem 0',
+          paddingLeft: '0.5rem',
+          paddingRight: '0.25rem',
+          order: 1,
+          '& > :last-child': {
+            paddingRight: 0
+          },
+          '&.Mui-expanded': {
+            margin: '0.75rem 0'
+          }
+        }
+      }
+    },
+    MuiFab: {
+      defaultProps: { size: 'medium' },
+      styleOverrides: {
+        root: {
+          borderRadius: 28,
+          width: 96,
+          height: 96,
+          color: theme.palette.text.primary,
+          backgroundColor: theme.palette.background.paper,
+          '&:hover': {
+            backgroundColor: darken(theme.palette.background.paper, 0.05)
+          },
+          '@media (hover: none)': {
+            backgroundColor: theme.palette.background.paper
+          }
+        },
+        primary: {
+          color: theme.palette.primary.dark,
+          backgroundColor: theme.palette.primary.light,
+          '&:hover': {
+            backgroundColor: darken(theme.palette.primary.light, 0.05)
+          },
+          '@media (hover: none)': {
+            backgroundColor: theme.palette.primary.light
+          }
+        },
+        extended: {
+          borderRadius: 16,
+          width: 'auto',
+          height: 56,
+          minWidth: 56,
+          padding: '0 20px',
+          '&.MuiFab-sizeSmall': {
+            borderRadius: 16,
+            width: 'auto',
+            height: 42,
+            minWidth: 42,
+            padding: '0 12px'
+          },
+          '&.MuiFab-sizeMedium': {
+            borderRadius: 16,
+            width: 'auto',
+            height: 48,
+            minWidth: 48,
+            padding: '0 16px'
+          }
+        },
+        sizeSmall: {
+          borderRadius: 12,
+          width: 40,
+          height: 40
+        },
+        sizeMedium: {
+          borderRadius: 16,
+          width: 56,
+          height: 56
+        }
+      }
+    },
+    MuiTooltip: {
+      defaultProps: { arrow: true },
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: alpha(theme.palette.grey[800], 0.9),
+          fontSize: '1rem',
+          lineHeight: 1.3,
+          borderRadius: '4px',
+          padding: '8px 12px'
         }
       }
     },

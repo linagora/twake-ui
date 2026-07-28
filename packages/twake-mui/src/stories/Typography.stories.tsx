@@ -52,6 +52,9 @@ export const Screenshot: Story = {
       <section>
         <h3 style={{ marginBottom: '12px', marginTop: '24px' }}>Colors</h3>
         <Stack spacing={1}>
+          <div style={{ color: 'blue' }}>
+            <Typography color="inherit">Inherit color text</Typography>
+          </div>
           <Typography color="primary">Primary color text</Typography>
           <Typography color="secondary">Secondary color text</Typography>
           <Typography color="success">Success color text</Typography>
