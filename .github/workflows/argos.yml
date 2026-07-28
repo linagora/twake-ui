@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build twake-icons (for type resolution)
+        run: npm run build --workspace=@linagora/twake-icons
+
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         with:
