@@ -1,3 +1,28 @@
+# @linagora/twake-mui [4.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@3.0.0...@linagora/twake-mui@4.0.0) (2026-07-28)
+
+
+### Bug Fixes
+
+* **twake-mui:** Remove forced grey color for Typography ([6bbd9e6](https://github.com/linagora/twake-ui/commit/6bbd9e6609356719bd2d0ce08660e079fc9d6e8c))
+
+
+### chore
+
+* **twake-mui:** Add @linagora/twake-icons as dependency ([d38157a](https://github.com/linagora/twake-ui/commit/d38157a0a1edc02be8450e2df0631bb492f18118))
+
+
+### Features
+
+* **twake-mui:** Add AccordionSummary cozy-ui style overrides with default expand icon ([30d8402](https://github.com/linagora/twake-ui/commit/30d840288a098d9e6af83422182a3e2e84dfb494))
+* **twake-mui:** Add Fab cozy-ui style overrides with medium size default ([2d6b0ed](https://github.com/linagora/twake-ui/commit/2d6b0ede0d65e73c5c80e58d678cd894ec6ba4de))
+* **twake-mui:** Add Tooltip cozy-ui style overrides with arrow by default ([ab349eb](https://github.com/linagora/twake-ui/commit/ab349ebc1efe3af8517a74dbab1efafe608e811e))
+* **twake-mui:** Copy Typography style from cozy-ui ([a43378a](https://github.com/linagora/twake-ui/commit/a43378a019bb369dcb2e5debd0baa5f2355941a7))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** You must have `"@linagora/twake-icons": "^2.7.0"`
+
 # @linagora/twake-mui [3.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@2.0.0...@linagora/twake-mui@3.0.0) (2026-07-27)
 
 
