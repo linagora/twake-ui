@@ -1,6 +1,11 @@
 import { TypographyVariantsOptions } from '@mui/material/styles'
 
 // Palette Types
+export interface CommonColor {
+  white: string
+  black: string
+}
+
 export interface PaletteColor {
   50: string
   100: string
@@ -37,7 +42,6 @@ export interface GreyPalette {
 export interface TextPalette {
   primary: string
   secondary: string
-  secondaryContainer: string
   disabled: string
   hint: string
   icon: string
@@ -72,6 +76,7 @@ export interface PaletteJson {
   Success: PaletteColor
   Info: Omit<PaletteColor, 'ContrastText'>
   Grey: GreyPalette
+  Common: CommonColor
 }
 
 // Typography Types

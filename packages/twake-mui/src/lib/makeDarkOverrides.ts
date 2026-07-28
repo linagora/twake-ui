@@ -1,4 +1,4 @@
-import { Theme, ThemeOptions, alpha } from '@mui/material/styles'
+import { Theme, ThemeOptions } from '@mui/material/styles'
 import { merge } from 'lodash'
 
 import { makeLightOverrides } from './makeLightOverrides'
@@ -7,19 +7,9 @@ export const makeDarkOverrides = (
   theme: Theme
 ): NonNullable<ThemeOptions['components']> => {
   const makeOverridesForDarkTheme = (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     theme: Theme
-  ): NonNullable<ThemeOptions['components']> => ({
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          color: alpha(theme.palette.grey[50], 0.9)
-        },
-        caption: {
-          // Typography caption overrides will be implemented later
-        }
-      }
-    }
-  })
+  ): NonNullable<ThemeOptions['components']> => ({})
 
   const DarkOverrides: NonNullable<ThemeOptions['components']> = merge(
     makeLightOverrides(theme),

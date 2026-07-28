@@ -444,16 +444,6 @@ export const makeLightOverrides = (
         }
       }
     },
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          color: alpha(theme.palette.grey[900], 0.9)
-        },
-        caption: {
-          // Typography caption overrides will be implemented later
-        }
-      }
-    },
     MuiAccordion: {
       styleOverrides: {
         root: {
