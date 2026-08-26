@@ -69,6 +69,11 @@ For each changed package:
     - Creates separate GitHub release
 ```
 
+### DO NOT MAKES CHANGES FOR SEVERAL PACKAGES IN THE SAME PR
+
+It will cause the release to fail. The ci will try to bump the version for each package and will try to install unreleased packages making the release fail.
+The solution is to merge your modification first, wait for a new release, and then use it in another PR.
+
 ### Dry-run
 
 ```bash
