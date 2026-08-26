@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build twake-icons (for type resolution)
+        run: npm run build --workspace=@linagora/twake-icons
+
       - name: Build twake-mui Storybook
         run: |
           cd packages/twake-mui
