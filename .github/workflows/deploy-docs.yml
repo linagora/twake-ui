@@ -1,4 +1,4 @@
-name: Deploy Twake-Mui doc
+name: Deploy docs
 
 on:
   push:
@@ -30,15 +30,30 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Storybook
+      - name: Build twake-mui Storybook
         run: |
           cd packages/twake-mui
           npm run build:doc
 
+      - name: Build twake-icons Storybook
+        run: |
+          cd packages/twake-icons
+          npm run build:doc
+
+      - name: Assemble combined site
+        run: |
+          mkdir combined
+          cp docs/index.html combined/
+          touch combined/.nojekyll
+          mkdir combined/twake-mui
+          cp -r packages/twake-mui/storybook-static/. combined/twake-mui/
+          mkdir combined/twake-icons
+          cp -r packages/twake-icons/storybook-static/. combined/twake-icons/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: packages/twake-mui/storybook-static
+          path: combined
 
   deploy:
     needs: build

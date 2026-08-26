@@ -10,7 +10,10 @@ const config: StorybookConfig = {
   typescript: {
     check: false,
   },
-  viteFinal: async (config) => {
+  viteFinal: async (config, options) => {
+    if (options.configType === 'PRODUCTION') {
+      config.base = '/twake-ui/twake-mui/'
+    }
     // Supress chunk size warnings from Storybook core
     if (config.build) {
       config.build.chunkSizeWarningLimit = 1000
