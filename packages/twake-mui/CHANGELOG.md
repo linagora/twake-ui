@@ -1,3 +1,20 @@
+# @linagora/twake-mui [4.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.0.0...@linagora/twake-mui@4.1.0) (2026-08-26)
+
+
+### Features
+
+* **twake-mui:** Add AppTitle ([6c7113c](https://github.com/linagora/twake-ui/commit/6c7113ce243fb381212e1b33a12b8ef6342abd38))
+
+
+### Reverts
+
+* **twake-mui:** Revert Apptitle addition ([3700530](https://github.com/linagora/twake-ui/commit/37005305b880d7a7fb11b6f4c800efdb5e9a03d0))
+
+
+### Dependencies
+
+* **@linagora/twake-icons:** upgraded to 2.8.0
+
 # @linagora/twake-mui [4.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@3.0.0...@linagora/twake-mui@4.0.0) (2026-07-28)
 
 
