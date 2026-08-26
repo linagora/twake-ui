@@ -1,3 +1,11 @@
+# @linagora/twake-icons [2.8.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.7.0...@linagora/twake-icons@2.8.0) (2026-08-26)
+
+
+### Features
+
+* **twake-icons:** Add DriveText for Drive logotype ([a8a172d](https://github.com/linagora/twake-ui/commit/a8a172decb642461d4cc6c666199b587c73e276b))
+* **twake-icons:** Add Texts part for all twake suite logotypes ([580b62c](https://github.com/linagora/twake-ui/commit/580b62cd1808c3bb27448be5d13d11ef45805e48))
+
 # @linagora/twake-icons [2.7.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.6.7...@linagora/twake-icons@2.7.0) (2026-07-21)
 
 
