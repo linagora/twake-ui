@@ -46,7 +46,7 @@ jobs:
       - name: Assemble combined site
         run: |
           mkdir combined
-          cp docs/index.html combined/
+          cp utils/index.html combined/
           touch combined/.nojekyll
           mkdir combined/twake-mui
           cp -r packages/twake-mui/storybook-static/. combined/twake-mui/
