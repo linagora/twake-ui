@@ -1,3 +1,10 @@
+# @linagora/twake-icons [2.9.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.8.0...@linagora/twake-icons@2.9.0) (2026-08-27)
+
+
+### Features
+
+* Add folder-outlined icon ([b3bbba6](https://github.com/linagora/twake-ui/commit/b3bbba681f25eb4d5e5886001b7695554bb1e2d3))
+
 # @linagora/twake-icons [2.8.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.7.0...@linagora/twake-icons@2.8.0) (2026-08-26)
 
 
