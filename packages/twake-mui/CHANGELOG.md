@@ -1,3 +1,10 @@
+## @linagora/twake-mui [4.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.1.0...@linagora/twake-mui@4.1.1) (2026-08-27)
+
+
+### Dependencies
+
+* **@linagora/twake-icons:** upgraded to 2.9.0
+
 # @linagora/twake-mui [4.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.0.0...@linagora/twake-mui@4.1.0) (2026-08-26)
 
 
