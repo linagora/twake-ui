@@ -1,0 +1,12 @@
+// Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
+import * as React from "react";
+import type { SVGProps } from "react";
+function SvgFolderOutlined(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+      <path d="m5.736 3.2 1.6 1.6H14.4v8H1.6V3.2zM6.4 1.6H1.6C.72 1.6.008 2.32.008 3.2L0 12.8c0 .88.72 1.6 1.6 1.6h12.8c.88 0 1.6-.72 1.6-1.6v-8c0-.88-.72-1.6-1.6-1.6H8z" />
+    </svg>
+  );
+}
+export default SvgFolderOutlined;
+
