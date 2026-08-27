@@ -280,6 +280,15 @@ export const makeLightOverrides = (
         }
       }
     },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          '&.square': {
+            borderRadius: radius.md
+          }
+        }
+      }
+    },
     MuiAvatar: {
       styleOverrides: {
         root: {
