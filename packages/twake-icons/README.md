@@ -46,7 +46,10 @@ import { Icon, Sprite } from '@linagora/twake-icons'
 
 Add the new icon in `/assets` folder, then optimize it and create the SVGr component and the Sprite:
 
-1. **Optimize SVGs:**
+1. **Remove fill props**
+   If your SVG file is an icon (not an illustration), verify that the file doesn't have any `fill` or `fill-opacity` properties. Remove them if necessary, to be able to set the color.
+
+2. **Optimize SVGs**
    ```bash
    npm run svgo
    ```
@@ -55,7 +58,7 @@ Add the new icon in `/assets` folder, then optimize it and create the SVGr compo
    npx svgo assets/ui/new-icon.svg
    ```
 
-2. **Generate SVGr components:**
+3. **Generate SVGr components**
    ```bash
    npm run makeSvgr
    ```
@@ -64,18 +67,21 @@ Add the new icon in `/assets` folder, then optimize it and create the SVGr compo
    npm run makeSvgr -- assets/ui/new-icon.svg
    ```
 
-3. **Regenerate the sprite:**
+4. **Regenerate the sprite**
    ```bash
    npm run sprite
    ```
 
-4. **Rebuild before commit:**
+5. **Rebuild and fix lint**
    ```bash
-   npm run build
+   npm run build && npm run lint:fix
    ```
 
-The barrel export (`src/Icons/index.ts`) is automatically regenerated during build.
-Run `npm run check:barrel` to verify it's in sync with the generated components.
+6. **Check the barrel**
+   The barrel export (`src/Icons/index.ts`) is automatically regenerated during build, so verify it's in sync with the generated components.
+   ```bash
+   npm run check:barrel
+   ```
 
 ## License
 
