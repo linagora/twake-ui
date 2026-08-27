@@ -1,3 +1,10 @@
+# @linagora/twake-mui [4.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.2.0...@linagora/twake-mui@4.3.0) (2026-08-27)
+
+
+### Features
+
+* Override chip component ([70b6e72](https://github.com/linagora/twake-ui/commit/70b6e720bff2e672940ef01963877671de531121))
+
 # @linagora/twake-mui [4.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.1.1...@linagora/twake-mui@4.2.0) (2026-08-27)
 
 
