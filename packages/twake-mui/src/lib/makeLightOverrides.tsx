@@ -280,6 +280,103 @@ export const makeLightOverrides = (
         }
       }
     },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          ...theme.typography.body2,
+          '&.square': {
+            borderRadius: radius.md
+          },
+          transition: theme.transitions.create(['background-color', 'color']),
+          '& .MuiChip-deleteIcon': {
+            fontSize: 16,
+            color: 'inherit',
+            opacity: 0.7,
+            '&:hover': {
+              color: 'inherit',
+              opacity: 1
+            }
+          },
+          '& .MuiChip-icon': {
+            fontSize: 16,
+            color: 'inherit'
+          },
+          '& .MuiChip-label .TwakeChip-endAdornment': {
+            '& *': {
+              fontSize: 16,
+              cursor: 'pointer'
+            }
+          }
+        },
+        filled: {
+          border: 'none',
+          '&.Mui-disabled': {
+            backgroundColor: theme.palette.action.disabledBackground,
+            color: theme.palette.action.disabled,
+            '& .MuiChip-icon, & .MuiChip-deleteIcon': {
+              color: theme.palette.action.disabled
+            }
+          }
+        }
+      },
+      variants: [
+        {
+          props: { color: 'default', variant: 'filled' },
+          style: {
+            backgroundColor: theme.palette.grey[100],
+            color: theme.palette.text.primary,
+            '&&:hover, &&.MuiChip-clickable:hover': {
+              backgroundColor: darken(
+                theme.palette.grey[100],
+                theme.palette.action.hoverOpacity
+              )
+            }
+          }
+        },
+        {
+          props: { color: 'default', variant: 'outlined' },
+          style: {
+            backgroundColor: 'transparent',
+            color: theme.palette.text.primary,
+            border: `1px solid ${theme.palette.grey['300']}`,
+            '&&:hover, &&.MuiChip-clickable:hover': {
+              backgroundColor: theme.palette.grey[200]
+            }
+          }
+        },
+        ...(
+          [
+            'primary',
+            'secondary',
+            'error',
+            'info',
+            'success',
+            'warning'
+          ] as const
+        ).flatMap(color => [
+          {
+            props: { color, variant: 'outlined' as const },
+            style: {
+              border: `1px solid ${alpha(theme.palette[color].main, theme.palette.action.disabledOpacity)}`,
+              '&&:hover, &&.MuiChip-clickable:hover': {
+                backgroundColor: alpha(
+                  theme.palette[color].main,
+                  theme.palette.action.hoverOpacity
+                )
+              }
+            }
+          },
+          {
+            props: { color, variant: 'filled' as const },
+            style: {
+              '&&:hover, &&.MuiChip-clickable:hover': {
+                backgroundColor: theme.palette[color].dark
+              }
+            }
+          }
+        ])
+      ]
+    },
     MuiAvatar: {
       styleOverrides: {
         root: {
