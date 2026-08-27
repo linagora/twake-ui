@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Preview } from '@storybook/react-vite'
-import { CssBaseline, ThemeProvider } from '@mui/material'
+import { Box, CssBaseline, ThemeProvider } from '@mui/material'
 import { makeTheme } from '../src/lib/makeTheme'
 
 const preview: Preview = {
@@ -62,9 +62,9 @@ const preview: Preview = {
       return (
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <div style={{ padding: '20px' }}>
+          <Box sx={{ padding: '20px', bgcolor: 'background.paper', minHeight: '100vh' }}>
             <Story />
-          </div>
+          </Box>
         </ThemeProvider>
       )
     },
