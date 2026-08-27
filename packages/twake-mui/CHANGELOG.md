@@ -1,3 +1,10 @@
+# @linagora/twake-mui [4.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.1.1...@linagora/twake-mui@4.2.0) (2026-08-27)
+
+
+### Features
+
+* Update palette to match cozy-ui palette ([1102658](https://github.com/linagora/twake-ui/commit/11026581150e966982672a724aaa2c7c099cc896))
+
 ## @linagora/twake-mui [4.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.1.0...@linagora/twake-mui@4.1.1) (2026-08-27)
 
 
