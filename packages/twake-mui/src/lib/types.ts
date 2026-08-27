@@ -18,7 +18,6 @@ export interface PaletteColor {
   800: string
   900: string
   ContrastText?: string
-  A400?: string
 }
 
 export interface GreyPalette {
