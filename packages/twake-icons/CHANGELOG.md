@@ -1,3 +1,10 @@
+# @linagora/twake-icons [2.10.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.9.0...@linagora/twake-icons@2.10.0) (2026-08-31)
+
+
+### Features
+
+* Add restricted-workspace illustration ([#71](https://github.com/linagora/twake-ui/issues/71)) ([1fc632a](https://github.com/linagora/twake-ui/commit/1fc632aed44bbd94d2ab7b1626fd68569b8710a4))
+
 # @linagora/twake-icons [2.9.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.8.0...@linagora/twake-icons@2.9.0) (2026-08-27)
 
 
