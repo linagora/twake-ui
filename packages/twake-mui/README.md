@@ -62,7 +62,7 @@ function MyComponent() {
 
 ## Development
 
-This package is part of the `twake-ui` monorepo.
+This package is part of the `twake-ui` monorepo
 
 ### Build
 
