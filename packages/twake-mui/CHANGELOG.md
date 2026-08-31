@@ -1,3 +1,18 @@
+# @linagora/twake-mui [5.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.3.1...@linagora/twake-mui@5.0.0) (2026-08-31)
+
+
+### Bug Fixes
+
+* Widen the twake-icons peer range in twake-mui ([c74da60](https://github.com/linagora/twake-ui/commit/c74da605d852d9e6239825a6ec53f05f407206f8))
+
+
+### BREAKING CHANGES
+
+* twake-mui no longer pins a single exact twake-icons version.
+You must have "@linagora/twake-icons": "^2.10.0". A consumer can now resolve any
+2.x from 2.10.0 upward, so it no longer gets the one guaranteed version it used
+to.
+
 ## @linagora/twake-mui [4.3.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.3.0...@linagora/twake-mui@4.3.1) (2026-08-31)
 
 
