@@ -28,8 +28,8 @@
     "lint": "npm run lint --workspaces",
     "lint:fix": "npm run lint --workspaces --if-present -- --fix",
     "clean": "npm run clean --workspaces && rm -rf node_modules",
-    "release": "multi-semantic-release",
-    "release:dry": "multi-semantic-release --dry-run"
+    "release": "multi-semantic-release --deps.bump=ignore",
+    "release:dry": "multi-semantic-release --deps.bump=ignore --dry-run"
   },
   "devDependencies": {
     "@commitlint/cli": "21.0.2",
