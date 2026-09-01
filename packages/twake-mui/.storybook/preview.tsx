@@ -35,8 +35,18 @@ const preview: Preview = {
       fitToContent: false,
       threshold: 0.2,
       modes: {
-        desktop: { viewport: 'desktop' },
-        mobile: { viewport: 'mobile' },
+        "desktop-light": { viewport: 'desktop' },
+        "mobile-light": { viewport: 'mobile' },
+        "desktop-dark": {
+          viewport: 'desktop',
+          theme: 'dark',
+          backgrounds: { value: 'dark' },
+        },
+        "mobile-dark": {
+          viewport: 'mobile',
+          theme: 'dark',
+          backgrounds: { value: 'dark' },
+        },
       },
     },
   },
