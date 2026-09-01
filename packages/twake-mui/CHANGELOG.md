@@ -1,3 +1,10 @@
+# @linagora/twake-mui [5.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@5.0.0...@linagora/twake-mui@5.1.0) (2026-09-01)
+
+
+### Features
+
+* **twake-mui:** Add Apptitle component ([4e9cf51](https://github.com/linagora/twake-ui/commit/4e9cf51c3c7fbceeed3fb99cfac0a0028ee0b12f))
+
 # @linagora/twake-mui [5.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@4.3.1...@linagora/twake-mui@5.0.0) (2026-08-31)
 
 
