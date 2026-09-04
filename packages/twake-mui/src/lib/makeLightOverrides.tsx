@@ -30,18 +30,18 @@ export const makeLightOverrides = (
           variants: [
             {
               props: { variant: 'contained', color: 'secondary' },
-              style: {
+              style: ({ theme }) => ({
                 backgroundColor: theme.palette.secondary.main,
                 color: alpha(theme.palette.text.primary, 0.9),
                 borderRadius: radius.sm,
                 '&:hover': {
-                  backgroundColor: paletteData.Secondary[700],
+                  backgroundColor: theme.palette.secondary.dark,
                   color: alpha(theme.palette.text.primary, 0.9)
                 },
                 '&.Mui-disabled': {
                   backgroundColor: theme.palette.action.disabledBackground
                 }
-              }
+              })
             },
             {
               props: { size: 'small' },
@@ -96,9 +96,9 @@ export const makeLightOverrides = (
             boxShadow: 'none'
           }
         },
-        outlined: {
+        outlined: ({ theme }) => ({
           backgroundColor: theme.palette.background.paper,
-          borderColor: alpha(paletteData.Grey.A900, 0.28),
+          borderColor: alpha(theme.palette.grey[900], 0.28),
           color: alpha(theme.palette.text.primary, 0.9),
           '&:hover': {
             backgroundColor: alpha(theme.palette.primary.main, 0.04),
@@ -108,9 +108,9 @@ export const makeLightOverrides = (
           '&.Mui-disabled': {
             backgroundColor: theme.palette.background.paper,
             color: alpha(theme.palette.grey[900], 0.38),
-            borderColor: alpha(paletteData.Grey.A900, 0.28)
+            borderColor: alpha(theme.palette.grey[900], 0.28)
           }
-        }
+        })
       }
     },
     MuiTextField: {
@@ -136,7 +136,7 @@ export const makeLightOverrides = (
             borderWidth: '1px'
           },
           '& input::placeholder': {
-            color: '#8C9CAF',
+            color: theme.palette.secondary.dark,
             opacity: 1
           },
           '& .MuiSvgIcon-root': {
@@ -248,13 +248,13 @@ export const makeLightOverrides = (
     },
     MuiDialogTitle: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           ...theme.typography.h3,
           padding: '12px 32px',
           [theme.breakpoints.down('sm')]: {
             ...theme.typography.h4
           }
-        }
+        })
       }
     },
     MuiDialogContent: {
@@ -291,7 +291,7 @@ export const makeLightOverrides = (
     },
     MuiAvatar: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           fontWeight: 600,
           '&.size-xs': {
             width: 18,
@@ -374,21 +374,18 @@ export const makeLightOverrides = (
               }
             }
           ]
-        }
+        })
       }
     },
     MuiToggleButtonGroup: {
       styleOverrides: {
         root: {
-          borderColor: '#AEAEC0',
+          borderColor: theme.palette.secondary.dark,
           '& .MuiToggleButton-root:not(.Mui-selected)': {
-            color: '#8C9CAF',
-            backgroundColor: alpha('#49454F', 0.08),
-            '&:hover': {
-              backgroundColor: alpha('#49454F', 0.08)
-            },
+            color: theme.palette.text.secondary,
+            backgroundColor: alpha(theme.palette.text.secondary, 0.08),
             '& svg, & .MuiSvgIcon-root': {
-              color: '#8C9CAF'
+              color: theme.palette.text.secondary
             }
           }
         }
@@ -397,9 +394,9 @@ export const makeLightOverrides = (
     MuiToggleButton: {
       styleOverrides: {
         root: {
-          color: '#525256',
+          color: theme.palette.text.primary,
           '&.Mui-selected': {
-            color: '#243B55',
+            color: theme.palette.text.primary,
             backgroundColor: 'transparent',
             '&:hover': {
               backgroundColor: 'transparent'
@@ -421,10 +418,10 @@ export const makeLightOverrides = (
     },
     MuiIconButton: {
       styleOverrides: {
-        root: {
-          color: alpha(paletteData.Grey[900], 0.48),
+        root: ({ theme }) => ({
+          color: alpha(theme.palette.grey[900], 0.48),
           padding: '4px'
-        }
+        })
       }
     },
     MuiCheckbox: {
@@ -574,21 +571,21 @@ export const makeLightOverrides = (
       }
     },
     MuiCssBaseline: {
-      styleOverrides: {
+      styleOverrides: theme => ({
         '.MuiAccordion-root .MuiListItem-root': {
           padding: '0',
           borderRadius: '4px',
           '&:hover': {
-            backgroundColor: alpha(paletteData.Grey.A900, 0.04)
+            backgroundColor: alpha(theme.palette.grey[900], 0.04)
           }
         },
         '.MuiAccordion-root .MuiListItem-root label': {
           fontSize: '14px',
           fontStyle: 'normal',
           fontWeight: 400,
-          color: alpha(paletteData.Grey[900], 0.9)
+          color: alpha(theme.palette.grey[900], 0.9)
         }
-      }
+      })
     },
     MuiMenuItem: {
       styleOverrides: {
