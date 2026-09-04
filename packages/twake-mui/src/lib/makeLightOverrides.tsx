@@ -462,40 +462,39 @@ export const makeLightOverrides = (): NonNullable<
       defaultProps: { expandIcon: <AccordionExpandIcon /> },
       styleOverrides: {
         root: ({ theme }) => ({
-          backgroundColor: theme.palette.grey[100],
-          textTransform: 'uppercase',
-          fontWeight: 'bold',
-          fontSize: '0.875rem',
-          minHeight: '3.5rem',
+          ...theme.typography.caption,
+          color: theme.palette.text.secondary,
+          minHeight: '17.67px',
           padding: 0,
-          color: theme.palette.text.primary,
+
           '&.Mui-expanded': {
-            minHeight: '3.5rem'
+            minHeight: '17.67px'
           }
         }),
         expandIconWrapper: {
-          order: 0,
           '&&': {
-            marginLeft: '0.3125rem'
+            marginLeft: '8px'
           },
-          transform: 'rotate(-90deg)',
+          transform: 'rotate(-180deg)',
+          '& svg': {
+            width: '10px',
+            height: '10px'
+          },
           '&.Mui-expanded': {
-            marginLeft: '0.3125rem',
+            marginLeft: '8px',
             transform: 'rotate(0deg)'
           }
         },
-        content: {
-          margin: '0.75rem 0',
-          paddingLeft: '0.5rem',
-          paddingRight: '0.25rem',
-          order: 1,
-          '& > :last-child': {
-            paddingRight: 0
-          },
+        content: ({ theme }) => ({
+          margin: 0,
+          padding: 0,
+          ...theme.typography.caption,
+          display: 'flex',
+          alignItems: 'center',
           '&.Mui-expanded': {
-            margin: '0.75rem 0'
+            margin: 0
           }
-        }
+        })
       }
     },
     MuiFab: {
@@ -569,22 +568,22 @@ export const makeLightOverrides = (): NonNullable<
         })
       }
     },
-    MuiCssBaseline: {
-      styleOverrides: theme => ({
-        '.MuiAccordion-root .MuiListItem-root': {
-          padding: '0',
-          borderRadius: '4px',
-          '&:hover': {
-            backgroundColor: alpha(theme.palette.grey[900], 0.04)
+    MuiListItem: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          '.MuiAccordion-root &': {
+            padding: '0',
+            borderRadius: '4px',
+            '&:hover': {
+              backgroundColor: alpha(theme.palette.grey[900], 0.04)
+            },
+            '& label': {
+              ...theme.typography.body2,
+              color: alpha(theme.palette.grey[900], 0.9)
+            }
           }
-        },
-        '.MuiAccordion-root .MuiListItem-root label': {
-          fontSize: '14px',
-          fontStyle: 'normal',
-          fontWeight: 400,
-          color: alpha(theme.palette.grey[900], 0.9)
-        }
-      })
+        })
+      }
     },
     MuiMenuItem: {
       styleOverrides: {
