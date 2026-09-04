@@ -11,7 +11,8 @@ export const makeLightOverrides = (): NonNullable<
   return {
     MuiButton: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
+          ...theme.typography.body2,
           borderRadius: radius.pill,
           boxShadow: 'none',
           '&:hover': {
@@ -79,7 +80,7 @@ export const makeLightOverrides = (): NonNullable<
               }
             }
           ]
-        },
+        }),
         contained: {
           boxShadow: 'none',
           '&:hover': {
