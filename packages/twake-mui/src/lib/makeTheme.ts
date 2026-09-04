@@ -37,7 +37,7 @@ export const makeTheme = (
   })
 
   const components =
-    mode === 'dark' ? makeDarkOverrides(theme) : makeLightOverrides(theme)
+    mode === 'dark' ? makeDarkOverrides() : makeLightOverrides()
 
   // Create the final theme with components
   return createTheme({
