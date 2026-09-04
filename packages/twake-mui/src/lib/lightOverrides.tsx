@@ -8,7 +8,8 @@ import AccordionExpandIcon from '../components/AccordionExpandIcon'
 export const lightOverrides: NonNullable<ThemeOptions['components']> = {
   MuiButton: {
     styleOverrides: {
-      root: {
+      root: ({ theme }) => ({
+        ...theme.typography.body2,
         borderRadius: radius.pill,
         boxShadow: 'none',
         '&:hover': {
@@ -76,7 +77,7 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
             }
           }
         ]
-      },
+      }),
       contained: {
         boxShadow: 'none',
         '&:hover': {
@@ -458,11 +459,10 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       root: ({ theme }) => ({
         ...theme.typography.caption,
         color: theme.palette.text.secondary,
-        minHeight: '17.67px',
+        minHeight: '18px',
         padding: 0,
-
         '&.Mui-expanded': {
-          minHeight: '17.67px'
+          minHeight: '18px'
         }
       }),
       expandIconWrapper: {
