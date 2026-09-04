@@ -1,17 +1,13 @@
 import { menuItemClasses } from '@mui/material/MenuItem'
-import { Theme, ThemeOptions, alpha, darken } from '@mui/material/styles'
+import { ThemeOptions, alpha, darken } from '@mui/material/styles'
 import React from 'react'
 
-import paletteJson from './palette.json'
 import { radius } from './radius'
-import { PaletteJson } from './types'
 import AccordionExpandIcon from '../components/AccordionExpandIcon'
 
-const paletteData = paletteJson as PaletteJson
-
-export const makeLightOverrides = (
-  theme: Theme
-): NonNullable<ThemeOptions['components']> => {
+export const makeLightOverrides = (): NonNullable<
+  ThemeOptions['components']
+> => {
   return {
     MuiButton: {
       styleOverrides: {
@@ -30,18 +26,18 @@ export const makeLightOverrides = (
           variants: [
             {
               props: { variant: 'contained', color: 'secondary' },
-              style: {
+              style: ({ theme }) => ({
                 backgroundColor: theme.palette.secondary.main,
                 color: alpha(theme.palette.text.primary, 0.9),
                 borderRadius: radius.sm,
                 '&:hover': {
-                  backgroundColor: paletteData.Secondary[700],
+                  backgroundColor: theme.palette.secondary.dark,
                   color: alpha(theme.palette.text.primary, 0.9)
                 },
                 '&.Mui-disabled': {
                   backgroundColor: theme.palette.action.disabledBackground
                 }
-              }
+              })
             },
             {
               props: { size: 'small' },
@@ -96,9 +92,9 @@ export const makeLightOverrides = (
             boxShadow: 'none'
           }
         },
-        outlined: {
+        outlined: ({ theme }) => ({
           backgroundColor: theme.palette.background.paper,
-          borderColor: alpha(paletteData.Grey.A900, 0.28),
+          borderColor: alpha(theme.palette.grey[900], 0.28),
           color: alpha(theme.palette.text.primary, 0.9),
           '&:hover': {
             backgroundColor: alpha(theme.palette.primary.main, 0.04),
@@ -108,9 +104,9 @@ export const makeLightOverrides = (
           '&.Mui-disabled': {
             backgroundColor: theme.palette.background.paper,
             color: alpha(theme.palette.grey[900], 0.38),
-            borderColor: alpha(paletteData.Grey.A900, 0.28)
+            borderColor: alpha(theme.palette.grey[900], 0.28)
           }
-        }
+        })
       }
     },
     MuiTextField: {
@@ -248,13 +244,13 @@ export const makeLightOverrides = (
     },
     MuiDialogTitle: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           ...theme.typography.h3,
           padding: '12px 32px',
           [theme.breakpoints.down('sm')]: {
             ...theme.typography.h4
           }
-        }
+        })
       }
     },
     MuiDialogContent: {
@@ -291,7 +287,7 @@ export const makeLightOverrides = (
     },
     MuiAvatar: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           fontWeight: 600,
           '&.size-xs': {
             width: 18,
@@ -374,29 +370,29 @@ export const makeLightOverrides = (
               }
             }
           ]
-        }
+        })
       }
     },
     MuiToggleButtonGroup: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           borderColor: '#AEAEC0',
           '& .MuiToggleButton-root:not(.Mui-selected)': {
             color: '#8C9CAF',
             backgroundColor: alpha('#49454F', 0.08),
             '&:hover': {
-              backgroundColor: alpha('#49454F', 0.08)
+              backgroundColor: theme.palette.secondary.main // alpha('#49454F', 0.08)
             },
             '& svg, & .MuiSvgIcon-root': {
               color: '#8C9CAF'
             }
           }
-        }
+        })
       }
     },
     MuiToggleButton: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           color: '#525256',
           '&.Mui-selected': {
             color: '#243B55',
@@ -416,15 +412,15 @@ export const makeLightOverrides = (
               }
             }
           ]
-        }
+        })
       }
     },
     MuiIconButton: {
       styleOverrides: {
-        root: {
-          color: alpha(paletteData.Grey[900], 0.48),
+        root: ({ theme }) => ({
+          color: alpha(theme.palette.grey[900], 0.48),
           padding: '4px'
-        }
+        })
       }
     },
     MuiCheckbox: {
@@ -442,12 +438,12 @@ export const makeLightOverrides = (
           variants: [
             {
               props: { invisible: false },
-              style: {
+              style: ({ theme }) => ({
                 backgroundColor: alpha(
                   theme.palette.text.primary,
                   theme.palette.action.focusOpacity
                 )
-              }
+              })
             }
           ]
         }
@@ -465,7 +461,7 @@ export const makeLightOverrides = (
     MuiAccordionSummary: {
       defaultProps: { expandIcon: <AccordionExpandIcon /> },
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           backgroundColor: theme.palette.grey[100],
           textTransform: 'uppercase',
           fontWeight: 'bold',
@@ -476,7 +472,7 @@ export const makeLightOverrides = (
           '&.Mui-expanded': {
             minHeight: '3.5rem'
           }
-        },
+        }),
         expandIconWrapper: {
           order: 0,
           '&&': {
@@ -505,7 +501,7 @@ export const makeLightOverrides = (
     MuiFab: {
       defaultProps: { size: 'medium' },
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           borderRadius: 28,
           width: 96,
           height: 96,
@@ -517,8 +513,8 @@ export const makeLightOverrides = (
           '@media (hover: none)': {
             backgroundColor: theme.palette.background.paper
           }
-        },
-        primary: {
+        }),
+        primary: ({ theme }) => ({
           color: theme.palette.primary.dark,
           backgroundColor: theme.palette.primary.light,
           '&:hover': {
@@ -527,7 +523,7 @@ export const makeLightOverrides = (
           '@media (hover: none)': {
             backgroundColor: theme.palette.primary.light
           }
-        },
+        }),
         extended: {
           borderRadius: 16,
           width: 'auto',
@@ -564,35 +560,35 @@ export const makeLightOverrides = (
     MuiTooltip: {
       defaultProps: { arrow: true },
       styleOverrides: {
-        tooltip: {
+        tooltip: ({ theme }) => ({
           backgroundColor: alpha(theme.palette.grey[800], 0.9),
           fontSize: '1rem',
           lineHeight: 1.3,
           borderRadius: '4px',
           padding: '8px 12px'
-        }
+        })
       }
     },
     MuiCssBaseline: {
-      styleOverrides: {
+      styleOverrides: theme => ({
         '.MuiAccordion-root .MuiListItem-root': {
           padding: '0',
           borderRadius: '4px',
           '&:hover': {
-            backgroundColor: alpha(paletteData.Grey.A900, 0.04)
+            backgroundColor: alpha(theme.palette.grey[900], 0.04)
           }
         },
         '.MuiAccordion-root .MuiListItem-root label': {
           fontSize: '14px',
           fontStyle: 'normal',
           fontWeight: 400,
-          color: alpha(paletteData.Grey[900], 0.9)
+          color: alpha(theme.palette.grey[900], 0.9)
         }
-      }
+      })
     },
     MuiMenuItem: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           borderRadius: radius.md,
           '&&&:hover': {
             backgroundColor: `${alpha(theme.palette.primary.main, theme.palette.action.hoverOpacity)}`
@@ -610,12 +606,12 @@ export const makeLightOverrides = (
               )
             }
           }
-        }
+        })
       }
     },
     MuiSwipeableDrawer: {
       defaultProps: {
-        sx: {
+        sx: theme => ({
           '& .MuiDrawer-paper': {
             borderTopLeftRadius: radius.md,
             borderTopRightRadius: radius.md,
@@ -631,7 +627,7 @@ export const makeLightOverrides = (
               flexShrink: 0
             }
           }
-        }
+        })
       }
     }
   }
