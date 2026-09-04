@@ -1,7 +1,7 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles'
 
-import { makeDarkOverrides } from './makeDarkOverrides'
-import { makeLightOverrides } from './makeLightOverrides'
+import { darkOverrides } from './darkOverrides'
+import { lightOverrides } from './lightOverrides'
 import { makePalette } from './makePalette'
 import { makeTypography } from './makeTypography'
 // DatePicker styles are applied through component overrides
@@ -36,8 +36,7 @@ export const makeTheme = (
     typography
   })
 
-  const components =
-    mode === 'dark' ? makeDarkOverrides(theme) : makeLightOverrides(theme)
+  const components = mode === 'dark' ? darkOverrides : lightOverrides
 
   // Create the final theme with components
   return createTheme({
