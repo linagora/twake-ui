@@ -1,17 +1,13 @@
 import { menuItemClasses } from '@mui/material/MenuItem'
-import { Theme, ThemeOptions, alpha, darken } from '@mui/material/styles'
+import { ThemeOptions, alpha, darken } from '@mui/material/styles'
 import React from 'react'
 
-import paletteJson from './palette.json'
 import { radius } from './radius'
-import { PaletteJson } from './types'
 import AccordionExpandIcon from '../components/AccordionExpandIcon'
 
-const paletteData = paletteJson as PaletteJson
-
-export const makeLightOverrides = (
-  theme: Theme
-): NonNullable<ThemeOptions['components']> => {
+export const makeLightOverrides = (): NonNullable<
+  ThemeOptions['components']
+> => {
   return {
     MuiButton: {
       styleOverrides: {
@@ -391,12 +387,12 @@ export const makeLightOverrides = (
               color: '#8C9CAF'
             }
           }
-        }
+        })
       }
     },
     MuiToggleButton: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           color: '#525256',
           '&.Mui-selected': {
             color: '#243B55',
@@ -442,12 +438,12 @@ export const makeLightOverrides = (
           variants: [
             {
               props: { invisible: false },
-              style: {
+              style: ({ theme }) => ({
                 backgroundColor: alpha(
                   theme.palette.text.primary,
                   theme.palette.action.focusOpacity
                 )
-              }
+              })
             }
           ]
         }
@@ -465,7 +461,7 @@ export const makeLightOverrides = (
     MuiAccordionSummary: {
       defaultProps: { expandIcon: <AccordionExpandIcon /> },
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           backgroundColor: theme.palette.grey[100],
           textTransform: 'uppercase',
           fontWeight: 'bold',
@@ -476,7 +472,7 @@ export const makeLightOverrides = (
           '&.Mui-expanded': {
             minHeight: '3.5rem'
           }
-        },
+        }),
         expandIconWrapper: {
           order: 0,
           '&&': {
@@ -505,7 +501,7 @@ export const makeLightOverrides = (
     MuiFab: {
       defaultProps: { size: 'medium' },
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           borderRadius: 28,
           width: 96,
           height: 96,
@@ -517,8 +513,8 @@ export const makeLightOverrides = (
           '@media (hover: none)': {
             backgroundColor: theme.palette.background.paper
           }
-        },
-        primary: {
+        }),
+        primary: ({ theme }) => ({
           color: theme.palette.primary.dark,
           backgroundColor: theme.palette.primary.light,
           '&:hover': {
@@ -527,7 +523,7 @@ export const makeLightOverrides = (
           '@media (hover: none)': {
             backgroundColor: theme.palette.primary.light
           }
-        },
+        }),
         extended: {
           borderRadius: 16,
           width: 'auto',
@@ -564,13 +560,13 @@ export const makeLightOverrides = (
     MuiTooltip: {
       defaultProps: { arrow: true },
       styleOverrides: {
-        tooltip: {
+        tooltip: ({ theme }) => ({
           backgroundColor: alpha(theme.palette.grey[800], 0.9),
           fontSize: '1rem',
           lineHeight: 1.3,
           borderRadius: '4px',
           padding: '8px 12px'
-        }
+        })
       }
     },
     MuiCssBaseline: {
@@ -592,7 +588,7 @@ export const makeLightOverrides = (
     },
     MuiMenuItem: {
       styleOverrides: {
-        root: {
+        root: ({ theme }) => ({
           borderRadius: radius.md,
           '&&&:hover': {
             backgroundColor: `${alpha(theme.palette.primary.main, theme.palette.action.hoverOpacity)}`
@@ -610,12 +606,12 @@ export const makeLightOverrides = (
               )
             }
           }
-        }
+        })
       }
     },
     MuiSwipeableDrawer: {
       defaultProps: {
-        sx: {
+        sx: theme => ({
           '& .MuiDrawer-paper': {
             borderTopLeftRadius: radius.md,
             borderTopRightRadius: radius.md,
@@ -631,7 +627,7 @@ export const makeLightOverrides = (
               flexShrink: 0
             }
           }
-        }
+        })
       }
     }
   }
