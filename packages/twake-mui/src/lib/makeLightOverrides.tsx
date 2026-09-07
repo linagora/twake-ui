@@ -430,9 +430,16 @@ export const makeLightOverrides = (
     MuiCheckbox: {
       styleOverrides: {
         root: {
+          color: alpha(paletteData.Grey.A900, 0.28),
           '&.MuiCheckbox-sizeSmall': {
             padding: '6px'
-          }
+          },
+          variants: (['error', 'warning', 'success'] as const).map(color => ({
+            props: { color },
+            style: {
+              color: alpha(theme.palette[color].main, 0.32)
+            }
+          }))
         }
       }
     },
