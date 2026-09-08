@@ -230,15 +230,6 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
-  MuiPopover: {
-    styleOverrides: {
-      paper: {
-        borderRadius: radius.md,
-        boxShadow:
-          '0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 4px 8px 3px rgba(0, 0, 0, 0.15)'
-      }
-    }
-  },
   MuiChip: {
     styleOverrides: {
       root: {
@@ -392,23 +383,6 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
-  MuiBackdrop: {
-    styleOverrides: {
-      root: {
-        variants: [
-          {
-            props: { invisible: false },
-            style: ({ theme }) => ({
-              backgroundColor: alpha(
-                theme.palette.text.primary,
-                theme.palette.action.focusOpacity
-              )
-            })
-          }
-        ]
-      }
-    }
-  },
   MuiAccordion: {
     styleOverrides: {
       root: {
@@ -529,23 +503,6 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
-  MuiCssBaseline: {
-    styleOverrides: theme => ({
-      '.MuiAccordion-root .MuiListItem-root': {
-        padding: '0',
-        borderRadius: '4px',
-        '&:hover': {
-          backgroundColor: alpha(theme.palette.grey[900], 0.04)
-        }
-      },
-      '.MuiAccordion-root .MuiListItem-root label': {
-        fontSize: '14px',
-        fontStyle: 'normal',
-        fontWeight: 400,
-        color: alpha(theme.palette.grey[900], 0.9)
-      }
-    })
-  },
   MuiMenuItem: {
     styleOverrides: {
       root: ({ theme }) => ({
@@ -564,27 +521,6 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
               theme.palette.action.selectedOpacity +
                 theme.palette.action.hoverOpacity
             )
-          }
-        }
-      })
-    }
-  },
-  MuiSwipeableDrawer: {
-    defaultProps: {
-      sx: theme => ({
-        '& .MuiDrawer-paper': {
-          borderTopLeftRadius: radius.md,
-          borderTopRightRadius: radius.md,
-          '&::before': {
-            content: '""',
-            display: 'block',
-            width: '64px',
-            height: '4px',
-            backgroundColor: theme.palette.action.disabledBackground,
-            borderRadius: radius.md,
-            margin: '12px auto',
-            marginTop: '30px',
-            flexShrink: 0
           }
         }
       })
