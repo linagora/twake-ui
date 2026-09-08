@@ -65,6 +65,9 @@ export interface BorderPalette {
   main: string
   disabled: string
   ghost: string
+  ghostDisabled: string
+  opacity: number
+  ghostOpacity: number
 }
 
 export interface PaletteJson {
@@ -119,3 +122,26 @@ export interface TypographyVariants {
 }
 
 export type MakeTypography = () => TypographyOptions
+
+/**
+ * Twake additions on top of the MUI palette, mirroring cozy-ui. MUI does not
+ * declare them, so without this augmentation consumers reading
+ * `theme.palette.background.contrast` get a type error.
+ */
+declare module '@mui/material/styles' {
+  interface TypeBackground {
+    contrast: string
+  }
+
+  interface TypeText {
+    icon: string
+  }
+
+  interface Palette {
+    border: BorderPalette
+  }
+
+  interface PaletteOptions {
+    border?: Partial<BorderPalette>
+  }
+}
