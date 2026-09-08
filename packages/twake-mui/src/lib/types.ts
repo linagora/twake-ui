@@ -119,3 +119,14 @@ export interface TypographyVariants {
 }
 
 export type MakeTypography = () => TypographyOptions
+
+/**
+ * Twake additions on top of the MUI palette, mirroring cozy-ui. MUI does not
+ * declare them, so without this augmentation consumers reading
+ * `theme.palette.background.contrast` get a type error.
+ */
+declare module '@mui/material/styles' {
+  interface TypeBackground {
+    contrast: string
+  }
+}
