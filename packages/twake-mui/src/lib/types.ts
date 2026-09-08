@@ -93,6 +93,12 @@ declare module '@mui/material/InputBase' {
   }
 }
 
+declare module '@mui/material/IconButton' {
+  interface IconButtonPropsSizeOverrides {
+    xsmall: true
+  }
+}
+
 export interface TypographyConfig {
   fontFamily?: string
   fontSize?: number

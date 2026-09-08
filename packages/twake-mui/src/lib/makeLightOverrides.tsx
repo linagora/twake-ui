@@ -419,6 +419,41 @@ export const makeLightOverrides = (
         }
       }
     },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          variants: [
+            {
+              props: { color: 'default' },
+              style: {
+                color: theme.palette.text.secondary
+              }
+            },
+            // medium matches the MUI default, which is already the Library size
+            {
+              props: { size: 'xsmall' },
+              style: {
+                padding: '3.75px',
+                fontSize: theme.typography.pxToRem(12.5)
+              }
+            },
+            {
+              props: { size: 'small' },
+              style: {
+                padding: '6px',
+                fontSize: theme.typography.pxToRem(20)
+              }
+            },
+            {
+              props: { size: 'large' },
+              style: {
+                padding: '14px'
+              }
+            }
+          ]
+        }
+      }
+    },
     MuiCheckbox: {
       styleOverrides: {
         root: {

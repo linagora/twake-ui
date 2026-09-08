@@ -16,7 +16,7 @@ export interface ChipProps extends MuiChipProps {
 export const Chip: React.FC<ChipProps> = ({
   className,
   deleteIcon = (
-    <IconButton>
+    <IconButton size="xsmall">
       <Icon icon={CrossSmall} />
     </IconButton>
   ),
