@@ -1,3 +1,11 @@
+## @linagora/twake-mui [5.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@5.1.0...@linagora/twake-mui@5.1.1) (2026-09-08)
+
+
+### Bug Fixes
+
+* Removed hardcoded data from makeLightOverrides ([df271e0](https://github.com/linagora/twake-ui/commit/df271e0c4e92e98854251804a5dbc0f20d24bbbd))
+* Removed theme variable from makeLightOverrides ([111b4bb](https://github.com/linagora/twake-ui/commit/111b4bb86e38a995fda7d7516c60d7c634c93816))
+
 # @linagora/twake-mui [5.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@5.0.0...@linagora/twake-mui@5.1.0) (2026-09-01)
 
 
