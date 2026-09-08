@@ -106,21 +106,6 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
-  MuiTextField: {
-    defaultProps: {
-      size: 'medium'
-    },
-    styleOverrides: {
-      root: {
-        '& .MuiOutlinedInput-root': {
-          borderRadius: radius.sm,
-          '& fieldset': {
-            borderRadius: radius.sm
-          }
-        }
-      }
-    }
-  },
   MuiOutlinedInput: {
     styleOverrides: {
       root: ({ theme }) => ({
@@ -152,25 +137,6 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
             }
           }
         ]
-      }
-    },
-    variants: [
-      {
-        props: { size: 'large' },
-        style: {
-          '& .MuiOutlinedInput-input': {
-            padding: '14px 16px' // Large: 54px height
-          }
-        }
-      }
-    ]
-  },
-  MuiInputBase: {
-    styleOverrides: {
-      root: {
-        '&.MuiInputBase-sizeLarge': {
-          fontSize: '16px'
-        }
       }
     }
   },
