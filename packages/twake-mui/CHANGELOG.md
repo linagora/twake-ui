@@ -1,3 +1,19 @@
+# @linagora/twake-mui [6.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@5.2.0...@linagora/twake-mui@6.0.0) (2026-09-08)
+
+
+### Features
+
+* **twake-mui:** Drop app-specific overrides from the theme ([b67cec4](https://github.com/linagora/twake-ui/commit/b67cec4bd20ebc9c04d998966e0f8c00c72830e1))
+* **twake-mui:** Remove inert rules from light overrides ([d50595c](https://github.com/linagora/twake-ui/commit/d50595c35ac30e6e2a32be74a0cde5b45798cc44))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** Custom style for `Popover`, `Backdrop`,
+`SwipeableDrawer` and `ListItem inside Accordion` has been
+removed
+* **twake-mui:** size="large" no longer typechecks on TextField and InputBase.
+
 # @linagora/twake-mui [5.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@5.1.1...@linagora/twake-mui@5.2.0) (2026-09-08)
 
 
