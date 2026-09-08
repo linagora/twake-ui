@@ -1,3 +1,16 @@
+# @linagora/twake-mui [5.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@5.1.1...@linagora/twake-mui@5.2.0) (2026-09-08)
+
+
+### Bug Fixes
+
+* **twake-mui:** Type background.contrast on the MUI palette ([0985fcb](https://github.com/linagora/twake-ui/commit/0985fcbc880b73575ffd817ab70b724979d74481))
+
+
+### Features
+
+* **twake-mui:** Add border and text.icon palette keys from cozy-ui ([9082d24](https://github.com/linagora/twake-ui/commit/9082d2416ad8be62772627bebe4daa27f4eabeca))
+* **twake-mui:** Align elevation shadows with cozy-ui ([64d3d5c](https://github.com/linagora/twake-ui/commit/64d3d5cce9e02ca013317ced302ba557a03d9de3))
+
 ## @linagora/twake-mui [5.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@5.1.0...@linagora/twake-mui@5.1.1) (2026-09-08)
 
 
