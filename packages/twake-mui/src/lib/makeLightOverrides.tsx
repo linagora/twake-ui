@@ -419,14 +419,6 @@ export const makeLightOverrides = (
         }
       }
     },
-    MuiIconButton: {
-      styleOverrides: {
-        root: {
-          color: alpha(paletteData.Grey[900], 0.48),
-          padding: '4px'
-        }
-      }
-    },
     MuiCheckbox: {
       styleOverrides: {
         root: {
