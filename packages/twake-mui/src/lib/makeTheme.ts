@@ -14,10 +14,10 @@ const themesCommonConfig: Partial<ThemeOptions> = {
   breakpoints: {
     values: {
       xs: 0,
-      sm: 480,
-      md: 768,
-      lg: 1023,
-      xl: 1200
+      sm: 544,
+      md: 769,
+      lg: 1024,
+      xl: 1201
     }
   },
   zIndex: {
