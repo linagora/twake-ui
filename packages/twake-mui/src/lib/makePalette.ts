@@ -1,14 +1,23 @@
 import { PaletteOptions, alpha } from '@mui/material/styles'
 
 import paletteJson from './palette.json'
-import { PaletteJson, BackgroundPalette, GreyPalette } from './types'
+import {
+  PaletteJson,
+  BackgroundPalette,
+  GreyPalette,
+  BorderPalette
+} from './types'
 
 const paletteData = paletteJson as PaletteJson
 
 export const makePalette = (
   mode: 'light' | 'dark' = 'light',
   palette: PaletteJson = paletteData
-): PaletteOptions & { background: BackgroundPalette; grey: GreyPalette } => {
+): PaletteOptions & {
+  background: BackgroundPalette
+  grey: GreyPalette
+  border: BorderPalette
+} => {
   if (mode === 'dark') {
     return {
       mode,
@@ -68,12 +77,21 @@ export const makePalette = (
       text: {
         primary: palette.Common.white,
         secondary: alpha(palette.Common.white, 0.64),
-        disabled: alpha(palette.Common.white, 0.4)
+        disabled: alpha(palette.Common.white, 0.4),
+        icon: palette.Common.white
       },
       background: {
         default: palette.Grey.A400,
         paper: palette.Grey[800],
         contrast: alpha(palette.Common.white, 0.072)
+      },
+      border: {
+        main: alpha(palette.Common.white, 0.24),
+        disabled: alpha(palette.Common.white, 0.12),
+        ghost: alpha(palette.Common.white, 0.48),
+        ghostDisabled: alpha(palette.Common.white, 0.24),
+        opacity: 0.48,
+        ghostOpacity: 0.48
       },
       divider: alpha(palette.Common.white, 0.16),
       action: {
@@ -150,12 +168,21 @@ export const makePalette = (
     text: {
       primary: alpha(palette.Grey[900], 0.9),
       secondary: alpha(palette.Grey[900], 0.64),
-      disabled: alpha(palette.Grey[900], 0.32)
+      disabled: alpha(palette.Grey[900], 0.32),
+      icon: alpha(palette.Grey[900], 0.72)
     },
     background: {
       default: palette.Grey[100],
       paper: palette.Common.white,
       contrast: alpha(palette.Grey[900], 0.048)
+    },
+    border: {
+      main: alpha(palette.Grey[900], 0.16),
+      disabled: alpha(palette.Grey[900], 0.08),
+      ghost: alpha(palette.Grey[900], 0.48),
+      ghostDisabled: alpha(palette.Grey[900], 0.16),
+      opacity: 0.32,
+      ghostOpacity: 0.48
     },
     divider: alpha(palette.Grey[900], 0.12),
     action: {

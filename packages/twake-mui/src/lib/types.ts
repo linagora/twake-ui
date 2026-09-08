@@ -65,6 +65,9 @@ export interface BorderPalette {
   main: string
   disabled: string
   ghost: string
+  ghostDisabled: string
+  opacity: number
+  ghostOpacity: number
 }
 
 export interface PaletteJson {
@@ -128,5 +131,17 @@ export type MakeTypography = () => TypographyOptions
 declare module '@mui/material/styles' {
   interface TypeBackground {
     contrast: string
+  }
+
+  interface TypeText {
+    icon: string
+  }
+
+  interface Palette {
+    border: BorderPalette
+  }
+
+  interface PaletteOptions {
+    border?: Partial<BorderPalette>
   }
 }
