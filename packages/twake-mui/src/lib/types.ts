@@ -84,18 +84,6 @@ export interface PaletteJson {
 // Typography Types
 export type TypographyOptions = TypographyVariantsOptions
 
-declare module '@mui/material/TextField' {
-  interface TextFieldPropsSizeOverrides {
-    large: true
-  }
-}
-
-declare module '@mui/material/InputBase' {
-  interface InputBasePropsSizeOverrides {
-    large: true
-  }
-}
-
 export interface TypographyConfig {
   fontFamily?: string
   fontSize?: number
