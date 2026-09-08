@@ -1,3 +1,24 @@
+# @linagora/twake-mui [7.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@6.0.0...@linagora/twake-mui@7.0.0) (2026-09-08)
+
+
+### Bug Fixes
+
+* **theme:** Align breakpoint values on cozy-ui bounds ([0fb7dd0](https://github.com/linagora/twake-ui/commit/0fb7dd0bb73e845cb2c62ea1c45f28016c2f9a31))
+
+
+### Features
+
+* Add useBreakpoints hook ([f7780d5](https://github.com/linagora/twake-ui/commit/f7780d5d2fbb194752688c54ec4421e8b51fa83e))
+
+
+### BREAKING CHANGES
+
+* **theme:** theme.breakpoints.values move from
+{sm:480, md:768, lg:1023, xl:1200} to {sm:544, md:769, lg:1024,
+xl:1201}. Consumers calling breakpoints.up/down/between keep the same
+call sites but resolve at the cozy-ui thresholds. down('sm') now
+covers up to 543px instead of 479px.
+
 # @linagora/twake-mui [6.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@5.2.0...@linagora/twake-mui@6.0.0) (2026-09-08)
 
 
