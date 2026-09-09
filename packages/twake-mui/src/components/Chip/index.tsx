@@ -15,18 +15,20 @@ export interface ChipProps extends MuiChipProps {
 
 export const Chip: React.FC<ChipProps> = ({
   className,
-  deleteIcon = (
-    <IconButton>
-      <Icon icon={CrossSmall} />
-    </IconButton>
-  ),
   label,
   endIcon,
   square = false,
+  size,
+  deleteIcon = (
+    <IconButton size={size === 'small' ? 'xsmall' : 'small'}>
+      <Icon icon={CrossSmall} />
+    </IconButton>
+  ),
   ...props
 }) => {
   return (
     <MuiChip
+      size={size}
       className={cx(className, { square })}
       deleteIcon={deleteIcon}
       label={

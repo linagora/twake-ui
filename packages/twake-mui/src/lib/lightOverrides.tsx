@@ -366,6 +366,45 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiIconButton: {
+    defaultProps: { size: 'large' },
+    styleOverrides: {
+      root: ({ theme }) => ({
+        variants: [
+          {
+            props: { color: 'default' },
+            style: {
+              color: theme.palette.text.secondary
+            }
+          },
+          {
+            props: { size: 'xsmall' },
+            style: {
+              padding: '5px'
+            }
+          },
+          {
+            props: { size: 'small' },
+            style: {
+              padding: '8px'
+            }
+          },
+          {
+            props: { size: 'medium' },
+            style: {
+              padding: '12px'
+            }
+          },
+          {
+            props: { size: 'large' },
+            style: {
+              padding: '16px'
+            }
+          }
+        ]
+      })
+    }
+  },
   MuiCheckbox: {
     styleOverrides: {
       root: {
