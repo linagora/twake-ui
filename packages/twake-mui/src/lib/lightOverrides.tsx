@@ -366,14 +366,6 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
-  MuiIconButton: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        color: alpha(theme.palette.grey[900], 0.48),
-        padding: '4px'
-      })
-    }
-  },
   MuiCheckbox: {
     styleOverrides: {
       root: {
