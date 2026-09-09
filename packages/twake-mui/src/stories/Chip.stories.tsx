@@ -172,12 +172,19 @@ export const Screenshot: Story = {
                                   label="Action chip"
                                   avatar={<Avatar>M</Avatar>}
                                   deleteIcon={
-                                    <IconButton>
+                                    <IconButton
+                                      size={
+                                        size === 'small' ? 'xsmall' : 'small'
+                                      }
+                                    >
                                       <Icon icon={Right} />
                                     </IconButton>
                                   }
                                   endIcon={
                                     <IconButton
+                                      size={
+                                        size === 'small' ? 'xsmall' : 'small'
+                                      }
                                       sx={{
                                         color:
                                           color === 'default'

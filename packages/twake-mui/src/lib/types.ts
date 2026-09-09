@@ -133,3 +133,9 @@ declare module '@mui/material/styles' {
     border?: Partial<BorderPalette>
   }
 }
+
+declare module '@mui/material/IconButton' {
+  interface IconButtonPropsSizeOverrides {
+    xsmall: true
+  }
+}
