@@ -1,3 +1,15 @@
+# @linagora/twake-mui [7.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@7.0.0...@linagora/twake-mui@7.1.0) (2026-09-10)
+
+
+### Bug Fixes
+
+* **twake-mui:** Clean old IconButton override ([b5a7733](https://github.com/linagora/twake-ui/commit/b5a7733ad9451ea9950e93a787133a2f9bf951d5))
+
+
+### Features
+
+* **twake-mui:** Migrate IconButton from cozy-ui ([d6aca04](https://github.com/linagora/twake-ui/commit/d6aca0454195f1d3ffd5170b2463f5bec9254678))
+
 # @linagora/twake-mui [7.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@6.0.0...@linagora/twake-mui@7.0.0) (2026-09-08)
 
 
