@@ -239,6 +239,39 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
+  MuiBadge: {
+    defaultProps: {
+      overlap: 'circular',
+      showZero: true
+    },
+    styleOverrides: {
+      badge: ({ theme }) => ({
+        boxSizing: 'content-box',
+        height: 14,
+        minWidth: 14,
+        padding: 0,
+        border: `2px solid ${theme.palette.background.paper}`,
+        borderRadius: '100%',
+        fontSize: theme.typography.pxToRem(10)
+      }),
+      dot: {
+        height: 8,
+        minWidth: 8
+      },
+      anchorOriginTopRightRectangular: {
+        transform: 'scale(1) translate(37%, -37%)'
+      },
+      anchorOriginBottomRightRectangular: {
+        transform: 'scale(1) translate(37%, 37%)'
+      },
+      anchorOriginBottomLeftRectangular: {
+        transform: 'scale(1) translate(-37%, 37%)'
+      },
+      anchorOriginTopLeftRectangular: {
+        transform: 'scale(1) translate(-37%, -37%)'
+      }
+    }
+  },
   MuiAvatar: {
     styleOverrides: {
       root: ({ theme }) => ({
