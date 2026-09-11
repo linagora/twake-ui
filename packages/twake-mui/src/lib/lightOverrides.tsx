@@ -534,6 +534,20 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiSnackbar: {
+    defaultProps: {
+      anchorOrigin: { vertical: 'bottom', horizontal: 'center' },
+      autoHideDuration: 2000
+    }
+  },
+  MuiSnackbarContent: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        padding: '4px 12px',
+        backgroundColor: theme.palette.grey[600]
+      })
+    }
+  },
   MuiMenuItem: {
     styleOverrides: {
       root: ({ theme }) => ({
