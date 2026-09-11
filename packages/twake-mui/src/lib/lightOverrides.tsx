@@ -239,6 +239,63 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
+  MuiBadge: {
+    defaultProps: {
+      overlap: 'circular',
+      showZero: true
+    },
+    styleOverrides: {
+      badge: ({ theme }) => ({
+        boxSizing: 'content-box',
+        padding: 0,
+        borderRadius: '100%',
+        '&.border': {
+          border: `2px solid ${theme.palette.background.paper}`
+        },
+        '&.size-small': {
+          height: 12,
+          minWidth: 12,
+          fontSize: theme.typography.pxToRem(8)
+        },
+        '&.size-medium': {
+          height: 14,
+          minWidth: 14,
+          fontSize: theme.typography.pxToRem(10)
+        },
+        '&.size-large': {
+          height: 16,
+          minWidth: 16,
+          fontSize: theme.typography.pxToRem(11)
+        }
+      }),
+      dot: {
+        '&.size-small': {
+          height: 6,
+          minWidth: 6
+        },
+        '&.size-medium': {
+          height: 8,
+          minWidth: 8
+        },
+        '&.size-large': {
+          height: 10,
+          minWidth: 10
+        }
+      },
+      anchorOriginTopRightRectangular: {
+        transform: 'scale(1) translate(37%, -37%)'
+      },
+      anchorOriginBottomRightRectangular: {
+        transform: 'scale(1) translate(37%, 37%)'
+      },
+      anchorOriginBottomLeftRectangular: {
+        transform: 'scale(1) translate(-37%, 37%)'
+      },
+      anchorOriginTopLeftRectangular: {
+        transform: 'scale(1) translate(-37%, -37%)'
+      }
+    }
+  },
   MuiAvatar: {
     styleOverrides: {
       root: ({ theme }) => ({
