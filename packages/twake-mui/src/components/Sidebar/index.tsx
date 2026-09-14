@@ -19,6 +19,7 @@ export const Sidebar = styled('aside', {
       left: 0,
       width: '100%',
       height: 52,
+      boxSizing: 'content-box',
       display: 'block',
       border: 0,
       borderTop: `1px solid ${theme.palette.divider}`,
