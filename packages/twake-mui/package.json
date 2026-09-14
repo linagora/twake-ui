@@ -57,6 +57,7 @@
     "react-dom": "^18"
   },
   "dependencies": {
+    "@mui/utils": "^9.2.0",
     "classnames": "^2.5.1"
   },
   "devDependencies": {

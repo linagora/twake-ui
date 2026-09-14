@@ -1,4 +1,5 @@
 import { PaletteOptions, alpha } from '@mui/material/styles'
+import { deepmerge } from '@mui/utils'
 
 import paletteJson from './palette.json'
 import {
@@ -12,12 +13,14 @@ const paletteData = paletteJson as PaletteJson
 
 export const makePalette = (
   mode: 'light' | 'dark' = 'light',
-  palette: PaletteJson = paletteData
+  overrides: Partial<PaletteJson> = {}
 ): PaletteOptions & {
   background: BackgroundPalette
   grey: GreyPalette
   border: BorderPalette
 } => {
+  const palette = deepmerge(paletteData, overrides)
+
   if (mode === 'dark') {
     return {
       mode,
