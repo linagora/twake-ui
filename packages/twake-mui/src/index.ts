@@ -24,6 +24,7 @@ export { default as AccordionExpandIcon } from './components/AccordionExpandIcon
 export { useBreakpoints } from './hooks/useBreakpoints'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
+export type { PaletteJson } from './lib/types'
 export type { AvatarProps } from './components/Avatar'
 export type { ChipProps } from './components/Chip'
 export type { Breakpoints } from './hooks/useBreakpoints'
