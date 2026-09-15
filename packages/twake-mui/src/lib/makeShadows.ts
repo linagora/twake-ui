@@ -56,11 +56,8 @@ const OUTLINE_OPACITY = 0.12
  */
 const EXTRA_ELEVATION_OPACITY = 0.04
 
-export const makeShadows = (
-  mode: 'light' | 'dark' = 'light',
-  palette: PaletteJson = paletteData
-): Shadows => {
-  const shadowColor = mode === 'dark' ? palette.Common.black : palette.Grey[900]
+export const makeShadows = (palette: PaletteJson = paletteData): Shadows => {
+  const shadowColor = palette.Common.black
   const outline = `0px 0px 0px 0.5px ${alpha(shadowColor, OUTLINE_OPACITY)}`
 
   const shadows = elevations.map(

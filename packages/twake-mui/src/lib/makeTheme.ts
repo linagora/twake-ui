@@ -35,7 +35,7 @@ export const makeTheme = (
     ...themesCommonConfig,
     palette: makePalette(mode, paletteOverrides),
     typography: makeTypography(),
-    shadows: makeShadows(mode),
+    shadows: makeShadows(),
     components: overrides
   }
 
