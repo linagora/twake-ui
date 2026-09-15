@@ -33,7 +33,12 @@ export const makeTheme = (
 ): ReturnType<typeof createTheme> => {
   const baseOptions: ThemeOptions = {
     ...themesCommonConfig,
-    palette: makePalette(mode, paletteOverrides),
+    cssVariables: { colorSchemeSelector: 'data-theme' },
+    defaultColorScheme: mode,
+    colorSchemes: {
+      light: { palette: makePalette('light', paletteOverrides) },
+      dark: { palette: makePalette('dark', paletteOverrides) }
+    },
     typography: makeTypography(),
     shadows: makeShadows(),
     components: overrides
