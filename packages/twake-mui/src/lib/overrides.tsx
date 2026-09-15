@@ -5,7 +5,7 @@ import React from 'react'
 import { radius } from './radius'
 import AccordionExpandIcon from '../components/AccordionExpandIcon'
 
-export const lightOverrides: NonNullable<ThemeOptions['components']> = {
+export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiButton: {
     styleOverrides: {
       root: {
