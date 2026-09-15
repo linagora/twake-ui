@@ -22,7 +22,7 @@ export const TwakeMuiThemeProvider: FC<ThemeProviderProps> = ({
   )
 
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme} defaultMode={mode}>
       <CssBaseline />
       {children}
     </MuiThemeProvider>

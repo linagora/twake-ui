@@ -70,7 +70,7 @@ const preview: Preview = {
       const theme = makeTheme(themeMode)
 
       return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme} defaultMode={themeMode}>
           <CssBaseline />
           <Box sx={{ padding: '20px', bgcolor: 'background.paper' }}>
             <Story />
