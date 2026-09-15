@@ -1,6 +1,34 @@
-import { Alert, AlertTitle } from '@mui/material'
+import { DeviceLaptop, Dots, Download, Icon } from '@linagora/twake-icons'
+import {
+  Alert,
+  AlertTitle,
+  Button,
+  IconButton,
+  ListItemIcon
+} from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+const severities = [
+  'primary',
+  'secondary',
+  'success',
+  'error',
+  'warning',
+  'info'
+] as const
+
+const message =
+  'Get Twake Drive for Desktop and synchronise your files safely to make them accessible at all times.'
+
+const longMessage =
+  'Ada Lovelace was an English mathematician and writer, chiefly known for her work on Charles Babbage proposed mechanical general-purpose computer, the Analytical Engine. She was the first to recognise that the machine had applications beyond pure calculation.'
+
+// primary and secondary have no Button equivalent, they use the default color
+const makeButtonColor = (
+  severity: (typeof severities)[number]
+): 'success' | 'error' | 'warning' | 'info' | undefined =>
+  severity === 'primary' || severity === 'secondary' ? undefined : severity
 
 const meta: Meta<typeof Alert> = {
   title: 'Alert',
@@ -9,18 +37,12 @@ const meta: Meta<typeof Alert> = {
   tags: ['autodocs'],
   argTypes: {
     severity: {
-      control: 'text',
-      description:
-        'Severity level (error, warning, info, success) or custom color name (primary, secondary)'
+      control: 'select',
+      options: severities
     },
     variant: {
       control: 'select',
       options: ['standard', 'filled', 'outlined']
-    },
-    color: {
-      control: 'text',
-      description:
-        'Custom color (CSS color value or MUI palette color like "primary", "secondary")'
     }
   }
 }
@@ -30,18 +52,18 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    severity: 'info',
+    severity: 'primary',
     variant: 'standard'
   },
   render: args => (
     <Alert {...args}>
-      <AlertTitle>Alert Title</AlertTitle>
-      This is the alert content text
+      <AlertTitle>This is the title</AlertTitle>
+      {message}
     </Alert>
   )
 }
 
-// Visual Regression - All severity colors and variants combined
+// Visual Regression - every severity, variant and option in a single render
 export const Screenshot: Story = {
   tags: ['argos'],
   render: () => (
@@ -50,75 +72,158 @@ export const Screenshot: Story = {
         display: 'flex',
         flexDirection: 'column',
         gap: '24px',
-        minWidth: '400px'
+        width: '560px'
       }}
     >
-      {/* Standard variant - all severities */}
       <section>
-        <h3 style={{ marginBottom: '12px' }}>Standard Variant</h3>
+        <h3 style={{ marginBottom: '12px' }}>Standard</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment */}
-          <Alert severity={'primary' as any}>
-            <AlertTitle>Primary Alert</AlertTitle>
-            This is a primary alert with title and text
-          </Alert>
-
-          <Alert severity={'secondary' as any}>
-            <AlertTitle>Secondary Alert</AlertTitle>
-            This is a secondary alert with title and text
-          </Alert>
-          {/* eslint-enable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment */}
-
-          <Alert severity="error">
-            <AlertTitle>Error Alert</AlertTitle>
-            This is an error alert with title and text
-          </Alert>
-
-          <Alert severity="warning">
-            <AlertTitle>Warning Alert</AlertTitle>
-            This is a warning alert with title and text
-          </Alert>
-
-          <Alert severity="info">
-            <AlertTitle>Info Alert</AlertTitle>
-            This is an info alert with title and text
-          </Alert>
-
-          <Alert severity="success">
-            <AlertTitle>Success Alert</AlertTitle>
-            This is a success alert with title and text
-          </Alert>
+          {severities.map(severity => (
+            <Alert
+              key={severity}
+              severity={severity}
+              action={
+                <Button
+                  variant="text"
+                  size="small"
+                  color={makeButtonColor(severity)}
+                >
+                  ACTION
+                </Button>
+              }
+            >
+              <AlertTitle>{severity}</AlertTitle>
+              This is a {severity} alert
+            </Alert>
+          ))}
         </div>
       </section>
 
-      {/* Filled variant */}
       <section>
-        <h3 style={{ marginBottom: '12px' }}>Filled Variant</h3>
+        <h3 style={{ marginBottom: '12px' }}>Filled</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <Alert severity="error" variant="filled">
-            <AlertTitle>Filled Error</AlertTitle>
-            This is a filled error alert
-          </Alert>
-
-          <Alert severity="success" variant="filled">
-            <AlertTitle>Filled Success</AlertTitle>
-            This is a filled success alert
-          </Alert>
+          {severities.map(severity => (
+            <Alert
+              key={severity}
+              variant="filled"
+              severity={severity}
+              action={
+                <Button variant="text" size="small" color="inherit">
+                  ACTION
+                </Button>
+              }
+            >
+              <AlertTitle>{severity}</AlertTitle>
+              This is a {severity} alert
+            </Alert>
+          ))}
         </div>
       </section>
 
-      {/* Outlined variant */}
       <section>
-        <h3 style={{ marginBottom: '12px' }}>Outlined Variant</h3>
+        <h3 style={{ marginBottom: '12px' }}>Outlined</h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <Alert severity="warning" variant="outlined">
-            <AlertTitle>Outlined Warning</AlertTitle>
-            This is an outlined warning alert
+          {severities.map(severity => (
+            <Alert
+              key={severity}
+              variant="outlined"
+              severity={severity}
+              action={
+                <Button
+                  variant="text"
+                  size="small"
+                  color={makeButtonColor(severity)}
+                >
+                  ACTION
+                </Button>
+              }
+            >
+              <AlertTitle>{severity}</AlertTitle>
+              This is a {severity} alert
+            </Alert>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h3 style={{ marginBottom: '12px' }}>Options</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <Alert>{message}</Alert>
+
+          <Alert>
+            <AlertTitle>This is the title</AlertTitle>
+            {message}
           </Alert>
 
-          <Alert severity="info" variant="outlined">
-            <AlertTitle>Outlined Info</AlertTitle>
-            This is an outlined info alert
+          <Alert>{longMessage}</Alert>
+
+          <Alert icon={false}>{message}</Alert>
+
+          <Alert icon={<Icon icon={DeviceLaptop} size={32} />}>{message}</Alert>
+
+          <Alert className="square">{message}</Alert>
+
+          <Alert sx={{ backgroundColor: '#EFA82D' }}>{message}</Alert>
+
+          <Alert onClose={() => undefined}>{message}</Alert>
+
+          <Alert
+            action={
+              <Button
+                variant="text"
+                size="small"
+                startIcon={<Icon icon={Download} />}
+              >
+                Download
+              </Button>
+            }
+          >
+            {message}
+          </Alert>
+
+          <Alert
+            action={
+              <>
+                <Button
+                  variant="text"
+                  size="small"
+                  startIcon={<Icon icon={Download} />}
+                >
+                  Download
+                </Button>
+                <Button variant="text" size="small">
+                  No, thanks!
+                </Button>
+                <ListItemIcon>
+                  <IconButton>
+                    <Icon icon={Dots} />
+                  </IconButton>
+                </ListItemIcon>
+              </>
+            }
+          >
+            {message}
+          </Alert>
+
+          <Alert
+            className="block"
+            action={
+              <>
+                <Button
+                  variant="text"
+                  size="small"
+                  startIcon={<Icon icon={Download} />}
+                >
+                  Download
+                </Button>
+                <Button variant="text" size="small">
+                  No, thanks!
+                </Button>
+              </>
+            }
+          >
+            <AlertTitle>This is the title</AlertTitle>
+            {message}
           </Alert>
         </div>
       </section>

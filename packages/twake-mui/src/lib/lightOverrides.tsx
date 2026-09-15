@@ -1,9 +1,29 @@
+import {
+  CheckCircle,
+  Icon,
+  Info,
+  Warning,
+  WarningCircle
+} from '@linagora/twake-icons'
+import { alertClasses } from '@mui/material/Alert'
 import { menuItemClasses } from '@mui/material/MenuItem'
 import { ThemeOptions, alpha, darken } from '@mui/material/styles'
 import React from 'react'
 
 import { radius } from './radius'
 import AccordionExpandIcon from '../components/AccordionExpandIcon'
+
+const alertSeverities = [
+  'primary',
+  'secondary',
+  'success',
+  'error',
+  'warning',
+  'info'
+] as const
+
+// cozy-ui tints the standard variant with the severity colour at this opacity
+const alertStandardOpacity = { light: 0.12, dark: 0.24 }
 
 export const lightOverrides: NonNullable<ThemeOptions['components']> = {
   MuiButton: {
@@ -588,6 +608,98 @@ export const lightOverrides: NonNullable<ThemeOptions['components']> = {
           }
         }
       })
+    }
+  },
+  MuiAlert: {
+    defaultProps: {
+      severity: 'primary',
+      iconMapping: {
+        primary: <Icon icon={Info} />,
+        secondary: <Icon icon={Info} />,
+        success: <Icon icon={CheckCircle} />,
+        error: <Icon icon={WarningCircle} />,
+        warning: <Icon icon={Warning} />,
+        info: <Icon icon={Info} />
+      }
+    },
+    styleOverrides: {
+      root: ({ theme }) => ({
+        padding: '8px 16px',
+        '&.square': {
+          borderRadius: radius.none
+        },
+        '&.block': {
+          flexWrap: 'wrap',
+          // keeps the icon on the message row so only the action wraps
+          [`& .${alertClasses.message}`]: {
+            flexBasis: 0,
+            minWidth: 0
+          },
+          [`& .${alertClasses.action}`]: {
+            width: '100%',
+            paddingLeft: 0,
+            justifyContent: 'end'
+          }
+        },
+        variants: alertSeverities.flatMap(severity => [
+          {
+            props: { colorSeverity: severity, variant: 'standard' },
+            style: {
+              color: theme.palette.text.primary,
+              backgroundColor: alpha(
+                theme.palette[severity].main,
+                alertStandardOpacity[theme.palette.mode]
+              ),
+              [`& .${alertClasses.icon}`]: {
+                color:
+                  severity === 'secondary'
+                    ? theme.palette.text.primary
+                    : theme.palette[severity].main
+              },
+              [`& .${alertClasses.action} button[title="Close"]`]: {
+                color: theme.palette.text.secondary
+              }
+            }
+          },
+          {
+            props: { colorSeverity: severity, variant: 'outlined' },
+            style: {
+              color: theme.palette.text.primary,
+              border: `1px solid ${theme.palette[severity].main}`,
+              [`& .${alertClasses.icon}`]: {
+                color:
+                  severity === 'secondary'
+                    ? theme.palette.text.primary
+                    : theme.palette[severity].main
+              }
+            }
+          },
+          {
+            props: { colorSeverity: severity, variant: 'filled' },
+            style: {
+              color: theme.palette[severity].contrastText,
+              backgroundColor: theme.palette[severity].main
+            }
+          }
+        ])
+      }),
+      icon: {
+        paddingTop: 9
+      },
+      message: {
+        flex: 'auto',
+        display: 'flex',
+        alignItems: 'center',
+        flexWrap: 'wrap'
+      }
+    }
+  },
+  MuiAlertTitle: {
+    styleOverrides: {
+      root: {
+        width: '100%',
+        fontWeight: 'bold'
+      }
     }
   }
 }
