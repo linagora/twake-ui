@@ -1,11 +1,10 @@
 import { createTheme, ThemeOptions } from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
 
-import { darkOverrides } from './darkOverrides'
-import { lightOverrides } from './lightOverrides'
 import { makePalette } from './makePalette'
 import { makeShadows } from './makeShadows'
 import { makeTypography } from './makeTypography'
+import { overrides } from './overrides'
 import { PaletteJson } from './types'
 // DatePicker styles are applied through component overrides
 
@@ -34,10 +33,15 @@ export const makeTheme = (
 ): ReturnType<typeof createTheme> => {
   const baseOptions: ThemeOptions = {
     ...themesCommonConfig,
-    palette: makePalette(mode, paletteOverrides),
+    cssVariables: { colorSchemeSelector: 'data-theme' },
+    defaultColorScheme: mode,
+    colorSchemes: {
+      light: { palette: makePalette('light', paletteOverrides) },
+      dark: { palette: makePalette('dark', paletteOverrides) }
+    },
     typography: makeTypography(),
-    shadows: makeShadows(mode),
-    components: mode === 'dark' ? darkOverrides : lightOverrides
+    shadows: makeShadows(),
+    components: overrides
   }
 
   return createTheme(deepmerge(baseOptions, themeOptions ?? {}))
