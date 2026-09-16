@@ -792,6 +792,20 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiTypography: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        variants: [
+          {
+            // cozy-ui greys captions unless a colour is asked for
+            props: ({ ownerState }) =>
+              ownerState.variant === 'caption' && !ownerState.color,
+            style: { color: theme.vars.palette.text.secondary }
+          }
+        ]
+      })
+    }
+  },
   MuiAlert: {
     // MUI maps an icon to its own four severities only. Reuse its info icon for
     // the two it does not know; the per-severity fallback keeps the rest.
