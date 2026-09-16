@@ -17,6 +17,7 @@ import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { formHelperTextClasses } from '@mui/material/FormHelperText'
 import { formLabelClasses } from '@mui/material/FormLabel'
+import { listItemButtonClasses } from '@mui/material/ListItemButton'
 import { menuItemClasses } from '@mui/material/MenuItem'
 import { outlinedInputClasses } from '@mui/material/OutlinedInput'
 import { radioClasses } from '@mui/material/Radio'
@@ -1071,6 +1072,136 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         lineHeight: 1.3,
         borderRadius: '4px',
         padding: '8px 12px'
+      })
+    }
+  },
+  MuiListItem: {
+    styleOverrides: {
+      root: {
+        gap: 16,
+        minHeight: 56,
+        '&.small': { minHeight: 48 },
+        '&.large': { minHeight: 64 },
+        variants: [
+          {
+            props: ({ ownerState }) => !ownerState.disablePadding,
+            style: {
+              paddingTop: 12,
+              paddingBottom: 12,
+              '&.small': { paddingTop: 8, paddingBottom: 8 },
+              '&.large': { paddingTop: 16, paddingBottom: 16 }
+            }
+          },
+          {
+            props: ({ ownerState }) => !!ownerState.dense,
+            style: {
+              minHeight: 48,
+              '&.small': { minHeight: 40 },
+              '&.large': { minHeight: 56 }
+            }
+          },
+          {
+            props: ({ ownerState }) =>
+              !ownerState.disablePadding && !!ownerState.dense,
+            style: {
+              paddingTop: 8,
+              paddingBottom: 8,
+              '&.small': { paddingTop: 4, paddingBottom: 4 },
+              '&.large': { paddingTop: 12, paddingBottom: 12 }
+            }
+          },
+          {
+            props: ({ ownerState }) =>
+              !ownerState.disablePadding && !ownerState.disableGutters,
+            style: {
+              paddingLeft: 'var(--ListItem-gutter, 16px)',
+              paddingRight: 'var(--ListItem-gutter, 16px)'
+            }
+          },
+          // Room for the absolutely positioned actions: 48px per button plus
+          // the gutter, which the ListItem wrapper computes into the variable
+          {
+            props: ({ ownerState }) =>
+              !ownerState.disablePadding && !!ownerState.secondaryAction,
+            style: { paddingRight: 'var(--ListItem-actionsWidth, 56px)' }
+          },
+          {
+            props: ({ ownerState }) => !!ownerState.secondaryAction,
+            style: {
+              [`& > .${listItemButtonClasses.root}`]: {
+                paddingRight: 'var(--ListItem-actionsWidth, 56px)'
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  MuiListItemButton: {
+    styleOverrides: {
+      root: {
+        gap: 16,
+        minHeight: 56,
+        paddingTop: 12,
+        paddingBottom: 12,
+        '.small > &': { minHeight: 48, paddingTop: 8, paddingBottom: 8 },
+        '.large > &': { minHeight: 64, paddingTop: 16, paddingBottom: 16 },
+        variants: [
+          {
+            props: ({ ownerState }) => !ownerState.disableGutters,
+            style: {
+              paddingLeft: 'var(--ListItem-gutter, 16px)',
+              paddingRight: 'var(--ListItem-gutter, 16px)'
+            }
+          },
+          {
+            props: ({ ownerState }) => !!ownerState.dense,
+            style: {
+              minHeight: 48,
+              paddingTop: 8,
+              paddingBottom: 8,
+              '.small > &': { minHeight: 40, paddingTop: 4, paddingBottom: 4 },
+              '.large > &': {
+                minHeight: 56,
+                paddingTop: 12,
+                paddingBottom: 12
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  MuiListItemIcon: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        minWidth: 'auto',
+        width: 32,
+        height: 32,
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: theme.vars.palette.text.icon
+      })
+    }
+  },
+  MuiListItemSecondaryAction: {
+    styleOverrides: {
+      root: {
+        right: 'calc(var(--ListItem-gutter, 16px) - 16px)'
+      }
+    }
+  },
+  MuiListSubheader: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        ...theme.typography.subtitle2,
+        paddingTop: 8,
+        paddingBottom: 8,
+        marginBottom: 8,
+        backgroundColor: theme.vars.palette.background.contrast
+      }),
+      sticky: ({ theme }) => ({
+        backgroundColor: theme.vars.palette.background.default
       })
     }
   },

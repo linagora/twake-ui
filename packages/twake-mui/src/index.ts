@@ -24,6 +24,7 @@ export { default as Chip } from './components/Chip'
 export { Dialog, default as DialogDefault } from './components/Dialog'
 export { Tabs, default as TabsDefault } from './components/Tabs'
 export { Switch, default as SwitchDefault } from './components/Switch'
+export { ListItem, default as ListItemDefault } from './components/ListItem'
 export { nameToColor, supportedColors } from './components/Avatar/helpers'
 export { default as AccordionExpandIcon } from './components/AccordionExpandIcon'
 export { useBreakpoints } from './hooks/useBreakpoints'
@@ -36,4 +37,9 @@ export type { ChipProps } from './components/Chip'
 export type { DialogProps, DialogSize } from './components/Dialog'
 export type { TabsProps } from './components/Tabs'
 export type { SwitchProps } from './components/Switch'
+export type {
+  ListItemProps,
+  ListItemSize,
+  ListItemGutters
+} from './components/ListItem'
 export type { Breakpoints } from './hooks/useBreakpoints'
