@@ -150,3 +150,9 @@ declare module '@mui/material/Alert' {
     secondary: true
   }
 }
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    ghost: true
+  }
+}

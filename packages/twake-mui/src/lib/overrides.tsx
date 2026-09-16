@@ -1,5 +1,7 @@
+import { Icon, Spinner } from '@linagora/twake-icons'
 import InfoOutlined from '@mui/icons-material/InfoOutlined'
 import { alertClasses } from '@mui/material/Alert'
+import { buttonClasses } from '@mui/material/Button'
 import { menuItemClasses } from '@mui/material/MenuItem'
 import {
   CSSObject,
@@ -84,7 +86,142 @@ const makeAvatarSizes = (theme: Theme): CSSObject =>
     ])
   )
 
+// cozy-ui tints every colour but primary at 8%, primary at 25%
+const buttonGhostColors = [
+  'secondary',
+  'success',
+  'error',
+  'warning',
+  'info'
+] as const
+
 export const overrides: NonNullable<ThemeOptions['components']> = {
+  MuiButton: {
+    defaultProps: {
+      variant: 'contained',
+      disableElevation: true,
+      loadingPosition: 'end',
+      loadingIndicator: (
+        <Icon icon={Spinner} spin aria-hidden focusable="false" />
+      )
+    },
+    styleOverrides: {
+      root: ({ theme }) => ({
+        borderRadius: radius.pill,
+        lineHeight: 'normal',
+        minHeight: 40,
+        padding: '10px 24px',
+        variants: [
+          {
+            props: { variant: 'outlined' },
+            style: { padding: '5px 15px', borderColor: 'currentColor' }
+          },
+          {
+            props: { variant: 'text' },
+            style: { minWidth: 'auto', padding: '10px 8px' }
+          },
+          {
+            props: { variant: 'ghost' },
+            style: {
+              padding: '5px 15px',
+              color: theme.vars.palette.text.primary,
+              backgroundColor: theme.alpha(
+                theme.vars.palette.primary.main,
+                0.25
+              ),
+              '@media (hover: hover)': {
+                '&:hover': {
+                  backgroundColor: theme.alpha(
+                    theme.vars.palette.primary.main,
+                    0.32
+                  )
+                }
+              },
+              [`&.${buttonClasses.disabled}`]: {
+                backgroundColor: 'transparent',
+                border: `1px solid ${theme.vars.palette.action.disabledBackground}`
+              }
+            }
+          },
+          ...buttonGhostColors.map(color => ({
+            props: { variant: 'ghost' as const, color },
+            style: {
+              color: theme.vars.palette[color].main,
+              backgroundColor: theme.alpha(
+                theme.vars.palette[color].main,
+                0.08
+              ),
+              '@media (hover: hover)': {
+                '&:hover': {
+                  backgroundColor: theme.alpha(
+                    theme.vars.palette[color].main,
+                    0.16
+                  )
+                }
+              }
+            }
+          })),
+          // Vertical paddings sit 1px under cozy-ui's so the outlined border
+          // still fits the fixed heights cozy-ui forces (36, 40, 48).
+          {
+            props: { size: 'small' },
+            style: {
+              minHeight: 36,
+              padding: '9px 16px',
+              fontSize: theme.typography.pxToRem(13)
+            }
+          },
+          {
+            props: { size: 'small', variant: 'text' },
+            style: { padding: '8px 16px' }
+          },
+          {
+            props: { size: 'large' },
+            style: {
+              minHeight: 48,
+              padding: '13px 32px',
+              fontSize: theme.typography.pxToRem(15)
+            }
+          },
+          {
+            props: { size: 'large', variant: 'text' },
+            style: { padding: '14px 10px' }
+          }
+        ]
+      }),
+      // Keep the end spinner where cozy-ui's inline endIcon sat, i.e. at the
+      // horizontal padding of each variant and size.
+      loadingIndicator: {
+        variants: [
+          { props: { loadingPosition: 'end' }, style: { right: 24 } },
+          {
+            props: { loadingPosition: 'end', variant: 'outlined' },
+            style: { right: 15 }
+          },
+          {
+            props: { loadingPosition: 'end', variant: 'ghost' },
+            style: { right: 15 }
+          },
+          {
+            props: { loadingPosition: 'end', variant: 'text' },
+            style: { right: 8 }
+          },
+          {
+            props: { loadingPosition: 'end', size: 'small' },
+            style: { right: 16 }
+          },
+          {
+            props: { loadingPosition: 'end', size: 'large' },
+            style: { right: 32 }
+          },
+          {
+            props: { loadingPosition: 'end', size: 'large', variant: 'text' },
+            style: { right: 10 }
+          }
+        ]
+      }
+    }
+  },
   MuiOutlinedInput: {
     styleOverrides: {
       root: ({ theme }) => ({
