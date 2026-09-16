@@ -308,45 +308,6 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
-  MuiDialog: {
-    styleOverrides: {
-      paper: {
-        borderRadius: radius.md,
-        boxShadow:
-          '0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 4px 8px 3px rgba(0, 0, 0, 0.15)',
-        maxWidth: '570px'
-      },
-      paperFullScreen: {
-        borderRadius: 0,
-        maxWidth: '100%'
-      }
-    }
-  },
-  MuiDialogTitle: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        ...theme.typography.h3,
-        padding: '12px 32px',
-        [theme.breakpoints.down('sm')]: {
-          ...theme.typography.h4
-        }
-      })
-    }
-  },
-  MuiDialogContent: {
-    styleOverrides: {
-      root: {
-        padding: '24px 32px'
-      }
-    }
-  },
-  MuiDialogActions: {
-    styleOverrides: {
-      root: {
-        padding: '16px 32px'
-      }
-    }
-  },
   MuiChip: {
     styleOverrides: {
       root: {
