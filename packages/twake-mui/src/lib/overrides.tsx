@@ -3,6 +3,7 @@ import InfoOutlined from '@mui/icons-material/InfoOutlined'
 import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
 import { checkboxClasses } from '@mui/material/Checkbox'
+import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { menuItemClasses } from '@mui/material/MenuItem'
 import {
   CSSObject,
@@ -306,6 +307,76 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       tag: {
         margin: '2px'
       }
+    }
+  },
+  MuiDialog: {
+    defaultProps: { disableEnforceFocus: true },
+    styleOverrides: {
+      paper: ({ theme }) => ({
+        width: '100%',
+        '&.small': {
+          maxWidth: 480,
+          [theme.breakpoints.down('lg')]: {
+            margin: 16,
+            padding: '0 8px 8px',
+            height: 'auto',
+            maxHeight: 'calc(100% - 32px)',
+            borderRadius: 6
+          }
+        },
+        '&.medium': { maxWidth: 544 },
+        '&.large': { maxWidth: 800 },
+        '&.full': { maxWidth: '100%' }
+      }),
+      paperFullScreen: {
+        '&.small, &.medium, &.large': { maxWidth: '100%' }
+      }
+    }
+  },
+  MuiDialogTitle: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        ...theme.typography.h3,
+        boxSizing: 'border-box',
+        width: '100%',
+        padding: '1.5rem 2rem',
+        [theme.breakpoints.down('md')]: {
+          ...theme.typography.h4,
+          padding: '0.75rem 1rem'
+        },
+        // padding base + button width + button margin
+        '&.dialogTitleWithBack': {
+          paddingLeft: '4rem',
+          [theme.breakpoints.down('md')]: { paddingLeft: '3rem' }
+        },
+        '&.dialogTitleWithClose': {
+          paddingRight: '4rem',
+          [theme.breakpoints.down('md')]: { paddingRight: '3rem' }
+        }
+      })
+    }
+  },
+  MuiDialogContent: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        padding: '24px 32px 0',
+        [theme.breakpoints.down('md')]: { padding: '24px 16px 0' },
+        // MUI drops the top padding after a title, cozy-ui keeps it
+        [`.${dialogTitleClasses.root} + &`]: { paddingTop: 24 }
+      })
+    }
+  },
+  MuiDialogActions: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        margin: '16px 32px',
+        padding: 0,
+        [theme.breakpoints.down('md')]: {
+          margin: '8px 16px',
+          '& button': { flexGrow: 1 }
+        },
+        '& > :not(style) ~ :not(style)': { marginLeft: 4 }
+      })
     }
   },
   MuiChip: {
