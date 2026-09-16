@@ -1,6 +1,19 @@
-import { Button, Stack } from '@mui/material'
+import { Icon, Plus, Stop } from '@linagora/twake-icons'
+import { Box, Button, ButtonProps, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+const variants = ['contained', 'outlined', 'ghost', 'text'] as const
+const sizes = ['small', 'medium', 'large'] as const
+const colors = [
+  'inherit',
+  'primary',
+  'secondary',
+  'success',
+  'error',
+  'warning',
+  'info'
+] as const
 
 const meta: Meta<typeof Button> = {
   title: 'Button',
@@ -8,143 +21,156 @@ const meta: Meta<typeof Button> = {
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['contained', 'outlined', 'text']
-    },
-    color: {
-      control: 'select',
-      options: ['primary', 'secondary', 'error', 'warning', 'info', 'success']
-    },
-    size: {
-      control: 'select',
-      options: ['small', 'medium', 'large']
-    }
+    variant: { control: 'select', options: variants },
+    color: { control: 'select', options: colors },
+    size: { control: 'select', options: sizes },
+    disabled: { control: 'boolean' },
+    loading: { control: 'boolean' },
+    fullWidth: { control: 'boolean' }
   }
 }
 
 export default meta
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<typeof meta>
 
-export const Docs: Story = {
+export const Default: Story = {
   args: {
     variant: 'contained',
     children: 'Button'
   }
 }
 
+const Section: React.FC<{ title: string; children: React.ReactNode }> = ({
+  title,
+  children
+}) => (
+  <section>
+    <h3 style={{ marginBottom: '12px' }}>{title}</h3>
+    <Stack direction="row" spacing={4} useFlexGap sx={{ flexWrap: 'wrap' }}>
+      {children}
+    </Stack>
+  </section>
+)
+
+// One column per props set, one button per variant, as the cozy-ui doc does
+const Column: React.FC<{ title: string; props?: ButtonProps }> = ({
+  title,
+  props
+}) => (
+  <Stack spacing={1} sx={{ alignItems: 'flex-start' }}>
+    <div>{title}</div>
+    {variants.map(variant => (
+      <Button key={variant} variant={variant} {...props}>
+        {variant}
+      </Button>
+    ))}
+  </Stack>
+)
+
 // Visual Regression - All variants combined
 export const Screenshot: Story = {
   tags: ['argos'],
   render: () => (
     <Stack spacing={4}>
-      {/* Variants */}
-      <section>
-        <h3 style={{ marginBottom: '12px' }}>Variants</h3>
-        <Stack direction="row" spacing={2}>
-          <Button variant="contained">Contained</Button>
-          <Button variant="outlined">Outlined</Button>
-          <Button variant="text">Text</Button>
-        </Stack>
-      </section>
+      <Section title="Default">
+        <Column title="default" />
+        <Column title="disabled" props={{ disabled: true }} />
+        <Column title="loading" props={{ loading: true }} />
+      </Section>
 
-      {/* Colors */}
-      <section>
-        <h3 style={{ marginBottom: '12px' }}>Colors contained</h3>
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-          <Button variant="contained" color="primary">
-            Primary
-          </Button>
-          <Button variant="contained" color="secondary">
-            Secondary
-          </Button>
-          <Button variant="contained" color="success">
-            Success
-          </Button>
-          <Button variant="contained" color="error">
-            Error
-          </Button>
-          <Button variant="contained" color="warning">
-            Warning
-          </Button>
-          <Button variant="contained" color="info">
-            Info
-          </Button>
-        </Stack>
-      </section>
-      <section>
-        <h3 style={{ marginBottom: '12px' }}>Colors outlined</h3>
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-          <Button variant="outlined" color="primary">
-            Primary
-          </Button>
-          <Button variant="outlined" color="secondary">
-            Secondary
-          </Button>
-          <Button variant="outlined" color="success">
-            Success
-          </Button>
-          <Button variant="outlined" color="error">
-            Error
-          </Button>
-          <Button variant="outlined" color="warning">
-            Warning
-          </Button>
-          <Button variant="outlined" color="info">
-            Info
-          </Button>
-        </Stack>
-      </section>
-      <section>
-        <h3 style={{ marginBottom: '12px' }}>Colors text</h3>
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-          <Button variant="text" color="primary">
-            Primary
-          </Button>
-          <Button variant="text" color="secondary">
-            Secondary
-          </Button>
-          <Button variant="text" color="success">
-            Success
-          </Button>
-          <Button variant="text" color="error">
-            Error
-          </Button>
-          <Button variant="text" color="warning">
-            Warning
-          </Button>
-          <Button variant="text" color="info">
-            Info
-          </Button>
-        </Stack>
-      </section>
+      <Section title="Sizes">
+        {sizes.map(size => (
+          <Column key={size} title={size} props={{ size }} />
+        ))}
+      </Section>
 
-      {/* Sizes */}
-      <section>
-        <h3 style={{ marginBottom: '12px' }}>Sizes</h3>
-        <Stack direction="row" spacing={2} sx={{ alignItems: 'center' }}>
-          <Button variant="contained" size="small">
-            Small
-          </Button>
-          <Button variant="contained" size="medium">
-            Medium
-          </Button>
-          <Button variant="contained" size="large">
-            Large
-          </Button>
+      <Section title="Icons">
+        <Column title="startIcon" props={{ startIcon: <Icon icon={Plus} /> }} />
+        <Column title="endIcon" props={{ endIcon: <Icon icon={Plus} /> }} />
+        <Stack spacing={1} sx={{ alignItems: 'flex-start' }}>
+          <div>label is only icon</div>
+          {variants.map(variant => (
+            <Stack key={variant} direction="row" spacing={2}>
+              <Button variant={variant}>
+                <Icon icon={Plus} />
+              </Button>
+              <Button variant={variant} disabled>
+                <Icon icon={Plus} />
+              </Button>
+            </Stack>
+          ))}
         </Stack>
-      </section>
+        <Stack spacing={1} sx={{ alignItems: 'flex-start' }}>
+          <div>round icon button</div>
+          {variants.map(variant => (
+            <Stack key={variant} direction="row" spacing={2}>
+              {[false, true].map(disabled => (
+                <Button
+                  key={String(disabled)}
+                  variant={variant}
+                  size="small"
+                  disabled={disabled}
+                  sx={{
+                    minWidth: 'auto',
+                    minHeight: 'auto',
+                    width: 32,
+                    height: 32,
+                    padding: 0,
+                    borderRadius: '50%'
+                  }}
+                >
+                  <Icon icon={Stop} size={12} />
+                </Button>
+              ))}
+            </Stack>
+          ))}
+        </Stack>
+      </Section>
 
-      {/* States */}
-      <section>
-        <h3 style={{ marginBottom: '12px' }}>States</h3>
-        <Stack direction="row" spacing={2}>
-          <Button variant="contained">Normal</Button>
-          <Button variant="contained" disabled>
-            Disabled
-          </Button>
-        </Stack>
-      </section>
+      <Section title="Icons with sizes">
+        {(['startIcon', 'endIcon'] as const).map(position =>
+          sizes.map(size => (
+            <Column
+              key={position + size}
+              title={`${position} - ${size}`}
+              props={{ size, [position]: <Icon icon={Plus} /> }}
+            />
+          ))
+        )}
+      </Section>
+
+      <Section title="Colors">
+        {colors.map(color => (
+          <Column key={color} title={color} props={{ color }} />
+        ))}
+      </Section>
+
+      <Section title="Disabled colors">
+        {colors.map(color => (
+          <Column key={color} title={color} props={{ color, disabled: true }} />
+        ))}
+      </Section>
+
+      <Section title="Loading colors">
+        {colors.map(color => (
+          <Column key={color} title={color} props={{ color, loading: true }} />
+        ))}
+      </Section>
+
+      <Section title="Long label">
+        {sizes.map(size => (
+          <Stack key={size} spacing={1} sx={{ width: 128 }}>
+            <div>{size}</div>
+            {variants.map(variant => (
+              <Box key={variant}>
+                <Button variant={variant} size={size}>
+                  {variant} with long label
+                </Button>
+              </Box>
+            ))}
+          </Stack>
+        ))}
+      </Section>
     </Stack>
   )
 }
