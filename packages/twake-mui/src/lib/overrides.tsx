@@ -1,9 +1,67 @@
+import InfoOutlined from '@mui/icons-material/InfoOutlined'
+import { alertClasses } from '@mui/material/Alert'
 import { menuItemClasses } from '@mui/material/MenuItem'
-import { ThemeOptions, alpha, darken } from '@mui/material/styles'
+import {
+  CSSObject,
+  Theme,
+  ThemeOptions,
+  alpha,
+  darken
+} from '@mui/material/styles'
 import React from 'react'
 
 import { radius } from './radius'
 import AccordionExpandIcon from '../components/AccordionExpandIcon'
+
+const alertSeverities = [
+  'primary',
+  'secondary',
+  'success',
+  'error',
+  'warning',
+  'info'
+] as const
+
+const alertIconColor = (
+  severity: (typeof alertSeverities)[number],
+  theme: Theme
+): string | undefined => {
+  if (severity === 'primary') return theme.vars.palette.primary.main
+  if (severity === 'secondary') return theme.vars.palette.text.primary
+  return undefined
+}
+
+const alertSeverityVariants = alertSeverities.flatMap(severity => [
+  {
+    props: { colorSeverity: severity, variant: 'standard' as const },
+    style: ({ theme }: { theme: Theme }): CSSObject => ({
+      color: theme.vars.palette.text.primary,
+      backgroundColor: theme.alpha(theme.vars.palette[severity].main, 0.12),
+      ...theme.applyStyles('dark', {
+        backgroundColor: theme.alpha(theme.vars.palette[severity].main, 0.24)
+      }),
+      [`& .${alertClasses.icon}`]: { color: alertIconColor(severity, theme) },
+      [`& .${alertClasses.action} button[title="Close"]`]: {
+        color: theme.vars.palette.text.secondary
+      }
+    })
+  },
+  {
+    props: { colorSeverity: severity, variant: 'outlined' as const },
+    style: ({ theme }: { theme: Theme }): CSSObject => ({
+      color: theme.vars.palette.text.primary,
+      border: `1px solid ${theme.vars.palette[severity].main}`,
+      [`& .${alertClasses.icon}`]: { color: alertIconColor(severity, theme) }
+    })
+  },
+  {
+    props: { colorSeverity: severity, variant: 'filled' as const },
+    style: ({ theme }: { theme: Theme }): CSSObject => ({
+      color: theme.vars.palette[severity].contrastText,
+      backgroundColor: theme.vars.palette[severity].main
+    })
+  }
+])
 
 export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiButton: {
@@ -444,6 +502,36 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         '&.MuiCheckbox-sizeSmall': {
           padding: '6px'
         }
+      }
+    }
+  },
+  MuiAlert: {
+    // MUI maps an icon to its own four severities only. Reuse its info icon for
+    // the two it does not know; the per-severity fallback keeps the rest.
+    defaultProps: {
+      iconMapping: {
+        primary: <InfoOutlined fontSize="inherit" />,
+        secondary: <InfoOutlined fontSize="inherit" />
+      }
+    },
+    styleOverrides: {
+      root: {
+        padding: '8px 16px',
+        variants: alertSeverityVariants
+      },
+      icon: {
+        paddingTop: '9px'
+      },
+      action: {
+        alignItems: 'center',
+        paddingTop: 0
+      }
+    }
+  },
+  MuiAlertTitle: {
+    styleOverrides: {
+      root: {
+        fontWeight: 'bold'
       }
     }
   },
