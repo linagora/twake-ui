@@ -143,3 +143,10 @@ declare module '@mui/material/IconButton' {
     xsmall: true
   }
 }
+
+declare module '@mui/material/Alert' {
+  interface AlertPropsColorOverrides {
+    primary: true
+    secondary: true
+  }
+}
