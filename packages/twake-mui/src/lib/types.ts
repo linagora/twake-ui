@@ -117,6 +117,10 @@ export type MakeTypography = () => TypographyOptions
  * `theme.palette.background.contrast` get a type error.
  */
 declare module '@mui/material/styles' {
+  interface CssThemeVariables {
+    enabled: true
+  }
+
   interface TypeBackground {
     contrast: string
   }
