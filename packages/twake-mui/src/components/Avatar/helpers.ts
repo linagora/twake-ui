@@ -1,35 +1,3 @@
-export const sizeToFontSize = {
-  xs: 9.109,
-  s: 12.525,
-  m: 18.219,
-  l: 27.328,
-  xl: 36.438
-}
-
-export const sizeToNb = {
-  xs: 18,
-  s: 28,
-  m: 36,
-  l: 54,
-  xl: 72
-}
-
-export const sizeToFontWeight = {
-  xs: 500,
-  s: 500,
-  m: 500,
-  l: 600,
-  xl: 600
-}
-
-export const sizeToLineHeight = {
-  xs: 18.219,
-  s: 18.219,
-  m: 27.328,
-  l: 36.438,
-  xl: 45.547
-}
-
 export const supportedColors = [
   'sunrise',
   'downy',
