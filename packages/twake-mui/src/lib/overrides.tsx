@@ -1226,28 +1226,5 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         backgroundColor: theme.vars.palette.background.default
       })
     }
-  },
-  MuiMenuItem: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        borderRadius: radius.md,
-        '&&&:hover': {
-          backgroundColor: `${alpha(theme.palette.primary.main, theme.palette.action.hoverOpacity)}`
-        },
-        [`&.${menuItemClasses.selected}`]: {
-          backgroundColor: alpha(
-            theme.palette.primary.main,
-            theme.palette.action.selectedOpacity
-          ),
-          '&:hover': {
-            backgroundColor: alpha(
-              theme.palette.primary.main,
-              theme.palette.action.selectedOpacity +
-                theme.palette.action.hoverOpacity
-            )
-          }
-        }
-      })
-    }
   }
 }
