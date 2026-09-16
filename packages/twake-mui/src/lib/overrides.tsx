@@ -13,6 +13,8 @@ import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { menuItemClasses } from '@mui/material/MenuItem'
 import { radioClasses } from '@mui/material/Radio'
 import { switchClasses } from '@mui/material/Switch'
+import { tabClasses } from '@mui/material/Tab'
+import { tabsClasses } from '@mui/material/Tabs'
 import {
   CSSObject,
   Theme,
@@ -720,6 +722,73 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         borderRadius: 100,
         opacity: 1,
         backgroundColor: theme.vars.palette.text.disabled
+      })
+    }
+  },
+  MuiTabs: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        '&.segmented': {
+          borderRadius: 99,
+          backgroundColor: theme.vars.palette.background.contrast,
+          overflow: 'visible',
+          minHeight: 40,
+          [`& .${tabsClasses.indicator}`]: {
+            top: 1,
+            height: 'calc(100% - 2px)',
+            transform: 'scale(0.99)',
+            borderRadius: 99,
+            zIndex: 0,
+            boxShadow: theme.vars.shadows[1],
+            backgroundColor: theme.vars.palette.background.paper
+          },
+          [`& .${tabsClasses.fixed}`]: { overflow: 'visible !important' },
+          [`& .${tabsClasses.scrollButtons}`]: { borderRadius: 99 },
+          [`& .${tabClasses.root}`]: {
+            ...theme.typography.body2,
+            textTransform: 'initial',
+            zIndex: 1,
+            borderRadius: 99,
+            minHeight: 40,
+            [`&.${tabClasses.selected}`]: {
+              color: theme.vars.palette.text.primary
+            }
+          }
+        },
+        [`&.narrowed .${tabClasses.root}`]: { minWidth: 'auto' },
+        variants: [
+          {
+            // cozy-ui stretches standard tabs across the width on mobile
+            props: { variant: 'standard' },
+            style: {
+              [theme.breakpoints.down('md')]: {
+                [`& .${tabClasses.root}`]: {
+                  flexShrink: 1,
+                  flexGrow: 1,
+                  flexBasis: 0,
+                  maxWidth: 'none'
+                }
+              }
+            }
+          }
+        ]
+      })
+    }
+  },
+  MuiTab: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        ...theme.typography.subtitle2,
+        minWidth: 72,
+        padding: '6px 12px',
+        [theme.breakpoints.up('sm')]: { minWidth: 160 },
+        [`&:hover:not(.${tabClasses.selected}):not(.${tabClasses.disabled})`]: {
+          color: theme.vars.palette.text.primary,
+          opacity: 1
+        },
+        [`&:focus:not(.${tabClasses.selected}):not(.${tabClasses.disabled})`]: {
+          color: theme.vars.palette.text.primary
+        }
       })
     }
   },
