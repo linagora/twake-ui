@@ -1,10 +1,17 @@
-import { CheckSquare, Icon, Spinner } from '@linagora/twake-icons'
+import {
+  CheckSquare,
+  Icon,
+  RadioChecked,
+  RadioUnchecked,
+  Spinner
+} from '@linagora/twake-icons'
 import InfoOutlined from '@mui/icons-material/InfoOutlined'
 import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
 import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { menuItemClasses } from '@mui/material/MenuItem'
+import { radioClasses } from '@mui/material/Radio'
 import {
   CSSObject,
   Theme,
@@ -90,6 +97,15 @@ const makeAvatarSizes = (theme: Theme): CSSObject =>
 
 // cozy-ui tints every colour but primary at 8%, primary at 25%
 const buttonGhostColors = [
+  'secondary',
+  'success',
+  'error',
+  'warning',
+  'info'
+] as const
+
+const radioColors = [
+  'primary',
   'secondary',
   'success',
   'error',
@@ -598,6 +614,40 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             style: {
               padding: 6,
               '& svg.twake-icon': { width: 16, height: 16, padding: 2 }
+            }
+          }
+        ]
+      })
+    }
+  },
+  MuiRadio: {
+    defaultProps: {
+      icon: <Icon icon={RadioUnchecked} />,
+      checkedIcon: <Icon icon={RadioChecked} />
+    },
+    styleOverrides: {
+      root: ({ theme }) => ({
+        padding: 12,
+        '& svg': { fill: theme.vars.palette.border.main },
+        variants: [
+          ...radioColors.map(color => ({
+            props: { color },
+            style: {
+              [`&.${radioClasses.checked} svg`]: {
+                fill: theme.vars.palette[color].main
+              }
+            }
+          })),
+          {
+            props: { disabled: true },
+            style: {
+              '& svg': {
+                borderRadius: '50%',
+                backgroundColor: theme.vars.palette.background.contrast
+              },
+              [`&.${radioClasses.checked} svg`]: {
+                fill: theme.vars.palette.text.disabled
+              }
             }
           }
         ]
