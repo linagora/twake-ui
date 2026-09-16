@@ -1,7 +1,8 @@
-import { Icon, Spinner } from '@linagora/twake-icons'
+import { CheckSquare, Icon, Spinner } from '@linagora/twake-icons'
 import InfoOutlined from '@mui/icons-material/InfoOutlined'
 import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
+import { checkboxClasses } from '@mui/material/Checkbox'
 import { menuItemClasses } from '@mui/material/MenuItem'
 import {
   CSSObject,
@@ -509,12 +510,32 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     }
   },
   MuiCheckbox: {
+    defaultProps: { checkedIcon: <Icon icon={CheckSquare} /> },
     styleOverrides: {
-      root: {
-        '&.MuiCheckbox-sizeSmall': {
-          padding: '6px'
-        }
-      }
+      root: ({ theme }) => ({
+        padding: 8,
+        // MUI colours an indeterminate box on its own, cozy-ui only once it is
+        // also checked
+        [`&.${checkboxClasses.indeterminate}:not(.${checkboxClasses.checked}):not(.${checkboxClasses.disabled})`]:
+          {
+            color: theme.vars.palette.text.secondary
+          },
+        '& svg.twake-icon': {
+          boxSizing: 'content-box',
+          width: 18,
+          height: 18,
+          padding: 3
+        },
+        variants: [
+          {
+            props: { size: 'small' },
+            style: {
+              padding: 6,
+              '& svg.twake-icon': { width: 16, height: 16, padding: 2 }
+            }
+          }
+        ]
+      })
     }
   },
   MuiAlert: {
