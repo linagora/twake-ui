@@ -654,6 +654,20 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiSnackbar: {
+    defaultProps: {
+      anchorOrigin: { vertical: 'bottom', horizontal: 'center' },
+      autoHideDuration: 2000
+    }
+  },
+  MuiSnackbarContent: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        padding: '4px 12px',
+        backgroundColor: theme.vars.palette.grey[600]
+      })
+    }
+  },
   MuiAlert: {
     // MUI maps an icon to its own four severities only. Reuse its info icon for
     // the two it does not know; the per-severity fallback keeps the rest.
