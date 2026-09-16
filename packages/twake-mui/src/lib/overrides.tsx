@@ -1,6 +1,8 @@
 import {
+  Bottom,
   CheckSquare,
   Icon,
+  IconProps,
   RadioChecked,
   RadioUnchecked,
   Spinner
@@ -10,8 +12,12 @@ import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
 import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
+import { formHelperTextClasses } from '@mui/material/FormHelperText'
+import { formLabelClasses } from '@mui/material/FormLabel'
 import { menuItemClasses } from '@mui/material/MenuItem'
+import { outlinedInputClasses } from '@mui/material/OutlinedInput'
 import { radioClasses } from '@mui/material/Radio'
+import { selectClasses } from '@mui/material/Select'
 import { switchClasses } from '@mui/material/Switch'
 import { tabClasses } from '@mui/material/Tab'
 import { tabsClasses } from '@mui/material/Tabs'
@@ -106,6 +112,11 @@ const buttonGhostColors = [
   'warning',
   'info'
 ] as const
+
+// cozy-ui's select caret, at the 16px twake icons render
+const SelectIcon: React.FC<Omit<IconProps, 'icon'>> = props => (
+  <Icon icon={Bottom} {...props} />
+)
 
 const radioColors = [
   'primary',
@@ -240,6 +251,142 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             style: { right: 10 }
           }
         ]
+      }
+    }
+  },
+  MuiOutlinedInput: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        borderRadius: radius.sm,
+        [`&.${outlinedInputClasses.disabled}`]: {
+          background: theme.vars.palette.background.contrast
+        },
+        [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
+          borderColor: theme.vars.palette.text.disabled
+        },
+        [`&.${outlinedInputClasses.focused} .${outlinedInputClasses.notchedOutline}`]:
+          {
+            borderWidth: 1
+          },
+        [`&.${outlinedInputClasses.error} .${outlinedInputClasses.notchedOutline}`]:
+          {
+            borderColor: theme.alpha(
+              theme.vars.palette.error.main,
+              theme.vars.palette.border.opacity
+            )
+          },
+        [`&.${outlinedInputClasses.error}:hover .${outlinedInputClasses.notchedOutline}, &.${outlinedInputClasses.error}.${outlinedInputClasses.focused} .${outlinedInputClasses.notchedOutline}`]:
+          {
+            borderColor: theme.vars.palette.error.main
+          },
+        variants: [
+          {
+            props: ({ ownerState }) => !!ownerState.startAdornment,
+            style: { paddingLeft: 16 }
+          },
+          {
+            props: ({ ownerState }) => !!ownerState.endAdornment,
+            style: { paddingRight: 16 }
+          },
+          {
+            props: ({ ownerState }) => !!ownerState.multiline,
+            style: { padding: '16.5px 16px' }
+          },
+          {
+            props: ({ ownerState }) =>
+              !!ownerState.multiline && ownerState.size === 'small',
+            style: { padding: '12.5px 16px' }
+          }
+        ]
+      }),
+      notchedOutline: ({ theme }) => ({
+        borderColor: theme.vars.palette.border.main,
+        transition: theme.transitions.create('border-color', {
+          duration: theme.transitions.duration.shorter
+        })
+      }),
+      // 16px gutters, and a 48px small field where MUI has 40px
+      input: {
+        variants: [
+          {
+            props: ({ ownerState }) =>
+              !ownerState.multiline && !ownerState.startAdornment,
+            style: { paddingLeft: 16 }
+          },
+          {
+            props: ({ ownerState }) =>
+              !ownerState.multiline && !ownerState.endAdornment,
+            style: { paddingRight: 16 }
+          },
+          {
+            props: ({ ownerState }) =>
+              !ownerState.multiline && ownerState.size === 'small',
+            style: { paddingTop: 12.5, paddingBottom: 12.5 }
+          }
+        ]
+      }
+    }
+  },
+  MuiInputLabel: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        variants: [
+          {
+            props: ({ ownerState }) =>
+              ownerState.variant === 'outlined' &&
+              ownerState.size === 'small' &&
+              !ownerState.shrink,
+            style: { transform: 'translate(14px, 12px) scale(1)' }
+          },
+          {
+            // cozy-ui keeps the resting label grey even in error
+            props: ({ ownerState }) =>
+              ownerState.variant === 'outlined' && !ownerState.shrink,
+            style: {
+              [`&.${formLabelClasses.error}`]: {
+                color: theme.vars.palette.text.secondary
+              }
+            }
+          }
+        ]
+      })
+    }
+  },
+  MuiFormLabel: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        [`&.${formLabelClasses.disabled}.${formLabelClasses.error}`]: {
+          color: theme.vars.palette.text.disabled
+        }
+      })
+    }
+  },
+  MuiFormHelperText: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        fontStyle: 'italic',
+        fontSize: theme.typography.pxToRem(14),
+        marginTop: 4,
+        [`&.${formHelperTextClasses.disabled}.${formHelperTextClasses.error}`]:
+          {
+            color: theme.vars.palette.text.disabled
+          }
+      })
+    }
+  },
+  MuiSelect: {
+    defaultProps: { IconComponent: SelectIcon },
+    styleOverrides: {
+      icon: ({ theme }) => ({
+        right: 14,
+        top: 'calc(50% - 8px)',
+        color: theme.vars.palette.text.icon,
+        [`&.${selectClasses.disabled}`]: {
+          color: theme.vars.palette.text.disabled
+        }
+      }),
+      outlined: {
+        '&&': { paddingRight: 39 }
       }
     }
   },
