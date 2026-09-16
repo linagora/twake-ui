@@ -18,6 +18,7 @@ import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { formHelperTextClasses } from '@mui/material/FormHelperText'
 import { formLabelClasses } from '@mui/material/FormLabel'
 import { listItemButtonClasses } from '@mui/material/ListItemButton'
+import { listItemIconClasses } from '@mui/material/ListItemIcon'
 import { menuItemClasses } from '@mui/material/MenuItem'
 import { outlinedInputClasses } from '@mui/material/OutlinedInput'
 import { radioClasses } from '@mui/material/Radio'
@@ -1224,6 +1225,23 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       }),
       sticky: ({ theme }) => ({
         backgroundColor: theme.vars.palette.background.default
+      })
+    }
+  },
+  MuiMenuItem: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        gap: 16,
+        whiteSpace: 'normal',
+        wordBreak: 'break-word',
+        paddingTop: 4,
+        paddingBottom: 4,
+        [theme.breakpoints.up('sm')]: { minHeight: 40 },
+        [`&.${menuItemClasses.selected}, &.${menuItemClasses.selected}:hover`]:
+          {
+            backgroundColor: theme.vars.palette.action.selected
+          },
+        [`& .${listItemIconClasses.root}`]: { minWidth: 'auto' }
       })
     }
   }
