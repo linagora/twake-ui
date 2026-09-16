@@ -12,6 +12,7 @@ import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { menuItemClasses } from '@mui/material/MenuItem'
 import { radioClasses } from '@mui/material/Radio'
+import { switchClasses } from '@mui/material/Switch'
 import {
   CSSObject,
   Theme,
@@ -665,6 +666,60 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       root: ({ theme }) => ({
         padding: '4px 12px',
         backgroundColor: theme.vars.palette.grey[600]
+      })
+    }
+  },
+  MuiSwitch: {
+    styleOverrides: {
+      root: {
+        width: 56,
+        height: 40,
+        padding: '6px 1px',
+        justifyContent: 'center'
+      },
+      switchBase: ({ theme }) => ({
+        padding: 5,
+        top: 5,
+        left: 5,
+        color: theme.vars.palette.text.icon,
+        [`&.${switchClasses.checked}`]: { transform: 'translateX(15px)' },
+        [`&.${switchClasses.checked} + .${switchClasses.track}`]: {
+          opacity: 1
+        },
+        [`&.${switchClasses.disabled}, &.${switchClasses.checked}.${switchClasses.disabled}`]:
+          {
+            color: theme.vars.palette.grey[400]
+          },
+        [`&.${switchClasses.disabled} + .${switchClasses.track}, &.${switchClasses.checked}.${switchClasses.disabled} + .${switchClasses.track}`]:
+          {
+            opacity: 1,
+            backgroundColor: theme.vars.palette.action.disabledBackground
+          },
+        // The Switch wrapper draws its own thumb so it can hold an icon
+        '& .switchThumb': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: 20,
+          height: 20,
+          borderRadius: '50%',
+          boxShadow: theme.vars.shadows[1],
+          backgroundColor: theme.vars.palette.common.white
+        },
+        [`&.${switchClasses.disabled} .switchThumb, &.${switchClasses.disabled} .${switchClasses.thumb}`]:
+          {
+            backgroundColor: theme.vars.palette.background.default
+          }
+      }),
+      thumb: ({ theme }) => ({
+        backgroundColor: theme.vars.palette.common.white
+      }),
+      track: ({ theme }) => ({
+        width: 44,
+        height: '100%',
+        borderRadius: 100,
+        opacity: 1,
+        backgroundColor: theme.vars.palette.text.disabled
       })
     }
   },
