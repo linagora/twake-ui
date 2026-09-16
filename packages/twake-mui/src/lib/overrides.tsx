@@ -379,6 +379,40 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiDivider: {
+    defaultProps: { textAlign: 'left' },
+    styleOverrides: {
+      root: {
+        variants: [
+          {
+            props: { variant: 'inset' },
+            style: { marginLeft: 64 }
+          },
+          {
+            props: ({ ownerState }) =>
+              !!ownerState.children &&
+              ownerState.textAlign === 'left' &&
+              ownerState.orientation !== 'vertical',
+            style: {
+              '&::before': { width: 0 },
+              '&::after': { width: '100%' }
+            }
+          }
+        ]
+      },
+      wrapper: ({ theme }) => ({
+        ...theme.typography.body2,
+        paddingLeft: 8,
+        paddingRight: 8,
+        variants: [
+          {
+            props: { textAlign: 'left', orientation: 'horizontal' },
+            style: { paddingLeft: 0 }
+          }
+        ]
+      })
+    }
+  },
   MuiChip: {
     styleOverrides: {
       root: {
