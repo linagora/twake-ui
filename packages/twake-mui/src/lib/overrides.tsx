@@ -243,63 +243,6 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
-  MuiOutlinedInput: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        borderRadius: radius.sm,
-        '&.Mui-focused fieldset': {
-          borderWidth: '1px'
-        },
-        '& input::placeholder': {
-          color: theme.palette.secondary.dark,
-          opacity: 1
-        },
-        '& .MuiSvgIcon-root': {
-          fontSize: '18px'
-        }
-      }),
-      input: {
-        padding: '11px 16px', // Default medium: 48px height
-        height: 'auto',
-        lineHeight: '24px',
-        variants: [
-          {
-            props: { size: 'small' },
-            style: {
-              padding: '8px 16px',
-              fontSize: '14px',
-              fontWeight: 400,
-              lineHeight: '20px',
-              minHeight: '26px'
-            }
-          }
-        ]
-      }
-    }
-  },
-  MuiSelect: {
-    styleOverrides: {
-      root: {
-        '&.MuiOutlinedInput-root': {
-          '& .MuiSvgIcon-root': {
-            fontSize: '25px'
-          },
-          '&.MuiInputBase-sizeSmall': {
-            '& .MuiSelect-select': {
-              padding: '10px 25px 10px 15px',
-              fontSize: '14px',
-              lineHeight: '20px',
-              // Note: :has() selector removed due to jsdom compatibility in tests
-              // If SVG is present, padding should be handled via component-level sx prop
-              '& svg': {
-                marginRight: '8px'
-              }
-            }
-          }
-        }
-      }
-    }
-  },
   MuiAutocomplete: {
     styleOverrides: {
       root: {
