@@ -1172,6 +1172,28 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
+  MuiListItemText: {
+    defaultProps: { slotProps: { secondary: { variant: 'caption' } } },
+    styleOverrides: {
+      root: {
+        marginTop: 1,
+        marginBottom: 1
+      },
+      primary: {
+        display: 'block',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+      },
+      secondary: {
+        display: 'block',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        marginTop: 1
+      }
+    }
+  },
   MuiListItemIcon: {
     styleOverrides: {
       root: ({ theme }) => ({
