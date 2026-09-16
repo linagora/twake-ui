@@ -63,6 +63,27 @@ const alertSeverityVariants = alertSeverities.flatMap(severity => [
   }
 ])
 
+const avatarSizes = {
+  xs: [16, 8, 10],
+  s: [24, 11, 16],
+  m: [32, 16, 20],
+  l: [48, 24, 28],
+  xl: [64, 32, 36]
+}
+
+const makeAvatarSizes = (theme: Theme): CSSObject =>
+  Object.fromEntries(
+    Object.entries(avatarSizes).map(([size, [box, font, icon]]) => [
+      `&.size-${size}`,
+      {
+        width: box,
+        height: box,
+        fontSize: theme.typography.pxToRem(font),
+        '& svg': { width: icon, height: icon }
+      }
+    ])
+  )
+
 export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiButton: {
     styleOverrides: {
@@ -328,6 +349,48 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       anchorOriginTopLeftRectangular: {
         transform: 'scale(1) translate(-37%, -37%)'
       }
+    }
+  },
+  MuiAvatar: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        fontWeight: 600,
+        ...makeAvatarSizes(theme),
+        '&.disabled': {
+          color: theme.vars.palette.primary.contrastText,
+          // cozy-ui's legacy `silver`, the same in both modes
+          background: '#d6d8da',
+          '& img': {
+            filter: 'grayscale(1) brightness(2)',
+            opacity: 0.5
+          }
+        },
+        '&.displayInline': {
+          display: 'inline-flex'
+        },
+        '&.border': {
+          border: `2px solid ${theme.vars.palette.background.paper}`
+        },
+        '&.innerBorder': {
+          boxShadow: `inset 0 0 0 1px ${theme.vars.palette.border.main}`
+        }
+      }),
+      colorDefault: ({ theme }) => ({
+        backgroundColor: theme.vars.palette.background.paper,
+        color: theme.vars.palette.text.secondary
+      })
+    }
+  },
+  MuiAvatarGroup: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        '& > div:last-child': {
+          boxShadow: `inset 0 0 0 1px ${theme.vars.palette.border.main}`
+        }
+      }),
+      avatar: ({ theme }) => ({
+        border: `2px solid ${theme.vars.palette.background.paper}`
+      })
     }
   },
   MuiToggleButtonGroup: {

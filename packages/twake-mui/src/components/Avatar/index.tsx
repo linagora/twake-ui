@@ -3,72 +3,78 @@ import {
   AvatarProps as MuiAvatarProps
 } from '@mui/material'
 import { styled } from '@mui/material/styles'
+import cx from 'classnames'
 import React from 'react'
 
-import { colorMapping, nameToColor, supportedColors } from './helpers'
+import { colorMapping, nameToColor } from './helpers'
 
-const capitalize = (str: string): string => {
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
-
-type AvatarSize = 'xs' | 's' | 'm' | 'l' | 'xl'
-type AvatarColor = (typeof supportedColors)[number] | 'none'
-type AvatarDisplay = 'initial' | 'inline'
+export type AvatarSize = 'xs' | 's' | 'm' | 'l' | 'xl'
 
 export interface AvatarProps extends Omit<MuiAvatarProps, 'color'> {
-  color?: AvatarColor
+  color?: string
   size?: AvatarSize | number
+  textColor?: string
   border?: boolean
   innerBorder?: boolean
   disabled?: boolean
-  display?: AvatarDisplay
+  display?: 'initial' | 'inline'
 }
 
+interface StyledAvatarProps {
+  background?: string
+  textColor?: string
+  customSize?: number
+}
+
+const transientProps = ['background', 'textColor', 'customSize']
+
 const StyledAvatar = styled(MuiAvatar, {
-  shouldForwardProp: prop => prop !== 'gradientColor'
-})<{ gradientColor?: string }>(({ theme, gradientColor }) => ({
-  ...(gradientColor && {
-    color: theme.palette.primary.contrastText,
-    background: colorMapping[gradientColor] || undefined
-  })
+  shouldForwardProp: prop => !transientProps.includes(String(prop))
+})<StyledAvatarProps>(({ background, textColor, customSize }) => ({
+  ...(customSize && {
+    width: customSize,
+    height: customSize,
+    fontSize: customSize / 2
+  }),
+  // The text stays white on a coloured avatar whatever the mode
+  ...(background && { background, color: '#fff' }),
+  ...(textColor && { color: textColor })
 }))
 
 export const Avatar: React.FC<AvatarProps> = ({
   className,
   color,
-  size,
+  size = 'm',
+  textColor,
   border,
   innerBorder,
   disabled,
   display = 'initial',
-  sx,
+  children,
   ...props
 }) => {
-  const defaultColor =
-    typeof props.children === 'string' ? nameToColor(props.children) : undefined
-
-  const finalColor =
-    color === 'none'
-      ? undefined
-      : color && supportedColors.includes(color)
-        ? color
-        : defaultColor
-
-  const classNames: string[] = []
-  if (className) classNames.push(className)
-  if (size && typeof size === 'string') classNames.push(`size-${size}`)
-  if (disabled) classNames.push('disabled')
-  if (border) classNames.push('border')
-  if (innerBorder) classNames.push('innerBorder')
-  if (display !== 'initial') classNames.push(`display${capitalize(display)}`)
+  const isCustomSize = typeof size === 'number'
+  const nameColor = typeof children === 'string' ? nameToColor(children) : ''
+  const madeColor = color === 'none' ? '' : color || nameColor
 
   return (
     <StyledAvatar
-      gradientColor={finalColor}
-      className={classNames.join(' ') || undefined}
-      sx={sx}
+      className={cx(className, {
+        [`size-${size}`]: !isCustomSize,
+        disabled,
+        border,
+        innerBorder,
+        displayInline: display === 'inline'
+      })}
+      customSize={isCustomSize ? size : undefined}
+      background={
+        madeColor ? (colorMapping[madeColor] ?? madeColor) : undefined
+      }
+      textColor={textColor}
       {...props}
-    />
+    >
+      {children}
+    </StyledAvatar>
   )
 }
 
