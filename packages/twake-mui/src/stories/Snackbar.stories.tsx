@@ -69,10 +69,13 @@ export const Default: Story = {
   render: args => <OpenableSnackbar {...args} />
 }
 
-// Renders in the flow of the page rather than fixed at the bottom
+// Renders in the flow of the page rather than fixed at the bottom. The top-left
+// anchor is the only one MUI positions without a transform, so nothing has to
+// win over the anchor rules.
 const staticProps = {
   open: true,
-  sx: { position: 'static', transform: 'none' }
+  anchorOrigin: { vertical: 'top', horizontal: 'left' },
+  sx: { position: 'static' }
 } satisfies Partial<SnackbarProps>
 
 // Visual Regression - Every example of the cozy-ui Snackbar doc
