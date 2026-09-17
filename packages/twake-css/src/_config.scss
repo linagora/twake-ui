@@ -1,0 +1,66 @@
+@use 'sass:map';
+@use 'sass:math';
+
+// Responsive suffixes, matching the breakpoints cozy-ui generated utilities for.
+// Order matters: on a narrow screen several of them match at once, and the last
+// one wins.
+$breakpoints: (
+  't': 30rem,
+  's': 48rem,
+  'm': 63.938rem
+);
+
+// Legacy scale, counted in rem steps.
+$sizes: (
+  'auto': auto,
+  '0': 0,
+  'half': .5rem,
+  '1': 1rem,
+  '1-half': 1.5rem,
+  '2': 2rem,
+  '2-half': 2.5rem,
+  '3': 3rem
+);
+
+// The scale the design team actually uses.
+$spacing: (
+  'm': 1rem,
+  'xs': .5rem,
+  's': .75rem,
+  'l': 1.5rem,
+  'xl': 2rem,
+  'xxl': 3rem
+);
+
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+@mixin declare($decls, $important: false) {
+  @each $prop, $value in $decls {
+    @if $important {
+      #{$prop}: #{$value} !important;
+    } @else {
+      #{$prop}: #{$value};
+    }
+  }
+}
+
+// Emits `.u-<name>`, then one `.u-<name>-<suffix>` variant per breakpoint.
+@mixin utils($map, $important: false) {
+  @each $name, $decls in $map {
+    .u-#{$name} {
+      @include declare($decls, $important);
+    }
+  }
+
+  @each $suffix, $width in $breakpoints {
+    @media (max-width: $width) {
+      @each $name, $decls in $map {
+        .u-#{$name}-#{$suffix} {
+          @include declare($decls, $important);
+        }
+      }
+    }
+  }
+}

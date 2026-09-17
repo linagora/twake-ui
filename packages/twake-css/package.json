@@ -1,0 +1,70 @@
+{
+  "name": "@linagora/twake-css",
+  "version": "0.0.0",
+  "description": "Design tokens and theme-aware CSS utility classes for Twake applications",
+  "author": "Twake",
+  "license": "MIT",
+  "engines": {
+    "node": "24.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linagora/twake-ui.git",
+    "directory": "packages/twake-css"
+  },
+  "keywords": [
+    "twake",
+    "css",
+    "utilities",
+    "theme"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/vars.css": "./dist/vars.css",
+    "./dist/utils.css": "./dist/utils.css"
+  },
+  "sideEffects": true,
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup && node scripts/generate-vars.mjs && npm run build:utils",
+    "start": "sass --watch --no-source-map src/utils.scss dist/utils.css",
+    "lint": "npm run build",
+    "clean": "rm -rf dist",
+    "doc": "storybook dev -p 6008",
+    "build:doc": "storybook build --output-dir storybook-static",
+    "build:utils": "sass --style=compressed --no-source-map src/utils.scss dist/utils.css"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@linagora/twake-mui": "^7.1.0",
+    "@mui/material": "^9.2.0",
+    "@storybook/addon-docs": "10.3.5",
+    "@storybook/builder-vite": "10.3.5",
+    "@storybook/react": "10.3.5",
+    "@storybook/react-vite": "10.3.5",
+    "@types/react": "18.2.0",
+    "cozy-tsconfig": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "1.104.1",
+    "storybook": "10.3.5",
+    "tsup": "8.5.1",
+    "vite": "8.0.9"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts"
+}
