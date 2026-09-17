@@ -1,0 +1,5 @@
+@each $name in (default, help, pointer, wait, not-allowed) {
+  .u-c-#{$name} {
+    cursor: $name;
+  }
+}

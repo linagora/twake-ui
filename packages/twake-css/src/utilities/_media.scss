@@ -1,0 +1,22 @@
+.u-media {
+  display: flex;
+  align-items: center;
+}
+
+.u-media-top {
+  align-items: flex-start;
+}
+
+.u-media-bottom {
+  align-items: flex-end;
+}
+
+.u-media-grow {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.u-media-fixed {
+  line-height: 0;
+  flex: 0 0 auto;
+}

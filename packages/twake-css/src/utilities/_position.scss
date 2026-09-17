@@ -1,0 +1,22 @@
+@use '../config';
+
+@include config.utils((
+  'pos-absolute': (position: absolute),
+  'pos-relative': (position: relative),
+  'pos-fixed': (position: fixed),
+  'pos-sticky': (position: sticky),
+  'pos-static': (position: static)
+));
+
+// Offsets are not responsive, mirroring cozy-ui.
+@each $side in (top, bottom, left, right) {
+  @each $name, $value in config.$spacing {
+    .u-#{$side}-#{$name} {
+      #{$side}: $value;
+    }
+  }
+
+  .u-#{$side}-0 {
+    #{$side}: 0;
+  }
+}
