@@ -1,6 +1,6 @@
-import { PaletteOptions, alpha } from '@mui/material/styles'
-import { deepmerge } from '@mui/utils'
+import type { PaletteOptions } from '@mui/material/styles'
 
+import { alpha, deepmerge } from './color'
 import paletteJson from './palette.json'
 import {
   PaletteJson,

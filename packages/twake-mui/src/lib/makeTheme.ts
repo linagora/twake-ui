@@ -1,17 +1,18 @@
+import {
+  makePalette,
+  makeShadows,
+  makeTypography,
+  shape,
+  PaletteJson
+} from '@linagora/twake-css'
 import { createTheme, ThemeOptions } from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
 
-import { makePalette } from './makePalette'
-import { makeShadows } from './makeShadows'
-import { makeTypography } from './makeTypography'
 import { overrides } from './overrides'
-import { PaletteJson } from './types'
 // DatePicker styles are applied through component overrides
 
 const themesCommonConfig: Partial<ThemeOptions> = {
-  shape: {
-    borderRadius: 6
-  },
+  shape,
   breakpoints: {
     values: {
       xs: 0,
@@ -33,7 +34,9 @@ export const makeTheme = (
 ): ReturnType<typeof createTheme> => {
   const baseOptions: ThemeOptions = {
     ...themesCommonConfig,
-    cssVariables: { colorSchemeSelector: 'data-theme' },
+    // The same variables ship statically as twake-css/dist/vars.css, for
+    // pages with no React to run this provider. Keep the two in step.
+    cssVariables: { colorSchemeSelector: 'data-theme', cssVarPrefix: 'twake' },
     defaultColorScheme: mode,
     colorSchemes: {
       light: { palette: makePalette('light', paletteOverrides) },

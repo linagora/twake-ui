@@ -1,6 +1,6 @@
-import { Shadows } from '@mui/material/styles'
-import { alpha } from '@mui/material/styles'
+import type { Shadows } from '@mui/material/styles'
 
+import { alpha } from './color'
 import paletteJson from './palette.json'
 import { PaletteJson } from './types'
 

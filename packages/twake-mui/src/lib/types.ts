@@ -1,85 +1,8 @@
 import { TypographyVariantsOptions } from '@mui/material/styles'
 
-// Palette Types
-export interface CommonColor {
-  white: string
-  black: string
-}
-
-export interface PaletteColor {
-  50: string
-  100: string
-  200: string
-  300: string
-  400: string
-  500: string
-  600: string
-  700: string
-  800: string
-  900: string
-  ContrastText?: string
-}
-
-export interface GreyPalette {
-  50: string
-  100: string
-  200: string
-  300: string
-  400: string
-  500: string
-  600: string
-  700: string
-  800: string
-  900: string
-  A100: string
-  A200: string
-  A400: string
-  A700: string
-  A900: string
-}
-
-export interface TextPalette {
-  primary: string
-  secondary: string
-  disabled: string
-  hint: string
-  icon: string
-}
-
-export interface BackgroundPalette {
-  default: string
-  paper: string
-  contrast: string
-}
-
-export interface ActionPalette {
-  active: string
-  hover: string
-  selected: string
-  disabled: string
-  disabledBackground: string
-  focus: string
-}
-
-export interface BorderPalette {
-  main: string
-  disabled: string
-  ghost: string
-  ghostDisabled: string
-  opacity: number
-  ghostOpacity: number
-}
-
-export interface PaletteJson {
-  Primary: PaletteColor
-  Secondary: PaletteColor
-  Error: PaletteColor
-  Warning: PaletteColor
-  Success: PaletteColor
-  Info: Omit<PaletteColor, 'ContrastText'>
-  Grey: GreyPalette
-  Common: CommonColor
-}
+// The palette types and the MUI palette augmentation live in twake-css, which
+// owns the tokens; importing it here is what pulls the augmentation in.
+import '@linagora/twake-css'
 
 // Typography Types
 export type TypographyOptions = TypographyVariantsOptions
@@ -110,29 +33,6 @@ export interface TypographyVariants {
 }
 
 export type MakeTypography = () => TypographyOptions
-
-/**
- * Twake additions on top of the MUI palette, mirroring cozy-ui. MUI does not
- * declare them, so without this augmentation consumers reading
- * `theme.palette.background.contrast` get a type error.
- */
-declare module '@mui/material/styles' {
-  interface TypeBackground {
-    contrast: string
-  }
-
-  interface TypeText {
-    icon: string
-  }
-
-  interface Palette {
-    border: BorderPalette
-  }
-
-  interface PaletteOptions {
-    border?: Partial<BorderPalette>
-  }
-}
 
 declare module '@mui/material/IconButton' {
   interface IconButtonPropsSizeOverrides {

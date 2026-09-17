@@ -4,8 +4,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import { TwakeMuiThemeProvider } from '../components/ThemeProvider'
-import { makePalette } from '../lib/makePalette'
-import type { PaletteJson } from '../lib/types'
+import { makePalette } from '@linagora/twake-css'
+import type { PaletteJson } from '@linagora/twake-css'
 
 const CUSTOM_PALETTE: Partial<PaletteJson> = {
   Primary: {

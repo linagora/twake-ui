@@ -1,7 +1,7 @@
 import { ThemeOptions } from '@mui/material/styles'
 import { ReactNode } from 'react'
 
-import { PaletteJson } from '../../lib/types'
+import { PaletteJson } from '@linagora/twake-css'
 
 export interface ThemeProviderProps {
   children: ReactNode

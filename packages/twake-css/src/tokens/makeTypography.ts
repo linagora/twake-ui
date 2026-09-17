@@ -1,4 +1,4 @@
-import { TypographyVariantsOptions } from '@mui/material/styles'
+import type { TypographyVariantsOptions } from '@mui/material/styles'
 
 export const makeTypography = (): TypographyVariantsOptions => {
   return {

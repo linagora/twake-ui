@@ -13,7 +13,7 @@ export {
 } from '@mui/material/styles'
 export { default as Autocomplete } from '@mui/material/Autocomplete'
 // LIB
-export { makePalette } from './lib/makePalette'
+export { makePalette } from '@linagora/twake-css'
 export { theme } from './lib/theme'
 export { radius } from './lib/radius'
 // COMPONENTS & HELPERS
@@ -25,7 +25,7 @@ export { default as AccordionExpandIcon } from './components/AccordionExpandIcon
 export { useBreakpoints } from './hooks/useBreakpoints'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
-export type { PaletteJson } from './lib/types'
+export type { PaletteJson } from '@linagora/twake-css'
 export type { AvatarProps } from './components/Avatar'
 export type { ChipProps } from './components/Chip'
 export type { Breakpoints } from './hooks/useBreakpoints'
