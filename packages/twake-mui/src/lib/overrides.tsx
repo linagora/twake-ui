@@ -1,13 +1,16 @@
 import {
   Bottom,
+  CheckCircle,
   CheckSquare,
   Icon,
   IconProps,
+  Info,
   RadioChecked,
   RadioUnchecked,
-  Spinner
+  Spinner,
+  Warning,
+  WarningCircle
 } from '@linagora/twake-icons'
-import InfoOutlined from '@mui/icons-material/InfoOutlined'
 import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
 import { checkboxClasses } from '@mui/material/Checkbox'
@@ -897,12 +900,16 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     }
   },
   MuiAlert: {
-    // MUI maps an icon to its own four severities only. Reuse its info icon for
-    // the two it does not know; the per-severity fallback keeps the rest.
+    // cozy-ui's 16px icons; the icon padding below centres them on the first
+    // line of the message.
     defaultProps: {
       iconMapping: {
-        primary: <InfoOutlined fontSize="inherit" />,
-        secondary: <InfoOutlined fontSize="inherit" />
+        primary: <Icon icon={Info} />,
+        secondary: <Icon icon={Info} />,
+        success: <Icon icon={CheckCircle} />,
+        warning: <Icon icon={Warning} />,
+        error: <Icon icon={WarningCircle} />,
+        info: <Icon icon={Info} />
       }
     },
     styleOverrides: {
