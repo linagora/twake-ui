@@ -1,7 +1,9 @@
 import { Icon, Plus, Stop } from '@linagora/twake-icons'
-import { Box, Button, ButtonProps, Stack } from '@mui/material'
+import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Button, ButtonProps } from '../components/Button'
 
 const variants = ['contained', 'outlined', 'ghost', 'text'] as const
 const sizes = ['small', 'medium', 'large'] as const
@@ -76,6 +78,11 @@ export const Screenshot: Story = {
         <Column title="default" />
         <Column title="disabled" props={{ disabled: true }} />
         <Column title="loading" props={{ loading: true }} />
+      </Section>
+
+      <Section title="legacy variants">
+        <Button variant="primary">primary</Button>
+        <Button variant="secondary">secondary</Button>
       </Section>
 
       <Section title="Sizes">
