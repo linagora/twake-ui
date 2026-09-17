@@ -63,12 +63,11 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    severity: 'primary',
+    severity: 'success',
     variant: 'standard'
   },
   render: args => (
     <Alert {...args}>
-      <AlertTitle>This is the title</AlertTitle>
       Get Cozy Drive for Desktop and synchronise your files safely to make them
       accessible at all times.
     </Alert>
@@ -113,6 +112,7 @@ export const Screenshot: Story = {
           Content
         </Typography>
         <Stack spacing={1}>
+          <Alert severity="info">Get Cozy Drive for Desktop.</Alert>
           <Alert severity="info">
             Get Cozy Drive for Desktop and synchronise your files safely to make
             them accessible at all times.
