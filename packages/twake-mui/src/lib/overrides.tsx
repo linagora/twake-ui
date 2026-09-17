@@ -804,7 +804,21 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         [`&.${switchClasses.disabled} .switchThumb, &.${switchClasses.disabled} .${switchClasses.thumb}`]:
           {
             backgroundColor: theme.vars.palette.background.default
+          },
+        variants: [
+          {
+            // cozy-ui draws the secondary colour as success
+            props: { color: 'secondary' },
+            style: {
+              [`&.${switchClasses.checked}`]: {
+                color: theme.vars.palette.success.main
+              },
+              [`&.${switchClasses.checked} + .${switchClasses.track}`]: {
+                backgroundColor: theme.vars.palette.success.main
+              }
+            }
           }
+        ]
       }),
       thumb: ({ theme }) => ({
         backgroundColor: theme.vars.palette.common.white
