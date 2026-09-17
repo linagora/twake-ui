@@ -1,0 +1,10 @@
+// cozy-ui froze a single shadow here. twake-mui carries a ramp shared by both
+// modes, so the classes follow it instead — .u-elevation-1 no longer needs its
+// own hairline border, the ramp bakes one into every level.
+//
+// 26 levels: none, 24 elevations, then the extra one makeShadows appends.
+@for $level from 0 through 25 {
+  .u-elevation-#{$level} {
+    box-shadow: var(--twake-shadows-#{$level}) !important;
+  }
+}

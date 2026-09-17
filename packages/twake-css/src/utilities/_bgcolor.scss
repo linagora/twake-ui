@@ -1,0 +1,11 @@
+@use './colors';
+
+@each $name, $value in colors.$utility-colors {
+  .u-bg-#{$name} {
+    background-color: $value !important;
+  }
+}
+
+.u-bg-transparent {
+  background-color: transparent !important;
+}

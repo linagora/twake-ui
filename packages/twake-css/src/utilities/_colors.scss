@@ -1,0 +1,21 @@
+// The semantic colors shared by text and background utilities. Every theme
+// aware entry reads the variables twake-mui emits, so `.u-primaryColor` and a
+// MUI component always resolve to the same color.
+$utility-colors: (
+  'black': var(--twake-palette-common-black),
+  'primaryColor': var(--twake-palette-primary-main),
+  'primaryColorLight': var(--twake-palette-primary-light),
+  'primaryContrastTextColor': var(--twake-palette-primary-contrastText),
+  // Not in cozy-ui, which only declared --secondary* for its components. The
+  // twake palette carries a secondary role, so the utilities cover it too.
+  'secondaryColor': var(--twake-palette-secondary-main),
+  'secondaryColorLight': var(--twake-palette-secondary-light),
+  'secondaryContrastTextColor': var(--twake-palette-secondary-contrastText),
+  'error': var(--twake-palette-error-main),
+  'success': var(--twake-palette-success-main),
+  'warning': var(--twake-palette-warning-main),
+  'info': var(--twake-palette-info-main),
+  // A scrim, deliberately identical in both modes as it was in cozy-ui.
+  'overlay': rgba(50, 54, 63, .5),
+  'white': var(--twake-palette-common-white)
+);
