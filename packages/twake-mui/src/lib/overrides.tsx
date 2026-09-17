@@ -913,6 +913,12 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       icon: {
         paddingTop: '9px'
       },
+      message: {
+        flex: 'auto',
+        display: 'flex',
+        alignItems: 'center',
+        flexWrap: 'wrap'
+      },
       action: {
         alignItems: 'center',
         paddingTop: 0
@@ -922,6 +928,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiAlertTitle: {
     styleOverrides: {
       root: {
+        width: '100%',
         fontWeight: 'bold'
       }
     }
