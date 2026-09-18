@@ -11,8 +11,8 @@ export const Sidebar = styled('aside', {
     flexDirection: 'column',
     overflowX: 'hidden',
     overflowY: 'auto',
-    backgroundColor: theme.palette.background.default,
-    ...(border && { borderRight: `1px solid ${theme.palette.divider}` }),
+    backgroundColor: theme.vars.palette.background.default,
+    ...(border && { borderRight: `1px solid ${theme.vars.palette.divider}` }),
     [theme.breakpoints.down('lg')]: {
       position: 'fixed',
       bottom: 0,
@@ -22,7 +22,7 @@ export const Sidebar = styled('aside', {
       boxSizing: 'content-box',
       display: 'block',
       border: 0,
-      borderTop: `1px solid ${theme.palette.divider}`,
+      borderTop: `1px solid ${theme.vars.palette.divider}`,
       zIndex: theme.zIndex.appBar
     }
   })

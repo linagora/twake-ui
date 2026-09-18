@@ -54,8 +54,8 @@ export const NavItem = styled(ListItem, {
         height: 'auto',
         fontSize: theme.typography.pxToRem(14),
         [`&.${listItemButtonClasses.selected}, &.active`]: {
-          color: theme.palette.secondary.contrastText,
-          backgroundColor: theme.palette.secondary.main
+          color: theme.vars.palette.secondary.contrastText,
+          backgroundColor: theme.vars.palette.secondary.main
         }
       }
     })
@@ -71,13 +71,13 @@ export const NavLink = styled(ListItemButton)(
     height: '100%',
     borderRadius: 8,
     lineHeight: 1.375,
-    color: theme.palette.text.primary,
+    color: theme.vars.palette.text.primary,
     [`&.${listItemButtonClasses.selected}, &.active`]: {
-      color: theme.palette.primary.main,
-      backgroundColor: theme.palette.action.selected,
-      '&:hover': { backgroundColor: theme.palette.action.selected },
+      color: theme.vars.palette.primary.main,
+      backgroundColor: theme.vars.palette.action.selected,
+      '&:hover': { backgroundColor: theme.vars.palette.action.selected },
       [`& .${listItemIconClasses.root}`]: {
-        color: theme.palette.primary.main
+        color: theme.vars.palette.primary.main
       }
     },
     [theme.breakpoints.down('lg')]: {
@@ -88,12 +88,12 @@ export const NavLink = styled(ListItemButton)(
       textAlign: 'center',
       fontSize: theme.typography.pxToRem(11),
       lineHeight: '12px',
-      color: theme.palette.text.secondary,
+      color: theme.vars.palette.text.secondary,
       [`&.${listItemButtonClasses.selected}, &.active`]: {
-        color: theme.palette.text.primary,
+        color: theme.vars.palette.text.primary,
         backgroundColor: 'transparent',
         [`& .${listItemIconClasses.root}`]: {
-          color: theme.palette.text.primary
+          color: theme.vars.palette.text.primary
         }
       }
     }
@@ -105,11 +105,11 @@ export type NavLinkProps = React.ComponentProps<typeof NavLink>
 const NavIconRoot = styled(ListItemIcon)(({ theme }: { theme: Theme }) => ({
   minWidth: 0,
   marginRight: 12,
-  color: theme.palette.text.primary,
+  color: theme.vars.palette.text.primary,
   [theme.breakpoints.down('lg')]: {
     display: 'block',
     marginRight: 0,
-    color: theme.palette.text.secondary,
+    color: theme.vars.palette.text.secondary,
     '& svg': { margin: '4px auto 5px', width: 16, height: 16 }
   }
 }))
