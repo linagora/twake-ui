@@ -1,7 +1,23 @@
 import React from 'react'
-import type { Preview } from '@storybook/react-vite'
+import type { Preview, StoryContext } from '@storybook/react-vite'
 import { Box, CssBaseline, ThemeProvider } from '@mui/material'
 import { makeTheme } from '../src/lib/makeTheme'
+
+/**
+ * Argos renders the story, then resizes the preview iframe to the mode's
+ * viewport, then screenshots. Some MUI components have internal debounces
+ * when resizing making flaky tests. Here we avoid totally these issues
+ * by sizing the frame before the story renders.
+ */
+const sizeFrameToViewport = (context: StoryContext): void => {
+  const frame = window.frameElement as HTMLIFrameElement | null
+  const viewports = context.parameters.viewport?.viewports
+  const styles = viewports?.[context.globals.viewport as string]?.styles
+
+  if (!frame || !styles) return
+
+  frame.style.width = styles.width
+}
 
 const preview: Preview = {
   parameters: {
@@ -63,6 +79,8 @@ const preview: Preview = {
       },
     },
   },
+
+  beforeEach: sizeFrameToViewport,
 
   decorators: [
     (Story, context) => {
