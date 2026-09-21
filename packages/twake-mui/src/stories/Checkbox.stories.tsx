@@ -1,15 +1,9 @@
-import FormatBoldIcon from '@mui/icons-material/FormatBold'
-import FormatItalicIcon from '@mui/icons-material/FormatItalic'
-import FormatUnderlinedIcon from '@mui/icons-material/FormatUnderlined'
 import {
   Checkbox,
   CheckboxProps,
   FormControlLabel,
   FormControlLabelProps,
-  ToggleButton,
-  ToggleButtonGroup,
-  Stack,
-  Box
+  Stack
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
@@ -112,24 +106,6 @@ export const Screenshot: Story = {
             </>
           }
         />
-      </section>
-
-      {/* Toggle Buttons */}
-      <section>
-        <h3 style={{ marginBottom: '12px' }}>Toggle Buttons</h3>
-        <Box>
-          <ToggleButtonGroup value={['bold']}>
-            <ToggleButton value="bold" aria-label="bold">
-              <FormatBoldIcon />
-            </ToggleButton>
-            <ToggleButton value="italic" aria-label="italic">
-              <FormatItalicIcon />
-            </ToggleButton>
-            <ToggleButton value="underlined" aria-label="underlined">
-              <FormatUnderlinedIcon />
-            </ToggleButton>
-          </ToggleButtonGroup>
-        </Box>
       </section>
     </Stack>
   )
