@@ -89,11 +89,19 @@ const preview: Preview = {
       const themeMode = context.globals.theme
       const theme = makeTheme(themeMode)
 
+      const isFullscreen = context.parameters.layout === 'fullscreen'
+
       return (
         <I18n lang="en" dictRequire={() => ({})}>
           <ThemeProvider theme={theme} defaultMode={themeMode}>
             <CssBaseline />
-            <Box sx={{ padding: '20px', bgcolor: 'background.paper' }}>
+            <Box
+              sx={
+                isFullscreen
+                  ? undefined
+                  : { padding: '20px', bgcolor: 'background.paper' }
+              }
+            >
               <Story />
             </Box>
           </ThemeProvider>
