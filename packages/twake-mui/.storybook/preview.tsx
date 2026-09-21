@@ -17,6 +17,7 @@ const sizeFrameToViewport = (context: StoryContext): void => {
   if (!frame || !styles) return
 
   frame.style.width = styles.width
+  frame.style.height = styles.height
 }
 
 const preview: Preview = {
