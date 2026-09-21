@@ -1,0 +1,6 @@
+export { Layout } from './Layout'
+export { Main } from './Main'
+export { Content } from './Content'
+export type { LayoutProps } from './Layout'
+export type { MainProps } from './Main'
+export type { ContentProps } from './Content'
