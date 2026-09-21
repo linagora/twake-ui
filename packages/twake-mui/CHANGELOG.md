@@ -1,3 +1,16 @@
+# @linagora/twake-mui [9.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@8.0.0...@linagora/twake-mui@9.0.0) (2026-09-21)
+
+
+### Features
+
+* **twake-mui:** Migrate Nav from cozy-ui ([5dd0516](https://github.com/linagora/twake-ui/commit/5dd05165741159437f796935f81d9d907eb808f2))
+* **twake-mui:** Migrate Sidebar from cozy-ui ([08f4179](https://github.com/linagora/twake-ui/commit/08f4179493090399cca1e59878d405b945777225))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** You need "twake-i18n" >= "0.5.0"
+
 # @linagora/twake-mui [8.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@7.1.0...@linagora/twake-mui@8.0.0) (2026-09-18)
 
 
