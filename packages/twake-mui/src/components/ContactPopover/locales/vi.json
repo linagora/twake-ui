@@ -1,0 +1,7 @@
+{
+  "ContactPopover": {
+    "emailButton": "Gửi email",
+    "copyTooltip": "Sao chép email",
+    "copiedTooltip": "Đã sao chép!"
+  }
+}

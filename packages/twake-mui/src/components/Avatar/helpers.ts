@@ -46,3 +46,27 @@ export const nameToColor = (name: string = ''): string | undefined => {
   const key = makeKey(colors, name)
   return colors[key]
 }
+
+/**
+ * Extract initials from a name (first letter of first name + first letter of last name)
+ * If only one name is provided, returns first 2 letters
+ * Falls back to first 2 letters of email local-part if no name provided
+ * @param name - Display name
+ * @param email - Email address (fallback source for initials)
+ * @returns Uppercase initials string
+ */
+export const getInitials = (name: string, email: string): string => {
+  if (!name || name === email) {
+    const emailPart = email.split('@')[0]
+    return emailPart.slice(0, 2).toUpperCase()
+  }
+
+  const parts = name.trim().split(/\s+/)
+  if (parts.length === 1) {
+    return parts[0].slice(0, 2).toUpperCase()
+  }
+
+  const firstName = parts[0]
+  const lastName = parts[parts.length - 1]
+  return (firstName[0] + lastName[0]).toUpperCase()
+}
