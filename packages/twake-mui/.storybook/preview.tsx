@@ -1,6 +1,7 @@
 import React from 'react'
 import type { Preview, StoryContext } from '@storybook/react-vite'
 import { Box, CssBaseline, ThemeProvider } from '@mui/material'
+import { I18n } from 'twake-i18n'
 import { makeTheme } from '../src/lib/makeTheme'
 
 /**
@@ -89,12 +90,14 @@ const preview: Preview = {
       const theme = makeTheme(themeMode)
 
       return (
-        <ThemeProvider theme={theme} defaultMode={themeMode}>
-          <CssBaseline />
-          <Box sx={{ padding: '20px', bgcolor: 'background.paper' }}>
-            <Story />
-          </Box>
-        </ThemeProvider>
+        <I18n lang="en" dictRequire={() => ({})}>
+          <ThemeProvider theme={theme} defaultMode={themeMode}>
+            <CssBaseline />
+            <Box sx={{ padding: '20px', bgcolor: 'background.paper' }}>
+              <Story />
+            </Box>
+          </ThemeProvider>
+        </I18n>
       )
     },
   ],
