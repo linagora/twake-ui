@@ -1,0 +1,8 @@
+{
+  "extends": "cozy-tsconfig",
+  "include": ["src/**/*", ".storybook/**/*"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "noEmit": true
+  }
+}

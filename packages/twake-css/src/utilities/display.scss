@@ -1,0 +1,52 @@
+@use '../config';
+
+@include config.utils((
+  'dn': (display: none),
+  'di': (display: inline),
+  'db': (display: block),
+  'dc': (display: contents),
+  'dib': (display: inline-block),
+  'dit': (display: inline-table),
+  'dt': (display: table),
+  'dtc': (display: table-cell),
+  'dt-row': (display: table-row),
+  'dt-row-group': (display: table-row-group),
+  'dt-column': (display: table-column),
+  'dt-column-group': (display: table-column-group)
+));
+
+// Hidden to the eye, still read by screen readers.
+.u-visuallyhidden {
+  position: absolute !important;
+  border: 0 !important;
+  width: config.rem(1) !important;
+  height: config.rem(1) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip: rect(config.rem(1), config.rem(1), config.rem(1), config.rem(1)) !important;
+  clip-path: inset(50%) !important;
+}
+
+.u-hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@media (max-width: 63.938rem) {
+  .u-hide--mob {
+    display: none !important;
+  }
+}
+
+@media (min-width: 64rem) {
+  .u-hide--tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 48.063rem) {
+  .u-hide--desk {
+    display: none !important;
+  }
+}

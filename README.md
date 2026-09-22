@@ -7,11 +7,20 @@ Monorepo containing shared UI packages for Twake applications.
 ```
 twake-ui/
 ├── packages/
-│   ├── twake-mui/          # MUI theme system
-│   └── ...                 # Other packages (to be added)
+│   ├── twake-css/          # Palette, CSS variables and utility classes
+│   ├── twake-icons/        # SVG icons and illustrations
+│   └── twake-mui/          # MUI theme and components
 ├── package.json            # Root workspace config
 └── README.md
 ```
+
+## Packages
+
+| Package | Scope |
+| --- | --- |
+| `@linagora/twake-css` | The palette (`palette.json`), its `--twake-*` CSS variables (`dist/vars.css`) and the `.u-*` utility classes (`dist/utils.css`). No JavaScript, usable from any stack. |
+| `@linagora/twake-icons` | SVG icons and illustrations as React components. |
+| `@linagora/twake-mui` | The MUI theme and components. Builds its theme from twake-css's `palette.json`, emits the same `--twake-*` variables at runtime, and renders twake-icons. |
 
 ## Development
 
@@ -87,7 +96,7 @@ Create your package in `packages/<name>/` with the required `package.json` field
 ```json
 {
   "name": "@linagora/your-new-package",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -99,7 +108,9 @@ Create your package in `packages/<name>/` with the required `package.json` field
 }
 ```
 
-No additional release config needed — release-it auto-detects new packages from the workspaces.
+No additional release config needed — the release tooling auto-detects new packages from the workspaces.
+
+Start at `1.0.0`: the first release semantic-release produces is always `1.0.0`, whatever `package.json` says. If another workspace depends on the new package, its range (`^1.0.0`) must match the workspace version both before and after that release.
 
 ## License
 

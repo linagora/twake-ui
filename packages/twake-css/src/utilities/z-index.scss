@@ -1,0 +1,23 @@
+// Compatibility layer for cozy-ui's `--zIndex-*` scale.
+//
+// DEPRECATED: consumers should move to `var(--twake-zIndex-*)` for the four roles
+// MUI covers (appBar, drawer, modal, snackbar) and to local values for the rest.
+// Rebased onto MUI's 1000-1500 ramp, in cozy-ui's relative order.
+:root {
+  --zIndex-below: -1;
+  --zIndex-app: 0;
+  --zIndex-low: 1;
+  // Stays at the bottom: cozy-sharing uses it for a dropdown that must sit
+  // under the nav.
+  --zIndex-alertMobile: 10;
+  --zIndex-nav: var(--twake-zIndex-appBar);
+  --zIndex-bar: calc(var(--twake-zIndex-appBar) + 1);
+  --zIndex-popover: var(--twake-zIndex-modal);
+  --zIndex-selection: 1160;
+  --zIndex-overlay: 1190;
+  --zIndex-drawer: var(--twake-zIndex-drawer);
+  --zIndex-modal: var(--twake-zIndex-modal);
+  --zIndex-modal-footer: calc(var(--twake-zIndex-modal) + 1);
+  --zIndex-modal-toolbar: calc(var(--twake-zIndex-modal) + 2);
+  --zIndex-alert: var(--twake-zIndex-snackbar);
+}

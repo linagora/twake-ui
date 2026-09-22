@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build twake-icons (for type resolution)
-        run: npm run build --workspace=@linagora/twake-icons
+      - name: Build twake-css (twake-mui imports its palette) and twake-icons
+        run: npm run build --workspace=@linagora/twake-css --workspace=@linagora/twake-icons
 
       - name: Build twake-mui Storybook
         run: |
@@ -43,6 +43,14 @@ jobs:
           cd packages/twake-icons
           npm run build:doc
 
+      - name: Build twake-mui (the twake-css stories import it)
+        run: npm run build --workspace=@linagora/twake-mui
+
+      - name: Build twake-css Storybook
+        run: |
+          cd packages/twake-css
+          npm run build:doc
+
       - name: Assemble combined site
         run: |
           mkdir combined
@@ -52,6 +60,8 @@ jobs:
           cp -r packages/twake-mui/storybook-static/. combined/twake-mui/
           mkdir combined/twake-icons
           cp -r packages/twake-icons/storybook-static/. combined/twake-icons/
+          mkdir combined/twake-css
+          cp -r packages/twake-css/storybook-static/. combined/twake-css/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

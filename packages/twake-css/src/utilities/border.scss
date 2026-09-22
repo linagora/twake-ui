@@ -1,0 +1,16 @@
+@use '../config';
+
+@include config.utils((
+  'bdrs-0': (border-radius: 0),
+  'bdrs-1': (border-radius: config.rem(2)),
+  'bdrs-2': (border-radius: config.rem(3)),
+  'bdrs-3': (border-radius: config.rem(4)),
+  'bdrs-4': (border-radius: config.rem(8)),
+  'bdrs-5': (border-radius: config.rem(10)),
+  'bdrs-6': (border-radius: config.rem(12)),
+  'bdrs-7': (border-radius: config.rem(14)),
+  'bdrs-8': (border-radius: config.rem(16)),
+  'bdrs-circle': (border-radius: 100%),
+  'bdw-0': (border-width: 0),
+  'bdw-1': (border-width: config.rem(2))
+), $important: true);

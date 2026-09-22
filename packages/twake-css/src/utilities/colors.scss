@@ -1,0 +1,16 @@
+$utility-colors: (
+  'black': var(--twake-palette-common-black),
+  'primaryColor': var(--twake-palette-primary-main),
+  'primaryColorLight': var(--twake-palette-primary-light),
+  'primaryContrastTextColor': var(--twake-palette-primary-contrastText),
+  'secondaryColor': var(--twake-palette-secondary-main),
+  'secondaryColorLight': var(--twake-palette-secondary-light),
+  'secondaryContrastTextColor': var(--twake-palette-secondary-contrastText),
+  'error': var(--twake-palette-error-main),
+  'success': var(--twake-palette-success-main),
+  'warning': var(--twake-palette-warning-main),
+  'info': var(--twake-palette-info-main),
+  // A scrim, identical in both modes.
+  'overlay': rgba(50, 54, 63, .5),
+  'white': var(--twake-palette-common-white)
+);

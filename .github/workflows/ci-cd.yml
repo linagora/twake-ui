@@ -47,13 +47,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build twake-icons (for type resolution)
-        run: npm run build --workspace=@linagora/twake-icons
+        run: npm run build --workspace=@linagora/twake-css --workspace=@linagora/twake-icons
       - name: Lint
         run: npm run lint
       - name: Check barrel export
         run: npm run check:barrel --workspace=@linagora/twake-icons
       - name: Build
         run: npm run build
+      - name: Test
+        run: npm test --workspace=@linagora/twake-mui
       - name: Configure git
         if: github.ref == 'refs/heads/main'
         run: |

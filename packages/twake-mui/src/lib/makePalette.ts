@@ -1,7 +1,7 @@
+import paletteJson from '@linagora/twake-css/palette.json'
 import { PaletteOptions, alpha } from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
 
-import paletteJson from './palette.json'
 import {
   PaletteJson,
   BackgroundPalette,
@@ -9,7 +9,7 @@ import {
   BorderPalette
 } from './types'
 
-const paletteData = paletteJson as PaletteJson
+const paletteData: PaletteJson = paletteJson
 
 export const makePalette = (
   mode: 'light' | 'dark' = 'light',

@@ -33,14 +33,20 @@ export const makeTheme = (
 ): ReturnType<typeof createTheme> => {
   const baseOptions: ThemeOptions = {
     ...themesCommonConfig,
-    cssVariables: { colorSchemeSelector: 'data-theme' },
+    cssVariables: { colorSchemeSelector: 'data-theme', cssVarPrefix: 'twake' },
     defaultColorScheme: mode,
     colorSchemes: {
-      light: { palette: makePalette('light', paletteOverrides) },
-      dark: { palette: makePalette('dark', paletteOverrides) }
+      light: {
+        palette: makePalette('light', paletteOverrides),
+        shadows: makeShadows('light')
+      },
+      dark: {
+        palette: makePalette('dark', paletteOverrides),
+        shadows: makeShadows('dark')
+      }
     },
     typography: makeTypography(),
-    shadows: makeShadows(),
+    shadows: makeShadows(mode),
     components: overrides
   }
 
