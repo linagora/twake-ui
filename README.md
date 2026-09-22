@@ -87,7 +87,7 @@ Create your package in `packages/<name>/` with the required `package.json` field
 ```json
 {
   "name": "@linagora/your-new-package",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -99,7 +99,9 @@ Create your package in `packages/<name>/` with the required `package.json` field
 }
 ```
 
-No additional release config needed — release-it auto-detects new packages from the workspaces.
+No additional release config needed — the release tooling auto-detects new packages from the workspaces.
+
+Start at `1.0.0`: the first release semantic-release produces is always `1.0.0`, whatever `package.json` says. If another workspace depends on the new package, its range (`^1.0.0`) must match the workspace version both before and after that release.
 
 ## License
 
