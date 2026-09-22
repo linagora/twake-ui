@@ -1,3 +1,10 @@
+# @linagora/twake-mui [9.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.0.0...@linagora/twake-mui@9.1.0) (2026-09-22)
+
+
+### Features
+
+* **twake-mui:** Migrate Layout from cozy-ui ([fdcb499](https://github.com/linagora/twake-ui/commit/fdcb499c9790e4b8fc7aaaa12087a8eebf250d42))
+
 # @linagora/twake-mui [9.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@8.0.0...@linagora/twake-mui@9.0.0) (2026-09-21)
 
 
