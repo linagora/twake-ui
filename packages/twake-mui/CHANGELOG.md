@@ -1,3 +1,20 @@
+# @linagora/twake-mui [9.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.1.0...@linagora/twake-mui@9.2.0) (2026-09-22)
+
+
+### Bug Fixes
+
+* **twake-mui:** Tint light-mode shadows with Grey 900, like cozy-ui ([4c74b68](https://github.com/linagora/twake-ui/commit/4c74b6861f6160ce174b7022ec2b42a64f5d5ecd))
+
+
+### Features
+
+* Read the palette from twake-css ([7c0a9e6](https://github.com/linagora/twake-ui/commit/7c0a9e6719d9520bdfdbd7b32b9d3132f2ae7d64))
+
+
+### Dependencies
+
+* **@linagora/twake-css:** upgraded to 1.0.0
+
 # @linagora/twake-mui [9.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.0.0...@linagora/twake-mui@9.1.0) (2026-09-22)
 
 
