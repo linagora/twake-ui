@@ -42,3 +42,6 @@ lerna-debug.log*
 *.temp
 .opencode
 docs/
+
+# Generated from palette.json at build time
+packages/twake-css/src/palette.scss

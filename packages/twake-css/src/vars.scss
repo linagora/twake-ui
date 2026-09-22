@@ -1,0 +1,235 @@
+@use 'sass:map';
+@use 'palette' as *;
+
+@function p($ramp, $key) {
+  @return map.get($palette, $ramp, $key);
+}
+
+// Semantic roles for the light mode, from the ramps of palette.json.
+:root,
+[data-theme="light"] {
+  --twake-palette-primary-light: #{p('Primary', 200)};
+  --twake-palette-primary-main: #{p('Primary', 600)};
+  --twake-palette-primary-dark: #{p('Primary', 700)};
+  --twake-palette-primary-contrastText: #{p('Primary', 'ContrastText')};
+
+  --twake-palette-secondary-light: #{p('Secondary', 200)};
+  --twake-palette-secondary-main: #{p('Secondary', 600)};
+  --twake-palette-secondary-dark: #{p('Secondary', 700)};
+  --twake-palette-secondary-contrastText: #{p('Secondary', 'ContrastText')};
+
+  --twake-palette-error-light: #{p('Error', 200)};
+  --twake-palette-error-main: #{p('Error', 600)};
+  --twake-palette-error-dark: #{p('Error', 700)};
+  --twake-palette-error-contrastText: #{p('Error', 'ContrastText')};
+
+  --twake-palette-warning-light: #{p('Warning', 200)};
+  --twake-palette-warning-main: #{p('Warning', 600)};
+  --twake-palette-warning-dark: #{p('Warning', 700)};
+  --twake-palette-warning-contrastText: #{p('Warning', 'ContrastText')};
+
+  --twake-palette-success-light: #{p('Success', 200)};
+  --twake-palette-success-main: #{p('Success', 600)};
+  --twake-palette-success-dark: #{p('Success', 700)};
+  --twake-palette-success-contrastText: #{p('Success', 'ContrastText')};
+
+  --twake-palette-info-light: #{p('Info', 200)};
+  --twake-palette-info-main: #{p('Info', 600)};
+  --twake-palette-info-dark: #{p('Info', 700)};
+  --twake-palette-info-contrastText: #fff;
+
+  --twake-palette-grey-50: #{p('Grey', 50)};
+  --twake-palette-grey-100: #{p('Grey', 100)};
+  --twake-palette-grey-200: #{p('Grey', 200)};
+  --twake-palette-grey-300: #{p('Grey', 300)};
+  --twake-palette-grey-400: #{p('Grey', 400)};
+  --twake-palette-grey-500: #{p('Grey', 500)};
+  --twake-palette-grey-600: #{p('Grey', 600)};
+  --twake-palette-grey-700: #{p('Grey', 700)};
+  --twake-palette-grey-800: #{p('Grey', 800)};
+  --twake-palette-grey-900: #{p('Grey', 900)};
+  --twake-palette-grey-A100: #{p('Grey', 'A100')};
+  --twake-palette-grey-A200: #{p('Grey', 'A200')};
+  --twake-palette-grey-A400: #{p('Grey', 'A400')};
+  --twake-palette-grey-A700: #{p('Grey', 'A700')};
+  --twake-palette-grey-A900: #{p('Grey', 'A900')};
+
+  --twake-palette-common-black: #{p('Common', 'black')};
+  --twake-palette-common-white: #{p('Common', 'white')};
+
+  $ink: p('Grey', 900);
+
+  --twake-palette-text-primary: #{rgba($ink, .9)};
+  --twake-palette-text-secondary: #{rgba($ink, .64)};
+  --twake-palette-text-disabled: #{rgba($ink, .32)};
+  --twake-palette-text-icon: #{rgba($ink, .72)};
+
+  --twake-palette-background-default: #{p('Grey', 100)};
+  --twake-palette-background-paper: #{p('Common', 'white')};
+  --twake-palette-background-contrast: #{rgba($ink, .048)};
+
+  --twake-palette-border-main: #{rgba($ink, .16)};
+  --twake-palette-border-disabled: #{rgba($ink, .08)};
+  --twake-palette-border-ghost: #{rgba($ink, .48)};
+  --twake-palette-border-ghostDisabled: #{rgba($ink, .16)};
+  --twake-palette-border-opacity: 0.32;
+  --twake-palette-border-ghostOpacity: 0.48;
+
+  --twake-palette-divider: #{rgba($ink, .12)};
+
+  --twake-palette-action-active: #{rgba($ink, .56)};
+  --twake-palette-action-hover: #{rgba($ink, .04)};
+  --twake-palette-action-hoverOpacity: 0.04;
+  --twake-palette-action-selected: #{rgba($ink, .08)};
+  --twake-palette-action-selectedOpacity: 0.18;
+  --twake-palette-action-disabled: #{rgba($ink, .24)};
+  --twake-palette-action-disabledOpacity: 0.32;
+  --twake-palette-action-disabledBackground: #{rgba($ink, .12)};
+  --twake-palette-action-focus: #{rgba($ink, .12)};
+  --twake-palette-action-focusOpacity: 0.12;
+  --twake-palette-action-activatedOpacity: 0.12;
+
+  $shadow-color: p('Grey', 900);
+
+  --twake-shadows-0: none;
+  --twake-shadows-1: 0px 2px 4px 0px #{rgba($shadow-color, .08)}, 0px 4px 16px 0px #{rgba($shadow-color, .06)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-2: 0px 3px 5px 0px #{rgba($shadow-color, .09)}, 0px 4px 17px 0px #{rgba($shadow-color, .07)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-3: 0px 3px 5px -1px #{rgba($shadow-color, .09)}, 0px 5px 19px 1px #{rgba($shadow-color, .08)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-4: 0px 3px 6px -1px #{rgba($shadow-color, .1)}, 0px 5px 20px 1px #{rgba($shadow-color, .08)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-5: 0px 4px 6px -1px #{rgba($shadow-color, .11)}, 0px 5px 22px 1px #{rgba($shadow-color, .09)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-6: 0px 4px 7px -2px #{rgba($shadow-color, .11)}, 0px 6px 23px 2px #{rgba($shadow-color, .1)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-7: 0px 5px 7px -2px #{rgba($shadow-color, .12)}, 0px 6px 24px 2px #{rgba($shadow-color, .11)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-8: 0px 5px 8px -2px #{rgba($shadow-color, .13)}, 0px 6px 26px 2px #{rgba($shadow-color, .11)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-9: 0px 5px 8px -3px #{rgba($shadow-color, .14)}, 0px 7px 27px 3px #{rgba($shadow-color, .12)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-10: 0px 6px 9px -3px #{rgba($shadow-color, .14)}, 0px 7px 29px 3px #{rgba($shadow-color, .13)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-11: 0px 6px 9px -3px #{rgba($shadow-color, .15)}, 0px 7px 30px 3px #{rgba($shadow-color, .14)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-12: 0px 7px 10px -4px #{rgba($shadow-color, .16)}, 0px 8px 31px 4px #{rgba($shadow-color, .15)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-13: 0px 7px 10px -4px #{rgba($shadow-color, .16)}, 0px 8px 33px 4px #{rgba($shadow-color, .15)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-14: 0px 8px 11px -5px #{rgba($shadow-color, .17)}, 0px 9px 34px 5px #{rgba($shadow-color, .16)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-15: 0px 8px 11px -5px #{rgba($shadow-color, .18)}, 0px 9px 35px 5px #{rgba($shadow-color, .17)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-16: 0px 9px 12px -5px #{rgba($shadow-color, .18)}, 0px 9px 37px 5px #{rgba($shadow-color, .18)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-17: 0px 9px 12px -6px #{rgba($shadow-color, .19)}, 0px 10px 38px 6px #{rgba($shadow-color, .19)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-18: 0px 9px 13px -6px #{rgba($shadow-color, .2)}, 0px 10px 40px 6px #{rgba($shadow-color, .19)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-19: 0px 10px 13px -6px #{rgba($shadow-color, .21)}, 0px 10px 41px 6px #{rgba($shadow-color, .2)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-20: 0px 10px 14px -7px #{rgba($shadow-color, .21)}, 0px 11px 42px 7px #{rgba($shadow-color, .21)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-21: 0px 11px 14px -7px #{rgba($shadow-color, .22)}, 0px 11px 44px 7px #{rgba($shadow-color, .22)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-22: 0px 11px 15px -7px #{rgba($shadow-color, .23)}, 0px 11px 45px 7px #{rgba($shadow-color, .22)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-23: 0px 12px 15px -8px #{rgba($shadow-color, .23)}, 0px 12px 47px 8px #{rgba($shadow-color, .23)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-24: 0px 12px 16px -8px #{rgba($shadow-color, .24)}, 0px 12px 48px 8px #{rgba($shadow-color, .24)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-25: 0px 1px 4px #{rgba($shadow-color, .04)};
+
+  --twake-zIndex-mobileStepper: 1000;
+  --twake-zIndex-fab: 1050;
+  --twake-zIndex-speedDial: 1050;
+  --twake-zIndex-appBar: 1100;
+  --twake-zIndex-drawer: 1200;
+  --twake-zIndex-modal: 1300;
+  --twake-zIndex-snackbar: 1400;
+  --twake-zIndex-tooltip: 1500;
+
+  --twake-shape-borderRadius: 6px;
+}
+
+// Only what changes in the dark mode.
+@mixin dark {
+  --twake-palette-primary-light: #{p('Primary', 300)};
+  --twake-palette-primary-main: #{p('Primary', 400)};
+  --twake-palette-primary-dark: #{p('Primary', 500)};
+  --twake-palette-primary-contrastText: #{rgba(p('Grey', 900), .9)};
+
+  --twake-palette-secondary-light: #{p('Grey', 300)};
+  --twake-palette-secondary-main: #{p('Grey', 400)};
+  --twake-palette-secondary-dark: #{p('Grey', 500)};
+  --twake-palette-secondary-contrastText: #{rgba(p('Grey', 900), .9)};
+
+  --twake-palette-error-light: #{p('Error', 300)};
+  --twake-palette-error-main: #{p('Error', 400)};
+  --twake-palette-error-dark: #{p('Error', 500)};
+  --twake-palette-error-contrastText: #{rgba(p('Grey', 900), .9)};
+
+  --twake-palette-warning-light: #{p('Warning', 300)};
+  --twake-palette-warning-main: #{p('Warning', 400)};
+  --twake-palette-warning-dark: #{p('Warning', 500)};
+  --twake-palette-warning-contrastText: #{rgba(p('Grey', 900), .9)};
+
+  --twake-palette-success-light: #{p('Success', 300)};
+  --twake-palette-success-main: #{p('Success', 400)};
+  --twake-palette-success-dark: #{p('Success', 500)};
+  --twake-palette-success-contrastText: #{rgba(p('Grey', 900), .9)};
+
+  --twake-palette-info-light: #{p('Info', 300)};
+  --twake-palette-info-main: #{p('Info', 400)};
+  --twake-palette-info-dark: #{p('Info', 500)};
+  --twake-palette-info-contrastText: #{rgba(p('Grey', 900), .9)};
+
+  $ink: p('Common', 'white');
+
+  --twake-palette-text-primary: #{$ink};
+  --twake-palette-text-secondary: #{rgba($ink, .64)};
+  --twake-palette-text-disabled: #{rgba($ink, .4)};
+  --twake-palette-text-icon: #{$ink};
+
+  --twake-palette-background-default: #{p('Grey', 'A400')};
+  --twake-palette-background-paper: #{p('Grey', 800)};
+  --twake-palette-background-contrast: #{rgba($ink, .072)};
+
+  --twake-palette-border-main: #{rgba($ink, .24)};
+  --twake-palette-border-disabled: #{rgba($ink, .12)};
+  --twake-palette-border-ghost: #{rgba($ink, .48)};
+  --twake-palette-border-ghostDisabled: #{rgba($ink, .24)};
+  --twake-palette-border-opacity: 0.48;
+  --twake-palette-border-ghostOpacity: 0.48;
+
+  --twake-palette-divider: #{rgba($ink, .16)};
+
+  --twake-palette-action-active: #{$ink};
+  --twake-palette-action-hover: #{rgba($ink, .08)};
+  --twake-palette-action-hoverOpacity: 0.08;
+  --twake-palette-action-selected: #{rgba($ink, .16)};
+  --twake-palette-action-selectedOpacity: 0.18;
+  --twake-palette-action-disabled: #{rgba($ink, .32)};
+  --twake-palette-action-disabledOpacity: 0.32;
+  --twake-palette-action-disabledBackground: #{rgba($ink, .12)};
+  --twake-palette-action-focus: #{rgba($ink, .24)};
+  --twake-palette-action-focusOpacity: 0.24;
+  --twake-palette-action-activatedOpacity: 0.24;
+
+  $shadow-color: p('Common', 'black');
+
+  --twake-shadows-1: 0px 2px 4px 0px #{rgba($shadow-color, .08)}, 0px 4px 16px 0px #{rgba($shadow-color, .06)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-2: 0px 3px 5px 0px #{rgba($shadow-color, .09)}, 0px 4px 17px 0px #{rgba($shadow-color, .07)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-3: 0px 3px 5px -1px #{rgba($shadow-color, .09)}, 0px 5px 19px 1px #{rgba($shadow-color, .08)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-4: 0px 3px 6px -1px #{rgba($shadow-color, .1)}, 0px 5px 20px 1px #{rgba($shadow-color, .08)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-5: 0px 4px 6px -1px #{rgba($shadow-color, .11)}, 0px 5px 22px 1px #{rgba($shadow-color, .09)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-6: 0px 4px 7px -2px #{rgba($shadow-color, .11)}, 0px 6px 23px 2px #{rgba($shadow-color, .1)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-7: 0px 5px 7px -2px #{rgba($shadow-color, .12)}, 0px 6px 24px 2px #{rgba($shadow-color, .11)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-8: 0px 5px 8px -2px #{rgba($shadow-color, .13)}, 0px 6px 26px 2px #{rgba($shadow-color, .11)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-9: 0px 5px 8px -3px #{rgba($shadow-color, .14)}, 0px 7px 27px 3px #{rgba($shadow-color, .12)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-10: 0px 6px 9px -3px #{rgba($shadow-color, .14)}, 0px 7px 29px 3px #{rgba($shadow-color, .13)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-11: 0px 6px 9px -3px #{rgba($shadow-color, .15)}, 0px 7px 30px 3px #{rgba($shadow-color, .14)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-12: 0px 7px 10px -4px #{rgba($shadow-color, .16)}, 0px 8px 31px 4px #{rgba($shadow-color, .15)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-13: 0px 7px 10px -4px #{rgba($shadow-color, .16)}, 0px 8px 33px 4px #{rgba($shadow-color, .15)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-14: 0px 8px 11px -5px #{rgba($shadow-color, .17)}, 0px 9px 34px 5px #{rgba($shadow-color, .16)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-15: 0px 8px 11px -5px #{rgba($shadow-color, .18)}, 0px 9px 35px 5px #{rgba($shadow-color, .17)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-16: 0px 9px 12px -5px #{rgba($shadow-color, .18)}, 0px 9px 37px 5px #{rgba($shadow-color, .18)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-17: 0px 9px 12px -6px #{rgba($shadow-color, .19)}, 0px 10px 38px 6px #{rgba($shadow-color, .19)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-18: 0px 9px 13px -6px #{rgba($shadow-color, .2)}, 0px 10px 40px 6px #{rgba($shadow-color, .19)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-19: 0px 10px 13px -6px #{rgba($shadow-color, .21)}, 0px 10px 41px 6px #{rgba($shadow-color, .2)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-20: 0px 10px 14px -7px #{rgba($shadow-color, .21)}, 0px 11px 42px 7px #{rgba($shadow-color, .21)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-21: 0px 11px 14px -7px #{rgba($shadow-color, .22)}, 0px 11px 44px 7px #{rgba($shadow-color, .22)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-22: 0px 11px 15px -7px #{rgba($shadow-color, .23)}, 0px 11px 45px 7px #{rgba($shadow-color, .22)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-23: 0px 12px 15px -8px #{rgba($shadow-color, .23)}, 0px 12px 47px 8px #{rgba($shadow-color, .23)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-24: 0px 12px 16px -8px #{rgba($shadow-color, .24)}, 0px 12px 48px 8px #{rgba($shadow-color, .24)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
+  --twake-shadows-25: 0px 1px 4px #{rgba($shadow-color, .04)};
+}
+
+[data-theme="dark"] {
+  @include dark;
+}
+
+// Follow the OS preference when the page has not chosen; an explicit data-theme wins.
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include dark;
+  }
+}
