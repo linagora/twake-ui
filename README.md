@@ -7,11 +7,20 @@ Monorepo containing shared UI packages for Twake applications.
 ```
 twake-ui/
 ├── packages/
-│   ├── twake-mui/          # MUI theme system
-│   └── ...                 # Other packages (to be added)
+│   ├── twake-css/          # Palette, CSS variables and utility classes
+│   ├── twake-icons/        # SVG icons and illustrations
+│   └── twake-mui/          # MUI theme and components
 ├── package.json            # Root workspace config
 └── README.md
 ```
+
+## Packages
+
+| Package | Scope |
+| --- | --- |
+| `@linagora/twake-css` | The palette (`palette.json`), its `--twake-*` CSS variables (`dist/vars.css`) and the `.u-*` utility classes (`dist/utils.css`). No JavaScript, usable from any stack. |
+| `@linagora/twake-icons` | SVG icons and illustrations as React components. |
+| `@linagora/twake-mui` | The MUI theme and components. Builds its theme from twake-css's `palette.json`, emits the same `--twake-*` variables at runtime, and renders twake-icons. |
 
 ## Development
 

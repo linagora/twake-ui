@@ -10,7 +10,7 @@ $breakpoints: (
   'm': 63.938rem
 );
 
-// Legacy rem scale.
+// Steps of the .u-m-* and .u-p-* classes.
 $sizes: (
   'auto': auto,
   '0': 0,
@@ -22,7 +22,7 @@ $sizes: (
   '3': 3rem
 );
 
-// Design scale.
+// The design team's named scale, used by .u-stack-* and the position offsets.
 $spacing: (
   'm': 1rem,
   'xs': .5rem,
