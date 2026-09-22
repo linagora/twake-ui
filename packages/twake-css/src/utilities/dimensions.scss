@@ -1,0 +1,46 @@
+@use 'sass:map';
+@use '../config';
+
+$minmax: ('min-width': 'miw', 'max-width': 'maw', 'min-height': 'mih', 'max-height': 'mah');
+$dimensions: ('width': 'w', 'height': 'h');
+
+$minmax-scale: (
+  'none': none,
+  'auto': auto,
+  'half': .5rem,
+  '1': 1rem,
+  '1-half': 1.5rem,
+  '2': 2rem,
+  '2-half': 2.5rem,
+  '3': 4rem,
+  '4': 8rem,
+  '5': 16rem,
+  '6': 32rem,
+  '7': 48rem,
+  '8': 64rem,
+  '9': 96rem,
+  '100': 100%
+);
+
+$dimensions-scale: map.remove($minmax-scale, 'none');
+
+@function build($scale, $props) {
+  $out: ();
+
+  @each $prop, $abbr in $props {
+    @each $name, $value in $scale {
+      // `max-*: auto` and `min-*: none` are meaningless, cozy-ui skips them too.
+      $skip: ($value == auto and ($prop == 'max-width' or $prop == 'max-height'))
+        or ($value == none and ($prop == 'min-width' or $prop == 'min-height'));
+
+      @if not $skip {
+        $out: map.set($out, '#{$abbr}-#{$name}', ($prop: $value));
+      }
+    }
+  }
+
+  @return $out;
+}
+
+@include config.utils(build($minmax-scale, $minmax), $important: true);
+@include config.utils(build($dimensions-scale, $dimensions), $important: true);

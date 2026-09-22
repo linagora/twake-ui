@@ -1,0 +1,13 @@
+@use '../config';
+
+@each $name, $value in config.$spacing {
+  .u-stack-#{$name} > * + * {
+    margin-top: $value;
+  }
+}
+
+@each $name, $value in config.$spacing {
+  .u-row-#{$name} > * + * {
+    margin-left: $value;
+  }
+}

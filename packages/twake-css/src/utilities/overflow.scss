@@ -1,0 +1,6 @@
+// Not responsive, mirroring cozy-ui.
+@each $name, $value in ('visible': visible, 'hidden': hidden, 'scroll': scroll, 'auto': auto) {
+  .u-ov-#{$name} {
+    overflow: $value !important;
+  }
+}

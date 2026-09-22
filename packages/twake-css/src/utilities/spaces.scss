@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use '../config';
+
+$types: ('p': padding, 'm': margin);
+$directions: ('': all, 't': top, 'b': bottom, 'l': left, 'r': right, 'v': vertical, 'h': horizontal);
+
+$spaces: ();
+
+@each $type, $prop in $types {
+  @each $size, $value in config.$sizes {
+    @each $dir, $side in $directions {
+      $decls: null;
+
+      @if $side == all {
+        $decls: ($prop: $value);
+      } @else if $side == vertical {
+        $decls: ('#{$prop}-top': $value, '#{$prop}-bottom': $value);
+      } @else if $side == horizontal {
+        $decls: ('#{$prop}-left': $value, '#{$prop}-right': $value);
+      } @else {
+        $decls: ('#{$prop}-#{$side}': $value);
+      }
+
+      $spaces: map.set($spaces, '#{$type}#{$dir}-#{$size}', $decls);
+    }
+  }
+}
+
+@include config.utils($spaces, $important: true);
