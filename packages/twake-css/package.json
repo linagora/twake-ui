@@ -1,0 +1,65 @@
+{
+  "name": "@linagora/twake-css",
+  "version": "1.0.0",
+  "description": "Palette and theme-aware CSS utility classes for Twake applications",
+  "author": "Twake",
+  "license": "MIT",
+  "engines": {
+    "node": "24.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linagora/twake-ui.git",
+    "directory": "packages/twake-css"
+  },
+  "keywords": [
+    "twake",
+    "css",
+    "utilities",
+    "theme"
+  ],
+  "exports": {
+    "./palette.json": "./palette.json",
+    "./dist/vars.css": "./dist/vars.css",
+    "./dist/utils.css": "./dist/utils.css"
+  },
+  "sideEffects": true,
+  "files": [
+    "dist",
+    "palette.json",
+    "README.md",
+    "MIGRATION.md",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npm run build:palette && npm run build:vars && npm run build:utils",
+    "build:palette": "node scripts/palette-to-scss.mjs",
+    "build:vars": "sass --no-source-map src/vars.scss dist/vars.css",
+    "build:utils": "sass --style=compressed --no-source-map src/utils.scss dist/utils.css",
+    "start": "npm run build:palette && sass --watch --no-source-map src/vars.scss:dist/vars.css src/utils.scss:dist/utils.css",
+    "lint": "npm run build",
+    "clean": "rm -rf dist src/palette.scss",
+    "doc": "npm run build:palette && storybook dev -p 6008",
+    "build:doc": "npm run build:palette && storybook build --output-dir storybook-static"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^9.2.0",
+    "@storybook/addon-docs": "10.3.5",
+    "@storybook/builder-vite": "10.3.5",
+    "@storybook/react": "10.3.5",
+    "@storybook/react-vite": "10.3.5",
+    "@types/react": "18.2.0",
+    "cozy-tsconfig": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "1.104.1",
+    "storybook": "10.3.5",
+    "vite": "8.0.9"
+  },
+  "type": "module"
+}
