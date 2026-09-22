@@ -1,4 +1,4 @@
-import { TypographyVariantsOptions } from '@mui/material/styles'
+import { Shadows, TypographyVariantsOptions } from '@mui/material/styles'
 
 // Palette Types
 export interface CommonColor {
@@ -117,6 +117,12 @@ export type MakeTypography = () => TypographyOptions
  * `theme.palette.background.contrast` get a type error.
  */
 declare module '@mui/material/styles' {
+  // Shadows differ per mode, like the palette. MUI emits them per scheme but
+  // does not type the option.
+  interface ColorSystemOptions {
+    shadows?: Shadows
+  }
+
   interface CssThemeVariables {
     enabled: true
   }

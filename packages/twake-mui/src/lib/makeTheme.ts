@@ -36,11 +36,17 @@ export const makeTheme = (
     cssVariables: { colorSchemeSelector: 'data-theme' },
     defaultColorScheme: mode,
     colorSchemes: {
-      light: { palette: makePalette('light', paletteOverrides) },
-      dark: { palette: makePalette('dark', paletteOverrides) }
+      light: {
+        palette: makePalette('light', paletteOverrides),
+        shadows: makeShadows('light')
+      },
+      dark: {
+        palette: makePalette('dark', paletteOverrides),
+        shadows: makeShadows('dark')
+      }
     },
     typography: makeTypography(),
-    shadows: makeShadows(),
+    shadows: makeShadows(mode),
     components: overrides
   }
 
