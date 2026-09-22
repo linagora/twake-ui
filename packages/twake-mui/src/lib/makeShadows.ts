@@ -1,10 +1,10 @@
+import paletteJson from '@linagora/twake-css/palette.json'
 import { Shadows } from '@mui/material/styles'
 import { alpha } from '@mui/material/styles'
 
-import paletteJson from './palette.json'
 import { PaletteJson } from './types'
 
-const paletteData = paletteJson as PaletteJson
+const paletteData: PaletteJson = paletteJson
 
 /**
  * Each elevation is two offset layers plus a constant hairline outline.

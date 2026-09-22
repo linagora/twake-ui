@@ -58,6 +58,7 @@
     "twake-i18n": ">=0.5.0"
   },
   "dependencies": {
+    "@linagora/twake-css": "^1.0.0",
     "@mui/utils": "^9.2.0",
     "classnames": "^2.5.1"
   },

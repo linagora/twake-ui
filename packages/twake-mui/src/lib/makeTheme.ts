@@ -33,7 +33,7 @@ export const makeTheme = (
 ): ReturnType<typeof createTheme> => {
   const baseOptions: ThemeOptions = {
     ...themesCommonConfig,
-    cssVariables: { colorSchemeSelector: 'data-theme' },
+    cssVariables: { colorSchemeSelector: 'data-theme', cssVarPrefix: 'twake' },
     defaultColorScheme: mode,
     colorSchemes: {
       light: {

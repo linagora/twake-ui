@@ -1,42 +1,11 @@
+import paletteJson from '@linagora/twake-css/palette.json'
 import { Shadows, TypographyVariantsOptions } from '@mui/material/styles'
 
 // Palette Types
-export interface CommonColor {
-  white: string
-  black: string
-}
-
-export interface PaletteColor {
-  50: string
-  100: string
-  200: string
-  300: string
-  400: string
-  500: string
-  600: string
-  700: string
-  800: string
-  900: string
-  ContrastText?: string
-}
-
-export interface GreyPalette {
-  50: string
-  100: string
-  200: string
-  300: string
-  400: string
-  500: string
-  600: string
-  700: string
-  800: string
-  900: string
-  A100: string
-  A200: string
-  A400: string
-  A700: string
-  A900: string
-}
+export type PaletteJson = typeof paletteJson
+export type PaletteColor = PaletteJson['Primary']
+export type GreyPalette = PaletteJson['Grey']
+export type CommonColor = PaletteJson['Common']
 
 export interface TextPalette {
   primary: string
@@ -68,17 +37,6 @@ export interface BorderPalette {
   ghostDisabled: string
   opacity: number
   ghostOpacity: number
-}
-
-export interface PaletteJson {
-  Primary: PaletteColor
-  Secondary: PaletteColor
-  Error: PaletteColor
-  Warning: PaletteColor
-  Success: PaletteColor
-  Info: Omit<PaletteColor, 'ContrastText'>
-  Grey: GreyPalette
-  Common: CommonColor
 }
 
 // Typography Types
