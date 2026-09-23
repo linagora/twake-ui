@@ -2,4 +2,8 @@
 import cozyReact from 'eslint-config-cozy-app/react'
 import storybook from 'eslint-plugin-storybook'
 
-export default [...cozyReact, ...storybook.configs['flat/recommended']]
+export default [
+  { ignores: ['**/*.test.ts'] },
+  ...cozyReact,
+  ...storybook.configs['flat/recommended']
+]
