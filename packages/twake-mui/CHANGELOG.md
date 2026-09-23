@@ -1,3 +1,12 @@
+# @linagora/twake-mui [9.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.3.0...@linagora/twake-mui@9.4.0) (2026-09-23)
+
+
+### Features
+
+* **twake-mui:** Install react-virtuoso ([4248221](https://github.com/linagora/twake-ui/commit/424822190001b87a38679957ce042322078aafd0))
+* **twake-mui:** Install rooks ([c1d4d9a](https://github.com/linagora/twake-ui/commit/c1d4d9aa5ea535f070be5b75dec9cb864103a547))
+* **twake-mui:** Migrate VirtualizedTable from cozy-ui ([2d3a3cf](https://github.com/linagora/twake-ui/commit/2d3a3cf6751435d247e7c14388010f1450cd9c96))
+
 # @linagora/twake-mui [9.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.2.0...@linagora/twake-mui@9.3.0) (2026-09-23)
 
 
