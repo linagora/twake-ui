@@ -59,7 +59,7 @@ export const Cell: React.FC<CellProps> = ({
     <TableCell
       ref={longPressRef}
       sx={{
-        cursor: onClick ? 'pointer' : undefined,
+        cursor: !!onClick && !column.disableClick ? 'pointer' : undefined,
         width: column.width,
         maxWidth: column.maxWidth
       }}
