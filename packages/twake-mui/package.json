@@ -61,6 +61,7 @@
     "@linagora/twake-css": "^1.0.0",
     "@mui/utils": "^9.2.0",
     "classnames": "^2.5.1",
+    "react-virtuoso": "4.13.0",
     "rooks": "7.14.1"
   },
   "devDependencies": {
