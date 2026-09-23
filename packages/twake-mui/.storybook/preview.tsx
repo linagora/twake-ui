@@ -3,6 +3,7 @@ import type { Preview, StoryContext } from '@storybook/react-vite'
 import { Box, CssBaseline, ThemeProvider } from '@mui/material'
 import { I18n } from 'twake-i18n'
 import { makeTheme } from '../src/lib/makeTheme'
+import '@linagora/twake-css/dist/utils.css'
 
 /**
  * Argos renders the story, then resizes the preview iframe to the mode's
