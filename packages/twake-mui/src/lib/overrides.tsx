@@ -1096,5 +1096,70 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         }
       })
     }
+  },
+  MuiTableHead: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        backgroundColor: theme.vars.palette.background.paper
+      })
+    }
+  },
+  MuiTableRow: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        '&.new': {
+          backgroundColor: theme.vars.palette.action.hover
+        },
+        '&.disabled': {
+          pointerEvents: 'none',
+          opacity: 0.5
+        }
+      })
+    }
+  },
+  MuiTableCell: {
+    styleOverrides: {
+      root: {
+        padding: '8px 4px'
+      },
+      head: ({ theme }) => ({
+        ...theme.typography.subtitle2,
+        color: theme.vars.palette.text.secondary,
+        lineHeight: 1.292
+      }),
+      body: ({ theme }) => ({
+        color: theme.vars.palette.text.secondary,
+        // We want cell's sizes to be 2rem of content plus padding and border (49px).
+        // CssBaseline makes Twake apps border-box, where 2rem would be the total
+        // height, so the cell opts back into content-box to keep the same row.
+        boxSizing: 'content-box',
+        height: '2rem'
+      }),
+      sizeSmall: ({ theme }) => ({
+        ...theme.typography.subtitle2,
+        // restated because the root padding above beats MUI's own size variant
+        padding: '0 16px',
+        outline: `1px solid ${theme.vars.palette.background.default}`,
+        borderBottom: 'none',
+        backgroundColor: theme.vars.palette.background.default
+      }),
+      paddingCheckbox: {
+        width: 32,
+        padding: 0
+      },
+      stickyHeader: ({ theme }) => ({
+        backgroundColor: theme.vars.palette.background.paper
+      })
+    }
+  },
+  MuiTableSortLabel: {
+    styleOverrides: {
+      root: {
+        padding: '8px 0'
+      },
+      icon: {
+        fontSize: 14
+      }
+    }
   }
 }
