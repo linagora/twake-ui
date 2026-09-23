@@ -1067,10 +1067,17 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     styleOverrides: {
       tooltip: ({ theme }) => ({
         backgroundColor: alpha(theme.palette.grey[800], 0.9),
-        fontSize: '1rem',
-        lineHeight: 1.3,
-        borderRadius: '4px',
-        padding: '8px 12px'
+        borderRadius: radius.sm,
+        variants: [
+          {
+            props: ({ ownerState }) => !ownerState.touch,
+            style: {
+              fontSize: theme.typography.pxToRem(16),
+              lineHeight: 1.3,
+              padding: '8px 12px'
+            }
+          }
+        ]
       })
     }
   },
