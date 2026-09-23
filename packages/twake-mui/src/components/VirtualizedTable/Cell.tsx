@@ -32,9 +32,10 @@ export const Cell: React.FC<CellProps> = ({
 
   const longPressRef = useOnLongPress(
     () => {
-      if (column.disableClick) return
+      // without a long press handler, a slow click must stay a click
+      if (column.disableClick || !onLongPress) return
       isLongPress.current = true
-      onLongPress?.(row, column)
+      onLongPress(row, column)
     },
     { duration: LONG_PRESS_DURATION }
   )
