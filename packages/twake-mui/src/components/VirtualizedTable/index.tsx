@@ -1,5 +1,5 @@
 import { TableCell } from '@mui/material'
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef, useMemo, useState } from 'react'
 import {
   GroupedTableVirtuoso,
   GroupedTableVirtuosoHandle,
@@ -90,10 +90,12 @@ export const VirtualizedTable = forwardRef<
     )
     const [orderBy, setOrderBy] = useState(defaultOrder?.by)
 
-    const sortedRows = orderBy
-      ? stableSort(rows, getComparator(orderDirection, orderBy))
-      : rows
-    const data = secondarySort ? secondarySort(sortedRows) : sortedRows
+    const data = useMemo(() => {
+      const sortedRows = orderBy
+        ? stableSort(rows, getComparator(orderDirection, orderBy))
+        : rows
+      return secondarySort ? secondarySort(sortedRows) : sortedRows
+    }, [rows, orderBy, orderDirection, secondarySort])
     const { groupLabels, groupCounts } = groups?.(data) ?? {}
     const tableContext: TableContext = {
       ...context,
