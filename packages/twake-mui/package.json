@@ -60,7 +60,8 @@
   "dependencies": {
     "@linagora/twake-css": "^1.0.0",
     "@mui/utils": "^9.2.0",
-    "classnames": "^2.5.1"
+    "classnames": "^2.5.1",
+    "rooks": "7.14.1"
   },
   "devDependencies": {
     "@argos-ci/cli": "4.2.0",
