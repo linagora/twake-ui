@@ -1,7 +1,15 @@
 import { TableCell, TableSortLabel } from '@mui/material'
 import React from 'react'
 
+import { useExtendI18n, useI18n } from 'twake-i18n'
+
+import en from './locales/en.json'
+import fr from './locales/fr.json'
+import ru from './locales/ru.json'
+import vi from './locales/vi.json'
 import type { Column, OrderDirection } from './types'
+
+const locales = { en, fr, ru, vi }
 
 interface HeadCellProps {
   column: Column
@@ -16,6 +24,8 @@ export const HeadCell: React.FC<HeadCellProps> = ({
   orderDirection,
   onClick
 }) => {
+  useExtendI18n(locales)
+  const { t } = useI18n()
   const isActive = orderBy === column.id
 
   return (
@@ -36,8 +46,8 @@ export const HeadCell: React.FC<HeadCellProps> = ({
           {isActive && (
             <span className="u-visuallyhidden">
               {orderDirection === 'desc'
-                ? 'sorted descending'
-                : 'sorted ascending'}
+                ? t('VirtualizedTable.sortedDesc')
+                : t('VirtualizedTable.sortedAsc')}
             </span>
           )}
         </TableSortLabel>
