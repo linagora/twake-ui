@@ -35,6 +35,7 @@ export { NavDesktopLimiter } from './components/NavDesktopLimiter'
 export { NavDesktopDropdown } from './components/NavDesktopDropdown'
 export { nameToColor, supportedColors } from './components/Avatar/helpers'
 export { default as AccordionExpandIcon } from './components/AccordionExpandIcon'
+export { default as VirtualizedTable } from './components/VirtualizedTable'
 export { useBreakpoints } from './hooks/useBreakpoints'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
@@ -54,4 +55,9 @@ export type { NavIconProps } from './components/NavIcon'
 export type { NavTextProps } from './components/NavText'
 export type { NavDesktopLimiterProps } from './components/NavDesktopLimiter'
 export type { NavDesktopDropdownProps } from './components/NavDesktopDropdown'
+export type {
+  VirtualizedTableProps,
+  VirtualizedTableColumn,
+  VirtualizedTableRow
+} from './components/VirtualizedTable'
 export type { Breakpoints } from './hooks/useBreakpoints'
