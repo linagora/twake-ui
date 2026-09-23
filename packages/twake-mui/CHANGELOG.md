@@ -1,3 +1,10 @@
+# @linagora/twake-mui [9.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.2.0...@linagora/twake-mui@9.3.0) (2026-09-23)
+
+
+### Features
+
+* **twake-mui:** Migrate Tooltip from cozy-ui ([6a5263a](https://github.com/linagora/twake-ui/commit/6a5263a2d5246798a1d003a8a2a7e0b5183bbe0d))
+
 # @linagora/twake-mui [9.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.1.0...@linagora/twake-mui@9.2.0) (2026-09-22)
 
 
