@@ -36,6 +36,7 @@ export { NavDesktopDropdown } from './components/NavDesktopDropdown'
 export { nameToColor, supportedColors } from './components/Avatar/helpers'
 export { default as AccordionExpandIcon } from './components/AccordionExpandIcon'
 export { default as VirtualizedTable } from './components/VirtualizedTable'
+export { VirtuosoMockContext } from 'react-virtuoso'
 export { useBreakpoints } from './hooks/useBreakpoints'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
