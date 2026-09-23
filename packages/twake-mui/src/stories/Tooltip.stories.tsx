@@ -1,5 +1,5 @@
 import { CarbonCopy, Icon } from '@linagora/twake-icons'
-import { Stack, Tooltip, Typography } from '@mui/material'
+import { Box, Stack, Tooltip, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
@@ -24,7 +24,19 @@ const meta: Meta<typeof Tooltip> = {
   title: 'Tooltip',
   component: Tooltip,
   parameters: { layout: 'centered' },
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  decorators: [
+    // The dark tooltip shares the dark paper colour, so it would vanish on it
+    (Story): React.ReactElement => (
+      <Box
+        sx={theme =>
+          theme.applyStyles('dark', { bgcolor: 'background.default' })
+        }
+      >
+        <Story />
+      </Box>
+    )
+  ]
 }
 
 export default meta
@@ -56,7 +68,7 @@ export const Default: Story = {
 export const Screenshot: Story = {
   tags: ['argos'],
   render: () => (
-    <div style={{ padding: '48px 48px 200px' }}>
+    <div style={{ padding: '48px 96px 200px' }}>
       <Tooltip open title={title}>
         <u>hover over me</u>
       </Tooltip>
