@@ -1,8 +1,8 @@
-import { Bottom, Icon } from '@linagora/twake-icons'
-import { ListItem, Typography } from '@mui/material'
+import { ListItem } from '@mui/material'
 import React, { Children, isValidElement, useState } from 'react'
 
 import { useBreakpoints } from '../../hooks/useBreakpoints'
+import DropdownText from '../DropdownText'
 
 export interface NavDesktopDropdownProps {
   label: string
@@ -29,26 +29,25 @@ export const NavDesktopDropdown = ({
   return (
     <>
       <ListItem
-        onClick={isActivated ? onToggle : undefined}
         sx={{
           minHeight: 48,
           py: 1,
           px: 2,
-          justifyContent: 'space-between',
           cursor: isActivated ? 'pointer' : undefined
         }}
       >
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+        <DropdownText
+          variant="caption"
+          color="textSecondary"
+          spaceBetween
+          onClick={isActivated ? onToggle : undefined}
+          innerIconProps={{
+            rotate: open ? 0 : -90,
+            display: isActivated ? undefined : 'none'
+          }}
+        >
           {label}
-        </Typography>
-        {isActivated && (
-          <Typography
-            component="span"
-            sx={{ display: 'flex', ml: '5px', color: 'text.secondary' }}
-          >
-            <Icon icon={Bottom} size={10} rotate={open ? 0 : -90} />
-          </Typography>
-        )}
+        </DropdownText>
       </ListItem>
       {open && children}
     </>
