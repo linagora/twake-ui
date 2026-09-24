@@ -17,6 +17,8 @@ import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { formHelperTextClasses } from '@mui/material/FormHelperText'
 import { formLabelClasses } from '@mui/material/FormLabel'
+import { listItemIconClasses } from '@mui/material/ListItemIcon'
+import { listItemTextClasses } from '@mui/material/ListItemText'
 import { outlinedInputClasses } from '@mui/material/OutlinedInput'
 import { radioClasses } from '@mui/material/Radio'
 import { selectClasses } from '@mui/material/Select'
@@ -1075,6 +1077,36 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
               lineHeight: 1.3,
               padding: '8px 12px'
             }
+          }
+        ]
+      })
+    }
+  },
+  MuiMenu: {
+    styleOverrides: {
+      paper: { maxWidth: 320 }
+    }
+  },
+  MuiMenuItem: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        gap: 16,
+        paddingTop: 4,
+        paddingBottom: 4,
+        whiteSpace: 'normal',
+        wordBreak: 'break-word',
+        [`& .${listItemIconClasses.root}`]: {
+          minWidth: 'auto',
+          color: theme.vars.palette.text.icon
+        },
+        [`& .${listItemTextClasses.root}`]: {
+          marginTop: 1,
+          marginBottom: 1
+        },
+        variants: [
+          {
+            props: { dense: false },
+            style: { [theme.breakpoints.up('sm')]: { minHeight: 40 } }
           }
         ]
       })
