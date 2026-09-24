@@ -1,3 +1,10 @@
+## @linagora/twake-mui [9.9.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.9.0...@linagora/twake-mui@9.9.1) (2026-09-24)
+
+
+### Bug Fixes
+
+* **twake-mui:** Fixed contactPopover click propagation & opening link in new pages ([b11270b](https://github.com/linagora/twake-ui/commit/b11270b060bcc749805f59059214c8a011b7b20d))
+
 # @linagora/twake-mui [9.9.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.8.0...@linagora/twake-mui@9.9.0) (2026-09-24)
 
 
