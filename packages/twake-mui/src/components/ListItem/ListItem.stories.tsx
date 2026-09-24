@@ -12,6 +12,7 @@ import {
   Checkbox,
   IconButton,
   List,
+  ListItemAvatar,
   ListItemIcon,
   ListItemSecondaryAction,
   ListSubheader,
@@ -23,6 +24,7 @@ import React from 'react'
 
 import { ListItemCozyProps } from './helpers'
 import { ListItem } from './index'
+import { Avatar } from '../Avatar'
 import { ListItemButton } from '../ListItemButton'
 import { ListItemText } from '../ListItemText'
 
@@ -225,6 +227,23 @@ export const Screenshot: Story = {
         longText
         gutters="double"
       />
+      <section>
+        <h3>With avatar</h3>
+        <List>
+          <ListItemButton>
+            <ListItemAvatar>
+              <Avatar>Ada Lovelace</Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Ada Lovelace" secondary={longText} />
+          </ListItemButton>
+          <ListItemButton alignItems="flex-start" ellipsis={false}>
+            <ListItemAvatar>
+              <Avatar>Ada Lovelace</Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Ada Lovelace" secondary={longText} />
+          </ListItemButton>
+        </List>
+      </section>
       <Example title="Selected" selected />
       <Example title="Disabled" disabled />
       <Example title="Not a button" button={false} />
