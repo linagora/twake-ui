@@ -1,3 +1,11 @@
+# @linagora/twake-mui [9.7.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.6.0...@linagora/twake-mui@9.7.0) (2026-09-24)
+
+
+### Features
+
+* **twake-mui:** Added ContactPopover component ([5332ae2](https://github.com/linagora/twake-ui/commit/5332ae2051c0863ce8269a32954c5dbb3a5a5694))
+* **twake-mui:** Migrate SearchBar from cozy-ui ([0b03e38](https://github.com/linagora/twake-ui/commit/0b03e38cee859c52d913acb3aca155eeca0c9665))
+
 # @linagora/twake-mui [9.6.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.5.1...@linagora/twake-mui@9.6.0) (2026-09-24)
 
 
