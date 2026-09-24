@@ -26,6 +26,7 @@ export {
   ContactPopover,
   default as ContactPopoverDefault
 } from './components/ContactPopover'
+export { default as DropdownText } from './components/DropdownText'
 export { Tabs, default as TabsDefault } from './components/Tabs'
 export { Switch, default as SwitchDefault } from './components/Switch'
 export { SearchBar, default as SearchBarDefault } from './components/SearchBar'
@@ -67,6 +68,10 @@ export type { ContactPopoverCalendarActionProps } from './components/ContactPopo
 export type { ContactPopoverEmailActionProps } from './components/ContactPopover/ContactPopoverEmailAction'
 export type { ChipProps } from './components/Chip'
 export type { DialogProps, DialogSize } from './components/Dialog'
+export type {
+  DropdownTextProps,
+  DropdownTextVariant
+} from './components/DropdownText'
 export type { TabsProps } from './components/Tabs'
 export type { SwitchProps } from './components/Switch'
 export type { SearchBarProps } from './components/SearchBar/types'
