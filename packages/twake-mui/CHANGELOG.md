@@ -1,3 +1,18 @@
+# @linagora/twake-mui [9.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.4.0...@linagora/twake-mui@9.5.0) (2026-09-24)
+
+
+### Bug Fixes
+
+* **twake-mui:** Keep slow clicks on VirtualizedTable cells without a long press handler ([9e2d7a7](https://github.com/linagora/twake-ui/commit/9e2d7a786e911a509ba35b5ddedcacb43e9d2061))
+* **twake-mui:** Show a pointer only on clickable VirtualizedTable cells ([eb98bc0](https://github.com/linagora/twake-ui/commit/eb98bc08892c5d6c162443cda249f81f57422512))
+* **twake-mui:** Sort VirtualizedTable rows only when rows or order change ([1cb782a](https://github.com/linagora/twake-ui/commit/1cb782a1b7fa39c4bf12a814cb1aa5d6d1ae7cc0))
+* **twake-mui:** Translate the VirtualizedTable sort direction announcement ([ffd5cc2](https://github.com/linagora/twake-ui/commit/ffd5cc2efaa437cc47d757b9d423e6648ddf6fe4))
+
+
+### Features
+
+* **twake-mui:** Export VirtuosoMockContext to test VirtualizedTable ([ab456e5](https://github.com/linagora/twake-ui/commit/ab456e56fa0c121c67561e944d91d3c2641b98de))
+
 # @linagora/twake-mui [9.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.3.0...@linagora/twake-mui@9.4.0) (2026-09-23)
 
 
