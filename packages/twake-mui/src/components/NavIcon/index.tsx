@@ -5,6 +5,8 @@ import React from 'react'
 
 const NavIconRoot = styled(ListItemIcon)(({ theme }: { theme: Theme }) => ({
   minWidth: 0,
+  width: 'auto',
+  height: 'auto',
   marginRight: 12,
   color: theme.vars.palette.text.primary,
   [theme.breakpoints.down('lg')]: {

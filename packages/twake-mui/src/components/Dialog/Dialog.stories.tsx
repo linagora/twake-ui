@@ -15,13 +15,13 @@ import {
   List,
   ListItemButton,
   ListItemIcon,
-  ListItemText,
   Stack
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import { Dialog, DialogProps, DialogSize } from './index'
+import { ListItemText } from '../ListItemText'
 
 const sizes: DialogSize[] = ['small', 'medium', 'large', 'full']
 

@@ -17,6 +17,7 @@ import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { formHelperTextClasses } from '@mui/material/FormHelperText'
 import { formLabelClasses } from '@mui/material/FormLabel'
+import { listItemButtonClasses } from '@mui/material/ListItemButton'
 import { listItemIconClasses } from '@mui/material/ListItemIcon'
 import { listItemTextClasses } from '@mui/material/ListItemText'
 import { outlinedInputClasses } from '@mui/material/OutlinedInput'
@@ -130,6 +131,47 @@ const radioColors = [
   'warning',
   'info'
 ] as const
+
+interface ListItemOwnerState {
+  dense?: boolean
+  disablePadding?: boolean
+}
+
+// Shared by ListItem and ListItemButton, both being cozy-ui's ListItem
+const listItemRoot: CSSObject = {
+  gap: 16,
+  variants: [
+    {
+      props: ({ dense, disablePadding }: ListItemOwnerState) =>
+        !dense && !disablePadding,
+      style: {
+        paddingTop: 12,
+        paddingBottom: 12,
+        minHeight: 56,
+        '&.small': { paddingTop: 8, paddingBottom: 8, minHeight: 48 },
+        '&.large': { paddingTop: 16, paddingBottom: 16, minHeight: 64 }
+      }
+    },
+    {
+      props: ({ dense, disablePadding }: ListItemOwnerState) =>
+        dense && !disablePadding,
+      style: {
+        paddingTop: 8,
+        paddingBottom: 8,
+        minHeight: 48,
+        '&.small': { paddingTop: 4, paddingBottom: 4, minHeight: 40 },
+        '&.large': { paddingTop: 12, paddingBottom: 12, minHeight: 56 }
+      }
+    },
+    {
+      props: { disableGutters: false },
+      style: {
+        '&.doubleGutters': { paddingLeft: 32, paddingRight: 32 },
+        [`& > .${listItemIconClasses.root}:last-child`]: { marginRight: -8 }
+      }
+    }
+  ]
+}
 
 export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiButton: {
@@ -1082,6 +1124,86 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiListItem: {
+    styleOverrides: {
+      root: listItemRoot
+    }
+  },
+  MuiListItemButton: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        ...listItemRoot,
+        [`&.${listItemButtonClasses.selected}, &.${listItemButtonClasses.selected}:hover, &.${listItemButtonClasses.focusVisible}, &.${listItemButtonClasses.selected}.${listItemButtonClasses.focusVisible}`]:
+          {
+            backgroundColor: theme.vars.palette.action.selected
+          },
+        [`&.${listItemButtonClasses.disabled}`]: {
+          opacity: 0.5
+        }
+      })
+    }
+  },
+  MuiListItemIcon: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        minWidth: 'auto',
+        width: 32,
+        height: 32,
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: theme.vars.palette.text.icon
+      })
+    }
+  },
+  MuiListSubheader: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        ...theme.typography.subtitle2,
+        paddingTop: 8,
+        paddingBottom: 8,
+        marginBottom: '0.5rem',
+        backgroundColor: theme.vars.palette.background.contrast,
+        variants: [
+          {
+            props: { disableSticky: false },
+            style: { backgroundColor: theme.vars.palette.background.default }
+          },
+          {
+            props: { disableGutters: false },
+            style: {
+              '&.doubleGutters': { paddingLeft: 32, paddingRight: 32 }
+            }
+          }
+        ]
+      })
+    }
+  },
+  MuiListItemText: {
+    styleOverrides: {
+      root: {
+        marginTop: 1,
+        marginBottom: 1,
+        '& > .ellipsis': {
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
+        }
+      },
+      secondary: {
+        marginTop: 1
+      }
+    }
+  },
+  MuiListItemSecondaryAction: {
+    styleOverrides: {
+      root: {
+        right: 0,
+        '.doubleGutters > &, .doubleGutters ~ &': {
+          marginRight: 16
+        }
+      }
+    }
+  },
   MuiMenu: {
     styleOverrides: {
       paper: { maxWidth: 320 }
@@ -1097,6 +1219,8 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         wordBreak: 'break-word',
         [`& .${listItemIconClasses.root}`]: {
           minWidth: 'auto',
+          width: 'auto',
+          height: 'auto',
           color: theme.vars.palette.text.icon
         },
         [`& .${listItemTextClasses.root}`]: {

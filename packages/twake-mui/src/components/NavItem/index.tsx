@@ -8,6 +8,7 @@ export const NavItem = styled(ListItem, {
   ({ theme, secondary }: { theme: Theme; secondary?: boolean }) => ({
     padding: 0,
     height: 36,
+    minHeight: 0,
     [theme.breakpoints.down('lg')]: {
       display: 'block',
       height: 'auto',
