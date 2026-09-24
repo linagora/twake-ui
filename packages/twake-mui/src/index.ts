@@ -22,6 +22,10 @@ export { Avatar, default as AvatarDefault } from './components/Avatar'
 export { Button, default as ButtonDefault } from './components/Button'
 export { default as Chip } from './components/Chip'
 export { Dialog, default as DialogDefault } from './components/Dialog'
+export {
+  ContactPopover,
+  default as ContactPopoverDefault
+} from './components/ContactPopover'
 export { Tabs, default as TabsDefault } from './components/Tabs'
 export { Switch, default as SwitchDefault } from './components/Switch'
 export { Sidebar, SIDEBAR_MOBILE_HEIGHT } from './components/Sidebar'
@@ -33,7 +37,11 @@ export { NavIcon } from './components/NavIcon'
 export { NavText } from './components/NavText'
 export { NavDesktopLimiter } from './components/NavDesktopLimiter'
 export { NavDesktopDropdown } from './components/NavDesktopDropdown'
-export { nameToColor, supportedColors } from './components/Avatar/helpers'
+export {
+  nameToColor,
+  supportedColors,
+  getInitials
+} from './components/Avatar/helpers'
 export { default as AccordionExpandIcon } from './components/AccordionExpandIcon'
 export { default as VirtualizedTable } from './components/VirtualizedTable'
 export { VirtuosoMockContext } from 'react-virtuoso'
@@ -43,6 +51,19 @@ export type { TwakeTheme } from './lib/theme'
 export type { PaletteJson } from './lib/types'
 export type { AvatarProps } from './components/Avatar'
 export type { ButtonProps } from './components/Button'
+export type { ContactPopoverProps } from './components/ContactPopover'
+export {
+  ContactPopoverActions,
+  ContactPopoverChatAction,
+  ContactPopoverVideoAction,
+  ContactPopoverCalendarAction,
+  ContactPopoverEmailAction
+} from './components/ContactPopover'
+export type { ContactPopoverActionsProps } from './components/ContactPopover/ContactPopoverActions'
+export type { ContactPopoverChatActionProps } from './components/ContactPopover/ContactPopoverChatAction'
+export type { ContactPopoverVideoActionProps } from './components/ContactPopover/ContactPopoverVideoAction'
+export type { ContactPopoverCalendarActionProps } from './components/ContactPopover/ContactPopoverCalendarAction'
+export type { ContactPopoverEmailActionProps } from './components/ContactPopover/ContactPopoverEmailAction'
 export type { ChipProps } from './components/Chip'
 export type { DialogProps, DialogSize } from './components/Dialog'
 export type { TabsProps } from './components/Tabs'
