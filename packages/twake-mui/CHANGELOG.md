@@ -1,3 +1,10 @@
+# @linagora/twake-mui [9.8.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.7.0...@linagora/twake-mui@9.8.0) (2026-09-24)
+
+
+### Features
+
+* **twake-mui:** Migrate DropdownText from cozy-ui ([777b07c](https://github.com/linagora/twake-ui/commit/777b07c26e72cc21ac278dd33b1e0a8210dc19e9))
+
 # @linagora/twake-mui [9.7.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.6.0...@linagora/twake-mui@9.7.0) (2026-09-24)
 
 
