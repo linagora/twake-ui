@@ -1186,6 +1186,8 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         wordBreak: 'break-word',
         [`& .${listItemIconClasses.root}`]: {
           minWidth: 'auto',
+          width: 'auto',
+          height: 'auto',
           color: theme.vars.palette.text.icon
         },
         [`& .${listItemTextClasses.root}`]: {

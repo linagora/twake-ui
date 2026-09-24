@@ -14,6 +14,8 @@ export const NavLink = styled(ListItemButton)(
     margin: '0 16px',
     padding: '0 8px',
     height: '100%',
+    minHeight: 0,
+    gap: 0,
     borderRadius: 8,
     lineHeight: 1.375,
     color: theme.vars.palette.text.primary,
