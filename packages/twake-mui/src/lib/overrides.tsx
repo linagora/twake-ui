@@ -140,12 +140,6 @@ interface ListItemOwnerState {
 // Shared by ListItem and ListItemButton, both being cozy-ui's ListItem
 const listItemRoot: CSSObject = {
   gap: 16,
-  [`&.ellipsis > .${listItemTextClasses.root} > .${listItemTextClasses.primary}, &.ellipsis > .${listItemTextClasses.root} > .${listItemTextClasses.secondary}`]:
-    {
-      whiteSpace: 'nowrap',
-      overflow: 'hidden',
-      textOverflow: 'ellipsis'
-    },
   variants: [
     {
       props: ({ dense, disablePadding }: ListItemOwnerState) =>
@@ -1159,6 +1153,22 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         justifyContent: 'center',
         color: theme.vars.palette.text.icon
       })
+    }
+  },
+  MuiListItemText: {
+    styleOverrides: {
+      root: {
+        marginTop: 1,
+        marginBottom: 1,
+        '& > .ellipsis': {
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
+        }
+      },
+      secondary: {
+        marginTop: 1
+      }
     }
   },
   MuiListItemSecondaryAction: {

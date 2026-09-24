@@ -1,7 +1,9 @@
 import { SxProps, Theme } from '@mui/material/styles'
 import { isMuiElement } from '@mui/material/utils'
 import cx from 'classnames'
-import React, { Children, isValidElement } from 'react'
+import React, { Children, cloneElement, isValidElement } from 'react'
+
+import { ListItemText, ListItemTextProps } from '../ListItemText'
 
 export type ListItemGutters = 'default' | 'double' | 'disabled'
 export type ListItemSize = 'small' | 'medium' | 'large'
@@ -52,10 +54,7 @@ export function computeListItemRow({
     : 0
 
   return {
-    className: cx(className, size, {
-      doubleGutters: gutters === 'double',
-      ellipsis
-    }),
+    className: cx(className, size, { doubleGutters: gutters === 'double' }),
     disableGutters: disableGutters || gutters === 'disabled',
     sx: [
       // && outranks the theme's .doubleGutters padding
@@ -63,6 +62,10 @@ export function computeListItemRow({
       sx ?? false
     ].flat(),
     action,
-    content: action ? items.slice(0, -1) : children
+    content: (action ? items.slice(0, -1) : items).map(item =>
+      isValidElement<ListItemTextProps>(item) && item.type === ListItemText
+        ? cloneElement(item, { ellipsis })
+        : item
+    )
   }
 }

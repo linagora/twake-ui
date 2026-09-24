@@ -42,7 +42,8 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
         disableGutters={row.disableGutters}
         sx={row.sx}
       >
-        {children}
+        {row.content}
+        {row.action}
       </MuiListItem>
     )
   }
