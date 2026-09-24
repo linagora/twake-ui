@@ -28,6 +28,7 @@ export {
 } from './components/ContactPopover'
 export { default as DropdownButton } from './components/DropdownButton'
 export { default as DropdownText } from './components/DropdownText'
+export { NavbarButton } from './components/NavbarButton'
 export { Tabs, default as TabsDefault } from './components/Tabs'
 export { Switch, default as SwitchDefault } from './components/Switch'
 export { SearchBar, default as SearchBarDefault } from './components/SearchBar'
@@ -70,6 +71,10 @@ export type { ContactPopoverEmailActionProps } from './components/ContactPopover
 export type { ChipProps } from './components/Chip'
 export type { DialogProps, DialogSize } from './components/Dialog'
 export type { DropdownButtonProps } from './components/DropdownButton'
+export type {
+  NavbarButtonProps,
+  NavbarButtonVariant
+} from './components/NavbarButton'
 export type {
   DropdownTextProps,
   DropdownTextVariant
