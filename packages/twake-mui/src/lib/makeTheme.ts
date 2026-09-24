@@ -1,4 +1,4 @@
-import { createTheme, ThemeOptions } from '@mui/material/styles'
+import { createTheme, Overlays, ThemeOptions } from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
 
 import { makePalette } from './makePalette'
@@ -42,7 +42,8 @@ export const makeTheme = (
       },
       dark: {
         palette: makePalette('dark', paletteOverrides),
-        shadows: makeShadows('dark')
+        shadows: makeShadows('dark'),
+        overlays: Array<string>(25).fill('none') as Overlays
       }
     },
     typography: makeTypography(),
