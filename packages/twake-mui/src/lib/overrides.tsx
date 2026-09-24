@@ -17,7 +17,6 @@ import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { formHelperTextClasses } from '@mui/material/FormHelperText'
 import { formLabelClasses } from '@mui/material/FormLabel'
-import { menuItemClasses } from '@mui/material/MenuItem'
 import { outlinedInputClasses } from '@mui/material/OutlinedInput'
 import { radioClasses } from '@mui/material/Radio'
 import { selectClasses } from '@mui/material/Select'
@@ -1078,29 +1077,6 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             }
           }
         ]
-      })
-    }
-  },
-  MuiMenuItem: {
-    styleOverrides: {
-      root: ({ theme }) => ({
-        borderRadius: radius.md,
-        '&&&:hover': {
-          backgroundColor: `${alpha(theme.palette.primary.main, theme.palette.action.hoverOpacity)}`
-        },
-        [`&.${menuItemClasses.selected}`]: {
-          backgroundColor: alpha(
-            theme.palette.primary.main,
-            theme.palette.action.selectedOpacity
-          ),
-          '&:hover': {
-            backgroundColor: alpha(
-              theme.palette.primary.main,
-              theme.palette.action.selectedOpacity +
-                theme.palette.action.hoverOpacity
-            )
-          }
-        }
       })
     }
   },
