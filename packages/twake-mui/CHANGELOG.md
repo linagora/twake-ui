@@ -1,3 +1,15 @@
+# @linagora/twake-mui [9.6.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.5.1...@linagora/twake-mui@9.6.0) (2026-09-24)
+
+
+### Bug Fixes
+
+* **twake-mui:** Clean old MenuItem override ([8c7b2f9](https://github.com/linagora/twake-ui/commit/8c7b2f9824e4ecc695f293ee04367415c5d5602e))
+
+
+### Features
+
+* **twake-mui:** Migrate Menu from cozy-ui ([e73e894](https://github.com/linagora/twake-ui/commit/e73e894938ac5e30f647f7e64ff06737b03afbad))
+
 ## @linagora/twake-mui [9.5.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.5.0...@linagora/twake-mui@9.5.1) (2026-09-24)
 
 
