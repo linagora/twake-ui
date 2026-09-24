@@ -1,16 +1,13 @@
-import {
-  Button as MuiButton,
-  ButtonTypeMap as MuiButtonTypeMap,
-  buttonClasses
-} from '@mui/material'
+import { Icon, IconProps } from '@linagora/twake-icons'
+import { ButtonTypeMap as MuiButtonTypeMap } from '@mui/material'
 import {
   OverridableComponent,
   OverrideProps
 } from '@mui/material/OverridableComponent'
-import { styled, Theme } from '@mui/material/styles'
+import cx from 'classnames'
 import React from 'react'
 
-import { radius } from '../../lib/radius'
+import { Button } from '../Button'
 
 export type NavbarButtonVariant = 'primary' | 'secondary'
 
@@ -23,7 +20,7 @@ export interface NavbarButtonTypeMap<
       MuiButtonTypeMap['props'],
       'variant' | 'children' | 'startIcon' | 'endIcon'
     > & {
-      icon: React.ReactNode
+      icon: IconProps['icon']
       text: React.ReactNode
       variant?: NavbarButtonVariant
     }
@@ -38,57 +35,21 @@ export type NavbarButtonProps<
   RootComponent
 >
 
-const NavbarButtonRoot = styled(MuiButton, {
-  shouldForwardProp: prop => prop !== 'navbarVariant'
-})<{ navbarVariant: NavbarButtonVariant }>(({ theme }: { theme: Theme }) => ({
-  ...theme.typography.body2,
-  gap: 7,
-  borderRadius: radius.lg,
-  [`& .${buttonClasses.startIcon}`]: {
-    margin: 0,
-    '& > *': { width: 12, height: 12, fontSize: 12 }
-  },
-  [`&.${buttonClasses.disabled}`]: {
-    color: theme.vars.palette.text.disabled
-  },
-  variants: [
-    {
-      props: { navbarVariant: 'primary' },
-      style: {
-        '@media (hover: hover)': {
-          '&:hover': {
-            backgroundColor: theme.vars.palette.primary.main,
-            backgroundImage: `linear-gradient(${theme.vars.palette.action.hover}, ${theme.vars.palette.action.hover})`
-          }
-        }
-      }
-    },
-    {
-      props: { navbarVariant: 'secondary' },
-      style: {
-        color: theme.vars.palette.text.primary,
-        backgroundColor: theme.vars.palette.background.paper,
-        '@media (hover: hover)': {
-          '&:hover': { backgroundColor: theme.vars.palette.background.paper }
-        }
-      }
-    }
-  ]
-}))
+const secondarySx = { color: 'text.primary', bgcolor: 'background.paper' }
 
 export const NavbarButton = React.forwardRef<
   HTMLButtonElement,
   NavbarButtonProps
->(({ icon, text, variant = 'primary', ...props }, ref) => (
-  <NavbarButtonRoot
+>(({ icon, text, variant = 'primary', className, ...props }, ref) => (
+  <Button
     ref={ref}
-    variant="contained"
-    navbarVariant={variant}
-    startIcon={icon}
+    startIcon={<Icon icon={icon} size={12} />}
+    className={cx('u-bdrs-6 u-fz-small', className)}
+    sx={variant === 'secondary' ? secondarySx : undefined}
     {...props}
   >
     {text}
-  </NavbarButtonRoot>
+  </Button>
 )) as OverridableComponent<NavbarButtonTypeMap> & { displayName?: string }
 
 NavbarButton.displayName = 'NavbarButton'

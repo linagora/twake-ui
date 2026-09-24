@@ -1,4 +1,4 @@
-import { Icon, Plus, Upload } from '@linagora/twake-icons'
+import { Plus, Upload } from '@linagora/twake-icons'
 import { Box, Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    icon: <Icon icon={Plus} />,
+    icon: Plus,
     text: 'Create'
   }
 }
@@ -38,19 +38,19 @@ export const Screenshot: Story = {
             <Typography variant="caption">{variant}</Typography>
             <NavbarButton
               variant={variant}
-              icon={<Icon icon={Plus} />}
+              icon={Plus}
               text="Create"
               fullWidth
             />
             <NavbarButton
               variant={variant}
-              icon={<Icon icon={Upload} />}
+              icon={Upload}
               text="Upload"
               fullWidth
             />
             <NavbarButton
               variant={variant}
-              icon={<Icon icon={Plus} />}
+              icon={Plus}
               text="Create"
               fullWidth
               disabled
