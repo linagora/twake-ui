@@ -1155,6 +1155,29 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiListSubheader: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        ...theme.typography.subtitle2,
+        paddingTop: 8,
+        paddingBottom: 8,
+        marginBottom: '0.5rem',
+        backgroundColor: theme.vars.palette.background.contrast,
+        variants: [
+          {
+            props: { disableSticky: false },
+            style: { backgroundColor: theme.vars.palette.background.default }
+          },
+          {
+            props: { disableGutters: false },
+            style: {
+              '&.doubleGutters': { paddingLeft: 32, paddingRight: 32 }
+            }
+          }
+        ]
+      })
+    }
+  },
   MuiListItemText: {
     styleOverrides: {
       root: {

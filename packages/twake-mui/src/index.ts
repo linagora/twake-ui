@@ -37,6 +37,10 @@ export {
   ListItemText,
   default as ListItemTextDefault
 } from './components/ListItemText'
+export {
+  ListSubheader,
+  default as ListSubheaderDefault
+} from './components/ListSubheader'
 export { Tabs, default as TabsDefault } from './components/Tabs'
 export { Switch, default as SwitchDefault } from './components/Switch'
 export { SearchBar, default as SearchBarDefault } from './components/SearchBar'
@@ -90,6 +94,7 @@ export type {
 } from './components/ListItem'
 export type { ListItemButtonProps } from './components/ListItemButton'
 export type { ListItemTextProps } from './components/ListItemText'
+export type { ListSubheaderProps } from './components/ListSubheader'
 export type { TabsProps } from './components/Tabs'
 export type { SwitchProps } from './components/Switch'
 export type { SearchBarProps } from './components/SearchBar/types'
