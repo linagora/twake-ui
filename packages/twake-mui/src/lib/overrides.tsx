@@ -17,7 +17,8 @@ import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { formHelperTextClasses } from '@mui/material/FormHelperText'
 import { formLabelClasses } from '@mui/material/FormLabel'
-import { menuItemClasses } from '@mui/material/MenuItem'
+import { listItemIconClasses } from '@mui/material/ListItemIcon'
+import { listItemTextClasses } from '@mui/material/ListItemText'
 import { outlinedInputClasses } from '@mui/material/OutlinedInput'
 import { radioClasses } from '@mui/material/Radio'
 import { selectClasses } from '@mui/material/Select'
@@ -1081,26 +1082,33 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiMenu: {
+    styleOverrides: {
+      paper: { maxWidth: 320 }
+    }
+  },
   MuiMenuItem: {
     styleOverrides: {
       root: ({ theme }) => ({
-        borderRadius: radius.md,
-        '&&&:hover': {
-          backgroundColor: `${alpha(theme.palette.primary.main, theme.palette.action.hoverOpacity)}`
+        gap: 16,
+        paddingTop: 4,
+        paddingBottom: 4,
+        whiteSpace: 'normal',
+        wordBreak: 'break-word',
+        [`& .${listItemIconClasses.root}`]: {
+          minWidth: 'auto',
+          color: theme.vars.palette.text.icon
         },
-        [`&.${menuItemClasses.selected}`]: {
-          backgroundColor: alpha(
-            theme.palette.primary.main,
-            theme.palette.action.selectedOpacity
-          ),
-          '&:hover': {
-            backgroundColor: alpha(
-              theme.palette.primary.main,
-              theme.palette.action.selectedOpacity +
-                theme.palette.action.hoverOpacity
-            )
+        [`& .${listItemTextClasses.root}`]: {
+          marginTop: 1,
+          marginBottom: 1
+        },
+        variants: [
+          {
+            props: { dense: false },
+            style: { [theme.breakpoints.up('sm')]: { minHeight: 40 } }
           }
-        }
+        ]
       })
     }
   },
