@@ -15,6 +15,8 @@ export const ContactPopoverChatAction = ({
   return (
     <IconButton
       href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       size="small"
       sx={{ border: `1px solid ${theme.palette.divider}` }}
     >
