@@ -191,7 +191,7 @@ export const ContactPopover: ContactPopoverComponent = ({
           }
         }}
       >
-        <StyledPopoverContent>
+        <StyledPopoverContent onClick={event => event.stopPropagation()}>
           <CloseButton size="small" onClick={handleClose}>
             <Icon icon={Cross} size={16} />
           </CloseButton>

@@ -17,6 +17,8 @@ export const ContactPopoverEmailAction = ({
   return (
     <Button
       href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       variant="outlined"
       size="small"
       fullWidth
