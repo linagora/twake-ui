@@ -1,3 +1,10 @@
+## @linagora/twake-mui [9.5.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.5.0...@linagora/twake-mui@9.5.1) (2026-09-24)
+
+
+### Bug Fixes
+
+* **twake-mui:** Remove the dark mode elevation overlay on papers ([b940b8f](https://github.com/linagora/twake-ui/commit/b940b8feba4abbe7918870ea1253a21469d3e534))
+
 # @linagora/twake-mui [9.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.4.0...@linagora/twake-mui@9.5.0) (2026-09-24)
 
 
