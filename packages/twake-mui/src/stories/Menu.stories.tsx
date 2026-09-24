@@ -1,7 +1,6 @@
 import {
   Attachment,
   Attention,
-  Bottom,
   Contrast,
   Copy,
   Icon,
@@ -11,7 +10,6 @@ import {
 } from '@linagora/twake-icons'
 import {
   Box,
-  Button,
   Divider,
   ListItemIcon,
   ListItemText,
@@ -22,6 +20,8 @@ import {
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
+
+import DropdownButton from '../components/DropdownButton'
 
 const items = [
   <MenuItem key="modify">
@@ -90,14 +90,9 @@ const ExampleMenu: React.FC<ExampleMenuProps> = ({
 
   return (
     <>
-      <Button
-        ref={setButton}
-        variant="text"
-        endIcon={<Icon icon={Bottom} />}
-        onClick={() => setOpen(!open)}
-      >
+      <DropdownButton ref={setButton} onClick={() => setOpen(!open)}>
         Show menu
-      </Button>
+      </DropdownButton>
       <Menu
         anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
         {...props}
