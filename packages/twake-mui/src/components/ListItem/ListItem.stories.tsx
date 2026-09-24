@@ -14,7 +14,6 @@ import {
   List,
   ListItemIcon,
   ListItemSecondaryAction,
-  ListItemText,
   ListSubheader,
   Radio,
   Stack
@@ -25,6 +24,7 @@ import React from 'react'
 import { ListItemCozyProps } from './helpers'
 import { ListItem } from './index'
 import { ListItemButton } from '../ListItemButton'
+import { ListItemText } from '../ListItemText'
 
 const longText =
   'Ada Lovelace wrote the first algorithm meant to be carried out by a machine, long before any computer existed to run it.'
