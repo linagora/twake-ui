@@ -11,6 +11,7 @@ import {
   Warning,
   WarningCircle
 } from '@linagora/twake-icons'
+import { accordionSummaryClasses } from '@mui/material/AccordionSummary'
 import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
 import { checkboxClasses } from '@mui/material/Checkbox'
@@ -997,8 +998,54 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
+  MuiAccordion: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.08)',
+        border: `1px solid ${theme.vars.palette.border.main}`,
+        overflow: 'hidden',
+        marginBottom: 16,
+        '&::before': { display: 'none' }
+      }),
+      rounded: ({ theme }) => ({ borderRadius: theme.shape.borderRadius })
+    }
+  },
   MuiAccordionSummary: {
-    defaultProps: { expandIcon: <AccordionExpandIcon /> }
+    defaultProps: { expandIcon: <AccordionExpandIcon /> },
+    styleOverrides: {
+      root: ({ theme }) => ({
+        backgroundColor: theme.vars.palette.background.default,
+        textTransform: 'uppercase',
+        fontWeight: 'bold',
+        fontSize: theme.typography.pxToRem(14),
+        minHeight: 56,
+        padding: 0,
+        [`&.${accordionSummaryClasses.expanded}`]: { minHeight: 56 }
+      }),
+      expandIconWrapper: ({ theme }) => ({
+        color: theme.vars.palette.text.secondary,
+        padding: 12,
+        marginLeft: 5,
+        marginRight: -12,
+        transform: 'rotate(-90deg)',
+        [`&.${accordionSummaryClasses.expanded}`]: { transform: 'rotate(0deg)' }
+      }),
+      content: {
+        paddingLeft: 8,
+        paddingRight: 4,
+        order: 1,
+        '& > :last-child': { paddingRight: 0 },
+        [`&.${accordionSummaryClasses.expanded}`]: { margin: '12px 0' }
+      }
+    }
+  },
+  MuiAccordionDetails: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        padding: 0,
+        borderTop: `1px solid ${theme.vars.palette.border.main}`
+      })
+    }
   },
   MuiFab: {
     defaultProps: { size: 'medium' },
