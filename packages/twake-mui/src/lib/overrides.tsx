@@ -997,54 +997,8 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
-  MuiAccordion: {
-    styleOverrides: {
-      root: {
-        '&::before': {
-          display: 'none'
-        }
-      }
-    }
-  },
   MuiAccordionSummary: {
-    defaultProps: { expandIcon: <AccordionExpandIcon /> },
-    styleOverrides: {
-      root: ({ theme }) => ({
-        backgroundColor: theme.palette.grey[100],
-        textTransform: 'uppercase',
-        fontWeight: 'bold',
-        fontSize: '0.875rem',
-        minHeight: '3.5rem',
-        padding: 0,
-        color: theme.palette.text.primary,
-        '&.Mui-expanded': {
-          minHeight: '3.5rem'
-        }
-      }),
-      expandIconWrapper: {
-        order: 0,
-        '&&': {
-          marginLeft: '0.3125rem'
-        },
-        transform: 'rotate(-90deg)',
-        '&.Mui-expanded': {
-          marginLeft: '0.3125rem',
-          transform: 'rotate(0deg)'
-        }
-      },
-      content: {
-        margin: '0.75rem 0',
-        paddingLeft: '0.5rem',
-        paddingRight: '0.25rem',
-        order: 1,
-        '& > :last-child': {
-          paddingRight: 0
-        },
-        '&.Mui-expanded': {
-          margin: '0.75rem 0'
-        }
-      }
-    }
+    defaultProps: { expandIcon: <AccordionExpandIcon /> }
   },
   MuiFab: {
     defaultProps: { size: 'medium' },
