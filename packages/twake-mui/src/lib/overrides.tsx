@@ -1001,7 +1001,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiAccordion: {
     styleOverrides: {
       root: ({ theme }) => ({
-        boxShadow: '0 4px 12px 0 rgba(0, 0, 0, 0.08)',
+        boxShadow: theme.vars.shadows[1],
         border: `1px solid ${theme.vars.palette.border.main}`,
         overflow: 'hidden',
         marginBottom: 16,
