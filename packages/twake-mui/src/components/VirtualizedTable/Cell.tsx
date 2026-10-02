@@ -1,4 +1,4 @@
-import { TableCell } from '@mui/material'
+import { TableCell, Skeleton } from '@mui/material'
 import React, { useRef } from 'react'
 import { useOnLongPress } from 'rooks'
 
@@ -26,6 +26,8 @@ export const Cell: React.FC<CellProps> = ({
   // onClick is triggered after a long press anyway, so we need this flag to swallow it
   const isLongPress = useRef(false)
   const lastClickTime = useRef(0)
+
+  const isLoading = row._isLoading
 
   const cellContent = getPath(row, column.id)
   const cell = cellContent === undefined ? '—' : cellContent
@@ -72,13 +74,15 @@ export const Cell: React.FC<CellProps> = ({
       }
       onContextMenu={ev => isLongPress.current && ev.preventDefault()}
     >
-      {children
-        ? React.Children.map(children, child =>
-            React.isValidElement<Partial<CellChildProps>>(child)
-              ? React.cloneElement(child, { row, columns, column, cell })
-              : null
-          )
-        : (cell as React.ReactNode)}
+      {isLoading
+        ? column.skeleton || <Skeleton animation="wave" variant="text" />
+        : children
+          ? React.Children.map(children, child =>
+              React.isValidElement<Partial<CellChildProps>>(child)
+                ? React.cloneElement(child, { row, columns, column, cell })
+                : null
+            )
+          : (cell as React.ReactNode)}
     </TableCell>
   )
 }

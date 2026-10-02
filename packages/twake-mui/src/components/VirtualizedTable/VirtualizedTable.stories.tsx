@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material'
+import { Button, Skeleton, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 import { fn } from 'storybook/test'
@@ -46,7 +46,10 @@ const columns: Column[] = [
     label: 'Calories',
     width: 80,
     textAlign: 'left',
-    sortable: false
+    sortable: false,
+    skeleton: (
+      <Skeleton animation="wave" variant="circular" width={24} height={24} />
+    )
   },
   { id: 'fat', label: 'Fat (g)', width: 85, textAlign: 'right' },
   { id: 'carbs', label: 'Carbs (g)', width: 115, textAlign: 'right' },
@@ -71,9 +74,15 @@ const onLongPress = fn<CellHandler>().mockName('onLongPress')
 
 const ExampleTable = ({
   title,
+  isLoading: propsIsLoading = false,
   ...props
 }: Partial<VirtualizedTableProps> & { title: string }): React.ReactElement => {
   const [selected, setSelected] = useState<number[]>([])
+  const [localIsLoading, setLocalIsLoading] = useState<boolean>(propsIsLoading)
+
+  React.useEffect(() => {
+    setLocalIsLoading(propsIsLoading)
+  }, [propsIsLoading])
 
   const toggle = (id: number): void =>
     setSelected(ids =>
@@ -93,10 +102,18 @@ const ExampleTable = ({
       <Button sx={{ my: 2 }} variant="text" onClick={toggleAll}>
         Select all
       </Button>
+      <Button
+        sx={{ my: 2, ml: 2 }}
+        variant="text"
+        onClick={() => setLocalIsLoading(!localIsLoading)}
+      >
+        Toggle loading
+      </Button>
       <div style={{ border: '1px solid #ccc', height: 400, width: '100%' }}>
         <VirtualizedTable
           rows={rows}
           columns={columns}
+          isLoading={localIsLoading}
           selectedItems={selected}
           isSelectedItem={row => selected.includes(row.id as number)}
           componentsProps={{
@@ -125,6 +142,7 @@ const meta: Meta<typeof VirtualizedTable> = {
     columns: { control: 'object' },
     defaultOrder: { control: 'object' },
     selectedItems: { control: 'object' },
+    isLoading: { control: 'boolean' },
     groups: { control: false },
     secondarySort: { control: false },
     isSelectedItem: { control: false },
@@ -150,6 +168,7 @@ export const Default: Story = {
 // Visual Regression - Combined view for Argos testing
 export const Screenshot: Story = {
   tags: ['argos'],
+
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
       <section>

@@ -15,6 +15,7 @@ export interface Column {
   disablePadding?: boolean
   sortable?: boolean
   disableClick?: boolean
+  skeleton?: React.ReactNode
 }
 
 export interface TableContext {

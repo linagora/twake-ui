@@ -61,6 +61,10 @@ export interface VirtualizedTableProps extends Omit<
   components?: TableVirtuosoProps<Row, TableContext>['components']
   /** Callback called after the sort */
   onSortChange?: (sort: { order: OrderDirection; orderBy: string }) => void
+  /** Is the table loading data */
+  isLoading?: boolean
+  /** The number of skeletons to show when loading */
+  skeletonCount?: number
 }
 
 export const VirtualizedTable = forwardRef<
@@ -81,6 +85,8 @@ export const VirtualizedTable = forwardRef<
       componentsProps,
       components = virtuosoComponents,
       onSortChange,
+      isLoading,
+      skeletonCount = 10,
       ...props
     },
     ref
@@ -91,12 +97,19 @@ export const VirtualizedTable = forwardRef<
     const [orderBy, setOrderBy] = useState(defaultOrder?.by)
 
     const data = useMemo(() => {
+      if (isLoading) {
+        return Array.from({ length: skeletonCount }).map((_, i) => ({
+          _isLoading: true,
+          id: `skeleton-${i}`
+        }))
+      }
       const sortedRows = orderBy
         ? stableSort(rows, getComparator(orderDirection, orderBy))
         : rows
       return secondarySort ? secondarySort(sortedRows) : sortedRows
-    }, [rows, orderBy, orderDirection, secondarySort])
-    const { groupLabels, groupCounts } = groups?.(data) ?? {}
+    }, [rows, orderBy, orderDirection, secondarySort, isLoading, skeletonCount])
+    const { groupLabels, groupCounts } =
+      (isLoading ? undefined : groups?.(data)) ?? {}
     const tableContext: TableContext = {
       ...context,
       data,
@@ -123,15 +136,22 @@ export const VirtualizedTable = forwardRef<
           orderDirection={orderDirection}
           orderBy={orderBy}
           onClick={handleSort}
+          isLoading={isLoading}
         />
       ),
-      itemContent: (index: number): React.ReactElement => (
-        <RowContent
-          {...componentsProps?.rowContent}
-          row={data[index]}
-          columns={columns}
-        />
-      )
+      itemContent: (index: number, ...args: unknown[]): React.ReactElement => {
+        const ctx = args.find(
+          a => a && typeof a === 'object' && 'isSelectedItem' in a
+        ) as TableContext | undefined
+        const freshData = ctx?.data ?? data
+        return (
+          <RowContent
+            {...componentsProps?.rowContent}
+            row={freshData[index]}
+            columns={columns}
+          />
+        )
+      }
     }
 
     return groupCounts ? (
