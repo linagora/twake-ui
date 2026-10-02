@@ -1,36 +1,53 @@
-import { ListItem, listItemButtonClasses } from '@mui/material'
-import { styled, Theme } from '@mui/material/styles'
-import React from 'react'
+import { Divider, ListItem } from '@mui/material'
+import cx from 'classnames'
+import React, { forwardRef } from 'react'
 
-export const NavItem = styled(ListItem, {
-  shouldForwardProp: prop => prop !== 'secondary'
-})<{ secondary?: boolean }>(
-  ({ theme, secondary }: { theme: Theme; secondary?: boolean }) => ({
-    padding: 0,
-    height: 36,
-    minHeight: 0,
-    [theme.breakpoints.down('lg')]: {
-      display: 'block',
-      height: 'auto',
-      margin: '0 12px',
-      flex: '0 0 40px'
-    },
-    ...(secondary && {
-      height: 'auto',
-      margin: '3px 0',
-      [theme.breakpoints.down('lg')]: { display: 'none' },
-      [`& .${listItemButtonClasses.root}`]: {
-        margin: '0 16px 0 2.8rem',
-        padding: '8px 16px',
-        height: 'auto',
-        fontSize: theme.typography.pxToRem(14),
-        [`&.${listItemButtonClasses.selected}, &.active`]: {
-          color: theme.vars.palette.secondary.contrastText,
-          backgroundColor: theme.vars.palette.secondary.main
-        }
-      }
-    })
-  })
-)
+import { NavBadge } from './NavBadge'
+import { NavIndicator } from './NavIndicator'
+import { NavItemActions } from './NavItemActions'
+import { NavItemRoot } from './NavItemRoot'
 
-export type NavItemProps = React.ComponentProps<typeof NavItem>
+export interface NavItemProps extends React.ComponentProps<typeof ListItem> {
+  variant?: 'primary' | 'secondary' | 'tertiary'
+  selected?: boolean
+  badge?: React.ReactNode
+  hasIndicator?: boolean
+  divider?: boolean
+}
+
+export const NavItem = forwardRef<HTMLLIElement, NavItemProps>((props, ref) => {
+  const {
+    variant = 'primary',
+    selected,
+    children,
+    className,
+    badge,
+    hasIndicator,
+    secondaryAction,
+    divider,
+    ...rest
+  } = props
+
+  return (
+    <>
+      <NavItemRoot
+        ref={ref}
+        variant={variant}
+        className={cx(className, selected && 'Mui-selected')}
+        {...rest}
+      >
+        {children}
+        {(hasIndicator || badge !== undefined || secondaryAction) && (
+          <NavItemActions>
+            {hasIndicator && <NavIndicator />}
+            {badge !== undefined && <NavBadge badgeContent={badge} />}
+            {secondaryAction}
+          </NavItemActions>
+        )}
+      </NavItemRoot>
+      {divider && <Divider className="u-mt-half u-mh-1" />}
+    </>
+  )
+})
+
+NavItem.displayName = 'NavItem'

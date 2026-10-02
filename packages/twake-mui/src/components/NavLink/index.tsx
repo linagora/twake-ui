@@ -1,48 +1,57 @@
-import {
-  ListItemButton,
-  ListItemButtonProps,
-  listItemButtonClasses,
-  listItemIconClasses
-} from '@mui/material'
-import { styled, Theme } from '@mui/material/styles'
+import { Icon, Dropdown } from '@linagora/twake-icons'
+import cx from 'classnames'
+import React, { forwardRef, useState } from 'react'
 
-export type NavLinkProps = ListItemButtonProps
+import { NavLinkRoot } from './NavLinkRoot'
 
-// Cast keeps ListItemButton's `component` generic (react-router NavLink etc.)
-export const NavLink = styled(ListItemButton)(
-  ({ theme }: { theme: Theme }) => ({
-    margin: '0 16px',
-    padding: '0 8px',
-    height: '100%',
-    minHeight: 0,
-    gap: 0,
-    borderRadius: 8,
-    lineHeight: 1.375,
-    color: theme.vars.palette.text.primary,
-    [`&.${listItemButtonClasses.selected}, &.active`]: {
-      color: theme.vars.palette.primary.main,
-      backgroundColor: theme.vars.palette.action.selected,
-      '&:hover': { backgroundColor: theme.vars.palette.action.selected },
-      [`& .${listItemIconClasses.root}`]: {
-        color: theme.vars.palette.primary.main
-      }
-    },
-    [theme.breakpoints.down('lg')]: {
-      display: 'block',
-      height: 'auto',
-      margin: 0,
-      padding: 0,
-      textAlign: 'center',
-      fontSize: theme.typography.pxToRem(11),
-      lineHeight: '12px',
-      color: theme.vars.palette.text.secondary,
-      [`&.${listItemButtonClasses.selected}, &.active`]: {
-        color: theme.vars.palette.text.primary,
-        backgroundColor: 'transparent',
-        [`& .${listItemIconClasses.root}`]: {
-          color: theme.vars.palette.text.primary
+export interface NavLinkProps extends React.ComponentPropsWithoutRef<'div'> {
+  hasDropdown?: boolean
+  selected?: boolean
+  onToggle?: React.MouseEventHandler<HTMLDivElement>
+}
+
+export const NavLink = forwardRef<HTMLDivElement, NavLinkProps>(
+  (
+    { hasDropdown, selected, onToggle, onClick, className, children, ...rest },
+    ref
+  ) => {
+    const [open, setOpen] = useState(false)
+
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
+      if (hasDropdown) {
+        setOpen(prev => !prev)
+        if (onToggle) {
+          onToggle(e)
         }
       }
+      if (onClick) {
+        onClick(e)
+      }
     }
-  })
-) as typeof ListItemButton
+
+    return (
+      <NavLinkRoot
+        ref={ref}
+        role="button"
+        tabIndex={0}
+        onClick={handleClick}
+        onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            handleClick(e as unknown as React.MouseEvent<HTMLDivElement>)
+          }
+        }}
+        aria-expanded={hasDropdown ? open : undefined}
+        className={cx(className, { active: selected })}
+        {...rest}
+      >
+        {children}
+        {hasDropdown && (
+          <Icon icon={Dropdown} rotate={open ? 0 : -90} size={14} />
+        )}
+      </NavLinkRoot>
+    )
+  }
+)
+
+NavLink.displayName = 'NavLink'
