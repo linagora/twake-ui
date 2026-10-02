@@ -37,7 +37,7 @@ export const NavDesktopLimiter = ({
     <>
       {viewingAll ? items : items.slice(0, max)}
       {amountHidden > 0 && (
-        <NavItem secondary>
+        <NavItem variant="secondary">
           <NavLink onClick={() => setViewingAll(current => !current)}>
             <NavIcon icon={viewingAll ? Top : Bottom} />
             <NavText>
