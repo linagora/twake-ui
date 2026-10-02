@@ -69,7 +69,7 @@ const LayoutDemo = ({
                 </NavItem>
                 <NavDesktopLimiter>
                   {Array.from(Array(10).keys()).map(i => (
-                    <NavItem secondary key={i}>
+                    <NavItem variant="secondary" key={i}>
                       <NavLink {...makeProps(['Section 1', `Subsection ${i}`])}>
                         <NavText>Subsection {i}</NavText>
                       </NavLink>
@@ -90,7 +90,7 @@ const LayoutDemo = ({
                 </NavItem>
                 <NavDesktopDropdown label="Section 4">
                   {Array.from(Array(6).keys()).map(i => (
-                    <NavItem secondary key={i}>
+                    <NavItem variant="secondary" key={i}>
                       <NavLink {...makeProps(['Section 4', `Subsection ${i}`])}>
                         <NavText>Subsection {i}</NavText>
                       </NavLink>
