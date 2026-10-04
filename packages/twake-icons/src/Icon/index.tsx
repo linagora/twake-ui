@@ -77,7 +77,11 @@ function Icon(props: IconProps): ReactElement | null {
       />
     )
 
-  const Svg = isFunction(icon) ? icon : makeSvgObject(icon as string)
+  const Svg = isFunction(icon)
+    ? icon
+    : typeof icon === 'string'
+      ? makeSvgObject(icon)
+      : null
 
   const _style: CSSProperties = {
     ...style,
