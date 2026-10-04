@@ -62,7 +62,7 @@
     "@mui/utils": "^9.2.0",
     "classnames": "^2.5.1",
     "react-virtuoso": "4.13.0",
-    "rooks": "7.14.1"
+    "rooks": "8.4.0"
   },
   "devDependencies": {
     "@argos-ci/cli": "6.9.5",
