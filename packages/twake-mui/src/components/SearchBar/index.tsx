@@ -4,6 +4,8 @@ import debounce from '@mui/utils/debounce'
 import cx from 'classnames'
 import React, { forwardRef, useState, useMemo, useRef, useEffect } from 'react'
 
+import { useExtendI18n, useI18n } from 'twake-i18n'
+
 import { DisableHighlight } from './DisableHighlight'
 import { FocusHighlight } from './FocusHighlight'
 import { SearchBarButtonBase } from './SearchBarButtonBase'
@@ -11,7 +13,13 @@ import { SearchBarIconWrapper } from './SearchBarIconWrapper'
 import { SearchBarInputBase } from './SearchBarInputBase'
 import { SearchBarRoot } from './SearchBarRoot'
 import { SearchBarTypography } from './SearchBarTypography'
+import en from './locales/en.json'
+import fr from './locales/fr.json'
+import ru from './locales/ru.json'
+import vi from './locales/vi.json'
 import { SearchBarProps } from './types'
+
+const locales = { en, fr, ru, vi }
 
 export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
   (
@@ -38,6 +46,8 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
     },
     ref
   ) => {
+    useExtendI18n(locales)
+    const { t } = useI18n()
     const [currentValue, setCurrentValue] = useState(defaultValue)
     const [isFocused, setIsFocused] = useState(false)
 
@@ -166,7 +176,7 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
           <IconButton
             size="small"
             onClick={handleClear}
-            aria-label="Clear search"
+            aria-label={t('SearchBar.clear')}
           >
             <Icon icon={Cross} />
           </IconButton>
