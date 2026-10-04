@@ -56,7 +56,7 @@
     "doc": "storybook dev -p 6007"
   },
   "peerDependencies": {
-    "react": "^18"
+    "react": "^18 || ^19"
   },
   "devDependencies": {
     "@storybook/addon-docs": "10.3.5",
