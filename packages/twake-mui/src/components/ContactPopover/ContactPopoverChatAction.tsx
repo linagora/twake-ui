@@ -13,7 +13,7 @@ export interface ContactPopoverChatActionProps {
 export const ContactPopoverChatAction = ({
   url,
   disabled = false
-}: ContactPopoverChatActionProps): JSX.Element => {
+}: ContactPopoverChatActionProps): React.ReactElement => {
   const theme = useTheme()
   return (
     <IconButton

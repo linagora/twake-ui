@@ -13,7 +13,7 @@ export interface ContactPopoverVideoActionProps {
 export const ContactPopoverVideoAction = ({
   url,
   disabled = false
-}: ContactPopoverVideoActionProps): JSX.Element => {
+}: ContactPopoverVideoActionProps): React.ReactElement => {
   const theme = useTheme()
   return (
     <IconButton

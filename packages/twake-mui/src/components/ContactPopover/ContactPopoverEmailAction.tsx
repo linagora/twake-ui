@@ -13,7 +13,7 @@ export interface ContactPopoverEmailActionProps {
 export const ContactPopoverEmailAction = ({
   url,
   disabled = false
-}: ContactPopoverEmailActionProps): JSX.Element => {
+}: ContactPopoverEmailActionProps): React.ReactElement => {
   const theme = useTheme()
   const { t } = useI18n()
 

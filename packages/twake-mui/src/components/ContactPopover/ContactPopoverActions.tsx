@@ -8,6 +8,6 @@ export interface ContactPopoverActionsProps {
 
 export const ContactPopoverActions = ({
   children
-}: ContactPopoverActionsProps): JSX.Element => (
+}: ContactPopoverActionsProps): React.ReactElement => (
   <Box sx={{ display: 'flex', gap: 1 }}>{children}</Box>
 )

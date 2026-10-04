@@ -13,7 +13,7 @@ export interface ContactPopoverCalendarActionProps {
 export const ContactPopoverCalendarAction = ({
   url,
   disabled = false
-}: ContactPopoverCalendarActionProps): JSX.Element => {
+}: ContactPopoverCalendarActionProps): React.ReactElement => {
   const theme = useTheme()
   return (
     <IconButton

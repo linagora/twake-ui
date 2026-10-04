@@ -21,7 +21,7 @@ export const AttendeeInfo = ({
   name,
   email,
   onEmailCopy
-}: AttendeeInfoProps): JSX.Element => {
+}: AttendeeInfoProps): React.ReactElement => {
   const theme = useTheme()
   const { t } = useI18n()
   const [showCopied, setShowCopied] = useState(false)
