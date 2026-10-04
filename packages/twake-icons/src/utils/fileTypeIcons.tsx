@@ -16,7 +16,7 @@ import {
  */
 export const mimeToIcon: Record<
   string,
-  (props: React.SVGProps<SVGSVGElement>) => JSX.Element
+  (props: React.SVGProps<SVGSVGElement>) => React.ReactElement
 > = {
   // PDF
   'application/pdf': FileTypePdf,
