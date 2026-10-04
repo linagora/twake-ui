@@ -59,7 +59,9 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
       onChangeRef.current = onChange
     }, [onChange])
 
-    const delayedOnChangeRef = useRef<ReturnType<typeof debounce>>()
+    const delayedOnChangeRef = useRef<ReturnType<typeof debounce> | undefined>(
+      undefined
+    )
 
     useEffect(() => {
       delayedOnChangeRef.current = debounce(
