@@ -35,6 +35,47 @@ jobs:
       - name: Lint commits
         run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
+  react-18:
+    name: Build and test with React 18
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+      - name: Install dependencies with React 18
+        run: |
+          npm pkg delete overrides
+          for workspace in @linagora/twake-css @linagora/twake-icons @linagora/twake-mui; do
+            npm pkg set devDependencies.react=^18.3.1 devDependencies.react-dom=^18.3.1 devDependencies.@types/react=^18.3.0 --workspace=$workspace
+          done
+          npm pkg set devDependencies.@types/react-dom=^18.3.0 --workspace=@linagora/twake-mui
+          # Drop the locked React 19 so that npm resolves React 18 everywhere
+          node -e "
+            const fs = require('fs')
+            const lock = JSON.parse(fs.readFileSync('package-lock.json'))
+            for (const key of Object.keys(lock.packages)) {
+              if (/node_modules\/(react|react-dom|@types\/react|@types\/react-dom|scheduler)$/.test(key)) delete lock.packages[key]
+            }
+            fs.writeFileSync('package-lock.json', JSON.stringify(lock, null, 2))
+          "
+          npm install
+          npm ls react react-dom @types/react
+      - name: Build twake-icons (for type resolution)
+        run: npm run build --workspace=@linagora/twake-css --workspace=@linagora/twake-icons
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm test --workspace=@linagora/twake-mui
+
   build:
     name: Build and publish
     runs-on: ubuntu-latest
