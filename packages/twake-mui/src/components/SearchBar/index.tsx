@@ -128,7 +128,7 @@ export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
           'Mui-disabled': disabled
         })}
         ref={ref}
-        onSubmit={(ev: React.FormEvent<HTMLDivElement>) => {
+        onSubmit={ev => {
           ev.preventDefault()
           props.onSubmit?.(ev)
         }}
