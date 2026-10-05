@@ -51,7 +51,6 @@ jobs:
           node-version-file: '.nvmrc'
       - name: Install dependencies with React 18
         run: |
-          npm pkg delete overrides
           for workspace in @linagora/twake-css @linagora/twake-icons @linagora/twake-mui; do
             npm pkg set devDependencies.react=^18.3.1 devDependencies.react-dom=^18.3.1 devDependencies.@types/react=^18.3.0 --workspace=$workspace
           done
