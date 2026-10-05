@@ -10,10 +10,11 @@ import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
 import { NavText } from '../NavText'
 import { Sidebar, SidebarProps } from './index'
-import { NavLink } from '../NavLink'
+import { NavLink, NavDropdown } from '../NavLink'
 
 const SidebarDemo = (props: SidebarProps): React.ReactElement => {
   const [active, setActive] = useState(['Section 1', 'Subsection 1'])
+  const [openSection1, setOpenSection1] = useState(true)
   const makeProps = (
     route: string[]
   ): { selected: boolean; onClick: () => void } => ({
@@ -26,20 +27,29 @@ const SidebarDemo = (props: SidebarProps): React.ReactElement => {
       <Sidebar {...props}>
         <Nav>
           <NavItem>
-            <NavLink {...makeProps(['Section 1'])}>
+            <NavDropdown
+              {...makeProps(['Section 1'])}
+              open={openSection1}
+              onToggle={e => {
+                e.stopPropagation()
+                setOpenSection1(prev => !prev)
+              }}
+            >
               <NavIcon icon={Warn} />
               <NavText>Section 1</NavText>
-            </NavLink>
+            </NavDropdown>
           </NavItem>
-          <NavDesktopLimiter>
-            {Array.from(Array(10).keys()).map(i => (
-              <NavItem variant="secondary" key={i}>
-                <NavLink {...makeProps(['Section 1', `Subsection ${i}`])}>
-                  <NavText>Subsection {i}</NavText>
-                </NavLink>
-              </NavItem>
-            ))}
-          </NavDesktopLimiter>
+          {openSection1 && (
+            <NavDesktopLimiter>
+              {Array.from(Array(10).keys()).map(i => (
+                <NavItem variant="secondary" key={i}>
+                  <NavLink {...makeProps(['Section 1', `Subsection ${i}`])}>
+                    <NavText>Subsection {i}</NavText>
+                  </NavLink>
+                </NavItem>
+              ))}
+            </NavDesktopLimiter>
+          )}
           <NavItem>
             <NavLink {...makeProps(['Section 2'])}>
               <NavIcon icon={Check} />

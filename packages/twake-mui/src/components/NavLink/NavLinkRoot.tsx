@@ -2,6 +2,7 @@ import { styled, Theme } from '@mui/material/styles'
 
 export const NavLinkRoot = styled('div')(({ theme }: { theme: Theme }) => ({
   padding: 8,
+  width: '100%',
   height: '100%',
   minHeight: 0,
   gap: 0,

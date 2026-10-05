@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import { NavIcon } from '../NavIcon'
-import { NavLink } from '../NavLink'
+import { NavLink, NavDropdown } from '../NavLink'
 import { NavText } from '../NavText'
 import { NavItem, NavItemProps } from './index'
 
@@ -110,6 +110,7 @@ export const Default: Story = {
   }) => {
     const IconComponent = icons[leftIcon]
     const TertiaryIconComponent = icons[tertiaryIcon]
+    const [open, setOpen] = React.useState(false)
 
     return (
       <div style={{ width: 300 }}>
@@ -121,18 +122,37 @@ export const Default: Story = {
           divider={divider}
           disablePadding={disablePadding}
         >
-          <NavLink hasDropdown={hasDropdown} selected={selected}>
-            {IconComponent && <NavIcon icon={IconComponent} />}
-            <NavText
-              secondaryText={secondaryText}
-              tertiaryText={tertiaryText}
-              tertiaryIcon={
-                TertiaryIconComponent ? <TertiaryIconComponent /> : undefined
-              }
+          {hasDropdown ? (
+            <NavDropdown
+              selected={Boolean(selected)}
+              open={open}
+              onClick={() => setOpen(!open)}
             >
-              {text}
-            </NavText>
-          </NavLink>
+              {IconComponent && <NavIcon icon={IconComponent} />}
+              <NavText
+                secondaryText={secondaryText}
+                tertiaryText={tertiaryText}
+                tertiaryIcon={
+                  TertiaryIconComponent ? <TertiaryIconComponent /> : undefined
+                }
+              >
+                {text}
+              </NavText>
+            </NavDropdown>
+          ) : (
+            <NavLink selected={Boolean(selected)}>
+              {IconComponent && <NavIcon icon={IconComponent} />}
+              <NavText
+                secondaryText={secondaryText}
+                tertiaryText={tertiaryText}
+                tertiaryIcon={
+                  TertiaryIconComponent ? <TertiaryIconComponent /> : undefined
+                }
+              >
+                {text}
+              </NavText>
+            </NavLink>
+          )}
         </NavItem>
       </div>
     )
@@ -159,20 +179,20 @@ export const Screenshot: Story = {
             badge={1}
             secondaryAction={secondaryActions.Dots}
           >
-            <NavLink hasDropdown>
+            <NavDropdown>
               <NavIcon icon={Heart} />
               <NavText secondaryText="Secondary" tertiaryText="Tertiary">
                 Primary Item
               </NavText>
-            </NavLink>
+            </NavDropdown>
           </NavItem>
         </section>
         <section>
           <h3>Secondary</h3>
           <NavItem disablePadding variant="secondary" selected>
-            <NavLink hasDropdown>
+            <NavDropdown>
               <NavText>Secondary Item</NavText>
-            </NavLink>
+            </NavDropdown>
           </NavItem>
         </section>
         <section>

@@ -44,7 +44,7 @@ export { Sidebar, SIDEBAR_MOBILE_HEIGHT } from './components/Sidebar'
 export { Layout, Main, Content } from './components/Layout'
 export { Nav } from './components/Nav'
 export { NavItem } from './components/NavItem'
-export { NavLink } from './components/NavLink'
+export { NavLink, NavLinkBase, NavDropdown } from './components/NavLink'
 export { NavIcon } from './components/NavIcon'
 export { NavText } from './components/NavText'
 export { NavDesktopLimiter } from './components/NavDesktopLimiter'
@@ -113,7 +113,11 @@ export type { SidebarProps } from './components/Sidebar'
 export type { LayoutProps, MainProps, ContentProps } from './components/Layout'
 export type { NavProps } from './components/Nav'
 export type { NavItemProps } from './components/NavItem'
-export type { NavLinkProps } from './components/NavLink'
+export type {
+  NavLinkProps,
+  NavLinkBaseProps,
+  NavDropdownProps
+} from './components/NavLink'
 export type { NavIconProps } from './components/NavIcon'
 export type { NavTextProps } from './components/NavText'
 export type { NavDesktopLimiterProps } from './components/NavDesktopLimiter'
