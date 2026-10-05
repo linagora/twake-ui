@@ -1,3 +1,15 @@
+# @linagora/twake-icons [2.12.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.11.1...@linagora/twake-icons@2.12.0) (2026-10-05)
+
+
+### Bug Fixes
+
+* **twake-icons:** Stop using the global JSX namespace ([2463706](https://github.com/linagora/twake-ui/commit/2463706aa3fb13b94edb1e4eb4516ec152b3ece4))
+
+
+### Features
+
+* **twake-icons:** Support React 19 ([550a098](https://github.com/linagora/twake-ui/commit/550a098fee39f15418b80b1d7097c184156b2f5d))
+
 ## @linagora/twake-icons [2.11.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.11.0...@linagora/twake-icons@2.11.1) (2026-10-01)
 
 
