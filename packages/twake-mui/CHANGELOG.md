@@ -1,3 +1,32 @@
+# @linagora/twake-mui [10.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.17.0...@linagora/twake-mui@10.0.0) (2026-10-05)
+
+
+### Bug Fixes
+
+* **twake-mui:** Infer the SearchBar submit event type ([542f632](https://github.com/linagora/twake-ui/commit/542f63255dd143d85be5f96678f6ccc66538918b))
+* **twake-mui:** Pass an initial value to useRef in SearchBar ([f32e365](https://github.com/linagora/twake-ui/commit/f32e36514e56373b6525b38b1c56c022b40b2797))
+* **twake-mui:** Stop using the global JSX namespace in ContactPopover ([102d577](https://github.com/linagora/twake-ui/commit/102d577a050c59724f18f535bf8e3227cafb7b74))
+
+
+### chore
+
+* **twake-mui:** Drop the twake-i18n React override by requiring twake-i18n 0.6.0 ([64c678e](https://github.com/linagora/twake-ui/commit/64c678e8e76015b919b6df9965ac512c142eed6f))
+
+
+### Features
+
+* **twake-mui:** Support React 19 ([bdc7265](https://github.com/linagora/twake-ui/commit/bdc7265565d7d4991d2c335d4c58a258f56946ed))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** twake-mui now requires twake-i18n >=0.6.0 as a peer
+dependency, up from >=0.5.0. twake-mui only supports React 19 when
+twake-i18n accepts it too, and consumers pinned on twake-i18n 0.5.0 will
+get an ERESOLVE error until they upgrade.
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+
 # @linagora/twake-mui [9.17.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.16.0...@linagora/twake-mui@9.17.0) (2026-10-05)
 
 
