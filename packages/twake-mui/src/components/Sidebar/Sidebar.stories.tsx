@@ -8,9 +8,10 @@ import { NavDesktopDropdown } from '../NavDesktopDropdown'
 import { NavDesktopLimiter } from '../NavDesktopLimiter'
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
-import { NavText } from '../NavText'
+import NavText from '../NavText'
 import { Sidebar, SidebarProps } from './index'
-import { NavLink, NavDropdown } from '../NavLink'
+import { NavDropdown } from '../NavLink/NavDropdown'
+import { NavLink } from '../NavLink/NavLink'
 
 const SidebarDemo = (props: SidebarProps): React.ReactElement => {
   const [active, setActive] = useState(['Section 1', 'Subsection 1'])
@@ -30,7 +31,7 @@ const SidebarDemo = (props: SidebarProps): React.ReactElement => {
             <NavDropdown
               {...makeProps(['Section 1'])}
               open={openSection1}
-              onToggle={e => {
+              onToggle={(e: React.MouseEvent<HTMLDivElement>) => {
                 e.stopPropagation()
                 setOpenSection1(prev => !prev)
               }}

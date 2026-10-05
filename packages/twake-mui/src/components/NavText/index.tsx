@@ -14,7 +14,7 @@ export interface NavTextProps extends React.ComponentPropsWithoutRef<'div'> {
   tertiaryIcon?: React.ReactNode
 }
 
-export const NavText = React.forwardRef<HTMLDivElement, NavTextProps>(
+const NavText = React.forwardRef<HTMLDivElement, NavTextProps>(
   (
     { secondaryText, tertiaryText, tertiaryIcon, children, sx, ...rest },
     ref
@@ -35,3 +35,5 @@ export const NavText = React.forwardRef<HTMLDivElement, NavTextProps>(
 )
 
 NavText.displayName = 'NavText'
+
+export default NavText

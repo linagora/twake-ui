@@ -9,8 +9,8 @@ import { NavDesktopDropdown } from '../NavDesktopDropdown'
 import { NavDesktopLimiter } from '../NavDesktopLimiter'
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
-import { NavLink } from '../NavLink'
-import { NavText } from '../NavText'
+import { NavLink } from '../NavLink/NavLink'
+import NavText from '../NavText'
 import { Sidebar } from '../Sidebar'
 
 const paragraph =

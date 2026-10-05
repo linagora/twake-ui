@@ -4,7 +4,7 @@ import React, { forwardRef } from 'react'
 
 import { NavLinkBase, NavLinkBaseProps } from './NavLinkBase'
 
-export interface NavDropdownProps extends NavLinkBaseProps {
+export interface NavDropdownProps extends Omit<NavLinkBaseProps, 'onToggle'> {
   open?: boolean
   onToggle?: React.MouseEventHandler<HTMLDivElement>
 }
@@ -12,7 +12,7 @@ export interface NavDropdownProps extends NavLinkBaseProps {
 export const NavDropdown = forwardRef<HTMLDivElement, NavDropdownProps>(
   ({ open, onToggle, onClick, children, ...rest }, ref) => {
     const theme = useTheme()
-    
+
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
       if (onToggle) {
         onToggle(e)

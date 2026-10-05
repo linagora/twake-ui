@@ -37,10 +37,10 @@ export const NavItem = forwardRef<HTMLLIElement, NavItemProps>((props, ref) => {
         {...rest}
       >
         {children}
-        {(hasIndicator || badge !== undefined || secondaryAction) && (
+        {(hasIndicator || badge || secondaryAction) && (
           <NavItemActions>
             {hasIndicator && <NavIndicator />}
-            {badge !== undefined && <NavBadge badgeContent={badge} />}
+            {badge && <NavBadge badgeContent={badge} />}
             {secondaryAction}
           </NavItemActions>
         )}

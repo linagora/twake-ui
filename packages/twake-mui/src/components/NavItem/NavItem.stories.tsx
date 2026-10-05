@@ -4,8 +4,9 @@ import { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import { NavIcon } from '../NavIcon'
-import { NavLink, NavDropdown } from '../NavLink'
-import { NavText } from '../NavText'
+import { NavDropdown } from '../NavLink/NavDropdown'
+import { NavLink } from '../NavLink/NavLink'
+import NavText from '../NavText'
 import { NavItem, NavItemProps } from './index'
 
 const icons = { Heart, None: undefined }
