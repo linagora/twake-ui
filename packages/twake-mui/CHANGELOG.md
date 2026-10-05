@@ -1,3 +1,10 @@
+# @linagora/twake-mui [9.17.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.16.0...@linagora/twake-mui@9.17.0) (2026-10-05)
+
+
+### Features
+
+* **twake-mui:** Translate SearchBar clear label in en, fr, ru and vi ([130409a](https://github.com/linagora/twake-ui/commit/130409a03794c3c776c447c671068128c09d8999))
+
 # @linagora/twake-mui [9.16.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.15.0...@linagora/twake-mui@9.16.0) (2026-10-01)
 
 
