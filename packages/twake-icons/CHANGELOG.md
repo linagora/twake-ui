@@ -1,3 +1,10 @@
+# @linagora/twake-icons [2.13.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.12.0...@linagora/twake-icons@2.13.0) (2026-10-05)
+
+
+### Features
+
+* **twake-icons:** Add ContactList icon ([33e2ca7](https://github.com/linagora/twake-ui/commit/33e2ca7e8186f8535954d3961c01da5185a7df71))
+
 # @linagora/twake-icons [2.12.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.11.1...@linagora/twake-icons@2.12.0) (2026-10-05)
 
 
