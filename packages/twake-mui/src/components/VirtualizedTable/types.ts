@@ -1,9 +1,11 @@
 import type { TableCellProps } from '@mui/material'
 import type React from 'react'
 
-export type Row = Record<string, unknown>
+export type Row = Record<string | symbol, unknown>
 
 export type OrderDirection = 'asc' | 'desc'
+
+export const _isLoading = Symbol('_isLoading')
 
 export interface Column {
   id: string
@@ -15,6 +17,7 @@ export interface Column {
   disablePadding?: boolean
   sortable?: boolean
   disableClick?: boolean
+  skeleton?: React.ReactNode
 }
 
 export interface TableContext {

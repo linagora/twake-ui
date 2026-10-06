@@ -9,13 +9,15 @@ interface FixedHeaderContentProps {
   orderBy?: string
   orderDirection: OrderDirection
   onClick: (columnId: string) => void
+  isLoading?: boolean
 }
 
 export const FixedHeaderContent: React.FC<FixedHeaderContentProps> = ({
   columns,
   orderBy,
   orderDirection,
-  onClick
+  onClick,
+  isLoading
 }) => (
   <TableRow>
     {columns.map(column => (
@@ -25,6 +27,7 @@ export const FixedHeaderContent: React.FC<FixedHeaderContentProps> = ({
         orderBy={orderBy}
         orderDirection={orderDirection}
         onClick={() => onClick(column.id)}
+        isLoading={isLoading}
       />
     ))}
   </TableRow>
