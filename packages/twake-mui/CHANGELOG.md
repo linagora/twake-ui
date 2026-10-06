@@ -1,3 +1,16 @@
+# @linagora/twake-mui [10.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.0.0...@linagora/twake-mui@10.1.0) (2026-10-06)
+
+
+### Features
+
+* **twake-mui:** Extract NavLink into dumber components ([c5c3581](https://github.com/linagora/twake-ui/commit/c5c358176c6cdd47666e261575a9e9576bbb8b84))
+* **twake-mui:** Resolve comments ([2b5a9c8](https://github.com/linagora/twake-ui/commit/2b5a9c8aa828991804858aedd1319ce78f910572))
+* **twake-mui:** Update NavDesktopLimiter as secondary variant of NavItem ([8124b58](https://github.com/linagora/twake-ui/commit/8124b58176f38919f8be4399b05854a097ed043f))
+* **twake-mui:** Update NavText to handle secondary and tertiary text ([bd976ce](https://github.com/linagora/twake-ui/commit/bd976ce73fd715d927f2fae967d4a27b01b89f77))
+* **twake-mui:** Update new NavItem ([915a508](https://github.com/linagora/twake-ui/commit/915a50801197c39dc3f60d4d6f00da833d34554d))
+* **twake-mui:** Update new NavLink ([e966794](https://github.com/linagora/twake-ui/commit/e966794971daa5fccd4205d0cf87bc0ccb964bc2))
+* **twake-mui:** Update storybooks of Layout and Sidebar with new NavItem ([b792097](https://github.com/linagora/twake-ui/commit/b7920972992db48fb271aa4daf3dc078de72b605))
+
 # @linagora/twake-mui [10.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@9.17.0...@linagora/twake-mui@10.0.0) (2026-10-05)
 
 
