@@ -3,13 +3,16 @@ import React from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
+import de from './locales/de.json'
 import en from './locales/en.json'
+import es from './locales/es.json'
 import fr from './locales/fr.json'
+import it from './locales/it.json'
 import ru from './locales/ru.json'
 import vi from './locales/vi.json'
 import type { Column, OrderDirection } from './types'
 
-const locales = { en, fr, ru, vi }
+const locales = { de, en, es, fr, it, ru, vi }
 
 interface HeadCellProps {
   column: Column

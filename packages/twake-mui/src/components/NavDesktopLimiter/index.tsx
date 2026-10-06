@@ -7,13 +7,16 @@ import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
 import { NavLink } from '../NavLink/NavLink'
 import NavText from '../NavText'
+import de from './locales/de.json'
 import en from './locales/en.json'
+import es from './locales/es.json'
 import fr from './locales/fr.json'
+import it from './locales/it.json'
 import ru from './locales/ru.json'
 import vi from './locales/vi.json'
 import { useBreakpoints } from '../../hooks/useBreakpoints'
 
-const locales = { en, fr, ru, vi }
+const locales = { de, en, es, fr, it, ru, vi }
 
 export interface NavDesktopLimiterProps {
   children: React.ReactNode

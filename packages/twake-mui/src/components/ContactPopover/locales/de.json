@@ -1,0 +1,7 @@
+{
+  "ContactPopover": {
+    "emailButton": "E-Mail senden",
+    "copyTooltip": "E-Mail kopieren",
+    "copiedTooltip": "Kopiert!"
+  }
+}
