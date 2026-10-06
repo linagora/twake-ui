@@ -68,10 +68,7 @@ const alertSeverityVariants = alertSeverities.flatMap(severity => [
         backgroundColor: theme.alpha(theme.vars.palette[severity].main, 0.24)
       }),
       [`& .${alertClasses.icon}`]: { color: alertIconColor(severity, theme) },
-      // Alert renders its close button, titled with the translated
-      // `closeText`, as the only child of the action slot and only when no
-      // custom `action` is given: matching that structure, not the title,
-      // keeps the style in every language.
+      // targets close button
       [`& .${alertClasses.action} > .${iconButtonClasses.root}:only-child`]: {
         color: theme.vars.palette.text.secondary
       }
