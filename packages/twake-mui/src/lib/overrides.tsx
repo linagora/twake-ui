@@ -18,6 +18,7 @@ import { checkboxClasses } from '@mui/material/Checkbox'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { formHelperTextClasses } from '@mui/material/FormHelperText'
 import { formLabelClasses } from '@mui/material/FormLabel'
+import { iconButtonClasses } from '@mui/material/IconButton'
 import { listItemButtonClasses } from '@mui/material/ListItemButton'
 import { listItemIconClasses } from '@mui/material/ListItemIcon'
 import { listItemTextClasses } from '@mui/material/ListItemText'
@@ -67,7 +68,11 @@ const alertSeverityVariants = alertSeverities.flatMap(severity => [
         backgroundColor: theme.alpha(theme.vars.palette[severity].main, 0.24)
       }),
       [`& .${alertClasses.icon}`]: { color: alertIconColor(severity, theme) },
-      [`& .${alertClasses.action} button[title="Close"]`]: {
+      // Alert renders its close button, titled with the translated
+      // `closeText`, as the only child of the action slot and only when no
+      // custom `action` is given: matching that structure, not the title,
+      // keeps the style in every language.
+      [`& .${alertClasses.action} > .${iconButtonClasses.root}:only-child`]: {
         color: theme.vars.palette.text.secondary
       }
     })
