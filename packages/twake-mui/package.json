@@ -60,7 +60,10 @@
   "dependencies": {
     "@linagora/twake-css": "^1.0.0",
     "@mui/utils": "^9.2.0",
+    "@react-spring/web": "10.1.2",
+    "@use-gesture/react": "10.3.1",
     "classnames": "^2.5.1",
+    "react-use-measure": "2.1.7",
     "react-virtuoso": "4.13.0",
     "rooks": "8.4.0"
   },
