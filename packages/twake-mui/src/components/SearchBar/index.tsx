@@ -13,13 +13,16 @@ import { SearchBarIconWrapper } from './SearchBarIconWrapper'
 import { SearchBarInputBase } from './SearchBarInputBase'
 import { SearchBarRoot } from './SearchBarRoot'
 import { SearchBarTypography } from './SearchBarTypography'
+import de from './locales/de.json'
 import en from './locales/en.json'
+import es from './locales/es.json'
 import fr from './locales/fr.json'
+import it from './locales/it.json'
 import ru from './locales/ru.json'
 import vi from './locales/vi.json'
 import { SearchBarProps } from './types'
 
-const locales = { en, fr, ru, vi }
+const locales = { de, en, es, fr, it, ru, vi }
 
 export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
   (

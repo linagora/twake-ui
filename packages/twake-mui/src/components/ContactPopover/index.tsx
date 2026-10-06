@@ -11,12 +11,15 @@ import { ContactPopoverCalendarAction } from './ContactPopoverCalendarAction'
 import { ContactPopoverChatAction } from './ContactPopoverChatAction'
 import { ContactPopoverEmailAction } from './ContactPopoverEmailAction'
 import { ContactPopoverVideoAction } from './ContactPopoverVideoAction'
+import de from './locales/de.json'
 import en from './locales/en.json'
+import es from './locales/es.json'
 import fr from './locales/fr.json'
+import it from './locales/it.json'
 import ru from './locales/ru.json'
 import vi from './locales/vi.json'
 
-const locales = { en, fr, ru, vi }
+const locales = { de, en, es, fr, it, ru, vi }
 
 const StyledPopoverContent = styled(Box)(({ theme }) => ({
   padding: theme.spacing(3),
