@@ -1,3 +1,10 @@
+# @linagora/twake-mui [10.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.2.0...@linagora/twake-mui@10.3.0) (2026-10-06)
+
+
+### Features
+
+* **twake-mui:** Implement loading state in virtualized table ([7a043cc](https://github.com/linagora/twake-ui/commit/7a043cc94a1e5af4229387088c2cae3214f8bd20))
+
 # @linagora/twake-mui [10.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.1.0...@linagora/twake-mui@10.2.0) (2026-10-06)
 
 
