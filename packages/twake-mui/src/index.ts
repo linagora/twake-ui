@@ -20,6 +20,7 @@ export { radius } from './lib/radius'
 export { TwakeMuiThemeProvider } from './components/ThemeProvider'
 export { Avatar, default as AvatarDefault } from './components/Avatar'
 export { Button, default as ButtonDefault } from './components/Button'
+export { default as BottomSheet } from './components/BottomSheet'
 export { default as BottomSheetItem } from './components/BottomSheet/BottomSheetItem'
 export { default as BottomSheetHeader } from './components/BottomSheet/BottomSheetHeader'
 export { default as BottomSheetTitle } from './components/BottomSheet/BottomSheetTitle'
@@ -85,6 +86,11 @@ export type { TwakeTheme } from './lib/theme'
 export type { PaletteJson } from './lib/types'
 export type { AvatarProps } from './components/Avatar'
 export type { ButtonProps } from './components/Button'
+export type {
+  BottomSheetProps,
+  BottomSheetSettings,
+  BottomSheetToolbarProps
+} from './components/BottomSheet/types'
 export type { BottomSheetItemProps } from './components/BottomSheet/BottomSheetItem'
 export type { BottomSheetHeaderProps } from './components/BottomSheet/BottomSheetHeader'
 export type { BottomSheetTitleProps } from './components/BottomSheet/BottomSheetTitle'
