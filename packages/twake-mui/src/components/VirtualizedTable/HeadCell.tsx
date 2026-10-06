@@ -1,4 +1,4 @@
-import { TableCell, TableSortLabel } from '@mui/material'
+import { TableCell, TableSortLabel, Skeleton } from '@mui/material'
 import React from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
@@ -19,17 +19,28 @@ interface HeadCellProps {
   orderBy?: string
   orderDirection: OrderDirection
   onClick: () => void
+  isLoading?: boolean
 }
 
 export const HeadCell: React.FC<HeadCellProps> = ({
   column,
   orderBy,
   orderDirection,
-  onClick
+  onClick,
+  isLoading
 }) => {
   useExtendI18n(locales)
   const { t } = useI18n()
   const isActive = orderBy === column.id
+
+  const content = isLoading ? (
+    <>
+      <span className="u-visuallyhidden">{column.label}</span>
+      <Skeleton animation="wave" width={50} />
+    </>
+  ) : (
+    column.label
+  )
 
   return (
     <TableCell
@@ -45,7 +56,7 @@ export const HeadCell: React.FC<HeadCellProps> = ({
           direction={isActive ? orderDirection : 'asc'}
           onClick={onClick}
         >
-          {column.label}
+          {content}
           {isActive && (
             <span className="u-visuallyhidden">
               {orderDirection === 'desc'
@@ -55,7 +66,7 @@ export const HeadCell: React.FC<HeadCellProps> = ({
           )}
         </TableSortLabel>
       ) : (
-        column.label
+        content
       )}
     </TableCell>
   )

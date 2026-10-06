@@ -1,9 +1,15 @@
-import { TableCell } from '@mui/material'
+import { TableCell, Skeleton } from '@mui/material'
 import React, { useRef } from 'react'
 import { useOnLongPress } from 'rooks'
 
 import { getPath } from './helpers'
-import type { CellChildProps, Column, Row, RowContentProps } from './types'
+import {
+  _isLoading as _isLoadingSymbol,
+  type CellChildProps,
+  type Column,
+  type Row,
+  type RowContentProps
+} from './types'
 
 const DOUBLE_CLICK_DELAY = 400
 const LONG_PRESS_DURATION = 300
@@ -27,13 +33,15 @@ export const Cell: React.FC<CellProps> = ({
   const isLongPress = useRef(false)
   const lastClickTime = useRef(0)
 
+  const _isLoading = row[_isLoadingSymbol] === true
+
   const cellContent = getPath(row, column.id)
   const cell = cellContent === undefined ? '—' : cellContent
 
   const longPressRef = useOnLongPress(
     () => {
       // without a long press handler, a slow click must stay a click
-      if (column.disableClick || !onLongPress) return
+      if (_isLoading || column.disableClick || !onLongPress) return
       isLongPress.current = true
       onLongPress(row, column)
     },
@@ -41,7 +49,7 @@ export const Cell: React.FC<CellProps> = ({
   )
 
   const handleClick = (): void => {
-    if (column.disableClick) return
+    if (_isLoading || column.disableClick) return
 
     if (isLongPress.current) {
       isLongPress.current = false
@@ -59,7 +67,10 @@ export const Cell: React.FC<CellProps> = ({
     <TableCell
       ref={longPressRef}
       sx={{
-        cursor: !!onClick && !column.disableClick ? 'pointer' : undefined,
+        cursor:
+          !!onClick && !_isLoading && !column.disableClick
+            ? 'pointer'
+            : undefined,
         width: column.width,
         maxWidth: column.maxWidth
       }}
@@ -68,17 +79,21 @@ export const Cell: React.FC<CellProps> = ({
       padding={column.disablePadding ? 'none' : 'normal'}
       onClick={handleClick}
       onDoubleClick={() =>
-        column.disableClick ? undefined : onDoubleClick?.(row, column)
+        _isLoading || column.disableClick
+          ? undefined
+          : onDoubleClick?.(row, column)
       }
       onContextMenu={ev => isLongPress.current && ev.preventDefault()}
     >
-      {children
-        ? React.Children.map(children, child =>
-            React.isValidElement<Partial<CellChildProps>>(child)
-              ? React.cloneElement(child, { row, columns, column, cell })
-              : null
-          )
-        : (cell as React.ReactNode)}
+      {_isLoading
+        ? column.skeleton || <Skeleton animation="wave" variant="text" />
+        : children
+          ? React.Children.map(children, child =>
+              React.isValidElement<Partial<CellChildProps>>(child)
+                ? React.cloneElement(child, { row, columns, column, cell })
+                : null
+            )
+          : (cell as React.ReactNode)}
     </TableCell>
   )
 }
