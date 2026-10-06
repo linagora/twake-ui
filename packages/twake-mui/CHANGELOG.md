@@ -1,3 +1,15 @@
+# @linagora/twake-mui [10.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.1.0...@linagora/twake-mui@10.2.0) (2026-10-06)
+
+
+### Bug Fixes
+
+* **twake-mui:** Match the Alert close button without its title ([cdfb37a](https://github.com/linagora/twake-ui/commit/cdfb37a832fdde8455702d0f40e1a9c0ecb34214))
+
+
+### Features
+
+* **twake-mui:** Translate component labels in es, de and it ([90f3d39](https://github.com/linagora/twake-ui/commit/90f3d3960d476a28ee3a4f3e2c453da36b55a645))
+
 # @linagora/twake-mui [10.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.0.0...@linagora/twake-mui@10.1.0) (2026-10-06)
 
 
