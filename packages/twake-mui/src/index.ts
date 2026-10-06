@@ -71,6 +71,7 @@ export { default as BottomSheetItem } from './components/BottomSheet/BottomSheet
 export { default as BottomSheetHeader } from './components/BottomSheet/BottomSheetHeader'
 export { default as BottomSheetTitle } from './components/BottomSheet/BottomSheetTitle'
 export { default as Chip } from './components/Chip'
+export { default as ColorList } from './components/ColorList'
 export { Dialog, default as DialogDefault } from './components/Dialog'
 export {
   ContactPopover,
@@ -108,6 +109,7 @@ export {
   supportedColors,
   getInitials
 } from './components/Avatar/helpers'
+export { COLORS } from './components/ColorList/helpers'
 export { default as AccordionExpandIcon } from './components/AccordionExpandIcon'
 export { default as VirtualizedTable } from './components/VirtualizedTable'
 export { VirtuosoMockContext } from 'react-virtuoso'
@@ -217,6 +219,7 @@ export type {
   OverlayRegion
 } from './components/SpaceOverlay/region'
 export type { OverlayFrameProps } from './components/SpaceOverlay/OverlayFrame'
+export type { ColorListProps, ColorListSize } from './components/ColorList'
 export type { DialogProps, DialogSize } from './components/Dialog'
 export type {
   PointerAlertProps,
