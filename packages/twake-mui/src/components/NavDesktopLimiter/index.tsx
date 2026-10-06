@@ -5,8 +5,8 @@ import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
-import { NavLink } from '../NavLink'
-import { NavText } from '../NavText'
+import { NavLink } from '../NavLink/NavLink'
+import NavText from '../NavText'
 import en from './locales/en.json'
 import fr from './locales/fr.json'
 import ru from './locales/ru.json'
@@ -37,7 +37,7 @@ export const NavDesktopLimiter = ({
     <>
       {viewingAll ? items : items.slice(0, max)}
       {amountHidden > 0 && (
-        <NavItem secondary>
+        <NavItem variant="secondary">
           <NavLink onClick={() => setViewingAll(current => !current)}>
             <NavIcon icon={viewingAll ? Top : Bottom} />
             <NavText>

@@ -1,23 +1,39 @@
 import { SxProps } from '@mui/material'
-import { styled, Theme } from '@mui/material/styles'
+import { Theme } from '@mui/material/styles'
 import React from 'react'
 
-export interface NavTextProps extends React.ComponentPropsWithoutRef<'span'> {
+import { NavPrimaryText } from './NavPrimaryText'
+import { NavSecondaryText } from './NavSecondaryText'
+import { NavTertiaryText } from './NavTertiaryText'
+import { NavTextRoot } from './NavTextRoot'
+
+export interface NavTextProps extends React.ComponentPropsWithoutRef<'div'> {
   sx?: SxProps<Theme>
+  secondaryText?: React.ReactNode
+  tertiaryText?: React.ReactNode
+  tertiaryIcon?: React.ReactNode
 }
 
-// Explicit annotation: declaration emit for styled('span') otherwise
-// widens the element props to the whole JSX.IntrinsicElements map.
-export const NavText: React.FC<NavTextProps> = styled('span')(
-  ({ theme }: { theme: Theme }) => ({
-    fontSize: theme.typography.pxToRem(14),
-    fontWeight: 500,
-    letterSpacing: '.15px',
-    [theme.breakpoints.down('lg')]: {
-      display: 'block',
-      textAlign: 'center',
-      whiteSpace: 'nowrap',
-      fontSize: theme.typography.pxToRem(12)
-    }
-  })
+const NavText = React.forwardRef<HTMLDivElement, NavTextProps>(
+  (
+    { secondaryText, tertiaryText, tertiaryIcon, children, sx, ...rest },
+    ref
+  ) => {
+    return (
+      <NavTextRoot ref={ref} sx={sx} {...rest}>
+        <NavPrimaryText>{children}</NavPrimaryText>
+        {secondaryText && <NavSecondaryText>{secondaryText}</NavSecondaryText>}
+        {(tertiaryText || tertiaryIcon) && (
+          <NavTertiaryText>
+            {tertiaryIcon}
+            {tertiaryText}
+          </NavTertiaryText>
+        )}
+      </NavTextRoot>
+    )
+  }
 )
+
+NavText.displayName = 'NavText'
+
+export default NavText
