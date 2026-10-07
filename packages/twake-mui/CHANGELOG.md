@@ -1,3 +1,10 @@
+# @linagora/twake-mui [10.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.3.0...@linagora/twake-mui@10.4.0) (2026-10-07)
+
+
+### Features
+
+* **twake-mui:** Add the TwakeSpace overlay for embedded apps ([97a8b50](https://github.com/linagora/twake-ui/commit/97a8b506c0c485fffaa71805e4c32c77bd6ff30d))
+
 # @linagora/twake-mui [10.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.2.0...@linagora/twake-mui@10.3.0) (2026-10-06)
 
 
