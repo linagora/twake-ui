@@ -11,6 +11,9 @@ const config: StorybookConfig = {
     check: false,
   },
   viteFinal: async (config, options) => {
+    // react-docgen only skips paths under node_modules: following the workspace
+    // symlink would make it parse the whole twake-icons bundle (~100s per start)
+    config.resolve = { ...config.resolve, preserveSymlinks: true }
     if (options.configType === 'PRODUCTION') {
       config.base = '/twake-ui/twake-mui/'
     }
