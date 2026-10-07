@@ -27,8 +27,8 @@ export const ContactPopoverEmailAction = ({
       disabled={disabled}
       sx={{
         justifyContent: 'center',
-        color: theme.palette.text.primary,
-        borderColor: theme.palette.divider
+        color: theme.vars.palette.text.primary,
+        borderColor: theme.vars.palette.divider
       }}
     >
       {t('ContactPopover.emailButton')}

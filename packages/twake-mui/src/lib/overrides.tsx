@@ -28,13 +28,7 @@ import { selectClasses } from '@mui/material/Select'
 import { switchClasses } from '@mui/material/Switch'
 import { tabClasses } from '@mui/material/Tab'
 import { tabsClasses } from '@mui/material/Tabs'
-import {
-  CSSObject,
-  Theme,
-  ThemeOptions,
-  alpha,
-  darken
-} from '@mui/material/styles'
+import { CSSObject, Theme, ThemeOptions, alpha } from '@mui/material/styles'
 import React from 'react'
 
 import { radius } from './radius'
@@ -590,7 +584,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         height: 14,
         minWidth: 14,
         padding: 0,
-        border: `2px solid ${theme.palette.background.paper}`,
+        border: `2px solid ${theme.vars.palette.background.paper}`,
         borderRadius: '100%',
         fontSize: theme.typography.pxToRem(10)
       }),
@@ -657,12 +651,12 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiToggleButtonGroup: {
     styleOverrides: {
       root: ({ theme }) => ({
-        borderColor: theme.palette.secondary.dark,
+        borderColor: theme.vars.palette.secondary.dark,
         '& .MuiToggleButton-root:not(.Mui-selected)': {
-          color: theme.palette.text.secondary,
-          backgroundColor: alpha(theme.palette.text.secondary, 0.08),
+          color: theme.vars.palette.text.secondary,
+          backgroundColor: theme.alpha(theme.vars.palette.text.secondary, 0.08),
           '& svg, & .MuiSvgIcon-root': {
-            color: theme.palette.text.secondary
+            color: theme.vars.palette.text.secondary
           }
         }
       })
@@ -671,15 +665,15 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiToggleButton: {
     styleOverrides: {
       root: ({ theme }) => ({
-        color: theme.palette.text.primary,
+        color: theme.vars.palette.text.primary,
         '&.Mui-selected': {
-          color: theme.palette.text.primary,
+          color: theme.vars.palette.text.primary,
           backgroundColor: 'transparent',
           '&:hover': {
             backgroundColor: 'transparent'
           },
           '& svg, & .MuiSvgIcon-root': {
-            color: theme.palette.primary.main
+            color: theme.vars.palette.primary.main
           }
         },
         variants: [
@@ -701,7 +695,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           {
             props: { color: 'default' },
             style: {
-              color: theme.palette.text.secondary
+              color: theme.vars.palette.text.secondary
             }
           },
           {
@@ -1030,7 +1024,9 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         marginLeft: 5,
         marginRight: -12,
         transform: 'rotate(-90deg)',
-        [`&.${accordionSummaryClasses.expanded}`]: { transform: 'rotate(0deg)' }
+        [`&.${accordionSummaryClasses.expanded}`]: {
+          transform: 'rotate(0deg)'
+        }
       }),
       content: {
         paddingLeft: 8,
@@ -1056,23 +1052,23 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         borderRadius: 28,
         width: 96,
         height: 96,
-        color: theme.palette.text.primary,
-        backgroundColor: theme.palette.background.paper,
+        color: theme.vars.palette.text.primary,
+        backgroundColor: theme.vars.palette.background.paper,
         '&:hover': {
-          backgroundColor: darken(theme.palette.background.paper, 0.05)
+          backgroundColor: `color-mix(in srgb, ${theme.vars.palette.background.paper}, #000 5%)`
         },
         '@media (hover: none)': {
-          backgroundColor: theme.palette.background.paper
+          backgroundColor: theme.vars.palette.background.paper
         }
       }),
       primary: ({ theme }) => ({
-        color: theme.palette.primary.dark,
-        backgroundColor: theme.palette.primary.light,
+        color: theme.vars.palette.primary.dark,
+        backgroundColor: theme.vars.palette.primary.light,
         '&:hover': {
-          backgroundColor: darken(theme.palette.primary.light, 0.05)
+          backgroundColor: `color-mix(in srgb, ${theme.vars.palette.primary.light}, #000 5%)`
         },
         '@media (hover: none)': {
-          backgroundColor: theme.palette.primary.light
+          backgroundColor: theme.vars.palette.primary.light
         }
       }),
       extended: {

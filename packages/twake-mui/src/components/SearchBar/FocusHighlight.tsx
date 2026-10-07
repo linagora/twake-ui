@@ -6,6 +6,6 @@ import { Highlight } from './Highlight'
 export const FocusHighlight = styled(Highlight)(
   ({ theme }: { theme: Theme }) => ({
     pointerEvents: 'none',
-    backgroundColor: theme.palette.action.hover
+    backgroundColor: theme.vars.palette.action.hover
   })
 )

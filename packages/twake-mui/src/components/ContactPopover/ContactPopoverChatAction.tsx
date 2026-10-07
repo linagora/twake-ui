@@ -22,9 +22,9 @@ export const ContactPopoverChatAction = ({
       rel="noopener noreferrer"
       size="small"
       disabled={disabled}
-      sx={{ border: `1px solid ${theme.palette.divider}` }}
+      sx={{ border: `1px solid ${theme.vars.palette.divider}` }}
     >
-      <Icon icon={Discuss} size={20} color={theme.palette.text.icon} />
+      <Icon icon={Discuss} size={20} color={theme.vars.palette.text.icon} />
     </IconButton>
   )
 }

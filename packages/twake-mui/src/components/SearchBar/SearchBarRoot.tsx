@@ -23,10 +23,10 @@ export const SearchBarRoot = styled(Paper, {
     borderStyle: 'solid',
     borderWidth: 1,
     paddingRight: '0.5rem',
-    borderColor: isFocused ? theme.palette.primary.main : 'transparent',
+    borderColor: isFocused ? theme.vars.palette.primary.main : 'transparent',
     backgroundColor: isFocused
-      ? theme.palette.background.paper
-      : theme.palette.background.default,
+      ? theme.vars.palette.background.paper
+      : theme.vars.palette.background.default,
     transition: theme.transitions.create(['border-color', 'background-color']),
     '&:hover': {
       '&:not(.Mui-disabled):not(.SearchBar-focused)': {
@@ -37,7 +37,7 @@ export const SearchBarRoot = styled(Paper, {
     },
     '&.Mui-disabled': {
       '& .SearchBar-icon': {
-        color: theme.palette.text.disabled
+        color: theme.vars.palette.text.disabled
       },
       '& .SearchBar-disableHighlight': {
         opacity: 1
