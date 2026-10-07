@@ -1,3 +1,10 @@
+## @linagora/twake-mui [10.4.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.4.0...@linagora/twake-mui@10.4.1) (2026-10-07)
+
+
+### Bug Fixes
+
+* **twake-mui:** Follow the color scheme in overrides and SearchBar ([#142](https://github.com/linagora/twake-ui/issues/142)) ([1c2efac](https://github.com/linagora/twake-ui/commit/1c2efacba0a3e140384775e9a4f8e76416409b7a))
+
 # @linagora/twake-mui [10.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.3.0...@linagora/twake-mui@10.4.0) (2026-10-07)
 
 
