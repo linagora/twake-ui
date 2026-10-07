@@ -1,3 +1,4 @@
+import { Portal } from '@mui/material'
 import type { ThemeOptions } from '@mui/material/styles'
 import React, {
   createContext,
@@ -6,7 +7,6 @@ import React, {
   type FC,
   type ReactNode
 } from 'react'
-import { createPortal } from 'react-dom'
 
 import type { SpaceOverlay, SpaceOverlayStatus } from './spaceOverlay'
 
@@ -61,7 +61,11 @@ export const OverlayPortal: FC<{ children?: ReactNode }> = ({ children }) => {
   // written in would lose what it holds
   if (status === 'connecting') return null
   const body = status === 'connected' ? (overlay?.getBody() ?? null) : null
-  return <>{body === null ? children : createPortal(children, body)}</>
+  return (
+    <Portal container={body} disablePortal={body === null}>
+      {children}
+    </Portal>
+  )
 }
 
 /**
