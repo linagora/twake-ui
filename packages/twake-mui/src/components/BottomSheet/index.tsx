@@ -1,6 +1,6 @@
 import { Backdrop, Portal } from '@mui/material'
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react'
-import { useMutationObserver, useTimeoutWhen } from 'rooks'
+import { useMutationObserver, useTimeoutWhen, useWindowSize } from 'rooks'
 
 import {
   ANIMATION_DURATION,
@@ -67,6 +67,8 @@ const BottomSheetContent = memo(function BottomSheetContent({
   const [initPos, setInitPos] = useState(0)
   const prevInitPos = useRef(0)
   const [forceRender, setForceRender] = useState(0)
+  // Stops are positions from the window top, so they follow its height (rotation, browser bars)
+  const { innerHeight } = useWindowSize()
 
   const hasToolbarProps = Object.keys(toolbarProps).length > 0
   const isClosable = !!onClose || backdrop
@@ -205,7 +207,8 @@ const BottomSheetContent = memo(function BottomSheetContent({
     backdrop,
     isClosable,
     offset,
-    forceRender
+    forceRender,
+    innerHeight
   ])
 
   const content = (
