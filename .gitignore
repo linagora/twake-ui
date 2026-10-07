@@ -15,6 +15,7 @@ screenshots/
 storybook-static/
 
 # IDE
+.claude/
 .idea/
 .vscode/
 *.swp
