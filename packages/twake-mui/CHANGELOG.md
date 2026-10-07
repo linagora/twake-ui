@@ -1,3 +1,10 @@
+## @linagora/twake-mui [10.5.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.5.0...@linagora/twake-mui@10.5.1) (2026-10-07)
+
+
+### Bug Fixes
+
+* **twake-mui:** Rename spaceOverlay.ts to connectSpaceOverlay.ts ([20754d1](https://github.com/linagora/twake-ui/commit/20754d1efdc12bf1f40331042de0ff16035f6aee))
+
 # @linagora/twake-mui [10.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.4.1...@linagora/twake-mui@10.5.0) (2026-10-07)
 
 
