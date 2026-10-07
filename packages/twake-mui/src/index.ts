@@ -60,7 +60,23 @@ export { default as AccordionExpandIcon } from './components/AccordionExpandIcon
 export { default as VirtualizedTable } from './components/VirtualizedTable'
 export { VirtuosoMockContext } from 'react-virtuoso'
 export { useBreakpoints } from './hooks/useBreakpoints'
-export * from './components/SpaceOverlay'
+export {
+  connectSpaceOverlay,
+  computeOverlayRegion
+} from './components/SpaceOverlay/spaceOverlay'
+export {
+  OverlayPortal,
+  SpaceOverlayProvider,
+  overlayThemeOptions,
+  useOverlayWindow
+} from './components/SpaceOverlay/SpaceOverlay'
+export {
+  overlayClipPath,
+  overlayRegionMessage,
+  parseOverlayRegion,
+  parseOverlayRegionMessage
+} from './components/SpaceOverlay/region'
+export { OverlayFrame } from './components/SpaceOverlay/OverlayFrame'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
 export type { PaletteJson } from './lib/types'
@@ -80,6 +96,16 @@ export type { ContactPopoverVideoActionProps } from './components/ContactPopover
 export type { ContactPopoverCalendarActionProps } from './components/ContactPopover/ContactPopoverCalendarAction'
 export type { ContactPopoverEmailActionProps } from './components/ContactPopover/ContactPopoverEmailAction'
 export type { ChipProps } from './components/Chip'
+export type {
+  SpaceOverlay,
+  SpaceOverlayStatus
+} from './components/SpaceOverlay/spaceOverlay'
+export type { SpaceOverlayProviderProps } from './components/SpaceOverlay/SpaceOverlay'
+export type {
+  OverlayBox,
+  OverlayRegion
+} from './components/SpaceOverlay/region'
+export type { OverlayFrameProps } from './components/SpaceOverlay/OverlayFrame'
 export type { DialogProps, DialogSize } from './components/Dialog'
 export type {
   PointerAlertProps,
