@@ -67,7 +67,7 @@ export { useBreakpoints } from './hooks/useBreakpoints'
 export {
   connectSpaceOverlay,
   computeOverlayRegion
-} from './components/SpaceOverlay/spaceOverlay'
+} from './components/SpaceOverlay/connectSpaceOverlay'
 export {
   OverlayPortal,
   SpaceOverlayProvider,
@@ -111,7 +111,7 @@ export type { ChipProps } from './components/Chip'
 export type {
   SpaceOverlay,
   SpaceOverlayStatus
-} from './components/SpaceOverlay/spaceOverlay'
+} from './components/SpaceOverlay/connectSpaceOverlay'
 export type { SpaceOverlayProviderProps } from './components/SpaceOverlay/SpaceOverlay'
 export type {
   OverlayBox,
