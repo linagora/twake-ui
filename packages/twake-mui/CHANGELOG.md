@@ -1,3 +1,11 @@
+# @linagora/twake-mui [10.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.4.1...@linagora/twake-mui@10.5.0) (2026-10-07)
+
+
+### Features
+
+* **twake-mui:** Migrate BottomSheet from cozy-ui ([5144650](https://github.com/linagora/twake-ui/commit/51446500bc88f45859bfc5e8278a88347d6f91f5))
+* **twake-mui:** Migrate BottomSheet subcomponents from cozy-ui ([006d755](https://github.com/linagora/twake-ui/commit/006d7559d13d8740b28f1e6c456372956884e7fb))
+
 ## @linagora/twake-mui [10.4.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.4.0...@linagora/twake-mui@10.4.1) (2026-10-07)
 
 
