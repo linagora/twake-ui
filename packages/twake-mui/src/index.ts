@@ -28,6 +28,42 @@ export {
   getActionName,
   getOnlyNeededActions
 } from './components/ActionsMenu/helpers'
+export {
+  makeActions,
+  makeAppWebLink,
+  makeBase64FromFile,
+  fileToArrayBuffer,
+  addFileToPdf,
+  makePdfBlob,
+  downloadBlob
+} from './components/ActionsMenu/Actions/helpers'
+export {
+  wrapTextToLines,
+  pushNewPageIfNeeded,
+  drawWrappedText,
+  makePdfBlobFromText
+} from './components/ActionsMenu/Actions/pdfHelpers'
+export {
+  makeAction,
+  makeActionComponent
+} from './components/ActionsMenu/Actions/makeAction'
+export { divider } from './components/ActionsMenu/Actions/divider'
+export { modify } from './components/ActionsMenu/Actions/modify'
+export { smsTo } from './components/ActionsMenu/Actions/smsTo'
+export { call } from './components/ActionsMenu/Actions/call'
+export { emailTo } from './components/ActionsMenu/Actions/emailTo'
+export { print } from './components/ActionsMenu/Actions/print'
+export { download } from './components/ActionsMenu/Actions/download'
+export {
+  addToFavorites,
+  removeFromFavorites
+} from './components/ActionsMenu/Actions/favorites'
+export { viewInContacts } from './components/ActionsMenu/Actions/viewInContacts'
+export { viewInDrive } from './components/ActionsMenu/Actions/viewInDrive'
+export { copyToClipboard } from './components/ActionsMenu/Actions/copyToClipboard'
+export { editAttribute } from './components/ActionsMenu/Actions/editAttribute'
+export { others } from './components/ActionsMenu/Actions/others'
+export { exportToText } from './components/ActionsMenu/Actions/exportToText'
 export { Avatar, default as AvatarDefault } from './components/Avatar'
 export { Button, default as ButtonDefault } from './components/Button'
 export { default as BottomSheet } from './components/BottomSheet'
@@ -120,6 +156,31 @@ export type {
   WebLinkClient,
   WebLinkOptions
 } from './components/ActionsMenu/types'
+export type {
+  MakeActionComponentOptions,
+  MakeActionOptions
+} from './components/ActionsMenu/Actions/makeAction'
+export type {
+  AppWebLinkOptions,
+  FetchBlobFileById,
+  MakePdfBlobOptions
+} from './components/ActionsMenu/Actions/helpers'
+export type {
+  WrapTextToLinesOptions,
+  PdfCursor,
+  PushNewPageIfNeededOptions,
+  DrawWrappedTextOptions
+} from './components/ActionsMenu/Actions/pdfHelpers'
+export type { FavoritesActionOptions } from './components/ActionsMenu/Actions/favorites'
+export type {
+  DownloadActionOptions,
+  DownloadFileOptions
+} from './components/ActionsMenu/Actions/download'
+export type {
+  PrintActionOptions,
+  PrintClient
+} from './components/ActionsMenu/Actions/print'
+export type { ExportToTextActionOptions } from './components/ActionsMenu/Actions/exportToText'
 export type { AvatarProps } from './components/Avatar'
 export type { ButtonProps } from './components/Button'
 export type {

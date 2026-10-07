@@ -64,6 +64,8 @@
     "@react-spring/web": "10.1.2",
     "@use-gesture/react": "10.3.1",
     "classnames": "^2.5.1",
+    "cozy-minilog": "^3.10.1",
+    "pdf-lib": "^1.17.1",
     "react-use-measure": "2.1.7",
     "react-virtuoso": "4.13.0",
     "rooks": "8.4.0"
