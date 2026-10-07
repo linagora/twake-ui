@@ -54,6 +54,61 @@ function MyComponent() {
 }
 ```
 
+### Apps embedded in TwakeSpace
+
+TwakeSpace shows an app of a space's tab in a frame named `twake-embed-<app>`.
+Next to it, it puts an overlay over its whole page: a second frame, named
+`twake-embed-<app>:overlay`, on `<app origin>/embed/overlay.html`. The app
+renders its dialogs, drawers and docked windows into the overlay, so they sit
+on TwakeSpace's page instead of inside the app's frame, with no change to its
+`Dialog` or `Drawer` calls.
+
+The contract:
+
+- The app serves `/embed/overlay.html`: an empty page, no script, with
+  `html, body { background: transparent; color-scheme: normal }`.
+- The app reports the region it draws in with `overlayRegionMessage(region)`,
+  posted to TwakeSpace: `'full'` while something blocks the page (a dialog, a
+  menu), else the boxes it draws. TwakeSpace shows that region only, and the
+  rest of its page keeps its clicks.
+
+In the app:
+
+```tsx
+import {
+  connectSpaceOverlay,
+  overlayRegionMessage,
+  overlayThemeOptions,
+  OverlayPortal,
+  SpaceOverlayProvider,
+  TwakeMuiThemeProvider
+} from '@linagora/twake-mui'
+
+// Null outside TwakeSpace: everything renders in place
+const overlay = connectSpaceOverlay(region => {
+  window.parent.postMessage(overlayRegionMessage(region), SPACE_ORIGIN)
+})
+const themeOptions = overlay ? overlayThemeOptions(overlay) : {}
+
+function App() {
+  return (
+    <TwakeMuiThemeProvider themeOptions={themeOptions}>
+      <SpaceOverlayProvider overlay={overlay}>
+        {/* Dialogs and drawers go to the overlay through the theme */}
+        <OverlayPortal>{/* a docked window, such as a composer */}</OverlayPortal>
+      </SpaceOverlayProvider>
+    </TwakeMuiThemeProvider>
+  )
+}
+```
+
+What renders on the overlay lives in another document: use `ownerDocument`
+rather than `document`, and `nodeType` rather than `instanceof`.
+
+In TwakeSpace, `OverlayFrame` is the overlay: it takes the region from
+`parseOverlayRegionMessage`, checked to come from the app's frame, through
+`overlayClipPath`.
+
 ## Features
 
 - **Palette System**: Techno-independent color definitions

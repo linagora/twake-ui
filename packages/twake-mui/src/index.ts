@@ -60,6 +60,7 @@ export { default as AccordionExpandIcon } from './components/AccordionExpandIcon
 export { default as VirtualizedTable } from './components/VirtualizedTable'
 export { VirtuosoMockContext } from 'react-virtuoso'
 export { useBreakpoints } from './hooks/useBreakpoints'
+export * from './components/SpaceOverlay'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
 export type { PaletteJson } from './lib/types'
