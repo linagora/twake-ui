@@ -18,6 +18,16 @@ export { theme } from './lib/theme'
 export { radius } from './lib/radius'
 // COMPONENTS & HELPERS
 export { TwakeMuiThemeProvider } from './components/ThemeProvider'
+export { default as ActionsMenu } from './components/ActionsMenu'
+export { default as ActionsMenuWrapper } from './components/ActionsMenu/ActionsMenuWrapper'
+export { default as ActionsMenuItem } from './components/ActionsMenu/ActionsMenuItem'
+export { default as ActionsMenuMobileHeader } from './components/ActionsMenu/ActionsMenuMobileHeader'
+export { default as ActionsMenuButton } from './components/ActionsMenu/ActionsMenuButton'
+export { default as ActionsItems } from './components/ActionsMenu/ActionsItems'
+export {
+  getActionName,
+  getOnlyNeededActions
+} from './components/ActionsMenu/helpers'
 export { Avatar, default as AvatarDefault } from './components/Avatar'
 export { Button, default as ButtonDefault } from './components/Button'
 export { default as BottomSheet } from './components/BottomSheet'
@@ -84,6 +94,32 @@ export { OverlayFrame } from './components/SpaceOverlay/OverlayFrame'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
 export type { PaletteJson } from './lib/types'
+export type {
+  ActionsMenuProps,
+  ActionsMenuComponentsProps
+} from './components/ActionsMenu'
+export type { ActionsMenuWrapperProps } from './components/ActionsMenu/ActionsMenuWrapper'
+export type { ActionsMenuItemProps } from './components/ActionsMenu/ActionsMenuItem'
+export type { ActionsMenuMobileHeaderProps } from './components/ActionsMenu/ActionsMenuMobileHeader'
+export type { ActionsMenuButtonProps } from './components/ActionsMenu/ActionsMenuButton'
+export type { ActionsItemsProps } from './components/ActionsMenu/ActionsItems'
+export type {
+  Action,
+  ActionCallbackOptions,
+  ActionComponent,
+  ActionComponentProps,
+  ActionComponentSlotProps,
+  ActionDocument,
+  ActionFactory,
+  ActionObject,
+  ActionTranslate,
+  GenerateWebLink,
+  ShowAlert,
+  ShowAlertOptions,
+  WebLinkActionOptions,
+  WebLinkClient,
+  WebLinkOptions
+} from './components/ActionsMenu/types'
 export type { AvatarProps } from './components/Avatar'
 export type { ButtonProps } from './components/Button'
 export type {
