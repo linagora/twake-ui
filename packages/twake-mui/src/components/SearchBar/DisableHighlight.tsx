@@ -5,6 +5,6 @@ import { Highlight } from './Highlight'
 
 export const DisableHighlight = styled(Highlight)(
   ({ theme }: { theme: Theme }) => ({
-    backgroundColor: theme.palette.action.disabled
+    backgroundColor: theme.vars.palette.action.disabled
   })
 )

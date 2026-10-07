@@ -1,6 +1,6 @@
 import { Icon } from '@linagora/twake-icons'
 import { Copy } from '@linagora/twake-icons'
-import { Box, IconButton, Typography, useTheme, alpha } from '@mui/material'
+import { Box, IconButton, Typography, useTheme } from '@mui/material'
 import React, { useState } from 'react'
 
 import { useI18n } from 'twake-i18n'
@@ -69,14 +69,14 @@ export const AttendeeInfo = ({
           <IconButton
             size="small"
             onClick={() => void handleCopy()}
-            sx={{ p: 0.5, color: alpha(theme.palette.grey[900], 0.9) }}
+            sx={{ p: 0.5, color: 'text.primary' }}
             title={
               showCopied
                 ? t('ContactPopover.copiedTooltip')
                 : t('ContactPopover.copyTooltip')
             }
           >
-            <Icon icon={Copy} size={16} color={theme.palette.text.icon} />
+            <Icon icon={Copy} size={16} color={theme.vars.palette.text.icon} />
           </IconButton>
         </Box>
       </Box>
