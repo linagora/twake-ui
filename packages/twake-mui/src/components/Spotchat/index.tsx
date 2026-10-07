@@ -4,20 +4,18 @@ import React, { useId } from 'react'
 
 import { Dialog, DialogProps } from '../Dialog'
 
-export interface SpotlightHint {
+export interface SpotchatHint {
   /** The keys, as drawn: « ↑↓ », « ↵ », « Esc » */
   keys: string
   label: string
 }
 
-export interface SpotlightProps extends Omit<
+export interface SpotchatProps extends Omit<
   DialogProps,
   'title' | 'onChange' | 'onKeyDown' | 'children'
 > {
-  /** The accessible name of the dialog and of its field */
+  /** The accessible name of the field */
   label: string
-  /** Shown above the field; the dialog is named by `label` without it */
-  title?: React.ReactNode
   placeholder?: string
   value: string
   onChange: (value: string) => void
@@ -28,18 +26,17 @@ export interface SpotlightProps extends Omit<
   inputProps?: React.InputHTMLAttributes<HTMLInputElement> &
     Record<string, unknown>
   /** The keys at the bottom */
-  hints?: readonly SpotlightHint[]
+  hints?: readonly SpotchatHint[]
   children?: React.ReactNode
 }
 
 /**
- * A large dialog high on the screen, a big search field on top, the results
+ * Spotchat: a large dialog high on the screen, a big search field on top, the results
  * below and the keys at the bottom, as Spotlight on a Mac. Full screen on
  * mobile, as every `Dialog` but the small one.
  */
-export const Spotlight: React.FC<SpotlightProps> = ({
+export const Spotchat: React.FC<SpotchatProps> = ({
   label,
-  title,
   placeholder,
   value,
   onChange,
@@ -56,8 +53,7 @@ export const Spotlight: React.FC<SpotlightProps> = ({
   return (
     <Dialog
       size="medium"
-      aria-label={title ? undefined : label}
-      aria-labelledby={title ? titleId : undefined}
+      aria-labelledby={titleId}
       {...props}
       slotProps={{
         ...slotProps,
@@ -77,16 +73,16 @@ export const Spotlight: React.FC<SpotlightProps> = ({
         }
       }}
     >
-      {title && (
-        <Typography
-          id={titleId}
-          component="h2"
-          variant="h6"
-          sx={{ px: 2.5, pt: 2, display: 'flex', alignItems: 'center', gap: 1 }}
-        >
-          {title}
-        </Typography>
-      )}
+      <Typography
+        id={titleId}
+        component="h2"
+        variant="h6"
+        sx={{ px: 2.5, pt: 2, display: 'flex', alignItems: 'center', gap: 1 }}
+      >
+        {/* The ginger cat of Apple: the mascot of Spotchat, always there */}
+        <span aria-hidden>🐈</span>
+        Spotchat
+      </Typography>
       <Box
         sx={{
           display: 'flex',
@@ -156,13 +152,13 @@ export const Spotlight: React.FC<SpotlightProps> = ({
   )
 }
 
-export interface SpotlightSectionProps extends React.ComponentPropsWithoutRef<'ul'> {
+export interface SpotchatSectionProps extends React.ComponentPropsWithoutRef<'ul'> {
   /** The small title above the results of the group */
   title: string
 }
 
 /** A group of results under a small title. Its children are list items. */
-export const SpotlightSection: React.FC<SpotlightSectionProps> = ({
+export const SpotchatSection: React.FC<SpotchatSectionProps> = ({
   title,
   children,
   ...props
@@ -201,4 +197,4 @@ export const SpotlightSection: React.FC<SpotlightSectionProps> = ({
   )
 }
 
-export default Spotlight
+export default Spotchat

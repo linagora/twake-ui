@@ -2,11 +2,11 @@ import { Button, ListItemButton, ListItemText } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { Spotlight, SpotlightProps, SpotlightSection } from './index'
+import { Spotchat, SpotchatProps, SpotchatSection } from './index'
 
-const meta: Meta<typeof Spotlight> = {
-  title: 'Spotlight',
-  component: Spotlight,
+const meta: Meta<typeof Spotchat> = {
+  title: 'Spotchat',
+  component: Spotchat,
   tags: ['autodocs']
 }
 
@@ -25,7 +25,7 @@ const hints = [
 ]
 
 // The caller owns the results: filtering, the active one and the keys
-const ExampleSpotlight: React.FC<Partial<SpotlightProps>> = props => {
+const ExampleSpotchat: React.FC<Partial<SpotchatProps>> = props => {
   const [query, setQuery] = React.useState('')
   const [active, setActive] = React.useState(0)
   const listId = React.useId()
@@ -42,7 +42,7 @@ const ExampleSpotlight: React.FC<Partial<SpotlightProps>> = props => {
   const optionId = (index: number): string => `${listId}-${index}`
 
   return (
-    <Spotlight
+    <Spotchat
       open
       label="Search"
       placeholder="Search a conversation"
@@ -73,7 +73,7 @@ const ExampleSpotlight: React.FC<Partial<SpotlightProps>> = props => {
     >
       <div id={listId} role="listbox" aria-label="Search">
         {groups.map(section => (
-          <SpotlightSection key={section.title} title={section.title}>
+          <SpotchatSection key={section.title} title={section.title}>
             {section.items.map(item => {
               const index = options.indexOf(item)
               return (
@@ -91,34 +91,33 @@ const ExampleSpotlight: React.FC<Partial<SpotlightProps>> = props => {
                 </ListItemButton>
               )
             })}
-          </SpotlightSection>
+          </SpotchatSection>
         ))}
       </div>
-    </Spotlight>
+    </Spotchat>
   )
 }
 
-const OpenableSpotlight: React.FC = () => {
+const OpenableSpotchat: React.FC = () => {
   const [open, setOpen] = React.useState(false)
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Open Spotlight</Button>
-      {open && <ExampleSpotlight onClose={() => setOpen(false)} />}
+      <Button onClick={() => setOpen(true)}>Open Spotchat</Button>
+      {open && <ExampleSpotchat onClose={() => setOpen(false)} />}
     </>
   )
 }
 
 export const Default: Story = {
-  render: () => <OpenableSpotlight />
+  render: () => <OpenableSpotchat />
 }
 
 // Visual Regression - in the flow of the page rather than over it
 export const Screenshot: Story = {
   tags: ['argos'],
   render: () => (
-    <ExampleSpotlight
-      title="Spotlight"
+    <ExampleSpotchat
       disablePortal
       hideBackdrop
       disableAutoFocus
