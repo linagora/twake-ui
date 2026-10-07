@@ -1,3 +1,10 @@
+## @linagora/twake-icons [2.13.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.13.0...@linagora/twake-icons@2.13.1) (2026-10-07)
+
+
+### Bug Fixes
+
+* **twake-icons:** Draw the Assistant icon as an outline ([ebbeb8c](https://github.com/linagora/twake-ui/commit/ebbeb8ce20af263d99aca6c4e6eb0c987dec6c7e))
+
 # @linagora/twake-icons [2.13.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.12.0...@linagora/twake-icons@2.13.0) (2026-10-05)
 
 
