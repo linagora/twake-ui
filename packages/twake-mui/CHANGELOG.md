@@ -1,3 +1,23 @@
+# @linagora/twake-mui [11.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.5.1...@linagora/twake-mui@11.0.0) (2026-10-08)
+
+
+### Bug Fixes
+
+* **twake-mui:** Reposition BottomSheet when the window is resized ([7036375](https://github.com/linagora/twake-ui/commit/70363755a1f61e2ca77d1fa3ac9132e3e33fd00e))
+
+
+### Features
+
+* **twake-mui:** Add ActionsMenu locales ([f0e09cb](https://github.com/linagora/twake-ui/commit/f0e09cb0f6ae7e8c3e988bc5b62fc7190c07f475))
+* **twake-mui:** Migrate ActionsMenu from cozy-ui ([7b12778](https://github.com/linagora/twake-ui/commit/7b12778d86948e5c53fe9b2e16555ed966e64dc6))
+* **twake-mui:** Migrate ActionsMenu predefined actions from cozy-ui ([7f66436](https://github.com/linagora/twake-ui/commit/7f6643633dfa1d6e65f402ee26af223e3ac5d440))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** cozy-intent is now a required peer dependency of
+@linagora/twake-mui. Apps must install cozy-intent >=2.29.1.
+
 ## @linagora/twake-mui [10.5.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.5.0...@linagora/twake-mui@10.5.1) (2026-10-07)
 
 
