@@ -1,3 +1,10 @@
+# @linagora/twake-mui [11.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.0.0...@linagora/twake-mui@11.1.0) (2026-10-08)
+
+
+### Features
+
+* **twake-mui:** Migrate Link from cozy-ui ([8056744](https://github.com/linagora/twake-ui/commit/805674475d17bdab80cb0d01ec760ad716185818))
+
 # @linagora/twake-mui [11.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.5.1...@linagora/twake-mui@11.0.0) (2026-10-08)
 
 
