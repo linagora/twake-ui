@@ -952,6 +952,11 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       })
     }
   },
+  MuiLink: {
+    defaultProps: {
+      underline: 'hover'
+    }
+  },
   MuiAlert: {
     defaultProps: {
       severity: 'primary',
