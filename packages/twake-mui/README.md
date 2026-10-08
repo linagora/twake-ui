@@ -14,6 +14,14 @@ npm install @linagora/twake-mui
 
 Don't forget to also install peerDependencies (see package.json)
 
+`@linagora/twake-css` is one of them: twake-mui builds its theme from its
+`palette.json`, and some components (NavItem, NavDropdown, VirtualizedTable)
+use its `.u-*` utility classes. Import the stylesheet once in your app:
+
+```js
+import '@linagora/twake-css/dist/utils.css'
+```
+
 ## Usage
 
 ### Basic Usage
