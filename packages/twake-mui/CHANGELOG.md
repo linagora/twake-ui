@@ -1,3 +1,10 @@
+# @linagora/twake-mui [11.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.3.0...@linagora/twake-mui@11.4.0) (2026-10-08)
+
+
+### Features
+
+* **twake-mui:** Migrate ColorList from cozy-ui ([870fd92](https://github.com/linagora/twake-ui/commit/870fd9265f0a23904570e910644a74700cd41178))
+
 # @linagora/twake-mui [11.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.2.0...@linagora/twake-mui@11.3.0) (2026-10-08)
 
 
