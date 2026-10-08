@@ -53,6 +53,7 @@
     "@linagora/twake-icons": ">=2.10.0",
     "@mui/lab": "^9.0.0-beta.6",
     "@mui/material": "^9.2.0",
+    "cozy-intent": ">=2.29.1",
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19",
     "twake-i18n": ">=0.6.0"
@@ -63,6 +64,8 @@
     "@react-spring/web": "10.1.2",
     "@use-gesture/react": "10.3.1",
     "classnames": "^2.5.1",
+    "cozy-minilog": "^3.10.1",
+    "pdf-lib": "^1.17.1",
     "react-use-measure": "2.1.7",
     "react-virtuoso": "4.13.0",
     "rooks": "8.4.0"
@@ -87,6 +90,7 @@
     "@types/react": "19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitest/browser-playwright": "4.1.11",
+    "cozy-intent": "^2.31.1",
     "cozy-tsconfig": "^2.0.0",
     "eslint": "10.2.1",
     "eslint-config-cozy-app": "7.0.0",
