@@ -6,7 +6,7 @@ import { screen } from 'storybook/test'
 import { ContactPopover } from './index'
 
 const meta: Meta<typeof ContactPopover> = {
-  title: 'Components/ContactPopover',
+  title: 'ContactPopover',
   component: ContactPopover,
   parameters: {
     layout: 'centered'
