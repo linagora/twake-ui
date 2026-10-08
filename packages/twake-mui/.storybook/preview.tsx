@@ -46,6 +46,11 @@ const instantTransitions: ThemeOptions = {
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
+    options: {
+      // Storybook serializes this function, so it cannot reference outer scope
+      storySort: (a, b) =>
+        a.title === b.title ? 0 : a.title.localeCompare(b.title, undefined, { numeric: true }),
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
