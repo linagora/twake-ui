@@ -1,3 +1,16 @@
+# @linagora/twake-mui [12.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.4.0...@linagora/twake-mui@12.0.0) (2026-10-08)
+
+
+* fix(twake-mui)!: Move @linagora/twake-css to peerDependencies ([672aa48](https://github.com/linagora/twake-ui/commit/672aa48a266ee10bbc3b421ce64b6ced83adbf85))
+
+
+### BREAKING CHANGES
+
+* apps must install @linagora/twake-css themselves and
+import @linagora/twake-css/dist/utils.css once.
+
+Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>
+
 # @linagora/twake-mui [11.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.3.0...@linagora/twake-mui@11.4.0) (2026-10-08)
 
 
