@@ -1,3 +1,10 @@
+## @linagora/twake-icons [2.13.2](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.13.1...@linagora/twake-icons@2.13.2) (2026-10-08)
+
+
+### Bug Fixes
+
+* **twake-icons:** Let Expand, Narrow, Export and Article follow currentColor ([d47e75c](https://github.com/linagora/twake-ui/commit/d47e75c02f572d65687801508ffd321bdbb698e5))
+
 ## @linagora/twake-icons [2.13.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.13.0...@linagora/twake-icons@2.13.1) (2026-10-07)
 
 
