@@ -1,3 +1,10 @@
+# @linagora/twake-mui [11.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.1.0...@linagora/twake-mui@11.2.0) (2026-10-08)
+
+
+### Features
+
+* **twake-mui:** Migrate Markdown from cozy-ui ([120d160](https://github.com/linagora/twake-ui/commit/120d1608e7c7ef4d1d624293b6c3d49d0e27a281))
+
 # @linagora/twake-mui [11.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.0.0...@linagora/twake-mui@11.1.0) (2026-10-08)
 
 
