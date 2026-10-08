@@ -1,3 +1,10 @@
+# @linagora/twake-mui [11.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.2.0...@linagora/twake-mui@11.3.0) (2026-10-08)
+
+
+### Features
+
+* **twake-mui:** Migrate ProgressionBanner from cozy-ui ([f3fb9a1](https://github.com/linagora/twake-ui/commit/f3fb9a11f9f91a15a5cb27d399c1956bcc1927c3))
+
 # @linagora/twake-mui [11.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.1.0...@linagora/twake-mui@11.2.0) (2026-10-08)
 
 
