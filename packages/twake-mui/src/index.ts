@@ -88,6 +88,7 @@ export { default as ListSkeleton } from './components/ListSkeleton'
 export { default as ListSubheader } from './components/ListSubheader'
 export { default as Markdown } from './components/Markdown'
 export { default as PointerAlert } from './components/PointerAlert'
+export { default as ProgressionBanner } from './components/ProgressionBanner'
 export { Tabs, default as TabsDefault } from './components/Tabs'
 export { Switch, default as SwitchDefault } from './components/Switch'
 export { SearchBar, default as SearchBarDefault } from './components/SearchBar'
@@ -221,6 +222,7 @@ export type {
   PointerAlertProps,
   PointerAlertDirection
 } from './components/PointerAlert'
+export type { ProgressionBannerProps } from './components/ProgressionBanner'
 export type {
   EmptyProps,
   EmptyIconSize,
