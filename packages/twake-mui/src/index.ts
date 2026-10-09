@@ -93,6 +93,7 @@ export { default as ProgressionBanner } from './components/ProgressionBanner'
 export { Tabs, default as TabsDefault } from './components/Tabs'
 export { Switch, default as SwitchDefault } from './components/Switch'
 export { SearchBar, default as SearchBarDefault } from './components/SearchBar'
+export { Spotchat, SpotchatSection } from './components/Spotchat'
 export { Sidebar, SIDEBAR_MOBILE_HEIGHT } from './components/Sidebar'
 export { Layout, Main, Content } from './components/Layout'
 export { Nav } from './components/Nav'
@@ -254,6 +255,11 @@ export type { MarkdownProps } from './components/Markdown'
 export type { TabsProps } from './components/Tabs'
 export type { SwitchProps } from './components/Switch'
 export type { SearchBarProps } from './components/SearchBar/types'
+export type {
+  SpotchatProps,
+  SpotchatSectionProps,
+  SpotchatHint
+} from './components/Spotchat'
 export type { SidebarProps } from './components/Sidebar'
 export type { LayoutProps, MainProps, ContentProps } from './components/Layout'
 export type { NavProps } from './components/Nav'
