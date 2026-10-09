@@ -170,6 +170,27 @@ const listItemRoot: CSSObject = {
 }
 
 export const overrides: NonNullable<ThemeOptions['components']> = {
+  MuiAppBar: {
+    // MUI otherwise paints every app bar with the paper colour in dark mode
+    defaultProps: { color: 'default', enableColorOnDark: true },
+    styleOverrides: {
+      root: ({ theme }) => ({
+        variants: [
+          {
+            props: { color: 'default' },
+            style: {
+              '--AppBar-background': theme.vars.palette.grey.A400,
+              '--AppBar-color': theme.vars.palette.primary.contrastText,
+              ...theme.applyStyles('dark', {
+                '--AppBar-background': theme.vars.palette.primary.main,
+                '--AppBar-color': theme.vars.palette.primary.contrastText
+              })
+            }
+          }
+        ]
+      })
+    }
+  },
   MuiButton: {
     defaultProps: {
       variant: 'contained',
