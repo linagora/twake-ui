@@ -150,3 +150,44 @@ export const Screenshot: Story = {
     </Stack>
   )
 }
+
+// Visual Regression - both veils over the page, light and dark themes
+export const LightBackdrop: Story = {
+  tags: ['argos'],
+  parameters: { layout: 'fullscreen' },
+  render: () => (
+    <>
+      <Stack spacing={2} sx={{ p: 3 }}>
+        <h3>Page behind the dialog</h3>
+        <p>The backdrop lets the page show through.</p>
+        <Button>Behind</Button>
+      </Stack>
+      <Dialog open disableScrollLock backdrop="light">
+        <DialogTitle>Light backdrop</DialogTitle>
+        <DialogContent>
+          <DialogContentText>The page is veiled behind.</DialogContentText>
+        </DialogContent>
+      </Dialog>
+    </>
+  )
+}
+
+export const DarkBackdrop: Story = {
+  tags: ['argos'],
+  parameters: { layout: 'fullscreen' },
+  render: () => (
+    <>
+      <Stack spacing={2} sx={{ p: 3 }}>
+        <h3>Page behind the dialog</h3>
+        <p>The backdrop lets the page show through.</p>
+        <Button>Behind</Button>
+      </Stack>
+      <Dialog open disableScrollLock>
+        <DialogTitle>Default backdrop</DialogTitle>
+        <DialogContent>
+          <DialogContentText>The page is veiled behind.</DialogContentText>
+        </DialogContent>
+      </Dialog>
+    </>
+  )
+}
