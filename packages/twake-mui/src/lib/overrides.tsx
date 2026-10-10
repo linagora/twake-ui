@@ -463,6 +463,14 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
   MuiDialog: {
     defaultProps: { disableEnforceFocus: true },
     styleOverrides: {
+      root: ({ theme }) => ({
+        '&.backdropLight > .MuiDialog-backdrop': {
+          backgroundColor: theme.alpha(
+            theme.vars.palette.text.primary,
+            theme.vars.palette.action.focusOpacity
+          )
+        }
+      }),
       paper: ({ theme }) => ({
         width: '100%',
         '&.small': {
