@@ -601,17 +601,20 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     },
     styleOverrides: {
       badge: ({ theme }) => ({
-        boxSizing: 'content-box',
-        height: 14,
-        minWidth: 14,
+        // Sizes include the border, so an app setting minWidth gets that width
+        boxSizing: 'border-box',
+        height: 18,
+        minWidth: 18,
         padding: 0,
         border: `2px solid ${theme.vars.palette.background.paper}`,
-        borderRadius: '100%',
-        fontSize: theme.typography.pxToRem(10)
+        borderRadius: radius.pill,
+        fontSize: theme.typography.pxToRem(10),
+        // Every two-digit count fits the circle, longer counts grow into a pill
+        fontVariantNumeric: 'tabular-nums'
       }),
       dot: {
-        height: 8,
-        minWidth: 8
+        height: 12,
+        minWidth: 12
       },
       anchorOriginTopRightRectangular: {
         transform: 'scale(1) translate(37%, -37%)'
