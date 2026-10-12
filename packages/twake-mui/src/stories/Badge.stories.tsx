@@ -121,6 +121,9 @@ export const Screenshot: Story = {
         <Badge color="error" badgeContent={0} showZero={false}>
           <Target />
         </Badge>
+        <Badge color="error" badgeContent={99} max={99}>
+          <Target />
+        </Badge>
         <Badge color="error" badgeContent={120} max={99}>
           <Target />
         </Badge>

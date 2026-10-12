@@ -189,6 +189,17 @@ export const Screenshot: Story = {
           </NavItem>
         </section>
         <section>
+          <h3>Counts</h3>
+          {[12, 99, '99+'].map(badge => (
+            <NavItem key={badge} disablePadding badge={badge}>
+              <NavLink>
+                <NavIcon icon={Folder} />
+                <NavText>Item with {badge}</NavText>
+              </NavLink>
+            </NavItem>
+          ))}
+        </section>
+        <section>
           <h3>Secondary</h3>
           <NavItem disablePadding variant="secondary" selected>
             <NavDropdown>
