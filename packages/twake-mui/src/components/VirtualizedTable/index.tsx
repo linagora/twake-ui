@@ -53,8 +53,6 @@ export interface VirtualizedTableProps extends Omit<
    * column
    */
   sortingMode?: 'client' | 'server'
-  /** Applied after the column sort, e.g. to keep directories before files */
-  secondarySort?: (rows: Row[]) => Row[]
   /** Array of selected items */
   selectedItems?: unknown[]
   /** Function to determine if a row is selected */
@@ -86,7 +84,6 @@ export const VirtualizedTable = forwardRef<
       groups,
       defaultOrder,
       sortingMode = 'client',
-      secondarySort,
       selectedItems = [],
       isSelectedItem = (): boolean => false,
       isNewItem,
@@ -112,20 +109,10 @@ export const VirtualizedTable = forwardRef<
           id: `skeleton-${i}`
         }))
       }
-      const sortedRows =
-        orderBy && sortingMode === 'client'
-          ? stableSort(rows, getComparator(orderDirection, orderBy))
-          : rows
-      return secondarySort ? secondarySort(sortedRows) : sortedRows
-    }, [
-      rows,
-      orderBy,
-      orderDirection,
-      sortingMode,
-      secondarySort,
-      isLoading,
-      skeletonCount
-    ])
+      return orderBy && sortingMode === 'client'
+        ? stableSort(rows, getComparator(orderDirection, orderBy))
+        : rows
+    }, [rows, orderBy, orderDirection, sortingMode, isLoading, skeletonCount])
     const { groupLabels, groupCounts } =
       (isLoading ? undefined : groups?.(data)) ?? {}
     const tableContext: TableContext = {

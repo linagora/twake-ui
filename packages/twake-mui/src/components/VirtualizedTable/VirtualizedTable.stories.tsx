@@ -146,7 +146,6 @@ const meta: Meta<typeof VirtualizedTable> = {
     selectedItems: { control: 'object' },
     isLoading: { control: 'boolean' },
     groups: { control: false },
-    secondarySort: { control: false },
     isSelectedItem: { control: false },
     isNewItem: { control: false },
     context: { control: false },
