@@ -141,6 +141,7 @@ const meta: Meta<typeof VirtualizedTable> = {
     rows: { control: 'object' },
     columns: { control: 'object' },
     defaultOrder: { control: 'object' },
+    sortingMode: { control: 'inline-radio', options: ['client', 'server'] },
     selectedItems: { control: 'object' },
     isLoading: { control: 'boolean' },
     groups: { control: false },

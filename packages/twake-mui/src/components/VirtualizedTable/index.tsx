@@ -44,8 +44,15 @@ export interface VirtualizedTableProps extends Omit<
     groupLabels: React.ReactNode[]
     groupCounts: number[]
   }
-  /** Default sorting configuration */
+  /** Column sorted at first: without it, no column is sorted until one is clicked */
   defaultOrder?: { direction?: OrderDirection; by?: string }
+  /**
+   * Who sorts the rows. 'server': the table keeps the given order, its
+   * headers changing the sort and calling onSortChange for the caller to sort
+   * them, e.g. on its server. 'client': the table sorts them by the sorted
+   * column
+   */
+  sortingMode?: 'client' | 'server'
   /** Applied after the column sort, e.g. to keep directories before files */
   secondarySort?: (rows: Row[]) => Row[]
   /** Array of selected items */
@@ -78,6 +85,7 @@ export const VirtualizedTable = forwardRef<
       columns,
       groups,
       defaultOrder,
+      sortingMode = 'client',
       secondarySort,
       selectedItems = [],
       isSelectedItem = (): boolean => false,
@@ -104,11 +112,20 @@ export const VirtualizedTable = forwardRef<
           id: `skeleton-${i}`
         }))
       }
-      const sortedRows = orderBy
-        ? stableSort(rows, getComparator(orderDirection, orderBy))
-        : rows
+      const sortedRows =
+        orderBy && sortingMode === 'client'
+          ? stableSort(rows, getComparator(orderDirection, orderBy))
+          : rows
       return secondarySort ? secondarySort(sortedRows) : sortedRows
-    }, [rows, orderBy, orderDirection, secondarySort, isLoading, skeletonCount])
+    }, [
+      rows,
+      orderBy,
+      orderDirection,
+      sortingMode,
+      secondarySort,
+      isLoading,
+      skeletonCount
+    ])
     const { groupLabels, groupCounts } =
       (isLoading ? undefined : groups?.(data)) ?? {}
     const tableContext: TableContext = {
