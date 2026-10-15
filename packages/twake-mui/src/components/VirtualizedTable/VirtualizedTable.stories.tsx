@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 import { fn } from 'storybook/test'
 
+import { getComparator, stableSort } from './helpers'
 import { VirtualizedTable, VirtualizedTableProps } from './index'
 import type { CellHandler, Column, Row } from './types'
 
@@ -164,6 +165,26 @@ export const Default: Story = {
     defaultOrder: { by: 'name', direction: 'asc' }
   },
   render: args => <ExampleTable title="Table" {...args} />
+}
+
+// The caller sorts the rows, as a server would, and the table keeps their order
+const SortedByCallerTable = (): React.ReactElement => {
+  const [sortedRows, setSortedRows] = useState(rows)
+
+  return (
+    <ExampleTable
+      title="Rows sorted by the caller"
+      rows={sortedRows}
+      sortingMode="server"
+      onSortChange={({ order, orderBy }) =>
+        setSortedRows(stableSort(rows, getComparator(order, orderBy)))
+      }
+    />
+  )
+}
+
+export const ServerSortingMode: Story = {
+  render: () => <SortedByCallerTable />
 }
 
 // Visual Regression - Combined view for Argos testing
