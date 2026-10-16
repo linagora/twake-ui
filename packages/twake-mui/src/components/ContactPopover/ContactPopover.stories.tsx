@@ -58,6 +58,33 @@ export const Default: Story = {
 
         <Box>
           <Typography variant="subtitle2" gutterBottom>
+            Default — all actions — Disabled
+          </Typography>
+          <ContactPopover name="Jane Doe" email="Jane.doe@example.com">
+            <Chip label="Jane Doe" clickable />
+            <ContactPopover.Actions>
+              <ContactPopover.EmailAction
+                disabled
+                url="https://mail.example.com/jane.doe"
+              />
+              <ContactPopover.CalendarAction
+                disabled
+                url="https://calendar.example.com/jane.doe"
+              />
+              <ContactPopover.ChatAction
+                disabled
+                url="https://chat.example.com/jane.doe"
+              />
+              <ContactPopover.VideoAction
+                disabled
+                url="https://meet.example.com/jane.doe"
+              />
+            </ContactPopover.Actions>
+          </ContactPopover>
+        </Box>
+
+        <Box>
+          <Typography variant="subtitle2" gutterBottom>
             Email only
           </Typography>
           <ContactPopover name="" email="jane.smith@example.com">

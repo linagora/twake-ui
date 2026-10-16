@@ -22,9 +22,12 @@ export const ContactPopoverVideoAction = ({
       rel="noopener noreferrer"
       size="small"
       disabled={disabled}
-      sx={{ border: `1px solid ${theme.vars.palette.divider}` }}
+      sx={{
+        border: `1px solid ${theme.vars.palette.divider}`,
+        color: theme.vars.palette.text.icon
+      }}
     >
-      <Icon icon={Camera} size={20} color={theme.vars.palette.text.icon} />
+      <Icon icon={Camera} size={20} />
     </IconButton>
   )
 }
