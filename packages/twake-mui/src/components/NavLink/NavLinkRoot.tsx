@@ -1,6 +1,8 @@
-import { styled, Theme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 
-export const NavLinkRoot = styled('div')(({ theme }: { theme: Theme }) => ({
+export const NavLinkRoot = styled('div', {
+  shouldForwardProp: prop => prop !== 'disableMobileView'
+})<{ disableMobileView?: boolean }>(({ theme, disableMobileView }) => ({
   padding: 8,
   width: '100%',
   height: '100%',
@@ -23,20 +25,22 @@ export const NavLinkRoot = styled('div')(({ theme }: { theme: Theme }) => ({
       color: theme.vars.palette.primary.main
     }
   },
-  [theme.breakpoints.down('lg')]: {
-    display: 'block',
-    height: 'auto',
-    margin: 0,
-    padding: 0,
-    textAlign: 'center',
-    fontSize: theme.typography.pxToRem(11),
-    lineHeight: '12px',
-    '&.selected, &.active': {
-      color: theme.vars.palette.text.primary,
-      '&:hover': { backgroundColor: 'transparent' },
-      '& svg, & span': {
-        color: theme.vars.palette.text.primary
+  ...(!disableMobileView && {
+    [theme.breakpoints.down('lg')]: {
+      display: 'block',
+      height: 'auto',
+      margin: 0,
+      padding: 0,
+      textAlign: 'center',
+      fontSize: theme.typography.pxToRem(11),
+      lineHeight: '12px',
+      '&.selected, &.active': {
+        color: theme.vars.palette.text.primary,
+        '&:hover': { backgroundColor: 'transparent' },
+        '& svg, & span': {
+          color: theme.vars.palette.text.primary
+        }
       }
     }
-  }
+  })
 }))

@@ -1,5 +1,5 @@
 import { Bottom, Top } from '@linagora/twake-icons'
-import React, { Children, isValidElement, useState } from 'react'
+import React, { Children, isValidElement, useState, useContext } from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
@@ -7,6 +7,7 @@ import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
 import { NavLink } from '../NavLink/NavLink'
 import NavText from '../NavText'
+import { SidebarContext } from '../Sidebar/SidebarContext'
 import de from './locales/de.json'
 import en from './locales/en.json'
 import es from './locales/es.json'
@@ -28,13 +29,14 @@ export const NavDesktopLimiter = ({
   max = 5
 }: NavDesktopLimiterProps): React.ReactElement | null => {
   useExtendI18n(locales)
+  const disableMobileView = useContext(SidebarContext)
   const { t } = useI18n()
   const [viewingAll, setViewingAll] = useState(false)
-  const { isMobile } = useBreakpoints()
+  const { isDesktop } = useBreakpoints()
   const items = Children.toArray(children).filter(isValidElement)
   const amountHidden = Math.max(0, items.length - max)
 
-  if (isMobile) return null
+  if (!isDesktop && !disableMobileView) return null
 
   return (
     <>

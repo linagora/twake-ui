@@ -1,11 +1,12 @@
 import { Divider, ListItem } from '@mui/material'
 import cx from 'classnames'
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useContext } from 'react'
 
 import { NavBadge } from './NavBadge'
 import { NavIndicator } from './NavIndicator'
 import { NavItemActions } from './NavItemActions'
 import { NavItemRoot } from './NavItemRoot'
+import { SidebarContext } from '../Sidebar/SidebarContext'
 
 export interface NavItemProps extends React.ComponentProps<typeof ListItem> {
   variant?: 'primary' | 'secondary' | 'tertiary'
@@ -28,11 +29,14 @@ export const NavItem = forwardRef<HTMLLIElement, NavItemProps>((props, ref) => {
     ...rest
   } = props
 
+  const disableMobileView = useContext(SidebarContext)
+
   return (
     <>
       <NavItemRoot
         ref={ref}
         variant={variant}
+        disableMobileView={disableMobileView}
         className={cx(className, selected && 'Mui-selected')}
         {...rest}
       >

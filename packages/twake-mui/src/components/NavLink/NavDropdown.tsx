@@ -1,22 +1,34 @@
 import { Icon, Dropdown } from '@linagora/twake-icons'
+import { IconButton } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import React, { forwardRef } from 'react'
 
+import { useExtendI18n, useI18n } from 'twake-i18n'
+
 import { NavLinkBase, NavLinkBaseProps } from './NavLinkBase'
+import de from './locales/de.json'
+import en from './locales/en.json'
+import es from './locales/es.json'
+import fr from './locales/fr.json'
+import it from './locales/it.json'
+import ru from './locales/ru.json'
+import vi from './locales/vi.json'
+
+const locales = { de, en, es, fr, it, ru, vi }
 
 export interface NavDropdownProps extends Omit<NavLinkBaseProps, 'onToggle'> {
   open?: boolean
-  onToggle?: React.MouseEventHandler<HTMLDivElement>
+  onToggle?: () => void
+  toggleLabel?: string
 }
 
 export const NavDropdown = forwardRef<HTMLDivElement, NavDropdownProps>(
-  ({ open, onToggle, onClick, children, ...rest }, ref) => {
+  ({ open, onToggle, toggleLabel, onClick, children, ...rest }, ref) => {
+    useExtendI18n(locales)
+    const { t } = useI18n()
     const theme = useTheme()
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
-      if (onToggle) {
-        onToggle(e)
-      }
       if (onClick) {
         onClick(e)
       }
@@ -30,13 +42,26 @@ export const NavDropdown = forwardRef<HTMLDivElement, NavDropdownProps>(
         {...rest}
       >
         {children}
-        <Icon
+        <IconButton
           className="u-ml-half"
-          icon={Dropdown}
-          rotate={open ? 0 : -90}
-          size={14}
-          color={theme.vars.palette.text.primary}
-        />
+          size="xsmall"
+          aria-label={
+            toggleLabel ??
+            t(open ? 'NavDropdown.collapse' : 'NavDropdown.expand')
+          }
+          aria-expanded={open}
+          onClick={e => {
+            e.stopPropagation()
+            onToggle?.()
+          }}
+        >
+          <Icon
+            icon={Dropdown}
+            rotate={open ? 0 : -90}
+            size={14}
+            color={theme.vars.palette.text.primary}
+          />
+        </IconButton>
       </NavLinkBase>
     )
   }

@@ -2,10 +2,12 @@ import { ListItem } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 export const NavItemRoot = styled(ListItem, {
-  shouldForwardProp: prop => prop !== 'secondary' && prop !== 'variant'
+  shouldForwardProp: prop =>
+    prop !== 'secondary' && prop !== 'variant' && prop !== 'disableMobileView'
 })<{
   variant?: 'primary' | 'secondary' | 'tertiary'
-}>(({ theme, variant = 'primary' }) => {
+  disableMobileView?: boolean
+}>(({ theme, variant = 'primary', disableMobileView = false }) => {
   const isSecondary = variant === 'secondary'
   const isTertiary = variant === 'tertiary'
 
@@ -31,22 +33,26 @@ export const NavItemRoot = styled(ListItem, {
         backgroundColor: theme.vars.palette.action.focus
       }
     },
-    [theme.breakpoints.down('lg')]: {
-      display: 'block',
-      height: 'auto',
-      margin: '0 12px',
-      flex: '0 0 40px',
-      [`&.Mui-selected, &:has(.Mui-selected), &:has(.active)`]: {
-        color: theme.vars.palette.text.primary,
-        backgroundColor: 'transparent',
-        '&:hover': {
-          backgroundColor: 'transparent'
+    ...(!disableMobileView && {
+      [theme.breakpoints.down('lg')]: {
+        display: 'block',
+        height: 'auto',
+        margin: '0 12px',
+        flex: '0 0 40px',
+        [`&.Mui-selected, &:has(.Mui-selected), &:has(.active)`]: {
+          color: theme.vars.palette.text.primary,
+          backgroundColor: 'transparent',
+          '&:hover': {
+            backgroundColor: 'transparent'
+          }
         }
       }
-    },
+    }),
     ...((isSecondary || isTertiary) && {
       margin: '3px 16px',
-      [theme.breakpoints.down('lg')]: { display: 'none' },
+      ...(!disableMobileView && {
+        [theme.breakpoints.down('lg')]: { display: 'none' }
+      }),
       paddingLeft: isTertiary ? '3rem' : '2rem'
     })
   }
