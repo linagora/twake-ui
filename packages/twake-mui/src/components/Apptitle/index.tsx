@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import { CSSObject, Theme } from '@mui/material/styles'
 import React, { FC } from 'react'
 
-interface AppTitleProps {
+export interface AppTitleProps {
   appIcon: React.ElementType
   appTextIcon: React.ElementType
 }
