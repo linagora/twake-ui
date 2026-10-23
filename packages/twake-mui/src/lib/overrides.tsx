@@ -262,14 +262,29 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
               }
             }
           })),
+          // For compact actions inside a row
+          {
+            props: { size: 'xsmall' },
+            style: {
+              minWidth: 'auto',
+              minHeight: 24,
+              padding: '4px 8px',
+              fontSize: theme.typography.pxToRem(11),
+              lineHeight: '16px',
+              letterSpacing: '0.5px'
+            }
+          },
+          {
+            props: { size: 'xsmall', variant: 'outlined' },
+            style: { padding: '3px 7px' }
+          },
           // Vertical paddings sit 1px under cozy-ui's so the outlined border
           // still fits the fixed heights cozy-ui forces (36, 40, 48).
           {
             props: { size: 'small' },
             style: {
               minHeight: 36,
-              padding: '9px 16px',
-              fontSize: theme.typography.pxToRem(13)
+              padding: '9px 16px'
             }
           },
           {
@@ -280,8 +295,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             props: { size: 'large' },
             style: {
               minHeight: 48,
-              padding: '13px 32px',
-              fontSize: theme.typography.pxToRem(15)
+              padding: '13px 32px'
             }
           },
           {
@@ -305,6 +319,10 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           },
           {
             props: { loadingPosition: 'end', variant: 'text' },
+            style: { right: 8 }
+          },
+          {
+            props: { loadingPosition: 'end', size: 'xsmall' },
             style: { right: 8 }
           },
           {
@@ -1051,6 +1069,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     }
   },
   MuiTypography: {
+    defaultProps: { variantMapping: { body3: 'p' } },
     styleOverrides: {
       root: ({ theme }) => ({
         variants: [

@@ -6,7 +6,7 @@ import React from 'react'
 import Button, { ButtonProps } from '../components/Button'
 
 const variants = ['contained', 'outlined', 'ghost', 'text'] as const
-const sizes = ['small', 'medium', 'large'] as const
+const sizes = ['xsmall', 'small', 'medium', 'large'] as const
 const colors = [
   'inherit',
   'primary',

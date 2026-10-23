@@ -5,13 +5,16 @@ export const NavPrimaryText = styled('span', {
 })<{ disableMobileView?: boolean }>(({ theme, disableMobileView }) => ({
   fontSize: theme.typography.pxToRem(14),
   fontWeight: 500,
-  letterSpacing: '.15px',
+  lineHeight: 1.313,
+  letterSpacing: '.25px',
   ...(!disableMobileView && {
     [theme.breakpoints.down('lg')]: {
       display: 'block',
       textAlign: 'center',
       whiteSpace: 'nowrap',
-      fontSize: theme.typography.pxToRem(12)
+      fontSize: theme.typography.pxToRem(12),
+      // The design line height is for the sidebar, the bottom bar keeps its rows
+      lineHeight: 'inherit'
     }
   })
 }))

@@ -1,5 +1,6 @@
 import paletteJson from '@linagora/twake-css/palette.json'
 import { Shadows, TypographyVariantsOptions } from '@mui/material/styles'
+import type { CSSProperties } from 'react'
 
 // Palette Types
 export type PaletteJson = typeof paletteJson
@@ -85,6 +86,14 @@ declare module '@mui/material/styles' {
     enabled: true
   }
 
+  interface TypographyVariants {
+    body3: CSSProperties
+  }
+
+  interface TypographyVariantsOptions {
+    body3?: CSSProperties
+  }
+
   interface TypeBackground {
     contrast: string
   }
@@ -99,6 +108,12 @@ declare module '@mui/material/styles' {
 
   interface PaletteOptions {
     border?: Partial<BorderPalette>
+  }
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    body3: true
   }
 }
 
@@ -118,5 +133,9 @@ declare module '@mui/material/Alert' {
 declare module '@mui/material/Button' {
   interface ButtonPropsVariantOverrides {
     ghost: true
+  }
+
+  interface ButtonPropsSizeOverrides {
+    xsmall: true
   }
 }

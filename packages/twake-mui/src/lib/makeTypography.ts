@@ -56,7 +56,7 @@ export const makeTypography = (): TypographyVariantsOptions => {
     subtitle2: {
       fontSize: 14,
       fontWeight: 600,
-      lineHeight: 1.334,
+      lineHeight: 1.313,
       letterSpacing: '0.25px'
     },
     body1: {
@@ -71,23 +71,30 @@ export const makeTypography = (): TypographyVariantsOptions => {
       lineHeight: 1.313,
       letterSpacing: '0.25px'
     },
+    body3: {
+      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.313,
+      letterSpacing: '0.25px'
+    },
     button: {
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: 500,
       lineHeight: 1.313,
+      letterSpacing: '0.1px',
       textTransform: 'inherit'
     },
     caption: {
       fontSize: 12,
       fontWeight: 500,
-      lineHeight: 1.313,
+      lineHeight: 1.317,
       letterSpacing: '0.5px'
     },
     overline: {
       fontSize: 11,
       fontWeight: 500,
-      lineHeight: '16px',
-      letterSpacing: '0.5px',
+      lineHeight: '13px',
+      letterSpacing: '0.4px',
       textTransform: 'inherit'
     }
   } as TypographyVariantsOptions
