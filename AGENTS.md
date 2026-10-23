@@ -28,9 +28,36 @@ npm run release:dry
 ## Architecture
 
 - **Monorepo**: npm workspaces with independent versioning
-- **Packages location**: `packages/*` (currently `twake-mui` and `twake-icons`)
+- **Packages location**: `packages/*` (currently `twake-css`, `twake-mui` and
+  `twake-icons`)
 - **Package naming**: All packages use `@linagora/` scope
 - **Build output**: Each package outputs to `dist/` (TypeScript compilation)
+
+## Colors
+
+Every Twake app reads its colours from this repo, so a colour changed here
+changes everywhere, in light and dark mode. These rules apply to the code you
+write; older literals (avatar gradients, `ColorList`, some overrides) predate
+them.
+
+- Write a new colour value in the base palette,
+  `packages/twake-css/palette.json`, and nowhere else.
+- Map palette values to semantic roles in both
+  `packages/twake-mui/src/lib/makePalette.ts` and
+  `packages/twake-css/src/vars.scss`, for each mode. `test/vars.test.ts` in
+  twake-mui only checks that each variable of `vars.css` matches the theme: a
+  role missing from `vars.scss` passes, so write both sides yourself.
+- In components, stories and apps, use roles only: `theme.vars.palette.*`
+  (`primary.main`, `text.secondary`, `action.hover`, `divider`, `border.main`…)
+  or the `--twake-palette-*` CSS variables. A hex or `rgba()` literal there
+  escapes the palette and the dark mode.
+- To add a colour, add a palette entry and a role that reads it. Name them like
+  the existing ones: a PascalCase ramp with numeric keys in `palette.json`,
+  camelCase roles with `light`, `main`, `dark` and `contrastText` when it is a
+  colour family.
+- Derive a new hover, selected, focus or disabled tint from the `action.*`
+  opacity tokens (`theme.alpha(color, theme.vars.palette.action.selectedOpacity)`),
+  so state tints follow one value.
 
 ## Release Flow (Automated)
 
