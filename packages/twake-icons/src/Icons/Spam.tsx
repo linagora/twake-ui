@@ -1,0 +1,12 @@
+// Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
+import * as React from "react";
+import type { SVGProps } from "react";
+function SvgSpam(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+      <path d="m1.333 5.333 5.334 3.334L12 5.333v1.334h1.333V4c0-.733-.6-1.333-1.333-1.333H1.333C.6 2.667.007 3.267.007 4L0 12c0 .733.6 1.333 1.333 1.333h8V12h-8zM12 4 6.667 7.333 1.333 4zm1.333 4a2.668 2.668 0 0 0 0 5.333 2.668 2.668 0 0 0 0-5.333m.267 4h-.533v-.533h.533zm0-1.067h-.533v-1.6h.533z" />
+    </svg>
+  );
+}
+export default SvgSpam;
+
