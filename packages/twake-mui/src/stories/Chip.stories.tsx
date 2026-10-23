@@ -26,7 +26,7 @@ const meta: Meta<typeof Chip> = {
     },
     variant: {
       control: 'select',
-      options: ['filled', 'outlined']
+      options: ['filled', 'outlined', 'ghost']
     },
     disabled: {
       control: 'boolean'
@@ -62,7 +62,7 @@ export const Screenshot: Story = {
       'warning',
       'info'
     ] as const
-    const variants = ['filled', 'outlined'] as const
+    const variants = ['filled', 'outlined', 'ghost'] as const
     const squareProps = [false, true] as const
     const sizeProps = ['small', 'medium'] as const
 
@@ -88,7 +88,7 @@ export const Screenshot: Story = {
                     </Typography>
                     <Grid container spacing={4}>
                       {variants.map(variant => (
-                        <Grid key={variant} size={{ xs: 12, sm: 6 }}>
+                        <Grid key={variant} size={{ xs: 12, sm: 4 }}>
                           <Stack spacing={2}>
                             <Typography
                               variant="h6"
