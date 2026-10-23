@@ -47,7 +47,7 @@ export const Swatch: FC<{ color: string; mode?: 'light' | 'dark' }> = ({
         : 'transparent'
     }}
   >
-    <Box sx={{ width: 1, height: 1, backgroundColor: color }} />
+    <Box sx={{ width: 1, height: 1, background: color }} />
   </Box>
 )
 

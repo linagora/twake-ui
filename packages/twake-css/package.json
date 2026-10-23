@@ -1,6 +1,6 @@
 {
   "name": "@linagora/twake-css",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Palette and theme-aware CSS utility classes for Twake applications",
   "author": "Twake",
   "license": "MIT",

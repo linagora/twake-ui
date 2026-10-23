@@ -1172,7 +1172,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         color: theme.vars.palette.text.primary,
         backgroundColor: theme.vars.palette.background.paper,
         '&:hover': {
-          backgroundColor: `color-mix(in srgb, ${theme.vars.palette.background.paper}, #000 5%)`
+          backgroundColor: `color-mix(in srgb, ${theme.vars.palette.background.paper}, ${theme.vars.palette.common.black} 5%)`
         },
         '@media (hover: none)': {
           backgroundColor: theme.vars.palette.background.paper
@@ -1182,7 +1182,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         color: theme.vars.palette.primary.dark,
         backgroundColor: theme.vars.palette.primary.light,
         '&:hover': {
-          backgroundColor: `color-mix(in srgb, ${theme.vars.palette.primary.light}, #000 5%)`
+          backgroundColor: `color-mix(in srgb, ${theme.vars.palette.primary.light}, ${theme.vars.palette.common.black} 5%)`
         },
         '@media (hover: none)': {
           backgroundColor: theme.vars.palette.primary.light

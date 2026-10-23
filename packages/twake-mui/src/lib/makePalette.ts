@@ -20,6 +20,10 @@ export const makePalette = (
   border: BorderPalette
 } => {
   const palette = deepmerge(paletteData, overrides)
+  // The design's stops; the yellow one sits past the right edge
+  const ai = {
+    gradient: `linear-gradient(90deg, ${alpha(palette.AiGradient.cyan, 0.9)} 0%, ${alpha(palette.AiGradient.pink, 0.9)} 77.8%, ${alpha(palette.AiGradient.yellow, 0.9)} 137%)`
+  }
 
   if (mode === 'dark') {
     return {
@@ -96,13 +100,16 @@ export const makePalette = (
         opacity: 0.48,
         ghostOpacity: 0.48
       },
+      neutral: { main: palette.Common.white },
+      favorite: { main: palette.Favorite[400] },
+      ai,
       divider: alpha(palette.Common.white, 0.16),
       action: {
         active: palette.Common.white,
         hover: alpha(palette.Common.white, 0.08),
         hoverOpacity: 0.08,
         selected: alpha(palette.Common.white, 0.16),
-        selectedOpacity: 0.18,
+        selectedOpacity: 0.16,
         disabled: alpha(palette.Common.white, 0.32),
         disabledOpacity: 0.32,
         disabledBackground: alpha(palette.Common.white, 0.12),
@@ -122,10 +129,10 @@ export const makePalette = (
       contrastText: palette.Primary.ContrastText
     },
     secondary: {
-      light: palette.Secondary[200],
-      main: palette.Secondary[600],
-      dark: palette.Secondary[700],
-      contrastText: palette.Secondary.ContrastText
+      light: palette.Neutral[400],
+      main: palette.Neutral[600],
+      dark: palette.Neutral[800],
+      contrastText: palette.Neutral.ContrastText
     },
     error: {
       light: palette.Error[200],
@@ -149,7 +156,7 @@ export const makePalette = (
       light: palette.Info[200],
       main: palette.Info[600],
       dark: palette.Info[700],
-      contrastText: '#fff'
+      contrastText: palette.Info.ContrastText
     },
     grey: {
       50: palette.Grey[50],
@@ -187,17 +194,20 @@ export const makePalette = (
       opacity: 0.32,
       ghostOpacity: 0.48
     },
-    divider: alpha(palette.Grey[900], 0.12),
+    neutral: { main: palette.Neutral[900] },
+    favorite: { main: palette.Favorite[700] },
+    ai,
+    divider: alpha(palette.Neutral[900], 0.12),
     action: {
       active: alpha(palette.Grey[900], 0.56),
-      hover: alpha(palette.Grey[900], 0.04),
+      hover: alpha(palette.Neutral[900], 0.04),
       hoverOpacity: 0.04,
-      selected: alpha(palette.Grey[900], 0.08),
-      selectedOpacity: 0.18,
+      selected: alpha(palette.Neutral[900], 0.08),
+      selectedOpacity: 0.08,
       disabled: alpha(palette.Grey[900], 0.24),
       disabledOpacity: 0.32,
       disabledBackground: alpha(palette.Grey[900], 0.12),
-      focus: alpha(palette.Grey[900], 0.12),
+      focus: alpha(palette.Neutral[900], 0.12),
       focusOpacity: 0.12,
       activatedOpacity: 0.12
     }
