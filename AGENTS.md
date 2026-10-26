@@ -93,6 +93,11 @@ For each changed package:
    - `"files": ["dist", "CHANGELOG.md", "README.md"]`
 3. No per-package config needed — the root `.releaserc.json` applies to all workspaces
 
+## Adding Icons
+
+To add one or more icons to `twake-icons`, follow
+[How to add an icon](packages/twake-icons/README.md#how-to-add-an-icon) in the package README.
+
 ## Storybook
 
 Inside `packages` folder:
