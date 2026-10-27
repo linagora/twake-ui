@@ -1,9 +1,21 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgSpinner(props: SVGProps<SVGSVGElement>) {
+function SvgSpinner({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props} role="progressbar" aria-busy="true">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      role="progressbar"
+      aria-busy="true"
+      {...props}
+    >
       <path d="M8 16a7.7 7.7 0 0 1-3.1-.63 8.1 8.1 0 0 1-2.55-1.72A8.1 8.1 0 0 1 .63 11.1 7.7 7.7 0 0 1 0 8q0-1.66.63-3.11a8.2 8.2 0 0 1 1.72-2.54A8.1 8.1 0 0 1 4.9.63 7.7 7.7 0 0 1 8 0q.34 0 .57.23T8.8.8a.77.77 0 0 1-.23.57.77.77 0 0 1-.57.23q-2.66 0-4.53 1.87T1.6 8t1.87 4.53T8 14.4t4.53-1.87T14.4 8q0-.34.23-.57a.77.77 0 0 1 .57-.23q.34 0 .57.23T16 8a7.7 7.7 0 0 1-.63 3.1 8.1 8.1 0 0 1-1.72 2.55 8.2 8.2 0 0 1-2.54 1.72A7.7 7.7 0 0 1 8 16" />
     </svg>
   );

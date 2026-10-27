@@ -6,7 +6,7 @@ function defaultTemplate({ componentName, props, interfaces, imports, exports, j
 
 ${imports}
 ${interfaces}
-function ${componentName}(${props}) {
+function ${componentName}({ iconRef, ...props }: SVGProps<SVGSVGElement> & { iconRef?: React.Ref<SVGSVGElement> }) {
   return ${jsx};
 }
 ${exports}
