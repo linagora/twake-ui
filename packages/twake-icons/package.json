@@ -50,7 +50,7 @@
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "copy-icons": "scripts/copy-icons-from-cozy-ui.sh",
-    "svgo": "svgo -r --folder assets",
+    "svgo": "svgo -r --folder assets --exclude animated",
     "makeSvgr": "scripts/generate-svgr.sh",
     "sprite": "scripts/make-sprite.sh",
     "doc": "storybook dev -p 6007"
