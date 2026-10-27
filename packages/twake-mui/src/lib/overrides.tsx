@@ -1181,8 +1181,6 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       primary: ({ theme }) => ({
         color: theme.vars.palette.primary.dark,
         backgroundColor: theme.vars.palette.primary.light,
-        // The dark palette's primary.dark is a light blue: 1.9:1 on
-        // primary.light. Its contrastText (dark grey) gives 5.7:1
         ...theme.applyStyles('dark', {
           color: theme.vars.palette.primary.contrastText
         }),
