@@ -25,8 +25,10 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces",
-    "lint": "npm run lint --workspaces",
-    "lint:fix": "npm run lint --workspaces --if-present -- --fix",
+    "lint": "rs lint packages/twake-icons/src packages/twake-mui/src",
+    "lint:fix": "rs lint --fix packages/twake-icons/src packages/twake-mui/src && rs fmt",
+    "lint:fmt": "rs fmt --check",
+    "fmt": "rs fmt",
     "clean": "npm run clean --workspaces && rm -rf node_modules",
     "release": "multi-semantic-release --deps.bump=ignore",
     "release:dry": "multi-semantic-release --deps.bump=ignore --dry-run"
@@ -36,7 +38,10 @@
     "@commitlint/config-conventional": "21.0.2",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
+    "eslint-plugin-storybook": "10.3.5",
     "multi-semantic-release": "3.1.0",
+    "rslint-config-cozy-app": "0.2.0",
+    "rstack": "0.8.5",
     "typescript": "5.5.2"
   },
   "commitlint": {

@@ -94,6 +94,8 @@ jobs:
         run: npm run build --workspace=@linagora/twake-css --workspace=@linagora/twake-icons
       - name: Lint
         run: npm run lint
+      - name: Check formatting
+        run: npm run lint:fmt
       - name: Check barrel export
         run: npm run check:barrel --workspace=@linagora/twake-icons
       - name: Build

@@ -13,7 +13,10 @@ npm run build
 npm run lint
 
 # Lint specific package
-npm run lint --workspace=twake-mui
+npx rs lint packages/twake-mui/src
+
+# Format all files
+npm run fmt
 
 # Test dry-run release (safe, no publish)
 npm run release:dry
@@ -133,7 +136,7 @@ export const MyStory = {
 ## CI/CD Notes
 
 - **Runs on**: PRs and push to main
-- **Order**: install → lint → build → release (main only)
+- **Order**: install → lint → format check → build → release (main only)
 - **Secrets required**: `NODE_AUTH_TOKEN` (NPM token, set in GitHub repo settings)
 - **Uses**: `secrets.GITHUB_TOKEN` (auto-provided, no setup needed)
 

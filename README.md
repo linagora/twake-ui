@@ -48,6 +48,14 @@ npm run test
 npm run lint
 ```
 
+[Rslint](https://rslint.rs) lints the code and `rs fmt` formats it, both from [Rstack](https://rstack.rs).
+
+### Format all files
+
+```bash
+npm run fmt
+```
+
 ## Workspace Management
 
 This monorepo uses npm workspaces to manage packages.
