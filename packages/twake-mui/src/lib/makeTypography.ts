@@ -97,5 +97,5 @@ export const makeTypography = (): TypographyVariantsOptions => {
       letterSpacing: '0.4px',
       textTransform: 'inherit'
     }
-  } as TypographyVariantsOptions
+  }
 }
