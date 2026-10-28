@@ -1,7 +1,8 @@
-import { CircleFilled, Icon, Link } from '@linagora/twake-icons'
 import { Avatar, Badge, Box } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { CircleFilled, Icon, Link } from '@linagora/twake-icons'
 
 const colors = [
   'default',

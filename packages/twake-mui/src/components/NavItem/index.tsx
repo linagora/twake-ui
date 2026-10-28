@@ -2,11 +2,11 @@ import { Divider, ListItem } from '@mui/material'
 import cx from 'classnames'
 import React, { forwardRef, useContext } from 'react'
 
+import { SidebarContext } from '../Sidebar/SidebarContext'
 import { NavBadge } from './NavBadge'
 import { NavIndicator } from './NavIndicator'
 import { NavItemActions } from './NavItemActions'
 import { NavItemRoot } from './NavItemRoot'
-import { SidebarContext } from '../Sidebar/SidebarContext'
 
 export interface NavItemProps extends React.ComponentProps<typeof ListItem> {
   variant?: 'primary' | 'secondary' | 'tertiary'

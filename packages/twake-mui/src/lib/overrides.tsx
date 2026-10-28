@@ -1,16 +1,3 @@
-import {
-  Bottom,
-  CheckCircle,
-  CheckSquare,
-  Icon,
-  IconProps,
-  Info,
-  RadioChecked,
-  RadioUnchecked,
-  Spinner,
-  Warning,
-  WarningCircle
-} from '@linagora/twake-icons'
 import { accordionSummaryClasses } from '@mui/material/AccordionSummary'
 import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
@@ -31,8 +18,22 @@ import { tabsClasses } from '@mui/material/Tabs'
 import { CSSObject, Theme, ThemeOptions, alpha } from '@mui/material/styles'
 import React from 'react'
 
-import { radius } from './radius'
+import {
+  Bottom,
+  CheckCircle,
+  CheckSquare,
+  Icon,
+  IconProps,
+  Info,
+  RadioChecked,
+  RadioUnchecked,
+  Spinner,
+  Warning,
+  WarningCircle
+} from '@linagora/twake-icons'
+
 import AccordionExpandIcon from '../components/AccordionExpandIcon'
+import { radius } from './radius'
 
 export const alertSeverities = [
   'primary',

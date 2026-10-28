@@ -1,8 +1,8 @@
 import { Dots } from '@linagora/twake-icons'
 
-import { makeAction } from './makeAction'
 import { getActionsI18n } from '../locales'
 import { Action } from '../types'
+import { makeAction } from './makeAction'
 
 export const others = (): Action => {
   const { t } = getActionsI18n()

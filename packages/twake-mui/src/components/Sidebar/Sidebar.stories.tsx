@@ -1,17 +1,18 @@
-import { Check, Download, Warn } from '@linagora/twake-icons'
 import { Box, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
+
+import { Check, Download, Warn } from '@linagora/twake-icons'
 
 import { Nav } from '../Nav'
 import { NavDesktopDropdown } from '../NavDesktopDropdown'
 import { NavDesktopLimiter } from '../NavDesktopLimiter'
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
-import NavText from '../NavText'
-import { Sidebar, SidebarProps } from './index'
 import { NavDropdown } from '../NavLink/NavDropdown'
 import { NavLink } from '../NavLink/NavLink'
+import NavText from '../NavText'
+import { Sidebar, SidebarProps } from './index'
 
 const SidebarDemo = (props: SidebarProps): React.ReactElement => {
   const [active, setActive] = useState(['Section 1', 'Subsection 1'])

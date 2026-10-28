@@ -1,8 +1,8 @@
-import { Icon } from '@linagora/twake-icons'
-import { Copy } from '@linagora/twake-icons'
 import { Box, IconButton, Typography, useTheme } from '@mui/material'
 import React, { useState } from 'react'
 
+import { Icon } from '@linagora/twake-icons'
+import { Copy } from '@linagora/twake-icons'
 import { useI18n } from 'twake-i18n'
 
 import Avatar from '../Avatar'

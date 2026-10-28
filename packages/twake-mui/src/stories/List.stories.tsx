@@ -1,17 +1,4 @@
 import {
-  Comment,
-  Dots,
-  FileTypeFolder,
-  FileTypeText,
-  Help,
-  Icon,
-  LinkOut,
-  MagicTrick,
-  People,
-  PieChart,
-  Right
-} from '@linagora/twake-icons'
-import {
   Box,
   Divider,
   IconButton,
@@ -24,6 +11,20 @@ import {
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import {
+  Comment,
+  Dots,
+  FileTypeFolder,
+  FileTypeText,
+  Help,
+  Icon,
+  LinkOut,
+  MagicTrick,
+  People,
+  PieChart,
+  Right
+} from '@linagora/twake-icons'
 
 import { ListItemLayoutProps } from '../components/ListItem/helpers'
 import ListItemButton from '../components/ListItemButton'

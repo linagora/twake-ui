@@ -1,7 +1,8 @@
-import { Folder, Heart, Warn, Dots, Icon } from '@linagora/twake-icons'
 import { IconButton } from '@mui/material'
 import { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Folder, Heart, Warn, Dots, Icon } from '@linagora/twake-icons'
 
 import { NavIcon } from '../NavIcon'
 import { NavDropdown } from '../NavLink/NavDropdown'

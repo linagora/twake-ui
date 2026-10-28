@@ -2,11 +2,11 @@ import { SxProps } from '@mui/material'
 import { Theme } from '@mui/material/styles'
 import React, { useContext } from 'react'
 
+import { SidebarContext } from '../Sidebar/SidebarContext'
 import { NavPrimaryText } from './NavPrimaryText'
 import { NavSecondaryText } from './NavSecondaryText'
 import { NavTertiaryText } from './NavTertiaryText'
 import { NavTextRoot } from './NavTextRoot'
-import { SidebarContext } from '../Sidebar/SidebarContext'
 
 export interface NavTextProps extends React.ComponentPropsWithoutRef<'div'> {
   sx?: SxProps<Theme>

@@ -1,9 +1,9 @@
 import { FolderOpen } from '@linagora/twake-icons'
 
-import { makeAppWebLink } from './helpers'
-import { makeAction } from './makeAction'
 import { getActionsI18n } from '../locales'
 import { Action, ActionDocument, WebLinkActionOptions } from '../types'
+import { makeAppWebLink } from './helpers'
+import { makeAction } from './makeAction'
 
 export const viewInDrive = ({
   client,

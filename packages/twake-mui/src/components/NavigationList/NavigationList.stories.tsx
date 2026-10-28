@@ -1,4 +1,3 @@
-import { Bank, Gear, Icon, People, Right, Trash } from '@linagora/twake-icons'
 import {
   Divider,
   ListItemIcon,
@@ -10,12 +9,14 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import NavigationListHeader from './NavigationListHeader'
-import NavigationListSection from './NavigationListSection'
-import NavigationList from './index'
+import { Bank, Gear, Icon, People, Right, Trash } from '@linagora/twake-icons'
+
 import ListItem from '../ListItem'
 import ListItemText from '../ListItemText'
 import Tabs from '../Tabs'
+import NavigationListHeader from './NavigationListHeader'
+import NavigationListSection from './NavigationListSection'
+import NavigationList from './index'
 
 const rightArrow = (
   <ListItemSecondaryAction>

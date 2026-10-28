@@ -1,9 +1,9 @@
 import { Star, StarOutline } from '@linagora/twake-icons'
 
-import { makeAction } from './makeAction'
 import { ShowAlert } from '../../../providers/AlertProvider/useAlert'
 import { getActionsI18n } from '../locales'
 import { Action, ActionDocument } from '../types'
+import { makeAction } from './makeAction'
 
 export interface FavoritesActionOptions {
   client: { save: (doc: ActionDocument) => Promise<unknown> }

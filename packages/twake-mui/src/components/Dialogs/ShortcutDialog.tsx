@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
+import { useAlert } from '../../providers/AlertProvider/useAlert'
 import ConfirmDialog from './ConfirmDialog'
 import { locales } from './locales'
 import {
@@ -10,7 +11,6 @@ import {
   checkAndSaveShortcut,
   makeHumanReadableFileName
 } from './shortcutHelpers'
-import { useAlert } from '../../providers/AlertProvider/useAlert'
 
 export interface ShortcutDialogProps {
   /** Shortcut to edit, which prefills the fields */

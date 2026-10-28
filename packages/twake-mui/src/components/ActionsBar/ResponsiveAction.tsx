@@ -1,6 +1,7 @@
-import { Icon } from '@linagora/twake-icons'
 import { buttonClasses, Typography } from '@mui/material'
 import React, { forwardRef } from 'react'
+
+import { Icon } from '@linagora/twake-icons'
 
 import { useBreakpoints } from '../../hooks/useBreakpoints'
 import { ActionComponentProps } from '../ActionsMenu/types'

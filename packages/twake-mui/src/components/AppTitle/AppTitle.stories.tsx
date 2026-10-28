@@ -1,3 +1,7 @@
+import { Box, Stack } from '@mui/material'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import React from 'react'
+
 import {
   CalendarApp as Calendar,
   CalendarText,
@@ -16,9 +20,6 @@ import {
   ProText,
   VisioText
 } from '@linagora/twake-icons'
-import { Box, Stack } from '@mui/material'
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import React from 'react'
 
 import AppTitle from './index'
 

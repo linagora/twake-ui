@@ -1,10 +1,11 @@
-import { Icon, IconProps } from '@linagora/twake-icons'
 import { List, ListItemIcon, Typography } from '@mui/material'
 import React, { forwardRef } from 'react'
 
-import BottomSheetItem from './BottomSheetItem'
+import { Icon, IconProps } from '@linagora/twake-icons'
+
 import ListItem from '../ListItem'
 import ListItemText from '../ListItemText'
+import BottomSheetItem from './BottomSheetItem'
 
 export interface BottomSheetTitleProps {
   className?: string

@@ -1,12 +1,4 @@
 import {
-  Attachment,
-  Cloud,
-  Dots,
-  Icon,
-  Pen,
-  People
-} from '@linagora/twake-icons'
-import {
   Button,
   IconButton,
   ListItemIcon,
@@ -18,18 +10,27 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import ConfirmDialog from './ConfirmDialog'
-import FixedActionsDialog from './FixedActionsDialog'
-import FixedDialog from './FixedDialog'
-import IllustrationDialog from './IllustrationDialog'
-import PermissionDialog from './PermissionDialog'
-import StandardDialog, { StandardDialogProps } from './StandardDialog'
+import {
+  Attachment,
+  Cloud,
+  Dots,
+  Icon,
+  Pen,
+  People
+} from '@linagora/twake-icons'
+
 import AlertProvider from '../../providers/AlertProvider'
 import { useAlert } from '../../providers/AlertProvider/useAlert'
 import BottomSheet from '../BottomSheet'
 import BottomSheetItem from '../BottomSheet/BottomSheetItem'
 import type { DialogSize } from '../Dialog'
 import ListItemText from '../ListItemText'
+import ConfirmDialog from './ConfirmDialog'
+import FixedActionsDialog from './FixedActionsDialog'
+import FixedDialog from './FixedDialog'
+import IllustrationDialog from './IllustrationDialog'
+import PermissionDialog from './PermissionDialog'
+import StandardDialog, { StandardDialogProps } from './StandardDialog'
 
 const sizes: DialogSize[] = ['small', 'medium', 'large', 'full']
 

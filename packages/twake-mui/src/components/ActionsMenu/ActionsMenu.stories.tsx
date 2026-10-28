@@ -1,4 +1,15 @@
 import {
+  Box,
+  Divider,
+  ListItemIcon,
+  PopoverOrigin,
+  Typography
+} from '@mui/material'
+import { Globals } from '@react-spring/web'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import React, { forwardRef, useRef, useState } from 'react'
+
+import {
   Attachment,
   Attention,
   Contrast,
@@ -10,16 +21,6 @@ import {
   People,
   Telephone
 } from '@linagora/twake-icons'
-import {
-  Box,
-  Divider,
-  ListItemIcon,
-  PopoverOrigin,
-  Typography
-} from '@mui/material'
-import { Globals } from '@react-spring/web'
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import React, { forwardRef, useRef, useState } from 'react'
 
 import DropdownButton from '../DropdownButton'
 import ListItemText from '../ListItemText'

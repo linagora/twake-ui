@@ -1,11 +1,11 @@
 import { DialogContent, DialogTitle, Divider } from '@mui/material'
 import React from 'react'
 
+import Dialog from '../Dialog'
 import DialogFluidContent from './DialogFluidContent'
 import DialogNavButtons from './DialogNavButtons'
 import type { DialogSectionsProps } from './types'
 import { DialogLayoutProps, useDialogLayout } from './useDialogLayout'
-import Dialog from '../Dialog'
 
 export interface StandardDialogProps
   extends DialogLayoutProps, DialogSectionsProps {}

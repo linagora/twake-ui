@@ -1,7 +1,8 @@
-import { Icon, TwakeWorkplace } from '@linagora/twake-icons'
 import { Box, Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Icon, TwakeWorkplace } from '@linagora/twake-icons'
 
 import { Empty, EmptyIconSize } from './index'
 

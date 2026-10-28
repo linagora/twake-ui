@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import { CloudSync2, Icon } from '@linagora/twake-icons'
 import { Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { CloudSync2, Icon } from '@linagora/twake-icons'
 
 import ProgressionBanner from './index'
 

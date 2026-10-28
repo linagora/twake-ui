@@ -1,6 +1,7 @@
-import paletteJson from '@linagora/twake-css/palette.json'
 import { PaletteOptions, alpha } from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
+
+import paletteJson from '@linagora/twake-css/palette.json'
 
 import {
   PaletteJson,

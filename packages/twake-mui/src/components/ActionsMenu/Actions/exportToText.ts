@@ -1,11 +1,11 @@
 import { Export } from '@linagora/twake-icons'
 
+import { getActionsI18n } from '../locales'
+import { Action, ActionDocument } from '../types'
 import { downloadBlob } from './helpers'
 import { logger } from './logger'
 import { makeAction } from './makeAction'
 import { makePdfBlobFromText } from './pdfHelpers'
-import { getActionsI18n } from '../locales'
-import { Action, ActionDocument } from '../types'
 
 export interface ExportToTextActionOptions {
   exportedText?: string

@@ -1,8 +1,8 @@
 import cx from 'classnames'
 import React, { forwardRef, useContext } from 'react'
 
-import { NavLinkRoot } from './NavLinkRoot'
 import { SidebarContext } from '../Sidebar/SidebarContext'
+import { NavLinkRoot } from './NavLinkRoot'
 
 export interface NavLinkBaseProps extends React.ComponentPropsWithoutRef<'div'> {
   selected?: boolean

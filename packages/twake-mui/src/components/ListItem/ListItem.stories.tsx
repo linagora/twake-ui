@@ -1,13 +1,4 @@
 import {
-  Comment,
-  Dots,
-  Icon,
-  Pen,
-  People,
-  Right,
-  Trash
-} from '@linagora/twake-icons'
-import {
   Box,
   Checkbox,
   IconButton,
@@ -21,12 +12,22 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { ListItemLayoutProps } from './helpers'
-import ListItem from './index'
+import {
+  Comment,
+  Dots,
+  Icon,
+  Pen,
+  People,
+  Right,
+  Trash
+} from '@linagora/twake-icons'
+
 import Avatar from '../Avatar'
 import ListItemButton from '../ListItemButton'
 import ListItemText from '../ListItemText'
 import ListSubheader from '../ListSubheader'
+import { ListItemLayoutProps } from './helpers'
+import ListItem from './index'
 
 const longText =
   'Ada Lovelace wrote the first algorithm meant to be carried out by a machine, long before any computer existed to run it.'

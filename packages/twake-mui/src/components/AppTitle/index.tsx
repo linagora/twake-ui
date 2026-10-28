@@ -1,7 +1,8 @@
-import { Icon, TwakeText } from '@linagora/twake-icons'
 import { Box } from '@mui/material'
 import { CSSObject, Theme } from '@mui/material/styles'
 import React, { FC } from 'react'
+
+import { Icon, TwakeText } from '@linagora/twake-icons'
 
 export interface AppTitleProps {
   appIcon: React.ElementType

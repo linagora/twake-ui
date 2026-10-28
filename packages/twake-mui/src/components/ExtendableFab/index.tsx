@@ -1,7 +1,8 @@
-import { Icon, IconProps } from '@linagora/twake-icons'
 import { Fab, FabProps, styled } from '@mui/material'
 import React, { forwardRef, useEffect, useState } from 'react'
 import { useDebounce } from 'rooks'
+
+import { Icon, IconProps } from '@linagora/twake-icons'
 
 export interface ScrollOptions {
   /** Delay in ms before the window scroll position is read */

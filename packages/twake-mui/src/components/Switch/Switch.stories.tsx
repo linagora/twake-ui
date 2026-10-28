@@ -1,4 +1,3 @@
-import { Check } from '@linagora/twake-icons'
 import {
   Divider,
   FormControlLabel,
@@ -9,6 +8,8 @@ import {
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Check } from '@linagora/twake-icons'
 
 import Switch, { SwitchProps } from './index'
 

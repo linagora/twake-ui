@@ -1,12 +1,13 @@
-import { Icon, Right } from '@linagora/twake-icons'
 import { Divider, ListItemIcon, Radio, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import React from 'react'
 
-import type { NestedSelectItem, NestedSelectRadioPosition } from './types'
+import { Icon, Right } from '@linagora/twake-icons'
+
 import { useBreakpoints } from '../../hooks/useBreakpoints'
 import ListItemButton from '../ListItemButton'
 import ListItemText from '../ListItemText'
+import type { NestedSelectItem, NestedSelectRadioPosition } from './types'
 
 export interface ItemRowProps {
   item: NestedSelectItem

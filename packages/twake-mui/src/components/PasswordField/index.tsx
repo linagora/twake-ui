@@ -1,4 +1,3 @@
-import { Eye, EyeClosed, Icon } from '@linagora/twake-icons'
 import {
   IconButton,
   InputAdornment,
@@ -8,6 +7,7 @@ import {
 import { mergeSlotProps } from '@mui/material/utils'
 import React, { useState } from 'react'
 
+import { Eye, EyeClosed, Icon } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import de from './locales/de.json'

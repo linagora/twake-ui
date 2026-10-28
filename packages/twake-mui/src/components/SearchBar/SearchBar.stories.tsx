@@ -1,7 +1,8 @@
-import { Cloud } from '@linagora/twake-icons'
 import { Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Cloud } from '@linagora/twake-icons'
 
 import SearchBar from './index'
 

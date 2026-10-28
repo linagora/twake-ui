@@ -1,8 +1,8 @@
 import { TextInfo } from '@linagora/twake-icons'
 
-import { makeAction } from './makeAction'
 import { getActionsI18n } from '../locales'
 import { Action, ActionCallbackOptions, ActionDocument } from '../types'
+import { makeAction } from './makeAction'
 
 interface EditAttributeCallbackOptions extends ActionCallbackOptions {
   editAttributeCallback: (docs: ActionDocument[]) => unknown

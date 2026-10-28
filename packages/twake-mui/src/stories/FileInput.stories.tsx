@@ -1,8 +1,9 @@
-import { CrossSmall, Icon, Upload } from '@linagora/twake-icons'
 import { ListItemIcon, MenuList, Paper, Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { MuiFileInput } from 'mui-file-input'
 import React, { useState } from 'react'
+
+import { CrossSmall, Icon, Upload } from '@linagora/twake-icons'
 
 import ActionsMenuItem from '../components/ActionsMenu/ActionsMenuItem'
 import Button from '../components/Button'

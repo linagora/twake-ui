@@ -1,9 +1,9 @@
-import { Check, Download, Warn } from '@linagora/twake-icons'
 import { Box, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import { Content, Layout, LayoutProps, Main } from './index'
+import { Check, Download, Warn } from '@linagora/twake-icons'
+
 import { Nav } from '../Nav'
 import { NavDesktopDropdown } from '../NavDesktopDropdown'
 import { NavDesktopLimiter } from '../NavDesktopLimiter'
@@ -12,6 +12,7 @@ import { NavItem } from '../NavItem'
 import { NavLink } from '../NavLink/NavLink'
 import NavText from '../NavText'
 import { Sidebar } from '../Sidebar'
+import { Content, Layout, LayoutProps, Main } from './index'
 
 const paragraph =
   'Ada Lovelace was an English mathematician chiefly known for her work on Charles Babbage’s proposed mechanical general-purpose computer, the Analytical Engine. She was the first to recognise that the machine had applications beyond pure calculation.'

@@ -1,7 +1,7 @@
-import { Dots, Icon } from '@linagora/twake-icons'
 import { IconButton, ListItemIcon } from '@mui/material'
 import React, { useRef, useState } from 'react'
 
+import { Dots, Icon } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import ActionsMenu from '.'

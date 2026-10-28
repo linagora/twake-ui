@@ -1,9 +1,9 @@
 import { Copy } from '@linagora/twake-icons'
 
-import { makeAction } from './makeAction'
 import { ShowAlert } from '../../../providers/AlertProvider/useAlert'
 import { getActionsI18n } from '../locales'
 import { Action, ActionCallbackOptions } from '../types'
+import { makeAction } from './makeAction'
 
 interface CopyToClipboardCallbackOptions extends ActionCallbackOptions {
   showAlert: ShowAlert

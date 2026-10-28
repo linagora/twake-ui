@@ -1,8 +1,8 @@
 import { Email } from '@linagora/twake-icons'
 
-import { makeAction } from './makeAction'
 import { getActionsI18n } from '../locales'
 import { Action, ActionDocument } from '../types'
+import { makeAction } from './makeAction'
 
 export const emailTo = (): Action => {
   const { t } = getActionsI18n()

@@ -1,4 +1,3 @@
-import { Icon, Check, Palette } from '@linagora/twake-icons'
 import {
   ButtonBase,
   ImageList,
@@ -8,6 +7,8 @@ import {
 } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
+
+import { Icon, Check, Palette } from '@linagora/twake-icons'
 
 import { useBreakpoints } from '../../hooks/useBreakpoints'
 import Avatar from '../Avatar'

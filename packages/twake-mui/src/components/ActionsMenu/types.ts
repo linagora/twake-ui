@@ -1,6 +1,6 @@
-import { IconProps } from '@linagora/twake-icons'
 import React from 'react'
 
+import { IconProps } from '@linagora/twake-icons'
 import type { WebviewService } from 'cozy-intent'
 
 import { ListItemSize } from '../ListItem'

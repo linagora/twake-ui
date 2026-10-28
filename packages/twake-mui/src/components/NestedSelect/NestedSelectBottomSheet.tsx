@@ -1,17 +1,17 @@
-import { ArrowUp, Icon } from '@linagora/twake-icons'
 import { Divider, IconButton, Typography } from '@mui/material'
 import cx from 'classnames'
 import React from 'react'
 
+import { ArrowUp, Icon } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import NestedSelect from './index'
-import type { NestedSelectHeaderProps, NestedSelectProps } from './types'
 import BottomSheet from '../BottomSheet'
 import BottomSheetHeader from '../BottomSheet/BottomSheetHeader'
 import BottomSheetItem from '../BottomSheet/BottomSheetItem'
 import type { BottomSheetProps } from '../BottomSheet/types'
 import { locales } from '../Dialogs/locales'
+import NestedSelect from './index'
+import type { NestedSelectHeaderProps, NestedSelectProps } from './types'
 
 export interface NestedSelectBottomSheetProps extends NestedSelectProps {
   onClose?: () => void

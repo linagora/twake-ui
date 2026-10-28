@@ -1,10 +1,4 @@
 import {
-  CrossMedium,
-  FileTypeFolder,
-  FileTypeText,
-  Icon
-} from '@linagora/twake-icons'
-import {
   Button,
   DialogActions,
   DialogContent,
@@ -19,9 +13,16 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import Dialog, { DialogProps, DialogSize } from './index'
+import {
+  CrossMedium,
+  FileTypeFolder,
+  FileTypeText,
+  Icon
+} from '@linagora/twake-icons'
+
 import ListItemButton from '../ListItemButton'
 import ListItemText from '../ListItemText'
+import Dialog, { DialogProps, DialogSize } from './index'
 
 const sizes: DialogSize[] = ['small', 'medium', 'large', 'full']
 

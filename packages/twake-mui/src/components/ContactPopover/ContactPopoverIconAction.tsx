@@ -1,6 +1,7 @@
-import { Icon } from '@linagora/twake-icons'
 import { Box, IconButton, Tooltip, useTheme } from '@mui/material'
 import React from 'react'
+
+import { Icon } from '@linagora/twake-icons'
 
 export interface ContactPopoverIconActionProps {
   /** Icon shown in the button */

@@ -1,6 +1,7 @@
-import { Icon } from '@linagora/twake-icons'
 import { ListItemIcon } from '@mui/material'
 import React, { forwardRef } from 'react'
+
+import { Icon } from '@linagora/twake-icons'
 
 import ListItemText from '../../ListItemText'
 import ActionsMenuItem from '../ActionsMenuItem'

@@ -1,9 +1,10 @@
-import { Icon, IconProps } from '@linagora/twake-icons'
 import {
   Switch as MuiSwitch,
   SwitchProps as MuiSwitchProps
 } from '@mui/material'
 import React from 'react'
+
+import { Icon, IconProps } from '@linagora/twake-icons'
 
 export interface SwitchProps extends Omit<
   MuiSwitchProps,

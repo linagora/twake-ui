@@ -1,10 +1,10 @@
 import { Printer } from '@linagora/twake-icons'
 
+import { getActionsI18n } from '../locales'
+import { Action, ActionCallbackOptions, ActionDocument } from '../types'
 import { FetchBlobFileById, makeBase64FromFile, makePdfBlob } from './helpers'
 import { logger } from './logger'
 import { makeAction } from './makeAction'
-import { getActionsI18n } from '../locales'
-import { Action, ActionCallbackOptions, ActionDocument } from '../types'
 
 export interface PrintClient {
   collection: (doctype: 'io.cozy.files') => {

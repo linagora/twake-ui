@@ -2,8 +2,6 @@ import { DialogContent, DialogTitle, List } from '@mui/material'
 import cx from 'classnames'
 import React, { createContext, useContext } from 'react'
 
-import NestedSelect from './index'
-import type { NestedSelectHeaderProps, NestedSelectProps } from './types'
 import Dialog from '../Dialog'
 import DialogNavButtons from '../Dialogs/DialogNavButtons'
 import {
@@ -11,6 +9,8 @@ import {
   DialogLayoutProps,
   useDialogLayout
 } from '../Dialogs/useDialogLayout'
+import NestedSelect from './index'
+import type { NestedSelectHeaderProps, NestedSelectProps } from './types'
 
 export interface NestedSelectModalProps extends NestedSelectProps {
   onClose?: DialogLayoutProps['onClose']

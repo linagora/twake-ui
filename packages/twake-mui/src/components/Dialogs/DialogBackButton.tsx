@@ -1,8 +1,8 @@
-import { Icon, Previous } from '@linagora/twake-icons'
 import { IconButton, IconButtonProps } from '@mui/material'
 import cx from 'classnames'
 import React from 'react'
 
+import { Icon, Previous } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import { locales } from './locales'

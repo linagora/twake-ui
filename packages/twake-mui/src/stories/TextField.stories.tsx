@@ -1,4 +1,3 @@
-import { File, Icon } from '@linagora/twake-icons'
 import {
   InputAdornment,
   MenuItem,
@@ -8,6 +7,8 @@ import {
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { File, Icon } from '@linagora/twake-icons'
 
 const options = [
   { value: 'value1', label: 'Item 1' },

@@ -1,8 +1,8 @@
-import { Icon, Dropdown } from '@linagora/twake-icons'
 import { IconButton } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import React, { forwardRef } from 'react'
 
+import { Icon, Dropdown } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import { NavLinkBase, NavLinkBaseProps } from './NavLinkBase'

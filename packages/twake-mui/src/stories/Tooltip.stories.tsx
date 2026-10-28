@@ -1,7 +1,8 @@
-import { CarbonCopy, Icon } from '@linagora/twake-icons'
 import { Box, Stack, Tooltip, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { CarbonCopy, Icon } from '@linagora/twake-icons'
 
 const title = (
   <>

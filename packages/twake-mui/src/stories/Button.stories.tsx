@@ -1,7 +1,8 @@
-import { Icon, Plus, Stop } from '@linagora/twake-icons'
 import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Icon, Plus, Stop } from '@linagora/twake-icons'
 
 import Button, { ButtonProps } from '../components/Button'
 

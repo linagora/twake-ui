@@ -1,6 +1,7 @@
-import paletteJson from '@linagora/twake-css/palette.json'
 import { Shadows } from '@mui/material/styles'
 import { alpha } from '@mui/material/styles'
+
+import paletteJson from '@linagora/twake-css/palette.json'
 
 import { PaletteJson } from './types'
 

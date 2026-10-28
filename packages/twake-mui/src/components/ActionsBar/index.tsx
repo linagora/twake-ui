@@ -1,11 +1,8 @@
-import { Cross, Dots, Icon } from '@linagora/twake-icons'
 import { AppBarProps, IconButton, Toolbar } from '@mui/material'
 import React, { useMemo, useRef, useState } from 'react'
 
-import ActionsBarActions from './ActionsBarActions'
-import ActionsBarRoot from './ActionsBarRoot'
-import ActionsBarSelectedCount from './ActionsBarSelectedCount'
-import ResponsiveAction from './ResponsiveAction'
+import { Cross, Dots, Icon } from '@linagora/twake-icons'
+
 import { useBreakpoints } from '../../hooks/useBreakpoints'
 import ActionsMenu from '../ActionsMenu'
 import { makeActions } from '../ActionsMenu/Actions/helpers'
@@ -13,6 +10,10 @@ import { others } from '../ActionsMenu/Actions/others'
 import ActionsItems from '../ActionsMenu/ActionsItems'
 import { getOnlyNeededActions } from '../ActionsMenu/helpers'
 import { ActionDocument, ActionObject } from '../ActionsMenu/types'
+import ActionsBarActions from './ActionsBarActions'
+import ActionsBarRoot from './ActionsBarRoot'
+import ActionsBarSelectedCount from './ActionsBarSelectedCount'
+import ResponsiveAction from './ResponsiveAction'
 
 const MOBILE_MAX_ACTIONS = 4
 

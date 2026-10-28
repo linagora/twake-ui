@@ -1,3 +1,7 @@
+import { Button, IconButton, Stack, Typography } from '@mui/material'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import React from 'react'
+
 import {
   Cross,
   Icon,
@@ -6,9 +10,6 @@ import {
   Stop,
   Trash
 } from '@linagora/twake-icons'
-import { Button, IconButton, Stack, Typography } from '@mui/material'
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import React from 'react'
 
 const meta: Meta<typeof IconButton> = {
   title: 'IconButton',

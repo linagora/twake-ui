@@ -1,8 +1,8 @@
-import { Icon } from '@linagora/twake-icons'
-import { Cross } from '@linagora/twake-icons'
 import { Box, IconButton, Popover, styled } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 
+import { Icon } from '@linagora/twake-icons'
+import { Cross } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import { AttendeeInfo } from './AttendeeInfo'

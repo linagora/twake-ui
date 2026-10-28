@@ -1,8 +1,9 @@
-import { Bottom, Top } from '@linagora/twake-icons'
 import React, { Children, isValidElement, useState, useContext } from 'react'
 
+import { Bottom, Top } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
+import { useBreakpoints } from '../../hooks/useBreakpoints'
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
 import { NavLink } from '../NavLink/NavLink'
@@ -15,7 +16,6 @@ import fr from './locales/fr.json'
 import it from './locales/it.json'
 import ru from './locales/ru.json'
 import vi from './locales/vi.json'
-import { useBreakpoints } from '../../hooks/useBreakpoints'
 
 const locales = { de, en, es, fr, it, ru, vi }
 

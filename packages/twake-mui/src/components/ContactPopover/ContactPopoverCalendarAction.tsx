@@ -1,6 +1,6 @@
-import { CalendarToday } from '@linagora/twake-icons'
 import React from 'react'
 
+import { CalendarToday } from '@linagora/twake-icons'
 import { useI18n } from 'twake-i18n'
 
 import { ContactPopoverIconAction } from './ContactPopoverIconAction'

@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import { Download, Icon } from '@linagora/twake-icons'
 import { AlertTitle, Button, Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Download, Icon } from '@linagora/twake-icons'
 
 import PointerAlert, { PointerAlertDirection } from './index'
 

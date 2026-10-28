@@ -1,8 +1,8 @@
 import { Comment } from '@linagora/twake-icons'
 
-import { makeAction } from './makeAction'
 import { getActionsI18n } from '../locales'
 import { Action, ActionDocument } from '../types'
+import { makeAction } from './makeAction'
 
 export const smsTo = (): Action => {
   const { t } = getActionsI18n()

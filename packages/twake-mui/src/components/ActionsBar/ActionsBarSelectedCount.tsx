@@ -1,9 +1,10 @@
-import { CheckCircle, CrossCircle, Icon } from '@linagora/twake-icons'
 import { Box, IconButton, Typography } from '@mui/material'
 import React from 'react'
 
+import { CheckCircle, CrossCircle, Icon } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
+import { useBreakpoints } from '../../hooks/useBreakpoints'
 import de from './locales/de.json'
 import en from './locales/en.json'
 import es from './locales/es.json'
@@ -11,7 +12,6 @@ import fr from './locales/fr.json'
 import it from './locales/it.json'
 import ru from './locales/ru.json'
 import vi from './locales/vi.json'
-import { useBreakpoints } from '../../hooks/useBreakpoints'
 
 const locales = { de, en, es, fr, it, ru, vi }
 

@@ -1,7 +1,8 @@
-import { File, Icon } from '@linagora/twake-icons'
 import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { File, Icon } from '@linagora/twake-icons'
 
 import Filename, { FilenameProps } from './index'
 

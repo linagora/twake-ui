@@ -1,6 +1,7 @@
-import paletteJson from '@linagora/twake-css/palette.json'
 import { Shadows, TypographyVariantsOptions } from '@mui/material/styles'
 import type { CSSProperties } from 'react'
+
+import paletteJson from '@linagora/twake-css/palette.json'
 
 // Palette Types
 export type PaletteJson = typeof paletteJson

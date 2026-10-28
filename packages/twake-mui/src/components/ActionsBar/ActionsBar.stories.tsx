@@ -1,9 +1,9 @@
-import { FlagOutlined, Icon, Star } from '@linagora/twake-icons'
 import { AppBarProps, Box, Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import ActionsBar from './index'
+import { FlagOutlined, Icon, Star } from '@linagora/twake-icons'
+
 import { call } from '../ActionsMenu/Actions/call'
 import { download } from '../ActionsMenu/Actions/download'
 import { emailTo } from '../ActionsMenu/Actions/emailTo'
@@ -11,6 +11,7 @@ import { makeActions } from '../ActionsMenu/Actions/helpers'
 import { modify } from '../ActionsMenu/Actions/modify'
 import { smsTo } from '../ActionsMenu/Actions/smsTo'
 import { ActionDocument } from '../ActionsMenu/types'
+import ActionsBar from './index'
 
 const doc: ActionDocument = {
   _id: 'id01',

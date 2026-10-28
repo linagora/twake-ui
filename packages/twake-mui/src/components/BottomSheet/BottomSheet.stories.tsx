@@ -1,13 +1,4 @@
 import {
-  File,
-  FileTypeSheet,
-  FileTypeSlide,
-  FileTypeText,
-  FileTypeVideo,
-  Icon,
-  Right
-} from '@linagora/twake-icons'
-import {
   Button,
   Checkbox,
   Divider,
@@ -18,12 +9,22 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
+import {
+  File,
+  FileTypeSheet,
+  FileTypeSlide,
+  FileTypeText,
+  FileTypeVideo,
+  Icon,
+  Right
+} from '@linagora/twake-icons'
+
+import ListItemButton from '../ListItemButton'
+import ListItemText from '../ListItemText'
 import BottomSheetHeader from './BottomSheetHeader'
 import BottomSheetItem from './BottomSheetItem'
 import BottomSheetTitle from './BottomSheetTitle'
 import BottomSheet from './index'
-import ListItemButton from '../ListItemButton'
-import ListItemText from '../ListItemText'
 
 interface ExampleArgs {
   open: boolean

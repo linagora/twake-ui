@@ -1,7 +1,8 @@
-import { Icon, Link } from '@linagora/twake-icons'
 import { AvatarGroup, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Icon, Link } from '@linagora/twake-icons'
 
 import { supportedColors } from './helpers'
 import Avatar, { AvatarSize } from './index'

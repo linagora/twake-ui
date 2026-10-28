@@ -4,10 +4,10 @@ import cx from 'classnames'
 import React, { useState } from 'react'
 import { useDebounce } from 'rooks'
 
+import SearchBar from '../SearchBar'
 import ItemRow from './ItemRow'
 import { makeHistory } from './helpers'
 import type { NestedSelectItem, NestedSelectProps } from './types'
-import SearchBar from '../SearchBar'
 
 const SEARCH_DELAY = 250
 

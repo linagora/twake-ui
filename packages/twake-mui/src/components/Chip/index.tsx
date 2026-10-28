@@ -1,4 +1,3 @@
-import { Icon, CrossSmall } from '@linagora/twake-icons'
 import {
   Box,
   Chip as MuiChip,
@@ -7,6 +6,8 @@ import {
 } from '@mui/material'
 import cx from 'classnames'
 import React from 'react'
+
+import { Icon, CrossSmall } from '@linagora/twake-icons'
 
 export interface ChipProps extends MuiChipProps {
   endIcon?: React.ReactNode

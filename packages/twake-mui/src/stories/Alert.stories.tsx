@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import { Dots, Download, Icon } from '@linagora/twake-icons'
 import {
   Alert,
   AlertTitle,
@@ -11,6 +10,8 @@ import {
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Dots, Download, Icon } from '@linagora/twake-icons'
 
 const severities = [
   'primary',

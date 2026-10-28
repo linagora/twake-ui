@@ -1,7 +1,8 @@
-import { Icon, IconProps } from '@linagora/twake-icons'
 import { ListItemIcon, ListItemIconProps } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React, { useContext } from 'react'
+
+import { Icon, IconProps } from '@linagora/twake-icons'
 
 import { SidebarContext } from '../Sidebar/SidebarContext'
 

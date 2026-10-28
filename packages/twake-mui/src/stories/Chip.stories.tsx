@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import { Icon, FileOutline, Openwith, Right } from '@linagora/twake-icons'
 import { Avatar, Grid, Stack, Typography, IconButton } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Icon, FileOutline, Openwith, Right } from '@linagora/twake-icons'
 
 import { Chip } from '../components/Chip'
 
