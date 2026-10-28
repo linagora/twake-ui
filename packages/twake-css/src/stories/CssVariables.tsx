@@ -195,6 +195,19 @@ export const CssVariables: FC = () => {
               </Box>
             </Box>
           ))}
+          <Box>
+            <Box
+              sx={{
+                height: 48,
+                borderRadius: '6px',
+                backgroundColor: 'background.paper',
+                boxShadow: 'var(--twake-elevation-level3)'
+              }}
+            />
+            <Box sx={{ mt: 1 }}>
+              <Code>--twake-elevation-level3</Code>
+            </Box>
+          </Box>
         </Box>
       </Section>
 

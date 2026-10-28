@@ -118,6 +118,9 @@
   --twake-shadows-24: 0px 12px 16px -8px #{rgba($shadow-color, .24)}, 0px 12px 48px 8px #{rgba($shadow-color, .24)}, 0px 0px 0px 0.5px #{rgba($shadow-color, .12)};
   --twake-shadows-25: 0px 1px 4px #{rgba($shadow-color, .04)};
 
+  // Material 3 levels, black in both modes
+  --twake-elevation-level3: 0px 1px 3px 0px #{rgba(p('Common', 'black'), .3)}, 0px 4px 8px 3px #{rgba(p('Common', 'black'), .15)};
+
   --twake-zIndex-mobileStepper: 1000;
   --twake-zIndex-fab: 1050;
   --twake-zIndex-speedDial: 1050;

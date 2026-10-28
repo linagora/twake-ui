@@ -2,7 +2,7 @@ import { createTheme, Overlays, ThemeOptions } from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
 
 import { makePalette } from './makePalette'
-import { makeShadows } from './makeShadows'
+import { makeElevation, makeShadows } from './makeShadows'
 import { makeTypography } from './makeTypography'
 import { overrides } from './overrides'
 import { PaletteJson } from './types'
@@ -38,11 +38,13 @@ export const makeTheme = (
     colorSchemes: {
       light: {
         palette: makePalette('light', paletteOverrides),
-        shadows: makeShadows('light')
+        shadows: makeShadows('light'),
+        elevation: makeElevation()
       },
       dark: {
         palette: makePalette('dark', paletteOverrides),
         shadows: makeShadows('dark'),
+        elevation: makeElevation(),
         overlays: Array<string>(25).fill('none') as Overlays
       }
     },

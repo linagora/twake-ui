@@ -2,7 +2,7 @@ import paletteJson from '@linagora/twake-css/palette.json'
 import { Shadows } from '@mui/material/styles'
 import { alpha } from '@mui/material/styles'
 
-import { PaletteJson } from './types'
+import { Elevation, PaletteJson } from './types'
 
 const paletteData: PaletteJson = paletteJson
 
@@ -80,3 +80,16 @@ export const makeShadows = (
 
   return ['none', ...shadows, extraElevation] as Shadows
 }
+
+/**
+ * Material 3 levels the design uses outside the cozy-ui ramp, for example on
+ * a docked window. Black in both modes, as Material 3 draws them.
+ */
+export const makeElevation = (
+  palette: PaletteJson = paletteData
+): Elevation => ({
+  level3: [
+    `0px 1px 3px 0px ${alpha(palette.Common.black, 0.3)}`,
+    `0px 4px 8px 3px ${alpha(palette.Common.black, 0.15)}`
+  ].join(', ')
+})
