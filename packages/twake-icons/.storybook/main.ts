@@ -5,10 +5,10 @@ const config: StorybookConfig = {
   addons: ['@storybook/addon-docs'],
   framework: {
     name: '@storybook/react-vite',
-    options: {},
+    options: {}
   },
   typescript: {
-    check: false,
+    check: false
   },
   viteFinal: async (config, options) => {
     if (options.configType === 'PRODUCTION') {
@@ -19,14 +19,17 @@ const config: StorybookConfig = {
     }
     if (config.build?.rollupOptions) {
       config.build.rollupOptions.onwarn = (warning, warn) => {
-        if (warning.code === 'EVAL' && warning.message.includes('storybook/core')) {
+        if (
+          warning.code === 'EVAL' &&
+          warning.message.includes('storybook/core')
+        ) {
           return
         }
         warn(warning)
       }
     }
     return config
-  },
+  }
 }
 
 export default config

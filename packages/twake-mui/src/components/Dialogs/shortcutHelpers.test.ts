@@ -39,7 +39,10 @@ describe('shortcut helpers', () => {
 
     await checkAndSaveShortcut(options)
 
-    expect(options.onSave).toHaveBeenCalledWith('Twake.url', 'https://twake.app')
+    expect(options.onSave).toHaveBeenCalledWith(
+      'Twake.url',
+      'https://twake.app'
+    )
     expect(options.showAlert).toHaveBeenCalledWith({
       message: 'Dialogs.shortcut.created',
       severity: 'success'
@@ -57,7 +60,11 @@ describe('shortcut helpers', () => {
   })
 
   it('reports a failed save', async () => {
-    const options = setup('Twake', 'twake.app', vi.fn().mockRejectedValue(new Error()))
+    const options = setup(
+      'Twake',
+      'twake.app',
+      vi.fn().mockRejectedValue(new Error())
+    )
 
     await checkAndSaveShortcut(options)
 

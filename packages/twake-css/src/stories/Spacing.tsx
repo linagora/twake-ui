@@ -42,8 +42,8 @@ export const Spacing: FC = () => (
     <Prose>
       Padding and margin sit on the same 8px grid as MUI, counted with a
       different step: the classes count in rem, MUI in half-rem. So{' '}
-      <Code>.u-p-1</Code> is 16px while <Code tone="var">sx=&#123;&#123; p: 1
-      &#125;&#125;</Code> is 8px.
+      <Code>.u-p-1</Code> is 16px while{' '}
+      <Code tone="var">sx=&#123;&#123; p: 1 &#125;&#125;</Code> is 8px.
     </Prose>
 
     <Section title="Scale" note="stops at 3 — beyond that, use sx or local CSS">
@@ -88,7 +88,10 @@ export const Spacing: FC = () => (
       </Rail>
     </Section>
 
-    <Section title="Breakpoints" note="a suffix narrows a class to small screens">
+    <Section
+      title="Breakpoints"
+      note="a suffix narrows a class to small screens"
+    >
       <Rail columns="auto auto minmax(0, 1fr)">
         {BREAKPOINTS.map(([suffix, width, example]) => (
           <React.Fragment key={suffix}>
@@ -100,23 +103,34 @@ export const Spacing: FC = () => (
       </Rail>
       <Prose>
         These are max-width queries, so they stack: on a 400px screen a{' '}
-        <Code>-t</Code>, a <Code>-s</Code> and an <Code>-m</Code> class all match
-        and the last one declared wins. The class reference marks which families
-        take them.
+        <Code>-t</Code>, a <Code>-s</Code> and an <Code>-m</Code> class all
+        match and the last one declared wins. The class reference marks which
+        families take them.
       </Prose>
     </Section>
 
-    <Section title="Stacks" note="margin between direct children, edges untouched">
+    <Section
+      title="Stacks"
+      note="margin between direct children, edges untouched"
+    >
       <Rail columns="auto minmax(0, 1fr)">
         {STACK.map(name => (
           <React.Fragment key={name}>
             <Code>{`.u-stack-${name}`}</Code>
             <Box className={`u-stack-${name}`}>
               <Box
-                sx={{ height: 10, borderRadius: '3px', backgroundColor: 'primary.main' }}
+                sx={{
+                  height: 10,
+                  borderRadius: '3px',
+                  backgroundColor: 'primary.main'
+                }}
               />
               <Box
-                sx={{ height: 10, borderRadius: '3px', backgroundColor: 'primary.main' }}
+                sx={{
+                  height: 10,
+                  borderRadius: '3px',
+                  backgroundColor: 'primary.main'
+                }}
               />
             </Box>
           </React.Fragment>

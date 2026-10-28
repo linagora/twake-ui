@@ -13,7 +13,7 @@ const dirname =
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   resolve: {
-    dedupe: ['react', 'react-dom'],
+    dedupe: ['react', 'react-dom']
   },
   test: {
     projects: [
@@ -21,8 +21,8 @@ export default defineConfig({
         test: {
           name: 'unit',
           include: ['test/**/*.test.ts', 'src/**/*.test.{ts,tsx}'],
-          environment: 'node',
-        },
+          environment: 'node'
+        }
       },
       {
         extends: true,
@@ -30,13 +30,13 @@ export default defineConfig({
           storybookTest({
             configDir: path.join(dirname, '.storybook'),
             tags: {
-              include: ['argos'],
-            },
+              include: ['argos']
+            }
           }),
           argosVitestPlugin({
             uploadToArgos: !!process.env.CI,
-            token: process.env.ARGOS_TOKEN,
-          }),
+            token: process.env.ARGOS_TOKEN
+          })
         ],
         test: {
           name: 'storybook',
@@ -48,10 +48,10 @@ export default defineConfig({
                 args: ['--disable-lcd-text', '--font-render-hinting=none']
               }
             }),
-            instances: [{ browser: 'chromium' }],
-          },
-        },
-      },
-    ],
-  },
+            instances: [{ browser: 'chromium' }]
+          }
+        }
+      }
+    ]
+  }
 })

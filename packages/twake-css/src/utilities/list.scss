@@ -1,3 +1,9 @@
 @use '../config';
 
-@include config.utils(('nolist': (list-style-type: none)));
+@include config.utils(
+  (
+    'nolist': (
+      list-style-type: none
+    )
+  )
+);

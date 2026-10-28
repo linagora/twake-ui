@@ -17,7 +17,8 @@ const NAV: [string, string][][] = [
   ],
   [
     ...VARIABLE_GROUPS.map(
-      ([group]) => [`variables-${group.toLowerCase()}`, group] as [string, string]
+      ([group]) =>
+        [`variables-${group.toLowerCase()}`, group] as [string, string]
     ),
     ['variables-shadows', 'Shadows'],
     ['variables-zindex', 'Stacking']
@@ -71,9 +72,9 @@ const Documentation: FC = () => {
               twake-css
             </Typography>
             <Prose>
-              The Twake palette as --twake-* CSS variables, and the utility classes
-              that replace <Code tone="var">cozy-ui.utils.min.css</Code>. Two
-              files, and two ways to get the variables into the page.
+              The Twake palette as --twake-* CSS variables, and the utility
+              classes that replace <Code tone="var">cozy-ui.utils.min.css</Code>
+              . Two files, and two ways to get the variables into the page.
             </Prose>
 
             <Requirement note="In a React app. TwakeMuiThemeProvider emits the variables at runtime and sets data-theme on the document, so only the classes are needed.">

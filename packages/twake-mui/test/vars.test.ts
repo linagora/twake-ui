@@ -12,10 +12,10 @@ const parseCss = (css: string): [string, Declarations][] =>
   Array.from(css.matchAll(/([^{}]+)\{([^{}]*)\}/g), ([, selector, body]) => [
     selector.trim(),
     Object.fromEntries(
-      Array.from(body.matchAll(/(--[\w-]+):\s*([^;]+);/g), ([, name, value]) => [
-        name,
-        value
-      ])
+      Array.from(
+        body.matchAll(/(--[\w-]+):\s*([^;]+);/g),
+        ([, name, value]) => [name, value]
+      )
     )
   ])
 
@@ -31,7 +31,10 @@ describe('twake-css/dist/vars.css', () => {
     readFileSync(require.resolve('@linagora/twake-css/dist/vars.css'), 'utf8')
   )
 
-  const emitted: Record<'light' | 'dark', Declarations> = { light: {}, dark: {} }
+  const emitted: Record<'light' | 'dark', Declarations> = {
+    light: {},
+    dark: {}
+  }
   for (const sheet of makeTheme().generateStyleSheets()) {
     for (const [selector, decls] of Object.entries(sheet)) {
       if (!selector.includes('dark')) Object.assign(emitted.light, decls)

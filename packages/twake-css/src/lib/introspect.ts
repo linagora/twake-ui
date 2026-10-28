@@ -49,7 +49,11 @@ export const collectRules = (): Rule[] => {
             ] as [string, string]
         )
         if (decls.length > 0) {
-          rules.push({ selector: rule.selectorText, decls: collapse(decls), media })
+          rules.push({
+            selector: rule.selectorText,
+            decls: collapse(decls),
+            media
+          })
         }
       }
     }
@@ -74,13 +78,13 @@ export const cssVariablesUsed = (rules: Rule[]): string[] => {
 
   for (const rule of rules) {
     for (const [, value] of rule.decls) {
-      for (const match of value.matchAll(/var\((--[\w-]+)/g)) found.add(match[1])
+      for (const match of value.matchAll(/var\((--[\w-]+)/g))
+        found.add(match[1])
     }
   }
 
   return Array.from(found).sort()
 }
-
 
 // Every custom property twake-mui declares, not just the ones the utilities
 // consume: an app can use any of them in its own CSS.

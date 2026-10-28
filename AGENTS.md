@@ -117,6 +117,7 @@ npm run screenshots
 ```
 
 Stories are located in:
+
 - `packages/twake-mui/src/components/**/*.stories.tsx` - Component stories (e.g., Avatar)
 - `packages/twake-mui/src/stories/*.stories.tsx` - Override showcase stories
 
@@ -143,6 +144,7 @@ export const MyStory = {
 ## Commits
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) for automatic versioning:
+
 - `feat:` → minor version bump
 - `fix:` → patch version bump
 - `feat!:` or `BREAKING CHANGE:` → major version bump

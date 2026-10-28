@@ -49,13 +49,15 @@ const preview: Preview = {
     options: {
       // Storybook serializes this function, so it cannot reference outer scope
       storySort: (a, b) =>
-        a.title === b.title ? 0 : a.title.localeCompare(b.title, undefined, { numeric: true }),
+        a.title === b.title
+          ? 0
+          : a.title.localeCompare(b.title, undefined, { numeric: true })
     },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/,
-      },
+        date: /Date$/
+      }
     },
     backgrounds: {
       options: {
@@ -80,20 +82,20 @@ const preview: Preview = {
       fitToContent: false,
       threshold: 0.2,
       modes: {
-        "desktop-light": { viewport: 'desktop' },
-        "mobile-light": { viewport: 'mobile' },
-        "desktop-dark": {
+        'desktop-light': { viewport: 'desktop' },
+        'mobile-light': { viewport: 'mobile' },
+        'desktop-dark': {
           viewport: 'desktop',
           theme: 'dark',
-          backgrounds: { value: 'dark' },
+          backgrounds: { value: 'dark' }
         },
-        "mobile-dark": {
+        'mobile-dark': {
           viewport: 'mobile',
           theme: 'dark',
-          backgrounds: { value: 'dark' },
-        },
-      },
-    },
+          backgrounds: { value: 'dark' }
+        }
+      }
+    }
   },
 
   globalTypes: {
@@ -104,9 +106,9 @@ const preview: Preview = {
       toolbar: {
         icon: 'circlehollow',
         items: ['light', 'dark'],
-        showName: true,
-      },
-    },
+        showName: true
+      }
+    }
   },
 
   beforeEach: sizeFrameToViewport,
@@ -139,7 +141,7 @@ const preview: Preview = {
           </ThemeProvider>
         </I18n>
       )
-    },
+    }
   ],
 
   initialGlobals: {

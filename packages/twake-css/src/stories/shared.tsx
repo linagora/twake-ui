@@ -51,11 +51,11 @@ export const Swatch: FC<{ color: string; mode?: 'light' | 'dark' }> = ({
   </Box>
 )
 
-export const Chapter: FC<{ id: string; title: string; children: ReactNode }> = ({
-  id,
-  title,
-  children
-}) => (
+export const Chapter: FC<{
+  id: string
+  title: string
+  children: ReactNode
+}> = ({ id, title, children }) => (
   <Box component="section" id={id} sx={{ pt: 7, scrollMarginTop: 108 }}>
     <Typography
       variant="h4"
@@ -87,7 +87,11 @@ export const Section: FC<{
     >
       <Typography sx={{ fontSize: 15, fontWeight: 600 }}>{title}</Typography>
       {note !== undefined && (
-        <Typography variant="body2" color="text.secondary" sx={{ fontSize: 13 }}>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ fontSize: 13 }}
+        >
           {note}
         </Typography>
       )}

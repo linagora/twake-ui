@@ -5,17 +5,17 @@ const config: StorybookConfig = {
   addons: ['@storybook/addon-docs'],
   framework: {
     name: '@storybook/react-vite',
-    options: {},
+    options: {}
   },
   typescript: {
-    check: false,
+    check: false
   },
   viteFinal: async (config, options) => {
     if (options.configType === 'PRODUCTION') {
       config.base = '/twake-ui/twake-css/'
     }
     return config
-  },
+  }
 }
 
 export default config

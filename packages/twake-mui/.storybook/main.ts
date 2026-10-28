@@ -5,10 +5,10 @@ const config: StorybookConfig = {
   addons: ['@storybook/addon-docs'],
   framework: {
     name: '@storybook/react-vite',
-    options: {},
+    options: {}
   },
   typescript: {
-    check: false,
+    check: false
   },
   viteFinal: async (config, options) => {
     // react-docgen only skips paths under node_modules: following the workspace
@@ -24,14 +24,17 @@ const config: StorybookConfig = {
     // Suppress eval warnings from Storybook core
     if (config.build?.rollupOptions) {
       config.build.rollupOptions.onwarn = (warning, warn) => {
-        if (warning.code === 'EVAL' && warning.message.includes('storybook/core')) {
+        if (
+          warning.code === 'EVAL' &&
+          warning.message.includes('storybook/core')
+        ) {
           return
         }
         warn(warning)
       }
     }
     return config
-  },
+  }
 }
 
 export default config

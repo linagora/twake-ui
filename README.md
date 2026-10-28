@@ -16,11 +16,11 @@ twake-ui/
 
 ## Packages
 
-| Package | Scope |
-| --- | --- |
-| `@linagora/twake-css` | The palette (`palette.json`), its `--twake-*` CSS variables (`dist/vars.css`) and the `.u-*` utility classes (`dist/utils.css`). No JavaScript, usable from any stack. |
-| `@linagora/twake-icons` | SVG icons and illustrations as React components. |
-| `@linagora/twake-mui` | The MUI theme and components. Builds its theme from twake-css's `palette.json`, emits the same `--twake-*` variables at runtime, and renders twake-icons. |
+| Package                 | Scope                                                                                                                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@linagora/twake-css`   | The palette (`palette.json`), its `--twake-*` CSS variables (`dist/vars.css`) and the `.u-*` utility classes (`dist/utils.css`). No JavaScript, usable from any stack. |
+| `@linagora/twake-icons` | SVG icons and illustrations as React components.                                                                                                                       |
+| `@linagora/twake-mui`   | The MUI theme and components. Builds its theme from twake-css's `palette.json`, emits the same `--twake-*` variables at runtime, and renders twake-icons.              |
 
 ## Development
 
@@ -123,11 +123,7 @@ Create your package in `packages/<name>/` with the required `package.json` field
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "CHANGELOG.md",
-    "README.md"
-  ]
+  "files": ["dist", "CHANGELOG.md", "README.md"]
 }
 ```
 

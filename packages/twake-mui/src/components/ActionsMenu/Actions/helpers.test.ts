@@ -25,9 +25,9 @@ describe('makeActions', () => {
   it('should skip falsy actions', () => {
     const action = makeTestAction('first')
 
-    expect(toNames(makeActions([undefined, action, null, false, action]))).toEqual(
-      ['first', 'first']
-    )
+    expect(
+      toNames(makeActions([undefined, action, null, false, action]))
+    ).toEqual(['first', 'first'])
   })
 
   it('should key each action by its name', () => {
@@ -44,7 +44,13 @@ describe('makeActions', () => {
 
   it('should pass the options to every action', () => {
     const [actionObject] = makeActions(
-      [({ label }: { label: string }): Action => ({ name: 'a', label, Component })],
+      [
+        ({ label }: { label: string }): Action => ({
+          name: 'a',
+          label,
+          Component
+        })
+      ],
       { label: 'Label' }
     )
 

@@ -7,7 +7,7 @@ import '../src/utils.scss'
 
 const preview: Preview = {
   parameters: {
-    layout: 'fullscreen',
+    layout: 'fullscreen'
   },
 
   globalTypes: {
@@ -18,9 +18,9 @@ const preview: Preview = {
       toolbar: {
         icon: 'circlehollow',
         items: ['light', 'dark'],
-        showName: true,
-      },
-    },
+        showName: true
+      }
+    }
   },
 
   decorators: [
@@ -28,8 +28,8 @@ const preview: Preview = {
       <TwakeMuiThemeProvider mode={context.globals.theme}>
         <Story />
       </TwakeMuiThemeProvider>
-    ),
-  ],
+    )
+  ]
 }
 
 export default preview

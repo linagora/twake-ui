@@ -12,7 +12,10 @@ const meta: Meta<typeof Icon> = {
     icon: {
       control: { type: 'select' },
       options: iconNames,
-      mapping: allIcons as Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>>,
+      mapping: allIcons as Record<
+        string,
+        React.ComponentType<React.SVGProps<SVGSVGElement>>
+      >
     },
     size: { control: { type: 'range', min: 8, max: 96, step: 1 } },
     color: { control: { type: 'color' } },
@@ -25,8 +28,8 @@ const meta: Meta<typeof Icon> = {
   },
   args: {
     icon: 'Check',
-    size: 24,
-  },
+    size: 24
+  }
 }
 
 export default meta
@@ -43,5 +46,5 @@ export const Interactive: Story = {
     width: undefined,
     height: undefined,
     style: undefined
-  },
+  }
 }
