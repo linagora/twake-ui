@@ -30,6 +30,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
+          cache: 'npm'
       - name: Install dependencies
         run: npm ci
       - name: Lint commits
@@ -49,6 +50,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
+          cache: 'npm'
       - name: Install dependencies with React 18
         run: |
           for workspace in @linagora/twake-css @linagora/twake-icons @linagora/twake-mui; do
@@ -88,6 +90,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
       - name: Install dependencies
         run: npm ci
       - name: Build twake-icons (for type resolution)
