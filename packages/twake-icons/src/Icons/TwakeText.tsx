@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgTwakeText(props: SVGProps<SVGSVGElement>) {
+function SvgTwakeText({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 86 23"
+      ref={iconRef}
       {...props}
     >
       <path d="M6.495 5.381H.635V1.69h15.822v3.692h-5.86V22.2H6.495V5.38Z" />

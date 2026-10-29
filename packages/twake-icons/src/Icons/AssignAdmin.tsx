@@ -1,9 +1,14 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgAssignAdmin(props: SVGProps<SVGSVGElement>) {
+function SvgAssignAdmin({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" ref={iconRef} {...props}>
       <path d="M11.2 10.896a.896.896 0 1 0 0-1.792.896.896 0 0 0 0 1.792" />
       <path
         fillRule="evenodd"

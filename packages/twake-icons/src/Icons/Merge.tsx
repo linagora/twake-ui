@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgMerge(props: SVGProps<SVGSVGElement>) {
+function SvgMerge({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 14 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M2.031 16 .778 14.747l4.293-4.294a3.56 3.56 0 0 0 1.04-2.515V3.404L4.698 4.81 3.444 3.556 7 0l3.556 3.556-1.254 1.253L7.89 3.404v4.534c0 .942.373 1.849 1.04 2.515l4.293 4.294L11.97 16 7 11.031z" />
     </svg>
   );

@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgShieldClean(props: SVGProps<SVGSVGElement>) {
+function SvgShieldClean({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 15 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M6.432 15.635q-.138 0-.257-.03a3 3 0 0 1-.237-.069q-2.672-.89-4.266-3.285T0 7.085v-3.74q0-.495.287-.89a1.63 1.63 0 0 1 .742-.575L5.78.1q.277-.1.553-.1.278 0 .554.099l4.75 1.781q.455.178.743.574.287.396.287.89v3.741a8 8 0 0 1-.04.792 3.7 3.7 0 0 0-.752-.08 4 4 0 0 0-.831.08 8 8 0 0 0 .04-.792v-3.74l-4.75-1.781-4.75 1.78v3.741a7.5 7.5 0 0 0 1.345 4.355q1.346 1.96 3.404 2.612.416-.138.812-.336t.772-.456v1.86a5 5 0 0 1-.406.179 11 11 0 0 0-.564.238 3 3 0 0 1-.248.069q-.128.03-.267.03Zm3.74.08a.65.65 0 0 1-.474-.198.65.65 0 0 1-.198-.475v-2.613q0-.277.198-.475a.65.65 0 0 1 .475-.198h.119v-.791q0-.654.465-1.119t1.118-.465 1.118.465.465 1.119v.791h.12q.276 0 .474.198t.198.475v2.613a.65.65 0 0 1-.198.475.65.65 0 0 1-.475.198zm.911-3.959h1.584v-.791a.77.77 0 0 0-.228-.565.77.77 0 0 0-.564-.227.77.77 0 0 0-.564.227.77.77 0 0 0-.228.565z" />
     </svg>
   );

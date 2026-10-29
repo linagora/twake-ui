@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgMovementOut(props: SVGProps<SVGSVGElement>) {
+function SvgMovementOut({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 13" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 13"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M3.547 5.333 0 8.89l3.547 3.555V9.778h6.23V8h-6.23zM16 3.556 12.453 0v2.667h-6.23v1.777h6.23v2.667z" />
     </svg>
   );

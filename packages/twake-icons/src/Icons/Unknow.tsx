@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgUnknow(props: SVGProps<SVGSVGElement>) {
+function SvgUnknow({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 17" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 10 17"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M7.218 4.774q0-.906-.6-1.453t-1.59-.547a2.3 2.3 0 0 0-1.105.263q-.495.262-.853.768-.337.485-.916.558a1.2 1.2 0 0 1-1-.305 1 1 0 0 1-.326-.674 1.2 1.2 0 0 1 .2-.758 4.71 4.71 0 0 1 4-2.126q2.043 0 3.316 1.158 1.274 1.158 1.274 3.031 0 .947-.4 1.706-.4.757-1.474 1.79-.78.735-1.053 1.147a2.3 2.3 0 0 0-.358.936q-.084.506-.431.842a1.15 1.15 0 0 1-.832.337q-.485 0-.831-.326a1.07 1.07 0 0 1-.348-.81q0-.822.358-1.506.359-.684 1.2-1.442Q6.523 6.415 6.87 5.9q.348-.516.348-1.126M5.028 16.5q-.695 0-1.19-.495a1.62 1.62 0 0 1-.494-1.19q0-.694.495-1.189a1.62 1.62 0 0 1 1.19-.494q.694 0 1.189.494.494.495.494 1.19t-.494 1.19q-.495.494-1.19.494" />
     </svg>
   );

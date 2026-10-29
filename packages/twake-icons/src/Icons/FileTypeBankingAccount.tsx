@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgFileTypeBankingAccount(props: SVGProps<SVGSVGElement>) {
+function SvgFileTypeBankingAccount({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 15 17"
+      ref={iconRef}
       {...props}
     >
       <path

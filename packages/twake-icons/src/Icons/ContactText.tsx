@@ -1,17 +1,23 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgContactText(props: SVGProps<SVGSVGElement>) {
+function SvgContactText({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 117 22"
+      ref={iconRef}
       {...props}
     >
       <path
         fill="url(#contact-text_svg__a)"
-        d="M10.79 21.46q-3.016 0-5.499-1.419A10.66 10.66 0 0 1 1.42 16.14Q0 13.687 0 10.76 0 7.805 1.36 5.35a10.15 10.15 0 0 1 3.842-3.902Q7.656 0 10.79 0q2.513 0 4.316.798 1.832.768 3.251 2.454L15.43 5.794q-1.863-1.951-4.64-1.951-1.951 0-3.43.946A6.1 6.1 0 0 0 5.084 7.3q-.798 1.567-.798 3.459 0 1.891.798 3.458a6.36 6.36 0 0 0 2.306 2.483q1.507.915 3.488.916 2.897 0 4.73-2.01l3.014 2.572q-1.24 1.508-3.251 2.394-1.98.887-4.582.887"
+        d="M10.79 21.46q-3.016 0-5.499-1.419A10.66 10.66 0 0 1 1.42 16.14Q0 13.687 0 10.76q0-2.955 1.36-5.41a10.15 10.15 0 0 1 3.842-3.902Q7.656 0 10.79 0q2.513 0 4.316.798 1.832.768 3.251 2.454L15.43 5.794q-1.863-1.951-4.64-1.951-1.951 0-3.43.946A6.1 6.1 0 0 0 5.084 7.3q-.798 1.567-.798 3.459 0 1.891.798 3.458A6.36 6.36 0 0 0 7.39 16.7q1.507.915 3.488.916 2.897 0 4.73-2.01l3.014 2.572q-1.24 1.508-3.251 2.394-1.98.887-4.582.887"
       />
       <path
         fill="url(#contact-text_svg__b)"
@@ -19,7 +25,7 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
       />
       <path
         fill="url(#contact-text_svg__c)"
-        d="M36.7 5.705h3.931V7.95q1.212-2.6 4.7-2.6 1.655 0 2.985.797 1.33.77 2.1 2.217.768 1.42.768 3.31v9.4h-3.99v-8.424q0-1.92-.888-2.867-.886-.946-2.423-.946-1.36 0-2.277.976-.915.945-.916 2.837v8.425H36.7z"
+        d="M36.7 5.705h3.931V7.95q1.212-2.6 4.7-2.6 1.655 0 2.985.797 1.33.77 2.1 2.217.768 1.42.768 3.31v9.4h-3.99V12.65q0-1.92-.888-2.867-.886-.946-2.423-.946-1.36 0-2.277.976-.915.945-.916 2.837v8.425H36.7z"
       />
       <path
         fill="url(#contact-text_svg__d)"
@@ -50,8 +56,8 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
           y2={24.174}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF8EB7" />
-          <stop offset={1} stopColor="#FB2D9D" />
+          <stop stopColor="#ff8eb7" />
+          <stop offset={1} stopColor="#fb2d9d" />
         </linearGradient>
         <linearGradient
           id="contact-text_svg__b"
@@ -61,8 +67,8 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
           y2={24.174}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF8EB7" />
-          <stop offset={1} stopColor="#FB2D9D" />
+          <stop stopColor="#ff8eb7" />
+          <stop offset={1} stopColor="#fb2d9d" />
         </linearGradient>
         <linearGradient
           id="contact-text_svg__c"
@@ -72,8 +78,8 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
           y2={24.174}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF8EB7" />
-          <stop offset={1} stopColor="#FB2D9D" />
+          <stop stopColor="#ff8eb7" />
+          <stop offset={1} stopColor="#fb2d9d" />
         </linearGradient>
         <linearGradient
           id="contact-text_svg__d"
@@ -83,8 +89,8 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
           y2={24.174}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF8EB7" />
-          <stop offset={1} stopColor="#FB2D9D" />
+          <stop stopColor="#ff8eb7" />
+          <stop offset={1} stopColor="#fb2d9d" />
         </linearGradient>
         <linearGradient
           id="contact-text_svg__e"
@@ -94,8 +100,8 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
           y2={24.174}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF8EB7" />
-          <stop offset={1} stopColor="#FB2D9D" />
+          <stop stopColor="#ff8eb7" />
+          <stop offset={1} stopColor="#fb2d9d" />
         </linearGradient>
         <linearGradient
           id="contact-text_svg__f"
@@ -105,8 +111,8 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
           y2={24.174}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF8EB7" />
-          <stop offset={1} stopColor="#FB2D9D" />
+          <stop stopColor="#ff8eb7" />
+          <stop offset={1} stopColor="#fb2d9d" />
         </linearGradient>
         <linearGradient
           id="contact-text_svg__g"
@@ -116,8 +122,8 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
           y2={24.174}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF8EB7" />
-          <stop offset={1} stopColor="#FB2D9D" />
+          <stop stopColor="#ff8eb7" />
+          <stop offset={1} stopColor="#fb2d9d" />
         </linearGradient>
         <linearGradient
           id="contact-text_svg__h"
@@ -127,8 +133,8 @@ function SvgContactText(props: SVGProps<SVGSVGElement>) {
           y2={24.174}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FF8EB7" />
-          <stop offset={1} stopColor="#FB2D9D" />
+          <stop stopColor="#ff8eb7" />
+          <stop offset={1} stopColor="#fb2d9d" />
         </linearGradient>
       </defs>
     </svg>

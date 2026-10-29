@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgHand(props: SVGProps<SVGSVGElement>) {
+function SvgHand({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 13 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M12.413 4.667a1.667 1.667 0 0 0-2-1.634v-.366A1.667 1.667 0 0 0 8.3 1.06 1.67 1.67 0 0 0 6.746 0c-.82 0-1.5.593-1.64 1.373A1.667 1.667 0 0 0 3.08 3v3.927a1.94 1.94 0 0 0-.813-.44l-.513-.14a1.315 1.315 0 0 0-1.46.553c-.253.38-.267.873-.1 1.3L1.9 12.487A5.57 5.57 0 0 0 7.08 16a5.33 5.33 0 0 0 5.333-5.333zm-1.333 6c0 2.206-1.794 4-4 4-1.74 0-3.3-1.06-3.94-2.674l-1.734-4.36.354.094c.306.08.553.306.666.6L3.08 10h1.333V3a.33.33 0 0 1 .333-.333A.33.33 0 0 1 5.08 3v5h1.333V1.667a.33.33 0 0 1 .333-.334.33.33 0 0 1 .334.334V8h1.333V2.667a.33.33 0 0 1 .333-.334.33.33 0 0 1 .334.334V8h1.333V4.667a.33.33 0 0 1 .333-.334.33.33 0 0 1 .334.334z" />
     </svg>
   );

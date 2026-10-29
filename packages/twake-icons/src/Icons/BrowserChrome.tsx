@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgBrowserChrome(props: SVGProps<SVGSVGElement>) {
+function SvgBrowserChrome({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path
         fillRule="evenodd"
         d="m4.036 6.978-2.29-3.966A7.99 7.99 0 0 1 8 .001a8 8 0 0 1 6.883 3.921H8.356a4.1 4.1 0 0 0-4.32 3.055zm6.828-1.9h4.585a8 8 0 0 1-7.359 10.92l3.273-5.665a4.08 4.08 0 0 0-.498-5.254zm-5.77 2.923A2.91 2.91 0 0 1 8 5.094a2.91 2.91 0 0 1 2.906 2.907A2.91 2.91 0 0 1 8 10.907 2.91 2.91 0 0 1 5.094 8zm4.003 3.944-2.29 3.967a8.002 8.002 0 0 1-5.78-11.834l3.266 5.657a4.1 4.1 0 0 0 4.804 2.21"

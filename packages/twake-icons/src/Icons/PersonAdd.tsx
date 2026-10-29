@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgPersonAdd(props: SVGProps<SVGSVGElement>) {
+function SvgPersonAdd({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 13" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 13"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M12.768 5.398h-.905a.75.75 0 0 1-.553-.222.75.75 0 0 1-.223-.55.76.76 0 0 1 .223-.554.75.75 0 0 1 .553-.226h.905v-.904q0-.33.221-.553a.75.75 0 0 1 .55-.223.76.76 0 0 1 .555.223q.226.223.226.553v.904h.904q.33 0 .553.222a.75.75 0 0 1 .223.55.76.76 0 0 1-.223.554.75.75 0 0 1-.553.226h-.904v.905a.75.75 0 0 1-.222.552.75.75 0 0 1-.55.224.76.76 0 0 1-.554-.224.75.75 0 0 1-.226-.552zm-6.706.825q-1.302 0-2.208-.906t-.906-2.208.906-2.205Q4.76-.001 6.062 0 7.363 0 8.27.904q.906.903.906 2.205T8.27 5.317t-2.208.906M0 10.753v-.36q0-.574.281-1.055.282-.48.774-.766 1.14-.66 2.409-1.013a9.7 9.7 0 0 1 2.598-.353q1.34 0 2.607.35 1.269.35 2.4 1.01.492.287.773.765.282.48.282 1.061v.36q0 .707-.497 1.203a1.64 1.64 0 0 1-1.203.497h-8.73q-.707 0-1.2-.497A1.64 1.64 0 0 1 0 10.753" />
     </svg>
   );

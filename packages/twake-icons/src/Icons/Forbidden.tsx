@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgForbidden(props: SVGProps<SVGSVGElement>) {
+function SvgForbidden({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8M1.6 8c0-3.536 2.864-6.4 6.4-6.4 1.48 0 2.84.504 3.92 1.352L2.952 11.92A6.32 6.32 0 0 1 1.6 8M8 14.4c-1.48 0-2.84-.504-3.92-1.352l8.968-8.968A6.32 6.32 0 0 1 14.4 8c0 3.536-2.864 6.4-6.4 6.4" />
     </svg>
   );

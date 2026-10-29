@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgSharings(props: SVGProps<SVGSVGElement>) {
+function SvgSharings({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 15 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M12.048 11.31a2.34 2.34 0 0 0-1.574.618L4.747 8.594c.04-.184.072-.37.072-.562a2.6 2.6 0 0 0-.072-.562l5.663-3.301a2.4 2.4 0 0 0 1.638.65 2.406 2.406 0 0 0 2.41-2.41A2.406 2.406 0 0 0 12.048 0a2.406 2.406 0 0 0-2.41 2.41c0 .192.033.377.073.562L4.048 6.273a2.4 2.4 0 0 0-1.638-.65A2.406 2.406 0 0 0 0 8.032a2.406 2.406 0 0 0 2.41 2.409 2.4 2.4 0 0 0 1.638-.65l5.72 3.34q-.063.256-.065.523A2.35 2.35 0 0 0 12.048 16a2.35 2.35 0 0 0 2.346-2.345 2.35 2.35 0 0 0-2.346-2.346Zm0-9.704c.442 0 .803.362.803.804a.806.806 0 0 1-.803.803.806.806 0 0 1-.803-.803c0-.442.361-.804.803-.804M2.41 8.836a.806.806 0 0 1-.804-.804c0-.442.362-.803.804-.803.441 0 .803.361.803.803a.806.806 0 0 1-.803.803Zm9.638 5.638a.806.806 0 0 1-.803-.803c0-.442.361-.803.803-.803s.803.36.803.803a.806.806 0 0 1-.803.803" />
     </svg>
   );

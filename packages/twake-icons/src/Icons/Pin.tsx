@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgPin(props: SVGProps<SVGSVGElement>) {
+function SvgPin({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 12 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M7.2 1.6v4c0 .896.296 1.728.8 2.4H3.2c.52-.688.8-1.52.8-2.4v-4zM9.6 0h-8C1.16 0 .8.36.8.8s.36.8.8.8h.8v4C2.4 6.928 1.328 8 0 8v1.6h4.776v5.6l.8.8.8-.8V9.6H11.2V8a2.397 2.397 0 0 1-2.4-2.4v-4h.8c.44 0 .8-.36.8-.8s-.36-.8-.8-.8" />
     </svg>
   );

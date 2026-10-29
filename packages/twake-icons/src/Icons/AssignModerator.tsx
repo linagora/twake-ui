@@ -1,9 +1,14 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgAssignModerator(props: SVGProps<SVGSVGElement>) {
+function SvgAssignModerator({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" ref={iconRef} {...props}>
       <path d="M1.6 7.272v-3.76l4.8-1.8 4.8 1.8v2.952c.568.08 1.104.248 1.6.48V2.4L6.4 0 0 2.4v4.872C0 11.312 2.728 15.08 6.4 16c.024-.008.04-.016.064-.016a5.66 5.66 0 0 1-1.4-2.272C3.008 12.424 1.6 9.936 1.6 7.272" />
       <path d="M10.4 8c-2.208 0-4 1.792-4 4s1.792 4 4 4 4-1.792 4-4-1.792-4-4-4m2.4 4.4h-2v2H10v-2H8v-.8h2v-2h.8v2h2z" />
     </svg>

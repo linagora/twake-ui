@@ -1,17 +1,23 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgMailText(props: SVGProps<SVGSVGElement>) {
+function SvgMailText({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 54 22"
+      ref={iconRef}
       {...props}
     >
       <path
         fill="url(#mail-text_svg__a)"
-        d="M0 .866h5.026l4.188 8.925q1.761 3.726 2.252 5.401.404-1.56 2.225-5.4L17.907.865h4.853v20.218h-3.957v-8.173q0-1.993.057-3.235.058-1.242.232-2.629l-6.73 14.037h-1.964L3.668 7.047q.174 1.386.231 2.629.058 1.242.058 3.235v8.173H0z"
+        d="M0 .866h5.026l4.188 8.925q1.761 3.726 2.252 5.401.404-1.56 2.225-5.4L17.907.865h4.853v20.218h-3.957V12.91q0-1.993.057-3.235.058-1.242.232-2.629l-6.73 14.037h-1.964L3.668 7.047q.174 1.386.231 2.629.058 1.242.058 3.235v8.173H0z"
       />
       <path
         fill="url(#mail-text_svg__b)"
@@ -31,8 +37,8 @@ function SvgMailText(props: SVGProps<SVGSVGElement>) {
           y2={21.435}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#57B9FF" />
-          <stop offset={1} stopColor="#0B84FF" />
+          <stop stopColor="#57b9ff" />
+          <stop offset={1} stopColor="#0b84ff" />
         </linearGradient>
         <linearGradient
           id="mail-text_svg__b"
@@ -42,8 +48,8 @@ function SvgMailText(props: SVGProps<SVGSVGElement>) {
           y2={21.435}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#57B9FF" />
-          <stop offset={1} stopColor="#0B84FF" />
+          <stop stopColor="#57b9ff" />
+          <stop offset={1} stopColor="#0b84ff" />
         </linearGradient>
         <linearGradient
           id="mail-text_svg__c"
@@ -53,8 +59,8 @@ function SvgMailText(props: SVGProps<SVGSVGElement>) {
           y2={21.435}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#57B9FF" />
-          <stop offset={1} stopColor="#0B84FF" />
+          <stop stopColor="#57b9ff" />
+          <stop offset={1} stopColor="#0b84ff" />
         </linearGradient>
         <linearGradient
           id="mail-text_svg__d"
@@ -64,8 +70,8 @@ function SvgMailText(props: SVGProps<SVGSVGElement>) {
           y2={21.435}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#57B9FF" />
-          <stop offset={1} stopColor="#0B84FF" />
+          <stop stopColor="#57b9ff" />
+          <stop offset={1} stopColor="#0b84ff" />
         </linearGradient>
       </defs>
     </svg>

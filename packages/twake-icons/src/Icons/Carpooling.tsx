@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgCarpooling(props: SVGProps<SVGSVGElement>) {
+function SvgCarpooling({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path
         fillRule="evenodd"
         d="M16 10.25v.005-3.297a1 1 0 0 0-.072-.33l-2-5-.051-.11A1 1 0 0 0 13 1H3l-.121.007a1 1 0 0 0-.807.622l-2 5-.04.119a1 1 0 0 0-.033.239L0 13.5l.007.145A1.5 1.5 0 0 0 1.5 15c.83 0 1.5-.67 1.5-1.5V13h3.73q.174-.252.376-.49c.233-.27.602-.648 1.091-.958A4.5 4.5 0 0 1 8 10.25C8 8.13 9.576 6 12 6s4 2.13 4 4.25M12 6H2.477l1.2-3h8.647l1.2 3zM3.5 8C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11 5 10.33 5 9.5 4.33 8 3.5 8"

@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgGraphCircle(props: SVGProps<SVGSVGElement>) {
+function SvgGraphCircle({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M8.8 0v2.424c2.712.392 4.8 2.712 4.8 5.536 0 .72-.144 1.4-.384 2.032l2.08 1.224A7.9 7.9 0 0 0 16 7.96C16 3.816 12.84.4 8.8 0M8 13.56a5.596 5.596 0 0 1-5.6-5.6c0-2.824 2.088-5.144 4.8-5.536V0A7.993 7.993 0 0 0 0 7.96c0 4.416 3.576 8 7.992 8a7.98 7.98 0 0 0 6.448-3.272l-2.08-1.224A5.56 5.56 0 0 1 8 13.56" />
     </svg>
   );

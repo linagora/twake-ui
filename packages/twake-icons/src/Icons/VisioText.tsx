@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgVisioText(props: SVGProps<SVGSVGElement>) {
+function SvgVisioText({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 62 22"
+      ref={iconRef}
       {...props}
     >
       <path
@@ -38,8 +44,8 @@ function SvgVisioText(props: SVGProps<SVGSVGElement>) {
           y2={29.617}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#77CC12" />
-          <stop offset={1} stopColor="#5AC840" />
+          <stop stopColor="#77cc12" />
+          <stop offset={1} stopColor="#5ac840" />
         </linearGradient>
         <linearGradient
           id="visio-text_svg__b"
@@ -49,8 +55,8 @@ function SvgVisioText(props: SVGProps<SVGSVGElement>) {
           y2={29.617}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#77CC12" />
-          <stop offset={1} stopColor="#5AC840" />
+          <stop stopColor="#77cc12" />
+          <stop offset={1} stopColor="#5ac840" />
         </linearGradient>
         <linearGradient
           id="visio-text_svg__c"
@@ -60,8 +66,8 @@ function SvgVisioText(props: SVGProps<SVGSVGElement>) {
           y2={29.617}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#77CC12" />
-          <stop offset={1} stopColor="#5AC840" />
+          <stop stopColor="#77cc12" />
+          <stop offset={1} stopColor="#5ac840" />
         </linearGradient>
         <linearGradient
           id="visio-text_svg__d"
@@ -71,8 +77,8 @@ function SvgVisioText(props: SVGProps<SVGSVGElement>) {
           y2={29.617}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#77CC12" />
-          <stop offset={1} stopColor="#5AC840" />
+          <stop stopColor="#77cc12" />
+          <stop offset={1} stopColor="#5ac840" />
         </linearGradient>
         <linearGradient
           id="visio-text_svg__e"
@@ -82,8 +88,8 @@ function SvgVisioText(props: SVGProps<SVGSVGElement>) {
           y2={29.617}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#77CC12" />
-          <stop offset={1} stopColor="#5AC840" />
+          <stop stopColor="#77cc12" />
+          <stop offset={1} stopColor="#5ac840" />
         </linearGradient>
       </defs>
     </svg>

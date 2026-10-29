@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgFileTypeSharedDrive(props: SVGProps<SVGSVGElement>) {
+function SvgFileTypeSharedDrive({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 96 78"
+      ref={iconRef}
       {...props}
     >
       <path
@@ -16,7 +22,7 @@ function SvgFileTypeSharedDrive(props: SVGProps<SVGSVGElement>) {
         clipRule="evenodd"
       />
       <path
-        fill="#8DBCFF"
+        fill="#8dbcff"
         d="M56.673 62.55H39.176c-4.772 0-8.749-3.976-8.749-8.748V36.305c0-4.772 3.977-8.748 8.749-8.748h3.976c.955 0 1.591.636 1.591 1.59s-.636 1.59-1.59 1.59h-3.977c-3.022 0-5.567 2.546-5.567 5.568v17.497c0 3.022 2.545 5.567 5.567 5.567h17.497c3.022 0 5.567-2.545 5.567-5.567v-2.386c0-.955.636-1.59 1.59-1.59s1.591.635 1.591 1.59v2.386c0 4.772-3.977 8.748-8.748 8.748M42.039 51.416c-.636 0-1.273-.477-1.59-1.114-.319-1.113-.478-2.386-.478-3.658 0-6.999 5.726-12.725 12.725-12.725h3.181v-4.772c0-.636.319-1.272.955-1.431.636-.319 1.272-.16 1.75.318l9.543 9.543c.636.637.636 1.591 0 2.227l-9.544 9.544c-.477.477-1.113.636-1.75.318-.636-.159-.954-.795-.954-1.431v-4.772h-3.18c-4.296 0-7.954 2.704-9.227 6.84-.158.636-.795 1.113-1.431 1.113"
       />
       <path
@@ -32,10 +38,10 @@ function SvgFileTypeSharedDrive(props: SVGProps<SVGSVGElement>) {
           y2={94.5}
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.044} stopColor="#1D7AFF" />
-          <stop offset={0.13} stopColor="#7CB2FF" />
-          <stop offset={0.617} stopColor="#76AFFF" />
-          <stop offset={1} stopColor="#4290FF" />
+          <stop offset={0.044} stopColor="#1d7aff" />
+          <stop offset={0.13} stopColor="#7cb2ff" />
+          <stop offset={0.617} stopColor="#76afff" />
+          <stop offset={1} stopColor="#4290ff" />
         </linearGradient>
         <linearGradient
           id="file-type-shared-drive_svg__b"
@@ -45,8 +51,8 @@ function SvgFileTypeSharedDrive(props: SVGProps<SVGSVGElement>) {
           y2={68.954}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#76AFFF" />
-          <stop offset={0.781} stopColor="#1D7AFF" />
+          <stop stopColor="#76afff" />
+          <stop offset={0.781} stopColor="#1d7aff" />
         </linearGradient>
       </defs>
     </svg>

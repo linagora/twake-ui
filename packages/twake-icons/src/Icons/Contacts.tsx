@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgContacts(props: SVGProps<SVGSVGElement>) {
+function SvgContacts({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 32 32"
+      ref={iconRef}
       {...props}
     >
       <g filter="url(#contacts_svg__a)">
@@ -88,8 +94,8 @@ function SvgContacts(props: SVGProps<SVGSVGElement>) {
           y2={1.958}
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.23} stopColor="#F74EA9" />
-          <stop offset={1} stopColor="#FFB2A8" />
+          <stop offset={0.23} stopColor="#f74ea9" />
+          <stop offset={1} stopColor="#ffb2a8" />
         </linearGradient>
         <clipPath id="contacts_svg__b">
           <path fill="#fff" d="M0 0h31.983v31.983H0z" />

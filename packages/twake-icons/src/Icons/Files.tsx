@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgFiles(props: SVGProps<SVGSVGElement>) {
+function SvgFiles({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 16 13"
+      ref={iconRef}
       {...props}
     >
       <path
@@ -33,10 +39,10 @@ function SvgFiles(props: SVGProps<SVGSVGElement>) {
           y2={15.75}
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.044} stopColor="#1D7AFF" />
-          <stop offset={0.13} stopColor="#7CB2FF" />
-          <stop offset={0.617} stopColor="#76AFFF" />
-          <stop offset={1} stopColor="#4290FF" />
+          <stop offset={0.044} stopColor="#1d7aff" />
+          <stop offset={0.13} stopColor="#7cb2ff" />
+          <stop offset={0.617} stopColor="#76afff" />
+          <stop offset={1} stopColor="#4290ff" />
         </linearGradient>
       </defs>
     </svg>

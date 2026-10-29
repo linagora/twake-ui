@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgHomePermissions(props: SVGProps<SVGSVGElement>) {
+function SvgHomePermissions({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 48 48"
+      ref={iconRef}
+      {...props}
+    >
       <g fill="none" fillRule="evenodd">
         <path
           fill="#5d6165"

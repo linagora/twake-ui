@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgKeychain(props: SVGProps<SVGSVGElement>) {
+function SvgKeychain({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 10" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 17 10"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M4.674 6.391a1.34 1.34 0 0 1-.983-.408A1.34 1.34 0 0 1 3.283 5q0-.574.408-.983.409-.408.983-.408c.574 0 .71.136.983.408q.408.409.408.983c0 .574-.136.71-.408.983a1.34 1.34 0 0 1-.983.408m0 2.783q-1.74 0-2.957-1.218Q.5 6.74.5 5t1.217-2.957T4.674.826a4 4 0 0 1 2.113.574 4.3 4.3 0 0 1 1.504 1.513h6.122L16.5 5l-3.13 3.13-1.392-1.043-1.391 1.043-1.478-1.043H8.29A4.3 4.3 0 0 1 6.787 8.6a4 4 0 0 1-2.113.574m0-1.391q.974 0 1.713-.592.739-.59.983-1.495h2.173l1.01.713 1.425-1.061 1.235.956L14.517 5l-.695-.696H7.37a2.8 2.8 0 0 0-.983-1.495 2.66 2.66 0 0 0-1.713-.592 2.68 2.68 0 0 0-1.965.818A2.68 2.68 0 0 0 1.89 5q0 1.147.818 1.965a2.68 2.68 0 0 0 1.965.818Z" />
     </svg>
   );

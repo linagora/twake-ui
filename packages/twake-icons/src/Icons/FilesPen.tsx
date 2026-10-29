@@ -1,17 +1,27 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgFilesPen(props: SVGProps<SVGSVGElement>) {
+function SvgFilesPen({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 15 16"
+      ref={iconRef}
+      {...props}
+    >
       <path
-        fill="#E8EDF3"
-        stroke="#4F5B69"
+        fill="#e8edf3"
+        stroke="#4f5b69"
         strokeWidth={0.8}
         d="M3.2.4h5.834L14 5.366V12.8a2.8 2.8 0 0 1-2.8 2.8h-8a2.8 2.8 0 0 1-2.8-2.8V3.2A2.8 2.8 0 0 1 3.2.4Z"
       />
       <path
-        fill="#4F5B69"
+        fill="#4f5b69"
         d="M14.4 5.4 9 0v2.793C9 4.233 10.128 5.4 11.52 5.4zM4 13.25v-1.476L8.583 7.2a.8.8 0 0 1 .23-.148.72.72 0 0 1 .534 0 .6.6 0 0 1 .226.156l.477.486q.104.096.152.226a.75.75 0 0 1 0 .525.65.65 0 0 1-.152.23L5.476 13.25zm5.07-4.583.486-.486-.487-.487-.486.487z"
       />
     </svg>

@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgChess(props: SVGProps<SVGSVGElement>) {
+function SvgChess({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M2.4 14.4h11.2v-1.6H2.4zm2.64-3.2h5.92L10.5 8h-5zM.8 16v-3.2q0-.66.47-1.13a1.54 1.54 0 0 1 1.13-.47h1.04L3.88 8H1.6V6.4h12.8V8h-2.28l.44 3.2h1.04q.66 0 1.13.47t.47 1.13V16zm3.02-9.6L2.4 0q.66.5 1.36.94t1.54.44q.8 0 1.47-.41A6.6 6.6 0 0 0 8 0q.56.56 1.23.97t1.47.41a2.84 2.84 0 0 0 1.54-.44Q12.94.5 13.6 0l-1.42 6.4h-1.64l.78-3.46-.15.02q-.15.02-.47.02-.72 0-1.41-.22A5.1 5.1 0 0 1 8 2.14a4.9 4.9 0 0 1-1.25.62q-.67.22-1.37.22a5 5 0 0 1-.53-.02l-.17-.02.78 3.46z" />
     </svg>
   );

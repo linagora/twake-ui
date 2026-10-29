@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgInfoOutlined(props: SVGProps<SVGSVGElement>) {
+function SvgInfoOutlined({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M7.2 4h1.6v1.6H7.2zm0 3.2h1.6V12H7.2zM8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8m0 14.4A6.41 6.41 0 0 1 1.6 8c0-3.528 2.872-6.4 6.4-6.4s6.4 2.872 6.4 6.4-2.872 6.4-6.4 6.4" />
     </svg>
   );

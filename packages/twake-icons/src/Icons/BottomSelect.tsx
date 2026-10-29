@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgBottomSelect(props: SVGProps<SVGSVGElement>) {
+function SvgBottomSelect({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 10"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M8 5.991 13.596.395Q13.991 0 14.601 0t1.004.395c.394.395.395.598.395 1.004q0 .61-.395 1.005l-6.6 6.6a1.3 1.3 0 0 1-.467.305q-.251.09-.538.09-.286 0-.538-.09a1.3 1.3 0 0 1-.466-.305l-6.601-6.6Q0 2.009 0 1.399T.395.395C.79.001.993 0 1.399 0q.61 0 1.005.395z" />
     </svg>
   );

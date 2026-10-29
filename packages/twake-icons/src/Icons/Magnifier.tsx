@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgMagnifier(props: SVGProps<SVGSVGElement>) {
+function SvgMagnifier({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 17 17"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M12.18 10.808h-.723l-.256-.247a5.92 5.92 0 0 0 1.436-3.87 5.946 5.946 0 1 0-5.946 5.947 5.92 5.92 0 0 0 3.87-1.437l.247.256v.723l4.574 4.565 1.363-1.363zm-5.489 0a4.11 4.11 0 0 1-4.116-4.117A4.11 4.11 0 0 1 6.69 2.575a4.11 4.11 0 0 1 4.117 4.116 4.11 4.11 0 0 1-4.117 4.117Z" />
     </svg>
   );
