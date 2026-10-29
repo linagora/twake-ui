@@ -40,7 +40,7 @@
     "build": "tsc && node scripts/copyAssets.mjs",
     "build:doc": "storybook build --output-dir storybook-static",
     "start": "tsc --watch",
-    "test": "vitest run --project unit",
+    "test": "vitest run -c vitest.unit.config.ts",
     "clean": "rm -rf dist",
     "doc": "storybook dev -p 6006",
     "screenshots": "vitest run"

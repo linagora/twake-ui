@@ -17,13 +17,7 @@ export default defineConfig({
   },
   test: {
     projects: [
-      {
-        test: {
-          name: 'unit',
-          include: ['test/**/*.test.ts', 'src/**/*.test.{ts,tsx}'],
-          environment: 'node'
-        }
-      },
+      './vitest.unit.config.ts',
       {
         extends: true,
         plugins: [
