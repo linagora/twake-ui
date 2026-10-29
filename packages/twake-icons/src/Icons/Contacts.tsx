@@ -3,17 +3,98 @@ import * as React from "react";
 import type { SVGProps } from "react";
 function SvgContacts(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
-      <g fill="none" fillRule="evenodd">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 32 32"
+      {...props}
+    >
+      <g filter="url(#contacts_svg__a)">
         <path
-          fill="#d6d8da"
-          d="M48 40c0 1.105-.902 2-2.009 2H36v-4.501C36 36.67 35.336 36 34.502 36h-1.504c-.827 0-1.498.665-1.498 1.499V42h-15v-4.501c0-.828-.664-1.499-1.498-1.499h-1.504c-.827 0-1.498.665-1.498 1.499V42H2.009A2 2 0 0 1 0 40V8a2 2 0 0 1 2.001-2H46c1.104 0 2 .89 2 2z"
-        />
-        <path
-          fill="#5d6165"
-          d="M25.5 13.5h9V15h-9zm0 4.5H42v1.5H25.5zm0 4.5H42V24H25.5zm0 4.5H42v1.5H25.5zm-12-4.875c-2.485 0-4.5-2.267-4.5-5.063C9 14.268 11.015 12 13.5 12s4.5 2.267 4.5 5.063-2.015 5.062-4.5 5.062m-9 5.625c0-1.125 2.25-4.5 4.5-4.5s1.125 1.125 4.5 1.125 2.25-1.125 4.5-1.125 4.5 3.375 4.5 4.5 0 2.25-1.125 2.25H5.625C4.5 30 4.5 28.875 4.5 27.75"
+          fill="#fff"
+          d="M15.992 5.874c5.857 0 10.606 4.102 10.606 9.16 0 5.06-4.749 9.16-10.606 9.16a12.1 12.1 0 0 1-3.432-.49q-1.805 1.404-5.596 2.356a.485.485 0 0 1-.541-.706l.18-.329q1.26-2.316 1.572-3.8c-1.733-1.63-2.79-3.804-2.79-6.19 0-5.06 4.749-9.16 10.607-9.16Z"
         />
       </g>
+      <g clipPath="url(#contacts_svg__b)">
+        <rect width={32} height={32} fill="url(#contacts_svg__c)" rx={10} />
+        <g fill="#fff" filter="url(#contacts_svg__d)">
+          <path d="M15.99 16.016a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9m8.85 6.028c-.68-1.907-2.795-4.028-8.85-4.028s-8.171 2.122-8.85 4.029c-.599 1.682 1.081 2.971 2.867 2.971h11.965c1.786 0 3.466-1.289 2.867-2.971Z" />
+        </g>
+      </g>
+      <defs>
+        <filter
+          id="contacts_svg__a"
+          width={24.477}
+          height={23.463}
+          x={3.753}
+          y={4.569}
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood floodOpacity={0} result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            result="hardAlpha"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          />
+          <feOffset dy={0.326} />
+          <feGaussianBlur stdDeviation={0.816} />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+          <feBlend
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_3096_936"
+          />
+          <feBlend
+            in="SourceGraphic"
+            in2="effect1_dropShadow_3096_936"
+            result="shape"
+          />
+        </filter>
+        <filter
+          id="contacts_svg__d"
+          width={23.66}
+          height={23.714}
+          x={4.16}
+          y={4.731}
+          colorInterpolationFilters="sRGB"
+          filterUnits="userSpaceOnUse"
+        >
+          <feFlood floodOpacity={0} result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            result="hardAlpha"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          />
+          <feOffset dy={0.571} />
+          <feGaussianBlur stdDeviation={1.429} />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+          <feBlend
+            in2="BackgroundImageFix"
+            result="effect1_dropShadow_3096_936"
+          />
+          <feBlend
+            in="SourceGraphic"
+            in2="effect1_dropShadow_3096_936"
+            result="shape"
+          />
+        </filter>
+        <linearGradient
+          id="contacts_svg__c"
+          x1={5.548}
+          x2={30.188}
+          y1={29.127}
+          y2={1.958}
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset={0.23} stopColor="#F74EA9" />
+          <stop offset={1} stopColor="#FFB2A8" />
+        </linearGradient>
+        <clipPath id="contacts_svg__b">
+          <path fill="#fff" d="M0 0h31.983v31.983H0z" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }

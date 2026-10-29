@@ -3,17 +3,8 @@ import * as React from "react";
 import type { SVGProps } from "react";
 function SvgContract(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
-      <g fill="none" fillRule="evenodd">
-        <path
-          fill="#d6d8da"
-          d="M3.002 43A2 2 0 0 1 1 41.003V2.997C1 1.894 1.89 1 2.991 1H23l10 10v32z"
-        />
-        <path
-          fill="#5d6165"
-          d="m23 1 10 10h-8c-1.113 0-2-.895-2-2zm3.931 45.452c-1.066.305-1.686-.306-1.38-1.38L27 40.005l13.59-13.592a2 2 0 0 1 2.831.007l2.162 2.162c.784.784.784 2.054.008 2.83L32 45.005l-5.069 1.448ZM16 38h10v2H16z"
-        />
-      </g>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+      <path d="M.889 3.556H15.11v1.777H.89V3.556Zm0 5.333H15.11V7.11H.89v1.78Zm0 3.555H7.11v-1.777H.89zm0 3.556H7.11v-1.778H.89zm10.142-2.516-1.253-1.262-1.254 1.254L11.031 16l4.08-4.071-1.262-1.262zM.89 0v1.778h14.22V0z" />
     </svg>
   );
 }

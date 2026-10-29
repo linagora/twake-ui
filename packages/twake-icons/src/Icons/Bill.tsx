@@ -3,21 +3,8 @@ import * as React from "react";
 import type { SVGProps } from "react";
 function SvgBill(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" {...props}>
-      <g fill="none" fillRule="evenodd">
-        <path
-          fill="#d6d8da"
-          d="M9 47c-1.105 0-2-.898-2-2.006V3.006C7 1.898 7.89 1 8.991 1H29l12 12v32c0 1.105-.892 2-2 2z"
-        />
-        <path fill="#5d6165" d="M29 1v9.991A2.01 2.01 0 0 0 31.009 13H41z" />
-        <path
-          stroke="#5d6165"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M35 41H13V17h22zM13 22h22m-22 6h22m-22 6h22M20 17v24"
-        />
-      </g>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+      <path d="M14 1.2 12.8 0l-1.2 1.2L10.4 0 9.2 1.2 8 0 6.8 1.2 5.6 0 4.4 1.2 3.2 0 2 1.2.8 0v16L2 14.8 3.2 16l1.2-1.2L5.6 16l1.2-1.2L8 16l1.2-1.2 1.2 1.2 1.2-1.2 1.2 1.2 1.2-1.2 1.2 1.2V0zm-.4 12.472H2.4V2.328h11.2zM3.2 10.4h9.6V12H3.2zm0-3.2h9.6v1.6H3.2zm0-3.2h9.6v1.6H3.2z" />
     </svg>
   );
 }
