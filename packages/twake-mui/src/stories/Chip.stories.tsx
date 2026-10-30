@@ -2,6 +2,7 @@
 import { Avatar, Grid, Stack, Typography, IconButton } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+import { expect } from 'storybook/test'
 
 import { Icon, FileOutline, Openwith, Right } from '@linagora/twake-icons'
 
@@ -26,7 +27,7 @@ const meta: Meta<typeof Chip> = {
     },
     variant: {
       control: 'select',
-      options: ['filled', 'outlined']
+      options: ['filled', 'outlined', 'ghost']
     },
     disabled: {
       control: 'boolean'
@@ -62,7 +63,7 @@ export const Screenshot: Story = {
       'warning',
       'info'
     ] as const
-    const variants = ['filled', 'outlined'] as const
+    const variants = ['filled', 'outlined', 'ghost'] as const
     const squareProps = [false, true] as const
     const sizeProps = ['small', 'medium'] as const
 
@@ -88,7 +89,7 @@ export const Screenshot: Story = {
                     </Typography>
                     <Grid container spacing={4}>
                       {variants.map(variant => (
-                        <Grid key={variant} size={{ xs: 12, sm: 6 }}>
+                        <Grid key={variant} size={{ xs: 12, sm: 4 }}>
                           <Stack spacing={2}>
                             <Typography
                               variant="h6"
@@ -259,5 +260,40 @@ export const Screenshot: Story = {
         ))}
       </Stack>
     )
+  }
+}
+
+// The delete icon keeps the chip colour while hovered or pressed. Synthetic
+// events do not trigger :hover, so the play reads the winning CSS rule.
+export const GhostDeleteIconHover: Story = {
+  tags: ['argos'],
+  render: () => (
+    <Chip
+      variant="ghost"
+      color="primary"
+      label="last 7 days"
+      onDelete={() => console.info('delete')}
+      data-testid="ghost-chip"
+    />
+  ),
+  play: async ({ canvas }) => {
+    const chip = canvas.getByTestId('ghost-chip')
+    const chipClass = [...chip.classList].find(name => name.startsWith('css-'))
+    const rules = [...document.styleSheets].flatMap(sheet => {
+      try {
+        return [...sheet.cssRules] as CSSStyleRule[]
+      } catch {
+        // Cross-origin font sheets cannot be read
+        return []
+      }
+    })
+    for (const state of ['hover', 'active']) {
+      const matching = rules.filter(rule =>
+        rule.selectorText?.includes(
+          `.${chipClass} .MuiChip-deleteIcon:${state}`
+        )
+      )
+      await expect(matching.at(-1)?.style.color).toBe('inherit')
+    }
   }
 }
