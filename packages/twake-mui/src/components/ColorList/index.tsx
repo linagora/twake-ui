@@ -33,6 +33,8 @@ export interface ColorListProps extends Omit<
   /** Defaults to `medium` on mobile and `small` otherwise */
   size?: ColorListSize
   selectedColor?: string
+  /** Hexadecimal colors drawn after `COLORS`, those already in it left out */
+  extraColors?: readonly string[]
   /** Accessible name of a color. Defaults to its hexadecimal code */
   getColorLabel?: (color: string) => string
   customColorProps?: {
@@ -48,6 +50,7 @@ export interface ColorListProps extends Omit<
 const ColorList: React.FC<ColorListProps> = ({
   size,
   selectedColor,
+  extraColors = [],
   getColorLabel,
   customColorProps,
   onClick,
@@ -55,13 +58,16 @@ const ColorList: React.FC<ColorListProps> = ({
 }) => {
   const { enabled: isCustomEnabled, ...customButtonProps } =
     customColorProps ?? {}
+  const colors = [
+    ...new Set([...COLORS, ...extraColors.map(color => color.toUpperCase())])
+  ]
   const { isMobile } = useBreakpoints()
   const { avatar, icon, cols, gap } =
     sizes[size ?? (isMobile ? 'medium' : 'small')]
 
   return (
     <ColorListRoot cols={cols} rowHeight={avatar} gap={gap} {...props}>
-      {COLORS.map(color => (
+      {colors.map(color => (
         <ImageListItem key={color}>
           <ButtonBase
             component="div"

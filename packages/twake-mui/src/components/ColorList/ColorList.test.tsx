@@ -4,6 +4,7 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
+import { COLORS } from './helpers'
 import ColorList, { ColorListProps } from './index'
 import { theme } from '../../lib/theme'
 
@@ -60,5 +61,22 @@ describe('ColorList', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Custom color' }))
     expect(onClick).toHaveBeenCalledTimes(1)
     expect(screen.queryByTestId('custom')).not.toBe(null)
+  })
+
+  it('draws the extra colors after its own, each once and in capitals', () => {
+    const onClick = vi.fn()
+    setup({ extraColors: ['#617adb', '#273891', '#617ADB'], onClick })
+
+    const buttons = screen.getAllByRole('button')
+    expect(buttons).toHaveLength(COLORS.length + 1)
+    expect(buttons.at(-1)?.getAttribute('aria-label')).toBe('#617ADB')
+    fireEvent.click(screen.getByRole('button', { name: '#617ADB' }))
+    expect(onClick).toHaveBeenCalledWith('#617ADB')
+  })
+
+  it('draws only its own colors without extra colors', () => {
+    setup({})
+
+    expect(screen.getAllByRole('button')).toHaveLength(COLORS.length)
   })
 })

@@ -87,6 +87,13 @@ export const Screenshot: Story = {
       <Section title="Without custom color" width={200}>
         <ColorList size="small" />
       </Section>
+      <Section title="Extra colors" width={200}>
+        <ColorList
+          size="small"
+          extraColors={['#617ADB', '#4896E5']}
+          selectedColor="#617ADB"
+        />
+      </Section>
     </Stack>
   )
 }
