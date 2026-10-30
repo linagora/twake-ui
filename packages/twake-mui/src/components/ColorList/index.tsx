@@ -33,9 +33,14 @@ export interface ColorListProps extends Omit<
   /** Defaults to `medium` on mobile and `small` otherwise */
   size?: ColorListSize
   selectedColor?: string
+  /** Accessible name of a color. Defaults to its hexadecimal code */
+  getColorLabel?: (color: string) => string
   customColorProps?: {
     enabled?: boolean
     onClick?: React.MouseEventHandler<HTMLButtonElement>
+    'aria-label'?: string
+    'aria-pressed'?: boolean
+    'data-testid'?: string
   }
   onClick?: (color: string) => void
 }
@@ -43,10 +48,13 @@ export interface ColorListProps extends Omit<
 const ColorList: React.FC<ColorListProps> = ({
   size,
   selectedColor,
+  getColorLabel,
   customColorProps,
   onClick,
   ...props
 }) => {
+  const { enabled: isCustomEnabled, ...customButtonProps } =
+    customColorProps ?? {}
   const { isMobile } = useBreakpoints()
   const { avatar, icon, cols, gap } =
     sizes[size ?? (isMobile ? 'medium' : 'small')]
@@ -58,6 +66,8 @@ const ColorList: React.FC<ColorListProps> = ({
           <ButtonBase
             component="div"
             className="u-bdrs-circle"
+            aria-label={getColorLabel?.(color) ?? color}
+            aria-pressed={selectedColor?.toUpperCase() === color}
             onClick={() => onClick?.(color)}
           >
             <Avatar color={color} size={avatar}>
@@ -70,9 +80,10 @@ const ColorList: React.FC<ColorListProps> = ({
           </ButtonBase>
         </ImageListItem>
       ))}
-      {customColorProps?.enabled && (
+      {isCustomEnabled && (
         <ImageListItem>
           <ButtonBase
+            {...customButtonProps}
             sx={{
               width: avatar,
               height: avatar,
@@ -83,7 +94,6 @@ const ColorList: React.FC<ColorListProps> = ({
               backgroundOrigin: 'border-box',
               backgroundClip: 'padding-box, border-box'
             }}
-            onClick={customColorProps.onClick}
           >
             <Icon icon={Palette} size={icon} color="#000" />
           </ButtonBase>
