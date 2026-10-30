@@ -40,7 +40,8 @@ const SelectableColorList: React.FC<ColorListProps> = props => {
 
 export const Default: Story = {
   args: {
-    customColorProps: { enabled: true }
+    getColorLabel: color => `Color ${color}`,
+    customColorProps: { enabled: true, 'aria-label': 'Custom color' }
   },
   render: args => (
     <Box
