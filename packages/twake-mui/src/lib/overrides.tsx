@@ -1203,6 +1203,9 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       primary: ({ theme }) => ({
         color: theme.vars.palette.primary.dark,
         backgroundColor: theme.vars.palette.primary.light,
+        ...theme.applyStyles('dark', {
+          color: theme.vars.palette.primary.contrastText
+        }),
         '&:hover': {
           backgroundColor: `color-mix(in srgb, ${theme.vars.palette.primary.light}, #000 5%)`
         },
