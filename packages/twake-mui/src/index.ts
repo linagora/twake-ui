@@ -252,7 +252,11 @@ export type {
   OverlayRegion
 } from './components/SpaceOverlay/region'
 export type { OverlayFrameProps } from './components/SpaceOverlay/OverlayFrame'
-export type { ColorListProps, ColorListSize } from './components/ColorList'
+export type {
+  ColorListCustomInput,
+  ColorListProps,
+  ColorListSize
+} from './components/ColorList'
 export type { DialogProps, DialogSize } from './components/Dialog'
 export type { StandardDialogProps } from './components/Dialogs/StandardDialog'
 export type { DialogSectionsProps } from './components/Dialogs/types'
