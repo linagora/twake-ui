@@ -75,6 +75,7 @@ export { default as BottomSheetHeader } from './components/BottomSheet/BottomShe
 export { default as BottomSheetTitle } from './components/BottomSheet/BottomSheetTitle'
 export { default as Chip } from './components/Chip'
 export { default as ColorList } from './components/ColorList'
+export { default as DateRangeCalendar } from './components/DateRangeCalendar'
 export { default as Dialog } from './components/Dialog'
 export { default as StandardDialog } from './components/Dialogs/StandardDialog'
 export { default as DialogCloseButton } from './components/Dialogs/DialogCloseButton'
@@ -253,6 +254,16 @@ export type {
 } from './components/SpaceOverlay/region'
 export type { OverlayFrameProps } from './components/SpaceOverlay/OverlayFrame'
 export type { ColorListProps, ColorListSize } from './components/ColorList'
+export type {
+  DateRangeCalendarProps,
+  DateRangeDay
+} from './components/DateRangeCalendar'
+export {
+  addDays,
+  addMonths,
+  dayOf,
+  monthOf
+} from './components/DateRangeCalendar/helpers'
 export type { DialogProps, DialogSize } from './components/Dialog'
 export type { StandardDialogProps } from './components/Dialogs/StandardDialog'
 export type { DialogSectionsProps } from './components/Dialogs/types'
