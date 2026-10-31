@@ -11,7 +11,7 @@ import { enUS } from 'date-fns/locale'
 import React, { useState } from 'react'
 
 const description = `
-To pick a date, a time or a month, use [MUI X Date Pickers](https://mui.com/x/react-date-pickers/), installed in the app with \`date-fns\`. Their popups are built on MUI components that twake-mui themes. Their field is a \`PickersTextField\`, which twake-mui does not theme yet: its radius, border colors and gutters still differ from a \`TextField\`.
+To pick a date, a time or a month, use [MUI X Date Pickers](https://mui.com/x/react-date-pickers/), installed in the app with \`date-fns\`. Their popups are built on MUI components that twake-mui themes. Their field is a \`PickersTextField\`, which twake-mui does not theme yet: its radius, border colors and gutters still differ from a \`TextField\`. To pick a range of days, use \`DateRangeCalendar\`.
 
 Wrap the app once in a \`LocalizationProvider\`, with the date-fns locale and the picker texts of the user's language. Twake apps use date-fns 2.30.0, so import the adapter from \`@mui/x-date-pickers/AdapterDateFnsV2\`:
 
