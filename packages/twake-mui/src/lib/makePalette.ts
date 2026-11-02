@@ -109,7 +109,9 @@ export const makePalette = (
         disabledBackground: alpha(palette.Common.white, 0.12),
         focus: alpha(palette.Common.white, 0.24),
         focusOpacity: 0.24,
-        activatedOpacity: 0.24
+        activatedOpacity: 0.24,
+        ghostOpacity: 0.08,
+        hoverGhostOpacity: 0.16
       }
     }
   }
@@ -200,7 +202,9 @@ export const makePalette = (
       disabledBackground: alpha(palette.Grey[900], 0.12),
       focus: alpha(palette.Grey[900], 0.12),
       focusOpacity: 0.12,
-      activatedOpacity: 0.12
+      activatedOpacity: 0.12,
+      ghostOpacity: 0.08,
+      hoverGhostOpacity: 0.16
     }
   }
 }
