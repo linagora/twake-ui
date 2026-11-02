@@ -251,13 +251,13 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
               color: theme.vars.palette[color].main,
               backgroundColor: theme.alpha(
                 theme.vars.palette[color].main,
-                0.08
+                theme.vars.palette.action.ghostOpacity
               ),
               '@media (hover: hover)': {
                 '&:hover': {
                   backgroundColor: theme.alpha(
                     theme.vars.palette[color].main,
-                    0.16
+                    theme.vars.palette.action.hoverGhostOpacity
                   )
                 }
               }
