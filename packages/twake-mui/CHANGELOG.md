@@ -1,3 +1,10 @@
+# @linagora/twake-mui [19.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.2.1...@linagora/twake-mui@19.3.0) (2026-11-02)
+
+
+### Features
+
+* **twake-mui:** Add ghost opacity tokens to the palette ([aefa93a](https://github.com/linagora/twake-ui/commit/aefa93aead8ff2038dc8192e942d1ca0a13f1f50))
+
 ## @linagora/twake-mui [19.2.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.2.0...@linagora/twake-mui@19.2.1) (2026-11-02)
 
 
