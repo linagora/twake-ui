@@ -103,6 +103,11 @@ declare module '@mui/material/styles' {
     icon: string
   }
 
+  interface TypeAction {
+    ghostOpacity: number
+    hoverGhostOpacity: number
+  }
+
   interface Palette {
     border: BorderPalette
   }
