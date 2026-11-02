@@ -1,3 +1,10 @@
+## @linagora/twake-mui [19.2.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.2.0...@linagora/twake-mui@19.2.1) (2026-11-02)
+
+
+### Bug Fixes
+
+* **twake-mui:** Readable label on a primary Fab in dark mode ([15dcf5b](https://github.com/linagora/twake-ui/commit/15dcf5b41a11c0f0d38c19adf8a68f89c300df76))
+
 # @linagora/twake-mui [19.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.1.1...@linagora/twake-mui@19.2.0) (2026-11-02)
 
 
