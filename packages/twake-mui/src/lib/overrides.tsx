@@ -684,6 +684,9 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           '&.square': {
             borderRadius: radius.md
           },
+          [`& .${chipClasses.icon}, & .${chipClasses.deleteIcon}`]: {
+            flexShrink: 0
+          },
           variants: [
             {
               props: { variant: 'ghost', color: 'default' },

@@ -50,6 +50,8 @@ export const Default: Story = {
   render: args => <Chip {...args} />
 }
 
+const LONG_LABEL = 'a.very.long.address.that.goes.on.and.on.again@example.com'
+
 export const Screenshot: Story = {
   tags: ['argos'],
   render: () => {
@@ -257,6 +259,25 @@ export const Screenshot: Story = {
             ))}
           </div>
         ))}
+        <div>
+          <Typography variant="h3" sx={{ mb: 2 }}>
+            Long label
+          </Typography>
+          <Stack spacing={2} sx={{ width: 240, alignItems: 'flex-start' }}>
+            <Chip label={LONG_LABEL} onDelete={() => {}} />
+            <Chip
+              label={LONG_LABEL}
+              onDelete={() => {}}
+              sx={{ maxWidth: 200 }}
+            />
+            <Chip label={LONG_LABEL} onDelete={() => {}} size="small" />
+            <Chip
+              label={LONG_LABEL}
+              onDelete={() => {}}
+              deleteIcon={<Icon icon={FileOutline} />}
+            />
+          </Stack>
+        </div>
       </Stack>
     )
   }
