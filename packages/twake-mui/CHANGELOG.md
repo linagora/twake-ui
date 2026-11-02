@@ -1,3 +1,10 @@
+# @linagora/twake-mui [19.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.1.1...@linagora/twake-mui@19.2.0) (2026-11-02)
+
+
+### Features
+
+* **twake-mui:** Name the colors of ColorList ([278249c](https://github.com/linagora/twake-ui/commit/278249cfaedca67c832ab0bf207042caa6273aa2))
+
 ## @linagora/twake-mui [19.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.1.0...@linagora/twake-mui@19.1.1) (2026-10-30)
 
 
