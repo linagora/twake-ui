@@ -681,7 +681,17 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         '&.square': {
           borderRadius: radius.md
         }
-      }
+      },
+      // MUI draws the delete icon of a default chip (its cross, or the icon an
+      // app passes) at 26 % of the text: below the 3:1 contrast a control
+      // needs. Coloured chips are not handled yet and keep MUI's colours
+      deleteIcon: ({ theme, ownerState }) =>
+        ownerState.color === 'default'
+          ? {
+              color: theme.vars.palette.text.icon,
+              '&:hover': { color: theme.vars.palette.text.primary }
+            }
+          : {}
     }
   },
   MuiBadge: {
