@@ -22,6 +22,8 @@ const HexField = styled(TextField)({ width: 96 })
 export interface ColorPickerCustomProps {
   className?: string
   color?: string
+  /** Its Hex field takes the focus when it shows */
+  autoFocus?: boolean
   /** Gets the color it was opened with */
   onCancel?: (color?: string) => void
   onSave?: (color: string) => void
@@ -30,6 +32,7 @@ export interface ColorPickerCustomProps {
 const ColorPickerCustom: React.FC<ColorPickerCustomProps> = ({
   className,
   color,
+  autoFocus = false,
   onCancel,
   onSave
 }) => {
@@ -71,6 +74,7 @@ const ColorPickerCustom: React.FC<ColorPickerCustomProps> = ({
           </Typography>
           <HexField
             id={fieldId}
+            autoFocus={autoFocus}
             size="small"
             value={text}
             error={hasError}

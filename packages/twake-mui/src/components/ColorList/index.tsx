@@ -63,6 +63,7 @@ export interface ColorListProps extends Omit<
     'aria-label'?: string
     'aria-pressed'?: boolean
     'data-testid'?: string
+    ref?: React.Ref<HTMLButtonElement>
   }
   onClick?: (color: string) => void
 }
