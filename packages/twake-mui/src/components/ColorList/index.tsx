@@ -1,5 +1,6 @@
 import {
   ButtonBase,
+  buttonBaseClasses,
   ImageList,
   ImageListItem,
   ImageListProps,
@@ -14,15 +15,34 @@ import { useBreakpoints } from '../../hooks/useBreakpoints'
 import Avatar from '../Avatar'
 import { COLORS } from './helpers'
 
+// `touch` is the area a finger hits: 44 px when the gap has room for it, else
+// the whole pitch, so that two colors never overlap
 const sizes = {
-  small: { avatar: 21, icon: 10, cols: 7, gap: 5 },
-  medium: { avatar: 41, icon: 16, cols: 5, gap: 16 }
+  small: { avatar: 21, icon: 10, cols: 7, gap: 5, touch: 26 },
+  medium: { avatar: 41, icon: 16, cols: 5, gap: 16, touch: 44 }
 }
 
-const ColorListRoot = styled(ImageList)({
+const CUSTOM_CLASS = 'ColorList-custom'
+
+const ColorListRoot = styled(ImageList, {
+  shouldForwardProp: prop => prop !== 'touchInset'
+})<{ touchInset: number }>(({ touchInset }) => ({
   margin: 0,
-  [`& .${imageListItemClasses.root}`]: { alignItems: 'center' }
-})
+  [`& .${imageListItemClasses.root}`]: { alignItems: 'center' },
+  // Room for the touch areas, which go past the edges of the list while it
+  // stays scrollable, as `overflow: visible` would not
+  '@media (pointer: coarse)': {
+    padding: 4,
+    margin: -4,
+    [`& .${buttonBaseClasses.root}::after`]: {
+      content: '""',
+      position: 'absolute',
+      inset: touchInset
+    },
+    // Its inset starts inside its 1 px border
+    [`& .${CUSTOM_CLASS}::after`]: { inset: touchInset - 1 }
+  }
+}))
 
 export type ColorListSize = keyof typeof sizes
 
@@ -62,11 +82,17 @@ const ColorList: React.FC<ColorListProps> = ({
     ...new Set([...COLORS, ...extraColors.map(color => color.toUpperCase())])
   ]
   const { isMobile } = useBreakpoints()
-  const { avatar, icon, cols, gap } =
+  const { avatar, icon, cols, gap, touch } =
     sizes[size ?? (isMobile ? 'medium' : 'small')]
 
   return (
-    <ColorListRoot cols={cols} rowHeight={avatar} gap={gap} {...props}>
+    <ColorListRoot
+      cols={cols}
+      rowHeight={avatar}
+      gap={gap}
+      touchInset={(avatar - touch) / 2}
+      {...props}
+    >
       {colors.map(color => (
         <ImageListItem key={color}>
           <ButtonBase
@@ -90,6 +116,7 @@ const ColorList: React.FC<ColorListProps> = ({
         <ImageListItem>
           <ButtonBase
             {...customButtonProps}
+            className={CUSTOM_CLASS}
             sx={{
               width: avatar,
               height: avatar,
