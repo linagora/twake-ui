@@ -79,4 +79,14 @@ describe('ColorList', () => {
 
     expect(screen.getAllByRole('button')).toHaveLength(COLORS.length)
   })
+
+  it('reads its colors as hexadecimal codes, 3 digits or without #', () => {
+    setup({ selectedColor: 'aabbcc', extraColors: ['#abc'] })
+
+    expect(
+      screen
+        .getByRole('button', { name: '#AABBCC' })
+        .getAttribute('aria-pressed')
+    ).toBe('true')
+  })
 })

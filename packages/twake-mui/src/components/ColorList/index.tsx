@@ -13,7 +13,7 @@ import { Icon, Check, Palette } from '@linagora/twake-icons'
 
 import { useBreakpoints } from '../../hooks/useBreakpoints'
 import Avatar from '../Avatar'
-import { COLORS } from './helpers'
+import { COLORS, toHex } from './helpers'
 
 // `touch` is the area a finger hits: 44 px when the gap has room for it, else
 // the whole pitch, so that two colors never overlap
@@ -79,8 +79,12 @@ const ColorList: React.FC<ColorListProps> = ({
   const { enabled: isCustomEnabled, ...customButtonProps } =
     customColorProps ?? {}
   const colors = [
-    ...new Set([...COLORS, ...extraColors.map(color => color.toUpperCase())])
+    ...new Set([
+      ...COLORS,
+      ...extraColors.map(color => toHex(color) ?? color.toUpperCase())
+    ])
   ]
+  const selected = toHex(selectedColor ?? '')
   const { isMobile } = useBreakpoints()
   const { avatar, icon, cols, gap, touch } =
     sizes[size ?? (isMobile ? 'medium' : 'small')]
@@ -99,15 +103,11 @@ const ColorList: React.FC<ColorListProps> = ({
             component="div"
             className="u-bdrs-circle"
             aria-label={getColorLabel?.(color) ?? color}
-            aria-pressed={selectedColor?.toUpperCase() === color}
+            aria-pressed={selected === color}
             onClick={() => onClick?.(color)}
           >
             <Avatar color={color} size={avatar}>
-              {selectedColor?.toUpperCase() === color ? (
-                <Icon icon={Check} size={icon} />
-              ) : (
-                ' '
-              )}
+              {selected === color ? <Icon icon={Check} size={icon} /> : ' '}
             </Avatar>
           </ButtonBase>
         </ImageListItem>
