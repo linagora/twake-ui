@@ -117,3 +117,24 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_IN_VAULT }}
         run: npm run release
+
+      # Tells the frontends that a release may have been published, so that
+      # their bump-twake-packages workflow opens the upgrade pull request right
+      # away instead of at its next hourly poll. Their workflow is idempotent:
+      # a push without release opens nothing.
+      - name: Notify downstream repositories
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ secrets.DOWNSTREAM_DISPATCH_TOKEN }}
+          DOWNSTREAM_REPOSITORIES: linagora/twake-calendar-frontend linagora/twake-contacts-frontend
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::DOWNSTREAM_DISPATCH_TOKEN is not set, downstream repositories are not notified"
+            exit 0
+          fi
+          # let the npm registry serve the versions just published
+          sleep 60
+          for repo in $DOWNSTREAM_REPOSITORIES; do
+            gh api "repos/$repo/dispatches" -f event_type=twake-ui-released \
+              || echo "::warning::could not notify $repo"
+          done
