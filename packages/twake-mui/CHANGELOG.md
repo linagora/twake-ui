@@ -1,3 +1,10 @@
+# @linagora/twake-mui [19.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.3.0...@linagora/twake-mui@19.4.0) (2026-11-04)
+
+
+### Features
+
+* **twake-mui:** Migrate EditBadge from cozy-ui ([d675912](https://github.com/linagora/twake-ui/commit/d6759120b33e861b91b327e129a2bc8e018e0dc9))
+
 # @linagora/twake-mui [19.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.2.1...@linagora/twake-mui@19.3.0) (2026-11-02)
 
 
