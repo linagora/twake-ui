@@ -1,3 +1,5 @@
+import { darken, lighten } from '@mui/material/styles'
+
 export const supportedColors = [
   'sunrise',
   'downy',
@@ -70,3 +72,11 @@ export const getInitials = (name: string, email: string): string => {
   const lastName = parts[parts.length - 1]
   return (firstName[0] + lastName[0]).toUpperCase()
 }
+
+/**
+ * Make an avatar gradient from a color, as the supported colors are
+ * @param color - Hex color, as `#RRGGBB`
+ * @returns CSS linear gradient
+ */
+export const colorToGradient = (color: string): string =>
+  `linear-gradient(136deg, ${lighten(color, 0.17)} 14.84%, ${darken(color, 0.15)} 96.03%)`
