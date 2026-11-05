@@ -107,6 +107,7 @@ export { default as LoadMore } from './components/LoadMore'
 export { default as Markdown } from './components/Markdown'
 export { getPlainTextFromMarkdown } from './components/Markdown/helpers'
 export { default as MemberAvatar } from './components/MemberRow/MemberAvatar'
+export { default as MemberGroupAvatar } from './components/MemberRow/MemberGroupAvatar'
 export { default as MidEllipsis } from './components/MidEllipsis'
 export { default as NavigationList } from './components/NavigationList'
 export { default as NavigationListHeader } from './components/NavigationList/NavigationListHeader'
@@ -141,7 +142,8 @@ export { default as PasswordField } from './components/PasswordField'
 export {
   nameToColor,
   supportedColors,
-  getInitials
+  getInitials,
+  colorToGradient
 } from './components/Avatar/helpers'
 export { COLORS } from './components/ColorList/helpers'
 export { default as AccordionExpandIcon } from './components/AccordionExpandIcon'
@@ -322,6 +324,7 @@ export type { ListSubheaderProps } from './components/ListSubheader'
 export type { LoadMoreProps } from './components/LoadMore'
 export type { MarkdownProps } from './components/Markdown'
 export type { MemberAvatarProps } from './components/MemberRow/MemberAvatar'
+export type { MemberGroupAvatarProps } from './components/MemberRow/MemberGroupAvatar'
 export type { MidEllipsisProps } from './components/MidEllipsis'
 export type { NavigationListProps } from './components/NavigationList'
 export type { NavigationListHeaderProps } from './components/NavigationList/NavigationListHeader'
