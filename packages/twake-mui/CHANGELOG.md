@@ -1,3 +1,10 @@
+# @linagora/twake-mui [19.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.4.0...@linagora/twake-mui@19.5.0) (2026-11-05)
+
+
+### Features
+
+* **twake-mui:** Add a ghost Chip variant ([ad5ecc3](https://github.com/linagora/twake-ui/commit/ad5ecc33a0f18f4d15525201a6022bfba3738cdd))
+
 # @linagora/twake-mui [19.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.3.0...@linagora/twake-mui@19.4.0) (2026-11-04)
 
 
