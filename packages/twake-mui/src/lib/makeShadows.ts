@@ -49,6 +49,11 @@ const elevations: [
 ]
 
 const OUTLINE_OPACITY = 0.12
+/**
+ * A dark hairline vanishes on dark surfaces: in the dark scheme the edge is a
+ * light line instead, so cards and menus need no hand-made border.
+ */
+const DARK_OUTLINE_OPACITY = 0.08
 
 /**
  * cozy-ui defines a flat 26th elevation outside the ramp. MUI's `Shadows`
@@ -63,7 +68,11 @@ export const makeShadows = (
 ): Shadows => {
   const shadowColor =
     mode === 'light' ? palette.Grey[900] : palette.Common.black
-  const outline = `0px 0px 0px 0.5px ${alpha(shadowColor, OUTLINE_OPACITY)}`
+  const outlineColor =
+    mode === 'light'
+      ? alpha(shadowColor, OUTLINE_OPACITY)
+      : alpha(palette.Common.white, DARK_OUTLINE_OPACITY)
+  const outline = `0px 0px 0px 0.5px ${outlineColor}`
 
   const shadows = elevations.map(
     ([y1, blur1, spread1, o1, y2, blur2, spread2, o2]) =>
