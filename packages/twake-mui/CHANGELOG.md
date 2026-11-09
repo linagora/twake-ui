@@ -1,3 +1,15 @@
+# @linagora/twake-mui [19.6.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.5.0...@linagora/twake-mui@19.6.0) (2026-11-09)
+
+
+### Features
+
+* **twake-mui:** Migrate MemberAutocomplete from cozy-ui ([4799024](https://github.com/linagora/twake-ui/commit/47990248503a78febc260458d7c9a3b255c3aa09))
+* **twake-mui:** Migrate MemberAvatar from cozy-ui ([a15d39e](https://github.com/linagora/twake-ui/commit/a15d39effbd01890130f676aaa6cbfd12e7f132d))
+* **twake-mui:** Migrate MemberGroupAvatar from cozy-ui ([31d9b8d](https://github.com/linagora/twake-ui/commit/31d9b8d04739bfb8e90a157671571db6629c6791))
+* **twake-mui:** Migrate MemberList from cozy-ui ([c4248d4](https://github.com/linagora/twake-ui/commit/c4248d44ad31325d16434eaf434e0a4f7da0e1e4))
+* **twake-mui:** Migrate MemberRoleMenu from cozy-ui ([e6dcf8e](https://github.com/linagora/twake-ui/commit/e6dcf8e865067e336a7496bad767a716e442cd67))
+* **twake-mui:** Migrate MemberRow from cozy-ui ([a868930](https://github.com/linagora/twake-ui/commit/a868930d3635dd63a81df1384ac56ecf27745fd8))
+
 # @linagora/twake-mui [19.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.4.0...@linagora/twake-mui@19.5.0) (2026-11-05)
 
 
