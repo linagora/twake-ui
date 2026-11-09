@@ -105,6 +105,17 @@ jobs:
         run: npm run build
       - name: Test
         run: npm test --workspace=@linagora/twake-mui
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+      - name: Install Playwright dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Test in a browser
+        run: npm run test:browser --workspace=@linagora/twake-mui
       - name: Configure git
         if: github.ref == 'refs/heads/main'
         run: |

@@ -42,6 +42,7 @@
     "build:doc": "storybook build --output-dir storybook-static",
     "start": "tsc --watch",
     "test": "vitest run -c vitest.unit.config.ts",
+    "test:browser": "vitest run -c test/browser/vitest.config.ts",
     "clean": "rm -rf dist",
     "doc": "storybook dev -p 6006",
     "screenshots": "vitest run"
