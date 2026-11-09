@@ -1,6 +1,7 @@
 import { accordionSummaryClasses } from '@mui/material/AccordionSummary'
 import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
+import { touchRippleClasses } from '@mui/material/ButtonBase'
 import { checkboxClasses } from '@mui/material/Checkbox'
 import { chipClasses } from '@mui/material/Chip'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
@@ -16,7 +17,13 @@ import { selectClasses } from '@mui/material/Select'
 import { switchClasses } from '@mui/material/Switch'
 import { tabClasses } from '@mui/material/Tab'
 import { tabsClasses } from '@mui/material/Tabs'
-import { CSSObject, Theme, ThemeOptions, alpha } from '@mui/material/styles'
+import {
+  CSSObject,
+  Theme,
+  ThemeOptions,
+  alpha,
+  keyframes
+} from '@mui/material/styles'
 import React from 'react'
 
 import {
@@ -171,7 +178,33 @@ const listItemRoot: CSSObject = {
   ]
 }
 
+// MUI grows its ripple from scale(0) over 550 ms: on every press the
+// feedback lags behind the finger. This one starts at half size and is done
+// in 250 ms, so the press reads at once.
+const rippleEnter = keyframes`
+  from { transform: scale(0.5); opacity: 0.1; }
+  to { transform: scale(1); opacity: 0.3; }
+`
+
 export const overrides: NonNullable<ThemeOptions['components']> = {
+  MuiButtonBase: {
+    styleOverrides: {
+      // MuiTouchRipple has no theme key: its classes are reached from the
+      // button, one class more specific than MUI's own ripple rules
+      root: ({ theme }) => ({
+        [`& .${touchRippleClasses.ripple}.${touchRippleClasses.rippleVisible}`]:
+          {
+            animationName: rippleEnter,
+            animationDuration: `${theme.transitions.duration.short}ms`,
+            animationTimingFunction: theme.transitions.easing.easeOut
+          },
+        [`& .${touchRippleClasses.ripple} .${touchRippleClasses.childLeaving}`]:
+          {
+            animationDuration: `${theme.transitions.duration.short}ms`
+          }
+      })
+    }
+  },
   MuiCssBaseline: {
     styleOverrides: {
       // Browsers give form controls their own system font instead of the page's
@@ -978,7 +1011,10 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       root: ({ theme }) => ({
         padding: '4px 12px',
         backgroundColor: theme.vars.palette.grey[600]
-      })
+      }),
+      // A Matrix id or a URL has no break opportunity: without this it
+      // widens the toast past the screen
+      message: { overflowWrap: 'anywhere' }
     }
   },
   MuiSwitch: {
@@ -1051,6 +1087,17 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
   },
   MuiTabs: {
     styleOverrides: {
+      // MUI transitions `all`; only what MUI writes inline to move the
+      // indicator (left or right and width, top and height when vertical)
+      indicator: ({ theme }) => ({
+        transition: theme.transitions.create([
+          'left',
+          'right',
+          'top',
+          'width',
+          'height'
+        ])
+      }),
       root: ({ theme }) => ({
         '&.segmented': {
           borderRadius: 99,
