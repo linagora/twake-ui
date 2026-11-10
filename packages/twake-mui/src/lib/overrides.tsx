@@ -1012,6 +1012,14 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     defaultProps: {
       anchorOrigin: { vertical: 'bottom', horizontal: 'center' },
       autoHideDuration: 2000
+    },
+    styleOverrides: {
+      root: {
+        // An unbreakable Matrix id would widen a <Snackbar><Alert> past the
+        // screen; scoped here because `anywhere` would squeeze the message of
+        // a standalone Alert beside its actions
+        [`& .${alertClasses.message}`]: { overflowWrap: 'anywhere' }
+      }
     }
   },
   MuiSnackbarContent: {
@@ -1220,10 +1228,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         flex: 'auto',
         display: 'flex',
         alignItems: 'center',
-        flexWrap: 'wrap',
-        // As for MuiSnackbarContent: an unbreakable Matrix id would widen a
-        // <Snackbar><Alert> past the screen
-        overflowWrap: 'anywhere'
+        flexWrap: 'wrap'
       },
       action: {
         alignItems: 'center',
