@@ -1,3 +1,11 @@
+# @linagora/twake-mui [19.7.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.6.1...@linagora/twake-mui@19.7.0) (2026-11-10)
+
+
+### Features
+
+* **twake-mui:** Keep the icons of a Chip whole beside a long label ([a546116](https://github.com/linagora/twake-ui/commit/a54611605bb32d5a4756bc7409c6932f1cb8bc48))
+* **twake-mui:** Show the grab cursor on a draggable Chip ([005027c](https://github.com/linagora/twake-ui/commit/005027c02bc4dae05a66b16e53882aefd9065833))
+
 ## @linagora/twake-mui [19.6.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.6.0...@linagora/twake-mui@19.6.1) (2026-11-10)
 
 
