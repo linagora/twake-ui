@@ -9,10 +9,11 @@ import { beforeAll, describe, expect, it } from 'vitest'
 // heavy libraries of the others: without `sideEffects` in package.json the
 // bundler keeps every module the index reaches (react-virtuoso of
 // VirtualizedTable, react-spring of BottomSheet) in the consumer's bundle.
-// The bundle is built from dist/, as a consumer gets it: run `npm run build`
-// first (the CI does, before `npm test`).
+// The bundle is built from dist/, as a consumer gets it: `npm run test:bundle`
+// builds it first. Out of `npm test`, which must not read a missing or stale
+// dist/.
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const manifest = JSON.parse(
   readFileSync(path.join(root, 'package.json'), 'utf8')
 ) as { peerDependencies: Record<string, string> }

@@ -137,8 +137,10 @@ export const MyStory = {
 ## CI/CD Notes
 
 - **Runs on**: PRs and push to main
-- **Order**: install → lint → format check → build → test → browser test
-  (`npm run test:browser` in twake-mui, Chromium) → release (main only)
+- **Order**: install → lint → format check → build → test → bundle test
+  (`npm run test:bundle` in twake-mui: builds, then bundles a consumer of
+  `dist/`) → browser test (`npm run test:browser` in twake-mui, Chromium) →
+  release (main only)
 - **Secrets required**: `NODE_AUTH_TOKEN` (NPM token, set in GitHub repo settings)
 - **Uses**: `secrets.GITHUB_TOKEN` (auto-provided, no setup needed)
 

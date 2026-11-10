@@ -76,6 +76,8 @@ jobs:
         run: npm run build
       - name: Test
         run: npm test --workspace=@linagora/twake-mui
+      - name: Test the bundle of a consumer
+        run: npm run test:bundle --workspace=@linagora/twake-mui
 
   build:
     name: Build and publish
@@ -105,6 +107,8 @@ jobs:
         run: npm run build
       - name: Test
         run: npm test --workspace=@linagora/twake-mui
+      - name: Test the bundle of a consumer
+        run: npm run test:bundle --workspace=@linagora/twake-mui
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         with:
