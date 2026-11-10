@@ -191,18 +191,26 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     styleOverrides: {
       // MuiTouchRipple has no theme key: its classes are reached from the
       // button, one class more specific than MUI's own ripple rules
-      root: ({ theme }) => ({
-        [`& .${touchRippleClasses.ripple}.${touchRippleClasses.rippleVisible}`]:
-          {
-            animationName: rippleEnter,
-            animationDuration: `${theme.transitions.duration.short}ms`,
-            animationTimingFunction: theme.transitions.easing.easeOut
-          },
-        [`& .${touchRippleClasses.ripple} .${touchRippleClasses.childLeaving}`]:
-          {
-            animationDuration: `${theme.transitions.duration.short}ms`
-          }
-      })
+      root: ({ theme }) => {
+        const ripple: CSSObject = {
+          [`& .${touchRippleClasses.ripple}.${touchRippleClasses.rippleVisible}`]:
+            {
+              animationName: rippleEnter,
+              animationDuration: `${theme.transitions.duration.short}ms`,
+              animationTimingFunction: theme.transitions.easing.easeOut
+            },
+          [`& .${touchRippleClasses.ripple} .${touchRippleClasses.childLeaving}`]:
+            {
+              animationDuration: `${theme.transitions.duration.short}ms`
+            }
+        }
+        // Gated as MUI gates its own ripple (TouchRipple.js), or this would
+        // bring back the animation that reducedMotion turned off
+        if (theme.motion.reducedMotion === 'always') return {}
+        if (theme.motion.reducedMotion === 'system')
+          return { '@media (prefers-reduced-motion: no-preference)': ripple }
+        return ripple
+      }
     }
   },
   MuiCssBaseline: {
@@ -1096,7 +1104,10 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           'top',
           'width',
           'height'
-        ])
+        ]),
+        // Our flat `transition` overwrites MUI's flat 'always' reset; its
+        // 'system' @media reset is emitted later and still wins
+        ...(theme.motion.reducedMotion === 'always' && { transition: 'none' })
       }),
       root: ({ theme }) => ({
         '&.segmented': {
@@ -1209,7 +1220,10 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         flex: 'auto',
         display: 'flex',
         alignItems: 'center',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        // As for MuiSnackbarContent: an unbreakable Matrix id would widen a
+        // <Snackbar><Alert> past the screen
+        overflowWrap: 'anywhere'
       },
       action: {
         alignItems: 'center',
