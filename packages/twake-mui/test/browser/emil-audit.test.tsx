@@ -1,9 +1,18 @@
-import { Alert, Snackbar, Tab, ThemeProvider } from '@mui/material'
+import {
+  Alert,
+  Button as MuiButton,
+  IconButton,
+  ListItemIcon,
+  Snackbar,
+  Tab,
+  ThemeProvider
+} from '@mui/material'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 import { afterEach, describe, expect, it } from 'vitest'
 import { cdp, page } from 'vitest/browser'
 
+import { Dots, Download, Icon } from '@linagora/twake-icons'
 import { I18n } from 'twake-i18n'
 
 import Button from '../../src/components/Button'
@@ -376,5 +385,80 @@ describe('Snackbar', () => {
     expect(toast.getBoundingClientRect().left).toBeGreaterThanOrEqual(0)
     expect(toast.getBoundingClientRect().right).toBeLessThanOrEqual(innerWidth)
     expect(message.scrollWidth).toBeLessThanOrEqual(message.clientWidth)
+  })
+})
+
+/** The words of `element`'s own text that the layout splits across lines. */
+const wordsSplitAcrossLines = (element: HTMLElement): string[] => {
+  const split: string[] = []
+  for (const node of element.childNodes) {
+    if (node.nodeType !== Node.TEXT_NODE) continue
+    const text = node.textContent ?? ''
+    for (const match of text.matchAll(/\S+/g)) {
+      const range = document.createRange()
+      range.setStart(node, match.index)
+      range.setEnd(node, match.index + match[0].length)
+      if (range.getClientRects().length > 1) split.push(match[0])
+    }
+  }
+  return split
+}
+
+// The "Actions" story of Alert: two text buttons and an icon button beside
+// the message, on a phone.
+const AlertWithActions = (): React.ReactElement => (
+  <Alert
+    severity="info"
+    action={
+      <>
+        <MuiButton
+          variant="text"
+          size="small"
+          startIcon={<Icon icon={Download} />}
+        >
+          Download
+        </MuiButton>
+        <MuiButton variant="text" size="small">
+          No, thanks!
+        </MuiButton>
+        <ListItemIcon>
+          <IconButton>
+            <Icon icon={Dots} />
+          </IconButton>
+        </ListItemIcon>
+      </>
+    }
+  >
+    Get Cozy Drive for Desktop and synchronise your files safely to make them
+    accessible at all times.
+  </Alert>
+)
+
+describe('Alert', () => {
+  it('with actions beside it, keeps every word of its message whole on a 375 px screen', async () => {
+    await page.viewport(375, 800)
+    renderThemed(<AlertWithActions />)
+    const message = screen.getByText(/Get Cozy Drive for Desktop/)
+
+    expect(wordsSplitAcrossLines(message)).toEqual([])
+  })
+
+  // Control: the same Alert, its message without overflow-wrap, keeps its
+  // words whole; the measure above is not what splits them.
+  it('with actions beside it and a message without overflow-wrap, keeps every word whole on a 375 px screen', async () => {
+    await page.viewport(375, 800)
+    renderThemed(
+      <>
+        <style>
+          {'.control .MuiAlert-message { overflow-wrap: normal !important }'}
+        </style>
+        <div className="control">
+          <AlertWithActions />
+        </div>
+      </>
+    )
+    const message = screen.getByText(/Get Cozy Drive for Desktop/)
+
+    expect(wordsSplitAcrossLines(message)).toEqual([])
   })
 })
