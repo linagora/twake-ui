@@ -1,3 +1,19 @@
+## @linagora/twake-mui [19.6.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.6.0...@linagora/twake-mui@19.6.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* **shadows:** Draw the hairline of dark elevations as a light edge ([f9e3f4d](https://github.com/linagora/twake-ui/commit/f9e3f4d3f3a4db392e82bb007070f49ee3c7d0ed))
+* **twake-mui:** Faster press ripple, tab indicator and snackbar wrapping ([7010d7c](https://github.com/linagora/twake-ui/commit/7010d7cd2d3a642a84cb0a99221e3437872b60fb))
+* **twake-mui:** Honour reduced motion in the ripple and tab overrides ([af1ccf0](https://github.com/linagora/twake-ui/commit/af1ccf0803278fb42112b51755c3f0abbdff2599))
+* **twake-mui:** Keep the small search bar at 16 px on touch screens ([1ced110](https://github.com/linagora/twake-ui/commit/1ced11017f03b063b48f771fb2b4efd7bfbfe123))
+* **twake-mui:** Wrap anywhere only in an Alert inside a Snackbar ([a70b4ec](https://github.com/linagora/twake-ui/commit/a70b4eca11164d260f2377dd178c63ea4343adf5))
+
+
+### Performance Improvements
+
+* **twake-mui:** Declare the package free of side effects ([98b2c4d](https://github.com/linagora/twake-ui/commit/98b2c4de56f4d86bb011b3427dd584db6652819a))
+
 # @linagora/twake-mui [19.6.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.5.0...@linagora/twake-mui@19.6.0) (2026-11-09)
 
 
