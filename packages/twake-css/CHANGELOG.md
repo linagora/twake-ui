@@ -1,3 +1,10 @@
+## @linagora/twake-css [1.2.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-css@1.2.0...@linagora/twake-css@1.2.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* **shadows:** Draw the hairline of dark elevations as a light edge ([f9e3f4d](https://github.com/linagora/twake-ui/commit/f9e3f4d3f3a4db392e82bb007070f49ee3c7d0ed))
+
 # @linagora/twake-css [1.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-css@1.1.0...@linagora/twake-css@1.2.0) (2026-10-28)
 
 
