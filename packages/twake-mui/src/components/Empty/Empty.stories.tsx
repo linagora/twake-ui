@@ -2,7 +2,12 @@ import { Box, Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { Icon, TwakeWorkplace } from '@linagora/twake-icons'
+import {
+  Filter,
+  ForwardSingle,
+  Icon,
+  TwakeWorkplace
+} from '@linagora/twake-icons'
 
 import { Empty, EmptyIconSize } from './index'
 
@@ -63,6 +68,21 @@ export const Screenshot: Story = {
             text="Try adding some content to this list"
           />
         ))}
+      </Section>
+
+      <Section title="Icon looks: tile and tinted">
+        <Empty
+          icon={Filter}
+          iconLook="tile"
+          title="No rules configured"
+          text="Create rules to handle incoming emails automatically"
+        />
+        <Empty
+          icon={ForwardSingle}
+          iconLook="tinted"
+          title="Forwarding is off"
+          text="Add an address and every new email will also be sent there"
+        />
       </Section>
 
       <Section title="Long title and text">

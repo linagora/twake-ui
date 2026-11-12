@@ -300,6 +300,7 @@ export type { ProgressionBannerProps } from './components/ProgressionBanner'
 export type {
   EmptyProps,
   EmptyIconSize,
+  EmptyIconLook,
   EmptyComponentsProps
 } from './components/Empty'
 export type { DropdownButtonProps } from './components/DropdownButton'
