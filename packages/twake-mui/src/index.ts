@@ -65,6 +65,7 @@ export { copyToClipboard } from './components/ActionsMenu/Actions/copyToClipboar
 export { editAttribute } from './components/ActionsMenu/Actions/editAttribute'
 export { others } from './components/ActionsMenu/Actions/others'
 export { exportToText } from './components/ActionsMenu/Actions/exportToText'
+export { default as Alert } from './components/Alert'
 export { default as AppTitle } from './components/AppTitle'
 export { default as Avatar } from './components/Avatar'
 export { default as BarTitle } from './components/BarTitle'
@@ -224,6 +225,7 @@ export type {
   PrintClient
 } from './components/ActionsMenu/Actions/print'
 export type { ExportToTextActionOptions } from './components/ActionsMenu/Actions/exportToText'
+export type { AlertProps } from './components/Alert'
 export type { AppTitleProps } from './components/AppTitle'
 export type { AvatarProps } from './components/Avatar'
 export type { BarTitleProps } from './components/BarTitle'
