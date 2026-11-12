@@ -2,7 +2,7 @@ import { Box, Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { Icon, TwakeWorkplace } from '@linagora/twake-icons'
+import { Filter, Icon, TwakeWorkplace } from '@linagora/twake-icons'
 
 import image from '../../stories/images/mountains.png'
 import { Empty, EmptyIconSize } from './index'
@@ -63,6 +63,15 @@ export const Screenshot: Story = {
             text="Try adding some content to this list"
           />
         ))}
+      </Section>
+
+      <Section title="Tile look">
+        <Empty
+          icon={<Icon icon={Filter} />}
+          iconLook="tile"
+          title="No rules configured"
+          text="Create rules to handle incoming emails automatically"
+        />
       </Section>
 
       <Section title="Long title and text">
