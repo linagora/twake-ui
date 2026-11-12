@@ -1189,7 +1189,11 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     }
   },
   MuiTypography: {
-    defaultProps: { variantMapping: { body3: 'p' } },
+    defaultProps: {
+      // The 12 px pair shares one element so swapping the weight (read,
+      // unread) never changes the markup
+      variantMapping: { body3: 'p', subtitle3: 'span', subtitle4: 'span' }
+    },
     styleOverrides: {
       root: ({ theme }) => ({
         variants: [

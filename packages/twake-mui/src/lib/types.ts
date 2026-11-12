@@ -88,10 +88,14 @@ declare module '@mui/material/styles' {
   }
 
   interface TypographyVariants {
+    subtitle3: CSSProperties
+    subtitle4: CSSProperties
     body3: CSSProperties
   }
 
   interface TypographyVariantsOptions {
+    subtitle3?: CSSProperties
+    subtitle4?: CSSProperties
     body3?: CSSProperties
   }
 
@@ -119,6 +123,8 @@ declare module '@mui/material/styles' {
 
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
+    subtitle3: true
+    subtitle4: true
     body3: true
   }
 }
