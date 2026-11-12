@@ -10,7 +10,7 @@ function SvgBrowserFirefox({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-1.609 -1.08 19.163 19.163"
       ref={iconRef}
       {...props}
     >

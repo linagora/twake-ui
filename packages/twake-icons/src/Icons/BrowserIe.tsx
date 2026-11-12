@@ -10,7 +10,7 @@ function SvgBrowserIe({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-1.596 -1.74 19.015 19.015"
       ref={iconRef}
       {...props}
     >

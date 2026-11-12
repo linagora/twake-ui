@@ -11,7 +11,7 @@ function SvgFileTypeSharedDriveGrey({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 16 13"
+      viewBox="-1.613 -3.117 19.212 19.212"
       ref={iconRef}
       {...props}
     >

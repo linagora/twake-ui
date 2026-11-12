@@ -10,7 +10,7 @@ function SvgCalendarToday({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
+      viewBox="-1.229 -1.219 26.438 26.438"
       ref={iconRef}
       {...props}
     >

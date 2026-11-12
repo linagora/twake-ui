@@ -10,7 +10,7 @@ function SvgLightning({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 9 16"
+      viewBox="-5.171 -1.614 19.228 19.228"
       ref={iconRef}
       {...props}
     >

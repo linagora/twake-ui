@@ -10,7 +10,7 @@ function SvgAlignLeft({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-0.408 -0.409 16.816 16.816"
       ref={iconRef}
       {...props}
     >

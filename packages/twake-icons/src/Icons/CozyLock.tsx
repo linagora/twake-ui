@@ -10,7 +10,7 @@ function SvgCozyLock({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 32 32"
+      viewBox="-3.226 -3.879 38.452 38.452"
       ref={iconRef}
       {...props}
     >

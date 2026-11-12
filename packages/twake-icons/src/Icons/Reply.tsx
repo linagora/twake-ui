@@ -10,7 +10,7 @@ function SvgReply({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 14"
+      viewBox="-1.613 -2.939 19.212 19.212"
       ref={iconRef}
       {...props}
     >

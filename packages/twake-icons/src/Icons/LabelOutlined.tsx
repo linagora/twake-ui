@@ -10,7 +10,7 @@ function SvgLabelOutlined({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 14"
+      viewBox="-1.409 -4.406 22.816 22.816"
       ref={iconRef}
       {...props}
     >

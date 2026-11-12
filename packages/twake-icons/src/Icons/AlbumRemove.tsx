@@ -10,7 +10,7 @@ function SvgAlbumRemove({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 3"
+      viewBox="-1.614 -8.477 19.228 19.228"
       ref={iconRef}
       {...props}
     >

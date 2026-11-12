@@ -10,7 +10,7 @@ function SvgCompare({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 14"
+      viewBox="-2.013 -5.009 24.026 24.026"
       ref={iconRef}
       {...props}
     >

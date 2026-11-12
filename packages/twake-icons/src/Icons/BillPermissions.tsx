@@ -10,7 +10,7 @@ function SvgBillPermissions({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 48 48"
+      viewBox="-3.621 -3.633 55.263 55.263"
       ref={iconRef}
       {...props}
     >

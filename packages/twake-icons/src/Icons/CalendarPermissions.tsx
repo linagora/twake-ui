@@ -11,7 +11,7 @@ function SvgCalendarPermissions({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 48 48"
+      viewBox="-4.812 -4.812 57.623 57.623"
       ref={iconRef}
       {...props}
     >

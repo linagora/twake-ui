@@ -10,7 +10,7 @@ function SvgStop({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 12 12"
+      viewBox="-1.206 -1.206 14.412 14.412"
       ref={iconRef}
       {...props}
     >

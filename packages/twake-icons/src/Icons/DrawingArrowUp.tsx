@@ -10,7 +10,7 @@ function SvgDrawingArrowUp({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 40 36"
+      viewBox="-4 -6.078 48 48"
       ref={iconRef}
       {...props}
     >

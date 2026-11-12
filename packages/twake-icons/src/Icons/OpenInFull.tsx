@@ -10,7 +10,7 @@ function SvgOpenInFull({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="0.794 0.794 14.412 14.412"
       ref={iconRef}
       {...props}
     >

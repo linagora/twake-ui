@@ -10,7 +10,7 @@ function SvgFileOutline({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 14 16"
+      viewBox="-2.619 -1.614 19.228 19.228"
       ref={iconRef}
       {...props}
     >

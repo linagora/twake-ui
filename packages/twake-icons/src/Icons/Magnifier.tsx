@@ -10,7 +10,7 @@ function SvgMagnifier({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 17"
+      viewBox="-0.861 -0.861 19.212 19.212"
       ref={iconRef}
       {...props}
     >

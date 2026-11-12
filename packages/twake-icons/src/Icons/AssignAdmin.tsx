@@ -8,7 +8,12 @@ function SvgAssignAdmin({
   iconRef?: React.Ref<SVGSVGElement>,
 }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" ref={iconRef} {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="-1.606 -1.606 19.218 19.218"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M11.2 10.896a.896.896 0 1 0 0-1.792.896.896 0 0 0 0 1.792" />
       <path
         fillRule="evenodd"

@@ -10,7 +10,7 @@ function SvgDown({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="0.433 0.736 15.134 15.134"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgMotorcycle({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 10"
+      viewBox="-1.606 -4.607 19.218 19.218"
       ref={iconRef}
       {...props}
     >

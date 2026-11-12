@@ -10,7 +10,7 @@ function SvgSpam({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-1.604 -1.56 19.113 19.113"
       ref={iconRef}
       {...props}
     >

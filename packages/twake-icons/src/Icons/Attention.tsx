@@ -10,7 +10,7 @@ function SvgAttention({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 22 19"
+      viewBox="-2.197 -3.706 26.406 26.406"
       ref={iconRef}
       {...props}
     >

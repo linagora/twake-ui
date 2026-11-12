@@ -10,7 +10,7 @@ function SvgFilter({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 14"
+      viewBox="-0.74 -2.743 19.286 19.286"
       ref={iconRef}
       {...props}
     >

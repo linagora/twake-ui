@@ -10,7 +10,7 @@ function SvgNumber({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 8"
+      viewBox="-0.861 -5.612 19.218 19.218"
       ref={iconRef}
       {...props}
     >

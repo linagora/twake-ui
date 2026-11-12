@@ -10,7 +10,7 @@ function SvgGroupList({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 13"
+      viewBox="-1.599 -3.581 19.212 19.212"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgShareExternal({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-1.569 -1.343 18.687 18.687"
       ref={iconRef}
       {...props}
     >

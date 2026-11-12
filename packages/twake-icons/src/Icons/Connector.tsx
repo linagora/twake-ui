@@ -10,7 +10,7 @@ function SvgConnector({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 17"
+      viewBox="-1.611 -1.135 19.269 19.269"
       ref={iconRef}
       {...props}
     >

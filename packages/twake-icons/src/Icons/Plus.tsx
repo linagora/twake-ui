@@ -10,7 +10,7 @@ function SvgPlus({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 14 14"
+      viewBox="-1.409 -1.409 16.819 16.819"
       ref={iconRef}
       {...props}
     >

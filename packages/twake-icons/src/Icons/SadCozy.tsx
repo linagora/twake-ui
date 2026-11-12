@@ -10,7 +10,7 @@ function SvgSadCozy({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 52 52"
+      viewBox="-5.23 -11.235 62.461 62.461"
       ref={iconRef}
       {...props}
     >

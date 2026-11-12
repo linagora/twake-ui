@@ -10,7 +10,7 @@ function SvgContractPermissions({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 48 48"
+      viewBox="-3.761 -3.583 54.664 54.664"
       ref={iconRef}
       {...props}
     >

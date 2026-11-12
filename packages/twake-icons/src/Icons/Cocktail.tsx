@@ -10,7 +10,7 @@ function SvgCocktail({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 18 18"
+      viewBox="-1.808 -1.808 21.615 21.615"
       ref={iconRef}
       {...props}
     >

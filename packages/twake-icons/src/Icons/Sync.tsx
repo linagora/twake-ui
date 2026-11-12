@@ -10,7 +10,7 @@ function SvgSync({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 12 16"
+      viewBox="-3.594 -1.598 19.195 19.195"
       ref={iconRef}
       {...props}
     >

@@ -11,7 +11,7 @@ function SvgFileTypeSharedDrive({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 96 78"
+      viewBox="-9.668 -18.665 115.336 115.336"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgList({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="0.797 0.797 14.406 14.406"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgHourglass({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 12 20"
+      viewBox="-6.014 -2.013 24.026 24.026"
       ref={iconRef}
       {...props}
     >

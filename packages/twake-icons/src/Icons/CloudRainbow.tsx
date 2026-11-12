@@ -10,7 +10,7 @@ function SvgCloudRainbow({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 11"
+      viewBox="-1.601 -4.267 19.212 19.212"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgPeoples({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-0.012 -0.009 16.025 16.025"
       ref={iconRef}
       {...props}
     >

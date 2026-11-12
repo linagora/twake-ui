@@ -10,7 +10,7 @@ function SvgUnknow({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 10 17"
+      viewBox="-4.386 -1.101 19.201 19.201"
       ref={iconRef}
       {...props}
     >

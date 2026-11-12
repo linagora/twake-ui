@@ -10,7 +10,7 @@ function SvgDots({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 4"
+      viewBox="-1.614 -7.616 19.228 19.228"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgTarget({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 17"
+      viewBox="-0.663 -0.663 19.218 19.218"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgRotateLeft({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 14 17"
+      viewBox="-2.645 -1.144 19.218 19.218"
       ref={iconRef}
       {...props}
     >

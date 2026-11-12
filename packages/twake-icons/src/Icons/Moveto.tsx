@@ -10,7 +10,7 @@ function SvgMoveto({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 10"
+      viewBox="-1.107 -4.607 19.212 19.212"
       ref={iconRef}
       {...props}
     >

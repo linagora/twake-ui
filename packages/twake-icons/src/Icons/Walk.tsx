@@ -10,7 +10,7 @@ function SvgWalk({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 11 17"
+      viewBox="-4.108 -0.861 19.212 19.212"
       ref={iconRef}
       {...props}
     >

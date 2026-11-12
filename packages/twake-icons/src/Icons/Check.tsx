@@ -10,7 +10,7 @@ function SvgCheck({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 13"
+      viewBox="-0.806 -2.898 19.212 19.212"
       ref={iconRef}
       {...props}
     >

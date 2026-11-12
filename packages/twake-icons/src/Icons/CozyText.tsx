@@ -10,7 +10,7 @@ function SvgCozyText({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 52 19"
+      viewBox="-4.882 -21.318 61.644 61.644"
       ref={iconRef}
       {...props}
     >

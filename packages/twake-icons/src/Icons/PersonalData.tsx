@@ -10,7 +10,7 @@ function SvgPersonalData({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 14 17"
+      viewBox="-2.604 -1.107 19.212 19.212"
       ref={iconRef}
       {...props}
     >

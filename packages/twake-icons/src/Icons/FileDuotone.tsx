@@ -10,7 +10,7 @@ function SvgFileDuotone({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 15 16"
+      viewBox="-2.207 -1.601 19.212 19.212"
       ref={iconRef}
       {...props}
     >

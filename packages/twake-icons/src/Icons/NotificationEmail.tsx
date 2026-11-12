@@ -10,7 +10,7 @@ function SvgNotificationEmail({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 18"
+      viewBox="-2.013 -3.017 24.026 24.026"
       ref={iconRef}
       {...props}
     >

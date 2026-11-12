@@ -11,7 +11,7 @@ function SvgFileNone({
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 16 16"
+      viewBox="-1.605 -1.606 19.218 19.218"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgRename({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 17"
+      viewBox="-1.605 -0.805 19.218 19.218"
       ref={iconRef}
       {...props}
     >

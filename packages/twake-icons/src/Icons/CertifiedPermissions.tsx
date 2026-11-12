@@ -10,7 +10,7 @@ function SvgCertifiedPermissions({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 48 48"
+      viewBox="-4.783 -4.806 57.579 57.579"
       ref={iconRef}
       {...props}
     >

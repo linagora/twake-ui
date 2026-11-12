@@ -10,7 +10,7 @@ function SvgHistory({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 21 18"
+      viewBox="-2.103 -3.605 25.207 25.207"
       ref={iconRef}
       {...props}
     >

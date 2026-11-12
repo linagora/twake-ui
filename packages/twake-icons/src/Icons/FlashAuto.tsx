@@ -10,7 +10,7 @@ function SvgFlashAuto({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 15 17"
+      viewBox="-2.009 -1.107 19.212 19.212"
       ref={iconRef}
       {...props}
     >

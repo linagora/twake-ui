@@ -10,7 +10,7 @@ function SvgMovement({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 8"
+      viewBox="-1.613 -5.605 19.212 19.212"
       ref={iconRef}
       {...props}
     >

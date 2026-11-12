@@ -10,7 +10,7 @@ function SvgConsumption({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 14"
+      viewBox="-0.63 -2.633 19.228 19.228"
       ref={iconRef}
       {...props}
     >

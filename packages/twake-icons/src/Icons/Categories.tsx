@@ -10,7 +10,7 @@ function SvgCategories({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 16"
+      viewBox="-1.115 -1.614 19.228 19.228"
       ref={iconRef}
       {...props}
     >

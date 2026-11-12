@@ -10,7 +10,7 @@ function SvgCloud2({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-1.6 -1.998 19.2 19.2"
       ref={iconRef}
       {...props}
     >

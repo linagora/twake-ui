@@ -10,7 +10,7 @@ function SvgBrowserOpera({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-1.613 -1.613 19.048 19.048"
       ref={iconRef}
       {...props}
     >

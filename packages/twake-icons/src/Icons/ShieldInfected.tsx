@@ -10,7 +10,7 @@ function SvgShieldInfected({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 13 16"
+      viewBox="-3.175 -1.596 19.015 19.015"
       ref={iconRef}
       {...props}
     >

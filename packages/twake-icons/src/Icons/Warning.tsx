@@ -10,7 +10,7 @@ function SvgWarning({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 14"
+      viewBox="-1.598 -2.685 19.195 19.195"
       ref={iconRef}
       {...props}
     >

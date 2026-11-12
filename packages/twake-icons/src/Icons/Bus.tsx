@@ -10,7 +10,7 @@ function SvgBus({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 19"
+      viewBox="-3.407 -1.908 22.816 22.816"
       ref={iconRef}
       {...props}
     >

@@ -10,7 +10,7 @@ function SvgRepare({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 16"
+      viewBox="-0.649 -1.621 19.218 19.218"
       ref={iconRef}
       {...props}
     >

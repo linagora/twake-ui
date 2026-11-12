@@ -10,7 +10,7 @@ function SvgKey2({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="-1.551 -1.565 18.473 18.473"
       ref={iconRef}
       {...props}
     >

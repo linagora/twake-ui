@@ -10,7 +10,7 @@ function SvgHand({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 13 16"
+      viewBox="-3.361 -1.606 19.218 19.218"
       ref={iconRef}
       {...props}
     >

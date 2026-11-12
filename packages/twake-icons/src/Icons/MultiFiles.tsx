@@ -10,7 +10,7 @@ function SvgMultiFiles({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 15"
+      viewBox="-1.614 -2.113 19.228 19.228"
       ref={iconRef}
       {...props}
     >

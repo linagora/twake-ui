@@ -10,7 +10,7 @@ function SvgMagicTrick({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 17 17"
+      viewBox="-1.101 -1.101 19.201 19.201"
       ref={iconRef}
       {...props}
     >

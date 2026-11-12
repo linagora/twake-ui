@@ -10,7 +10,7 @@ function SvgPin({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 12 16"
+      viewBox="-4.005 -1.601 19.212 19.212"
       ref={iconRef}
       {...props}
     >

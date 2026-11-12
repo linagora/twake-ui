@@ -10,7 +10,7 @@ function SvgLocationOutlined({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 12 17"
+      viewBox="-4.179 -1.681 20.021 20.021"
       ref={iconRef}
       {...props}
     >
