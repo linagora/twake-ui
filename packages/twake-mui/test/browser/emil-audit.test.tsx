@@ -66,7 +66,8 @@ describe('SearchBar small', () => {
     expect(fontSizeOf(screen.getByRole('textbox'))).toBe(14)
   })
 
-  it('has text of 16 px at least on a touch screen, so iOS does not zoom', async () => {
+  it('has text of 16 px at least on a touch phone, so iOS does not zoom', async () => {
+    await page.viewport(375, 800)
     await setTouch(true)
     expect(matchMedia('(pointer: coarse)').matches).toBe(true)
     renderThemed(<SearchBar size="small" placeholder="Search" />)
