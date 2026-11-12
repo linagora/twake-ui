@@ -49,7 +49,21 @@ Add the new icon in `/assets` folder, then optimize it and create the SVGr compo
 1. **Remove fill props**
    If your SVG file is an icon (not an illustration), verify that the file doesn't have any `fill` or `fill-opacity` properties. Remove them if necessary, to be able to set the color.
 
-2. **Optimize SVGs**
+2. **Put icons on the grid**
+
+   Each icon gets a square viewBox, its drawing centred and its longest side on 20 px of 24. Illustrations keep their own frame, and so do the icons listed in `scripts/fit-grid.mjs`: the small variants and the chevrons, drawn small on purpose, and the form controls (checkbox, radio), which fill the box of their component. The script measures the rendered drawings in Chromium (`npx playwright install chromium` once).
+
+   ```bash
+   npm run grid
+   ```
+
+   Or for a single icon:
+
+   ```bash
+   npm run grid -- assets/ui/new-icon.svg
+   ```
+
+3. **Optimize SVGs**
 
    ```bash
    npm run svgo
@@ -61,7 +75,7 @@ Add the new icon in `/assets` folder, then optimize it and create the SVGr compo
    npx svgo assets/ui/new-icon.svg
    ```
 
-3. **Generate SVGr components**
+4. **Generate SVGr components**
 
    ```bash
    npm run makeSvgr
@@ -73,19 +87,19 @@ Add the new icon in `/assets` folder, then optimize it and create the SVGr compo
    npm run makeSvgr -- assets/ui/new-icon.svg
    ```
 
-4. **Regenerate the sprite**
+5. **Regenerate the sprite**
 
    ```bash
    npm run sprite
    ```
 
-5. **Rebuild and fix lint**
+6. **Rebuild and fix lint**
 
    ```bash
    npm run build && npm run lint:fix
    ```
 
-6. **Check the barrel**
+7. **Check the barrel**
    The barrel export (`src/Icons/index.ts`) is automatically regenerated during build, so verify it's in sync with the generated components.
    ```bash
    npm run check:barrel
