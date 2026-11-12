@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import {
-  Alert,
   AlertTitle,
   Button,
   IconButton,
@@ -13,6 +12,8 @@ import React from 'react'
 
 import { Dots, Download, Icon } from '@linagora/twake-icons'
 
+import Alert from '../components/Alert'
+
 const severities = [
   'primary',
   'secondary',
@@ -23,6 +24,8 @@ const severities = [
 ] as const
 
 const variants = ['standard', 'filled', 'outlined'] as const
+
+const blockSides = ['end', 'start', 'center'] as const
 
 // cozy-ui's doc tints the action button like the alert, except on `filled`
 // where the alert already carries the contrast, and on primary/secondary where
@@ -55,6 +58,10 @@ const meta: Meta<typeof Alert> = {
       control: 'select',
       options: severities,
       description: 'Overrides the colour taken from `severity`'
+    },
+    block: {
+      control: 'select',
+      options: [false, true, ...blockSides]
     }
   }
 }
@@ -65,10 +72,18 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     severity: 'success',
-    variant: 'standard'
+    variant: 'standard',
+    block: false
   },
   render: args => (
-    <Alert {...args}>
+    <Alert
+      {...args}
+      action={
+        <Button variant="text" size="small">
+          ACTION
+        </Button>
+      }
+    >
       Get Cozy Drive for Desktop and synchronise your files safely to make them
       accessible at all times.
     </Alert>
@@ -160,6 +175,43 @@ export const Screenshot: Story = {
             Get Cozy Drive for Desktop and synchronise your files safely to make
             them accessible at all times.
           </Alert>
+        </Stack>
+      </section>
+
+      <section>
+        <Typography variant="h4" gutterBottom>
+          Block
+        </Typography>
+        <Stack spacing={1}>
+          {blockSides.map(block => (
+            <Alert
+              key={block}
+              severity="secondary"
+              block={block}
+              action={
+                <Button variant="text" size="small">
+                  ACTION
+                </Button>
+              }
+            >
+              {`block="${block}": all messages in Trash will be deleted if you reach limited storage.`}
+            </Alert>
+          ))}
+          {blockSides.map(block => (
+            <Alert
+              key={`${block}-without-icon`}
+              severity="secondary"
+              icon={false}
+              block={block}
+              action={
+                <Button variant="text" size="small">
+                  ACTION
+                </Button>
+              }
+            >
+              {`block="${block}" without an icon`}
+            </Alert>
+          ))}
         </Stack>
       </section>
     </Stack>
