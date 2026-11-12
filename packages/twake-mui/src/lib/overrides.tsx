@@ -1450,7 +1450,11 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             style: {
               fontSize: theme.typography.pxToRem(16),
               lineHeight: 1.3,
-              padding: '8px 12px'
+              padding: '8px 12px',
+              [theme.breakpoints.up('md')]: {
+                ...theme.typography.caption,
+                padding: '4px 8px'
+              }
             }
           }
         ]
