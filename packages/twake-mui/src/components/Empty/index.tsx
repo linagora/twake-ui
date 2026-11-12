@@ -7,6 +7,8 @@ import { Icon, IconProps } from '@linagora/twake-icons'
 
 export type EmptyIconSize = 'normal' | 'medium' | 'large'
 
+export type EmptyIconLook = 'plain' | 'tile'
+
 export interface EmptyComponentsProps {
   icon?: Partial<IconProps>
   title?: TypographyProps
@@ -20,6 +22,12 @@ export interface EmptyProps extends Omit<
 > {
   icon?: IconProps['icon']
   iconSize?: EmptyIconSize
+  /**
+   * `plain`: a large glyph in the text colour; `tile`: a 60 px white icon
+   * with a soft shadow on a 100 px tile in `action.selected`. `iconSize` has
+   * no effect with `tile`
+   */
+  iconLook?: EmptyIconLook
   title?: React.ReactNode
   text?: React.ReactNode
   /** Below the `lg` breakpoint, pins the block to the centre of the viewport */
@@ -29,6 +37,8 @@ export interface EmptyProps extends Omit<
 }
 
 const ICON_CLASS_NAME = 'Empty-icon'
+const ICON_TILE_CLASS_NAME = 'Empty-iconTile'
+const ILLUSTRATION_ICON_SIZE = 60
 
 const iconHeights: Record<EmptyIconSize, { desktop: number; mobile: number }> =
   {
@@ -60,9 +70,27 @@ const EmptyRoot = styled('div', {
     [`& .${ICON_CLASS_NAME}`]: {
       display: 'block',
       margin: '0 auto 16px',
+      [theme.breakpoints.down('lg')]: {
+        marginBottom: 8
+      },
+      [`&.${ICON_TILE_CLASS_NAME}`]: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 100,
+        height: 100,
+        // Rounder than the radius scale, as the Figma (33 on a 100 px tile)
+        borderRadius: 33,
+        backgroundColor: theme.vars.palette.action.selected,
+        color: theme.vars.palette.common.white,
+        fill: 'currentColor',
+        '& svg': { filter: 'drop-shadow(0 2px 10px rgb(0 0 0 / 10%))' }
+      }
+    },
+    // :where keeps the weight of `& .Empty-icon`, so an app's sx height still wins
+    [`& .${ICON_CLASS_NAME}:not(:where(.${ICON_TILE_CLASS_NAME}))`]: {
       height: iconHeights[iconSize].desktop,
       [theme.breakpoints.down('lg')]: {
-        marginBottom: 8,
         height: iconHeights[iconSize].mobile
       }
     },
@@ -89,24 +117,59 @@ export const EmptySubTitle: React.FC<TypographyProps> = props => (
 
 const renderIcon = (
   icon: IconProps['icon'],
+  iconLook: EmptyIconLook,
   iconProps?: Partial<IconProps>
 ): React.ReactElement => {
+  if (iconLook === 'tile') {
+    return (
+      <span
+        className={cx(ICON_CLASS_NAME, ICON_TILE_CLASS_NAME)}
+        aria-hidden="true"
+      >
+        {React.isValidElement<Partial<IconProps>>(icon) ? (
+          React.cloneElement(
+            icon,
+            icon.type === Icon
+              ? {
+                  size: icon.props.size ?? ILLUSTRATION_ICON_SIZE,
+                  ...iconProps
+                }
+              : {
+                  width: icon.props.width ?? ILLUSTRATION_ICON_SIZE,
+                  height: icon.props.height ?? ILLUSTRATION_ICON_SIZE,
+                  ...iconProps
+                }
+          )
+        ) : (
+          <Icon icon={icon} size={ILLUSTRATION_ICON_SIZE} {...iconProps} />
+        )}
+      </span>
+    )
+  }
   if (React.isValidElement<Partial<IconProps>>(icon)) {
     return React.cloneElement(icon, {
       className: cx(ICON_CLASS_NAME, icon.props.className),
       size: icon.props.size ?? (icon.type === Icon ? '100%' : undefined),
+      'aria-hidden': 'true',
       ...iconProps
     })
   }
 
   return (
-    <Icon className={ICON_CLASS_NAME} icon={icon} size="100%" {...iconProps} />
+    <Icon
+      className={ICON_CLASS_NAME}
+      icon={icon}
+      size="100%"
+      aria-hidden="true"
+      {...iconProps}
+    />
   )
 }
 
 export const Empty: React.FC<EmptyProps> = ({
   icon,
   iconSize = 'normal',
+  iconLook = 'plain',
   title,
   text,
   centered = false,
@@ -115,7 +178,7 @@ export const Empty: React.FC<EmptyProps> = ({
   ...props
 }) => (
   <EmptyRoot iconSize={iconSize} centered={centered} {...props}>
-    {icon && renderIcon(icon, componentsProps?.icon)}
+    {icon && renderIcon(icon, iconLook, componentsProps?.icon)}
     {title && (
       <Typography
         gutterBottom
