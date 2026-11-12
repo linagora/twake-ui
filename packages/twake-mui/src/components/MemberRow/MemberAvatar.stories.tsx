@@ -2,11 +2,11 @@ import { Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
+import image from '../../stories/images/mountains.png'
 import { AvatarSize } from '../Avatar'
 import MemberAvatar from './MemberAvatar'
 
 const sizes: AvatarSize[] = ['xs', 's', 'm', 'l', 'xl']
-const image = 'https://i.pravatar.cc/150?img=11'
 const brokenImage = 'https://example.invalid/avatar.png'
 
 const meta: Meta<typeof MemberAvatar> = {
