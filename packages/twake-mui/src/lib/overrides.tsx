@@ -613,7 +613,13 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       // Styling for chips in Autocomplete
       tag: {
         margin: '2px'
-      }
+      },
+      paper: ({ theme }) => ({
+        [theme.breakpoints.up('md')]: {
+          ...theme.typography.body3,
+          lineHeight: '21px'
+        }
+      })
     }
   },
   MuiBackdrop: {
@@ -1548,6 +1554,15 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         [`& .${listItemTextClasses.root}`]: {
           marginTop: 1,
           marginBottom: 1
+        },
+        // Heights stay those of the 16px text: line height in px
+        [theme.breakpoints.up('md')]: {
+          ...theme.typography.body3,
+          lineHeight: '21px',
+          [`& .${listItemTextClasses.primary}`]: {
+            ...theme.typography.body3,
+            lineHeight: '21px'
+          }
         },
         variants: [
           {
