@@ -1,0 +1,22 @@
+// Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
+import * as React from "react";
+import type { SVGProps } from "react";
+function SvgPenOutlined({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="-1.606 -1.606 19.218 19.218"
+      ref={iconRef}
+      {...props}
+    >
+      <path d="m9.831 5.351.818.818-8.053 8.053h-.818v-.818zM13.031 0a.9.9 0 0 0-.622.258l-1.627 1.627 3.333 3.333 1.627-1.627a.884.884 0 0 0 0-1.253l-2.08-2.08A.87.87 0 0 0 13.031 0m-3.2 2.836L0 12.667V16h3.333l9.831-9.831z" />
+    </svg>
+  );
+}
+export default SvgPenOutlined;
+
