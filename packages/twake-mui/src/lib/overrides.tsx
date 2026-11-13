@@ -1225,7 +1225,27 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     styleOverrides: {
       root: {
         padding: '8px 16px',
-        variants: alertSeverityVariants
+        variants: alertSeverityVariants,
+        // `block` of the `Alert` component: the action on a row of its own
+        // under the message; `end` keeps MUI's `marginRight: -8`
+        '&.block': {
+          flexWrap: 'wrap',
+          [`& .${alertClasses.message}`]: { flex: '1 1 0', minWidth: 0 },
+          [`& .${alertClasses.action}`]: {
+            flexBasis: '100%',
+            flexWrap: 'wrap',
+            justifyContent: 'flex-end',
+            paddingLeft: 0
+          }
+        },
+        [`&.blockStart .${alertClasses.action}`]: {
+          justifyContent: 'flex-start',
+          margin: 0
+        },
+        [`&.blockCenter .${alertClasses.action}`]: {
+          justifyContent: 'center',
+          margin: 0
+        }
       },
       icon: {
         paddingTop: '9px'

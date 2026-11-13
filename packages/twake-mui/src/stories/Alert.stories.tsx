@@ -13,6 +13,8 @@ import React from 'react'
 
 import { Dots, Download, Icon } from '@linagora/twake-icons'
 
+import TwakeAlert from '../components/Alert'
+
 const severities = [
   'primary',
   'secondary',
@@ -162,6 +164,65 @@ export const Screenshot: Story = {
           </Alert>
         </Stack>
       </section>
+    </Stack>
+  )
+}
+
+/** The action on a row of its own under the message (`block`), at the end, the start or the centre */
+export const ActionBelow: Story = {
+  tags: ['argos'],
+  render: () => (
+    <Stack spacing={2} sx={{ width: 360 }}>
+      <TwakeAlert
+        severity="secondary"
+        block
+        action={
+          <Button variant="text" size="small">
+            Empty trash now
+          </Button>
+        }
+      >
+        `block`: all messages in Trash will be deleted if you reach limited
+        storage.
+      </TwakeAlert>
+      <TwakeAlert
+        severity="secondary"
+        block="start"
+        action={
+          <>
+            <Button variant="text" size="small">
+              Show
+            </Button>
+            <Button variant="text" size="small">
+              Always show for this sender
+            </Button>
+          </>
+        }
+      >
+        `block=&quot;start&quot;`: remote images hidden to protect your privacy
+      </TwakeAlert>
+      <TwakeAlert
+        severity="secondary"
+        block="center"
+        action={
+          <Button variant="text" size="small">
+            Empty spam now
+          </Button>
+        }
+      >
+        `block=&quot;center&quot;`: all messages in Spam will be deleted if you
+        reach limited storage.
+      </TwakeAlert>
+      <TwakeAlert
+        severity="secondary"
+        action={
+          <Button variant="text" size="small">
+            Show
+          </Button>
+        }
+      >
+        The default placement, beside the message
+      </TwakeAlert>
     </Stack>
   )
 }
