@@ -67,6 +67,7 @@
     "classnames": "2.5.1",
     "cozy-minilog": "^3.10.1",
     "pdf-lib": "1.17.1",
+    "react-colorful": "5.8.1",
     "react-markdown": "10.1.0",
     "react-use-measure": "2.1.7",
     "react-virtuoso": "4.13.0",

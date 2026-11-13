@@ -1,0 +1,7 @@
+{
+  "ColorPickerCustom": {
+    "cancel": "hủy",
+    "submit": "lưu",
+    "invalid": "Nhập màu dạng #RRGGBB hoặc #RGB"
+  }
+}

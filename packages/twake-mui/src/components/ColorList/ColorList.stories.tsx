@@ -52,6 +52,18 @@ export const Default: Story = {
   )
 }
 
+export const ExtraColors: Story = {
+  args: {
+    extraColors: ['#617ADB', '#4896E5'],
+    selectedColor: '#617ADB'
+  },
+  render: args => (
+    <Box sx={{ width: { xs: '100%', md: 200 } }}>
+      <SelectableColorList {...args} />
+    </Box>
+  )
+}
+
 const Section: React.FC<{
   title: string
   width?: number
@@ -86,6 +98,13 @@ export const Screenshot: Story = {
       </Section>
       <Section title="Without custom color" width={200}>
         <ColorList size="small" />
+      </Section>
+      <Section title="Extra colors" width={200}>
+        <ColorList
+          size="small"
+          extraColors={['#617ADB', '#4896E5']}
+          selectedColor="#617ADB"
+        />
       </Section>
     </Stack>
   )
