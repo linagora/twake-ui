@@ -1,3 +1,10 @@
+# @linagora/twake-icons [3.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.0.0...@linagora/twake-icons@3.1.0) (2026-11-13)
+
+
+### Features
+
+* **twake-icons:** Add icon AddToCloud ([09287d4](https://github.com/linagora/twake-ui/commit/09287d4c2a29fd909dadb4813eefe250e8ff6b88))
+
 # @linagora/twake-icons [3.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.17.0...@linagora/twake-icons@3.0.0) (2026-10-29)
 
 
