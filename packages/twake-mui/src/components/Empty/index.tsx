@@ -7,6 +7,8 @@ import { Icon, IconProps } from '@linagora/twake-icons'
 
 export type EmptyIconSize = 'normal' | 'medium' | 'large'
 
+export type EmptyIconLook = 'plain' | 'tile' | 'tinted'
+
 export interface EmptyComponentsProps {
   icon?: Partial<IconProps>
   title?: TypographyProps
@@ -20,6 +22,12 @@ export interface EmptyProps extends Omit<
 > {
   icon?: IconProps['icon']
   iconSize?: EmptyIconSize
+  /**
+   * `plain`: a large glyph in the text colour; `tile`: a 60 px icon in
+   * `background.paper` on a 100 px tile in `background.contrast`;
+   * `tinted`: a 60 px icon in `primary.light`
+   */
+  iconLook?: EmptyIconLook
   title?: React.ReactNode
   text?: React.ReactNode
   /** Below the `lg` breakpoint, pins the block to the centre of the viewport */
@@ -29,6 +37,7 @@ export interface EmptyProps extends Omit<
 }
 
 const ICON_CLASS_NAME = 'Empty-icon'
+const ILLUSTRATION_ICON_SIZE = 60
 
 const iconHeights: Record<EmptyIconSize, { desktop: number; mobile: number }> =
   {
@@ -64,6 +73,23 @@ const EmptyRoot = styled('div', {
       [theme.breakpoints.down('lg')]: {
         marginBottom: 8,
         height: iconHeights[iconSize].mobile
+      },
+      '&.Empty-iconTile, &.Empty-iconTinted': {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+      },
+      '&.Empty-iconTile': {
+        width: 100,
+        height: 100,
+        // Rounder than the radius scale, as the Figma (33 on a 100 px tile)
+        borderRadius: 33,
+        backgroundColor: theme.vars.palette.background.contrast,
+        color: theme.vars.palette.background.paper
+      },
+      '&.Empty-iconTinted': {
+        height: ILLUSTRATION_ICON_SIZE,
+        color: theme.vars.palette.primary.light
       }
     },
     ...(centered && {
@@ -89,8 +115,26 @@ export const EmptySubTitle: React.FC<TypographyProps> = props => (
 
 const renderIcon = (
   icon: IconProps['icon'],
+  iconLook: EmptyIconLook,
   iconProps?: Partial<IconProps>
 ): React.ReactElement => {
+  if (iconLook !== 'plain') {
+    return (
+      <span
+        className={cx(
+          ICON_CLASS_NAME,
+          iconLook === 'tile' ? 'Empty-iconTile' : 'Empty-iconTinted'
+        )}
+        aria-hidden="true"
+      >
+        {React.isValidElement(icon) ? (
+          icon
+        ) : (
+          <Icon icon={icon} size={ILLUSTRATION_ICON_SIZE} {...iconProps} />
+        )}
+      </span>
+    )
+  }
   if (React.isValidElement<Partial<IconProps>>(icon)) {
     return React.cloneElement(icon, {
       className: cx(ICON_CLASS_NAME, icon.props.className),
@@ -107,6 +151,7 @@ const renderIcon = (
 export const Empty: React.FC<EmptyProps> = ({
   icon,
   iconSize = 'normal',
+  iconLook = 'plain',
   title,
   text,
   centered = false,
@@ -115,7 +160,7 @@ export const Empty: React.FC<EmptyProps> = ({
   ...props
 }) => (
   <EmptyRoot iconSize={iconSize} centered={centered} {...props}>
-    {icon && renderIcon(icon, componentsProps?.icon)}
+    {icon && renderIcon(icon, iconLook, componentsProps?.icon)}
     {title && (
       <Typography
         gutterBottom
