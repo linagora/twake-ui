@@ -4,10 +4,9 @@ import React from 'react'
 import { screen } from 'storybook/test'
 
 import AlertProvider from '../../providers/AlertProvider'
+import image from '../../stories/images/mountains.png'
 import Avatar from '../Avatar'
 import EditBadge, { EditBadgeProps } from './index'
-
-const image = 'https://i.pravatar.cc/150?img=11'
 
 const baseProps: Omit<EditBadgeProps, 'children'> = {
   src: () => image,

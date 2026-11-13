@@ -2,6 +2,7 @@ import { Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
+import mountains from '../../stories/images/mountains.png'
 import { getPlainTextFromMarkdown } from './helpers'
 import Markdown from './index'
 
@@ -53,7 +54,7 @@ __Bold and Italic Text__
 
 ## Images
 
-![Mountains](https://picsum.photos/id/1018/400/200 "Mountains")
+![Mountains](${mountains} "Mountains")
 
 ## Code
 
