@@ -2,6 +2,8 @@
 
 MUI v9 theme system for Twake Calendar and other Twake applications.
 
+Storybook: https://linagora.github.io/twake-ui/twake-mui/
+
 ## Requirements
 
 You need to use Node 24+

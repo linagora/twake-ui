@@ -2,6 +2,8 @@
 
 Monorepo containing shared UI packages for Twake applications.
 
+Storybooks: https://linagora.github.io/twake-ui/
+
 ## Structure
 
 ```
