@@ -1,3 +1,11 @@
+## @linagora/twake-icons [3.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.1.0...@linagora/twake-icons@3.1.1) (2026-11-16)
+
+
+### Bug Fixes
+
+* **twake-icons:** Give AssignAdmin and AssignModerator a viewBox ([a4c033a](https://github.com/linagora/twake-ui/commit/a4c033a930bd7d715a265283a3f6d618e45d88a3))
+* **twake-icons:** Regenerate AddToCloud from its source ([17d5efd](https://github.com/linagora/twake-ui/commit/17d5efd69c49cbecb29533ecd941d73ba3375339))
+
 # @linagora/twake-icons [3.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.0.0...@linagora/twake-icons@3.1.0) (2026-11-13)
 
 
