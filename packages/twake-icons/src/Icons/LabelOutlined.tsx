@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgLabelOutlined(props: SVGProps<SVGSVGElement>) {
+function SvgLabelOutlined({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 14" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 14"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M15.13.84C14.77.33 14.17 0 13.5 0L2.5.01C1.4.01.5.9.5 2v10c0 1.1.9 1.99 2 1.99l11 .01c.67 0 1.27-.33 1.63-.84L19.5 7zM13.5 12h-11V2h11l3.55 5z" />
     </svg>
   );

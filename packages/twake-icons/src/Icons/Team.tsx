@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgTeam(props: SVGProps<SVGSVGElement>) {
+function SvgTeam({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 12"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M3.87 6.553c.697.014 1.345.363 1.78.974.532.75 1.412 1.2 2.35 1.2a2.87 2.87 0 0 0 2.35-1.207c.436-.61 1.083-.96 1.78-.975-.523-.887-2.617-1.454-4.13-1.454-1.505 0-3.607.567-4.13 1.462m-1.688-.008a2.18 2.18 0 0 0 2.182-2.181 2.18 2.18 0 0 0-2.182-2.182A2.18 2.18 0 0 0 0 4.364a2.18 2.18 0 0 0 2.182 2.181m11.636 0A2.18 2.18 0 0 0 16 4.364a2.18 2.18 0 0 0-2.182-2.182 2.18 2.18 0 0 0-2.182 2.182c0 1.207.975 2.181 2.182 2.181M8 4.364a2.18 2.18 0 0 0 2.182-2.182A2.18 2.18 0 0 0 8 0a2.18 2.18 0 0 0-2.182 2.182A2.18 2.18 0 0 0 8 4.364" />
       <path d="M14.546 7.273h-2.379c-.56 0-.982.327-1.222.669-.029.043-.989 1.513-2.945 1.513a3.62 3.62 0 0 1-2.945-1.513c-.284-.4-.728-.67-1.222-.67H1.455C.655 7.273 0 7.928 0 8.728v2.91h5.09V9.992a5.1 5.1 0 0 0 2.91.916 5.1 5.1 0 0 0 2.91-.916v1.643H16V8.727c0-.8-.655-1.454-1.454-1.454" />
     </svg>

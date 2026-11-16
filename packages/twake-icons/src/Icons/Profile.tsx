@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgProfile(props: SVGProps<SVGSVGElement>) {
+function SvgProfile({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path
         fillRule="evenodd"
         d="M8 0C3.584 0 0 3.584 0 8s3.584 8 8 8 8-3.584 8-8-3.584-8-8-8m5.088 11.864C11.944 10.472 9.168 10 8 10s-3.944.472-5.088 1.864A6.36 6.36 0 0 1 1.6 8c0-3.528 2.872-6.4 6.4-6.4s6.4 2.872 6.4 6.4a6.36 6.36 0 0 1-1.312 3.864M5.2 6c0-1.552 1.248-2.8 2.8-2.8s2.8 1.248 2.8 2.8S9.552 8.8 8 8.8A2.793 2.793 0 0 1 5.2 6"

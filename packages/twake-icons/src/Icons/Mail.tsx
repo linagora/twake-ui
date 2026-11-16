@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgMail(props: SVGProps<SVGSVGElement>) {
+function SvgMail({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 32 32"
+      ref={iconRef}
       {...props}
     >
       <rect width={32} height={32} fill="url(#mail_svg__a)" rx={10} />

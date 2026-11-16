@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgCozyLogo(props: SVGProps<SVGSVGElement>) {
+function SvgCozyLogo({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101 30" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 101 30"
+      ref={iconRef}
+      {...props}
+    >
       <g fill="none" fillRule="evenodd">
         <path d="M0-5h101v40H0z" />
         <path

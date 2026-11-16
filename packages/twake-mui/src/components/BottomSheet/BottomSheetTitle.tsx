@@ -1,10 +1,12 @@
-import { Icon, IconProps } from '@linagora/twake-icons'
 import { List, ListItemIcon, Typography } from '@mui/material'
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useContext } from 'react'
 
-import BottomSheetItem from './BottomSheetItem'
+import { Icon, IconProps } from '@linagora/twake-icons'
+
 import ListItem from '../ListItem'
 import ListItemText from '../ListItemText'
+import BottomSheetItem from './BottomSheetItem'
+import BottomSheetTitleIdContext from './BottomSheetTitleIdContext'
 
 export interface BottomSheetTitleProps {
   className?: string
@@ -15,6 +17,8 @@ export interface BottomSheetTitleProps {
 
 const BottomSheetTitle = forwardRef<HTMLElement, BottomSheetTitleProps>(
   ({ className, label, icon }, ref) => {
+    const titleId = useContext(BottomSheetTitleIdContext)
+
     if (icon) {
       return (
         <BottomSheetItem disableGutters disableElevation>
@@ -25,7 +29,9 @@ const BottomSheetTitle = forwardRef<HTMLElement, BottomSheetTitleProps>(
               </ListItemIcon>
               <ListItemText
                 primary={label}
-                slotProps={{ primary: { variant: 'h6', noWrap: true } }}
+                slotProps={{
+                  primary: { id: titleId, variant: 'h6', noWrap: true }
+                }}
               />
             </ListItem>
           </List>
@@ -35,7 +41,13 @@ const BottomSheetTitle = forwardRef<HTMLElement, BottomSheetTitleProps>(
 
     return (
       <BottomSheetItem disableElevation>
-        <Typography ref={ref} className={className} variant="h6" align="center">
+        <Typography
+          ref={ref}
+          id={titleId}
+          className={className}
+          variant="h6"
+          align="center"
+        >
           {label}
         </Typography>
       </BottomSheetItem>

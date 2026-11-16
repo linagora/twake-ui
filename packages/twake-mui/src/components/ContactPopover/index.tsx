@@ -1,9 +1,9 @@
-import { Icon } from '@linagora/twake-icons'
-import { Cross } from '@linagora/twake-icons'
 import { Box, IconButton, Popover, styled } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { useExtendI18n } from 'twake-i18n'
+import { Icon } from '@linagora/twake-icons'
+import { Cross } from '@linagora/twake-icons'
+import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import { AttendeeInfo } from './AttendeeInfo'
 import { ContactPopoverActions } from './ContactPopoverActions'
@@ -27,7 +27,7 @@ const StyledPopoverContent = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   gap: theme.spacing(2),
   position: 'relative',
-  minWidth: 320
+  minWidth: 'min(320px, calc(100vw - 32px))'
 }))
 
 const CloseButton = styled(IconButton)(() => ({
@@ -49,6 +49,8 @@ export interface ContactPopoverProps {
   onClose?: () => void
   /** Disable the popover (render children only) */
   disabled?: boolean
+  /** Open the popover when the trigger is hovered, not only when clicked */
+  openOnHover?: boolean
 }
 
 interface ContactPopoverComponent extends React.FC<ContactPopoverProps> {
@@ -59,15 +61,17 @@ interface ContactPopoverComponent extends React.FC<ContactPopoverProps> {
   EmailAction: typeof ContactPopoverEmailAction
 }
 
-export const ContactPopover: ContactPopoverComponent = ({
+const ContactPopover: ContactPopoverComponent = ({
   name,
   email,
   children,
   onEmailCopy,
   onClose,
-  disabled = false
+  disabled = false,
+  openOnHover = true
 }) => {
   useExtendI18n(locales)
+  const { t } = useI18n()
 
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
   const openTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -160,8 +164,8 @@ export const ContactPopover: ContactPopoverComponent = ({
     <div>
       <div
         onClick={handleClick}
-        onMouseEnter={handleTriggerMouseEnter}
-        onMouseLeave={handleTriggerMouseLeave}
+        onMouseEnter={openOnHover ? handleTriggerMouseEnter : undefined}
+        onMouseLeave={openOnHover ? handleTriggerMouseLeave : undefined}
         onKeyDown={event => {
           if (event.key === 'Enter' || event.key === ' ') {
             handleClick(event as unknown as React.MouseEvent<HTMLElement>)
@@ -188,15 +192,19 @@ export const ContactPopover: ContactPopoverComponent = ({
             elevation: 4,
             sx: {
               borderRadius: 2,
-              maxWidth: 400
+              maxWidth: 'min(400px, calc(100% - 32px))'
             },
-            onMouseEnter: handlePopoverMouseEnter,
-            onMouseLeave: handleMouseLeave
+            onMouseEnter: openOnHover ? handlePopoverMouseEnter : undefined,
+            onMouseLeave: openOnHover ? handleMouseLeave : undefined
           }
         }}
       >
         <StyledPopoverContent onClick={event => event.stopPropagation()}>
-          <CloseButton size="small" onClick={handleClose}>
+          <CloseButton
+            size="small"
+            onClick={handleClose}
+            aria-label={t('ContactPopover.closeButton')}
+          >
             <Icon icon={Cross} size={16} />
           </CloseButton>
           <AttendeeInfo name={name} email={email} onEmailCopy={onEmailCopy} />

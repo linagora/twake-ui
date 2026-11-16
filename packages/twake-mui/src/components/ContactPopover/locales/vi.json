@@ -2,6 +2,10 @@
   "ContactPopover": {
     "emailButton": "Gửi email",
     "copyTooltip": "Sao chép email",
-    "copiedTooltip": "Đã sao chép!"
+    "copiedTooltip": "Đã sao chép!",
+    "closeButton": "Đóng",
+    "chatButton": "Mở trò chuyện",
+    "videoButton": "Bắt đầu cuộc gọi video",
+    "calendarButton": "Lên lịch cuộc họp"
   }
 }

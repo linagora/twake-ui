@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgNoteText(props: SVGProps<SVGSVGElement>) {
+function SvgNoteText({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 76 22"
+      ref={iconRef}
       {...props}
     >
       <path
@@ -38,8 +44,8 @@ function SvgNoteText(props: SVGProps<SVGSVGElement>) {
           y2={21.069}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FFC953" />
-          <stop offset={1} stopColor="#FFB81E" />
+          <stop stopColor="#ffc953" />
+          <stop offset={1} stopColor="#ffb81e" />
         </linearGradient>
         <linearGradient
           id="note-text_svg__b"
@@ -49,8 +55,8 @@ function SvgNoteText(props: SVGProps<SVGSVGElement>) {
           y2={21.069}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FFC953" />
-          <stop offset={1} stopColor="#FFB81E" />
+          <stop stopColor="#ffc953" />
+          <stop offset={1} stopColor="#ffb81e" />
         </linearGradient>
         <linearGradient
           id="note-text_svg__c"
@@ -60,8 +66,8 @@ function SvgNoteText(props: SVGProps<SVGSVGElement>) {
           y2={21.069}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FFC953" />
-          <stop offset={1} stopColor="#FFB81E" />
+          <stop stopColor="#ffc953" />
+          <stop offset={1} stopColor="#ffb81e" />
         </linearGradient>
         <linearGradient
           id="note-text_svg__d"
@@ -71,8 +77,8 @@ function SvgNoteText(props: SVGProps<SVGSVGElement>) {
           y2={21.069}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FFC953" />
-          <stop offset={1} stopColor="#FFB81E" />
+          <stop stopColor="#ffc953" />
+          <stop offset={1} stopColor="#ffb81e" />
         </linearGradient>
         <linearGradient
           id="note-text_svg__e"
@@ -82,8 +88,8 @@ function SvgNoteText(props: SVGProps<SVGSVGElement>) {
           y2={21.069}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FFC953" />
-          <stop offset={1} stopColor="#FFB81E" />
+          <stop stopColor="#ffc953" />
+          <stop offset={1} stopColor="#ffb81e" />
         </linearGradient>
       </defs>
     </svg>

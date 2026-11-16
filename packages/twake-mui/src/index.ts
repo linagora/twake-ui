@@ -17,33 +17,120 @@ export { makePalette } from './lib/makePalette'
 export { theme } from './lib/theme'
 export { radius } from './lib/radius'
 // COMPONENTS & HELPERS
-export { TwakeMuiThemeProvider } from './components/ThemeProvider'
-export { Avatar, default as AvatarDefault } from './components/Avatar'
-export { Button, default as ButtonDefault } from './components/Button'
+export { TwakeMuiThemeProvider } from './providers/ThemeProvider'
+export { default as ActionsBar } from './components/ActionsBar'
+export { default as ActionsMenu } from './components/ActionsMenu'
+export { default as ActionsMenuWrapper } from './components/ActionsMenu/ActionsMenuWrapper'
+export { default as ActionsMenuItem } from './components/ActionsMenu/ActionsMenuItem'
+export { default as ActionsMenuMobileHeader } from './components/ActionsMenu/ActionsMenuMobileHeader'
+export { default as ActionsMenuButton } from './components/ActionsMenu/ActionsMenuButton'
+export { default as ActionsItems } from './components/ActionsMenu/ActionsItems'
+export {
+  getActionName,
+  getOnlyNeededActions
+} from './components/ActionsMenu/helpers'
+export {
+  makeActions,
+  makeAppWebLink,
+  makeBase64FromFile,
+  fileToArrayBuffer,
+  addFileToPdf,
+  makePdfBlob,
+  downloadBlob
+} from './components/ActionsMenu/Actions/helpers'
+export {
+  wrapTextToLines,
+  pushNewPageIfNeeded,
+  drawWrappedText,
+  makePdfBlobFromText
+} from './components/ActionsMenu/Actions/pdfHelpers'
+export {
+  makeAction,
+  makeActionComponent
+} from './components/ActionsMenu/Actions/makeAction'
+export { divider } from './components/ActionsMenu/Actions/divider'
+export { modify } from './components/ActionsMenu/Actions/modify'
+export { smsTo } from './components/ActionsMenu/Actions/smsTo'
+export { call } from './components/ActionsMenu/Actions/call'
+export { emailTo } from './components/ActionsMenu/Actions/emailTo'
+export { print } from './components/ActionsMenu/Actions/print'
+export { download } from './components/ActionsMenu/Actions/download'
+export {
+  addToFavorites,
+  removeFromFavorites
+} from './components/ActionsMenu/Actions/favorites'
+export { viewInContacts } from './components/ActionsMenu/Actions/viewInContacts'
+export { viewInDrive } from './components/ActionsMenu/Actions/viewInDrive'
+export { copyToClipboard } from './components/ActionsMenu/Actions/copyToClipboard'
+export { editAttribute } from './components/ActionsMenu/Actions/editAttribute'
+export { others } from './components/ActionsMenu/Actions/others'
+export { exportToText } from './components/ActionsMenu/Actions/exportToText'
+export { default as AppTitle } from './components/AppTitle'
+export { default as Avatar } from './components/Avatar'
+export { default as BarTitle } from './components/BarTitle'
+export { default as Button } from './components/Button'
 export { default as BottomSheet } from './components/BottomSheet'
 export { default as BottomSheetItem } from './components/BottomSheet/BottomSheetItem'
 export { default as BottomSheetHeader } from './components/BottomSheet/BottomSheetHeader'
 export { default as BottomSheetTitle } from './components/BottomSheet/BottomSheetTitle'
 export { default as Chip } from './components/Chip'
-export { Dialog, default as DialogDefault } from './components/Dialog'
-export {
-  ContactPopover,
-  default as ContactPopoverDefault
-} from './components/ContactPopover'
+export { default as ColorList } from './components/ColorList'
+export { default as Dialog } from './components/Dialog'
+export { default as StandardDialog } from './components/Dialogs/StandardDialog'
+export { default as DialogCloseButton } from './components/Dialogs/DialogCloseButton'
+export { default as DialogBackButton } from './components/Dialogs/DialogBackButton'
+export { default as ConfirmDialog } from './components/Dialogs/ConfirmDialog'
+export { default as FixedDialog } from './components/Dialogs/FixedDialog'
+export { default as FixedActionsDialog } from './components/Dialogs/FixedActionsDialog'
+export { default as IllustrationDialog } from './components/Dialogs/IllustrationDialog'
+export { default as PermissionDialog } from './components/Dialogs/PermissionDialog'
+export { default as InstallFlagshipAppDialog } from './components/Dialogs/InstallFlagshipAppDialog'
+export { default as ShortcutDialog } from './components/Dialogs/ShortcutDialog'
+export { useDialogLayout } from './components/Dialogs/useDialogLayout'
+export { default as ContactPopover } from './components/ContactPopover'
 export { default as DropdownButton } from './components/DropdownButton'
 export { default as DropdownText } from './components/DropdownText'
+export { default as EditBadge } from './components/EditBadge'
 export { Empty, EmptySubTitle } from './components/Empty'
 export { ExtendableFab } from './components/ExtendableFab'
+export { default as Filename } from './components/Filename'
+export { default as FilePath } from './components/FilePath'
+export { default as FilePathLink } from './components/FilePathLink'
+export { default as IntentHeader } from './components/IntentHeader'
 export { default as ListItem } from './components/ListItem'
 export { default as ListItemButton } from './components/ListItemButton'
 export { default as ListItemText } from './components/ListItemText'
 export { default as ListItemSkeleton } from './components/ListItemSkeleton'
 export { default as ListSkeleton } from './components/ListSkeleton'
 export { default as ListSubheader } from './components/ListSubheader'
+export { default as LoadMore } from './components/LoadMore'
+export { default as Markdown } from './components/Markdown'
+export { getPlainTextFromMarkdown } from './components/Markdown/helpers'
+export { default as MemberAutocomplete } from './components/MemberAutocomplete'
+export { default as MemberAvatar } from './components/MemberRow/MemberAvatar'
+export { default as MemberList } from './components/MemberList'
+export { default as MemberGroupAvatar } from './components/MemberRow/MemberGroupAvatar'
+export { default as MemberRow } from './components/MemberRow'
+export { default as MemberRoleMenu } from './components/MemberRow/MemberRoleMenu'
+export { default as MidEllipsis } from './components/MidEllipsis'
+export { default as NavigationList } from './components/NavigationList'
+export { default as NavigationListHeader } from './components/NavigationList/NavigationListHeader'
+export { default as NavigationListSection } from './components/NavigationList/NavigationListSection'
+export { default as NestedSelect } from './components/NestedSelect'
+export { default as NestedSelectModal } from './components/NestedSelect/NestedSelectModal'
+export { default as NestedSelectBottomSheet } from './components/NestedSelect/NestedSelectBottomSheet'
+export { default as NestedSelectResponsive } from './components/NestedSelect/NestedSelectResponsive'
 export { default as PointerAlert } from './components/PointerAlert'
-export { Tabs, default as TabsDefault } from './components/Tabs'
-export { Switch, default as SwitchDefault } from './components/Switch'
-export { SearchBar, default as SearchBarDefault } from './components/SearchBar'
+export { default as AlertProvider } from './providers/AlertProvider'
+export { useAlert } from './providers/AlertProvider/useAlert'
+export { default as ConfirmDialogProvider } from './providers/ConfirmDialogProvider'
+export { useConfirmDialog } from './providers/ConfirmDialogProvider/useConfirmDialog'
+export { default as SelectionProvider } from './providers/SelectionProvider'
+export { useSelection } from './providers/SelectionProvider/useSelection'
+export { default as ProgressionBanner } from './components/ProgressionBanner'
+export { default as Tabs } from './components/Tabs'
+export { default as Switch } from './components/Switch'
+export { default as SearchBar } from './components/SearchBar'
 export { default as SpotModal } from './components/SpotModal'
 export { default as SpotModalSection } from './components/SpotModal/SpotModalSection'
 export { Sidebar, SIDEBAR_MOBILE_HEIGHT } from './components/Sidebar'
@@ -57,11 +144,14 @@ export { NavIcon } from './components/NavIcon'
 export { default as NavText } from './components/NavText'
 export { NavDesktopLimiter } from './components/NavDesktopLimiter'
 export { NavDesktopDropdown } from './components/NavDesktopDropdown'
+export { default as PasswordField } from './components/PasswordField'
 export {
   nameToColor,
   supportedColors,
-  getInitials
+  getInitials,
+  colorToGradient
 } from './components/Avatar/helpers'
+export { COLORS } from './components/ColorList/helpers'
 export { default as AccordionExpandIcon } from './components/AccordionExpandIcon'
 export { default as VirtualizedTable } from './components/VirtualizedTable'
 export { VirtuosoMockContext } from 'react-virtuoso'
@@ -69,7 +159,7 @@ export { useBreakpoints } from './hooks/useBreakpoints'
 export {
   connectSpaceOverlay,
   computeOverlayRegion
-} from './components/SpaceOverlay/spaceOverlay'
+} from './components/SpaceOverlay/connectSpaceOverlay'
 export {
   OverlayPortal,
   SpaceOverlayProvider,
@@ -86,7 +176,59 @@ export { OverlayFrame } from './components/SpaceOverlay/OverlayFrame'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
 export type { PaletteJson } from './lib/types'
+export type { ActionsBarProps } from './components/ActionsBar'
+export type {
+  ActionsMenuProps,
+  ActionsMenuComponentsProps
+} from './components/ActionsMenu'
+export type { ActionsMenuWrapperProps } from './components/ActionsMenu/ActionsMenuWrapper'
+export type { ActionsMenuItemProps } from './components/ActionsMenu/ActionsMenuItem'
+export type { ActionsMenuMobileHeaderProps } from './components/ActionsMenu/ActionsMenuMobileHeader'
+export type { ActionsMenuButtonProps } from './components/ActionsMenu/ActionsMenuButton'
+export type { ActionsItemsProps } from './components/ActionsMenu/ActionsItems'
+export type {
+  Action,
+  ActionCallbackOptions,
+  ActionComponent,
+  ActionComponentProps,
+  ActionComponentSlotProps,
+  ActionDocument,
+  ActionFactory,
+  ActionObject,
+  ActionTranslate,
+  GenerateWebLink,
+  WebLinkActionOptions,
+  WebLinkClient,
+  WebLinkOptions
+} from './components/ActionsMenu/types'
+export type {
+  MakeActionComponentOptions,
+  MakeActionOptions
+} from './components/ActionsMenu/Actions/makeAction'
+export type {
+  AppWebLinkOptions,
+  FetchBlobFileById,
+  MakePdfBlobOptions
+} from './components/ActionsMenu/Actions/helpers'
+export type {
+  WrapTextToLinesOptions,
+  PdfCursor,
+  PushNewPageIfNeededOptions,
+  DrawWrappedTextOptions
+} from './components/ActionsMenu/Actions/pdfHelpers'
+export type { FavoritesActionOptions } from './components/ActionsMenu/Actions/favorites'
+export type {
+  DownloadActionOptions,
+  DownloadFileOptions
+} from './components/ActionsMenu/Actions/download'
+export type {
+  PrintActionOptions,
+  PrintClient
+} from './components/ActionsMenu/Actions/print'
+export type { ExportToTextActionOptions } from './components/ActionsMenu/Actions/exportToText'
+export type { AppTitleProps } from './components/AppTitle'
 export type { AvatarProps } from './components/Avatar'
+export type { BarTitleProps } from './components/BarTitle'
 export type { ButtonProps } from './components/Button'
 export type {
   BottomSheetProps,
@@ -113,18 +255,50 @@ export type { ChipProps } from './components/Chip'
 export type {
   SpaceOverlay,
   SpaceOverlayStatus
-} from './components/SpaceOverlay/spaceOverlay'
+} from './components/SpaceOverlay/connectSpaceOverlay'
 export type { SpaceOverlayProviderProps } from './components/SpaceOverlay/SpaceOverlay'
 export type {
   OverlayBox,
   OverlayRegion
 } from './components/SpaceOverlay/region'
 export type { OverlayFrameProps } from './components/SpaceOverlay/OverlayFrame'
+export type { ColorListProps, ColorListSize } from './components/ColorList'
 export type { DialogProps, DialogSize } from './components/Dialog'
+export type { StandardDialogProps } from './components/Dialogs/StandardDialog'
+export type { DialogSectionsProps } from './components/Dialogs/types'
+export type { ShortcutDialogProps } from './components/Dialogs/ShortcutDialog'
+export type { InstallFlagshipAppDialogProps } from './components/Dialogs/InstallFlagshipAppDialog'
+export type { PermissionDialogProps } from './components/Dialogs/PermissionDialog'
+export type { IllustrationDialogProps } from './components/Dialogs/IllustrationDialog'
+export type { FixedActionsDialogProps } from './components/Dialogs/FixedActionsDialog'
+export type { FixedDialogProps } from './components/Dialogs/FixedDialog'
+export type { ConfirmDialogProps } from './components/Dialogs/ConfirmDialog'
+export type { DialogCloseButtonProps } from './components/Dialogs/DialogCloseButton'
+export type { DialogBackButtonProps } from './components/Dialogs/DialogBackButton'
+export type {
+  DialogCloseReason,
+  DialogLayout,
+  DialogLayoutComponentsProps,
+  DialogLayoutProps
+} from './components/Dialogs/useDialogLayout'
 export type {
   PointerAlertProps,
   PointerAlertDirection
 } from './components/PointerAlert'
+export type { AlertProviderProps } from './providers/AlertProvider'
+export type {
+  AlertContextValue,
+  ShowAlert,
+  ShowAlertOptions
+} from './providers/AlertProvider/useAlert'
+export type { ConfirmDialogProviderProps } from './providers/ConfirmDialogProvider'
+export type {
+  ConfirmDialogContextValue,
+  ShowConfirmDialogOptions
+} from './providers/ConfirmDialogProvider/useConfirmDialog'
+export type { SelectionProviderProps } from './providers/SelectionProvider'
+export type { SelectionContextValue } from './providers/SelectionProvider/useSelection'
+export type { ProgressionBannerProps } from './components/ProgressionBanner'
 export type {
   EmptyProps,
   EmptyIconSize,
@@ -139,6 +313,10 @@ export type {
   ExtendableFabProps,
   ScrollOptions
 } from './components/ExtendableFab'
+export type { FilenameProps } from './components/Filename'
+export type { FilePathProps } from './components/FilePath'
+export type { FilePathLinkProps } from './components/FilePathLink'
+export type { IntentHeaderProps } from './components/IntentHeader'
 export type {
   ListItemProps,
   ListItemGutters,
@@ -149,6 +327,31 @@ export type { ListItemTextProps } from './components/ListItemText'
 export type { ListItemSkeletonProps } from './components/ListItemSkeleton'
 export type { ListSkeletonProps } from './components/ListSkeleton'
 export type { ListSubheaderProps } from './components/ListSubheader'
+export type { LoadMoreProps } from './components/LoadMore'
+export type { MarkdownProps } from './components/Markdown'
+export type { MemberAutocompleteProps } from './components/MemberAutocomplete'
+export type { MemberAvatarProps } from './components/MemberRow/MemberAvatar'
+export type { MemberListProps } from './components/MemberList'
+export type { MemberGroupAvatarProps } from './components/MemberRow/MemberGroupAvatar'
+export type { MemberRowProps } from './components/MemberRow'
+export type { MemberRoleMenuProps } from './components/MemberRow/MemberRoleMenu'
+export type { Member, MemberRole } from './components/MemberRow/types'
+export type { MidEllipsisProps } from './components/MidEllipsis'
+export type { NavigationListProps } from './components/NavigationList'
+export type { NavigationListHeaderProps } from './components/NavigationList/NavigationListHeader'
+export type { NavigationListSectionProps } from './components/NavigationList/NavigationListSection'
+export type {
+  NestedSelectHeaderProps,
+  NestedSelectItem,
+  NestedSelectItemAction,
+  NestedSelectOptions,
+  NestedSelectProps,
+  NestedSelectRadioPosition,
+  NestedSelectSearchOptions
+} from './components/NestedSelect/types'
+export type { NestedSelectModalProps } from './components/NestedSelect/NestedSelectModal'
+export type { NestedSelectBottomSheetProps } from './components/NestedSelect/NestedSelectBottomSheet'
+export type { NestedSelectResponsiveProps } from './components/NestedSelect/NestedSelectResponsive'
 export type { TabsProps } from './components/Tabs'
 export type { SwitchProps } from './components/Switch'
 export type { SearchBarProps } from './components/SearchBar/types'
@@ -164,6 +367,8 @@ export type { NavDropdownProps } from './components/NavLink/NavDropdown'
 export type { NavIconProps } from './components/NavIcon'
 export type { NavTextProps } from './components/NavText'
 export type { NavDesktopLimiterProps } from './components/NavDesktopLimiter'
+export type { EditBadgeProps } from './components/EditBadge'
+export type { PasswordFieldProps } from './components/PasswordField'
 export type { NavDesktopDropdownProps } from './components/NavDesktopDropdown'
 export type {
   VirtualizedTableProps,

@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import { Icon, FileOutline, Openwith, Right } from '@linagora/twake-icons'
 import { Avatar, Grid, Stack, Typography, IconButton } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Icon, FileOutline, Openwith, Right } from '@linagora/twake-icons'
 
 import { Chip } from '../components/Chip'
 
@@ -25,7 +26,7 @@ const meta: Meta<typeof Chip> = {
     },
     variant: {
       control: 'select',
-      options: ['filled', 'outlined']
+      options: ['filled', 'outlined', 'ghost']
     },
     disabled: {
       control: 'boolean'
@@ -49,6 +50,8 @@ export const Default: Story = {
   render: args => <Chip {...args} />
 }
 
+const LONG_LABEL = 'a.very.long.address.that.goes.on.and.on.again@example.com'
+
 export const Screenshot: Story = {
   tags: ['argos'],
   render: () => {
@@ -61,7 +64,7 @@ export const Screenshot: Story = {
       'warning',
       'info'
     ] as const
-    const variants = ['filled', 'outlined'] as const
+    const variants = ['filled', 'outlined', 'ghost'] as const
     const squareProps = [false, true] as const
     const sizeProps = ['small', 'medium'] as const
 
@@ -87,7 +90,7 @@ export const Screenshot: Story = {
                     </Typography>
                     <Grid container spacing={4}>
                       {variants.map(variant => (
-                        <Grid key={variant} size={{ xs: 12, sm: 6 }}>
+                        <Grid key={variant} size={{ xs: 12, sm: 4 }}>
                           <Stack spacing={2}>
                             <Typography
                               variant="h6"
@@ -256,6 +259,25 @@ export const Screenshot: Story = {
             ))}
           </div>
         ))}
+        <div>
+          <Typography variant="h3" sx={{ mb: 2 }}>
+            Long label
+          </Typography>
+          <Stack spacing={2} sx={{ width: 240, alignItems: 'flex-start' }}>
+            <Chip label={LONG_LABEL} onDelete={() => {}} />
+            <Chip
+              label={LONG_LABEL}
+              onDelete={() => {}}
+              sx={{ maxWidth: 200 }}
+            />
+            <Chip label={LONG_LABEL} onDelete={() => {}} size="small" />
+            <Chip
+              label={LONG_LABEL}
+              onDelete={() => {}}
+              deleteIcon={<Icon icon={FileOutline} />}
+            />
+          </Stack>
+        </div>
       </Stack>
     )
   }

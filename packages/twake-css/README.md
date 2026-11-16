@@ -28,8 +28,8 @@ keeps a class and a component on the same value.
 ## Anywhere else: Svelte, a page served by cozy-stack, plain HTML
 
 ```html
-<link rel="stylesheet" href="@linagora/twake-css/dist/vars.css">
-<link rel="stylesheet" href="@linagora/twake-css/dist/utils.css">
+<link rel="stylesheet" href="@linagora/twake-css/dist/vars.css" />
+<link rel="stylesheet" href="@linagora/twake-css/dist/utils.css" />
 ```
 
 No JavaScript. The page follows `prefers-color-scheme`; set
@@ -38,7 +38,9 @@ be used directly in your own CSS, Tailwind included:
 
 ```js
 // tailwind.config.js
-colors: { primary: 'var(--twake-palette-primary-main)' }
+colors: {
+  primary: 'var(--twake-palette-primary-main)'
+}
 ```
 
 ## Reference

@@ -1,12 +1,18 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgChatText(props: SVGProps<SVGSVGElement>) {
+function SvgChatText({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 62 22"
+      ref={iconRef}
       {...props}
     >
       <path
@@ -34,8 +40,8 @@ function SvgChatText(props: SVGProps<SVGSVGElement>) {
           y2={27.652}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#B666FA" />
-          <stop offset={1} stopColor="#A347EC" />
+          <stop stopColor="#b666fa" />
+          <stop offset={1} stopColor="#a347ec" />
         </linearGradient>
         <linearGradient
           id="chat-text_svg__b"
@@ -45,8 +51,8 @@ function SvgChatText(props: SVGProps<SVGSVGElement>) {
           y2={27.652}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#B666FA" />
-          <stop offset={1} stopColor="#A347EC" />
+          <stop stopColor="#b666fa" />
+          <stop offset={1} stopColor="#a347ec" />
         </linearGradient>
         <linearGradient
           id="chat-text_svg__c"
@@ -56,8 +62,8 @@ function SvgChatText(props: SVGProps<SVGSVGElement>) {
           y2={27.652}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#B666FA" />
-          <stop offset={1} stopColor="#A347EC" />
+          <stop stopColor="#b666fa" />
+          <stop offset={1} stopColor="#a347ec" />
         </linearGradient>
         <linearGradient
           id="chat-text_svg__d"
@@ -67,8 +73,8 @@ function SvgChatText(props: SVGProps<SVGSVGElement>) {
           y2={27.652}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#B666FA" />
-          <stop offset={1} stopColor="#A347EC" />
+          <stop stopColor="#b666fa" />
+          <stop offset={1} stopColor="#a347ec" />
         </linearGradient>
       </defs>
     </svg>

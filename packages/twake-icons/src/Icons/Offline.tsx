@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgOffline(props: SVGProps<SVGSVGElement>) {
+function SvgOffline({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 14"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M14.546 7.314 16 5.859c-2.713-2.713-6.45-3.745-9.964-3.134L7.913 4.6a9.27 9.27 0 0 1 6.633 2.713ZM13.09 8.768a7.2 7.2 0 0 0-2.705-1.694l2.196 2.196zm-7.273 2.91L8 13.858l2.182-2.182a3.08 3.08 0 0 0-4.364 0ZM1.753.505.727 1.532 2.945 3.75A11.4 11.4 0 0 0 0 5.86l1.455 1.454a9.2 9.2 0 0 1 3.032-2.022l1.63 1.629a7.14 7.14 0 0 0-3.208 1.847l1.455 1.455A5.1 5.1 0 0 1 7.92 8.725l5.15 5.149 1.024-1.026L1.754.506Z" />
     </svg>
   );

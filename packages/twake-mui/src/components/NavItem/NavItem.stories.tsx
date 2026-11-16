@@ -1,7 +1,8 @@
-import { Folder, Heart, Warn, Dots, Icon } from '@linagora/twake-icons'
 import { IconButton } from '@mui/material'
 import { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Folder, Heart, Warn, Dots, Icon } from '@linagora/twake-icons'
 
 import { NavIcon } from '../NavIcon'
 import { NavDropdown } from '../NavLink/NavDropdown'
@@ -187,6 +188,17 @@ export const Screenshot: Story = {
               </NavText>
             </NavDropdown>
           </NavItem>
+        </section>
+        <section>
+          <h3>Counts</h3>
+          {[12, 99, '99+'].map(badge => (
+            <NavItem key={badge} disablePadding badge={badge}>
+              <NavLink>
+                <NavIcon icon={Folder} />
+                <NavText>Item with {badge}</NavText>
+              </NavLink>
+            </NavItem>
+          ))}
         </section>
         <section>
           <h3>Secondary</h3>

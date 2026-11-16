@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgRotateRight(props: SVGProps<SVGSVGElement>) {
+function SvgRotateRight({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 17" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 14 17"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M9.995 4.31 6.15.466V3.06A6.76 6.76 0 0 0 .233 9.762a6.75 6.75 0 0 0 5.916 6.703v-1.707a5.07 5.07 0 0 1-4.226-4.996A5.07 5.07 0 0 1 6.15 4.767v3.305zm3.702 4.607a6.7 6.7 0 0 0-1.37-3.288l-1.2 1.2c.457.634.744 1.353.863 2.088zM7.84 14.749v1.707a6.7 6.7 0 0 0 3.296-1.36L9.92 13.879a4.9 4.9 0 0 1-2.08.87m3.288-2.045 1.2 1.191a6.7 6.7 0 0 0 1.37-3.287H11.99a5 5 0 0 1-.862 2.096" />
     </svg>
   );

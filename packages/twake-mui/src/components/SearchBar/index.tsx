@@ -1,9 +1,9 @@
-import { Cross, Icon, Magnifier } from '@linagora/twake-icons'
 import { IconButton } from '@mui/material'
 import debounce from '@mui/utils/debounce'
 import cx from 'classnames'
 import React, { forwardRef, useState, useMemo, useRef, useEffect } from 'react'
 
+import { Cross, Icon, Magnifier } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import { DisableHighlight } from './DisableHighlight'
@@ -24,7 +24,7 @@ import { SearchBarProps } from './types'
 
 const locales = { de, en, es, fr, it, ru, vi }
 
-export const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
+const SearchBar = forwardRef<HTMLDivElement, SearchBarProps>(
   (
     {
       placeholder,

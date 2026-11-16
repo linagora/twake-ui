@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgLaudry(props: SVGProps<SVGSVGElement>) {
+function SvgLaudry({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 13 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M11.2.008 1.6 0C.712 0 0 .712 0 1.6v12.8c0 .888.712 1.6 1.6 1.6h9.6c.888 0 1.6-.712 1.6-1.6V1.6c0-.888-.712-1.592-1.6-1.592m0 14.392H1.6L1.592 1.6H11.2z" />
       <path d="M3.2 4a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6m2.4 0a.8.8 0 1 0 0-1.6.8.8 0 0 0 0 1.6m.8 9.6c2.208 0 4-1.792 4-4s-1.792-4-4-4-4 1.792-4 4 1.792 4 4 4m1.888-5.888a2.675 2.675 0 0 1 0 3.776 2.675 2.675 0 0 1-3.776 0z" />
     </svg>

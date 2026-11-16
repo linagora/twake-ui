@@ -8,7 +8,7 @@ import React, {
   type ReactNode
 } from 'react'
 
-import type { SpaceOverlay, SpaceOverlayStatus } from './spaceOverlay'
+import type { SpaceOverlay, SpaceOverlayStatus } from './connectSpaceOverlay'
 
 const SpaceOverlayContext = createContext<SpaceOverlay | null>(null)
 

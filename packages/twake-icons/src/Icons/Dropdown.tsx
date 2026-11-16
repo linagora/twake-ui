@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgDropdown(props: SVGProps<SVGSVGElement>) {
+function SvgDropdown({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M8 10.95q-.2 0-.375-.063a.9.9 0 0 1-.325-.212l-4.6-4.6a.95.95 0 0 1-.275-.7.95.95 0 0 1 .275-.7.95.95 0 0 1 .7-.275.95.95 0 0 1 .7.275l3.9 3.9 3.9-3.9a.95.95 0 0 1 .7-.275.95.95 0 0 1 .7.275.95.95 0 0 1 .275.7.95.95 0 0 1-.275.7l-4.6 4.6q-.15.15-.325.212A1.1 1.1 0 0 1 8 10.95" />
     </svg>
   );

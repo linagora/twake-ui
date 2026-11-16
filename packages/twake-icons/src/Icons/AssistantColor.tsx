@@ -1,16 +1,22 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgAssistantColor(props: SVGProps<SVGSVGElement>) {
+function SvgAssistantColor({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
       viewBox="0 0 16 16"
+      ref={iconRef}
       {...props}
     >
       <g clipPath="url(#assistant-color_svg__a)">
         <path
+          fill="none"
           stroke="url(#assistant-color_svg__b)"
           strokeLinecap="round"
           strokeLinejoin="round"

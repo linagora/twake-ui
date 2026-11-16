@@ -14,7 +14,9 @@ export const BottomSheetContainer = styled('div')(
   ({ theme }: { theme: Theme }) => ({
     position: 'fixed',
     zIndex: theme.zIndex.modal,
-    inset: 0
+    inset: 0,
+    // Takes the focus on open: no ring around the whole screen
+    outline: 0
   })
 )
 

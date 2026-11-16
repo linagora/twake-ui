@@ -1,7 +1,8 @@
-import { Icon, Plus } from '@linagora/twake-icons'
 import { Fab, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Icon, Plus } from '@linagora/twake-icons'
 
 const meta: Meta<typeof Fab> = {
   title: 'Fab',

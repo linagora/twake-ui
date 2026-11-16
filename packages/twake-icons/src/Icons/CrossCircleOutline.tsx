@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgCrossCircleOutline(props: SVGProps<SVGSVGElement>) {
+function SvgCrossCircleOutline({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path
         fillRule="evenodd"
         d="M8 0C3.576 0 0 3.576 0 8s3.576 8 8 8 8-3.576 8-8-3.576-8-8-8m0 14.4A6.41 6.41 0 0 1 1.6 8c0-3.528 2.872-6.4 6.4-6.4s6.4 2.872 6.4 6.4-2.872 6.4-6.4 6.4m0-7.528L10.872 4 12 5.128 9.128 8 12 10.872 10.872 12 8 9.128 5.128 12 4 10.872 6.872 8 4 5.128 5.128 4z"

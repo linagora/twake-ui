@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgBankGroups(props: SVGProps<SVGSVGElement>) {
+function SvgBankGroups({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 17 17"
+      ref={iconRef}
+      {...props}
+    >
       <path
         fillRule="evenodd"
         d="M8.01 1 .529 5.75v1.842H15.49V5.75zm3.75 8.912h1.875V8.56H11.76zm-4.688 1.411h1.875V8.56H7.072zm-4.687 1.924H4.26V8.56H2.385zM.529 16.06h7.5v-1.875H.53v1.875Zm10.137-4.857-1.494 1.866a.92.92 0 0 0-.201.58.92.92 0 0 0 .201.58l1.494 1.866a1 1 0 0 0 .33.26.9.9 0 0 0 .407.09h3.592a.9.9 0 0 0 .663-.273.9.9 0 0 0 .273-.662v-3.722a.9.9 0 0 0-.273-.662.9.9 0 0 0-.662-.273h-3.593a.94.94 0 0 0-.737.35m.333 3.03a.676.676 0 1 0 0-1.352.676.676 0 0 0 0 1.353Z"

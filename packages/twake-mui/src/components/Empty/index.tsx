@@ -1,8 +1,9 @@
-import { Icon, IconProps } from '@linagora/twake-icons'
 import { SxProps, Typography, TypographyProps } from '@mui/material'
 import { styled, Theme } from '@mui/material/styles'
 import cx from 'classnames'
 import React from 'react'
+
+import { Icon, IconProps } from '@linagora/twake-icons'
 
 export type EmptyIconSize = 'normal' | 'medium' | 'large'
 

@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgDevicePhone(props: SVGProps<SVGSVGElement>) {
+function SvgDevicePhone({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 17" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 11 17"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M8.782.807 1.509.8A1.46 1.46 0 0 0 .055 2.255v13.09c0 .8.654 1.455 1.454 1.455h7.273c.8 0 1.454-.655 1.454-1.455V2.255c0-.8-.654-1.448-1.454-1.448m0 13.084H1.509V3.709h7.273z" />
     </svg>
   );

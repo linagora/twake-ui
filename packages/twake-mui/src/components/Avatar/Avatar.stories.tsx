@@ -1,13 +1,14 @@
-import { Icon, Link } from '@linagora/twake-icons'
 import { AvatarGroup, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
+import { Icon, Link } from '@linagora/twake-icons'
+
+import image from '../../stories/images/mountains.png'
 import { supportedColors } from './helpers'
-import { Avatar, AvatarSize } from './index'
+import Avatar, { AvatarSize } from './index'
 
 const sizes: AvatarSize[] = ['xs', 's', 'm', 'l', 'xl']
-const image = 'https://i.pravatar.cc/150?img=11'
 
 const meta: Meta<typeof Avatar> = {
   title: 'Avatar',

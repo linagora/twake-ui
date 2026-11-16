@@ -1,34 +1,35 @@
-import { Icon } from '@linagora/twake-icons'
-import { CalendarToday } from '@linagora/twake-icons'
-import { IconButton, useTheme } from '@mui/material'
 import React from 'react'
+
+import { CalendarToday } from '@linagora/twake-icons'
+import { useI18n } from 'twake-i18n'
+
+import { ContactPopoverIconAction } from './ContactPopoverIconAction'
 
 export interface ContactPopoverCalendarActionProps {
   /** URL for calendar action (e.g., view attendee's calendar) */
-  url: string
+  url?: string
+  /** Callback when the action is clicked, used when no url is given */
+  onClick?: () => void
   /** Disable the action button */
   disabled?: boolean
+  /** Accessible name and tooltip of the action, defaults to "Plan a meeting" */
+  label?: string
 }
 
 export const ContactPopoverCalendarAction = ({
   url,
-  disabled = false
+  onClick,
+  disabled = false,
+  label
 }: ContactPopoverCalendarActionProps): React.ReactElement => {
-  const theme = useTheme()
+  const { t } = useI18n()
   return (
-    <IconButton
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      size="small"
+    <ContactPopoverIconAction
+      icon={CalendarToday}
+      label={label ?? t('ContactPopover.calendarButton')}
+      url={url}
+      onClick={onClick}
       disabled={disabled}
-      sx={{ border: `1px solid ${theme.vars.palette.divider}` }}
-    >
-      <Icon
-        icon={CalendarToday}
-        size={20}
-        color={theme.vars.palette.text.icon}
-      />
-    </IconButton>
+    />
   )
 }

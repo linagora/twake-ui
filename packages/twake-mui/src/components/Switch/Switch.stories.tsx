@@ -1,4 +1,3 @@
-import { Check } from '@linagora/twake-icons'
 import {
   Divider,
   FormControlLabel,
@@ -10,7 +9,9 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { Switch, SwitchProps } from './index'
+import { Check } from '@linagora/twake-icons'
+
+import Switch, { SwitchProps } from './index'
 
 const colors = ['primary', 'secondary', 'success', 'default'] as const
 

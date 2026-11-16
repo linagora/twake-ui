@@ -2,6 +2,8 @@
 
 MUI v9 theme system for Twake Calendar and other Twake applications.
 
+Storybook: https://linagora.github.io/twake-ui/twake-mui/
+
 ## Requirements
 
 You need to use Node 24+
@@ -14,6 +16,14 @@ npm install @linagora/twake-mui
 
 Don't forget to also install peerDependencies (see package.json)
 
+`@linagora/twake-css` is one of them: twake-mui builds its theme from its
+`palette.json`, and some components (NavItem, NavDropdown, VirtualizedTable)
+use its `.u-*` utility classes. Import the stylesheet once in your app:
+
+```js
+import '@linagora/twake-css/dist/utils.css'
+```
+
 ## Usage
 
 ### Basic Usage
@@ -24,9 +34,7 @@ Wrap your app with the Provider to get the Material-UI theme
 import { TwakeMuiThemeProvider } from '@linagora/twake-mui'
 
 function App() {
-  return (
-    <TwakeMuiThemeProvider>{/* Your application */}</TwakeMuiThemeProvider>
-  )
+  return <TwakeMuiThemeProvider>{/* Your application */}</TwakeMuiThemeProvider>
 }
 ```
 
@@ -36,9 +44,7 @@ Then you can use Material-UI components from Twake-mui
 import { Button } from '@linagora/twake-mui'
 
 function Component() {
-  return (
-    <Button>Label</Button>
-  )
+  return <Button>Label</Button>
 }
 ```
 
@@ -95,7 +101,9 @@ function App() {
     <TwakeMuiThemeProvider themeOptions={themeOptions}>
       <SpaceOverlayProvider overlay={overlay}>
         {/* Dialogs and drawers go to the overlay through the theme */}
-        <OverlayPortal>{/* a docked window, such as a composer */}</OverlayPortal>
+        <OverlayPortal>
+          {/* a docked window, such as a composer */}
+        </OverlayPortal>
       </SpaceOverlayProvider>
     </TwakeMuiThemeProvider>
   )
@@ -138,6 +146,7 @@ npm run build:doc
 ```
 
 Stories are located in:
+
 - `src/components/**/*.stories.tsx` - Component stories (e.g., Avatar)
 - `src/stories/*.stories.tsx` - Override showcase stories (Button, Input, Dialog, etc.)
 
@@ -187,6 +196,7 @@ Or use file path in package.json:
 ### About dependencies
 
 Because of inter-dependencies between these packages:
+
 - `storybook`, `@storybook/*`
 - `vite`, `@vitejs/*`
 - `vitest`, `@vitest/*`

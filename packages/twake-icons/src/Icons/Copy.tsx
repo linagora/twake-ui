@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgCopy(props: SVGProps<SVGSVGElement>) {
+function SvgCopy({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 14 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M10.182 0H1.455C.655 0 0 .655 0 1.455v10.181h1.455V1.455h8.727zm-.727 2.91H4.364c-.8 0-1.448.654-1.448 1.454L2.91 14.545c0 .8.647 1.455 1.447 1.455h8.008c.8 0 1.454-.655 1.454-1.454V7.273L9.455 2.909ZM4.364 14.545V4.364h4.363V8h3.637v6.546z" />
     </svg>
   );

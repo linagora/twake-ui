@@ -14,8 +14,8 @@ import {
   mirrorStyles,
   type SpaceOverlay,
   type SpaceOverlayStatus
-} from './spaceOverlay'
-import { TwakeMuiThemeProvider } from '../ThemeProvider'
+} from './connectSpaceOverlay'
+import { TwakeMuiThemeProvider } from '../../providers/ThemeProvider'
 
 function renderDs(ui: ReactElement): void {
   render(<TwakeMuiThemeProvider>{ui}</TwakeMuiThemeProvider>)

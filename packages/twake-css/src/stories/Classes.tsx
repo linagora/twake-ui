@@ -11,9 +11,15 @@ export const FAMILIES: [string, RegExp][] = [
   ['Dimensions', /^\.u-(w|h|miw|maw|mih|mah)-/],
   ['Display', /^\.u-(dn|di|db|dc|dib|dit|dt|dtc|dt-|hide|visuallyhidden)/],
   ['Flexbox', /^\.u-(flex|inline-flex)/],
-  ['Text colors', /^\.u-(primary|secondary|error|success|warning|info|overlay|black|white|link)/],
+  [
+    'Text colors',
+    /^\.u-(primary|secondary|error|success|warning|info|overlay|black|white|link)/
+  ],
   ['Background colors', /^\.u-bg-/],
-  ['Typography', /^\.u-(fz|fw|fs|ta|lh|uppercase|lowercase|ellipsis|midellipsis|spacellipsis|breakword)/],
+  [
+    'Typography',
+    /^\.u-(fz|fw|fs|ta|lh|uppercase|lowercase|ellipsis|midellipsis|spacellipsis|breakword)/
+  ],
   ['Borders', /^\.u-(bdrs|bdw)-/],
   ['Opacity', /^\.u-o-/],
   ['Overflow', /^\.u-ov-/],

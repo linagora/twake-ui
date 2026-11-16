@@ -2,6 +2,10 @@
   "ContactPopover": {
     "emailButton": "Envoyer un email",
     "copyTooltip": "Copier l'email",
-    "copiedTooltip": "Copié !"
+    "copiedTooltip": "Copié !",
+    "closeButton": "Fermer",
+    "chatButton": "Ouvrir une discussion",
+    "videoButton": "Lancer un appel vidéo",
+    "calendarButton": "Planifier une réunion"
   }
 }

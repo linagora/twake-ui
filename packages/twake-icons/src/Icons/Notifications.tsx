@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgNotifications(props: SVGProps<SVGSVGElement>) {
+function SvgNotifications({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 14 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M6.564 16c.903 0 1.641-.739 1.641-1.641H4.923c0 .902.739 1.641 1.641 1.641m4.923-4.923V6.974c0-2.519-1.337-4.627-3.692-5.185V1.23c0-.68-.55-1.23-1.23-1.23a1.23 1.23 0 0 0-1.232 1.23v.559c-2.346.558-3.692 2.658-3.692 5.185v4.103L0 12.717v.822h13.128v-.821zm-1.64.82H3.281V6.974c0-2.035 1.239-3.692 3.282-3.692s3.282 1.657 3.282 3.692v4.923Z" />
     </svg>
   );

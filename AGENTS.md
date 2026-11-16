@@ -13,7 +13,10 @@ npm run build
 npm run lint
 
 # Lint specific package
-npm run lint --workspace=twake-mui
+npx rs lint packages/twake-mui/src
+
+# Format all files
+npm run fmt
 
 # Test dry-run release (safe, no publish)
 npm run release:dry
@@ -28,9 +31,40 @@ npm run release:dry
 ## Architecture
 
 - **Monorepo**: npm workspaces with independent versioning
-- **Packages location**: `packages/*` (currently `twake-mui` and `twake-icons`)
+- **Packages location**: `packages/*` (currently `twake-css`, `twake-mui` and
+  `twake-icons`)
 - **Package naming**: All packages use `@linagora/` scope
 - **Build output**: Each package outputs to `dist/` (TypeScript compilation)
+- **Dependency versions**: exact versions for external packages
+  (`npm install --save-exact`), caret ranges for internal ones (`@linagora/*`,
+  `cozy-*`, `twake-*`); `peerDependencies` keep their ranges. See "Dependency
+  versions" in the README.
+
+## Colors
+
+Every Twake app reads its colours from this repo, so a colour changed here
+changes everywhere, in light and dark mode. These rules apply to the code you
+write; older literals (avatar gradients, `ColorList`, some overrides) predate
+them.
+
+- Write a new colour value in the base palette,
+  `packages/twake-css/palette.json`, and nowhere else.
+- Map palette values to semantic roles in both
+  `packages/twake-mui/src/lib/makePalette.ts` and
+  `packages/twake-css/src/vars.scss`, for each mode. `test/vars.test.ts` in
+  twake-mui only checks that each variable of `vars.css` matches the theme: a
+  role missing from `vars.scss` passes, so write both sides yourself.
+- In components, stories and apps, use roles only: `theme.vars.palette.*`
+  (`primary.main`, `text.secondary`, `action.hover`, `divider`, `border.main`…)
+  or the `--twake-palette-*` CSS variables. A hex or `rgba()` literal there
+  escapes the palette and the dark mode.
+- To add a colour, add a palette entry and a role that reads it. Name them like
+  the existing ones: a PascalCase ramp with numeric keys in `palette.json`,
+  camelCase roles with `light`, `main`, `dark` and `contrastText` when it is a
+  colour family.
+- Derive a new hover, selected, focus or disabled tint from the `action.*`
+  opacity tokens (`theme.alpha(color, theme.vars.palette.action.selectedOpacity)`),
+  so state tints follow one value.
 
 ## Release Flow (Automated)
 
@@ -62,6 +96,11 @@ For each changed package:
    - `"files": ["dist", "CHANGELOG.md", "README.md"]`
 3. No per-package config needed — the root `.releaserc.json` applies to all workspaces
 
+## Adding Icons
+
+To add one or more icons to `twake-icons`, follow
+[How to add an icon](packages/twake-icons/README.md#how-to-add-an-icon) in the package README.
+
 ## Storybook
 
 Inside `packages` folder:
@@ -78,6 +117,7 @@ npm run screenshots
 ```
 
 Stories are located in:
+
 - `packages/twake-mui/src/components/**/*.stories.tsx` - Component stories (e.g., Avatar)
 - `packages/twake-mui/src/stories/*.stories.tsx` - Override showcase stories
 
@@ -97,13 +137,17 @@ export const MyStory = {
 ## CI/CD Notes
 
 - **Runs on**: PRs and push to main
-- **Order**: install → lint → build → release (main only)
+- **Order**: install → lint → format check → build → test → bundle test
+  (`npm run test:bundle` in twake-mui: builds, then bundles a consumer of
+  `dist/`) → browser test (`npm run test:browser` in twake-mui, Chromium) →
+  release (main only)
 - **Secrets required**: `NODE_AUTH_TOKEN` (NPM token, set in GitHub repo settings)
 - **Uses**: `secrets.GITHUB_TOKEN` (auto-provided, no setup needed)
 
 ## Commits
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) for automatic versioning:
+
 - `feat:` → minor version bump
 - `fix:` → patch version bump
 - `feat!:` or `BREAKING CHANGE:` → major version bump

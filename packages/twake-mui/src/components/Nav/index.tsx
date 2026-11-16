@@ -1,21 +1,33 @@
 import { List } from '@mui/material'
-import { styled, Theme } from '@mui/material/styles'
-import React from 'react'
+import { styled } from '@mui/material/styles'
+import React, { useContext } from 'react'
 
-const NavRoot = styled(List)(({ theme }: { theme: Theme }) => ({
+import { SidebarContext } from '../Sidebar/SidebarContext'
+
+const NavRoot = styled(List, {
+  shouldForwardProp: prop => prop !== 'disableMobileView'
+})<{ disableMobileView: boolean }>(({ theme, disableMobileView }) => ({
   margin: '24px 0',
   padding: 0,
-  [theme.breakpoints.down('lg')]: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    margin: '6px 0 4px'
-  }
+  ...(!disableMobileView && {
+    [theme.breakpoints.down('lg')]: {
+      display: 'flex',
+      justifyContent: 'space-around',
+      margin: '6px 0 4px'
+    }
+  })
 }))
 
-export type NavProps = React.ComponentProps<typeof NavRoot>
+export type NavProps = Omit<
+  React.ComponentProps<typeof NavRoot>,
+  'disableMobileView'
+>
 
-export const Nav = (props: NavProps): React.ReactElement => (
-  <nav>
-    <NavRoot {...props} />
-  </nav>
-)
+export const Nav = (props: NavProps): React.ReactElement => {
+  const disableMobileView = useContext(SidebarContext)
+  return (
+    <nav>
+      <NavRoot {...props} disableMobileView={disableMobileView} />
+    </nav>
+  )
+}

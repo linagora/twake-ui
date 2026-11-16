@@ -204,9 +204,9 @@ export const CssVariables: FC = () => {
         note="deprecated — kept so existing code keeps working"
       >
         <Prose>
-          cozy-ui ran these from -1 to 80 and pulled MUI down to match. twake-mui
-          keeps MUI&apos;s 1000-1500 ramp, so the values are rebased onto it with
-          the original order intact: arithmetic such as{' '}
+          cozy-ui ran these from -1 to 80 and pulled MUI down to match.
+          twake-mui keeps MUI&apos;s 1000-1500 ramp, so the values are rebased
+          onto it with the original order intact: arithmetic such as{' '}
           <Code tone="var">calc(var(--zIndex-modal) + 30)</Code> keeps working,
           against the right baseline this time.
         </Prose>
@@ -222,7 +222,9 @@ export const CssVariables: FC = () => {
                     <Code tone="var">{Z_INDEX_TARGET[name]}</Code>
                   </Box>
                 ) : (
-                  <Quiet>no MUI role — pick a local value on the same ramp</Quiet>
+                  <Quiet>
+                    no MUI role — pick a local value on the same ramp
+                  </Quiet>
                 )}
               </React.Fragment>
             ))}

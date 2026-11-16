@@ -46,11 +46,18 @@ const instantTransitions: ThemeOptions = {
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
+    options: {
+      // Storybook serializes this function, so it cannot reference outer scope
+      storySort: (a, b) =>
+        a.title === b.title
+          ? 0
+          : a.title.localeCompare(b.title, undefined, { numeric: true })
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/,
-      },
+        date: /Date$/
+      }
     },
     backgrounds: {
       options: {
@@ -75,20 +82,20 @@ const preview: Preview = {
       fitToContent: false,
       threshold: 0.2,
       modes: {
-        "desktop-light": { viewport: 'desktop' },
-        "mobile-light": { viewport: 'mobile' },
-        "desktop-dark": {
+        'desktop-light': { viewport: 'desktop' },
+        'mobile-light': { viewport: 'mobile' },
+        'desktop-dark': {
           viewport: 'desktop',
           theme: 'dark',
-          backgrounds: { value: 'dark' },
+          backgrounds: { value: 'dark' }
         },
-        "mobile-dark": {
+        'mobile-dark': {
           viewport: 'mobile',
           theme: 'dark',
-          backgrounds: { value: 'dark' },
-        },
-      },
-    },
+          backgrounds: { value: 'dark' }
+        }
+      }
+    }
   },
 
   globalTypes: {
@@ -99,9 +106,9 @@ const preview: Preview = {
       toolbar: {
         icon: 'circlehollow',
         items: ['light', 'dark'],
-        showName: true,
-      },
-    },
+        showName: true
+      }
+    }
   },
 
   beforeEach: sizeFrameToViewport,
@@ -122,22 +129,19 @@ const preview: Preview = {
           <ThemeProvider theme={theme} defaultMode={themeMode}>
             <CssBaseline />
             <Box
-              sx={
-                isFullscreen
-                  ? undefined
-                  : {
-                      padding: '20px',
-                      bgcolor: 'background.paper',
-                      '& > *': { maxWidth: '100%' }
-                    }
-              }
+              sx={{
+                bgcolor: 'background.paper',
+                ...(isFullscreen
+                  ? { minHeight: '100vh' }
+                  : { padding: '20px', '& > *': { maxWidth: '100%' } })
+              }}
             >
               <Story />
             </Box>
           </ThemeProvider>
         </I18n>
       )
-    },
+    }
   ],
 
   initialGlobals: {

@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import { DeviceLaptop, Download, Icon } from '@linagora/twake-icons'
 import { AlertTitle, Button, Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Download, Icon } from '@linagora/twake-icons'
 
 import PointerAlert, { PointerAlertDirection } from './index'
 
@@ -55,8 +56,7 @@ const meta: Meta<typeof PointerAlert> = {
       control: 'select',
       options: severities,
       description: 'Overrides the colour taken from `severity`'
-    },
-    square: { control: 'boolean' }
+    }
   }
 }
 
@@ -146,27 +146,6 @@ export const Screenshot: Story = {
         <PointerAlert severity="primary">
           <AlertTitle>This is the title</AlertTitle>
           {text}
-        </PointerAlert>
-        <PointerAlert severity="primary" color="warning">
-          Colour overridden: {text}
-        </PointerAlert>
-        <PointerAlert
-          severity="primary"
-          icon={
-            <Icon
-              icon={DeviceLaptop}
-              color="var(--twake-palette-error-main)"
-              size={32}
-            />
-          }
-        >
-          {text}
-        </PointerAlert>
-        <PointerAlert severity="primary" icon={false}>
-          {text}
-        </PointerAlert>
-        <PointerAlert severity="primary" square>
-          Square: {text}
         </PointerAlert>
         <PointerAlert severity="primary" onClose={() => console.log('closed')}>
           {text}

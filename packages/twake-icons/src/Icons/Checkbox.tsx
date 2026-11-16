@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgCheckbox(props: SVGProps<SVGSVGElement>) {
+function SvgCheckbox({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="m6.756 9.244-1.912-1.91a.84.84 0 0 0-.622-.245.84.84 0 0 0-.622.244.84.84 0 0 0-.244.623q0 .377.244.622l2.533 2.533a.85.85 0 0 0 .623.267.85.85 0 0 0 .622-.267L12.4 6.09a.84.84 0 0 0 .244-.622.84.84 0 0 0-.244-.623.84.84 0 0 0-.622-.244.84.84 0 0 0-.622.244l-4.4 4.4ZM1.778 16q-.734 0-1.256-.522A1.7 1.7 0 0 1 0 14.222V1.778Q0 1.044.522.522A1.7 1.7 0 0 1 1.778 0h12.444q.734 0 1.256.522T16 1.778v12.444q0 .734-.522 1.256a1.7 1.7 0 0 1-1.256.522zm0-1.778h12.444V1.778H1.778z" />
     </svg>
   );

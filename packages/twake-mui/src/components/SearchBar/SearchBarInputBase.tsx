@@ -13,6 +13,8 @@ export const SearchBarInputBase = styled(InputBase, {
   return {
     flex: 1,
     fontSize: fontSizeToPixel[searchSize],
+    // iOS Safari zooms the page into a field whose text is under 16 px
+    '@media (pointer: coarse)': { fontSize: 16 },
     paddingLeft: !hasIcon ? '1rem' : undefined
   }
 })

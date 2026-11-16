@@ -1,0 +1,25 @@
+{
+  "Dialogs": {
+    "closeButton": "Đóng",
+    "backButton": "Quay lại",
+    "installFlagshipApp": {
+      "title": "Quét mã QR",
+      "text": "hoặc trực tiếp đến <img src=%{iosIconSrc} /> <a href='%{iosUrl}' class='u-link' target='_blank' rel='noopener'>App Store</a><br>hoặc <img src=%{androidIconSrc} /> <a href='%{androidUrl}' class='u-link' target='_blank' rel='noopener'>Play Store</a> để cài đặt ứng dụng Twake Workplace",
+      "linkLabel": "Đến trang tải xuống ứng dụng Twake Workplace"
+    },
+    "shortcut": {
+      "createTitle": "Tạo lối tắt",
+      "editTitle": "Chỉnh sửa lối tắt",
+      "filename": "Tên lối tắt",
+      "url": "URL",
+      "cancel": "Hủy",
+      "create": "Tạo",
+      "edit": "Lưu",
+      "created": "Lối tắt đã được tạo",
+      "edited": "Lối tắt đã được chỉnh sửa",
+      "errored": "Đã xảy ra lỗi",
+      "needsInfo": "Lối tắt cần có tên và URL",
+      "urlBadFormat": "URL đã nhập không đúng định dạng"
+    }
+  }
+}

@@ -2,6 +2,8 @@
 
 Monorepo containing shared UI packages for Twake applications.
 
+Storybooks: https://linagora.github.io/twake-ui/
+
 ## Structure
 
 ```
@@ -16,11 +18,11 @@ twake-ui/
 
 ## Packages
 
-| Package | Scope |
-| --- | --- |
-| `@linagora/twake-css` | The palette (`palette.json`), its `--twake-*` CSS variables (`dist/vars.css`) and the `.u-*` utility classes (`dist/utils.css`). No JavaScript, usable from any stack. |
-| `@linagora/twake-icons` | SVG icons and illustrations as React components. |
-| `@linagora/twake-mui` | The MUI theme and components. Builds its theme from twake-css's `palette.json`, emits the same `--twake-*` variables at runtime, and renders twake-icons. |
+| Package                 | Scope                                                                                                                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@linagora/twake-css`   | The palette (`palette.json`), its `--twake-*` CSS variables (`dist/vars.css`) and the `.u-*` utility classes (`dist/utils.css`). No JavaScript, usable from any stack. |
+| `@linagora/twake-icons` | SVG icons and illustrations as React components.                                                                                                                       |
+| `@linagora/twake-mui`   | The MUI theme and components. Builds its theme from twake-css's `palette.json`, emits the same `--twake-*` variables at runtime, and renders twake-icons.              |
 
 ## Development
 
@@ -48,6 +50,14 @@ npm run test
 npm run lint
 ```
 
+[Rslint](https://rslint.rs) lints the code and `rs fmt` formats it, both from [Rstack](https://rstack.rs).
+
+### Format all files
+
+```bash
+npm run fmt
+```
+
 ## Workspace Management
 
 This monorepo uses npm workspaces to manage packages.
@@ -57,6 +67,15 @@ To run a script in a specific package:
 ```bash
 npm run <script> --workspace=twake-mui
 ```
+
+### Dependency versions
+
+In `dependencies` and `devDependencies`:
+
+- external packages use an exact version (`"vite": "8.3.1"`), so add them with `npm install --save-exact`;
+- internal packages (`@linagora/*`, `cozy-*`, `twake-*`) use a caret range (`"cozy-minilog": "^3.10.1"`).
+
+`peerDependencies` keep ranges: they constrain the apps that install the package (see [Depending on a new version of another package](#depending-on-a-new-version-of-another-package)).
 
 ## Release Management
 
@@ -106,11 +125,7 @@ Create your package in `packages/<name>/` with the required `package.json` field
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "CHANGELOG.md",
-    "README.md"
-  ]
+  "files": ["dist", "CHANGELOG.md", "README.md"]
 }
 ```
 

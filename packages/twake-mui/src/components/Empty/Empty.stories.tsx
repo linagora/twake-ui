@@ -1,12 +1,13 @@
-import { Icon, TwakeWorkplace } from '@linagora/twake-icons'
 import { Box, Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
+import { Icon, TwakeWorkplace } from '@linagora/twake-icons'
+
+import image from '../../stories/images/mountains.png'
 import { Empty, EmptyIconSize } from './index'
 
 const iconSizes: EmptyIconSize[] = ['normal', 'medium', 'large']
-const image = 'https://i.pravatar.cc/150?img=11'
 const longTitle =
   'This is a very very long title, just to see and verify how it works with it'
 const longText =

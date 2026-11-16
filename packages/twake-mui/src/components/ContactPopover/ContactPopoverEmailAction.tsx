@@ -5,23 +5,27 @@ import { useI18n } from 'twake-i18n'
 
 export interface ContactPopoverEmailActionProps {
   /** URL for email action */
-  url: string
+  url?: string
+  /** Callback when the action is clicked, used when no url is given */
+  onClick?: () => void
   /** Disable the action button */
   disabled?: boolean
 }
 
 export const ContactPopoverEmailAction = ({
   url,
+  onClick,
   disabled = false
 }: ContactPopoverEmailActionProps): React.ReactElement => {
   const theme = useTheme()
   const { t } = useI18n()
+  const linkProps = url
+    ? { href: url, target: '_blank', rel: 'noopener noreferrer' }
+    : { onClick }
 
   return (
     <Button
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...linkProps}
       variant="outlined"
       size="small"
       disabled={disabled}

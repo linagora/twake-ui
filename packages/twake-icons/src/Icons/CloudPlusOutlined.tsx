@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgCloudPlusOutlined(props: SVGProps<SVGSVGElement>) {
+function SvgCloudPlusOutlined({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 12"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M12.9 4.693A4.993 4.993 0 0 0 3.567 3.36 3.996 3.996 0 0 0 0 7.333c0 2.207 1.793 4 4 4h8.667A3.335 3.335 0 0 0 16 8a3.317 3.317 0 0 0-3.1-3.307M12.667 10H4a2.666 2.666 0 0 1-2.667-2.667 2.65 2.65 0 0 1 2.374-2.646l.713-.074.333-.633A3.65 3.65 0 0 1 8 2a3.67 3.67 0 0 1 3.593 2.953l.2 1 1.02.074c1.04.066 1.854.94 1.854 1.973 0 1.1-.9 2-2 2M5.333 6.667h1.7v2h1.934v-2h1.7L8 4z" />
     </svg>
   );

@@ -1,7 +1,8 @@
-import { Plus } from '@linagora/twake-icons'
 import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { Plus } from '@linagora/twake-icons'
 
 import { ExtendableFab } from './index'
 

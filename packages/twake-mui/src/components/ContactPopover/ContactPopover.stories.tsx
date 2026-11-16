@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 import { screen } from 'storybook/test'
 
-import { ContactPopover } from './index'
+import ContactPopover from './index'
 
 const meta: Meta<typeof ContactPopover> = {
-  title: 'Components/ContactPopover',
+  title: 'ContactPopover',
   component: ContactPopover,
   parameters: {
     layout: 'centered'
@@ -37,67 +37,68 @@ const meta: Meta<typeof ContactPopover> = {
 export default meta
 type Story = StoryObj<typeof ContactPopover>
 
+const Variant: React.FC<{
+  title: string
+  children: React.ReactNode
+}> = ({ title, children }) => (
+  <Box>
+    <Typography variant="subtitle2" gutterBottom>
+      {title}
+    </Typography>
+    {children}
+  </Box>
+)
+
 export const Default: Story = {
-  render: () => {
-    return (
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-        <Box>
-          <Typography variant="subtitle2" gutterBottom>
-            Default — all actions
-          </Typography>
-          <ContactPopover name="John Doe" email="john.doe@example.com">
-            <Chip label="John Doe" clickable />
-            <ContactPopover.Actions>
-              <ContactPopover.EmailAction url="https://mail.example.com/john.doe" />
-              <ContactPopover.CalendarAction url="https://calendar.example.com/john.doe" />
-              <ContactPopover.ChatAction url="https://chat.example.com/john.doe" />
-              <ContactPopover.VideoAction url="https://meet.example.com/john.doe" />
-            </ContactPopover.Actions>
-          </ContactPopover>
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2" gutterBottom>
-            Email only
-          </Typography>
-          <ContactPopover name="" email="jane.smith@example.com">
-            <Chip label="jane.smith@example.com" clickable />
-            <ContactPopover.Actions>
-              <ContactPopover.EmailAction url="mailto:jane.smith@example.com" />
-            </ContactPopover.Actions>
-          </ContactPopover>
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2" gutterBottom>
-            Without actions
-          </Typography>
-          <ContactPopover name="Alice Brown" email="alice.brown@example.com">
-            <Chip label="Alice Brown" clickable />
-          </ContactPopover>
-        </Box>
-
-        <Box>
-          <Typography variant="subtitle2" gutterBottom>
-            Long name / email
-          </Typography>
-          <ContactPopover
-            name="Christopher Alexander Montgomery"
-            email="christopher.montgomery@verylongdomain.example.com"
-          >
-            <Chip label="Christopher Alexander Montgomery" clickable />
-            <ContactPopover.Actions>
-              <ContactPopover.ChatAction url="https://chat.example.com/christopher" />
-              <ContactPopover.VideoAction url="https://meet.example.com/christopher" />
-              <ContactPopover.CalendarAction url="https://calendar.example.com/christopher" />
-            </ContactPopover.Actions>
-          </ContactPopover>
-        </Box>
-      </Box>
-    )
-  },
+  render: () => (
+    <ContactPopover name="John Doe" email="john.doe@example.com">
+      <Chip label="John Doe" clickable />
+      <ContactPopover.Actions>
+        <ContactPopover.EmailAction url="https://mail.example.com/john.doe" />
+        <ContactPopover.CalendarAction url="https://calendar.example.com/john.doe" />
+        <ContactPopover.ChatAction url="https://chat.example.com/john.doe" />
+        <ContactPopover.VideoAction url="https://meet.example.com/john.doe" />
+      </ContactPopover.Actions>
+    </ContactPopover>
+  ),
   play: async ({ canvas, userEvent }) => {
     await userEvent.click(canvas.getByText('John Doe'))
     await screen.findByText('john.doe@example.com')
   }
+}
+
+export const AllActionsVariants: Story = {
+  render: () => (
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+      <Variant title="Default — all actions">
+        <ContactPopover.Actions>
+          <ContactPopover.EmailAction url="https://mail.example.com/john.doe" />
+          <ContactPopover.CalendarAction url="https://calendar.example.com/john.doe" />
+          <ContactPopover.ChatAction url="https://chat.example.com/john.doe" />
+          <ContactPopover.VideoAction url="https://meet.example.com/john.doe" />
+        </ContactPopover.Actions>
+      </Variant>
+
+      <Variant title="Default — all actions — Disabled">
+        <ContactPopover.Actions>
+          <ContactPopover.EmailAction
+            disabled
+            url="https://mail.example.com/jane.doe"
+          />
+          <ContactPopover.CalendarAction
+            disabled
+            url="https://calendar.example.com/jane.doe"
+          />
+          <ContactPopover.ChatAction
+            disabled
+            url="https://chat.example.com/jane.doe"
+          />
+          <ContactPopover.VideoAction
+            disabled
+            url="https://meet.example.com/jane.doe"
+          />
+        </ContactPopover.Actions>
+      </Variant>
+    </Box>
+  )
 }

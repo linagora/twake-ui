@@ -41,7 +41,7 @@ const StyledAvatar = styled(MuiAvatar, {
   ...(textColor && { color: textColor })
 }))
 
-export const Avatar: React.FC<AvatarProps> = ({
+const Avatar: React.FC<AvatarProps> = ({
   className,
   color,
   size = 'm',

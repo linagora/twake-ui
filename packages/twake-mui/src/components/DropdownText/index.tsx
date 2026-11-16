@@ -1,6 +1,7 @@
-import { Icon, IconProps, Bottom } from '@linagora/twake-icons'
 import { Box, Typography, TypographyProps } from '@mui/material'
 import React from 'react'
+
+import { Icon, IconProps, Bottom } from '@linagora/twake-icons'
 
 const iconSizeByVariant = {
   h1: 24,

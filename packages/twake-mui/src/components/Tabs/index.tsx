@@ -9,7 +9,7 @@ export interface TabsProps extends MuiTabsProps {
   segmented?: boolean
 }
 
-export const Tabs: React.FC<TabsProps> = ({
+const Tabs: React.FC<TabsProps> = ({
   className,
   narrowed,
   segmented,

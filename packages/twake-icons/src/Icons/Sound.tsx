@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgSound(props: SVGProps<SVGSVGElement>) {
+function SvgSound({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M14.222 8.288q0-1.845-.978-3.367a6.06 6.06 0 0 0-2.622-2.278 1 1 0 0 1-.489-.478.84.84 0 0 1-.044-.655.88.88 0 0 1 .478-.511.83.83 0 0 1 .7 0A7.83 7.83 0 0 1 14.71 3.92Q16 5.888 16 8.288c0 2.4-.43 3.055-1.289 4.366a7.83 7.83 0 0 1-3.444 2.922.83.83 0 0 1-.7 0 .88.88 0 0 1-.478-.51.84.84 0 0 1 .044-.656 1 1 0 0 1 .49-.478 6.06 6.06 0 0 0 2.621-2.278 6.1 6.1 0 0 0 .978-3.366M3.556 10.976H.889a.86.86 0 0 1-.633-.255.86.86 0 0 1-.256-.633V6.532a.86.86 0 0 1 .256-.633.86.86 0 0 1 .633-.256h2.667L6.489 2.71q.422-.423.967-.19.544.234.544.834v9.911q0 .6-.544.834-.545.233-.967-.19zM12 8.31q0 .932-.422 1.766a4 4 0 0 1-1.111 1.367.44.44 0 0 1-.456.011.41.41 0 0 1-.233-.389V5.51a.41.41 0 0 1 .233-.39.44.44 0 0 1 .456.012q.69.555 1.11 1.4A3.9 3.9 0 0 1 12 8.31m-5.778-2.8-1.91 1.91H1.777V9.2H4.31l1.911 1.91v-5.6Z" />
     </svg>
   );

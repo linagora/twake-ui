@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgAi(props: SVGProps<SVGSVGElement>) {
+function SvgAi({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 33 33"
+      ref={iconRef}
+      {...props}
+    >
       <rect width={32.49} height={32.49} fill="url(#ai_svg__a)" rx={10.73} />
       <g
         fill="none"

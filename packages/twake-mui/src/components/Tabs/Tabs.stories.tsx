@@ -2,7 +2,7 @@ import { Stack, Tab } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { Tabs, TabsProps } from './index'
+import Tabs, { TabsProps } from './index'
 
 const variants = ['standard', 'fullWidth', 'scrollable'] as const
 

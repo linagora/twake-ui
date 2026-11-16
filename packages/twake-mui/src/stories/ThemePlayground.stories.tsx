@@ -3,9 +3,9 @@ import type { SimplePaletteColorOptions } from '@mui/material/styles'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { TwakeMuiThemeProvider } from '../components/ThemeProvider'
 import { makePalette } from '../lib/makePalette'
 import type { PaletteJson } from '../lib/types'
+import { TwakeMuiThemeProvider } from '../providers/ThemeProvider'
 
 const CUSTOM_PALETTE: Partial<PaletteJson> = {
   Primary: {

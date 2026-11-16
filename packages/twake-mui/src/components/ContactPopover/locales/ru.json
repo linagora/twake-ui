@@ -2,6 +2,10 @@
   "ContactPopover": {
     "emailButton": "Отправить email",
     "copyTooltip": "Копировать email",
-    "copiedTooltip": "Скопировано!"
+    "copiedTooltip": "Скопировано!",
+    "closeButton": "Закрыть",
+    "chatButton": "Открыть чат",
+    "videoButton": "Начать видеозвонок",
+    "calendarButton": "Запланировать встречу"
   }
 }

@@ -11,6 +11,6 @@ $utility-colors: (
   'warning': var(--twake-palette-warning-main),
   'info': var(--twake-palette-info-main),
   // A scrim, identical in both modes.
-  'overlay': rgba(50, 54, 63, .5),
+  'overlay': rgba(50, 54, 63, 0.5),
   'white': var(--twake-palette-common-white)
 );

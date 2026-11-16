@@ -47,7 +47,11 @@ export const Colors: FC = () => {
               <Code>{`.u-${name}`}</Code>
               <Code>{`.u-bg-${name}`}</Code>
               {variable === null ? (
-                <Typography variant="body2" color="text.secondary" sx={{ fontSize: 13 }}>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ fontSize: 13 }}
+                >
                   {value} — a scrim, the same in both modes
                 </Typography>
               ) : (

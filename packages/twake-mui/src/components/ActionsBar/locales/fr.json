@@ -1,0 +1,6 @@
+{
+  "ActionsBar": {
+    "selected": "%{smart_count} élément sélectionné |||| %{smart_count} éléments sélectionnés",
+    "selected_light": "%{smart_count} élément |||| %{smart_count} éléments"
+  }
+}

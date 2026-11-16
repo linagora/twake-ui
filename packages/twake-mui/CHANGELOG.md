@@ -1,3 +1,468 @@
+# @linagora/twake-mui [19.7.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.6.1...@linagora/twake-mui@19.7.0) (2026-11-10)
+
+
+### Features
+
+* **twake-mui:** Keep the icons of a Chip whole beside a long label ([a546116](https://github.com/linagora/twake-ui/commit/a54611605bb32d5a4756bc7409c6932f1cb8bc48))
+* **twake-mui:** Show the grab cursor on a draggable Chip ([005027c](https://github.com/linagora/twake-ui/commit/005027c02bc4dae05a66b16e53882aefd9065833))
+
+## @linagora/twake-mui [19.6.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.6.0...@linagora/twake-mui@19.6.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* **shadows:** Draw the hairline of dark elevations as a light edge ([f9e3f4d](https://github.com/linagora/twake-ui/commit/f9e3f4d3f3a4db392e82bb007070f49ee3c7d0ed))
+* **twake-mui:** Faster press ripple, tab indicator and snackbar wrapping ([7010d7c](https://github.com/linagora/twake-ui/commit/7010d7cd2d3a642a84cb0a99221e3437872b60fb))
+* **twake-mui:** Honour reduced motion in the ripple and tab overrides ([af1ccf0](https://github.com/linagora/twake-ui/commit/af1ccf0803278fb42112b51755c3f0abbdff2599))
+* **twake-mui:** Keep the small search bar at 16 px on touch screens ([1ced110](https://github.com/linagora/twake-ui/commit/1ced11017f03b063b48f771fb2b4efd7bfbfe123))
+* **twake-mui:** Wrap anywhere only in an Alert inside a Snackbar ([a70b4ec](https://github.com/linagora/twake-ui/commit/a70b4eca11164d260f2377dd178c63ea4343adf5))
+
+
+### Performance Improvements
+
+* **twake-mui:** Declare the package free of side effects ([98b2c4d](https://github.com/linagora/twake-ui/commit/98b2c4de56f4d86bb011b3427dd584db6652819a))
+
+# @linagora/twake-mui [19.6.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.5.0...@linagora/twake-mui@19.6.0) (2026-11-09)
+
+
+### Features
+
+* **twake-mui:** Migrate MemberAutocomplete from cozy-ui ([4799024](https://github.com/linagora/twake-ui/commit/47990248503a78febc260458d7c9a3b255c3aa09))
+* **twake-mui:** Migrate MemberAvatar from cozy-ui ([a15d39e](https://github.com/linagora/twake-ui/commit/a15d39effbd01890130f676aaa6cbfd12e7f132d))
+* **twake-mui:** Migrate MemberGroupAvatar from cozy-ui ([31d9b8d](https://github.com/linagora/twake-ui/commit/31d9b8d04739bfb8e90a157671571db6629c6791))
+* **twake-mui:** Migrate MemberList from cozy-ui ([c4248d4](https://github.com/linagora/twake-ui/commit/c4248d44ad31325d16434eaf434e0a4f7da0e1e4))
+* **twake-mui:** Migrate MemberRoleMenu from cozy-ui ([e6dcf8e](https://github.com/linagora/twake-ui/commit/e6dcf8e865067e336a7496bad767a716e442cd67))
+* **twake-mui:** Migrate MemberRow from cozy-ui ([a868930](https://github.com/linagora/twake-ui/commit/a868930d3635dd63a81df1384ac56ecf27745fd8))
+
+# @linagora/twake-mui [19.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.4.0...@linagora/twake-mui@19.5.0) (2026-11-05)
+
+
+### Features
+
+* **twake-mui:** Add a ghost Chip variant ([ad5ecc3](https://github.com/linagora/twake-ui/commit/ad5ecc33a0f18f4d15525201a6022bfba3738cdd))
+
+# @linagora/twake-mui [19.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.3.0...@linagora/twake-mui@19.4.0) (2026-11-04)
+
+
+### Features
+
+* **twake-mui:** Migrate EditBadge from cozy-ui ([d675912](https://github.com/linagora/twake-ui/commit/d6759120b33e861b91b327e129a2bc8e018e0dc9))
+
+# @linagora/twake-mui [19.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.2.1...@linagora/twake-mui@19.3.0) (2026-11-02)
+
+
+### Features
+
+* **twake-mui:** Add ghost opacity tokens to the palette ([aefa93a](https://github.com/linagora/twake-ui/commit/aefa93aead8ff2038dc8192e942d1ca0a13f1f50))
+
+## @linagora/twake-mui [19.2.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.2.0...@linagora/twake-mui@19.2.1) (2026-11-02)
+
+
+### Bug Fixes
+
+* **twake-mui:** Readable label on a primary Fab in dark mode ([15dcf5b](https://github.com/linagora/twake-ui/commit/15dcf5b41a11c0f0d38c19adf8a68f89c300df76))
+
+# @linagora/twake-mui [19.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.1.1...@linagora/twake-mui@19.2.0) (2026-11-02)
+
+
+### Features
+
+* **twake-mui:** Name the colors of ColorList ([278249c](https://github.com/linagora/twake-ui/commit/278249cfaedca67c832ab0bf207042caa6273aa2))
+
+## @linagora/twake-mui [19.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.1.0...@linagora/twake-mui@19.1.1) (2026-10-30)
+
+
+### Bug Fixes
+
+* **twake-mui:** Accept twake-icons 3 in the devDependencies ([8acf30d](https://github.com/linagora/twake-ui/commit/8acf30d5f075c38a2350d318702bb5532d48ef9f))
+* **twake-mui:** Make the bottom sheet with a backdrop a modal dialog ([d800447](https://github.com/linagora/twake-ui/commit/d800447bd1dc29efc01c4c3f4bfd5f165aeb2390))
+
+# @linagora/twake-mui [19.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.0.1...@linagora/twake-mui@19.1.0) (2026-10-28)
+
+
+### Features
+
+* **twake-mui:** Size the small Checkbox as the design ([5234ff4](https://github.com/linagora/twake-ui/commit/5234ff4b79cf517071414d24b1781b0f8bb516b8))
+
+## @linagora/twake-mui [19.0.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.0.0...@linagora/twake-mui@19.0.1) (2026-10-28)
+
+
+### Bug Fixes
+
+* **twake-mui:** Resolve left edge overflow of ContactPopover ([2a82c31](https://github.com/linagora/twake-ui/commit/2a82c31020ac77c692cfc26ad64b43e0ab7654d3))
+
+# @linagora/twake-mui [19.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@18.5.0...@linagora/twake-mui@19.0.0) (2026-10-28)
+
+
+* build(twake-mui)!: Require @linagora/twake-css 1.1.0 ([eb84e76](https://github.com/linagora/twake-ui/commit/eb84e768815e9635a2326a72754c6236770b975b))
+
+
+### Features
+
+* **twake-mui:** Read the light secondary from Secondary 100 ([6c66be6](https://github.com/linagora/twake-ui/commit/6c66be63ad34354b0a3b35e1b55a736714876d55))
+* **twake-mui:** Tint selected items with 8% of their colour ([aac9b45](https://github.com/linagora/twake-ui/commit/aac9b45f5a12e9a84513de939d636fc0aa01034a))
+
+
+### BREAKING CHANGES
+
+* you now need "@linagora/twake-css": ">=1.1.0".
+An app that upgrades twake-mui and keeps twake-css 1.0.0 gets a blue
+secondary colour.
+
+# @linagora/twake-mui [18.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@18.4.1...@linagora/twake-mui@18.5.0) (2026-10-27)
+
+
+### Bug Fixes
+
+* **twake-mui:** Take the line heights and tracking of the small styles from the design ([bab4fa1](https://github.com/linagora/twake-ui/commit/bab4fa147fd55735c8e4396c364e19bc696099db))
+
+
+### Features
+
+* **twake-mui:** Add a body3 typography variant ([b1110b3](https://github.com/linagora/twake-ui/commit/b1110b328f29ad49714b138cceaf887236dad667))
+* **twake-mui:** Add an xsmall Button size ([6ca4db8](https://github.com/linagora/twake-ui/commit/6ca4db8105c37d87bec419b8a4bfe563e4d40098))
+* **twake-mui:** Set the button text to 14px at every size ([6587b37](https://github.com/linagora/twake-ui/commit/6587b377eea92cece727309b3ff76cec8e8dfd3e))
+
+## @linagora/twake-mui [18.4.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@18.4.0...@linagora/twake-mui@18.4.1) (2026-10-23)
+
+
+### Bug Fixes
+
+* **twake-mui:** Allow select NavDesktopDropdown by keyboard ([733c7d1](https://github.com/linagora/twake-ui/commit/733c7d1f81729383d68e190b014b1645efc3d5f9))
+
+# @linagora/twake-mui [18.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@18.3.0...@linagora/twake-mui@18.4.0) (2026-10-22)
+
+
+### Features
+
+* **twake-mui:** Add getPlainTextFromMarkdown helper ([a47e189](https://github.com/linagora/twake-ui/commit/a47e1897ecdd14e8d2e8b7c6663815272c00aad4)), closes [cozy/cozy-ui#2965](https://github.com/cozy/cozy-ui/issues/2965)
+
+# @linagora/twake-mui [18.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@18.2.0...@linagora/twake-mui@18.3.0) (2026-10-22)
+
+
+### Features
+
+* **twake-mui:** Name the close and icon action buttons of ContactPopover ([4ece4c5](https://github.com/linagora/twake-ui/commit/4ece4c5509ae5c0f0b1a09c3492d834ffba40f80))
+
+# @linagora/twake-mui [18.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@18.1.0...@linagora/twake-mui@18.2.0) (2026-10-22)
+
+
+### Features
+
+* **twake-mui:** Migrate IntentHeader from cozy-ui ([fd35f2c](https://github.com/linagora/twake-ui/commit/fd35f2c0715d9ec2fac81940b584074aefdf7532))
+
+# @linagora/twake-mui [18.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@18.0.0...@linagora/twake-mui@18.1.0) (2026-10-22)
+
+
+### Features
+
+* **twake-mui:** Lighten the Backdrop to 12% black in light theme ([48ea234](https://github.com/linagora/twake-ui/commit/48ea234e6ccd1d69cc6164a291e0d5c4976c1897))
+
+# @linagora/twake-mui [18.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@17.1.0...@linagora/twake-mui@18.0.0) (2026-10-22)
+
+
+* feat(twake-mui)!: Remove encryptedUrl from the download action ([bf7480f](https://github.com/linagora/twake-ui/commit/bf7480f37d89b166850cc50fdf566b421eef00cb))
+
+
+### Features
+
+* **twake-mui:** Migrate ConfirmDialogProvider from cozy-ui ([eb9de6d](https://github.com/linagora/twake-ui/commit/eb9de6d3ac69b83455d127bb44f826f26af9e2ec))
+* **twake-mui:** Migrate SelectionProvider from cozy-ui ([50b91f4](https://github.com/linagora/twake-ui/commit/50b91f446ca91c498514debe1034010db2ac5557))
+
+
+### BREAKING CHANGES
+
+* `download` no longer accepts `encryptedUrl` and
+`DownloadFileOptions` no longer has `url`. Apps that downloaded an
+encrypted file through this option must pass its URL to their own
+`downloadFile` implementation instead.
+
+# @linagora/twake-mui [17.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@17.0.0...@linagora/twake-mui@17.1.0) (2026-10-22)
+
+
+### Features
+
+* **twake-mui:** Migrate NestedSelect from cozy-ui ([112d694](https://github.com/linagora/twake-ui/commit/112d69461cab48248b088c1da2c722b18d2dbffc))
+
+# @linagora/twake-mui [17.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@16.3.0...@linagora/twake-mui@17.0.0) (2026-10-22)
+
+
+### Bug Fixes
+
+* **twake-mui:** Make native form controls inherit the app font ([3746c36](https://github.com/linagora/twake-ui/commit/3746c36684d01d1b8e39b02cdbd6557797143aeb))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** CssBaseline now sets `font: inherit` on button, input,
+optgroup, select and textarea. Controls that set no font of their own
+(raw elements, `Box component="button"`, AccordionSummary) now take the
+font family, size, weight and line-height of their parent instead of
+the browser's. Set a font explicitly on a control to keep its previous
+rendering, or opt out globally by passing to TwakeMuiThemeProvider
+`themeOptions.components.MuiCssBaseline.styleOverrides` set to
+`{ 'button, input, optgroup, select, textarea': { font: 'revert' } }`.
+
+# @linagora/twake-mui [16.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@16.2.0...@linagora/twake-mui@16.3.0) (2026-10-22)
+
+
+### Features
+
+* **twake-mui:** Migrate NavigationList from cozy-ui ([2bb292a](https://github.com/linagora/twake-ui/commit/2bb292a1534e53d332194b4e609210479cea9aaa))
+
+# @linagora/twake-mui [16.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@16.1.0...@linagora/twake-mui@16.2.0) (2026-10-21)
+
+
+### Features
+
+* **twake-mui:** Migrate FilePathLink from cozy-ui ([49a90f5](https://github.com/linagora/twake-ui/commit/49a90f54647a0e697be1038d061b24af5449541e))
+
+# @linagora/twake-mui [16.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@16.0.1...@linagora/twake-mui@16.1.0) (2026-10-21)
+
+
+### Features
+
+* **twake-mui:** Migrate FilePath from cozy-ui ([622be6f](https://github.com/linagora/twake-ui/commit/622be6fd697ae5d067e4d1ca71063a4b14f1970d))
+
+## @linagora/twake-mui [16.0.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@16.0.0...@linagora/twake-mui@16.0.1) (2026-10-19)
+
+
+### Bug Fixes
+
+* **twake-mui:** Disabled ContactPopoved action has now visible state ([bcbf81e](https://github.com/linagora/twake-ui/commit/bcbf81e29cb997599cacc5fb0ea34a5813905820))
+
+# @linagora/twake-mui [16.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@15.2.0...@linagora/twake-mui@16.0.0) (2026-10-19)
+
+
+### Code Refactoring
+
+* **twake-mui:** Export Dialog as default only ([ed447eb](https://github.com/linagora/twake-ui/commit/ed447eb8041974c1b4d3b55bb7160740003a787e))
+
+
+### Features
+
+* **twake-mui:** Migrate ConfirmDialog from cozy-ui ([62098f2](https://github.com/linagora/twake-ui/commit/62098f26bafbf660126e9a408fbb650d3914187b))
+* **twake-mui:** Migrate FixedActionsDialog from cozy-ui ([61c34b1](https://github.com/linagora/twake-ui/commit/61c34b12069ab66d59498342790a26508f00d8a2))
+* **twake-mui:** Migrate FixedDialog from cozy-ui ([bb6ba7f](https://github.com/linagora/twake-ui/commit/bb6ba7f66938fff8bd8cc51ab9c17c7554119394))
+* **twake-mui:** Migrate IllustrationDialog from cozy-ui ([ba5525e](https://github.com/linagora/twake-ui/commit/ba5525ef40e9ec4d018c62ef96f9d6d8806c17fa))
+* **twake-mui:** Migrate InstallFlagshipAppDialog from cozy-ui ([4869572](https://github.com/linagora/twake-ui/commit/48695729c9c89651d21f10140fa3fd83c6e2b1d4))
+* **twake-mui:** Migrate PermissionDialog from cozy-ui ([b8f9628](https://github.com/linagora/twake-ui/commit/b8f962838b91c23b85d8528b07504be79d46f33f))
+* **twake-mui:** Migrate ShortcutDialog from cozy-ui ([74c0614](https://github.com/linagora/twake-ui/commit/74c061468784736d77ef3a738b20ba4d0bfece15))
+* **twake-mui:** Migrate StandardDialog from cozy-ui ([a43530f](https://github.com/linagora/twake-ui/commit/a43530f7906a39a518ae97a15b0e006d1e46ab71))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** DialogDefault is no longer exported. Import Dialog
+instead.
+
+# @linagora/twake-mui [15.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@15.1.0...@linagora/twake-mui@15.2.0) (2026-10-19)
+
+
+### Features
+
+* **twake-mui:** Export AppTitle ([2a19fc2](https://github.com/linagora/twake-ui/commit/2a19fc27bb033e6855545923904dae6b8c4c4cd1))
+
+# @linagora/twake-mui [15.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@15.0.0...@linagora/twake-mui@15.1.0) (2026-10-19)
+
+
+### Features
+
+* **twake-mui:** Implement sidebar drawer ([43a443b](https://github.com/linagora/twake-ui/commit/43a443bcff5719c828382230971beb83be4fb10a))
+* **twake-mui:** Separate click and toggle event in NavDropdown ([4ae7157](https://github.com/linagora/twake-ui/commit/4ae715714a04ba4eb606c598b7ec4e715c511dca))
+
+# @linagora/twake-mui [15.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@14.4.0...@linagora/twake-mui@15.0.0) (2026-10-19)
+
+
+### Code Refactoring
+
+* **twake-mui:** Export Avatar as default only ([a7a138e](https://github.com/linagora/twake-ui/commit/a7a138e0cf2e731fb5eba00bc7dfdbe2c8993f0b))
+* **twake-mui:** Export Button as default only ([c5ac445](https://github.com/linagora/twake-ui/commit/c5ac445f3f438e1d3f366c906067b18fd19e2ded))
+* **twake-mui:** Export ContactPopover as default only ([e74ddbe](https://github.com/linagora/twake-ui/commit/e74ddbec7a0fe526d508075364cc52d586cc26db))
+* **twake-mui:** Export SearchBar as default only ([34d0050](https://github.com/linagora/twake-ui/commit/34d00502da7c41edfcf841a49494b139cf977d9f))
+* **twake-mui:** Export Switch as default only ([b22aebc](https://github.com/linagora/twake-ui/commit/b22aebc9809137eb8a7effb30f8dd5ed98ff97cc))
+* **twake-mui:** Export Tabs as default only ([47d31fe](https://github.com/linagora/twake-ui/commit/47d31fea3c68ba104ff92f455b7ca0db47d43cab))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** ContactPopoverDefault is no longer exported. Import
+ContactPopover instead.
+* **twake-mui:** SearchBarDefault is no longer exported. Import SearchBar
+instead.
+* **twake-mui:** SwitchDefault is no longer exported. Import Switch
+instead.
+* **twake-mui:** TabsDefault is no longer exported. Import Tabs
+instead.
+* **twake-mui:** ButtonDefault is no longer exported. Import Button
+instead.
+* **twake-mui:** AvatarDefault is no longer exported. Import Avatar
+instead.
+
+# @linagora/twake-mui [14.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@14.3.0...@linagora/twake-mui@14.4.0) (2026-10-15)
+
+
+### Features
+
+* **twake-mui:** Migrate AlertProvider from cozy-ui ([9abdc95](https://github.com/linagora/twake-ui/commit/9abdc95037d43d96d2cdcc5c498567f0e065d018))
+
+# @linagora/twake-mui [14.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@14.2.0...@linagora/twake-mui@14.3.0) (2026-10-15)
+
+
+### Features
+
+* **twake-mui:** Migrate PasswordField from cozy-ui ([5d39ddd](https://github.com/linagora/twake-ui/commit/5d39ddd8c7616e82c9f6c89cabe1a53b6b553864))
+
+# @linagora/twake-mui [14.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@14.1.0...@linagora/twake-mui@14.2.0) (2026-10-15)
+
+
+### Features
+
+* **twake-mui:** Migrate Filename from cozy-ui ([84f4803](https://github.com/linagora/twake-ui/commit/84f4803fedbfc211dabef69717570d75500369b4))
+
+# @linagora/twake-mui [14.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@14.0.0...@linagora/twake-mui@14.1.0) (2026-10-15)
+
+
+### Features
+
+* **twake-mui:** Migrate LoadMore from cozy-ui ([3b505ec](https://github.com/linagora/twake-ui/commit/3b505ec16434d371d7a730cc314df06e6013b724))
+
+# @linagora/twake-mui [14.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@13.2.1...@linagora/twake-mui@14.0.0) (2026-10-15)
+
+
+### Code Refactoring
+
+* **twake-mui:** Remove secondarySort from VirtualizedTable ([f0d5632](https://github.com/linagora/twake-ui/commit/f0d5632c57346428f5075f7ea9e338128a597c48))
+
+
+### Features
+
+* **twake-mui:** Add sortingMode to VirtualizedTable ([e747721](https://github.com/linagora/twake-ui/commit/e74772185ae3447d0fce935393119e785b3a3c3a))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** VirtualizedTable no longer takes secondarySort. Sort
+the rows, secondary order included, before passing them, and set
+sortingMode="server" so that the table keeps their order.
+
+Assisted-by: LLM
+
+## @linagora/twake-mui [13.2.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@13.2.0...@linagora/twake-mui@13.2.1) (2026-10-13)
+
+
+### Bug Fixes
+
+* **twake-mui:** Draw badge counts as a pill ([2cc8518](https://github.com/linagora/twake-ui/commit/2cc8518f927ddd2b571c455a6a0ddddf475151c9))
+
+# @linagora/twake-mui [13.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@13.1.0...@linagora/twake-mui@13.2.0) (2026-10-13)
+
+
+### Features
+
+* **twake-mui:** Migrate MidEllipsis from cozy-ui ([54c58b7](https://github.com/linagora/twake-ui/commit/54c58b75389c5a608080e2e4df7164f76f441b21))
+
+# @linagora/twake-mui [13.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@13.0.0...@linagora/twake-mui@13.1.0) (2026-10-13)
+
+
+### Features
+
+* **twake-mui:** Migrate BarTitle from cozy-ui ([63e9e21](https://github.com/linagora/twake-ui/commit/63e9e21fee5ceaffe6355c6eca9fc7f2aee5500b))
+
+# @linagora/twake-mui [13.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@12.1.0...@linagora/twake-mui@13.0.0) (2026-10-12)
+
+
+### chore
+
+* **twake-mui:** Upgrade twake-i18n from 0.6.0 to 0.7.1 ([311b59b](https://github.com/linagora/twake-ui/commit/311b59b4ae9c9d1bb730a81d1c7df2d9311cf2dc))
+
+
+### Features
+
+* **twake-mui:** Add ActionsBar locales ([ad935ba](https://github.com/linagora/twake-ui/commit/ad935bae17e8be853140507275b14f30a96035eb))
+* **twake-mui:** Migrate ActionsBar from cozy-ui ([dcf2a17](https://github.com/linagora/twake-ui/commit/dcf2a17128be796c0f9c5aa0ebda36051a2a11ee))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** twake-i18n >=0.7.1 is now a required peer dependency
+of @linagora/twake-mui. Apps must upgrade twake-i18n to 0.7.1 or later.
+
+# @linagora/twake-mui [12.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@12.0.0...@linagora/twake-mui@12.1.0) (2026-10-12)
+
+
+### Features
+
+* **twake-mui:** Migrate AppBar from cozy-ui ([4a7280f](https://github.com/linagora/twake-ui/commit/4a7280f0f4a75687d5de823fd5b544ccd63035cb))
+
+# @linagora/twake-mui [12.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.4.0...@linagora/twake-mui@12.0.0) (2026-10-08)
+
+
+* fix(twake-mui)!: Move @linagora/twake-css to peerDependencies ([672aa48](https://github.com/linagora/twake-ui/commit/672aa48a266ee10bbc3b421ce64b6ced83adbf85))
+
+
+### BREAKING CHANGES
+
+* apps must install @linagora/twake-css themselves and
+import @linagora/twake-css/dist/utils.css once.
+
+Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>
+
+# @linagora/twake-mui [11.4.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.3.0...@linagora/twake-mui@11.4.0) (2026-10-08)
+
+
+### Features
+
+* **twake-mui:** Migrate ColorList from cozy-ui ([870fd92](https://github.com/linagora/twake-ui/commit/870fd9265f0a23904570e910644a74700cd41178))
+
+# @linagora/twake-mui [11.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.2.0...@linagora/twake-mui@11.3.0) (2026-10-08)
+
+
+### Features
+
+* **twake-mui:** Migrate ProgressionBanner from cozy-ui ([f3fb9a1](https://github.com/linagora/twake-ui/commit/f3fb9a11f9f91a15a5cb27d399c1956bcc1927c3))
+
+# @linagora/twake-mui [11.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.1.0...@linagora/twake-mui@11.2.0) (2026-10-08)
+
+
+### Features
+
+* **twake-mui:** Migrate Markdown from cozy-ui ([120d160](https://github.com/linagora/twake-ui/commit/120d1608e7c7ef4d1d624293b6c3d49d0e27a281))
+
+# @linagora/twake-mui [11.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@11.0.0...@linagora/twake-mui@11.1.0) (2026-10-08)
+
+
+### Features
+
+* **twake-mui:** Migrate Link from cozy-ui ([8056744](https://github.com/linagora/twake-ui/commit/805674475d17bdab80cb0d01ec760ad716185818))
+
+# @linagora/twake-mui [11.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.5.1...@linagora/twake-mui@11.0.0) (2026-10-08)
+
+
+### Bug Fixes
+
+* **twake-mui:** Reposition BottomSheet when the window is resized ([7036375](https://github.com/linagora/twake-ui/commit/70363755a1f61e2ca77d1fa3ac9132e3e33fd00e))
+
+
+### Features
+
+* **twake-mui:** Add ActionsMenu locales ([f0e09cb](https://github.com/linagora/twake-ui/commit/f0e09cb0f6ae7e8c3e988bc5b62fc7190c07f475))
+* **twake-mui:** Migrate ActionsMenu from cozy-ui ([7b12778](https://github.com/linagora/twake-ui/commit/7b12778d86948e5c53fe9b2e16555ed966e64dc6))
+* **twake-mui:** Migrate ActionsMenu predefined actions from cozy-ui ([7f66436](https://github.com/linagora/twake-ui/commit/7f6643633dfa1d6e65f402ee26af223e3ac5d440))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** cozy-intent is now a required peer dependency of
+@linagora/twake-mui. Apps must install cozy-intent >=2.29.1.
+
+## @linagora/twake-mui [10.5.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.5.0...@linagora/twake-mui@10.5.1) (2026-10-07)
+
+
+### Bug Fixes
+
+* **twake-mui:** Rename spaceOverlay.ts to connectSpaceOverlay.ts ([20754d1](https://github.com/linagora/twake-ui/commit/20754d1efdc12bf1f40331042de0ff16035f6aee))
+
 # @linagora/twake-mui [10.5.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@10.4.1...@linagora/twake-mui@10.5.0) (2026-10-07)
 
 

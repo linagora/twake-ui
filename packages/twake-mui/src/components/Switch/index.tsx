@@ -1,9 +1,10 @@
-import { Icon, IconProps } from '@linagora/twake-icons'
 import {
   Switch as MuiSwitch,
   SwitchProps as MuiSwitchProps
 } from '@mui/material'
 import React from 'react'
+
+import { Icon, IconProps } from '@linagora/twake-icons'
 
 export interface SwitchProps extends Omit<
   MuiSwitchProps,
@@ -13,7 +14,7 @@ export interface SwitchProps extends Omit<
   icon?: IconProps['icon']
 }
 
-export const Switch: React.FC<SwitchProps> = ({ icon, ...props }) => {
+const Switch: React.FC<SwitchProps> = ({ icon, ...props }) => {
   const thumb = (
     <span className="switchThumb">
       {!!icon && <Icon icon={icon} size={14} />}

@@ -1,0 +1,25 @@
+{
+  "Dialogs": {
+    "closeButton": "Close",
+    "backButton": "Back",
+    "installFlagshipApp": {
+      "title": "Scan the QR Code",
+      "text": "or go directly to the <img src=%{iosIconSrc} /> <a href='%{iosUrl}' class='u-link' target='_blank' rel='noopener'>App Store</a><br>or <img src=%{androidIconSrc} /> <a href='%{androidUrl}' class='u-link' target='_blank' rel='noopener'>Play Store</a> to install the Twake Workplace app",
+      "linkLabel": "Go to the Twake Workplace application download page"
+    },
+    "shortcut": {
+      "createTitle": "Create a shortcut",
+      "editTitle": "Modify a shortcut",
+      "filename": "Shortcut name",
+      "url": "URL",
+      "cancel": "Cancel",
+      "create": "Create",
+      "edit": "Save",
+      "created": "The shortcut has been created",
+      "edited": "The shortcut has been modified",
+      "errored": "An error occurred",
+      "needsInfo": "A shortcut needs a name and a URL",
+      "urlBadFormat": "The entered URL is not in the correct format"
+    }
+  }
+}

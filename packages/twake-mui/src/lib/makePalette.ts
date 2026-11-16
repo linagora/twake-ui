@@ -1,6 +1,7 @@
-import paletteJson from '@linagora/twake-css/palette.json'
 import { PaletteOptions, alpha } from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
+
+import paletteJson from '@linagora/twake-css/palette.json'
 
 import {
   PaletteJson,
@@ -102,13 +103,15 @@ export const makePalette = (
         hover: alpha(palette.Common.white, 0.08),
         hoverOpacity: 0.08,
         selected: alpha(palette.Common.white, 0.16),
-        selectedOpacity: 0.18,
+        selectedOpacity: 0.16,
         disabled: alpha(palette.Common.white, 0.32),
         disabledOpacity: 0.32,
         disabledBackground: alpha(palette.Common.white, 0.12),
         focus: alpha(palette.Common.white, 0.24),
         focusOpacity: 0.24,
-        activatedOpacity: 0.24
+        activatedOpacity: 0.24,
+        ghostOpacity: 0.08,
+        hoverGhostOpacity: 0.16
       }
     }
   }
@@ -122,7 +125,7 @@ export const makePalette = (
       contrastText: palette.Primary.ContrastText
     },
     secondary: {
-      light: palette.Secondary[200],
+      light: palette.Secondary[100],
       main: palette.Secondary[600],
       dark: palette.Secondary[700],
       contrastText: palette.Secondary.ContrastText
@@ -193,13 +196,15 @@ export const makePalette = (
       hover: alpha(palette.Grey[900], 0.04),
       hoverOpacity: 0.04,
       selected: alpha(palette.Grey[900], 0.08),
-      selectedOpacity: 0.18,
+      selectedOpacity: 0.08,
       disabled: alpha(palette.Grey[900], 0.24),
       disabledOpacity: 0.32,
       disabledBackground: alpha(palette.Grey[900], 0.12),
       focus: alpha(palette.Grey[900], 0.12),
       focusOpacity: 0.12,
-      activatedOpacity: 0.12
+      activatedOpacity: 0.12,
+      ghostOpacity: 0.08,
+      hoverGhostOpacity: 0.16
     }
   }
 }

@@ -1,17 +1,18 @@
-import { Check, Download, Warn } from '@linagora/twake-icons'
 import { Box, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
+
+import { Check, Download, Warn } from '@linagora/twake-icons'
 
 import { Nav } from '../Nav'
 import { NavDesktopDropdown } from '../NavDesktopDropdown'
 import { NavDesktopLimiter } from '../NavDesktopLimiter'
 import { NavIcon } from '../NavIcon'
 import { NavItem } from '../NavItem'
-import NavText from '../NavText'
-import { Sidebar, SidebarProps } from './index'
 import { NavDropdown } from '../NavLink/NavDropdown'
 import { NavLink } from '../NavLink/NavLink'
+import NavText from '../NavText'
+import { Sidebar, SidebarProps } from './index'
 
 const SidebarDemo = (props: SidebarProps): React.ReactElement => {
   const [active, setActive] = useState(['Section 1', 'Subsection 1'])
@@ -31,8 +32,7 @@ const SidebarDemo = (props: SidebarProps): React.ReactElement => {
             <NavDropdown
               {...makeProps(['Section 1'])}
               open={openSection1}
-              onToggle={(e: React.MouseEvent<HTMLDivElement>) => {
-                e.stopPropagation()
+              onToggle={() => {
                 setOpenSection1(prev => !prev)
               }}
             >
@@ -85,6 +85,14 @@ const meta: Meta<typeof Sidebar> = {
   title: 'Sidebar',
   component: Sidebar,
   tags: ['autodocs'],
+  argTypes: {
+    anchor: { control: 'radio', options: ['bottom', 'left'] },
+    open: { control: 'boolean' }
+  },
+  args: {
+    anchor: 'bottom',
+    open: false
+  },
   render: args => <SidebarDemo {...args} />
 }
 
@@ -96,4 +104,18 @@ export const Default: Story = {}
 // Visual Regression - Combined view for Argos testing
 export const Screenshot: Story = {
   tags: ['argos']
+}
+
+export const DrawerMobile: Story = {
+  tags: ['argos', '!autodocs'],
+  globals: { viewport: 'mobile' },
+  args: { anchor: 'left', open: true },
+  parameters: {
+    argos: {
+      modes: {
+        'desktop-light': { disabled: true },
+        'desktop-dark': { disabled: true }
+      }
+    }
+  }
 }

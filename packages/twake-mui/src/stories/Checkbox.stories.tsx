@@ -40,6 +40,7 @@ const noEffect: CheckboxProps = { disableRipple: true, sx: { p: 0 } }
 const checkboxes: { label: string; props: CheckboxProps }[] = [
   { label: 'Checkbox', props: {} },
   { label: 'Small', props: { size: 'small' } },
+  { label: 'Small checked', props: { size: 'small', checked: true } },
   { label: 'Checked', props: { checked: true } },
   { label: 'Mixed', props: { indeterminate: true } },
   { label: 'Mixed checked', props: { indeterminate: true, checked: true } },

@@ -1,7 +1,19 @@
-import { Backdrop, Portal } from '@mui/material'
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react'
-import { useMutationObserver, useTimeoutWhen } from 'rooks'
+import {
+  Backdrop,
+  Portal,
+  Unstable_TrapFocus as FocusTrap
+} from '@mui/material'
+import React, {
+  memo,
+  useCallback,
+  useEffect,
+  useId,
+  useRef,
+  useState
+} from 'react'
+import { useMutationObserver, useTimeoutWhen, useWindowSize } from 'rooks'
 
+import BottomSheetTitleIdContext from './BottomSheetTitleIdContext'
 import {
   ANIMATION_DURATION,
   computeBottomSpacer,
@@ -38,6 +50,12 @@ const NO_TOOLBAR_PROPS: BottomSheetToolbarProps = {}
 const DEFAULT_MEDIUM_HEIGHT_RATIO = 0.75
 const SPRING_CONFIG = { tension: 165, friction: 17, clamp: true }
 
+/** Portals append to body, so the last modal in DOM order is the topmost one */
+const isTopModal = (element: HTMLElement | null): boolean => {
+  const modals = document.querySelectorAll('[aria-modal="true"]')
+  return modals[modals.length - 1] === element
+}
+
 const BottomSheetContent = memo(function BottomSheetContent({
   toolbarProps = NO_TOOLBAR_PROPS,
   settings,
@@ -45,6 +63,8 @@ const BottomSheetContent = memo(function BottomSheetContent({
   skipAnimation,
   onClose,
   offset = 0,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledby,
   children
 }: BottomSheetContentProps): React.JSX.Element {
   const mediumHeight = settings?.mediumHeight ?? null
@@ -56,6 +76,8 @@ const BottomSheetContent = memo(function BottomSheetContent({
   const innerContentRef = useRef<HTMLDivElement | null>(null)
   const headerRef = useRef<HTMLDivElement | null>(null)
   const headerContentRef = useRef<HTMLDivElement | null>(null)
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const titleId = useId()
   const [isTopPosition, setIsTopPosition] = useState(false)
   const [isBottomPosition, setIsBottomPosition] = useState(false)
   const [isHidden, setIsHidden] = useState(false)
@@ -67,6 +89,8 @@ const BottomSheetContent = memo(function BottomSheetContent({
   const [initPos, setInitPos] = useState(0)
   const prevInitPos = useRef(0)
   const [forceRender, setForceRender] = useState(0)
+  // Stops are positions from the window top, so they follow its height (rotation, browser bars)
+  const { innerHeight } = useWindowSize()
 
   const hasToolbarProps = Object.keys(toolbarProps).length > 0
   const isClosable = !!onClose || backdrop
@@ -109,6 +133,16 @@ const BottomSheetContent = memo(function BottomSheetContent({
       handleClose
     })
   }
+
+  const handleKeyDown = (event: React.KeyboardEvent): void => {
+    if (event.key !== 'Escape') return
+    // A nested sheet is a React child: its Escape must not close the parent
+    event.stopPropagation()
+    handleBackdropClick()
+  }
+
+  // Keeps the trap of a parent sheet from pulling the focus back out of a nested one
+  const isTopSheet = (): boolean => isTopModal(containerRef.current)
 
   // Recomputes the stops when the content changes, after loading or navigating inside it
   useMutationObserver(innerContentRef, () => {
@@ -205,7 +239,8 @@ const BottomSheetContent = memo(function BottomSheetContent({
     backdrop,
     isClosable,
     offset,
-    forceRender
+    forceRender,
+    innerHeight
   ])
 
   const content = (
@@ -256,10 +291,28 @@ const BottomSheetContent = memo(function BottomSheetContent({
     </>
   )
 
-  return showBackdrop ? (
-    <BottomSheetContainer>{content}</BottomSheetContainer>
-  ) : (
-    content
+  return (
+    <BottomSheetTitleIdContext.Provider value={titleId}>
+      {showBackdrop ? (
+        <FocusTrap open isEnabled={isTopSheet}>
+          <BottomSheetContainer
+            ref={containerRef}
+            role="dialog"
+            aria-modal
+            aria-label={ariaLabel}
+            aria-labelledby={
+              ariaLabelledby ?? (ariaLabel ? undefined : titleId)
+            }
+            tabIndex={-1}
+            onKeyDown={handleKeyDown}
+          >
+            {content}
+          </BottomSheetContainer>
+        </FocusTrap>
+      ) : (
+        content
+      )}
+    </BottomSheetTitleIdContext.Provider>
   )
 })
 

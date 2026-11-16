@@ -15,6 +15,7 @@ const variants = [
   'subtitle2',
   'body1',
   'body2',
+  'body3',
   'caption'
 ] as const
 

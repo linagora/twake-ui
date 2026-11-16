@@ -1,7 +1,8 @@
-import { CircleFilled, Icon, Link } from '@linagora/twake-icons'
 import { Avatar, Badge, Box } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
+
+import { CircleFilled, Icon, Link } from '@linagora/twake-icons'
 
 const colors = [
   'default',
@@ -119,6 +120,9 @@ export const Screenshot: Story = {
           <Target />
         </Badge>
         <Badge color="error" badgeContent={0} showZero={false}>
+          <Target />
+        </Badge>
+        <Badge color="error" badgeContent={99} max={99}>
           <Target />
         </Badge>
         <Badge color="error" badgeContent={120} max={99}>

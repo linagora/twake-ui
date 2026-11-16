@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgRestoreStraight(props: SVGProps<SVGSVGElement>) {
+function SvgRestoreStraight({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 14 16"
+      ref={iconRef}
+      {...props}
+    >
       <path d="M8.6 0H2.2C1.32 0 .608.72.608 1.6L.6 14.4c0 .88.712 1.6 1.592 1.6H11.8c.88 0 1.6-.72 1.6-1.6V4.8zm3.2 14.4H2.2V1.6h5.736L11.8 5.464zM4.16 6.856l-.936-.936V8.8h2.88L4.952 7.648A2.52 2.52 0 0 1 7.184 6.28a2.52 2.52 0 1 1 0 5.04 2.51 2.51 0 0 1-2.064-1.08H3.88a3.61 3.61 0 0 0 3.296 2.16c1.984 0 3.6-1.616 3.6-3.6s-1.616-3.6-3.6-3.6A3.58 3.58 0 0 0 4.16 6.856" />
     </svg>
   );

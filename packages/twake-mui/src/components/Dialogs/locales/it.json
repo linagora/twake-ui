@@ -1,0 +1,25 @@
+{
+  "Dialogs": {
+    "closeButton": "Chiudi",
+    "backButton": "Indietro",
+    "installFlagshipApp": {
+      "title": "Scansiona il codice QR",
+      "text": "oppure vai direttamente su <img src=%{iosIconSrc} /> <a href='%{iosUrl}' class='u-link' target='_blank' rel='noopener'>App Store</a><br>o su <img src=%{androidIconSrc} /> <a href='%{androidUrl}' class='u-link' target='_blank' rel='noopener'>Play Store</a> per installare l'app Twake Workplace",
+      "linkLabel": "Vai alla pagina di download dell'applicazione Twake Workplace"
+    },
+    "shortcut": {
+      "createTitle": "Crea un collegamento",
+      "editTitle": "Modifica un collegamento",
+      "filename": "Nome del collegamento",
+      "url": "URL",
+      "cancel": "Annulla",
+      "create": "Crea",
+      "edit": "Salva",
+      "created": "Il collegamento è stato creato",
+      "edited": "Il collegamento è stato modificato",
+      "errored": "Si è verificato un errore",
+      "needsInfo": "Un collegamento richiede un nome e un URL",
+      "urlBadFormat": "L'URL inserito non è nel formato corretto"
+    }
+  }
+}

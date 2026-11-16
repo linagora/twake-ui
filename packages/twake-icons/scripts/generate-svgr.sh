@@ -27,9 +27,17 @@ createSvgr() {
 
   echo "Generating: $tsxFilename"
 
+  # svgo strips role from the SVG source, so pass it here
+  extraProps=()
+  if [ "$svgFilename" = "spinner.svg" ]; then
+    extraProps=(--svg-props role=progressbar --svg-props aria-busy=true)
+  fi
+
   "$SVGR_BIN" "$svgFileFullPath" \
     --typescript \
     --no-dimensions \
+    --svg-props 'ref={iconRef}' \
+    ${extraProps[@]+"${extraProps[@]}"} \
     --template "$SVGR_TEMPLATE" > "$tsxFileFullPath"
 }
 

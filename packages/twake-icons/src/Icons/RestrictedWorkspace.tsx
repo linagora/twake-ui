@@ -1,16 +1,22 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgRestrictedWorkspace(props: SVGProps<SVGSVGElement>) {
+function SvgRestrictedWorkspace({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 100 100"
+      ref={iconRef}
       {...props}
     >
       <g
-        stroke="#FFE597"
+        stroke="#ffe597"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={5.022}
@@ -45,9 +51,9 @@ function SvgRestrictedWorkspace(props: SVGProps<SVGSVGElement>) {
           y2={79.563}
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.13} stopColor="#A033FF" />
-          <stop offset={0.61} stopColor="#0094FF" />
-          <stop offset={1} stopColor="#4FB500" />
+          <stop offset={0.13} stopColor="#a033ff" />
+          <stop offset={0.61} stopColor="#0094ff" />
+          <stop offset={1} stopColor="#4fb500" />
         </linearGradient>
         <linearGradient
           id="restricted-workspace_svg__c"
@@ -57,8 +63,8 @@ function SvgRestrictedWorkspace(props: SVGProps<SVGSVGElement>) {
           y2={90.99}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#FFD600" stopOpacity={0} />
-          <stop offset={0.563} stopColor="#FFC700" />
+          <stop stopColor="#ffd600" stopOpacity={0} />
+          <stop offset={0.563} stopColor="#ffc700" />
         </linearGradient>
         <linearGradient
           id="restricted-workspace_svg__d"
@@ -68,8 +74,8 @@ function SvgRestrictedWorkspace(props: SVGProps<SVGSVGElement>) {
           y2={91.663}
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.03} stopColor="#FF3B30" stopOpacity={0} />
-          <stop offset={0.843} stopColor="#E73B2D" />
+          <stop offset={0.03} stopColor="#ff3b30" stopOpacity={0} />
+          <stop offset={0.843} stopColor="#e73b2d" />
         </linearGradient>
         <clipPath id="restricted-workspace_svg__a">
           <path fill="#fff" d="M53 60h33v33H53z" />

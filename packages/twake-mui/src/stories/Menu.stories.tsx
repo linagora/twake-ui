@@ -1,14 +1,4 @@
 import {
-  Attachment,
-  Attention,
-  Contrast,
-  Copy,
-  Icon,
-  Pen,
-  People,
-  Telephone
-} from '@linagora/twake-icons'
-import {
   Box,
   Divider,
   ListItemIcon,
@@ -20,6 +10,17 @@ import {
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
+
+import {
+  Attachment,
+  Attention,
+  Contrast,
+  Copy,
+  Icon,
+  Pen,
+  People,
+  Telephone
+} from '@linagora/twake-icons'
 
 import DropdownButton from '../components/DropdownButton'
 

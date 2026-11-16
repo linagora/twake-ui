@@ -1,30 +1,35 @@
-import { Icon } from '@linagora/twake-icons'
-import { Camera } from '@linagora/twake-icons'
-import { IconButton, useTheme } from '@mui/material'
 import React from 'react'
+
+import { Camera } from '@linagora/twake-icons'
+import { useI18n } from 'twake-i18n'
+
+import { ContactPopoverIconAction } from './ContactPopoverIconAction'
 
 export interface ContactPopoverVideoActionProps {
   /** URL for video call action (e.g., Twake Meet link) */
-  url: string
+  url?: string
+  /** Callback when the action is clicked, used when no url is given */
+  onClick?: () => void
   /** Disable the action button */
   disabled?: boolean
+  /** Accessible name and tooltip of the action, defaults to "Start a video call" */
+  label?: string
 }
 
 export const ContactPopoverVideoAction = ({
   url,
-  disabled = false
+  onClick,
+  disabled = false,
+  label
 }: ContactPopoverVideoActionProps): React.ReactElement => {
-  const theme = useTheme()
+  const { t } = useI18n()
   return (
-    <IconButton
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      size="small"
+    <ContactPopoverIconAction
+      icon={Camera}
+      label={label ?? t('ContactPopover.videoButton')}
+      url={url}
+      onClick={onClick}
       disabled={disabled}
-      sx={{ border: `1px solid ${theme.vars.palette.divider}` }}
-    >
-      <Icon icon={Camera} size={20} color={theme.vars.palette.text.icon} />
-    </IconButton>
+    />
   )
 }

@@ -1,7 +1,8 @@
 import { SxProps } from '@mui/material'
 import { Theme } from '@mui/material/styles'
-import React from 'react'
+import React, { useContext } from 'react'
 
+import { SidebarContext } from '../Sidebar/SidebarContext'
 import { NavPrimaryText } from './NavPrimaryText'
 import { NavSecondaryText } from './NavSecondaryText'
 import { NavTertiaryText } from './NavTertiaryText'
@@ -19,9 +20,13 @@ const NavText = React.forwardRef<HTMLDivElement, NavTextProps>(
     { secondaryText, tertiaryText, tertiaryIcon, children, sx, ...rest },
     ref
   ) => {
+    const disableMobileView = useContext(SidebarContext)
+
     return (
       <NavTextRoot ref={ref} sx={sx} {...rest}>
-        <NavPrimaryText>{children}</NavPrimaryText>
+        <NavPrimaryText disableMobileView={disableMobileView}>
+          {children}
+        </NavPrimaryText>
         {secondaryText && <NavSecondaryText>{secondaryText}</NavSecondaryText>}
         {(tertiaryText || tertiaryIcon) && (
           <NavTertiaryText>

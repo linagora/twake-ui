@@ -33,6 +33,10 @@ export interface BottomSheetProps {
   offset?: number
   /** Lets the user close the sheet by swiping it down */
   onClose?: () => void
+  /** Names the sheet, when it has a backdrop */
+  'aria-label'?: string
+  /** Id of the element naming the sheet, when it has a backdrop. Defaults to its `BottomSheetTitle` */
+  'aria-labelledby'?: string
   portalProps?: Omit<PortalProps, 'children'>
   children?: React.ReactNode
 }

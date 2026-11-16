@@ -1,3 +1,85 @@
+## @linagora/twake-icons [3.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.1.0...@linagora/twake-icons@3.1.1) (2026-11-16)
+
+
+### Bug Fixes
+
+* **twake-icons:** Give AssignAdmin and AssignModerator a viewBox ([a4c033a](https://github.com/linagora/twake-ui/commit/a4c033a930bd7d715a265283a3f6d618e45d88a3))
+* **twake-icons:** Regenerate AddToCloud from its source ([17d5efd](https://github.com/linagora/twake-ui/commit/17d5efd69c49cbecb29533ecd941d73ba3375339))
+
+# @linagora/twake-icons [3.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.0.0...@linagora/twake-icons@3.1.0) (2026-11-13)
+
+
+### Features
+
+* **twake-icons:** Add icon AddToCloud ([09287d4](https://github.com/linagora/twake-ui/commit/09287d4c2a29fd909dadb4813eefe250e8ff6b88))
+
+# @linagora/twake-icons [3.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.17.0...@linagora/twake-icons@3.0.0) (2026-10-29)
+
+
+### Bug Fixes
+
+* **twake-icons:** Generate the Cube and Spinner props ([e15774c](https://github.com/linagora/twake-ui/commit/e15774c33a01d5addd73c827434336cfa8843763))
+* **twake-icons:** Remove the root fill of the ManageSearch source ([1bffb58](https://github.com/linagora/twake-ui/commit/1bffb584ab66c2221bdd6428caefc574be82fd7d))
+* **twake-icons:** Rename permission icons that shadow other icons ([fcca309](https://github.com/linagora/twake-ui/commit/fcca3091521e38d73498457dccfe35c5e38fcbec))
+* **twake-icons:** Run svgo until the SVGs stop changing ([202328f](https://github.com/linagora/twake-ui/commit/202328fbf9b25cc28527dfeeddef5cd7fd504620))
+* **twake-icons:** Skip animated icons in npm run svgo ([8a6b503](https://github.com/linagora/twake-ui/commit/8a6b503291f0fc3b5303fd44c434dc0b835e2298))
+
+
+### BREAKING CHANGES
+
+* **twake-icons:** Bill, Calendar, Certified, Contract, Home, Location
+and Safe now render the ui icon, and Contacts the illus one. The old
+permission drawings are exported as BillPermissions,
+CalendarPermissions, CertifiedPermissions, ContactsPermissions,
+ContractPermissions, HomePermissions, LocationPermissions and
+SafePermissions, which no longer render the 16px Twake drawings.
+
+Assisted-by: LLM
+
+# @linagora/twake-icons [2.17.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.16.1...@linagora/twake-icons@2.17.0) (2026-10-27)
+
+
+### Features
+
+* **twake-icons:** Add editor and composer icons ([867d1e9](https://github.com/linagora/twake-ui/commit/867d1e9f18eb0c7e972dc23c9f473c4de8c5484b))
+* **twake-icons:** Add mail folder icons ([d5d6065](https://github.com/linagora/twake-ui/commit/d5d6065f7b65ac1c8132b1d14b9cee9381c29f73))
+* **twake-icons:** Add mail message action icons ([444fdec](https://github.com/linagora/twake-ui/commit/444fdecea6919f045066ccfd014e953a57508050))
+
+## @linagora/twake-icons [2.16.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.16.0...@linagora/twake-icons@2.16.1) (2026-10-27)
+
+
+### Bug Fixes
+
+* **twake-icons:** Keep the AssistantColor star transparent ([1e045af](https://github.com/linagora/twake-ui/commit/1e045afd34e327ff42fdf4d551d38a0cf22700b3))
+
+# @linagora/twake-icons [2.16.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.15.0...@linagora/twake-icons@2.16.0) (2026-10-21)
+
+
+### Features
+
+* **twake-icons:** Add LocationOutlined icon ([f6522fb](https://github.com/linagora/twake-ui/commit/f6522fb610c1cc6da84c8989b55eabc707dbd292))
+
+# @linagora/twake-icons [2.15.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.14.0...@linagora/twake-icons@2.15.0) (2026-10-20)
+
+
+### Features
+
+* **twake-icons:** Add ManageSearch icon ([25fe610](https://github.com/linagora/twake-ui/commit/25fe610b3f363865dc3c022d64777f81b1461886))
+
+# @linagora/twake-icons [2.14.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.13.2...@linagora/twake-icons@2.14.0) (2026-10-12)
+
+
+### Features
+
+* **twake-icons:** Add UserGroup icon ([df948b5](https://github.com/linagora/twake-ui/commit/df948b5b02d286c562c9a338506c7043d053ad50))
+
+## @linagora/twake-icons [2.13.2](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.13.1...@linagora/twake-icons@2.13.2) (2026-10-08)
+
+
+### Bug Fixes
+
+* **twake-icons:** Let Expand, Narrow, Export and Article follow currentColor ([d47e75c](https://github.com/linagora/twake-ui/commit/d47e75c02f572d65687801508ffd321bdbb698e5))
+
 ## @linagora/twake-icons [2.13.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@2.13.0...@linagora/twake-icons@2.13.1) (2026-10-07)
 
 

@@ -1,12 +1,13 @@
-import { Icon, Plus, Stop } from '@linagora/twake-icons'
 import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { Button, ButtonProps } from '../components/Button'
+import { Icon, Plus, Stop } from '@linagora/twake-icons'
+
+import Button, { ButtonProps } from '../components/Button'
 
 const variants = ['contained', 'outlined', 'ghost', 'text'] as const
-const sizes = ['small', 'medium', 'large'] as const
+const sizes = ['xsmall', 'small', 'medium', 'large'] as const
 const colors = [
   'inherit',
   'primary',

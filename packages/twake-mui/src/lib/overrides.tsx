@@ -1,20 +1,9 @@
-import {
-  Bottom,
-  CheckCircle,
-  CheckSquare,
-  Icon,
-  IconProps,
-  Info,
-  RadioChecked,
-  RadioUnchecked,
-  Spinner,
-  Warning,
-  WarningCircle
-} from '@linagora/twake-icons'
 import { accordionSummaryClasses } from '@mui/material/AccordionSummary'
 import { alertClasses } from '@mui/material/Alert'
 import { buttonClasses } from '@mui/material/Button'
+import { touchRippleClasses } from '@mui/material/ButtonBase'
 import { checkboxClasses } from '@mui/material/Checkbox'
+import { chipClasses } from '@mui/material/Chip'
 import { dialogTitleClasses } from '@mui/material/DialogTitle'
 import { formHelperTextClasses } from '@mui/material/FormHelperText'
 import { formLabelClasses } from '@mui/material/FormLabel'
@@ -28,11 +17,31 @@ import { selectClasses } from '@mui/material/Select'
 import { switchClasses } from '@mui/material/Switch'
 import { tabClasses } from '@mui/material/Tab'
 import { tabsClasses } from '@mui/material/Tabs'
-import { CSSObject, Theme, ThemeOptions, alpha } from '@mui/material/styles'
+import {
+  CSSObject,
+  Theme,
+  ThemeOptions,
+  alpha,
+  keyframes
+} from '@mui/material/styles'
 import React from 'react'
 
-import { radius } from './radius'
+import {
+  Bottom,
+  CheckCircle,
+  CheckSquare,
+  Icon,
+  IconProps,
+  Info,
+  RadioChecked,
+  RadioUnchecked,
+  Spinner,
+  Warning,
+  WarningCircle
+} from '@linagora/twake-icons'
+
 import AccordionExpandIcon from '../components/AccordionExpandIcon'
+import { radius } from './radius'
 
 export const alertSeverities = [
   'primary',
@@ -169,7 +178,68 @@ const listItemRoot: CSSObject = {
   ]
 }
 
+// MUI grows its ripple from scale(0) over 550 ms: on every press the
+// feedback lags behind the finger. This one starts at half size and is done
+// in 250 ms, so the press reads at once.
+const rippleEnter = keyframes`
+  from { transform: scale(0.5); opacity: 0.1; }
+  to { transform: scale(1); opacity: 0.3; }
+`
+
 export const overrides: NonNullable<ThemeOptions['components']> = {
+  MuiButtonBase: {
+    styleOverrides: {
+      // MuiTouchRipple has no theme key: its classes are reached from the
+      // button, one class more specific than MUI's own ripple rules
+      root: ({ theme }) => {
+        const ripple: CSSObject = {
+          [`& .${touchRippleClasses.ripple}.${touchRippleClasses.rippleVisible}`]:
+            {
+              animationName: rippleEnter,
+              animationDuration: `${theme.transitions.duration.short}ms`,
+              animationTimingFunction: theme.transitions.easing.easeOut
+            },
+          [`& .${touchRippleClasses.ripple} .${touchRippleClasses.childLeaving}`]:
+            {
+              animationDuration: `${theme.transitions.duration.short}ms`
+            }
+        }
+        // Gated as MUI gates its own ripple (TouchRipple.js), or this would
+        // bring back the animation that reducedMotion turned off
+        if (theme.motion.reducedMotion === 'always') return {}
+        if (theme.motion.reducedMotion === 'system')
+          return { '@media (prefers-reduced-motion: no-preference)': ripple }
+        return ripple
+      }
+    }
+  },
+  MuiCssBaseline: {
+    styleOverrides: {
+      // Browsers give form controls their own system font instead of the page's
+      'button, input, optgroup, select, textarea': { font: 'inherit' }
+    }
+  },
+  MuiAppBar: {
+    // MUI otherwise paints every app bar with the paper colour in dark mode
+    defaultProps: { color: 'default', enableColorOnDark: true },
+    styleOverrides: {
+      root: ({ theme }) => ({
+        variants: [
+          {
+            props: { color: 'default' },
+            style: {
+              '--AppBar-background': theme.vars.palette.grey.A400,
+              '--AppBar-color': theme.vars.palette.primary.contrastText,
+              ...theme.applyStyles('dark', {
+                '--AppBar-background': theme.vars.palette.primary.main,
+                '--AppBar-color': theme.vars.palette.primary.contrastText
+              })
+            }
+          }
+        ]
+      })
+    }
+  },
   MuiButton: {
     defaultProps: {
       variant: 'contained',
@@ -223,26 +293,40 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
               color: theme.vars.palette[color].main,
               backgroundColor: theme.alpha(
                 theme.vars.palette[color].main,
-                0.08
+                theme.vars.palette.action.ghostOpacity
               ),
               '@media (hover: hover)': {
                 '&:hover': {
                   backgroundColor: theme.alpha(
                     theme.vars.palette[color].main,
-                    0.16
+                    theme.vars.palette.action.hoverGhostOpacity
                   )
                 }
               }
             }
           })),
+          {
+            props: { size: 'xsmall' },
+            style: {
+              minWidth: 'auto',
+              minHeight: 24,
+              padding: '4px 8px',
+              fontSize: theme.typography.pxToRem(11),
+              lineHeight: '16px',
+              letterSpacing: '0.5px'
+            }
+          },
+          {
+            props: { size: 'xsmall', variant: 'outlined' },
+            style: { padding: '3px 7px' }
+          },
           // Vertical paddings sit 1px under cozy-ui's so the outlined border
           // still fits the fixed heights cozy-ui forces (36, 40, 48).
           {
             props: { size: 'small' },
             style: {
               minHeight: 36,
-              padding: '9px 16px',
-              fontSize: theme.typography.pxToRem(13)
+              padding: '9px 16px'
             }
           },
           {
@@ -253,8 +337,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             props: { size: 'large' },
             style: {
               minHeight: 48,
-              padding: '13px 32px',
-              fontSize: theme.typography.pxToRem(15)
+              padding: '13px 32px'
             }
           },
           {
@@ -278,6 +361,10 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           },
           {
             props: { loadingPosition: 'end', variant: 'text' },
+            style: { right: 8 }
+          },
+          {
+            props: { loadingPosition: 'end', size: 'xsmall' },
             style: { right: 8 }
           },
           {
@@ -460,6 +547,23 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
+  MuiBackdrop: {
+    styleOverrides: {
+      root: ({ theme }) => ({
+        variants: [
+          {
+            props: { invisible: false },
+            style: {
+              backgroundColor: alpha(theme.palette.common.black, 0.12),
+              ...theme.applyStyles('dark', {
+                backgroundColor: alpha(theme.palette.common.black, 0.5)
+              })
+            }
+          }
+        ]
+      })
+    }
+  },
   MuiDialog: {
     defaultProps: { disableEnforceFocus: true },
     styleOverrides: {
@@ -472,15 +576,20 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             padding: '0 8px 8px',
             height: 'auto',
             maxHeight: 'calc(100% - 32px)',
-            borderRadius: 6
+            borderRadius: 6,
+            '& .dialogDivider': { marginLeft: -8, marginRight: -8 }
           }
         },
         '&.medium': { maxWidth: 544 },
         '&.large': { maxWidth: 800 },
         '&.full': { maxWidth: '100%' }
       }),
+      container: {
+        '&.alignTop': { alignItems: 'start' }
+      },
       paperFullScreen: {
-        '&.small, &.medium, &.large': { maxWidth: '100%' }
+        '&.small, &.medium, &.large': { maxWidth: '100%' },
+        '& .dialogActions': { paddingBottom: 'env(safe-area-inset-bottom)' }
       }
     }
   },
@@ -503,7 +612,8 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         '&.dialogTitleWithClose': {
           paddingRight: '4rem',
           [theme.breakpoints.down('md')]: { paddingRight: '3rem' }
-        }
+        },
+        '&.dialogTitleFluid': { paddingTop: 0 }
       })
     }
   },
@@ -513,7 +623,41 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         padding: '24px 32px 0',
         [theme.breakpoints.down('md')]: { padding: '24px 16px 0' },
         // MUI drops the top padding after a title, cozy-ui keeps it
-        [`.${dialogTitleClasses.root} + &`]: { paddingTop: 24 }
+        [`.${dialogTitleClasses.root} + &`]: { paddingTop: 24 },
+        '&.disableGutters': {
+          padding: 0,
+          '& .dialogContentInner': { marginBottom: 0 },
+          '& .dialogTitleFluidContainer': { margin: 0 }
+        },
+        '& .dialogContentInner': {
+          marginBottom: 24,
+          '&.withFluidActions': {
+            [theme.breakpoints.down('md')]: {
+              marginBottom: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              '& .dialogContentWrapper': {
+                flexGrow: 1,
+                '&:not(.withActions)': {
+                  paddingBottom: 'calc(env(safe-area-inset-bottom) + 16px)'
+                }
+              },
+              '& .dialogActions': {
+                paddingBottom: 'calc(env(safe-area-inset-bottom) + 16px)'
+              }
+            }
+          },
+          '& .dialogTitleFluidContainer': {
+            marginLeft: '-2rem',
+            marginRight: '-2rem',
+            [theme.breakpoints.down('md')]: {
+              marginLeft: '-1rem',
+              marginRight: '-1rem',
+              marginTop: '-0.75rem'
+            }
+          }
+        }
       })
     }
   },
@@ -526,7 +670,16 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           margin: '8px 16px',
           '& button': { flexGrow: 1 }
         },
-        '& > :not(style) ~ :not(style)': { marginLeft: 4 }
+        '& > :not(style) ~ :not(style)': { marginLeft: 4 },
+        '&.dialogActionsFluid': { margin: '24px 0 0' },
+        '&.columnLayout': {
+          flexDirection: 'column-reverse',
+          '& button': {
+            width: '100%',
+            margin: 0,
+            '&:not(:first-child)': { marginBottom: 8 }
+          }
+        }
       })
     }
   },
@@ -537,7 +690,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         variants: [
           {
             props: { variant: 'inset' },
-            style: { marginLeft: 64 }
+            style: { marginLeft: 64, '&.dialogDivider': { marginLeft: 80 } }
           },
           {
             props: ({ ownerState }) =>
@@ -566,9 +719,59 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
   },
   MuiChip: {
     styleOverrides: {
-      root: {
-        '&.square': {
-          borderRadius: radius.md
+      root: ({ theme }) => {
+        const { action } = theme.vars.palette
+        return {
+          '&.square': {
+            borderRadius: radius.md
+          },
+          '&[draggable="true"]': {
+            cursor: 'grab'
+          },
+          [`& .${chipClasses.icon}, & .${chipClasses.deleteIcon}`]: {
+            flexShrink: 0
+          },
+          variants: [
+            {
+              props: { variant: 'ghost', color: 'default' },
+              style: {
+                color: theme.vars.palette.text.primary,
+                backgroundColor: theme.vars.palette.background.default,
+                // The action colours are translucent, so they go over the rest colour
+                [`&.${chipClasses.clickable}:hover`]: {
+                  backgroundColor: theme.vars.palette.background.default,
+                  backgroundImage: `linear-gradient(${action.hover}, ${action.hover})`
+                },
+                [`&.${chipClasses.focusVisible}`]: {
+                  backgroundColor: theme.vars.palette.background.default,
+                  backgroundImage: `linear-gradient(${action.focus}, ${action.focus})`
+                }
+              }
+            },
+            ...radioColors.map(color => ({
+              props: { variant: 'ghost' as const, color },
+              style: {
+                color: theme.vars.palette[color].main,
+                backgroundColor: theme.alpha(
+                  theme.vars.palette[color].main,
+                  action.ghostOpacity
+                ),
+                [`& .${chipClasses.icon}, & .${chipClasses.deleteIcon}`]: {
+                  color: 'inherit'
+                },
+                // MUI's coloured chips switch the delete icon to contrastText
+                [`& .${chipClasses.deleteIcon}:hover, & .${chipClasses.deleteIcon}:active`]:
+                  { color: 'inherit' },
+                [`&.${chipClasses.clickable}:hover, &.${chipClasses.focusVisible}`]:
+                  {
+                    backgroundColor: theme.alpha(
+                      theme.vars.palette[color].main,
+                      action.hoverGhostOpacity
+                    )
+                  }
+              }
+            }))
+          ]
         }
       }
     }
@@ -580,17 +783,20 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     },
     styleOverrides: {
       badge: ({ theme }) => ({
-        boxSizing: 'content-box',
-        height: 14,
-        minWidth: 14,
+        // Sizes include the border, so an app setting minWidth gets that width
+        boxSizing: 'border-box',
+        height: 18,
+        minWidth: 18,
         padding: 0,
         border: `2px solid ${theme.vars.palette.background.paper}`,
-        borderRadius: '100%',
-        fontSize: theme.typography.pxToRem(10)
+        borderRadius: radius.pill,
+        fontSize: theme.typography.pxToRem(10),
+        // Every two-digit count fits the circle, longer counts grow into a pill
+        fontVariantNumeric: 'tabular-nums'
       }),
       dot: {
-        height: 8,
-        minWidth: 8
+        height: 12,
+        minWidth: 12
       },
       anchorOriginTopRightRectangular: {
         transform: 'scale(1) translate(37%, -37%)'
@@ -691,6 +897,22 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     defaultProps: { size: 'large' },
     styleOverrides: {
       root: ({ theme }) => ({
+        '&.dialogIconButton': {
+          position: 'absolute',
+          top: '1.15rem',
+          zIndex: 1,
+          backgroundColor: theme.vars.palette.background.paper,
+          '&:hover': { backgroundColor: theme.vars.palette.action.selected },
+          [theme.breakpoints.down('md')]: { top: '0.25rem' }
+        },
+        '&.dialogCloseButton': {
+          right: '1.15rem',
+          [theme.breakpoints.down('md')]: { right: '0.25rem' }
+        },
+        '&.dialogBackButton': {
+          left: '1.15rem',
+          [theme.breakpoints.down('md')]: { left: '0.25rem' }
+        },
         variants: [
           {
             props: { color: 'default' },
@@ -747,8 +969,11 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           {
             props: { size: 'small' },
             style: {
-              padding: 6,
-              '& svg.twake-icon': { width: 16, height: 16, padding: 2 }
+              padding: 6.4,
+              '& .MuiSvgIcon-root': {
+                fontSize: theme.typography.pxToRem(19.2)
+              },
+              '& svg.twake-icon': { width: 14.4, height: 14.4, padding: 2.4 }
             }
           }
         ]
@@ -793,6 +1018,14 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     defaultProps: {
       anchorOrigin: { vertical: 'bottom', horizontal: 'center' },
       autoHideDuration: 2000
+    },
+    styleOverrides: {
+      root: {
+        // An unbreakable Matrix id would widen a <Snackbar><Alert> past the
+        // screen; scoped here because `anywhere` would squeeze the message of
+        // a standalone Alert beside its actions
+        [`& .${alertClasses.message}`]: { overflowWrap: 'anywhere' }
+      }
     }
   },
   MuiSnackbarContent: {
@@ -800,7 +1033,10 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       root: ({ theme }) => ({
         padding: '4px 12px',
         backgroundColor: theme.vars.palette.grey[600]
-      })
+      }),
+      // A Matrix id or a URL has no break opportunity: without this it
+      // widens the toast past the screen
+      message: { overflowWrap: 'anywhere' }
     }
   },
   MuiSwitch: {
@@ -873,6 +1109,20 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
   },
   MuiTabs: {
     styleOverrides: {
+      // MUI transitions `all`; only what MUI writes inline to move the
+      // indicator (left or right and width, top and height when vertical)
+      indicator: ({ theme }) => ({
+        transition: theme.transitions.create([
+          'left',
+          'right',
+          'top',
+          'width',
+          'height'
+        ]),
+        // Our flat `transition` overwrites MUI's flat 'always' reset; its
+        // 'system' @media reset is emitted later and still wins
+        ...(theme.motion.reducedMotion === 'always' && { transition: 'none' })
+      }),
       root: ({ theme }) => ({
         '&.segmented': {
           borderRadius: 99,
@@ -939,6 +1189,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     }
   },
   MuiTypography: {
+    defaultProps: { variantMapping: { body3: 'p' } },
     styleOverrides: {
       root: ({ theme }) => ({
         variants: [
@@ -950,6 +1201,11 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           }
         ]
       })
+    }
+  },
+  MuiLink: {
+    defaultProps: {
+      underline: 'hover'
     }
   },
   MuiAlert: {
@@ -1064,6 +1320,9 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       primary: ({ theme }) => ({
         color: theme.vars.palette.primary.dark,
         backgroundColor: theme.vars.palette.primary.light,
+        ...theme.applyStyles('dark', {
+          color: theme.vars.palette.primary.contrastText
+        }),
         '&:hover': {
           backgroundColor: `color-mix(in srgb, ${theme.vars.palette.primary.light}, #000 5%)`
         },

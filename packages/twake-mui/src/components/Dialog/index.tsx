@@ -14,7 +14,7 @@ export interface DialogProps extends MuiDialogProps {
   size?: DialogSize
 }
 
-export const Dialog: React.FC<DialogProps> = ({
+const Dialog: React.FC<DialogProps> = ({
   size = 'medium',
   fullScreen,
   classes,

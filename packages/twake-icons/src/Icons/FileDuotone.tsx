@@ -1,9 +1,19 @@
 // Automatically created, please run `scripts/generate-svgr.sh ` to regenerate;
 import * as React from "react";
 import type { SVGProps } from "react";
-function SvgFileDuotone(props: SVGProps<SVGSVGElement>) {
+function SvgFileDuotone({
+  iconRef,
+  ...props
+}: SVGProps<SVGSVGElement> & {
+  iconRef?: React.Ref<SVGSVGElement>,
+}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 15 16"
+      ref={iconRef}
+      {...props}
+    >
       <g clipPath="url(#file-duotone_svg__a)">
         <path
           fillRule="evenodd"

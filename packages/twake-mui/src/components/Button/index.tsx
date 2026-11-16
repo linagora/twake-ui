@@ -33,7 +33,7 @@ export type ButtonProps<
 const isLegacy = (variant: ButtonProps['variant']): variant is LegacyVariant =>
   typeof variant === 'string' && variant in legacyVariants
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant, ...props }, ref) => (
     <MuiButton
       ref={ref}
