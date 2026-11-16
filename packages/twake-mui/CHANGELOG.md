@@ -1,3 +1,10 @@
+# @linagora/twake-mui [19.8.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.7.0...@linagora/twake-mui@19.8.0) (2026-11-16)
+
+
+### Features
+
+* **twake-mui:** Add SpotModal ([#144](https://github.com/linagora/twake-ui/issues/144)) ([3704fee](https://github.com/linagora/twake-ui/commit/3704fee7945a0c7a5115078e4977cc2ead680498))
+
 # @linagora/twake-mui [19.7.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.6.1...@linagora/twake-mui@19.7.0) (2026-11-10)
 
 
