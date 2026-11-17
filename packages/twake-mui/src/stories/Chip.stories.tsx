@@ -52,233 +52,223 @@ export const Default: Story = {
 
 const LONG_LABEL = 'a.very.long.address.that.goes.on.and.on.again@example.com'
 
-export const Screenshot: Story = {
-  tags: ['argos'],
-  render: () => {
-    const colors = [
-      'default',
-      'primary',
-      'secondary',
-      'success',
-      'error',
-      'warning',
-      'info'
-    ] as const
-    const variants = ['filled', 'outlined', 'ghost'] as const
-    const squareProps = [false, true] as const
-    const sizeProps = ['small', 'medium'] as const
+const COLORS = [
+  'default',
+  'primary',
+  'secondary',
+  'success',
+  'error',
+  'warning',
+  'info'
+] as const
+const VARIANTS = ['filled', 'outlined', 'ghost'] as const
+const SQUARE_PROPS = [false, true] as const
 
-    return (
-      <Stack spacing={4}>
-        {sizeProps.map(size => (
-          <div key={size}>
-            <Typography variant="h3" sx={{ mb: 2 }}>
-              {size}
+const renderChipMatrix = (size: 'small' | 'medium'): React.ReactElement => (
+  <Stack spacing={4}>
+    {SQUARE_PROPS.map(square => (
+      <div key={String(square)}>
+        <Typography variant="h4" sx={{ mb: 2 }}>
+          {square ? 'Square' : 'Rounded'}
+        </Typography>
+        {COLORS.map(color => (
+          <div key={color}>
+            <Typography
+              variant="h4"
+              sx={{ textTransform: 'capitalize', mt: 2 }}
+            >
+              {color}
             </Typography>
-            {squareProps.map(square => (
-              <div key={String(square)}>
-                <Typography variant="h4" sx={{ mb: 2 }}>
-                  {square ? 'Square' : 'Rounded'}
-                </Typography>
-                {colors.map(color => (
-                  <div key={color}>
+            <Grid container spacing={4}>
+              {VARIANTS.map(variant => (
+                <Grid key={variant} size={{ xs: 12, sm: 4 }}>
+                  <Stack spacing={2}>
                     <Typography
-                      variant="h4"
-                      sx={{ textTransform: 'capitalize', mt: 2 }}
+                      variant="h6"
+                      sx={{ textTransform: 'capitalize' }}
                     >
-                      {color}
+                      {variant}
                     </Typography>
-                    <Grid container spacing={4}>
-                      {variants.map(variant => (
-                        <Grid key={variant} size={{ xs: 12, sm: 4 }}>
-                          <Stack spacing={2}>
-                            <Typography
-                              variant="h6"
-                              sx={{ textTransform: 'capitalize' }}
+
+                    {/* Default State */}
+                    <Stack spacing={1}>
+                      <Typography
+                        variant="caption"
+                        sx={{ color: 'text.secondary' }}
+                      >
+                        default
+                      </Typography>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Simple Chip"
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Clickable Chip"
+                          clickable
+                          onClick={() => console.info('click')}
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Deletable chip"
+                          onDelete={() => console.info('delete')}
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Chip with Icon"
+                          icon={<Icon icon={FileOutline} />}
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Deletable chip with icon"
+                          icon={<Icon icon={FileOutline} />}
+                          onDelete={() => console.info('delete')}
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Avatar Chip"
+                          avatar={<Avatar>M</Avatar>}
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Action chip"
+                          avatar={<Avatar>M</Avatar>}
+                          deleteIcon={
+                            <IconButton
+                              size={size === 'small' ? 'xsmall' : 'small'}
                             >
-                              {variant}
-                            </Typography>
+                              <Icon icon={Right} />
+                            </IconButton>
+                          }
+                          endIcon={
+                            <IconButton
+                              size={size === 'small' ? 'xsmall' : 'small'}
+                              sx={{
+                                color:
+                                  color === 'default'
+                                    ? `${color}.main`
+                                    : `inherit`
+                              }}
+                              onClick={() =>
+                                console.info('end adornment clicked')
+                              }
+                            >
+                              <Icon icon={Openwith} />
+                            </IconButton>
+                          }
+                          onDelete={() => console.info('delete')}
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                    </Stack>
 
-                            {/* Default State */}
-                            <Stack spacing={1}>
-                              <Typography
-                                variant="caption"
-                                sx={{ color: 'text.secondary' }}
-                              >
-                                default
-                              </Typography>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Simple Chip"
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Clickable Chip"
-                                  clickable
-                                  onClick={() => console.info('click')}
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Deletable chip"
-                                  onDelete={() => console.info('delete')}
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Chip with Icon"
-                                  icon={<Icon icon={FileOutline} />}
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Deletable chip with icon"
-                                  icon={<Icon icon={FileOutline} />}
-                                  onDelete={() => console.info('delete')}
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Avatar Chip"
-                                  avatar={<Avatar>M</Avatar>}
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Action chip"
-                                  avatar={<Avatar>M</Avatar>}
-                                  deleteIcon={
-                                    <IconButton
-                                      size={
-                                        size === 'small' ? 'xsmall' : 'small'
-                                      }
-                                    >
-                                      <Icon icon={Right} />
-                                    </IconButton>
-                                  }
-                                  endIcon={
-                                    <IconButton
-                                      size={
-                                        size === 'small' ? 'xsmall' : 'small'
-                                      }
-                                      sx={{
-                                        color:
-                                          color === 'default'
-                                            ? `${color}.main`
-                                            : `inherit`
-                                      }}
-                                      onClick={() =>
-                                        console.info('end adornment clicked')
-                                      }
-                                    >
-                                      <Icon icon={Openwith} />
-                                    </IconButton>
-                                  }
-                                  onDelete={() => console.info('delete')}
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                            </Stack>
-
-                            {/* Disabled State */}
-                            <Stack spacing={1}>
-                              <Typography
-                                variant="caption"
-                                sx={{ color: 'text.secondary' }}
-                              >
-                                disabled
-                              </Typography>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Chip Content"
-                                  disabled
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Chip Content"
-                                  onDelete={() => {}}
-                                  disabled
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                              <div>
-                                <Chip
-                                  color={color}
-                                  variant={variant}
-                                  label="Chip Content"
-                                  icon={<Icon icon={FileOutline} />}
-                                  disabled
-                                  square={square}
-                                  size={size}
-                                />
-                              </div>
-                            </Stack>
-                          </Stack>
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </div>
-                ))}
-              </div>
-            ))}
+                    {/* Disabled State */}
+                    <Stack spacing={1}>
+                      <Typography
+                        variant="caption"
+                        sx={{ color: 'text.secondary' }}
+                      >
+                        disabled
+                      </Typography>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Chip Content"
+                          disabled
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Chip Content"
+                          onDelete={() => {}}
+                          disabled
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                      <div>
+                        <Chip
+                          color={color}
+                          variant={variant}
+                          label="Chip Content"
+                          icon={<Icon icon={FileOutline} />}
+                          disabled
+                          square={square}
+                          size={size}
+                        />
+                      </div>
+                    </Stack>
+                  </Stack>
+                </Grid>
+              ))}
+            </Grid>
           </div>
         ))}
-        <div>
-          <Typography variant="h3" sx={{ mb: 2 }}>
-            Long label
-          </Typography>
-          <Stack spacing={2} sx={{ width: 240, alignItems: 'flex-start' }}>
-            <Chip label={LONG_LABEL} onDelete={() => {}} />
-            <Chip
-              label={LONG_LABEL}
-              onDelete={() => {}}
-              sx={{ maxWidth: 200 }}
-            />
-            <Chip label={LONG_LABEL} onDelete={() => {}} size="small" />
-            <Chip
-              label={LONG_LABEL}
-              onDelete={() => {}}
-              deleteIcon={<Icon icon={FileOutline} />}
-            />
-          </Stack>
-        </div>
-      </Stack>
-    )
-  }
+      </div>
+    ))}
+  </Stack>
+)
+
+export const ScreenshotSmall: Story = {
+  tags: ['argos'],
+  render: () => renderChipMatrix('small')
+}
+
+export const ScreenshotMedium: Story = {
+  tags: ['argos'],
+  render: () => renderChipMatrix('medium')
+}
+
+export const ScreenshotLongLabel: Story = {
+  tags: ['argos'],
+  render: () => (
+    <Stack spacing={2} sx={{ width: 240, alignItems: 'flex-start' }}>
+      <Chip label={LONG_LABEL} onDelete={() => {}} />
+      <Chip label={LONG_LABEL} onDelete={() => {}} sx={{ maxWidth: 200 }} />
+      <Chip label={LONG_LABEL} onDelete={() => {}} size="small" />
+      <Chip
+        label={LONG_LABEL}
+        onDelete={() => {}}
+        deleteIcon={<Icon icon={FileOutline} />}
+      />
+    </Stack>
+  )
 }
