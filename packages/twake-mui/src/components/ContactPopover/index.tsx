@@ -1,40 +1,12 @@
-import { Box, IconButton, Popover, styled } from '@mui/material'
+import { PopoverOrigin } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { Icon } from '@linagora/twake-icons'
-import { Cross } from '@linagora/twake-icons'
-import { useExtendI18n, useI18n } from 'twake-i18n'
-
-import { AttendeeInfo } from './AttendeeInfo'
+import ContactCard from './ContactCard'
 import { ContactPopoverActions } from './ContactPopoverActions'
 import { ContactPopoverCalendarAction } from './ContactPopoverCalendarAction'
 import { ContactPopoverChatAction } from './ContactPopoverChatAction'
 import { ContactPopoverEmailAction } from './ContactPopoverEmailAction'
 import { ContactPopoverVideoAction } from './ContactPopoverVideoAction'
-import de from './locales/de.json'
-import en from './locales/en.json'
-import es from './locales/es.json'
-import fr from './locales/fr.json'
-import it from './locales/it.json'
-import ru from './locales/ru.json'
-import vi from './locales/vi.json'
-
-const locales = { de, en, es, fr, it, ru, vi }
-
-const StyledPopoverContent = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(3),
-  display: 'flex',
-  flexDirection: 'column',
-  gap: theme.spacing(2),
-  position: 'relative',
-  minWidth: 'min(320px, calc(100vw - 32px))'
-}))
-
-const CloseButton = styled(IconButton)(() => ({
-  position: 'absolute',
-  top: 8,
-  right: 8
-}))
 
 export interface ContactPopoverProps {
   /** Attendee display name */
@@ -43,14 +15,18 @@ export interface ContactPopoverProps {
   email: string
   /** Children element that triggers the popover, plus optional ContactPopover.Actions */
   children: React.ReactNode
-  /** Callback when email is copied to clipboard */
-  onEmailCopy?: (email: string) => void
+  /** Callback once the email is in the clipboard, with the copy button */
+  onEmailCopy?: (email: string, button: HTMLElement) => void
   /** Callback when the popover closes */
   onClose?: () => void
   /** Disable the popover (render children only) */
   disabled?: boolean
   /** Open the popover when the trigger is hovered, not only when clicked */
   openOnHover?: boolean
+  /** Point of the trigger the popover is attached to */
+  anchorOrigin?: PopoverOrigin
+  /** Point of the popover attached to the trigger */
+  transformOrigin?: PopoverOrigin
 }
 
 interface ContactPopoverComponent extends React.FC<ContactPopoverProps> {
@@ -68,11 +44,10 @@ const ContactPopover: ContactPopoverComponent = ({
   onEmailCopy,
   onClose,
   disabled = false,
-  openOnHover = true
+  openOnHover = true,
+  anchorOrigin,
+  transformOrigin
 }) => {
-  useExtendI18n(locales)
-  const { t } = useI18n()
-
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
   const openTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -181,36 +156,20 @@ const ContactPopover: ContactPopoverComponent = ({
       >
         {triggerChildren}
       </div>
-      <Popover
+      <ContactCard
         open={Boolean(anchorEl)}
         anchorEl={anchorEl}
+        name={name}
+        email={email}
+        anchorOrigin={anchorOrigin}
+        transformOrigin={transformOrigin}
         onClose={handleClose}
-        anchorOrigin={{ vertical: 'center', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'center', horizontal: 'left' }}
-        slotProps={{
-          paper: {
-            elevation: 4,
-            sx: {
-              borderRadius: 2,
-              maxWidth: 'min(400px, calc(100% - 32px))'
-            },
-            onMouseEnter: openOnHover ? handlePopoverMouseEnter : undefined,
-            onMouseLeave: openOnHover ? handleMouseLeave : undefined
-          }
-        }}
+        onEmailCopy={onEmailCopy}
+        onMouseEnter={openOnHover ? handlePopoverMouseEnter : undefined}
+        onMouseLeave={openOnHover ? handleMouseLeave : undefined}
       >
-        <StyledPopoverContent onClick={event => event.stopPropagation()}>
-          <CloseButton
-            size="small"
-            onClick={handleClose}
-            aria-label={t('ContactPopover.closeButton')}
-          >
-            <Icon icon={Cross} size={16} />
-          </CloseButton>
-          <AttendeeInfo name={name} email={email} onEmailCopy={onEmailCopy} />
-          {actionsChild}
-        </StyledPopoverContent>
-      </Popover>
+        {actionsChild}
+      </ContactCard>
     </div>
   )
 }

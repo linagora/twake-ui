@@ -5,6 +5,7 @@ import { Icon } from '@linagora/twake-icons'
 import { Copy } from '@linagora/twake-icons'
 import { useI18n } from 'twake-i18n'
 
+import { writeToClipboard } from '../../lib/writeToClipboard'
 import Avatar from '../Avatar'
 import { nameToColor, getInitials } from '../Avatar/helpers'
 
@@ -13,31 +14,41 @@ export interface AttendeeInfoProps {
   name: string
   /** Attendee email address */
   email: string
-  /** Callback when email is copied to clipboard */
-  onEmailCopy?: (email: string) => void
+  /** Id of the title of the card: the name, else the email */
+  titleId?: string
+  /** Picks the colour of the avatar, the name (else the email) by default */
+  avatarColorKey?: string
+  /** Callback once the email is in the clipboard, with the copy button */
+  onEmailCopy?: (email: string, button: HTMLElement) => void
 }
 
 export const AttendeeInfo = ({
   name,
   email,
+  titleId,
+  avatarColorKey,
   onEmailCopy
 }: AttendeeInfoProps): React.ReactElement => {
   const theme = useTheme()
   const { t } = useI18n()
   const [showCopied, setShowCopied] = useState(false)
+  const hasName = Boolean(name) && name !== email
 
-  const handleCopy = async (): Promise<void> => {
+  const handleCopy = async (
+    event: React.MouseEvent<HTMLElement>
+  ): Promise<void> => {
+    const button = event.currentTarget
     try {
-      await navigator.clipboard.writeText(email)
-      onEmailCopy?.(email)
-      setShowCopied(true)
-      setTimeout(() => setShowCopied(false), 2000)
+      await writeToClipboard(email, button)
     } catch {
-      // Clipboard write failed — silently ignore
+      return
     }
+    setShowCopied(true)
+    setTimeout(() => setShowCopied(false), 2000)
+    onEmailCopy?.(email, button)
   }
 
-  const avatarColor = nameToColor(name || email)
+  const avatarColor = nameToColor(avatarColorKey ?? (name || email))
   const initials = getInitials(name, email)
 
   return (
@@ -50,8 +61,9 @@ export const AttendeeInfo = ({
         {initials}
       </Avatar>
       <Box sx={{ minWidth: 0 }}>
-        {name && name !== email ? (
+        {hasName ? (
           <Typography
+            id={titleId}
             variant="body1"
             sx={{ fontWeight: 500, wordBreak: 'break-word' }}
           >
@@ -60,6 +72,7 @@ export const AttendeeInfo = ({
         ) : null}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <Typography
+            id={hasName ? undefined : titleId}
             variant="body2"
             color="text.secondary"
             sx={{ wordBreak: 'break-word' }}
@@ -68,7 +81,7 @@ export const AttendeeInfo = ({
           </Typography>
           <IconButton
             size="small"
-            onClick={() => void handleCopy()}
+            onClick={event => void handleCopy(event)}
             sx={{ p: 0.5, color: 'text.primary' }}
             title={
               showCopied
