@@ -38,13 +38,13 @@ jobs:
           cd packages/twake-mui
           npm run build:doc
 
+      - name: Build twake-mui (the twake-icons and twake-css stories import it)
+        run: npm run build --workspace=@linagora/twake-mui
+
       - name: Build twake-icons Storybook
         run: |
           cd packages/twake-icons
           npm run build:doc
-
-      - name: Build twake-mui (the twake-css stories import it)
-        run: npm run build --workspace=@linagora/twake-mui
 
       - name: Build twake-css Storybook
         run: |

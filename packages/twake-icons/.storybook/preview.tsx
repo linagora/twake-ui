@@ -1,4 +1,6 @@
+import { Box, TwakeMuiThemeProvider } from '@linagora/twake-mui'
 import type { Preview } from '@storybook/react'
+import React from 'react'
 
 const preview: Preview = {
   parameters: {
@@ -9,14 +11,31 @@ const preview: Preview = {
         date: /Date$/
       }
     },
-    backgrounds: {
-      options: {
-        light: { name: 'light', value: '#ffffff' },
-        dark: { name: 'dark', value: '#121212' },
-        gray: { name: 'gray', value: '#f5f5f5' }
+    backgrounds: { disable: true }
+  },
+
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'circlehollow',
+        items: ['light', 'dark'],
+        showName: true
       }
     }
-  }
+  },
+
+  decorators: [
+    (Story, context) => (
+      <TwakeMuiThemeProvider mode={context.globals.theme}>
+        <Box sx={{ bgcolor: 'background.paper', color: 'text.icon' }}>
+          <Story />
+        </Box>
+      </TwakeMuiThemeProvider>
+    )
+  ]
 }
 
 export default preview

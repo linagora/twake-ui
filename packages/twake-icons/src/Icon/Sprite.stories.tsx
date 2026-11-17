@@ -13,7 +13,12 @@ type Story = StoryObj
 export const StringIcons: Story = {
   render: () => (
     <div style={{ padding: 24 }}>
-      <p style={{ marginBottom: 16, color: '#666' }}>
+      <p
+        style={{
+          marginBottom: 16,
+          color: 'var(--twake-palette-text-secondary)'
+        }}
+      >
         Render <code>&lt;Sprite /&gt;</code> once at the root of your app, then
         use string identifiers with <code>&lt;Icon icon="name" /&gt;</code>.
       </p>
@@ -56,7 +61,14 @@ export const StringIcons: Story = {
             }}
           >
             <Icon icon={name} size={24} />
-            <span style={{ fontSize: 11, color: '#666' }}>{name}</span>
+            <span
+              style={{
+                fontSize: 11,
+                color: 'var(--twake-palette-text-secondary)'
+              }}
+            >
+              {name}
+            </span>
           </div>
         ))}
       </div>

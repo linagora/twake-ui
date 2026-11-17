@@ -92,7 +92,7 @@ export const AllIcons: Story = {
                   alignItems: 'center',
                   gap: 8,
                   padding: 12,
-                  border: '1px solid #e0e0e0',
+                  border: '1px solid var(--twake-palette-divider)',
                   borderRadius: 8,
                   cursor: 'pointer'
                 }}
@@ -107,7 +107,7 @@ export const AllIcons: Story = {
                     fontSize: 11,
                     textAlign: 'center',
                     wordBreak: 'break-word',
-                    color: '#666'
+                    color: 'var(--twake-palette-text-secondary)'
                   }}
                 >
                   {name}
