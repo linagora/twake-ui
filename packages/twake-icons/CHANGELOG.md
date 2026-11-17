@@ -1,3 +1,10 @@
+# @linagora/twake-icons [3.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.1.1...@linagora/twake-icons@3.2.0) (2026-11-17)
+
+
+### Features
+
+* **twake-icons:** Add the PenOutlined icon ([18e758d](https://github.com/linagora/twake-ui/commit/18e758df60e687aa38319a7476d5e536cd0144e2))
+
 ## @linagora/twake-icons [3.1.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.1.0...@linagora/twake-icons@3.1.1) (2026-11-16)
 
 
