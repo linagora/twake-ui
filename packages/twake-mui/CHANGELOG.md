@@ -1,3 +1,12 @@
+# @linagora/twake-mui [19.9.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.8.0...@linagora/twake-mui@19.9.0) (2026-11-17)
+
+
+### Features
+
+* **twake-mui:** Use 12px text in tooltips on desktop ([7403358](https://github.com/linagora/twake-ui/commit/7403358d3d576243025367dd506ed7238beba384))
+* **twake-mui:** Use 14px text in fields on desktop ([8a5e83c](https://github.com/linagora/twake-ui/commit/8a5e83c33c1dbe62f72a121d507831426fc54004))
+* **twake-mui:** Use 14px text in menus on desktop ([b9c1c4b](https://github.com/linagora/twake-ui/commit/b9c1c4b4adc640a19a3a39c10687831fd1d48b80))
+
 # @linagora/twake-mui [19.8.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.7.0...@linagora/twake-mui@19.8.0) (2026-11-16)
 
 
