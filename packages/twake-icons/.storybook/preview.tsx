@@ -29,7 +29,10 @@ const preview: Preview = {
 
   decorators: [
     (Story, context) => (
-      <TwakeMuiThemeProvider mode={context.globals.theme}>
+      <TwakeMuiThemeProvider
+        key={context.globals.theme}
+        mode={context.globals.theme}
+      >
         <Box sx={{ bgcolor: 'background.paper', color: 'text.icon' }}>
           <Story />
         </Box>

@@ -7,7 +7,8 @@ import '../src/utils.scss'
 
 const preview: Preview = {
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
+    backgrounds: { disable: true }
   },
 
   globalTypes: {
@@ -25,7 +26,10 @@ const preview: Preview = {
 
   decorators: [
     (Story, context) => (
-      <TwakeMuiThemeProvider mode={context.globals.theme}>
+      <TwakeMuiThemeProvider
+        key={context.globals.theme}
+        mode={context.globals.theme}
+      >
         <Story />
       </TwakeMuiThemeProvider>
     )
