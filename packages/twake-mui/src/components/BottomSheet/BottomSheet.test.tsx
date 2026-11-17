@@ -75,7 +75,7 @@ describe('BottomSheet', () => {
     fireEvent.click(backdrop)
 
     await waitFor(() => expect(screen.queryByRole('dialog')).toBe(null))
-    expect(document.activeElement).toBe(opener)
+    await waitFor(() => expect(document.activeElement).toBe(opener))
   })
 
   it('is no dialog without a backdrop', () => {
@@ -142,7 +142,7 @@ describe('BottomSheet', () => {
     fireEvent.keyDown(document.activeElement ?? sheet, { key: 'Escape' })
 
     await waitFor(() => expect(screen.queryByRole('dialog')).toBe(null))
-    expect(document.activeElement).toBe(opener)
+    await waitFor(() => expect(document.activeElement).toBe(opener))
   })
 
   it('closes only the nested sheet on Escape inside it', async () => {
