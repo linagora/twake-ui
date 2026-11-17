@@ -241,6 +241,7 @@ export type { BottomSheetItemProps } from './components/BottomSheet/BottomSheetI
 export type { BottomSheetHeaderProps } from './components/BottomSheet/BottomSheetHeader'
 export type { BottomSheetTitleProps } from './components/BottomSheet/BottomSheetTitle'
 export type { ContactPopoverProps } from './components/ContactPopover'
+export { default as ContactCard } from './components/ContactPopover/ContactCard'
 export {
   ContactPopoverActions,
   ContactPopoverChatAction,
@@ -248,6 +249,7 @@ export {
   ContactPopoverCalendarAction,
   ContactPopoverEmailAction
 } from './components/ContactPopover'
+export type { ContactCardProps } from './components/ContactPopover/ContactCard'
 export type { ContactPopoverActionsProps } from './components/ContactPopover/ContactPopoverActions'
 export type { ContactPopoverChatActionProps } from './components/ContactPopover/ContactPopoverChatAction'
 export type { ContactPopoverVideoActionProps } from './components/ContactPopover/ContactPopoverVideoAction'

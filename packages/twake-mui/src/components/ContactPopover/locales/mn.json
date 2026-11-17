@@ -1,0 +1,11 @@
+{
+  "ContactPopover": {
+    "emailButton": "Имэйл бичих",
+    "copyTooltip": "Имэйл хаягийг хуулах",
+    "copiedTooltip": "Имэйл хаягийг хуулсан",
+    "closeButton": "Хаах",
+    "chatButton": "Чат",
+    "videoButton": "Видео дуудлага эхлүүлэх",
+    "calendarButton": "Арга хэмжээнд урих"
+  }
+}

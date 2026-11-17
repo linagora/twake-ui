@@ -1,8 +1,9 @@
-import { Chip, Box, Typography } from '@mui/material'
+import { Button, Chip, Box, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import React from 'react'
+import React, { useState } from 'react'
 import { screen } from 'storybook/test'
 
+import ContactCard from './ContactCard'
 import ContactPopover from './index'
 
 const meta: Meta<typeof ContactPopover> = {
@@ -101,4 +102,60 @@ export const AllActionsVariants: Story = {
       </Variant>
     </Box>
   )
+}
+
+/** Opened by the app (a chip it handles itself), with actions of its own */
+const ControlledCard = ({ name }: { name: string }): React.ReactElement => {
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
+  return (
+    <>
+      <Chip
+        label={name || 'jane.doe@example.com'}
+        onClick={event => setAnchorEl(event.currentTarget)}
+      />
+      <ContactCard
+        open={anchorEl !== null}
+        anchorEl={anchorEl}
+        name={name}
+        email="jane.doe@example.com"
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+        onClose={() => setAnchorEl(null)}
+      >
+        <ContactPopover.Actions>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 1,
+              flexGrow: 1
+            }}
+          >
+            <Button variant="contained" fullWidth>
+              Edit
+            </Button>
+            <Button variant="outlined" fullWidth>
+              Create a rule
+            </Button>
+          </Box>
+        </ContactPopover.Actions>
+      </ContactCard>
+    </>
+  )
+}
+
+export const Controlled: Story = {
+  render: () => <ControlledCard name="Jane Doe" />,
+  play: async ({ canvas, userEvent }) => {
+    await userEvent.click(canvas.getByText('Jane Doe'))
+    await screen.findByRole('dialog', { name: 'Jane Doe' })
+  }
+}
+
+export const WithoutName: Story = {
+  render: () => <ControlledCard name="" />,
+  play: async ({ canvas, userEvent }) => {
+    await userEvent.click(canvas.getByText('jane.doe@example.com'))
+    await screen.findByRole('dialog', { name: 'jane.doe@example.com' })
+  }
 }
