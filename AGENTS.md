@@ -1,5 +1,8 @@
 # AGENTS.md - Twake UI Monorepo
 
+The rules in Colors and Conventions apply to the code you write; older code
+(avatar gradients, `ColorList`, some overrides…) predates some of them.
+
 ## Quick Commands
 
 ```bash
@@ -33,6 +36,7 @@ npm run release:dry
 - **Monorepo**: npm workspaces with independent versioning
 - **Packages location**: `packages/*` (currently `twake-css`, `twake-mui` and
   `twake-icons`)
+- **MUI version**: twake-mui is on MUI v9
 - **Package naming**: All packages use `@linagora/` scope
 - **Build output**: Each package outputs to `dist/` (TypeScript compilation)
 - **Dependency versions**: exact versions for external packages
@@ -43,9 +47,7 @@ npm run release:dry
 ## Colors
 
 Every Twake app reads its colours from this repo, so a colour changed here
-changes everywhere, in light and dark mode. These rules apply to the code you
-write; older literals (avatar gradients, `ColorList`, some overrides) predate
-them.
+changes everywhere, in light and dark mode.
 
 - Write a new colour value in the base palette,
   `packages/twake-css/palette.json`, and nowhere else.
@@ -65,6 +67,86 @@ them.
 - Derive a new hover, selected, focus or disabled tint from the `action.*`
   opacity tokens (`theme.alpha(color, theme.vars.palette.action.selectedOpacity)`),
   so state tints follow one value.
+
+## Conventions
+
+### API and scope
+
+- When cozy-ui already has an API for the need, reuse it (prop name, values,
+  default) and extend it so existing values keep their meaning, except: drop
+  the props cozy-ui itself deprecates; when MUI v9 moved a prop to another
+  component, follow MUI (`<ListItem button>` → `ListItemButton`); keep the
+  cozy-ui name only for a plain rename. Ask before porting a legacy or hack
+  prop. Open the matching change on cozy-ui in its own PR, for the apps still
+  on it.
+- Add a variant to a component only when more than one screen uses it, or when
+  the Figma library makes it a component of its own, including when a
+  twake-guidelines skill suggests adding the missing variant here. A look for
+  a single screen comes from the designer as an asset (an illustration)
+  passed in as is.
+- Build on what MUI and MUI X already do, themed here (overrides,
+  `defaultProps`, a provider), before writing a component of your own. A
+  wrapper earns its place only for a real composition (a date and a time
+  sharing one value).
+- Put a context-based library in `peerDependencies`, so the app and twake-mui
+  share one copy. When only some apps use it, make it optional
+  (`peerDependenciesMeta`) and export its provider from its own subpath,
+  mounted apart from `ThemeProvider`, so the other apps neither install nor
+  load it: from the `"."` entry they would rely on tree-shaking. This is the
+  target for `@mui/x-date-pickers` and `date-fns`, today in `devDependencies`
+  with no provider. `date-fns` stays pinned to `2.30.0`, peer included
+  (`AdapterDateFnsV2`).
+- Fix a bug everywhere it occurs: move the fix into a shared helper and call it
+  from each place.
+
+### Code
+
+- Name components and props without a `Cozy` or `Twake` prefix.
+- Reuse the twake-css `u-*` utilities (`packages/twake-css/src/utilities`)
+  instead of copying their rules into `styled()`.
+- Default-export each new component, and export it from its own file in
+  `src/index.ts` rather than through another component's `index.tsx`. This
+  overrides the named-exports-only rule of twake-guidelines for React
+  components; helpers and hooks stay named exports.
+- Write functions as arrow functions, never with the `function` keyword
+  (`<T,>` for generics in `.tsx`). Add `export` only when other files import
+  the function: `export const fn = (args) => {}`. A file-local helper is
+  `const fn = (args) => {}`.
+- Export from a module only what other files import; the public API is what
+  `src/index.ts` lists.
+- Any change to the public API (export, prop, option, default value,
+  behaviour) is a breaking change, whether or not the apps use it: add a
+  `BREAKING CHANGE:` footer with migration guidance. Adding an export or a
+  component is not, nor is a visual change that leaves the apps nothing to
+  adapt.
+- Put callback props (`onX`) last, grouped, in the props interface, the
+  destructuring and every call site.
+- Name the variant classes the overrides target bare (`.square`, `.small`).
+- Hold a class name repeated in a component's styles in a constant, like
+  `ICON_CLASS_NAME` in `Empty`, so a typo cannot break the look silently.
+- Read `event.currentTarget` before an `await`, and pass the element to a
+  callback that runs after it.
+- Set `aria-hidden="true"` on decorative icons in every render branch.
+
+### Comments
+
+- Write JSDoc for exported components, their props and exported helpers.
+- Comment a constraint the code cannot show (why a lookup goes through the
+  element's frame, why a `minWidth`). Delete a comment that restates the code.
+- Never name an app, a consumer or cozy-ui in a comment: it implies a
+  coupling. The reason for a fix belongs in its commit message.
+
+### Tests
+
+- Name test files `*.test.ts(x)`.
+- Test behaviour that can break. Do not test rendering (class names, which
+  branch renders), left to the Argos stories, nor what MUI already does
+  (forwarding `open`, `onClose`, `aria-modal`).
+- In jsdom, `ownerDocument.defaultView` is `window`: mount a test of
+  frame-dependent code in an iframe, so it fails if the code uses the app's
+  window.
+- Restore every global you mock (`navigator.clipboard`) after the test, and
+  move a setup shared by several test files into one helper.
 
 ## Release Flow (Automated)
 
@@ -120,6 +202,14 @@ Stories are located in:
 
 - `packages/twake-mui/src/components/**/*.stories.tsx` - Component stories (e.g., Avatar)
 - `packages/twake-mui/src/stories/*.stories.tsx` - Override showcase stories
+
+When you write or change a story:
+
+- Show a new prop or look in the existing stories: a control in `Default` and a
+  section in `Screenshot`, rather than a new story per feature. When the
+  component has no `Screenshot` story yet, add one with the `argos` tag.
+- When twake-mui has its own component, render it in its stories, not the MUI
+  one it wraps.
 
 ### Visual Regression Testing
 
