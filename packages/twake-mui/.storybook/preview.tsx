@@ -112,7 +112,7 @@ const preview: Preview = {
 
       return (
         <I18n lang="en" dictRequire={() => ({})}>
-          <ThemeProvider theme={theme} defaultMode={themeMode}>
+          <ThemeProvider key={themeMode} theme={theme} defaultMode={themeMode}>
             <CssBaseline />
             <Box
               sx={{
