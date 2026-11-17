@@ -1,3 +1,10 @@
+## @linagora/twake-icons [3.2.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.2.0...@linagora/twake-icons@3.2.1) (2026-11-17)
+
+
+### Bug Fixes
+
+* **twake-icons:** AddToCloud must be able to change color ([fe27df8](https://github.com/linagora/twake-ui/commit/fe27df815ae924d543fbaeaf5c0d1d7a34a481b5))
+
 # @linagora/twake-icons [3.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.1.1...@linagora/twake-icons@3.2.0) (2026-11-17)
 
 
