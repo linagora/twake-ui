@@ -1,3 +1,16 @@
+# @linagora/twake-mui [19.10.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.9.0...@linagora/twake-mui@19.10.0) (2026-11-17)
+
+
+### Bug Fixes
+
+* **twake-mui:** Copy with the clipboard of the frame the menu is in ([78ddedd](https://github.com/linagora/twake-ui/commit/78ddeddb5ea751298352a45552861c94cf7d3640))
+
+
+### Features
+
+* **twake-mui:** Add block to Alert, with the side of its action ([993a5b3](https://github.com/linagora/twake-ui/commit/993a5b30b22fb65e984b4e2444164c381c336521))
+* **twake-mui:** Add ContactCard, the ContactPopover card an app opens itself ([ff17383](https://github.com/linagora/twake-ui/commit/ff17383ab1b7632bc67798d61d03c63f9cdeaa43))
+
 # @linagora/twake-mui [19.9.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.8.0...@linagora/twake-mui@19.9.0) (2026-11-17)
 
 
