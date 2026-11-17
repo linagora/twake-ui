@@ -1,5 +1,6 @@
 import { Copy } from '@linagora/twake-icons'
 
+import { writeToClipboard } from '../../../lib/writeToClipboard'
 import { ShowAlert } from '../../../providers/AlertProvider/useAlert'
 import { getActionsI18n } from '../locales'
 import { Action, ActionCallbackOptions } from '../types'
@@ -8,6 +9,8 @@ import { makeAction } from './makeAction'
 interface CopyToClipboardCallbackOptions extends ActionCallbackOptions {
   showAlert: ShowAlert
   copyValue?: string
+  /** The clicked item, from the click event spread into the options */
+  currentTarget?: Element | null
 }
 
 export const copyToClipboard = (): Action => {
@@ -19,12 +22,12 @@ export const copyToClipboard = (): Action => {
     icon: Copy,
     action: async (
       _docs,
-      { showAlert, copyValue }: CopyToClipboardCallbackOptions
+      { showAlert, copyValue, currentTarget }: CopyToClipboardCallbackOptions
     ): Promise<boolean> => {
       if (!copyValue) return false
 
       try {
-        await navigator.clipboard.writeText(copyValue)
+        await writeToClipboard(copyValue, currentTarget)
         showAlert({
           message: t('ActionsMenu.copyToClipboard.success'),
           severity: 'success',
