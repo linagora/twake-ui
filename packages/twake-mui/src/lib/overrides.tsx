@@ -383,6 +383,25 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       }
     }
   },
+  MuiInputBase: {
+    styleOverrides: {
+      // Heights stay those of the 16px text: line height and input height in px
+      root: ({ theme }) => ({
+        [theme.breakpoints.up('md')]: {
+          ...theme.typography.body3,
+          lineHeight: '23px'
+        }
+      }),
+      input: ({ theme }) => ({
+        variants: [
+          {
+            props: ({ ownerState }) => !ownerState.multiline,
+            style: { [theme.breakpoints.up('md')]: { height: 23 } }
+          }
+        ]
+      })
+    }
+  },
   MuiOutlinedInput: {
     styleOverrides: {
       root: ({ theme }) => ({
@@ -432,7 +451,10 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         borderColor: theme.vars.palette.border.main,
         transition: theme.transitions.create('border-color', {
           duration: theme.transitions.duration.shorter
-        })
+        }),
+        [theme.breakpoints.up('md')]: {
+          '& legend': { fontSize: theme.typography.pxToRem(12) }
+        }
       }),
       // 16px gutters, and a 48px small field where MUI has 40px
       input: {
@@ -468,6 +490,49 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             style: { transform: 'translate(14px, 12px) scale(1)' }
           },
           {
+            // 12px once shrunk, from a 14px label. MUI sizes the max width
+            // for its 0.75 scale.
+            props: ({ ownerState }) =>
+              ownerState.variant === 'outlined' && !!ownerState.shrink,
+            style: {
+              [theme.breakpoints.up('md')]: {
+                transform: 'translate(14px, -10px) scale(0.857)',
+                maxWidth: 'calc(116.7% - 28px)'
+              }
+            }
+          },
+          {
+            props: ({ ownerState }) =>
+              ownerState.variant === 'filled' && !!ownerState.shrink,
+            style: {
+              [theme.breakpoints.up('md')]: {
+                transform: 'translate(12px, 6px) scale(0.857)',
+                maxWidth: 'calc(116.7% - 21px)'
+              }
+            }
+          },
+          {
+            props: ({ ownerState }) =>
+              ownerState.variant === 'filled' &&
+              ownerState.size === 'small' &&
+              !!ownerState.shrink,
+            style: {
+              [theme.breakpoints.up('md')]: {
+                transform: 'translate(12px, 3px) scale(0.857)'
+              }
+            }
+          },
+          {
+            props: ({ ownerState }) =>
+              ownerState.variant === 'standard' && !!ownerState.shrink,
+            style: {
+              [theme.breakpoints.up('md')]: {
+                transform: 'translate(0, -3px) scale(0.857)',
+                maxWidth: '116.7%'
+              }
+            }
+          },
+          {
             // cozy-ui keeps the resting label grey even in error
             props: ({ ownerState }) =>
               ownerState.variant === 'outlined' && !ownerState.shrink,
@@ -486,6 +551,10 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       root: ({ theme }) => ({
         [`&.${formLabelClasses.disabled}.${formLabelClasses.error}`]: {
           color: theme.vars.palette.text.disabled
+        },
+        [theme.breakpoints.up('md')]: {
+          ...theme.typography.body3,
+          lineHeight: '23px'
         }
       })
     }
@@ -544,7 +613,13 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       // Styling for chips in Autocomplete
       tag: {
         margin: '2px'
-      }
+      },
+      paper: ({ theme }) => ({
+        [theme.breakpoints.up('md')]: {
+          ...theme.typography.body3,
+          lineHeight: '21px'
+        }
+      })
     }
   },
   MuiBackdrop: {
@@ -1375,7 +1450,11 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             style: {
               fontSize: theme.typography.pxToRem(16),
               lineHeight: 1.3,
-              padding: '8px 12px'
+              padding: '8px 12px',
+              [theme.breakpoints.up('md')]: {
+                ...theme.typography.caption,
+                padding: '4px 8px'
+              }
             }
           }
         ]
@@ -1479,6 +1558,15 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         [`& .${listItemTextClasses.root}`]: {
           marginTop: 1,
           marginBottom: 1
+        },
+        // Heights stay those of the 16px text: line height in px
+        [theme.breakpoints.up('md')]: {
+          ...theme.typography.body3,
+          lineHeight: '21px',
+          [`& .${listItemTextClasses.primary}`]: {
+            ...theme.typography.body3,
+            lineHeight: '21px'
+          }
         },
         variants: [
           {
