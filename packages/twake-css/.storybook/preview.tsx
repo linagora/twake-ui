@@ -7,7 +7,8 @@ import '../src/utils.scss'
 
 const preview: Preview = {
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
+    backgrounds: { disable: true }
   },
 
   globalTypes: {

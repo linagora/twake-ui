@@ -59,13 +59,7 @@ const preview: Preview = {
         date: /Date$/
       }
     },
-    backgrounds: {
-      options: {
-        light: { name: 'light', value: '#ffffff' },
-        dark: { name: 'dark', value: '#121212' },
-        gray: { name: 'gray', value: '#f5f5f5' }
-      }
-    },
+    backgrounds: { disable: true },
     viewport: {
       viewports: {
         desktop: {
@@ -84,16 +78,8 @@ const preview: Preview = {
       modes: {
         'desktop-light': { viewport: 'desktop' },
         'mobile-light': { viewport: 'mobile' },
-        'desktop-dark': {
-          viewport: 'desktop',
-          theme: 'dark',
-          backgrounds: { value: 'dark' }
-        },
-        'mobile-dark': {
-          viewport: 'mobile',
-          theme: 'dark',
-          backgrounds: { value: 'dark' }
-        }
+        'desktop-dark': { viewport: 'desktop', theme: 'dark' },
+        'mobile-dark': { viewport: 'mobile', theme: 'dark' }
       }
     }
   },
@@ -142,13 +128,7 @@ const preview: Preview = {
         </I18n>
       )
     }
-  ],
-
-  initialGlobals: {
-    backgrounds: {
-      value: 'light'
-    }
-  }
+  ]
 }
 
 export default preview
