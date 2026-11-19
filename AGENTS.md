@@ -140,7 +140,8 @@ export const MyStory = {
 - **Order**: install → lint → format check → build → test → bundle test
   (`npm run test:bundle` in twake-mui: builds, then bundles a consumer of
   `dist/`) → browser test (`npm run test:browser` in twake-mui, Chromium) →
-  release (main only, in its own `release` job once the `build` job passes)
+  release (main only, in its own `release` job once the `build` job passes;
+  it publishes the `dist` built by the `build` job and builds nothing itself)
 - **npm auth**: OIDC trusted publishing, no npm token. The `release` job runs
   in the `npm` GitHub environment (main only). A new package must first be
   published by hand, then get a trusted publisher on npmjs.com: `linagora` /
