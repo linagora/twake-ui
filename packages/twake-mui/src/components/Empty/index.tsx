@@ -21,6 +21,7 @@ export interface EmptyProps extends Omit<
   'title'
 > {
   icon?: IconProps['icon']
+  /** No effect with `tile` or with a `size` in `componentsProps.icon` */
   iconSize?: EmptyIconSize
   /**
    * `plain`: a large glyph in the text colour; `tile`: a 60 px white icon
@@ -38,6 +39,7 @@ export interface EmptyProps extends Omit<
 
 const ICON_CLASS_NAME = 'Empty-icon'
 const ICON_TILE_CLASS_NAME = 'Empty-iconTile'
+const ICON_SIZED_CLASS_NAME = 'Empty-iconSized'
 const ILLUSTRATION_ICON_SIZE = 60
 
 const iconHeights: Record<EmptyIconSize, { desktop: number; mobile: number }> =
@@ -88,12 +90,13 @@ const EmptyRoot = styled('div', {
       }
     },
     // :where keeps the weight of `& .Empty-icon`, so an app's sx height still wins
-    [`& .${ICON_CLASS_NAME}:not(:where(.${ICON_TILE_CLASS_NAME}))`]: {
-      height: iconHeights[iconSize].desktop,
-      [theme.breakpoints.down('lg')]: {
-        height: iconHeights[iconSize].mobile
-      }
-    },
+    [`& .${ICON_CLASS_NAME}:not(:where(.${ICON_SIZED_CLASS_NAME}, .${ICON_TILE_CLASS_NAME}))`]:
+      {
+        height: iconHeights[iconSize].desktop,
+        [theme.breakpoints.down('lg')]: {
+          height: iconHeights[iconSize].mobile
+        }
+      },
     ...(centered && {
       [theme.breakpoints.down('lg')]: {
         position: 'fixed',
@@ -147,9 +150,14 @@ const renderIcon = (
     )
   }
   if (React.isValidElement<Partial<IconProps>>(icon)) {
+    const size = iconProps?.size ?? icon.props.size
     return React.cloneElement(icon, {
-      className: cx(ICON_CLASS_NAME, icon.props.className),
-      size: icon.props.size ?? (icon.type === Icon ? '100%' : undefined),
+      className: cx(
+        ICON_CLASS_NAME,
+        size !== undefined && ICON_SIZED_CLASS_NAME,
+        icon.props.className
+      ),
+      size: size ?? (icon.type === Icon ? '100%' : undefined),
       'aria-hidden': 'true',
       ...iconProps
     })
@@ -157,7 +165,10 @@ const renderIcon = (
 
   return (
     <Icon
-      className={ICON_CLASS_NAME}
+      className={cx(
+        ICON_CLASS_NAME,
+        iconProps?.size !== undefined && ICON_SIZED_CLASS_NAME
+      )}
       icon={icon}
       size="100%"
       aria-hidden="true"

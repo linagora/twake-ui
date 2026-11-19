@@ -2,7 +2,12 @@ import { Box, Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { Filter, Icon, TwakeWorkplace } from '@linagora/twake-icons'
+import {
+  Filter,
+  ForwardSingle,
+  Icon,
+  TwakeWorkplace
+} from '@linagora/twake-icons'
 
 import image from '../../stories/images/mountains.png'
 import { Empty, EmptyIconSize } from './index'
@@ -71,6 +76,17 @@ export const Screenshot: Story = {
           iconLook="tile"
           title="No rules configured"
           text="Create rules to handle incoming emails automatically"
+        />
+      </Section>
+
+      <Section title="Explicit icon size and colour">
+        <Empty
+          icon={ForwardSingle}
+          componentsProps={{
+            icon: { size: 60, color: 'var(--twake-palette-primary-light)' }
+          }}
+          title="Forwarding is off"
+          text="Add an address and every new email will also be sent there"
         />
       </Section>
 
