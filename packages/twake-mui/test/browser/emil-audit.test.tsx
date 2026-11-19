@@ -22,6 +22,8 @@ import Tabs from '../../src/components/Tabs'
 import { makeTheme } from '../../src/lib/makeTheme'
 import { theme } from '../../src/lib/theme'
 
+import { fontSizeOf } from './helpers'
+
 // Real Chromium: media queries, CSS animations and layout, which jsdom does
 // not evaluate. Run: npx vitest run -c test/browser/vitest.config.ts
 
@@ -40,39 +42,20 @@ const renderWith = (
 const renderThemed = (ui: React.ReactElement): ReturnType<typeof render> =>
   renderWith(theme, ui)
 
-const setTouch = async (enabled: boolean): Promise<void> => {
-  await cdp().send('Emulation.setTouchEmulationEnabled', {
-    enabled,
-    maxTouchPoints: 1
-  })
-}
-
 afterEach(async () => {
   cleanup()
-  await setTouch(false)
   await emulateReducedMotion('no-preference')
   await page.viewport(1280, 800)
 })
 
-const fontSizeOf = (element: HTMLElement): number =>
-  parseFloat(getComputedStyle(element).fontSize)
-
 describe('SearchBar small', () => {
-  // iOS Safari zooms the page into a field whose text is under 16 px.
+  // iOS Safari zooms the page into a field whose text is under 16 px; the
+  // touch phone is in fields-touch.test.tsx
   it('keeps 14 px text with a mouse', () => {
     expect(matchMedia('(pointer: fine)').matches).toBe(true)
     renderThemed(<SearchBar size="small" placeholder="Search" />)
 
     expect(fontSizeOf(screen.getByRole('textbox'))).toBe(14)
-  })
-
-  it('has text of 16 px at least on a touch phone, so iOS does not zoom', async () => {
-    await page.viewport(375, 800)
-    await setTouch(true)
-    expect(matchMedia('(pointer: coarse)').matches).toBe(true)
-    renderThemed(<SearchBar size="small" placeholder="Search" />)
-
-    expect(fontSizeOf(screen.getByRole('textbox'))).toBeGreaterThanOrEqual(16)
   })
 })
 

@@ -115,6 +115,12 @@ const makeAvatarSizes = (theme: Theme): CSSObject =>
     ])
   )
 
+// Fields, their labels and their options take 14px from md, but not on a touch
+// screen, which keeps 16px as wide (a tablet, a phone held sideways): iOS
+// Safari zooms the page into a field whose text is under 16px
+const makeMouseFromMdQuery = (theme: Theme): string =>
+  `${theme.breakpoints.up('md')} and (not (pointer: coarse))`
+
 // cozy-ui tints every colour but primary at 8%, primary at 25%
 const buttonGhostColors = [
   'secondary',
@@ -387,7 +393,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
     styleOverrides: {
       // Heights stay those of the 16px text: line height and input height in px
       root: ({ theme }) => ({
-        [theme.breakpoints.up('md')]: {
+        [makeMouseFromMdQuery(theme)]: {
           ...theme.typography.body3,
           lineHeight: '23px'
         }
@@ -396,7 +402,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         variants: [
           {
             props: ({ ownerState }) => !ownerState.multiline,
-            style: { [theme.breakpoints.up('md')]: { height: 23 } }
+            style: { [makeMouseFromMdQuery(theme)]: { height: 23 } }
           }
         ]
       })
@@ -452,7 +458,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         transition: theme.transitions.create('border-color', {
           duration: theme.transitions.duration.shorter
         }),
-        [theme.breakpoints.up('md')]: {
+        [makeMouseFromMdQuery(theme)]: {
           '& legend': { fontSize: theme.typography.pxToRem(12) }
         }
       }),
@@ -495,7 +501,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             props: ({ ownerState }) =>
               ownerState.variant === 'outlined' && !!ownerState.shrink,
             style: {
-              [theme.breakpoints.up('md')]: {
+              [makeMouseFromMdQuery(theme)]: {
                 transform: 'translate(14px, -10px) scale(0.857)',
                 maxWidth: 'calc(116.7% - 28px)'
               }
@@ -505,7 +511,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             props: ({ ownerState }) =>
               ownerState.variant === 'filled' && !!ownerState.shrink,
             style: {
-              [theme.breakpoints.up('md')]: {
+              [makeMouseFromMdQuery(theme)]: {
                 transform: 'translate(12px, 6px) scale(0.857)',
                 maxWidth: 'calc(116.7% - 21px)'
               }
@@ -517,7 +523,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
               ownerState.size === 'small' &&
               !!ownerState.shrink,
             style: {
-              [theme.breakpoints.up('md')]: {
+              [makeMouseFromMdQuery(theme)]: {
                 transform: 'translate(12px, 3px) scale(0.857)'
               }
             }
@@ -526,7 +532,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             props: ({ ownerState }) =>
               ownerState.variant === 'standard' && !!ownerState.shrink,
             style: {
-              [theme.breakpoints.up('md')]: {
+              [makeMouseFromMdQuery(theme)]: {
                 transform: 'translate(0, -3px) scale(0.857)',
                 maxWidth: '116.7%'
               }
@@ -552,7 +558,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         [`&.${formLabelClasses.disabled}.${formLabelClasses.error}`]: {
           color: theme.vars.palette.text.disabled
         },
-        [theme.breakpoints.up('md')]: {
+        [makeMouseFromMdQuery(theme)]: {
           ...theme.typography.body3,
           lineHeight: '23px'
         }
@@ -615,7 +621,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
         margin: '2px'
       },
       paper: ({ theme }) => ({
-        [theme.breakpoints.up('md')]: {
+        [makeMouseFromMdQuery(theme)]: {
           ...theme.typography.body3,
           lineHeight: '21px'
         }
@@ -1580,7 +1586,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
           marginBottom: 1
         },
         // Heights stay those of the 16px text: line height in px
-        [theme.breakpoints.up('md')]: {
+        [makeMouseFromMdQuery(theme)]: {
           ...theme.typography.body3,
           lineHeight: '21px',
           [`& .${listItemTextClasses.primary}`]: {
