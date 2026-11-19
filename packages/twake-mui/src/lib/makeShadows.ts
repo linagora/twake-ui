@@ -49,6 +49,8 @@ const elevations: [
 ]
 
 const OUTLINE_OPACITY = 0.12
+/** Black at the light scheme opacities does not show on dark surfaces. */
+const DARK_SHADOW_STRENGTH = 3
 /**
  * A dark hairline vanishes on dark surfaces: in the dark scheme the edge is a
  * light line instead, so cards and menus need no hand-made border.
@@ -61,6 +63,11 @@ const DARK_OUTLINE_OPACITY = 0.08
  * through the type. Kept to stay iso with cozy-ui.
  */
 const EXTRA_ELEVATION_OPACITY = 0.04
+
+const makeCastOpacity = (mode: 'light' | 'dark', opacity: number): number =>
+  mode === 'light'
+    ? opacity
+    : Math.round(opacity * DARK_SHADOW_STRENGTH * 100) / 100
 
 export const makeShadows = (
   mode: 'light' | 'dark' = 'light',
@@ -77,15 +84,15 @@ export const makeShadows = (
   const shadows = elevations.map(
     ([y1, blur1, spread1, o1, y2, blur2, spread2, o2]) =>
       [
-        `0px ${y1}px ${blur1}px ${spread1}px ${alpha(shadowColor, o1)}`,
-        `0px ${y2}px ${blur2}px ${spread2}px ${alpha(shadowColor, o2)}`,
+        `0px ${y1}px ${blur1}px ${spread1}px ${alpha(shadowColor, makeCastOpacity(mode, o1))}`,
+        `0px ${y2}px ${blur2}px ${spread2}px ${alpha(shadowColor, makeCastOpacity(mode, o2))}`,
         outline
       ].join(', ')
   )
 
   const extraElevation = `0px 1px 4px ${alpha(
     shadowColor,
-    EXTRA_ELEVATION_OPACITY
+    makeCastOpacity(mode, EXTRA_ELEVATION_OPACITY)
   )}`
 
   return ['none', ...shadows, extraElevation] as Shadows

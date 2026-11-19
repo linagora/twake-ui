@@ -94,3 +94,31 @@ describe('the hairline of elevated surfaces', () => {
     }
   })
 })
+
+/** The first offset layer of a box-shadow: the shadow a surface casts. */
+const castOf = (shadow: string): Rgba => {
+  const [layer] = shadow.split(/,(?![^(]*\))/).map(part => part.trim())
+  if (!layer) throw new Error(`no layer in ${shadow}`)
+  return parseColor(layer.replace(/^(\S+\s+){4}/, ''))
+}
+
+describe('the shadow cast by elevated surfaces', () => {
+  const dark = scheme('dark')
+  const surfaces = {
+    'background.default': dark.palette.background.default,
+    'background.paper': dark.palette.background.paper
+  }
+
+  for (const [name, surface] of Object.entries(surfaces)) {
+    it(`darkens ${name} visibly in the dark scheme`, () => {
+      const backdrop = parseColor(surface)
+      for (const level of [2, 4, 8]) {
+        const shade = over(castOf(dark.shadows[level]), backdrop)
+        expect(
+          contrast(shade, backdrop),
+          `elevation ${level}`
+        ).toBeGreaterThanOrEqual(1.15)
+      }
+    })
+  }
+})
