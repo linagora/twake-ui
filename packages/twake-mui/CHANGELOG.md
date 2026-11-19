@@ -1,3 +1,10 @@
+## @linagora/twake-mui [19.10.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.10.0...@linagora/twake-mui@19.10.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* **twake-mui:** Add a default condition to the package exports ([ddbee9e](https://github.com/linagora/twake-ui/commit/ddbee9efe7117e741bf851cc69a56bc8ccb5b258))
+
 # @linagora/twake-mui [19.10.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.9.0...@linagora/twake-mui@19.10.0) (2026-11-17)
 
 
