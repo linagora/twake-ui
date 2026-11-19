@@ -20,3 +20,14 @@ export const COLORS = [
   '#131326',
   '#646580'
 ]
+
+const HEX = /^#?([0-9a-f]{3}|[0-9a-f]{6})$/i
+
+/** `#RRGGBB` in capitals for a 3 or 6 digit hexadecimal color, else null */
+export const toHex = (text: string): string | null => {
+  const digits = HEX.exec(text.trim())?.[1]
+  if (digits === undefined) return null
+  const full =
+    digits.length === 3 ? digits.replace(/./g, digit => digit + digit) : digits
+  return `#${full.toUpperCase()}`
+}
