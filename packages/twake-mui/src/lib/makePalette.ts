@@ -7,13 +7,14 @@ import {
   PaletteJson,
   BackgroundPalette,
   GreyPalette,
-  BorderPalette
+  BorderPalette,
+  TwakeColorScheme
 } from './types'
 
 const paletteData: PaletteJson = paletteJson
 
 export const makePalette = (
-  mode: 'light' | 'dark' = 'light',
+  mode: TwakeColorScheme = 'light',
   overrides: Partial<PaletteJson> = {}
 ): PaletteOptions & {
   background: BackgroundPalette
@@ -21,6 +22,108 @@ export const makePalette = (
   border: BorderPalette
 } => {
   const palette = deepmerge(paletteData, overrides)
+  const grey: GreyPalette = {
+    50: palette.Grey[50],
+    100: palette.Grey[100],
+    200: palette.Grey[200],
+    300: palette.Grey[300],
+    400: palette.Grey[400],
+    500: palette.Grey[500],
+    600: palette.Grey[600],
+    700: palette.Grey[700],
+    800: palette.Grey[800],
+    900: palette.Grey[900],
+    A100: palette.Grey.A100,
+    A200: palette.Grey.A200,
+    A400: palette.Grey.A400,
+    A700: palette.Grey.A700,
+    A800: palette.Grey.A800,
+    A900: palette.Grey.A900
+  }
+
+  // High contrast: a light scheme for low-vision users, from the "Contrast
+  // grey" mode of the Figma library. Plain ramp steps, no alpha on the text.
+  if (mode === 'contrast') {
+    const ink = palette.Grey.A800
+
+    return {
+      mode: 'light',
+      primary: {
+        light: palette.Grey.A200,
+        main: palette.Grey[900],
+        dark: palette.Grey.A400,
+        contrastText: palette.Common.white
+      },
+      secondary: {
+        light: palette.Secondary[300],
+        main: palette.Secondary[700],
+        dark: palette.Secondary[900],
+        contrastText: palette.Common.white
+      },
+      error: {
+        light: palette.Error[100],
+        main: palette.Error[700],
+        dark: palette.Error[900],
+        contrastText: palette.Common.white
+      },
+      warning: {
+        light: palette.Warning[50],
+        main: palette.Warning[800],
+        dark: palette.Warning[850],
+        contrastText: palette.Common.white
+      },
+      success: {
+        light: palette.Success[100],
+        main: palette.Success[800],
+        dark: palette.Success[850],
+        contrastText: palette.Common.white
+      },
+      info: {
+        light: palette.Info[100],
+        main: palette.Info[800],
+        dark: palette.Info[900],
+        contrastText: palette.Common.white
+      },
+      grey,
+      text: {
+        primary: palette.Grey[900],
+        secondary: palette.Grey[800],
+        disabled: palette.Grey[700],
+        icon: palette.Grey[800]
+      },
+      background: {
+        default: palette.Grey[100],
+        paper: palette.Grey[50],
+        contrast: alpha(palette.Grey[900], 0.048)
+      },
+      border: {
+        main: palette.Grey[700],
+        disabled: alpha(ink, 0.3),
+        ghost: alpha(ink, 0.48),
+        ghostDisabled: alpha(ink, 0.24),
+        opacity: 0.32,
+        ghostOpacity: 0.48
+      },
+      divider: palette.Grey[600],
+      action: {
+        // Figma sets 16 % here, but MUI paints icons with action.active: keep
+        // them as dark as text.icon so icon buttons stay readable.
+        active: palette.Grey[800],
+        hover: alpha(palette.Grey[900], 0.04),
+        hoverOpacity: 0.04,
+        selected: alpha(palette.Grey[900], 0.08),
+        selectedOpacity: 0.08,
+        disabled: alpha(ink, 0.12),
+        disabledOpacity: 0.32,
+        disabledBackground: alpha(ink, 0.12),
+        focus: alpha(palette.Grey[900], 0.12),
+        focusOpacity: 0.12,
+        activatedOpacity: 0.12,
+        ghostOpacity: 0.08,
+        hoverGhostOpacity: 0.16
+      }
+    }
+  }
 
   if (mode === 'dark') {
     return {
@@ -61,23 +164,7 @@ export const makePalette = (
         dark: palette.Info[500],
         contrastText: alpha(palette.Grey[900], 0.9)
       },
-      grey: {
-        50: palette.Grey[50],
-        100: palette.Grey[100],
-        200: palette.Grey[200],
-        300: palette.Grey[300],
-        400: palette.Grey[400],
-        500: palette.Grey[500],
-        600: palette.Grey[600],
-        700: palette.Grey[700],
-        800: palette.Grey[800],
-        900: palette.Grey[900],
-        A100: palette.Grey.A100,
-        A200: palette.Grey.A200,
-        A400: palette.Grey.A400,
-        A700: palette.Grey.A700,
-        A900: palette.Grey.A900
-      },
+      grey,
       text: {
         primary: palette.Common.white,
         secondary: alpha(palette.Common.white, 0.64),
@@ -154,23 +241,7 @@ export const makePalette = (
       dark: palette.Info[700],
       contrastText: '#fff'
     },
-    grey: {
-      50: palette.Grey[50],
-      100: palette.Grey[100],
-      200: palette.Grey[200],
-      300: palette.Grey[300],
-      400: palette.Grey[400],
-      500: palette.Grey[500],
-      600: palette.Grey[600],
-      700: palette.Grey[700],
-      800: palette.Grey[800],
-      900: palette.Grey[900],
-      A100: palette.Grey.A100,
-      A200: palette.Grey.A200,
-      A400: palette.Grey.A400,
-      A700: palette.Grey.A700,
-      A900: palette.Grey.A900
-    },
+    grey,
     text: {
       primary: alpha(palette.Grey[900], 0.9),
       secondary: alpha(palette.Grey[900], 0.64),

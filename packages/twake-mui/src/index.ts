@@ -176,7 +176,7 @@ export {
 export { OverlayFrame } from './components/SpaceOverlay/OverlayFrame'
 // TYPES
 export type { TwakeTheme } from './lib/theme'
-export type { PaletteJson } from './lib/types'
+export type { PaletteJson, TwakeColorScheme } from './lib/types'
 export type { ActionsBarProps } from './components/ActionsBar'
 export type {
   ActionsMenuProps,

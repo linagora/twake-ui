@@ -4,6 +4,9 @@ import type { CSSProperties } from 'react'
 import paletteJson from '@linagora/twake-css/palette.json'
 
 // Palette Types
+/** The colour schemes of the theme: `contrast` is a light high-contrast one. */
+export type TwakeColorScheme = 'light' | 'dark' | 'contrast'
+
 export type PaletteJson = typeof paletteJson
 export type PaletteColor = PaletteJson['Primary']
 export type GreyPalette = PaletteJson['Grey']
@@ -81,6 +84,10 @@ declare module '@mui/material/styles' {
   // does not type the option.
   interface ColorSystemOptions {
     shadows?: Shadows
+  }
+
+  interface ColorSchemeOverrides {
+    contrast: true
   }
 
   interface CssThemeVariables {
