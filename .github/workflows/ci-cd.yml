@@ -94,8 +94,9 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
+      # Same install as the release job
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
       - name: Build twake-icons (for type resolution)
         run: npm run build --workspace=@linagora/twake-css --workspace=@linagora/twake-icons
       - name: Lint
