@@ -92,7 +92,7 @@ For each changed package:
      workspace depending on it must declare `^1.0.0`, or npm stops linking the
      workspace after the release bot bumps the version (ranges are not rewritten,
      `--deps.bump=ignore`)
-   - `"publishConfig": { "access": "public" }`
+   - `"publishConfig": { "access": "public", "provenance": true }`
    - `"files": ["dist", "CHANGELOG.md", "README.md"]`
 3. No per-package config needed — the root `.releaserc.json` applies to all workspaces
 

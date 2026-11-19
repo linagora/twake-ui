@@ -123,7 +123,8 @@ Create your package in `packages/<name>/` with the required `package.json` field
   "name": "@linagora/your-new-package",
   "version": "1.0.0",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "files": ["dist", "CHANGELOG.md", "README.md"]
 }
