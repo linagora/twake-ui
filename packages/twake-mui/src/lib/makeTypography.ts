@@ -59,6 +59,18 @@ export const makeTypography = (): TypographyVariantsOptions => {
       lineHeight: 1.313,
       letterSpacing: '0.25px'
     },
+    subtitle3: {
+      fontSize: 12,
+      fontWeight: 600,
+      lineHeight: 1.533,
+      letterSpacing: '0.25px'
+    },
+    subtitle4: {
+      fontSize: 12,
+      fontWeight: 400,
+      lineHeight: 1,
+      letterSpacing: '0.15px'
+    },
     body1: {
       fontSize: 16,
       fontWeight: 400,
