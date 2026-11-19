@@ -122,14 +122,27 @@ Create your package in `packages/<name>/` with the required `package.json` field
 {
   "name": "@linagora/your-new-package",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linagora/twake-ui.git",
+    "directory": "packages/your-new-package"
+  },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "files": ["dist", "CHANGELOG.md", "README.md"]
 }
 ```
 
-No additional release config needed — the release tooling auto-detects new packages from the workspaces.
+`repository.url` must be this repository: npm checks it against the provenance of the publish and rejects a package that does not match.
+
+No additional release config is needed in the repository, but npm must know the package before its first merge to main:
+
+1. Publish a `0.0.0` placeholder by hand: set the version to `0.0.0` locally (do not commit it) and run `npm publish --provenance=false` (`provenance: true` only works from CI).
+2. On npmjs.com, add a trusted publisher to the package: `linagora` / `twake-ui` / `ci-cd.yml` / environment `npm`, with "Allow npm publish" checked. The configuration expires unless the package is released within 2 days.
+
+Without it, the release of every package fails until the trusted publisher is configured.
 
 Start at `1.0.0`: the first release semantic-release produces is always `1.0.0`, whatever `package.json` says. If another workspace depends on the new package, its range (`^1.0.0`) must match the workspace version both before and after that release.
 

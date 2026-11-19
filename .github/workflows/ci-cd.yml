@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
-  contents: write # Required for release-it to create tags and GitHub releases
+  contents: read
 
 jobs:
   commitlint:
@@ -80,21 +80,23 @@ jobs:
         run: npm run test:bundle --workspace=@linagora/twake-mui
 
   build:
-    name: Build and publish
+    name: Build and test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          fetch-depth: 0 # Full git history required for release-it (changelog, tags, commits analysis)
+          persist-credentials: false
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
-          registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
+      # Same install as the release job
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
       - name: Build twake-icons (for type resolution)
         run: npm run build --workspace=@linagora/twake-css --workspace=@linagora/twake-icons
       - name: Lint
@@ -120,15 +122,51 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Test in a browser
         run: npm run test:browser --workspace=@linagora/twake-mui
+      - name: Upload the built packages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: packages/*/dist
+          if-no-files-found: error
+          retention-days: 1
+
+  release:
+    name: Publish
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: npm
+    permissions:
+      contents: write # semantic-release pushes the release commit, the tags and the GitHub releases
+      issues: write # @semantic-release/github comments on released issues
+      pull-requests: write # @semantic-release/github comments on released PRs
+      id-token: write # npm trusted publishing (OIDC)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # Full git history required for semantic-release (changelog, tags, commits analysis)
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      # No lifecycle scripts and no build while the OIDC token can be requested
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      # dist is the only generated entry of the published files
+      - name: Download the packages built and tested by the build job
+        uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: packages
       - name: Configure git
-        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Release
-        if: github.ref == 'refs/heads/main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_IN_VAULT }}
         run: npm run release
