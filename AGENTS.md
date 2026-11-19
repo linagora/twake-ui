@@ -140,8 +140,11 @@ export const MyStory = {
 - **Order**: install → lint → format check → build → test → bundle test
   (`npm run test:bundle` in twake-mui: builds, then bundles a consumer of
   `dist/`) → browser test (`npm run test:browser` in twake-mui, Chromium) →
-  release (main only)
-- **Secrets required**: `NODE_AUTH_TOKEN` (NPM token, set in GitHub repo settings)
+  release (main only, in its own `release` job once the `build` job passes)
+- **npm auth**: OIDC trusted publishing, no npm token. The `release` job runs
+  in the `npm` GitHub environment (main only). A new package must first be
+  published by hand, then get a trusted publisher on npmjs.com: `linagora` /
+  `twake-ui` / `ci-cd.yml` / environment `npm`, with "Allow npm publish" checked
 - **Uses**: `secrets.GITHUB_TOKEN` (auto-provided, no setup needed)
 
 ## Commits
