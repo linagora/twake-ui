@@ -28,6 +28,10 @@ npm run release:dry
 
 **⚠️ Always use Node 24** - specified in `.nvmrc`. Other versions will fail.
 
+## Decisions
+
+- Decisions: each package keeps its own `docs/decisions.md` (`packages/*/docs/decisions.md`), mandatory, none at the repo root. Search the log of the package you change before asking a question or proposing a change; record every decision in the log of the package it touches (the main one when it touches several, the others in its Scope line), in the commit that applies it (skill `twake-decisions`).
+
 ## Architecture
 
 - **Monorepo**: npm workspaces with independent versioning
@@ -95,6 +99,7 @@ For each changed package:
    - `"publishConfig": { "access": "public" }`
    - `"files": ["dist", "CHANGELOG.md", "README.md"]`
 3. No per-package config needed — the root `.releaserc.json` applies to all workspaces
+4. Create `packages/<name>/docs/decisions.md` with the same header as the other packages
 
 ## Adding Icons
 
