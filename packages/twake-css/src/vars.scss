@@ -252,8 +252,8 @@
   --twake-palette-divider: #{p('Grey', 600)};
 
   --twake-palette-action-active: #{p('Grey', 800)};
-  --twake-palette-action-disabled: #{rgba($ink, 0.12)};
-  --twake-palette-action-disabledBackground: #{rgba($ink, 0.12)};
+  --twake-palette-action-disabled: #{rgba($ink, 0.24)};
+  --twake-palette-action-disabledBackground: #{rgba($ink, 0.24)};
 }
 
 // Only what changes in the dark mode.

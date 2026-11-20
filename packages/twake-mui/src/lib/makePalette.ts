@@ -106,16 +106,14 @@ export const makePalette = (
       },
       divider: palette.Grey[600],
       action: {
-        // Figma sets 16 % here, but MUI paints icons with action.active: keep
-        // them as dark as text.icon so icon buttons stay readable.
         active: palette.Grey[800],
         hover: alpha(palette.Grey[900], 0.04),
         hoverOpacity: 0.04,
         selected: alpha(palette.Grey[900], 0.08),
         selectedOpacity: 0.08,
-        disabled: alpha(ink, 0.12),
+        disabled: alpha(ink, 0.24),
         disabledOpacity: 0.32,
-        disabledBackground: alpha(ink, 0.12),
+        disabledBackground: alpha(ink, 0.24),
         focus: alpha(palette.Grey[900], 0.12),
         focusOpacity: 0.12,
         activatedOpacity: 0.12,
