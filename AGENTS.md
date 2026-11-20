@@ -28,6 +28,8 @@ npm run release:dry
 
 **⚠️ Always use Node 24** - specified in `.nvmrc`. Other versions will fail.
 
+- Decisions: each package keeps its own `<package>/docs/decisions.md`, mandatory. Search it before asking a question or proposing a change; record every decision there, in the commit that applies it (skill `twake-decisions`).
+
 ## Architecture
 
 - **Monorepo**: npm workspaces with independent versioning
