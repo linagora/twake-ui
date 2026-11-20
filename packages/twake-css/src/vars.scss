@@ -52,6 +52,7 @@
   --twake-palette-grey-A200: #{p('Grey', 'A200')};
   --twake-palette-grey-A400: #{p('Grey', 'A400')};
   --twake-palette-grey-A700: #{p('Grey', 'A700')};
+  --twake-palette-grey-A800: #{p('Grey', 'A800')};
   --twake-palette-grey-A900: #{p('Grey', 'A900')};
 
   --twake-palette-common-black: #{p('Common', 'black')};
@@ -200,6 +201,59 @@
   --twake-zIndex-tooltip: 1500;
 
   --twake-shape-borderRadius: 6px;
+}
+
+// High contrast, a light scheme: only what changes from the light mode.
+[data-theme='contrast'] {
+  --twake-palette-primary-light: #{p('Grey', 'A200')};
+  --twake-palette-primary-main: #{p('Grey', 900)};
+  --twake-palette-primary-dark: #{p('Grey', 'A400')};
+  --twake-palette-primary-contrastText: #{p('Common', 'white')};
+
+  --twake-palette-secondary-light: #{p('Secondary', 300)};
+  --twake-palette-secondary-main: #{p('Secondary', 700)};
+  --twake-palette-secondary-dark: #{p('Secondary', 900)};
+  --twake-palette-secondary-contrastText: #{p('Common', 'white')};
+
+  --twake-palette-error-light: #{p('Error', 100)};
+  --twake-palette-error-main: #{p('Error', 700)};
+  --twake-palette-error-dark: #{p('Error', 900)};
+  --twake-palette-error-contrastText: #{p('Common', 'white')};
+
+  --twake-palette-warning-light: #{p('Warning', 50)};
+  --twake-palette-warning-main: #{p('Warning', 800)};
+  --twake-palette-warning-dark: #{p('Warning', 850)};
+  --twake-palette-warning-contrastText: #{p('Common', 'white')};
+
+  --twake-palette-success-light: #{p('Success', 100)};
+  --twake-palette-success-main: #{p('Success', 800)};
+  --twake-palette-success-dark: #{p('Success', 850)};
+  --twake-palette-success-contrastText: #{p('Common', 'white')};
+
+  --twake-palette-info-light: #{p('Info', 100)};
+  --twake-palette-info-main: #{p('Info', 800)};
+  --twake-palette-info-dark: #{p('Info', 900)};
+  --twake-palette-info-contrastText: #{p('Common', 'white')};
+
+  $ink: p('Grey', 'A800');
+
+  --twake-palette-text-primary: #{p('Grey', 900)};
+  --twake-palette-text-secondary: #{p('Grey', 800)};
+  --twake-palette-text-disabled: #{p('Grey', 700)};
+  --twake-palette-text-icon: #{p('Grey', 800)};
+
+  --twake-palette-background-paper: #{p('Grey', 50)};
+
+  --twake-palette-border-main: #{p('Grey', 700)};
+  --twake-palette-border-disabled: #{rgba($ink, 0.3)};
+  --twake-palette-border-ghostDisabled: #{rgba($ink, 0.24)};
+  --twake-palette-border-ghost: #{rgba($ink, 0.48)};
+
+  --twake-palette-divider: #{p('Grey', 600)};
+
+  --twake-palette-action-active: #{p('Grey', 800)};
+  --twake-palette-action-disabled: #{rgba($ink, 0.24)};
+  --twake-palette-action-disabledBackground: #{rgba($ink, 0.24)};
 }
 
 // Only what changes in the dark mode.
@@ -375,7 +429,7 @@
 
 // Follow the OS preference when the page has not chosen; an explicit data-theme wins.
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
+  :root:not([data-theme='light'], [data-theme='contrast']) {
     @include dark;
   }
 }

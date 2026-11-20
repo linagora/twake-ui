@@ -1,4 +1,9 @@
-import { createTheme, Overlays, ThemeOptions } from '@mui/material/styles'
+import {
+  createColorScheme,
+  createTheme,
+  Overlays,
+  ThemeOptions
+} from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
 
 import { makePalette } from './makePalette'
@@ -44,7 +49,15 @@ export const makeTheme = (
         palette: makePalette('dark', paletteOverrides),
         shadows: makeShadows('dark'),
         overlays: Array<string>(25).fill('none') as Overlays
-      }
+      },
+      // High contrast, switched on at runtime with
+      // useColorScheme().setColorScheme({ light: 'contrast', dark: 'contrast' }).
+      // MUI completes only the light and dark schemes: this one must come
+      // complete, or its palette lacks common, the channels, etc.
+      contrast: createColorScheme({
+        palette: makePalette('contrast', paletteOverrides),
+        shadows: makeShadows('light')
+      })
     },
     typography: makeTypography(),
     shadows: makeShadows(mode),
