@@ -13,7 +13,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const makeBrowser = () => ({
   enabled: true,
   headless: true,
-  provider: playwright(),
+  // Playwright hides the scrollbars of headless Chromium; a spec drags one
+  provider: playwright({
+    launchOptions: { ignoreDefaultArgs: ['--hide-scrollbars'] }
+  }),
   instances: [{ browser: 'chromium' as const }]
 })
 
