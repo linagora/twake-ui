@@ -226,10 +226,12 @@ describe('mirrorStyles', () => {
 
     const copied = overlay.querySelector<HTMLStyleElement>('style[data-mirror]')
     const rules = Array.from(copied?.sheet?.cssRules ?? [])
-    expect(rules.map(rule => rule.cssText.replace(/\s/g, ''))).toEqual(
-      expect.arrayContaining(['.paper{width:300px;}'])
-    )
-    expect(rules).toHaveLength(new Set(rules.map(rule => rule.cssText)).size)
+    // The app may hold twin rules of earlier test files (isolate: false)
+    expect(
+      rules.filter(
+        rule => rule.cssText.replace(/\s/g, '') === '.paper{width:300px;}'
+      )
+    ).toHaveLength(1)
     app.remove()
     frame.remove()
   })
