@@ -1,3 +1,23 @@
+# @linagora/twake-mui [20.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.10.2...@linagora/twake-mui@20.0.0) (2026-11-23)
+
+
+### Features
+
+* **twake-mui:** Take webviewIntent from actionOptions ([dc63b20](https://github.com/linagora/twake-ui/commit/dc63b20aea8befb34187a7b2de967b98e4260967))
+* **twake-mui:** Type the action options ([0477e10](https://github.com/linagora/twake-ui/commit/0477e10ae06e76af5979466f13fcad09f4ae23ab))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** ActionsMenu, ActionsItems and ActionsBar no longer read
+the webview intent from cozy-intent. Apps running in the native app must
+pass it themselves, e.g.
+`actionOptions={{ webviewIntent: useWebviewIntent() }}`
+(`componentsProps.actionsItems.actionOptions` for ActionsMenu).
+cozy-intent is no longer a peer dependency.
+
+Assisted-by: LLM
+
 ## @linagora/twake-mui [19.10.2](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.10.1...@linagora/twake-mui@19.10.2) (2026-11-23)
 
 
