@@ -4,13 +4,18 @@ import { useI18n } from 'twake-i18n'
 
 import { ListItemSize } from '../ListItem'
 import { getActionName, getOnlyNeededActions } from './helpers'
-import { ActionComponent, ActionDocument, ActionObject } from './types'
+import {
+  ActionComponent,
+  ActionDocument,
+  ActionObject,
+  ActionOptions
+} from './types'
 
 export interface ActionsItemsProps {
   docs: ActionDocument[]
   actions: ActionObject[]
   /** Options passed to the `action` method of every action */
-  actionOptions?: Record<string, unknown>
+  actionOptions?: ActionOptions
   /** Renders every action with this component instead of its own */
   component?: ActionComponent
   /** Called after any action is clicked */

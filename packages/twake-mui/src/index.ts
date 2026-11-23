@@ -196,6 +196,7 @@ export type {
   ActionDocument,
   ActionFactory,
   ActionObject,
+  ActionOptions,
   ActionTranslate,
   GenerateWebLink,
   WebLinkActionOptions,
