@@ -1,3 +1,10 @@
+## @linagora/twake-mui [19.10.2](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.10.1...@linagora/twake-mui@19.10.2) (2026-11-23)
+
+
+### Bug Fixes
+
+* **twake-mui:** Keep 16px text in fields on touch screens ([e24ee1c](https://github.com/linagora/twake-ui/commit/e24ee1cf89d27c372302c55600f31242bf93ac2b))
+
 ## @linagora/twake-mui [19.10.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.10.0...@linagora/twake-mui@19.10.1) (2026-11-19)
 
 

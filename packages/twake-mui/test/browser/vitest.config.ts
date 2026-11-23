@@ -9,19 +9,40 @@ import { defineConfig } from 'vitest/config'
 // Run: npx vitest run -c test/browser/vitest.config.ts
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 
+// A new object for each project: Vitest names the instances it is given
+const makeBrowser = () => ({
+  enabled: true,
+  headless: true,
+  provider: playwright(),
+  instances: [{ browser: 'chromium' as const }]
+})
+
+// Touch emulation cannot be undone (the pointer stays coarse, or becomes
+// none): the touch specs run in a browser of their own
 export default defineConfig({
   root,
   resolve: {
     dedupe: ['react', 'react-dom']
   },
   test: {
-    name: 'browser',
-    include: ['test/browser/**/*.test.tsx'],
-    browser: {
-      enabled: true,
-      headless: true,
-      provider: playwright(),
-      instances: [{ browser: 'chromium' }]
-    }
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: 'browser',
+          include: ['test/browser/**/*.test.tsx'],
+          exclude: ['test/browser/**/*-touch.test.tsx'],
+          browser: makeBrowser()
+        }
+      },
+      {
+        extends: true,
+        test: {
+          name: 'browser-touch',
+          include: ['test/browser/**/*-touch.test.tsx'],
+          browser: makeBrowser()
+        }
+      }
+    ]
   }
 })
