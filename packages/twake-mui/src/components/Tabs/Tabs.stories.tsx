@@ -83,6 +83,13 @@ export const Screenshot: Story = {
         <h3 style={{ marginBottom: '12px' }}>Segmented</h3>
         <Example segmented />
       </section>
+      <section>
+        <h3 style={{ marginBottom: '12px' }}>Segmented, disabled</h3>
+        <Tabs segmented narrowed value={0} aria-label="disabled tabs example">
+          <Tab label="Right away" disabled />
+          <Tab label="Pick a time" disabled />
+        </Tabs>
+      </section>
       {variants.map(variant => (
         <section key={variant}>
           <h3 style={{ marginBottom: '12px' }}>{variant}</h3>
