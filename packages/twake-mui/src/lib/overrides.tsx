@@ -1226,10 +1226,7 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
             textTransform: 'initial',
             zIndex: 1,
             borderRadius: 99,
-            minHeight: 40,
-            [`&.${tabClasses.selected}`]: {
-              color: theme.vars.palette.text.primary
-            }
+            minHeight: 40
           }
         },
         [`&.narrowed .${tabClasses.root}`]: { minWidth: 'auto' },
