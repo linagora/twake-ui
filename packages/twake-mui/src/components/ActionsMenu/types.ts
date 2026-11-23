@@ -19,19 +19,22 @@ export interface ActionDocument {
   [key: string]: unknown
 }
 
-/** Bridge to the native app, such as the `WebviewService` of cozy-intent */
+/** Bridge to the native app, when the page runs inside it */
 export interface WebviewIntent {
+  // A method, not a property: cozy-intent's `WebviewService.call` takes a
+  // narrower method name and only fits through method parameter bivariance
   call(methodName: string, ...args: unknown[]): Promise<unknown>
 }
 
-export interface ActionCallbackOptions {
-  t: ActionTranslate
-  /**
-   * Bridge to the native app, when the page runs inside it. Pass it in
-   * `actionOptions`, from `useWebviewIntent` of cozy-intent
-   */
+/** Options passed by the app to the `action` method of every action */
+export interface ActionOptions {
+  /** Bridge to the native app, when the page runs inside it */
   webviewIntent?: WebviewIntent
   [key: string]: unknown
+}
+
+export interface ActionCallbackOptions extends ActionOptions {
+  t: ActionTranslate
 }
 
 export interface ActionComponentProps {
