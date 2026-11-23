@@ -196,11 +196,13 @@ export type {
   ActionDocument,
   ActionFactory,
   ActionObject,
+  ActionOptions,
   ActionTranslate,
   GenerateWebLink,
   WebLinkActionOptions,
   WebLinkClient,
-  WebLinkOptions
+  WebLinkOptions,
+  WebviewIntent
 } from './components/ActionsMenu/types'
 export type {
   MakeActionComponentOptions,

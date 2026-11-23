@@ -1,17 +1,21 @@
 import React, { forwardRef, useMemo } from 'react'
 
-import { useWebviewIntent } from 'cozy-intent'
 import { useI18n } from 'twake-i18n'
 
 import { ListItemSize } from '../ListItem'
 import { getActionName, getOnlyNeededActions } from './helpers'
-import { ActionComponent, ActionDocument, ActionObject } from './types'
+import {
+  ActionComponent,
+  ActionDocument,
+  ActionObject,
+  ActionOptions
+} from './types'
 
 export interface ActionsItemsProps {
   docs: ActionDocument[]
   actions: ActionObject[]
   /** Options passed to the `action` method of every action */
-  actionOptions?: Record<string, unknown>
+  actionOptions?: ActionOptions
   /** Renders every action with this component instead of its own */
   component?: ActionComponent
   /** Called after any action is clicked */
@@ -32,7 +36,6 @@ const ActionsItems = forwardRef<HTMLElement, ActionsItemsProps>(
     },
     ref
   ) => {
-    const webviewIntent = useWebviewIntent()
     const { t } = useI18n()
 
     const cleanedActions = useMemo(
@@ -48,7 +51,6 @@ const ActionsItems = forwardRef<HTMLElement, ActionsItemsProps>(
       const handleClick = (clickProps?: object): void => {
         actionDefinition.action?.(docs, {
           t,
-          webviewIntent,
           ...actionOptions,
           ...clickProps
         })

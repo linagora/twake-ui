@@ -9,7 +9,11 @@ import { makeActions } from '../ActionsMenu/Actions/helpers'
 import { others } from '../ActionsMenu/Actions/others'
 import ActionsItems from '../ActionsMenu/ActionsItems'
 import { getOnlyNeededActions } from '../ActionsMenu/helpers'
-import { ActionDocument, ActionObject } from '../ActionsMenu/types'
+import {
+  ActionDocument,
+  ActionObject,
+  ActionOptions
+} from '../ActionsMenu/types'
 import ActionsBarActions from './ActionsBarActions'
 import ActionsBarRoot from './ActionsBarRoot'
 import ActionsBarSelectedCount from './ActionsBarSelectedCount'
@@ -20,6 +24,8 @@ const MOBILE_MAX_ACTIONS = 4
 export interface ActionsBarProps {
   actions: ActionObject[]
   docs: ActionDocument[]
+  /** Options passed to the `action` method of every action, in the bar and in its menu */
+  actionOptions?: ActionOptions
   /** Closes the bar when an action is clicked */
   autoClose?: boolean
   /** Actions shown in the bar on desktop, the others go to a menu */
@@ -34,6 +40,7 @@ export interface ActionsBarProps {
 const ActionsBar = ({
   actions,
   docs,
+  actionOptions,
   autoClose = true,
   maxDesktopActions = 5,
   color = 'default',
@@ -87,6 +94,7 @@ const ActionsBar = ({
           <ActionsItems
             docs={docs}
             actions={barActions}
+            actionOptions={actionOptions}
             component={ResponsiveAction}
             onClick={handleClick}
           />
@@ -114,7 +122,9 @@ const ActionsBar = ({
                 docs={docs}
                 actions={menuActions}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                componentsProps={{ actionsItems: { onClick: handleClick } }}
+                componentsProps={{
+                  actionsItems: { actionOptions, onClick: handleClick }
+                }}
                 onClose={() => setShowMenu(false)}
               />
             </>

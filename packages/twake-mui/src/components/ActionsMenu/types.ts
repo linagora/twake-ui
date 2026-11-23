@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { IconProps } from '@linagora/twake-icons'
-import type { WebviewService } from 'cozy-intent'
 
 import { ListItemSize } from '../ListItem'
 import { ActionTranslate } from './locales'
@@ -20,11 +19,22 @@ export interface ActionDocument {
   [key: string]: unknown
 }
 
-export interface ActionCallbackOptions {
-  t: ActionTranslate
+/** Bridge to the native app, when the page runs inside it */
+export interface WebviewIntent {
+  // A method, not a property: cozy-intent's `WebviewService.call` takes a
+  // narrower method name and only fits through method parameter bivariance
+  call(methodName: string, ...args: unknown[]): Promise<unknown>
+}
+
+/** Options passed by the app to the `action` method of every action */
+export interface ActionOptions {
   /** Bridge to the native app, when the page runs inside it */
-  webviewIntent?: WebviewService
+  webviewIntent?: WebviewIntent
   [key: string]: unknown
+}
+
+export interface ActionCallbackOptions extends ActionOptions {
+  t: ActionTranslate
 }
 
 export interface ActionComponentProps {
