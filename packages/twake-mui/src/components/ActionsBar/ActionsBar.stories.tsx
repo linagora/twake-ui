@@ -86,7 +86,15 @@ const ExampleActionsBar = ({
 const meta: Meta<ExampleArgs> = {
   title: 'ActionsBar',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'Bar of the actions available on the selected documents.\n\nInside the native app, pass the `webviewIntent` of cozy-intent for native print and download:\n\n```tsx\nconst webviewIntent = useWebviewIntent() // from cozy-intent\n\n<ActionsBar actionOptions={{ webviewIntent }} />\n```'
+      }
+    }
+  },
   argTypes: {
     color: {
       control: 'select',
