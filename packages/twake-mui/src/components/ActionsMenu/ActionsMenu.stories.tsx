@@ -252,7 +252,7 @@ const meta: Meta<ExampleArgs> = {
     docs: {
       description: {
         component:
-          'Menu of actions built with `makeActions`, displayed as a bottom sheet on mobile. `ActionsMenuMobileHeader` only renders on mobile, where the menu hides its anchor.'
+          'Menu of actions built with `makeActions`, displayed as a bottom sheet on mobile. `ActionsMenuMobileHeader` only renders on mobile, where the menu hides its anchor.\n\nInside the native app, pass the `webviewIntent` of cozy-intent for native print and download:\n\n```tsx\nconst webviewIntent = useWebviewIntent() // from cozy-intent\n\n<ActionsMenu\n  componentsProps={{ actionsItems: { actionOptions: { webviewIntent } } }}\n/>\n```'
       }
     }
   },
