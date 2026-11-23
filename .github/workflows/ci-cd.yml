@@ -161,6 +161,9 @@ jobs:
         with:
           name: dist
           path: packages
+      # npm publish does not complain about a missing dist
+      - name: Check the downloaded packages
+        run: for pkg in packages/*/; do test -d "${pkg}dist" || exit 1; done
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
