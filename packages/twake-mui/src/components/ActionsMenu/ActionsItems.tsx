@@ -1,6 +1,5 @@
 import React, { forwardRef, useMemo } from 'react'
 
-import { useWebviewIntent } from 'cozy-intent'
 import { useI18n } from 'twake-i18n'
 
 import { ListItemSize } from '../ListItem'
@@ -32,7 +31,6 @@ const ActionsItems = forwardRef<HTMLElement, ActionsItemsProps>(
     },
     ref
   ) => {
-    const webviewIntent = useWebviewIntent()
     const { t } = useI18n()
 
     const cleanedActions = useMemo(
@@ -48,7 +46,6 @@ const ActionsItems = forwardRef<HTMLElement, ActionsItemsProps>(
       const handleClick = (clickProps?: object): void => {
         actionDefinition.action?.(docs, {
           t,
-          webviewIntent,
           ...actionOptions,
           ...clickProps
         })

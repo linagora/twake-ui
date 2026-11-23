@@ -200,7 +200,8 @@ export type {
   GenerateWebLink,
   WebLinkActionOptions,
   WebLinkClient,
-  WebLinkOptions
+  WebLinkOptions,
+  WebviewIntent
 } from './components/ActionsMenu/types'
 export type {
   MakeActionComponentOptions,

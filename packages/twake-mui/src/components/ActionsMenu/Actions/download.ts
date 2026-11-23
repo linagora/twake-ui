@@ -1,14 +1,18 @@
 import { Download } from '@linagora/twake-icons'
-import type { WebviewService } from 'cozy-intent'
 
 import { getActionsI18n } from '../locales'
-import { Action, ActionCallbackOptions, ActionDocument } from '../types'
+import {
+  Action,
+  ActionCallbackOptions,
+  ActionDocument,
+  WebviewIntent
+} from '../types'
 import { makeAction } from './makeAction'
 
 export interface DownloadFileOptions<Client> {
   client: Client
   file: ActionDocument
-  webviewIntent?: WebviewService
+  webviewIntent?: WebviewIntent
   driveId?: string
 }
 
