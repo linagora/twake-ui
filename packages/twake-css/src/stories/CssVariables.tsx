@@ -29,9 +29,9 @@ const Z_INDEX_TARGET: Record<string, string> = {
   '--zIndex-alert': '--twake-zIndex-snackbar'
 }
 
-type Mode = 'light' | 'dark'
+type Mode = 'light' | 'dark' | 'contrast'
 
-const MODES: Mode[] = ['light', 'dark']
+const MODES: Mode[] = ['light', 'dark', 'contrast']
 
 // An offscreen node carrying the other data-theme resolves the other mode.
 const probe = (mode: Mode, names: string[]): Map<string, string> => {
@@ -146,10 +146,11 @@ export const CssVariables: FC = () => {
             title={group}
             note={`${names.length}`}
           >
-            <Rail columns="minmax(0, auto) 1fr 1fr">
+            <Rail columns="minmax(0, auto) 1fr 1fr 1fr">
               <Box />
               <Quiet>Light</Quiet>
               <Quiet>Dark</Quiet>
+              <Quiet>Contrast</Quiet>
               {names.map(name => (
                 <React.Fragment key={name}>
                   <Code tone="var">{name}</Code>
