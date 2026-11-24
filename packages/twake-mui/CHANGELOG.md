@@ -1,3 +1,23 @@
+# @linagora/twake-mui [21.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@20.0.0...@linagora/twake-mui@21.0.0) (2026-11-24)
+
+
+### Bug Fixes
+
+* **twake-mui:** Show the chosen segmented tab in the primary colour ([376473d](https://github.com/linagora/twake-ui/commit/376473dec770784db82f392a7e8de4610c1ac3b0))
+
+
+### Features
+
+* **twake-mui:** Fold ExtendableFab while its content scrolls ([2c85e73](https://github.com/linagora/twake-ui/commit/2c85e731274bb0725ccad2e789a2c21b71e7eb1e))
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** ExtendableFab ignores topLimit. It stays extended
+at rest and folds while the followed content scrolls, wherever the
+scroll position is. Drop topLimit from ExtendableFab, and pass follow
+when the content scrolls in an element rather than the page.
+
 # @linagora/twake-mui [20.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@19.10.2...@linagora/twake-mui@20.0.0) (2026-11-23)
 
 
