@@ -40,6 +40,7 @@ export interface IconProps extends SVGAttributes<SVGSVGElement> {
   preserveColor?: boolean
   rotate?: number
   spin?: boolean
+  title?: string
 }
 
 function Icon(props: IconProps): ReactElement | null {
@@ -63,6 +64,10 @@ function Icon(props: IconProps): ReactElement | null {
     return icon
   }
 
+  const isLabelled = Boolean(
+    restProps['aria-label'] || restProps['aria-labelledby'] || restProps.title
+  )
+
   const isPngPath = typeof icon === 'string' && icon.includes('.png')
 
   if (isPngPath)
@@ -73,6 +78,7 @@ function Icon(props: IconProps): ReactElement | null {
         style={style}
         width={width || size || DEFAULT_SIZE}
         height={height || size || DEFAULT_SIZE}
+        {...(isLabelled ? {} : { alt: '' })}
         {...(restProps as React.ImgHTMLAttributes<HTMLImageElement>)}
       />
     )
@@ -94,6 +100,16 @@ function Icon(props: IconProps): ReactElement | null {
     .filter(Boolean)
     .join(' ')
 
+  // Before restProps, so that a caller's own aria-hidden or role wins
+  const a11yProps: SVGAttributes<SVGSVGElement> = isLabelled
+    ? { role: 'img' }
+    : { 'aria-hidden': true, focusable: 'false' }
+  // The title attribute names an SVG in Chromium only: it becomes its
+  // aria-label, after restProps so that an undefined aria-label cannot drop it
+  const ariaLabel =
+    restProps['aria-label'] ||
+    (restProps['aria-labelledby'] ? undefined : restProps.title)
+
   return Svg ? (
     // eslint-disable-next-line react-hooks/static-components
     <Svg
@@ -101,7 +117,9 @@ function Icon(props: IconProps): ReactElement | null {
       style={_style}
       width={width || size || DEFAULT_SIZE}
       height={height || size || DEFAULT_SIZE}
+      {...a11yProps}
       {...restProps}
+      {...(ariaLabel ? { 'aria-label': ariaLabel } : {})}
     />
   ) : null
 }
