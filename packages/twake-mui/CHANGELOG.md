@@ -1,3 +1,10 @@
+## @linagora/twake-mui [21.0.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@21.0.0...@linagora/twake-mui@21.0.1) (2026-11-24)
+
+
+### Bug Fixes
+
+* Publish with npm provenance ([00b2c98](https://github.com/linagora/twake-ui/commit/00b2c98353c84dfeb3d558e784d1231619f7b237))
+
 # @linagora/twake-mui [21.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@20.0.0...@linagora/twake-mui@21.0.0) (2026-11-24)
 
 
