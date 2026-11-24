@@ -33,7 +33,7 @@ keeps a class and a component on the same value.
 ```
 
 No JavaScript. The page follows `prefers-color-scheme`; set
-`data-theme="light"` or `"dark"` on `<html>` to decide yourself. Any variable can
+`data-theme="light"`, `"dark"` or `"contrast"` on `<html>` to decide yourself. Any variable can
 be used directly in your own CSS, Tailwind included:
 
 ```js
