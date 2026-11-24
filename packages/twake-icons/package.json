@@ -36,7 +36,8 @@
     "CHANGELOG.md"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "check:barrel": "node scripts/check-barrel.mjs",

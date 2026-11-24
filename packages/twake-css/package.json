@@ -32,7 +32,8 @@
     "CHANGELOG.md"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
     "build": "npm run build:palette && npm run build:vars && npm run build:utils",

@@ -96,9 +96,15 @@ For each changed package:
      workspace depending on it must declare `^1.0.0`, or npm stops linking the
      workspace after the release bot bumps the version (ranges are not rewritten,
      `--deps.bump=ignore`)
-   - `"publishConfig": { "access": "public" }`
+   - `"repository"` with `"url": "https://github.com/linagora/twake-ui.git"`
+     and `"directory": "packages/<name>"`: npm rejects a publish whose
+     provenance does not match it
+   - `"publishConfig": { "access": "public", "provenance": true }`
    - `"files": ["dist", "CHANGELOG.md", "README.md"]`
-3. No per-package config needed — the root `.releaserc.json` applies to all workspaces
+3. No per-package release config: the root `.releaserc.json` applies to all
+   workspaces. But npm must know the package before its first merge to main
+   (placeholder and trusted publisher, see "npm auth" in CI/CD Notes), or the
+   release of every package fails
 4. Create `packages/<name>/docs/decisions.md` with the same header as the other packages
 
 ## Adding Icons
@@ -145,8 +151,15 @@ export const MyStory = {
 - **Order**: install → lint → format check → build → test → bundle test
   (`npm run test:bundle` in twake-mui: builds, then bundles a consumer of
   `dist/`) → browser test (`npm run test:browser` in twake-mui, Chromium) →
-  release (main only)
-- **Secrets required**: `NODE_AUTH_TOKEN` (NPM token, set in GitHub repo settings)
+  release (main only, in its own `release` job once the `build` job passes;
+  it publishes the `dist` built by the `build` job and builds nothing itself)
+- **npm auth**: OIDC trusted publishing, no npm token. The `release` job runs
+  in the `npm` GitHub environment (main only). A new package must first be
+  published by hand as a `0.0.0` placeholder (version set to `0.0.0` locally,
+  not committed, then `npm publish --provenance=false`), then get a trusted
+  publisher on npmjs.com: `linagora` / `twake-ui` / `ci-cd.yml` / environment
+  `npm`, with "Allow npm publish" checked. The configuration expires unless
+  the package is released within 2 days
 - **Uses**: `secrets.GITHUB_TOKEN` (auto-provided, no setup needed)
 
 ## Commits
