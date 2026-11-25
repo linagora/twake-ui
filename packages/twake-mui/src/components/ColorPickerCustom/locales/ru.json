@@ -1,0 +1,7 @@
+{
+  "ColorPickerCustom": {
+    "cancel": "отменить",
+    "submit": "Сохранить",
+    "invalid": "Введите цвет в формате #RRGGBB или #RGB"
+  }
+}

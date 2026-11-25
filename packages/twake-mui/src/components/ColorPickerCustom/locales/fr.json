@@ -1,0 +1,7 @@
+{
+  "ColorPickerCustom": {
+    "cancel": "Annuler",
+    "submit": "Valider",
+    "invalid": "Saisissez une couleur au format #RRGGBB ou #RGB"
+  }
+}
