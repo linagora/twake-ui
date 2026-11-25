@@ -107,6 +107,8 @@ jobs:
         run: npm run check:barrel --workspace=@linagora/twake-icons
       - name: Build
         run: npm run build
+      - name: Check the packages load in Node
+        run: node scripts/check-node-esm.mjs
       - name: Test
         run: npm test --workspace=@linagora/twake-mui
       - name: Test the bundle of a consumer
