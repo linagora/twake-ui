@@ -1,3 +1,11 @@
+# @linagora/twake-mui [21.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@21.0.1...@linagora/twake-mui@21.1.0) (2026-11-25)
+
+
+### Features
+
+* **twake-mui:** Add a tile look to the icon of Empty ([a8b77d4](https://github.com/linagora/twake-ui/commit/a8b77d43b7807bd90ce973ac80cd178d0687ae7a))
+* **twake-mui:** Let an explicit size set the height of the Empty icon ([d3e5831](https://github.com/linagora/twake-ui/commit/d3e5831d278c6f6530d26be5ca6af243f883e0e0))
+
 ## @linagora/twake-mui [21.0.1](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@21.0.0...@linagora/twake-mui@21.0.1) (2026-11-24)
 
 
