@@ -112,6 +112,34 @@ export const Screenshot: Story = {
         </Avatar>
       </Row>
 
+      <Row title="Variants">
+        <Avatar size="m" color="sunrise">
+          <Icon icon={Link} />
+        </Avatar>
+        <Avatar size="m" color="sunrise" variant="rounded">
+          <Icon icon={Link} />
+        </Avatar>
+        <Avatar size="m" color="sunrise" variant="square">
+          <Icon icon={Link} />
+        </Avatar>
+        <Avatar
+          size="m"
+          variant="rounded"
+          color="var(--twake-palette-border-main)"
+          textColor="var(--twake-palette-primary-contrastText)"
+        >
+          <Icon icon={Link} />
+        </Avatar>
+      </Row>
+
+      <Row title="Rounded sizes">
+        {sizes.map(size => (
+          <Avatar key={size} size={size} color="sunrise" variant="rounded">
+            AB
+          </Avatar>
+        ))}
+      </Row>
+
       <Row title="Borders">
         <Avatar size="l">Default</Avatar>
         <Avatar size="l" border>

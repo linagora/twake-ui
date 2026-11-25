@@ -920,6 +920,11 @@ export const overrides: NonNullable<ThemeOptions['components']> = {
       colorDefault: ({ theme }) => ({
         backgroundColor: theme.vars.palette.background.paper,
         color: theme.vars.palette.text.secondary
+      }),
+      rounded: ({ theme }) => ({
+        borderRadius: radius.lg,
+        // 12 px would round a 16 or 24 px avatar into a circle
+        '&.size-xs, &.size-s': { borderRadius: theme.shape.borderRadius }
       })
     }
   },
