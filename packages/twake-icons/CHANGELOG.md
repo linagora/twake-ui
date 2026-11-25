@@ -1,3 +1,10 @@
+## @linagora/twake-icons [3.2.3](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.2.2...@linagora/twake-icons@3.2.3) (2026-11-25)
+
+
+### Bug Fixes
+
+* **twake-icons:** Hide an icon without a label from assistive technologies ([4991634](https://github.com/linagora/twake-ui/commit/4991634ab8d335d9405b9be8629cc966cb51b383))
+
 ## @linagora/twake-icons [3.2.2](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.2.1...@linagora/twake-icons@3.2.2) (2026-11-24)
 
 
