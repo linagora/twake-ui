@@ -1,3 +1,10 @@
+# @linagora/twake-icons [3.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.2.3...@linagora/twake-icons@3.3.0) (2026-11-25)
+
+
+### Features
+
+* **twake-icons:** Add a single forward arrow ([efeb7b4](https://github.com/linagora/twake-ui/commit/efeb7b4d5909d32207ef2620bce8ba1b8ea45bac))
+
 ## @linagora/twake-icons [3.2.3](https://github.com/linagora/twake-ui/compare/@linagora/twake-icons@3.2.2...@linagora/twake-icons@3.2.3) (2026-11-25)
 
 
