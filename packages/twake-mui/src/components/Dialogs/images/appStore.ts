@@ -1,0 +1,2 @@
+export const appStore =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAY1BMVEUAAAAbivUapPUVnfcdj/YcifQbjfUaqvkZvPobmfcavPockPYarvkgd/Qar/kdmfYcfPMbgfMcivMcmPYcfPMdffQbn/YckfQap/kbn/Qbt/ochvcbj/UatfkbofgcgPQbp/jS6lwFAAAAHHRSTlMA4CAQn4DQoN/fsK8/MP7v7s/Av7+fkJB/YF8/OgJnugAAAF1JREFUCNc9jEcOwCAQAzfsAimQ3kPJ/18ZQIQ5WB5ZMkSQIYOftq7bIsrauwjrJRaR7ynL4PbLqSxNw3BYYuPUGUF0mI44iCpBwlRzmKb09Hge0m+QWMcQGvOnhg/hzAM6wPTOXQAAAABJRU5ErkJggg=='

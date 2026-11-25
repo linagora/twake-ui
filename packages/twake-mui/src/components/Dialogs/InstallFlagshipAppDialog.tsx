@@ -4,9 +4,10 @@ import React from 'react'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import IllustrationDialog from './IllustrationDialog.js'
-import appStoreIcon from './images/appStore.png'
-import defaultQrCode from './images/installFlagshipAppQrCode.png'
-import playStoreIcon from './images/playStore.png'
+// Data URIs: a module that imports a PNG does not load in Node
+import { appStore as appStoreIcon } from './images/appStore.js'
+import { installFlagshipAppQrCode as defaultQrCode } from './images/installFlagshipAppQrCode.js'
+import { playStore as playStoreIcon } from './images/playStore.js'
 import { locales } from './locales/index.js'
 
 export interface InstallFlagshipAppDialogProps {
