@@ -1,9 +1,9 @@
 import { Star, StarOutline } from '@linagora/twake-icons'
 
-import { ShowAlert } from '../../../providers/AlertProvider/useAlert'
-import { getActionsI18n } from '../locales'
-import { Action, ActionDocument } from '../types'
-import { makeAction } from './makeAction'
+import { ShowAlert } from '../../../providers/AlertProvider/useAlert.js'
+import { getActionsI18n } from '../locales/index.js'
+import { Action, ActionDocument } from '../types.js'
+import { makeAction } from './makeAction.js'
 
 export interface FavoritesActionOptions {
   client: { save: (doc: ActionDocument) => Promise<unknown> }

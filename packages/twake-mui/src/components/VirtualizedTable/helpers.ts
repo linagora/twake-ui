@@ -1,4 +1,4 @@
-import type { OrderDirection, Row } from './types'
+import type { OrderDirection, Row } from './types.js'
 
 export const getPath = (row: Row, path: string): unknown =>
   path

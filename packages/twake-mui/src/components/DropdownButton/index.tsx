@@ -5,7 +5,7 @@ import React from 'react'
 import DropdownText, {
   DropdownTextProps,
   DropdownTextVariant
-} from '../DropdownText'
+} from '../DropdownText/index.js'
 
 export interface DropdownButtonProps extends ButtonProps {
   textVariant?: DropdownTextVariant

@@ -3,9 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 import { fn } from 'storybook/test'
 
-import { getComparator, stableSort } from './helpers'
-import { VirtualizedTable, VirtualizedTableProps } from './index'
-import type { CellHandler, Column, Row } from './types'
+import { getComparator, stableSort } from './helpers.js'
+import { VirtualizedTable, VirtualizedTableProps } from './index.js'
+import type { CellHandler, Column, Row } from './types.js'
 
 const createData = (
   id: number,

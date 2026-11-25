@@ -1,6 +1,6 @@
 import { InputBase, styled } from '@mui/material'
 
-import { SearchBarProps } from './types'
+import { SearchBarProps } from './types.js'
 
 const fontSizeToPixel = { small: 14, medium: 16, large: 16, auto: 16 }
 

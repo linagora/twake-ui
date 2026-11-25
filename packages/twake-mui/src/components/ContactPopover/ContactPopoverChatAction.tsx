@@ -3,7 +3,7 @@ import React from 'react'
 import { Discuss } from '@linagora/twake-icons'
 import { useI18n } from 'twake-i18n'
 
-import { ContactPopoverIconAction } from './ContactPopoverIconAction'
+import { ContactPopoverIconAction } from './ContactPopoverIconAction.js'
 
 export interface ContactPopoverChatActionProps {
   /** URL for chat action (e.g., Twake Chat link) */

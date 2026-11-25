@@ -13,7 +13,7 @@ import React, {
 } from 'react'
 import { useMutationObserver, useTimeoutWhen, useWindowSize } from 'rooks'
 
-import BottomSheetTitleIdContext from './BottomSheetTitleIdContext'
+import BottomSheetTitleIdContext from './BottomSheetTitleIdContext.js'
 import {
   ANIMATION_DURATION,
   computeBottomSpacer,
@@ -25,7 +25,7 @@ import {
   minimizeAndClose,
   setBottomPosition,
   setTopPosition
-} from './helpers'
+} from './helpers.js'
 import {
   BORDER_RADIUS,
   BottomSheetBounceSafer,
@@ -38,12 +38,12 @@ import {
   BottomSheetRoot,
   BottomSheetSpacer,
   BottomSheetStack
-} from './styles'
+} from './styles.js'
 import {
   BottomSheetContentProps,
   BottomSheetProps,
   BottomSheetToolbarProps
-} from './types'
+} from './types.js'
 
 /** Shared default, so that effects depending on it do not run on every render */
 const NO_TOOLBAR_PROPS: BottomSheetToolbarProps = {}

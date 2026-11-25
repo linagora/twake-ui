@@ -1,11 +1,11 @@
 import { createTheme, Overlays, ThemeOptions } from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
 
-import { makePalette } from './makePalette'
-import { makeShadows } from './makeShadows'
-import { makeTypography } from './makeTypography'
-import { overrides } from './overrides'
-import { PaletteJson } from './types'
+import { makePalette } from './makePalette.js'
+import { makeShadows } from './makeShadows.js'
+import { makeTypography } from './makeTypography.js'
+import { overrides } from './overrides.js'
+import { PaletteJson } from './types.js'
 // DatePicker styles are applied through component overrides
 
 const themesCommonConfig: Partial<ThemeOptions> = {

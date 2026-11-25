@@ -12,16 +12,16 @@ import React, { useState } from 'react'
 
 import { Icon, Setting } from '@linagora/twake-icons'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import Avatar from '../Avatar'
-import NestedSelectResponsive from './NestedSelectResponsive'
-import NestedSelect from './index'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import Avatar from '../Avatar/index.js'
+import NestedSelectResponsive from './NestedSelectResponsive.js'
+import NestedSelect from './index.js'
 import type {
   NestedSelectItem,
   NestedSelectOptions,
   NestedSelectProps,
   NestedSelectSearchOptions
-} from './types'
+} from './types.js'
 
 const LONG_TEXT =
   'Augusta Ada King-Noel, Countess of Lovelace, was an English mathematician and writer, chiefly known for her work on Charles Babbage proposed mechanical general-purpose computer.'

@@ -10,7 +10,7 @@ import {
 } from '@linagora/twake-icons'
 
 import image from '../../stories/images/mountains.png'
-import { Empty, EmptyIconSize } from './index'
+import { Empty, EmptyIconSize } from './index.js'
 
 const iconSizes: EmptyIconSize[] = ['normal', 'medium', 'large']
 const longTitle =

@@ -12,10 +12,10 @@ import {
 import React, { useState } from 'react'
 import { afterEach, beforeAll, describe, expect, it } from 'vitest'
 
-import BottomSheetTitle from './BottomSheetTitle'
-import BottomSheet from './index'
-import { BottomSheetProps } from './types'
-import { theme } from '../../lib/theme'
+import BottomSheetTitle from './BottomSheetTitle.js'
+import BottomSheet from './index.js'
+import { BottomSheetProps } from './types.js'
+import { theme } from '../../lib/theme.js'
 
 beforeAll(() => {
   Globals.assign({ skipAnimation: true })

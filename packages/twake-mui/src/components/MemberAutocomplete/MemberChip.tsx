@@ -2,10 +2,10 @@ import React from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import Chip, { ChipProps } from '../Chip'
-import MemberOrGroupAvatar from '../MemberRow/MemberOrGroupAvatar'
-import { locales } from '../MemberRow/locales'
-import { Member } from '../MemberRow/types'
+import Chip, { ChipProps } from '../Chip/index.js'
+import MemberOrGroupAvatar from '../MemberRow/MemberOrGroupAvatar.js'
+import { locales } from '../MemberRow/locales/index.js'
+import { Member } from '../MemberRow/types.js'
 
 interface MemberChipProps {
   member: Member

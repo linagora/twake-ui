@@ -10,9 +10,9 @@ import React from 'react'
 
 import { Icon, Check, Palette } from '@linagora/twake-icons'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import Avatar from '../Avatar'
-import { COLORS } from './helpers'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import Avatar from '../Avatar/index.js'
+import { COLORS } from './helpers.js'
 
 const sizes = {
   small: { avatar: 21, icon: 10, cols: 7, gap: 5 },

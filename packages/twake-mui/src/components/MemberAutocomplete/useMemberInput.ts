@@ -4,14 +4,14 @@ import type {
 } from '@mui/material'
 import type React from 'react'
 
-import { Member } from '../MemberRow/types'
+import { Member } from '../MemberRow/types.js'
 import {
   GetMembersFromText,
   getUnpickedMembers,
   isEmailLike,
   makeMembersFromValue,
   resolveKnownMembers
-} from './helpers'
+} from './helpers.js'
 
 interface UseMemberInputParams {
   inputValue: string

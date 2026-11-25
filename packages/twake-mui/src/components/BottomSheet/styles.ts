@@ -1,8 +1,8 @@
 import { Paper, Stack } from '@mui/material'
 import { keyframes, styled, Theme } from '@mui/material/styles'
 
-import { BottomSheetCore } from './core/BottomSheetCore'
-import { ANIMATION_DURATION } from './helpers'
+import { BottomSheetCore } from './core/BottomSheetCore.js'
+import { ANIMATION_DURATION } from './helpers.js'
 
 export const BORDER_RADIUS = 16
 const BOUNCE_SAFER_HEIGHT = 50

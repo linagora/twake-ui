@@ -2,7 +2,7 @@ import { SxProps } from '@mui/material'
 import { styled, Theme } from '@mui/material/styles'
 import React, { useContext } from 'react'
 
-import { LayoutContext, TwoPanesProps, twoPanes } from './Layout'
+import { LayoutContext, TwoPanesProps, twoPanes } from './Layout.js'
 
 /** Height of the top bar, which is out of the Layout but overlaps it */
 const TOP_BAR_HEIGHT = 48

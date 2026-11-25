@@ -4,8 +4,8 @@ import React from 'react'
 
 import { Unlink } from '@linagora/twake-icons'
 
-import MemberRow from './index'
-import { Member } from './types'
+import MemberRow from './index.js'
+import { Member } from './types.js'
 
 const noop = (): void => {}
 

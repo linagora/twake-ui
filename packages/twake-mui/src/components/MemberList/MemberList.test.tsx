@@ -6,8 +6,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { I18n } from 'twake-i18n'
 
-import MemberList from './index'
-import { theme } from '../../lib/theme'
+import MemberList from './index.js'
+import { theme } from '../../lib/theme.js'
 
 afterEach(cleanup)
 

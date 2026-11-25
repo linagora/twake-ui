@@ -6,21 +6,21 @@ import React, { forwardRef, useState, useMemo, useRef, useEffect } from 'react'
 import { Cross, Icon, Magnifier } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import { DisableHighlight } from './DisableHighlight'
-import { FocusHighlight } from './FocusHighlight'
-import { SearchBarButtonBase } from './SearchBarButtonBase'
-import { SearchBarIconWrapper } from './SearchBarIconWrapper'
-import { SearchBarInputBase } from './SearchBarInputBase'
-import { SearchBarRoot } from './SearchBarRoot'
-import { SearchBarTypography } from './SearchBarTypography'
-import de from './locales/de.json'
-import en from './locales/en.json'
-import es from './locales/es.json'
-import fr from './locales/fr.json'
-import it from './locales/it.json'
-import ru from './locales/ru.json'
-import vi from './locales/vi.json'
-import { SearchBarProps } from './types'
+import { DisableHighlight } from './DisableHighlight.js'
+import { FocusHighlight } from './FocusHighlight.js'
+import { SearchBarButtonBase } from './SearchBarButtonBase.js'
+import { SearchBarIconWrapper } from './SearchBarIconWrapper.js'
+import { SearchBarInputBase } from './SearchBarInputBase.js'
+import { SearchBarRoot } from './SearchBarRoot.js'
+import { SearchBarTypography } from './SearchBarTypography.js'
+import de from './locales/de.json' with { type: 'json' }
+import en from './locales/en.json' with { type: 'json' }
+import es from './locales/es.json' with { type: 'json' }
+import fr from './locales/fr.json' with { type: 'json' }
+import it from './locales/it.json' with { type: 'json' }
+import ru from './locales/ru.json' with { type: 'json' }
+import vi from './locales/vi.json' with { type: 'json' }
+import { SearchBarProps } from './types.js'
 
 const locales = { de, en, es, fr, it, ru, vi }
 

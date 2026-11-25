@@ -1,9 +1,9 @@
 import { Pen } from '@linagora/twake-icons'
 
-import { getActionsI18n } from '../locales'
-import { Action, ActionDocument, WebLinkActionOptions } from '../types'
-import { makeAppWebLink } from './helpers'
-import { makeAction } from './makeAction'
+import { getActionsI18n } from '../locales/index.js'
+import { Action, ActionDocument, WebLinkActionOptions } from '../types.js'
+import { makeAppWebLink } from './helpers.js'
+import { makeAction } from './makeAction.js'
 
 export const modify = ({
   client,

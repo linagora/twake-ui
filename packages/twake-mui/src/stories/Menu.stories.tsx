@@ -22,7 +22,7 @@ import {
   Telephone
 } from '@linagora/twake-icons'
 
-import DropdownButton from '../components/DropdownButton'
+import DropdownButton from '../components/DropdownButton/index.js'
 
 const items = [
   <MenuItem key="modify">

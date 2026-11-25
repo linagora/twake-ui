@@ -1,7 +1,7 @@
 // The overlay TwakeSpace puts over its page for an embedded app (ADR 010 of
 // twake-space-architecture), from the side of the app.
 
-import type { OverlayBox, OverlayRegion } from './region'
+import type { OverlayBox, OverlayRegion } from './region.js'
 
 /**
  * Where the overlay stands: looked for (render nothing yet, so that what

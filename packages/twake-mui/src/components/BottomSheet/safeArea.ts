@@ -1,4 +1,4 @@
-import { SafeAreaSide } from './types'
+import { SafeAreaSide } from './types.js'
 
 /** Returns the device safe area inset (notch, home indicator), in px */
 export function getSafeAreaInset(side: SafeAreaSide): number {

@@ -3,10 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 import { screen } from 'storybook/test'
 
-import AlertProvider from '../../providers/AlertProvider'
+import AlertProvider from '../../providers/AlertProvider/index.js'
 import image from '../../stories/images/mountains.png'
-import Avatar from '../Avatar'
-import EditBadge, { EditBadgeProps } from './index'
+import Avatar from '../Avatar/index.js'
+import EditBadge, { EditBadgeProps } from './index.js'
 
 const baseProps: Omit<EditBadgeProps, 'children'> = {
   src: () => image,

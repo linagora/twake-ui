@@ -7,7 +7,7 @@ import {
 } from '@mui/material'
 import { capitalize } from '@mui/material/utils'
 
-import { alertSeverities } from '../../lib/overrides'
+import { alertSeverities } from '../../lib/overrides.js'
 
 export type PointerAlertDirection = 'top' | 'right' | 'bottom' | 'left'
 

@@ -2,7 +2,7 @@ import { Link, Typography } from '@mui/material'
 import React from 'react'
 import ReactMarkdown, { Components } from 'react-markdown'
 
-import { remarkPlugins } from './helpers'
+import { remarkPlugins } from './helpers.js'
 
 export interface MarkdownProps {
   content: string

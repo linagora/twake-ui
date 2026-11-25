@@ -5,9 +5,9 @@ import { Icon } from '@linagora/twake-icons'
 import { Copy } from '@linagora/twake-icons'
 import { useI18n } from 'twake-i18n'
 
-import { writeToClipboard } from '../../lib/writeToClipboard'
-import Avatar from '../Avatar'
-import { nameToColor, getInitials } from '../Avatar/helpers'
+import { writeToClipboard } from '../../lib/writeToClipboard.js'
+import Avatar from '../Avatar/index.js'
+import { nameToColor, getInitials } from '../Avatar/helpers.js'
 
 export interface AttendeeInfoProps {
   /** Attendee display name */

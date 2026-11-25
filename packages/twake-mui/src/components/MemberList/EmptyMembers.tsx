@@ -5,9 +5,9 @@ import React from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import EmptyMembersIllustration from './EmptyMembersIllustration'
-import { locales } from './locales'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import EmptyMembersIllustration from './EmptyMembersIllustration.js'
+import { locales } from './locales/index.js'
 
 const EmptyMembersRoot = styled('div')(({ theme }) => ({
   backgroundColor: theme.alpha(

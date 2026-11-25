@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Icon } from '@linagora/twake-icons'
 
-import ConfirmDialog, { ConfirmDialogProps } from './ConfirmDialog'
-import PermissionDialogIcon from './PermissionDialogIcon'
+import ConfirmDialog, { ConfirmDialogProps } from './ConfirmDialog.js'
+import PermissionDialogIcon from './PermissionDialogIcon.js'
 
 export interface PermissionDialogProps extends Pick<
   ConfirmDialogProps,

@@ -1,4 +1,4 @@
-import type { NestedSelectItem, NestedSelectOptions } from './types'
+import type { NestedSelectItem, NestedSelectOptions } from './types.js'
 
 /** Path from the item matching `options.focusedId` up to `options`, deepest first */
 export const makeHistory = (

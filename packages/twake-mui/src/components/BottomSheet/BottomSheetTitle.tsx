@@ -3,10 +3,10 @@ import React, { forwardRef, useContext } from 'react'
 
 import { Icon, IconProps } from '@linagora/twake-icons'
 
-import ListItem from '../ListItem'
-import ListItemText from '../ListItemText'
-import BottomSheetItem from './BottomSheetItem'
-import BottomSheetTitleIdContext from './BottomSheetTitleIdContext'
+import ListItem from '../ListItem/index.js'
+import ListItemText from '../ListItemText/index.js'
+import BottomSheetItem from './BottomSheetItem.js'
+import BottomSheetTitleIdContext from './BottomSheetTitleIdContext.js'
 
 export interface BottomSheetTitleProps {
   className?: string

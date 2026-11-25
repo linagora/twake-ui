@@ -2,7 +2,7 @@ import { List } from '@mui/material'
 import cx from 'classnames'
 import React, { CSSProperties, ReactNode } from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
 
 export interface NavigationListProps {
   children?: ReactNode

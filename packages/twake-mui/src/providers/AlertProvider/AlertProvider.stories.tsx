@@ -2,8 +2,8 @@ import { Button } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import AlertProvider from './index'
-import { ShowAlertOptions, useAlert } from './useAlert'
+import AlertProvider from './index.js'
+import { ShowAlertOptions, useAlert } from './useAlert.js'
 
 const severities = [
   'primary',

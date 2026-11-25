@@ -4,10 +4,10 @@ import React, { useRef, useState } from 'react'
 import { Dots, Icon } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import ActionsMenu from '.'
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import { locales } from './locales'
-import { ActionDocument, ActionObject } from './types'
+import ActionsMenu from './index.js'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import { locales } from './locales/index.js'
+import { ActionDocument, ActionObject } from './types.js'
 
 export interface ActionsMenuButtonProps {
   docs?: ActionDocument[]

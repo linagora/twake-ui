@@ -19,12 +19,12 @@ import {
   Right
 } from '@linagora/twake-icons'
 
-import ListItemButton from '../ListItemButton'
-import ListItemText from '../ListItemText'
-import BottomSheetHeader from './BottomSheetHeader'
-import BottomSheetItem from './BottomSheetItem'
-import BottomSheetTitle from './BottomSheetTitle'
-import BottomSheet from './index'
+import ListItemButton from '../ListItemButton/index.js'
+import ListItemText from '../ListItemText/index.js'
+import BottomSheetHeader from './BottomSheetHeader.js'
+import BottomSheetItem from './BottomSheetItem.js'
+import BottomSheetTitle from './BottomSheetTitle.js'
+import BottomSheet from './index.js'
 
 interface ExampleArgs {
   open: boolean

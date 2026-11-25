@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React, { ReactNode } from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
 
 export interface NavigationListSectionProps {
   children?: ReactNode

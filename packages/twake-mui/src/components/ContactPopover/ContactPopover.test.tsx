@@ -13,10 +13,10 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { I18n } from 'twake-i18n'
 
-import ContactCard, { ContactCardProps } from './ContactCard'
-import ContactPopover from './index'
-import { setupFrameClipboard } from '../../lib/setupFrameClipboard.test-utils'
-import { theme } from '../../lib/theme'
+import ContactCard, { ContactCardProps } from './ContactCard.js'
+import ContactPopover from './index.js'
+import { setupFrameClipboard } from '../../lib/setupFrameClipboard.test-utils.js'
+import { theme } from '../../lib/theme.js'
 
 afterEach(cleanup)
 

@@ -5,8 +5,8 @@ import React from 'react'
 import { Icon, Link } from '@linagora/twake-icons'
 
 import image from '../../stories/images/mountains.png'
-import { supportedColors } from './helpers'
-import Avatar, { AvatarSize } from './index'
+import { supportedColors } from './helpers.js'
+import Avatar, { AvatarSize } from './index.js'
 
 const sizes: AvatarSize[] = ['xs', 's', 'm', 'l', 'xl']
 

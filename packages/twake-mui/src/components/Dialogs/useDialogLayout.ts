@@ -9,9 +9,9 @@ import { mergeSlotProps } from '@mui/material/utils'
 import cx from 'classnames'
 import React, { useId } from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import type { DialogProps } from '../Dialog'
-import SlideUpTransition from './SlideUpTransition'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import type { DialogProps } from '../Dialog/index.js'
+import SlideUpTransition from './SlideUpTransition.js'
 
 export type DialogCloseReason = 'backdropClick' | 'escapeKeyDown'
 

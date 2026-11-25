@@ -1,9 +1,9 @@
 import { Divider, ListItemIcon, Skeleton } from '@mui/material'
 import React from 'react'
 
-import { radius } from '../../lib/radius'
-import ListItem, { ListItemGutters } from '../ListItem'
-import ListItemText from '../ListItemText'
+import { radius } from '../../lib/radius.js'
+import ListItem, { ListItemGutters } from '../ListItem/index.js'
+import ListItemText from '../ListItemText/index.js'
 
 export interface ListItemSkeletonProps {
   hasSecondary?: boolean

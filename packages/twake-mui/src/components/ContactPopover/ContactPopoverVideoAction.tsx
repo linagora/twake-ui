@@ -3,7 +3,7 @@ import React from 'react'
 import { Camera } from '@linagora/twake-icons'
 import { useI18n } from 'twake-i18n'
 
-import { ContactPopoverIconAction } from './ContactPopoverIconAction'
+import { ContactPopoverIconAction } from './ContactPopoverIconAction.js'
 
 export interface ContactPopoverVideoActionProps {
   /** URL for video call action (e.g., Twake Meet link) */

@@ -2,7 +2,7 @@ import { TableRow as MuiTableRow } from '@mui/material'
 import React from 'react'
 import type { TableComponents } from 'react-virtuoso'
 
-import type { Row, TableContext } from './types'
+import type { Row, TableContext } from './types.js'
 
 type TableRowProps = React.ComponentProps<
   NonNullable<TableComponents<Row, TableContext>['TableRow']>

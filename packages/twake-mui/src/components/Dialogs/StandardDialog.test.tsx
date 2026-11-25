@@ -6,8 +6,8 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { I18n } from 'twake-i18n'
 
-import StandardDialog, { StandardDialogProps } from './StandardDialog'
-import { theme } from '../../lib/theme'
+import StandardDialog, { StandardDialogProps } from './StandardDialog.js'
+import { theme } from '../../lib/theme.js'
 
 afterEach(cleanup)
 

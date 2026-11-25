@@ -6,8 +6,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { Plus } from '@linagora/twake-icons'
 
-import ExtendableFab, { ExtendableFabProps } from './index'
-import { theme } from '../../lib/theme'
+import ExtendableFab, { ExtendableFabProps } from './index.js'
+import { theme } from '../../lib/theme.js'
 
 beforeEach(() => {
   vi.useFakeTimers()

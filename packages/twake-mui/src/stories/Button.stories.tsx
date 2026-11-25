@@ -4,7 +4,7 @@ import React from 'react'
 
 import { Icon, Plus, Stop } from '@linagora/twake-icons'
 
-import Button, { ButtonProps } from '../components/Button'
+import Button, { ButtonProps } from '../components/Button/index.js'
 
 const variants = ['contained', 'outlined', 'ghost', 'text'] as const
 const sizes = ['xsmall', 'small', 'medium', 'large'] as const

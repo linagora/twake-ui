@@ -1,12 +1,12 @@
 import { PopoverOrigin } from '@mui/material'
 import React, { useEffect, useRef, useState } from 'react'
 
-import ContactCard from './ContactCard'
-import { ContactPopoverActions } from './ContactPopoverActions'
-import { ContactPopoverCalendarAction } from './ContactPopoverCalendarAction'
-import { ContactPopoverChatAction } from './ContactPopoverChatAction'
-import { ContactPopoverEmailAction } from './ContactPopoverEmailAction'
-import { ContactPopoverVideoAction } from './ContactPopoverVideoAction'
+import ContactCard from './ContactCard.js'
+import { ContactPopoverActions } from './ContactPopoverActions.js'
+import { ContactPopoverCalendarAction } from './ContactPopoverCalendarAction.js'
+import { ContactPopoverChatAction } from './ContactPopoverChatAction.js'
+import { ContactPopoverEmailAction } from './ContactPopoverEmailAction.js'
+import { ContactPopoverVideoAction } from './ContactPopoverVideoAction.js'
 
 export interface ContactPopoverProps {
   /** Attendee display name */

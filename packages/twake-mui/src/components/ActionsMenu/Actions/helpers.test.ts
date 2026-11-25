@@ -1,8 +1,8 @@
 // @vitest-environment jsdom
 import { describe, expect, it } from 'vitest'
 
-import { makeActions, makeBase64FromFile } from './helpers'
-import { Action } from '../types'
+import { makeActions, makeBase64FromFile } from './helpers.js'
+import { Action } from '../types.js'
 
 const Component = (): null => null
 

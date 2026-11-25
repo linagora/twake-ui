@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
 
-import { Member } from '../MemberRow/types'
+import { Member } from '../MemberRow/types.js'
 import {
   isSameMember,
   makeMembersFromValue,
   resolveKnownMembers
-} from './helpers'
+} from './helpers.js'
 
 describe('isSameMember', () => {
   it('matches the same id or the same email whatever its case', () => {

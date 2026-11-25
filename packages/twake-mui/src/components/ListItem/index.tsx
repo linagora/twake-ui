@@ -4,9 +4,9 @@ import {
 } from '@mui/material'
 import React, { forwardRef } from 'react'
 
-import { computeListItemRow, ListItemLayoutProps } from './helpers'
+import { computeListItemRow, ListItemLayoutProps } from './helpers.js'
 
-export type { ListItemGutters, ListItemSize } from './helpers'
+export type { ListItemGutters, ListItemSize } from './helpers.js'
 
 export type ListItemProps = Omit<MuiListItemProps, 'ref'> & ListItemLayoutProps
 

@@ -3,7 +3,7 @@ import { cleanup, render } from '@testing-library/react'
 import React from 'react'
 import { afterEach, describe, expect, it } from 'vitest'
 
-import { OverlayFrame } from './OverlayFrame'
+import { OverlayFrame } from './OverlayFrame.js'
 
 const renderFrame = (clipPath: string): HTMLIFrameElement => {
   render(

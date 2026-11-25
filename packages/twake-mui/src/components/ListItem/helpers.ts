@@ -3,7 +3,7 @@ import { isMuiElement } from '@mui/material/utils'
 import cx from 'classnames'
 import React, { Children, cloneElement, isValidElement } from 'react'
 
-import ListItemText, { ListItemTextProps } from '../ListItemText'
+import ListItemText, { ListItemTextProps } from '../ListItemText/index.js'
 
 export type ListItemGutters = 'default' | 'double' | 'disabled'
 export type ListItemSize = 'small' | 'medium' | 'large'

@@ -1,8 +1,8 @@
 import { CircularProgress, Stack } from '@mui/material'
 import React, { useLayoutEffect, useRef } from 'react'
 
-import MemberRoleMenu from '../MemberRow/MemberRoleMenu'
-import { MemberRole } from '../MemberRow/types'
+import MemberRoleMenu from '../MemberRow/MemberRoleMenu.js'
+import { MemberRole } from '../MemberRow/types.js'
 
 interface MemberAutocompleteActionsProps {
   roles?: MemberRole[]

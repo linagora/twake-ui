@@ -4,7 +4,7 @@ import React from 'react'
 
 import { File, Icon } from '@linagora/twake-icons'
 
-import Filename, { FilenameProps } from './index'
+import Filename, { FilenameProps } from './index.js'
 
 const longName =
   'Lacinia condimentum potenti id est tortor dictumst lectus tincidunt hac ultricies, curae mattis nisi neque sodales sagittis dui nulla aliquam turpis eros, finibus ac iaculis dictum et orci elit posuere ex and this is the end'

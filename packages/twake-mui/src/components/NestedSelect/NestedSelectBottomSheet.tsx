@@ -5,13 +5,13 @@ import React from 'react'
 import { ArrowUp, Icon } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import BottomSheet from '../BottomSheet'
-import BottomSheetHeader from '../BottomSheet/BottomSheetHeader'
-import BottomSheetItem from '../BottomSheet/BottomSheetItem'
-import type { BottomSheetProps } from '../BottomSheet/types'
-import { locales } from '../Dialogs/locales'
-import NestedSelect from './index'
-import type { NestedSelectHeaderProps, NestedSelectProps } from './types'
+import BottomSheet from '../BottomSheet/index.js'
+import BottomSheetHeader from '../BottomSheet/BottomSheetHeader.js'
+import BottomSheetItem from '../BottomSheet/BottomSheetItem.js'
+import type { BottomSheetProps } from '../BottomSheet/types.js'
+import { locales } from '../Dialogs/locales/index.js'
+import NestedSelect from './index.js'
+import type { NestedSelectHeaderProps, NestedSelectProps } from './types.js'
 
 export interface NestedSelectBottomSheetProps extends NestedSelectProps {
   onClose?: () => void

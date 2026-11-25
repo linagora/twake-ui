@@ -1,8 +1,8 @@
 import { Telephone } from '@linagora/twake-icons'
 
-import { getActionsI18n } from '../locales'
-import { Action, ActionDocument } from '../types'
-import { makeAction } from './makeAction'
+import { getActionsI18n } from '../locales/index.js'
+import { Action, ActionDocument } from '../types.js'
+import { makeAction } from './makeAction.js'
 
 export const call = (): Action => {
   const { t } = getActionsI18n()

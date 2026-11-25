@@ -1,6 +1,6 @@
 import { Theme } from '@mui/material/styles'
 
-import { makeTheme } from './makeTheme'
+import { makeTheme } from './makeTheme.js'
 
 export const theme: Theme = makeTheme()
 

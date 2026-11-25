@@ -5,7 +5,7 @@ import React from 'react'
 import { Icon, Previous } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import { locales } from './locales'
+import { locales } from './locales/index.js'
 
 export interface DialogBackButtonProps extends IconButtonProps {
   onClick: NonNullable<IconButtonProps['onClick']>

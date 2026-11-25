@@ -40,8 +40,8 @@ import {
   WarningCircle
 } from '@linagora/twake-icons'
 
-import AccordionExpandIcon from '../components/AccordionExpandIcon'
-import { radius } from './radius'
+import AccordionExpandIcon from '../components/AccordionExpandIcon/index.js'
+import { radius } from './radius.js'
 
 export const alertSeverities = [
   'primary',

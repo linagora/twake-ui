@@ -1,4 +1,4 @@
-import { Member } from '../MemberRow/types'
+import { Member } from '../MemberRow/types.js'
 
 export type GetMembersFromText = (text: string) => Member[]
 

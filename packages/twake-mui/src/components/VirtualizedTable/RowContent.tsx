@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Cell } from './Cell'
-import type { Column, Row, RowContentProps } from './types'
+import { Cell } from './Cell.js'
+import type { Column, Row, RowContentProps } from './types.js'
 
 interface RowContentComponentProps extends RowContentProps {
   row: Row

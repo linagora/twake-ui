@@ -3,11 +3,11 @@ import React from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import IllustrationDialog from './IllustrationDialog'
+import IllustrationDialog from './IllustrationDialog.js'
 import appStoreIcon from './images/appStore.png'
 import defaultQrCode from './images/installFlagshipAppQrCode.png'
 import playStoreIcon from './images/playStore.png'
-import { locales } from './locales'
+import { locales } from './locales/index.js'
 
 export interface InstallFlagshipAppDialogProps {
   onClose?: () => void

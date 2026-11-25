@@ -3,8 +3,8 @@ import React from 'react'
 
 import { useI18n } from 'twake-i18n'
 
-import MemberRowActions from './MemberRowActions'
-import { Member, MemberRole } from './types'
+import MemberRowActions from './MemberRowActions.js'
+import { Member, MemberRole } from './types.js'
 
 interface MemberRowEndProps {
   member: Member

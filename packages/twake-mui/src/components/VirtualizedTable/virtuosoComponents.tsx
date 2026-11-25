@@ -8,8 +8,8 @@ import {
 import React, { forwardRef } from 'react'
 import type { TableComponents } from 'react-virtuoso'
 
-import { TableRow } from './TableRow'
-import type { Row, TableContext } from './types'
+import { TableRow } from './TableRow.js'
+import type { Row, TableContext } from './types.js'
 
 /**
  * `context` is spread by virtuoso to every component. We destructure it so it

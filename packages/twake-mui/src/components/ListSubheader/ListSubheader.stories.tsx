@@ -4,9 +4,9 @@ import React from 'react'
 
 import { FileTypeFolder, Icon } from '@linagora/twake-icons'
 
-import ListItemButton from '../ListItemButton'
-import ListItemText from '../ListItemText'
-import ListSubheader, { ListSubheaderProps } from './index'
+import ListItemButton from '../ListItemButton/index.js'
+import ListItemText from '../ListItemText/index.js'
+import ListSubheader, { ListSubheaderProps } from './index.js'
 
 const meta: Meta<typeof ListSubheader> = {
   title: 'ListSubheader',

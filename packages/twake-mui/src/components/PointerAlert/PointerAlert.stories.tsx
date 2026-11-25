@@ -5,7 +5,7 @@ import React from 'react'
 
 import { Download, Icon } from '@linagora/twake-icons'
 
-import PointerAlert, { PointerAlertDirection } from './index'
+import PointerAlert, { PointerAlertDirection } from './index.js'
 
 const directions: PointerAlertDirection[] = ['top', 'bottom', 'left', 'right']
 

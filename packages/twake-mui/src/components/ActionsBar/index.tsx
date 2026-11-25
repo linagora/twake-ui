@@ -3,21 +3,21 @@ import React, { useMemo, useRef, useState } from 'react'
 
 import { Cross, Dots, Icon } from '@linagora/twake-icons'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import ActionsMenu from '../ActionsMenu'
-import { makeActions } from '../ActionsMenu/Actions/helpers'
-import { others } from '../ActionsMenu/Actions/others'
-import ActionsItems from '../ActionsMenu/ActionsItems'
-import { getOnlyNeededActions } from '../ActionsMenu/helpers'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import ActionsMenu from '../ActionsMenu/index.js'
+import { makeActions } from '../ActionsMenu/Actions/helpers.js'
+import { others } from '../ActionsMenu/Actions/others.js'
+import ActionsItems from '../ActionsMenu/ActionsItems.js'
+import { getOnlyNeededActions } from '../ActionsMenu/helpers.js'
 import {
   ActionDocument,
   ActionObject,
   ActionOptions
-} from '../ActionsMenu/types'
-import ActionsBarActions from './ActionsBarActions'
-import ActionsBarRoot from './ActionsBarRoot'
-import ActionsBarSelectedCount from './ActionsBarSelectedCount'
-import ResponsiveAction from './ResponsiveAction'
+} from '../ActionsMenu/types.js'
+import ActionsBarActions from './ActionsBarActions.js'
+import ActionsBarRoot from './ActionsBarRoot.js'
+import ActionsBarSelectedCount from './ActionsBarSelectedCount.js'
+import ResponsiveAction from './ResponsiveAction.js'
 
 const MOBILE_MAX_ACTIONS = 4
 

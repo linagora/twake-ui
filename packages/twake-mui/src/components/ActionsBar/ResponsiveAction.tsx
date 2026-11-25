@@ -3,9 +3,9 @@ import React, { forwardRef } from 'react'
 
 import { Icon } from '@linagora/twake-icons'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import { ActionComponentProps } from '../ActionsMenu/types'
-import Button from '../Button'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import { ActionComponentProps } from '../ActionsMenu/types.js'
+import Button from '../Button/index.js'
 
 const MOBILE_SX = {
   flex: '1 1 0',

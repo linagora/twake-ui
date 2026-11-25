@@ -2,7 +2,7 @@ import { Box, List, Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import ListItemText from './index'
+import ListItemText from './index.js'
 
 const longText =
   'Ada Lovelace wrote the first algorithm meant to be carried out by a machine, long before any computer existed to run it.'

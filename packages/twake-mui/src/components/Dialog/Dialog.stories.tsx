@@ -20,9 +20,9 @@ import {
   Icon
 } from '@linagora/twake-icons'
 
-import ListItemButton from '../ListItemButton'
-import ListItemText from '../ListItemText'
-import Dialog, { DialogProps, DialogSize } from './index'
+import ListItemButton from '../ListItemButton/index.js'
+import ListItemText from '../ListItemText/index.js'
+import Dialog, { DialogProps, DialogSize } from './index.js'
 
 const sizes: DialogSize[] = ['small', 'medium', 'large', 'full']
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { makeHistory } from './helpers'
+import { makeHistory } from './helpers.js'
 
 describe('makeHistory', () => {
   it('is empty without options', () => {

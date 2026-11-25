@@ -2,8 +2,8 @@ import { Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import { Member } from '../MemberRow/types'
-import MemberAutocomplete from './index'
+import { Member } from '../MemberRow/types.js'
+import MemberAutocomplete from './index.js'
 
 const contacts: Member[] = [
   {

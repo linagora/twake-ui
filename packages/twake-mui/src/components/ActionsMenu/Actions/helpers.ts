@@ -6,7 +6,7 @@ import {
   ActionObject,
   GenerateWebLink,
   WebLinkClient
-} from '../types'
+} from '../types.js'
 
 // Should guarantee good resolution for different uses (printing, downloading, etc.)
 const MAX_RESIZE_IMAGE_SIZE = 3840

@@ -1,4 +1,4 @@
-import { ActionDocument, ActionObject } from './types'
+import { ActionDocument, ActionObject } from './types.js'
 
 export const getActionName = (actionObject: ActionObject): string => {
   return Object.keys(actionObject)[0]

@@ -2,7 +2,7 @@ import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import ListSkeleton, { ListSkeletonProps } from './index'
+import ListSkeleton, { ListSkeletonProps } from './index.js'
 
 const meta: Meta<typeof ListSkeleton> = {
   title: 'ListSkeleton',

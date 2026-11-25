@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Icon, Peoples } from '@linagora/twake-icons'
 
-import Avatar, { AvatarSize } from '../Avatar'
-import { colorToGradient } from '../Avatar/helpers'
-import { COLORS } from '../ColorList/helpers'
+import Avatar, { AvatarSize } from '../Avatar/index.js'
+import { colorToGradient } from '../Avatar/helpers.js'
+import { COLORS } from '../ColorList/helpers.js'
 
 const DEFAULT_COLOR = COLORS[4]
 

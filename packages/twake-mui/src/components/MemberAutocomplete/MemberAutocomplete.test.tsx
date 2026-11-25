@@ -6,9 +6,9 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { I18n } from 'twake-i18n'
 
-import { theme } from '../../lib/theme'
-import { Member } from '../MemberRow/types'
-import MemberAutocomplete, { MemberAutocompleteProps } from './index'
+import { theme } from '../../lib/theme.js'
+import { Member } from '../MemberRow/types.js'
+import MemberAutocomplete, { MemberAutocompleteProps } from './index.js'
 
 afterEach(cleanup)
 

@@ -1,7 +1,7 @@
 import { styled } from '@mui/material'
 import { Theme } from '@mui/material/styles'
 
-import { Highlight } from './Highlight'
+import { Highlight } from './Highlight.js'
 
 export const DisableHighlight = styled(Highlight)(
   ({ theme }: { theme: Theme }) => ({

@@ -5,7 +5,7 @@ import React from 'react'
 
 import { Icon, FileOutline, Openwith, Right } from '@linagora/twake-icons'
 
-import { Chip } from '../components/Chip'
+import { Chip } from '../components/Chip/index.js'
 
 const meta: Meta<typeof Chip> = {
   title: 'Chip',

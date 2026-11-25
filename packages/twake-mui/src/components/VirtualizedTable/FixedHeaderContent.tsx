@@ -1,8 +1,8 @@
 import { TableRow } from '@mui/material'
 import React from 'react'
 
-import { HeadCell } from './HeadCell'
-import type { Column, OrderDirection } from './types'
+import { HeadCell } from './HeadCell.js'
+import type { Column, OrderDirection } from './types.js'
 
 interface FixedHeaderContentProps {
   columns: Column[]

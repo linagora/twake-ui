@@ -2,9 +2,9 @@ import { Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import { AvatarSize } from '../Avatar'
-import { COLORS } from '../ColorList/helpers'
-import MemberGroupAvatar from './MemberGroupAvatar'
+import { AvatarSize } from '../Avatar/index.js'
+import { COLORS } from '../ColorList/helpers.js'
+import MemberGroupAvatar from './MemberGroupAvatar.js'
 
 const sizes: AvatarSize[] = ['xs', 's', 'm', 'l', 'xl']
 

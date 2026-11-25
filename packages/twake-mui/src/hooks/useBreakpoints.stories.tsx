@@ -2,7 +2,7 @@ import { Box, Chip, Stack, Typography, useTheme } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { FC } from 'react'
 
-import { useBreakpoints } from './useBreakpoints'
+import { useBreakpoints } from './useBreakpoints.js'
 
 const meta: Meta = {
   title: 'Hooks/useBreakpoints',

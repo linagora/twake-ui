@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Member } from '../MemberRow/types'
-import { GetMembersFromText, makeSuggestions } from './helpers'
+import { Member } from '../MemberRow/types.js'
+import { GetMembersFromText, makeSuggestions } from './helpers.js'
 
 interface UseMemberSuggestionsParams {
   inputValue: string

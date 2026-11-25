@@ -1,7 +1,7 @@
 import { Box, Typography, TypographyProps } from '@mui/material'
 import React from 'react'
 
-import MidEllipsis from '../MidEllipsis'
+import MidEllipsis from '../MidEllipsis/index.js'
 
 export interface FilenameProps {
   icon?: React.ReactNode

@@ -2,7 +2,7 @@ import { SxProps } from '@mui/material'
 import { CSSObject, styled, Theme } from '@mui/material/styles'
 import React, { createContext, useMemo } from 'react'
 
-import { SIDEBAR_MOBILE_HEIGHT } from '../Sidebar'
+import { SIDEBAR_MOBILE_HEIGHT } from '../Sidebar/index.js'
 
 interface LayoutContextValue {
   monoColumn: boolean

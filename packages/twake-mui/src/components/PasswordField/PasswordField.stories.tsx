@@ -2,7 +2,7 @@ import { Stack, TextField } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import PasswordField from './index'
+import PasswordField from './index.js'
 
 // TextFieldProps is a union, which Storybook cannot infer args from
 const meta: Meta<typeof TextField> = {

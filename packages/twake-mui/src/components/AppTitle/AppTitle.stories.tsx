@@ -21,7 +21,7 @@ import {
   VisioText
 } from '@linagora/twake-icons'
 
-import AppTitle from './index'
+import AppTitle from './index.js'
 
 const meta: Meta<typeof AppTitle> = {
   title: 'AppTitle',

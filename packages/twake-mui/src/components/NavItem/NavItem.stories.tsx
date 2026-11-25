@@ -4,11 +4,11 @@ import React from 'react'
 
 import { Folder, Heart, Warn, Dots, Icon } from '@linagora/twake-icons'
 
-import { NavIcon } from '../NavIcon'
-import { NavDropdown } from '../NavLink/NavDropdown'
-import { NavLink } from '../NavLink/NavLink'
-import NavText from '../NavText'
-import { NavItem, NavItemProps } from './index'
+import { NavIcon } from '../NavIcon/index.js'
+import { NavDropdown } from '../NavLink/NavDropdown.js'
+import { NavLink } from '../NavLink/NavLink.js'
+import NavText from '../NavText/index.js'
+import { NavItem, NavItemProps } from './index.js'
 
 const icons = { Heart, None: undefined }
 

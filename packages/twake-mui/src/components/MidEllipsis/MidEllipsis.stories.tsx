@@ -2,7 +2,7 @@ import { Box, Link, Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import MidEllipsis from './index'
+import MidEllipsis from './index.js'
 
 const longText =
   'Augusta Ada King-Noel, Countess of Lovelace (née Byron; 10 December 1815 – 27 November 1852) was an English mathematician and writer, chiefly known for her work on Charles Babbage’s proposed mechanical general-purpose computer, the Analytical Engine.'

@@ -3,11 +3,11 @@ import React from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import ListItem from '../ListItem'
-import ListItemText from '../ListItemText'
-import MemberOrGroupAvatar from '../MemberRow/MemberOrGroupAvatar'
-import { locales } from '../MemberRow/locales'
-import { Member } from '../MemberRow/types'
+import ListItem from '../ListItem/index.js'
+import ListItemText from '../ListItemText/index.js'
+import MemberOrGroupAvatar from '../MemberRow/MemberOrGroupAvatar.js'
+import { locales } from '../MemberRow/locales/index.js'
+import { Member } from '../MemberRow/types.js'
 
 interface MemberSuggestionProps {
   suggestion: Member

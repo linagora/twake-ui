@@ -1,10 +1,10 @@
 import { Copy } from '@linagora/twake-icons'
 
-import { writeToClipboard } from '../../../lib/writeToClipboard'
-import { ShowAlert } from '../../../providers/AlertProvider/useAlert'
-import { getActionsI18n } from '../locales'
-import { Action, ActionCallbackOptions } from '../types'
-import { makeAction } from './makeAction'
+import { writeToClipboard } from '../../../lib/writeToClipboard.js'
+import { ShowAlert } from '../../../providers/AlertProvider/useAlert.js'
+import { getActionsI18n } from '../locales/index.js'
+import { Action, ActionCallbackOptions } from '../types.js'
+import { makeAction } from './makeAction.js'
 
 interface CopyToClipboardCallbackOptions extends ActionCallbackOptions {
   showAlert: ShowAlert

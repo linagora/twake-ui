@@ -4,15 +4,15 @@ import React, { useState } from 'react'
 
 import { Check, Download, Warn } from '@linagora/twake-icons'
 
-import { Nav } from '../Nav'
-import { NavDesktopDropdown } from '../NavDesktopDropdown'
-import { NavDesktopLimiter } from '../NavDesktopLimiter'
-import { NavIcon } from '../NavIcon'
-import { NavItem } from '../NavItem'
-import { NavDropdown } from '../NavLink/NavDropdown'
-import { NavLink } from '../NavLink/NavLink'
-import NavText from '../NavText'
-import { Sidebar, SidebarProps } from './index'
+import { Nav } from '../Nav/index.js'
+import { NavDesktopDropdown } from '../NavDesktopDropdown/index.js'
+import { NavDesktopLimiter } from '../NavDesktopLimiter/index.js'
+import { NavIcon } from '../NavIcon/index.js'
+import { NavItem } from '../NavItem/index.js'
+import { NavDropdown } from '../NavLink/NavDropdown.js'
+import { NavLink } from '../NavLink/NavLink.js'
+import NavText from '../NavText/index.js'
+import { Sidebar, SidebarProps } from './index.js'
 
 const SidebarDemo = (props: SidebarProps): React.ReactElement => {
   const [active, setActive] = useState(['Section 1', 'Subsection 1'])

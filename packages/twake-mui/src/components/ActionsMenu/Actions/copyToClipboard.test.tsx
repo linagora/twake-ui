@@ -6,10 +6,10 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { I18n } from 'twake-i18n'
 
-import { setupFrameClipboard } from '../../../lib/setupFrameClipboard.test-utils'
-import ActionsItems from '../ActionsItems'
-import { copyToClipboard } from './copyToClipboard'
-import { makeActions } from './helpers'
+import { setupFrameClipboard } from '../../../lib/setupFrameClipboard.test-utils.js'
+import ActionsItems from '../ActionsItems.js'
+import { copyToClipboard } from './copyToClipboard.js'
+import { makeActions } from './helpers.js'
 
 describe('copyToClipboard', () => {
   const { getFrame, appWrite, frameWrite } = setupFrameClipboard()
