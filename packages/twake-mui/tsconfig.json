@@ -12,6 +12,8 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "declarationDir": "./dist",
-    "emitDeclarationOnly": false
+    "emitDeclarationOnly": false,
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
   }
 }
