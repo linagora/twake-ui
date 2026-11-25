@@ -1,11 +1,11 @@
 import { PopoverOrigin } from '@mui/material'
 import React, { forwardRef } from 'react'
 
-import ActionsItems, { ActionsItemsProps } from './ActionsItems'
+import ActionsItems, { ActionsItemsProps } from './ActionsItems.js'
 import ActionsMenuWrapper, {
   ActionsMenuWrapperProps
-} from './ActionsMenuWrapper'
-import { ActionDocument, ActionObject } from './types'
+} from './ActionsMenuWrapper.js'
+import { ActionDocument, ActionObject } from './types.js'
 
 export interface ActionsMenuComponentsProps {
   actionsItems?: Pick<ActionsItemsProps, 'actionOptions' | 'onClick'>

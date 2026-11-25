@@ -5,11 +5,11 @@ import React, { useState } from 'react'
 
 import { CrossSmall, Icon, Upload } from '@linagora/twake-icons'
 
-import ActionsMenuItem from '../components/ActionsMenu/ActionsMenuItem'
-import Button from '../components/Button'
-import ListItemText from '../components/ListItemText'
-import AlertProvider from '../providers/AlertProvider'
-import { useAlert } from '../providers/AlertProvider/useAlert'
+import ActionsMenuItem from '../components/ActionsMenu/ActionsMenuItem.js'
+import Button from '../components/Button/index.js'
+import ListItemText from '../components/ListItemText/index.js'
+import AlertProvider from '../providers/AlertProvider/index.js'
+import { useAlert } from '../providers/AlertProvider/useAlert.js'
 
 const description = `
 To open the file picker from a button or a menu item, render the trigger as a \`label\`, with \`component="label"\`, and put a hidden \`input type="file"\` inside it. The label opens the picker on click, Enter and Space.

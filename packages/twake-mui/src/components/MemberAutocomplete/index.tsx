@@ -4,16 +4,16 @@ import React, { useId, useState } from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import Button from '../Button'
-import { Member, MemberRole } from '../MemberRow/types'
-import MemberAutocompleteActions from './MemberAutocompleteActions'
-import MemberChip from './MemberChip'
-import MemberSuggestion from './MemberSuggestion'
-import { GetMembersFromText, getUnpickedMembers } from './helpers'
-import { locales } from './locales'
-import { useMemberInput } from './useMemberInput'
-import { useMemberSuggestions } from './useMemberSuggestions'
-import { useRoleMenuFocus } from './useRoleMenuFocus'
+import Button from '../Button/index.js'
+import { Member, MemberRole } from '../MemberRow/types.js'
+import MemberAutocompleteActions from './MemberAutocompleteActions.js'
+import MemberChip from './MemberChip.js'
+import MemberSuggestion from './MemberSuggestion.js'
+import { GetMembersFromText, getUnpickedMembers } from './helpers.js'
+import { locales } from './locales/index.js'
+import { useMemberInput } from './useMemberInput.js'
+import { useMemberSuggestions } from './useMemberSuggestions.js'
+import { useRoleMenuFocus } from './useRoleMenuFocus.js'
 
 const LIMIT_TAGS = 3
 

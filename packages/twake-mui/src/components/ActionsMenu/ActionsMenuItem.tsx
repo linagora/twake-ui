@@ -6,10 +6,10 @@ import React, {
   isValidElement
 } from 'react'
 
-import { ListItemSize } from '../ListItem'
-import ListItemButton from '../ListItemButton'
-import ListItemText, { ListItemTextProps } from '../ListItemText'
-import { Action, ActionDocument } from './types'
+import { ListItemSize } from '../ListItem/index.js'
+import ListItemButton from '../ListItemButton/index.js'
+import ListItemText, { ListItemTextProps } from '../ListItemText/index.js'
+import { Action, ActionDocument } from './types.js'
 
 export interface ActionsMenuItemProps extends Omit<
   MenuItemProps,

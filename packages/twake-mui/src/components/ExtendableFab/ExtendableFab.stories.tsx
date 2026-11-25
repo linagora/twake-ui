@@ -5,7 +5,7 @@ import { waitFor, within } from 'storybook/test'
 
 import { Plus } from '@linagora/twake-icons'
 
-import ExtendableFab, { ExtendableFabProps } from './index'
+import ExtendableFab, { ExtendableFabProps } from './index.js'
 
 const meta: Meta<typeof ExtendableFab> = {
   title: 'ExtendableFab',

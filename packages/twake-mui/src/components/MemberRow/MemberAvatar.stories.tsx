@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import image from '../../stories/images/mountains.png'
-import { AvatarSize } from '../Avatar'
-import MemberAvatar from './MemberAvatar'
+import { AvatarSize } from '../Avatar/index.js'
+import MemberAvatar from './MemberAvatar.js'
 
 const sizes: AvatarSize[] = ['xs', 's', 'm', 'l', 'xl']
 const brokenImage = 'https://example.invalid/avatar.png'

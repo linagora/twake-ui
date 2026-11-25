@@ -12,9 +12,9 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { I18n } from 'twake-i18n'
 
-import EditBadge from './index'
-import { theme } from '../../lib/theme'
-import AlertProvider from '../../providers/AlertProvider'
+import EditBadge from './index.js'
+import { theme } from '../../lib/theme.js'
+import AlertProvider from '../../providers/AlertProvider/index.js'
 
 afterEach(cleanup)
 

@@ -6,9 +6,9 @@ import { afterEach, describe, expect, it } from 'vitest'
 
 import { I18n } from 'twake-i18n'
 
-import ConfirmDialogProvider from './index'
-import { useConfirmDialog } from './useConfirmDialog'
-import { theme } from '../../lib/theme'
+import ConfirmDialogProvider from './index.js'
+import { useConfirmDialog } from './useConfirmDialog.js'
+import { theme } from '../../lib/theme.js'
 
 afterEach(cleanup)
 

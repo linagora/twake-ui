@@ -5,7 +5,7 @@ import {
   makeHumanReadableFileName,
   makeValidFileName,
   makeValidUrl
-} from './shortcutHelpers'
+} from './shortcutHelpers.js'
 
 const setup = (
   fileName: string,

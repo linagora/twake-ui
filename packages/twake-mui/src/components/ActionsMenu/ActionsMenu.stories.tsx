@@ -22,28 +22,28 @@ import {
   Telephone
 } from '@linagora/twake-icons'
 
-import DropdownButton from '../DropdownButton'
-import ListItemText from '../ListItemText'
-import { call } from './Actions/call'
-import { divider } from './Actions/divider'
-import { emailTo } from './Actions/emailTo'
-import { makeActions } from './Actions/helpers'
-import { modify } from './Actions/modify'
-import { print } from './Actions/print'
-import { PrintClient } from './Actions/print'
-import { smsTo } from './Actions/smsTo'
-import { viewInContacts } from './Actions/viewInContacts'
-import { viewInDrive } from './Actions/viewInDrive'
-import ActionsMenuItem from './ActionsMenuItem'
-import ActionsMenuMobileHeader from './ActionsMenuMobileHeader'
-import ActionsMenuWrapper from './ActionsMenuWrapper'
-import ActionsMenu from './index'
+import DropdownButton from '../DropdownButton/index.js'
+import ListItemText from '../ListItemText/index.js'
+import { call } from './Actions/call.js'
+import { divider } from './Actions/divider.js'
+import { emailTo } from './Actions/emailTo.js'
+import { makeActions } from './Actions/helpers.js'
+import { modify } from './Actions/modify.js'
+import { print } from './Actions/print.js'
+import { PrintClient } from './Actions/print.js'
+import { smsTo } from './Actions/smsTo.js'
+import { viewInContacts } from './Actions/viewInContacts.js'
+import { viewInDrive } from './Actions/viewInDrive.js'
+import ActionsMenuItem from './ActionsMenuItem.js'
+import ActionsMenuMobileHeader from './ActionsMenuMobileHeader.js'
+import ActionsMenuWrapper from './ActionsMenuWrapper.js'
+import ActionsMenu from './index.js'
 import {
   Action,
   ActionComponentProps,
   ActionDocument,
   WebLinkClient
-} from './types'
+} from './types.js'
 
 const doc: ActionDocument = {
   _id: 'id01',

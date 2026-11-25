@@ -2,8 +2,8 @@ import React from 'react'
 
 import { IconProps } from '@linagora/twake-icons'
 
-import { ListItemSize } from '../ListItem'
-import { ActionTranslate } from './locales'
+import { ListItemSize } from '../ListItem/index.js'
+import { ActionTranslate } from './locales/index.js'
 
 export type { ActionTranslate }
 

@@ -4,14 +4,14 @@ import React, { useState } from 'react'
 
 import { FlagOutlined, Icon, Star } from '@linagora/twake-icons'
 
-import { call } from '../ActionsMenu/Actions/call'
-import { download } from '../ActionsMenu/Actions/download'
-import { emailTo } from '../ActionsMenu/Actions/emailTo'
-import { makeActions } from '../ActionsMenu/Actions/helpers'
-import { modify } from '../ActionsMenu/Actions/modify'
-import { smsTo } from '../ActionsMenu/Actions/smsTo'
-import { ActionDocument } from '../ActionsMenu/types'
-import ActionsBar from './index'
+import { call } from '../ActionsMenu/Actions/call.js'
+import { download } from '../ActionsMenu/Actions/download.js'
+import { emailTo } from '../ActionsMenu/Actions/emailTo.js'
+import { makeActions } from '../ActionsMenu/Actions/helpers.js'
+import { modify } from '../ActionsMenu/Actions/modify.js'
+import { smsTo } from '../ActionsMenu/Actions/smsTo.js'
+import { ActionDocument } from '../ActionsMenu/types.js'
+import ActionsBar from './index.js'
 
 const doc: ActionDocument = {
   _id: 'id01',

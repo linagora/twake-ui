@@ -2,8 +2,8 @@ import { Button, ListItemButton, ListItemText } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import SpotModalSection from './SpotModalSection'
-import SpotModal, { SpotModalProps } from './index'
+import SpotModalSection from './SpotModalSection.js'
+import SpotModal, { SpotModalProps } from './index.js'
 
 const meta: Meta<typeof SpotModal> = {
   title: 'SpotModal',

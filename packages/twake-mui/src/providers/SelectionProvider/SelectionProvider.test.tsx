@@ -3,8 +3,8 @@ import { act, renderHook } from '@testing-library/react'
 import React from 'react'
 import { describe, expect, it } from 'vitest'
 
-import SelectionProvider from './index'
-import { SelectionContextValue, useSelection } from './useSelection'
+import SelectionProvider from './index.js'
+import { SelectionContextValue, useSelection } from './useSelection.js'
 
 const setup = (): { current: SelectionContextValue } =>
   renderHook(() => useSelection(), {

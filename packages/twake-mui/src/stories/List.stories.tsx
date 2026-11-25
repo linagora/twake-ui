@@ -26,10 +26,10 @@ import {
   Right
 } from '@linagora/twake-icons'
 
-import { ListItemLayoutProps } from '../components/ListItem/helpers'
-import ListItemButton from '../components/ListItemButton'
-import ListItemText from '../components/ListItemText'
-import ListSubheader from '../components/ListSubheader'
+import { ListItemLayoutProps } from '../components/ListItem/helpers.js'
+import ListItemButton from '../components/ListItemButton/index.js'
+import ListItemText from '../components/ListItemText/index.js'
+import ListSubheader from '../components/ListSubheader/index.js'
 
 const longText =
   'Ada Lovelace wrote the first algorithm meant to be carried out by a machine, long before any computer existed to run it.'

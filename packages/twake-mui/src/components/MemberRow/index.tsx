@@ -3,14 +3,14 @@ import React from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import ListItem from '../ListItem'
-import ListItemButton from '../ListItemButton'
-import ListItemText from '../ListItemText'
-import MemberOrGroupAvatar from './MemberOrGroupAvatar'
-import MemberRowEnd from './MemberRowEnd'
-import { locales } from './locales'
-import { Member, MemberRole } from './types'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import ListItem from '../ListItem/index.js'
+import ListItemButton from '../ListItemButton/index.js'
+import ListItemText from '../ListItemText/index.js'
+import MemberOrGroupAvatar from './MemberOrGroupAvatar.js'
+import MemberRowEnd from './MemberRowEnd.js'
+import { locales } from './locales/index.js'
+import { Member, MemberRole } from './types.js'
 
 export const FADE_IN_DURATION = 600
 

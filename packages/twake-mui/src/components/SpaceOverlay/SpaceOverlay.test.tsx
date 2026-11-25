@@ -7,15 +7,15 @@ import {
   OverlayPortal,
   overlayThemeOptions,
   SpaceOverlayProvider
-} from './SpaceOverlay'
+} from './SpaceOverlay.js'
 import {
   computeOverlayRegion,
   connectSpaceOverlay,
   mirrorStyles,
   type SpaceOverlay,
   type SpaceOverlayStatus
-} from './connectSpaceOverlay'
-import { TwakeMuiThemeProvider } from '../../providers/ThemeProvider'
+} from './connectSpaceOverlay.js'
+import { TwakeMuiThemeProvider } from '../../providers/ThemeProvider/index.js'
 
 function renderDs(ui: ReactElement): void {
   render(<TwakeMuiThemeProvider>{ui}</TwakeMuiThemeProvider>)

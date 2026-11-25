@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Avatar, { AvatarProps } from '../Avatar'
+import Avatar, { AvatarProps } from '../Avatar/index.js'
 
 export interface MemberAvatarProps extends Omit<AvatarProps, 'src'> {
   initials?: string

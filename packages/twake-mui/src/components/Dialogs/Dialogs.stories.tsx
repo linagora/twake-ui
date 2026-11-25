@@ -19,18 +19,18 @@ import {
   People
 } from '@linagora/twake-icons'
 
-import AlertProvider from '../../providers/AlertProvider'
-import { useAlert } from '../../providers/AlertProvider/useAlert'
-import BottomSheet from '../BottomSheet'
-import BottomSheetItem from '../BottomSheet/BottomSheetItem'
-import type { DialogSize } from '../Dialog'
-import ListItemText from '../ListItemText'
-import ConfirmDialog from './ConfirmDialog'
-import FixedActionsDialog from './FixedActionsDialog'
-import FixedDialog from './FixedDialog'
-import IllustrationDialog from './IllustrationDialog'
-import PermissionDialog from './PermissionDialog'
-import StandardDialog, { StandardDialogProps } from './StandardDialog'
+import AlertProvider from '../../providers/AlertProvider/index.js'
+import { useAlert } from '../../providers/AlertProvider/useAlert.js'
+import BottomSheet from '../BottomSheet/index.js'
+import BottomSheetItem from '../BottomSheet/BottomSheetItem.js'
+import type { DialogSize } from '../Dialog/index.js'
+import ListItemText from '../ListItemText/index.js'
+import ConfirmDialog from './ConfirmDialog.js'
+import FixedActionsDialog from './FixedActionsDialog.js'
+import FixedDialog from './FixedDialog.js'
+import IllustrationDialog from './IllustrationDialog.js'
+import PermissionDialog from './PermissionDialog.js'
+import StandardDialog, { StandardDialogProps } from './StandardDialog.js'
 
 const sizes: DialogSize[] = ['small', 'medium', 'large', 'full']
 

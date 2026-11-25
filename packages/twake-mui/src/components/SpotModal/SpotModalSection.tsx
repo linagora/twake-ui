@@ -1,7 +1,7 @@
 import { List, ListProps } from '@mui/material'
 import React, { useId } from 'react'
 
-import ListSubheader from '../ListSubheader'
+import ListSubheader from '../ListSubheader/index.js'
 
 export interface SpotModalSectionProps extends Omit<ListProps, 'title'> {
   title: string

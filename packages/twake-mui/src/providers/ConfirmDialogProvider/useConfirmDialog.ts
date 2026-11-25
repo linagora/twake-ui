@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import type { ConfirmDialogProps } from '../../components/Dialogs/ConfirmDialog'
+import type { ConfirmDialogProps } from '../../components/Dialogs/ConfirmDialog.js'
 
 export type ShowConfirmDialogOptions = Omit<ConfirmDialogProps, 'open'>
 

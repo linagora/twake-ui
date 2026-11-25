@@ -3,11 +3,11 @@ import React from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import ActionsMenuMobileHeader from '../ActionsMenu/ActionsMenuMobileHeader'
-import ListItemText from '../ListItemText'
-import MemberOrGroupAvatar from './MemberOrGroupAvatar'
-import { locales } from './locales'
-import { Member } from './types'
+import ActionsMenuMobileHeader from '../ActionsMenu/ActionsMenuMobileHeader.js'
+import ListItemText from '../ListItemText/index.js'
+import MemberOrGroupAvatar from './MemberOrGroupAvatar.js'
+import { locales } from './locales/index.js'
+import { Member } from './types.js'
 
 interface MemberRoleMenuHeaderProps {
   member: Member

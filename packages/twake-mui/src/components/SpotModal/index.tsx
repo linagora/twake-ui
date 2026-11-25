@@ -2,7 +2,7 @@ import { Icon, Magnifier } from '@linagora/twake-icons'
 import { Box, DialogTitle, InputBase, Typography } from '@mui/material'
 import React, { useId } from 'react'
 
-import Dialog, { DialogProps } from '../Dialog'
+import Dialog, { DialogProps } from '../Dialog/index.js'
 
 export interface SpotModalHint {
   /** The keys, as drawn: « ↑↓ », « ↵ », « Esc » */

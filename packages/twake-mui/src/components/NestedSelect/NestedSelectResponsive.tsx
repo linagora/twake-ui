@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
 import NestedSelectBottomSheet, {
   NestedSelectBottomSheetProps
-} from './NestedSelectBottomSheet'
-import NestedSelectModal from './NestedSelectModal'
+} from './NestedSelectBottomSheet.js'
+import NestedSelectModal from './NestedSelectModal.js'
 
 export type NestedSelectResponsiveProps = NestedSelectBottomSheetProps
 

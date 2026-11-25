@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { getPlainTextFromMarkdown } from './helpers'
+import { getPlainTextFromMarkdown } from './helpers.js'
 
 describe('getPlainTextFromMarkdown', () => {
   it('gives the words of a Markdown content on one line', () => {

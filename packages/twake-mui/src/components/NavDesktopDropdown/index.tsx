@@ -1,10 +1,10 @@
 import React, { Children, isValidElement, useState, useContext } from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import DropdownText from '../DropdownText'
-import ListItem from '../ListItem'
-import ListItemButton from '../ListItemButton'
-import { SidebarContext } from '../Sidebar/SidebarContext'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import DropdownText from '../DropdownText/index.js'
+import ListItem from '../ListItem/index.js'
+import ListItemButton from '../ListItemButton/index.js'
+import { SidebarContext } from '../Sidebar/SidebarContext.js'
 
 const StaticHeader = ({ label }: { label: string }): React.ReactElement => (
   <ListItem size="small">

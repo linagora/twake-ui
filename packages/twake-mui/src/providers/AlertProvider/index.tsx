@@ -1,7 +1,11 @@
 import { Alert, AlertTitle, Snackbar, SnackbarProps } from '@mui/material'
 import React, { ReactNode, useMemo, useState } from 'react'
 
-import { AlertContext, AlertContextValue, ShowAlertOptions } from './useAlert'
+import {
+  AlertContext,
+  AlertContextValue,
+  ShowAlertOptions
+} from './useAlert.js'
 
 export interface AlertProviderProps {
   children?: ReactNode

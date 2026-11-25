@@ -2,7 +2,7 @@ import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import FilePath from './index'
+import FilePath from './index.js'
 
 const path =
   '/Partages reçus/Cozy 🗄 - Team/Customers & Partners 🛒/Xxxxxx (Xxxxxxxx)/4_Suivi opérationnel/Point de synchro'

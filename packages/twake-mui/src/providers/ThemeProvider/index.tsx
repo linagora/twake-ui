@@ -2,8 +2,8 @@ import { CssBaseline } from '@mui/material'
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import React, { FC, useMemo } from 'react'
 
-import { makeTheme } from '../../lib/makeTheme'
-import { ThemeProviderProps } from './types'
+import { makeTheme } from '../../lib/makeTheme.js'
+import { ThemeProviderProps } from './types.js'
 
 export const TwakeMuiThemeProvider: FC<ThemeProviderProps> = ({
   children,

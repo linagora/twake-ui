@@ -3,7 +3,7 @@ import { alpha } from '@mui/material/styles'
 
 import paletteJson from '@linagora/twake-css/palette.json'
 
-import { PaletteJson } from './types'
+import { PaletteJson } from './types.js'
 
 const paletteData: PaletteJson = paletteJson
 

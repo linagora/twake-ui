@@ -2,8 +2,11 @@ import { Button } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import ConfirmDialogProvider from './index'
-import { ShowConfirmDialogOptions, useConfirmDialog } from './useConfirmDialog'
+import ConfirmDialogProvider from './index.js'
+import {
+  ShowConfirmDialogOptions,
+  useConfirmDialog
+} from './useConfirmDialog.js'
 
 type StoryArgs = Pick<ShowConfirmDialogOptions, 'title' | 'content'>
 

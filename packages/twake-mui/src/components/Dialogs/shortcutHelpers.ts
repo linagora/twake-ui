@@ -1,4 +1,4 @@
-import type { ShowAlert } from '../../providers/AlertProvider/useAlert'
+import type { ShowAlert } from '../../providers/AlertProvider/useAlert.js'
 
 const SHORTCUT_EXTENSION = '.url'
 

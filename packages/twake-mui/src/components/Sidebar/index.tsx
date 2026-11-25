@@ -8,8 +8,8 @@ import {
 import { styled } from '@mui/material/styles'
 import React from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import { SidebarContext } from './SidebarContext'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import { SidebarContext } from './SidebarContext.js'
 
 export const SIDEBAR_MOBILE_HEIGHT = '--sidebarHeight'
 

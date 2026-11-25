@@ -1,7 +1,7 @@
 import { Link, LinkProps } from '@mui/material'
 import React from 'react'
 
-import FilePath from '../FilePath'
+import FilePath from '../FilePath/index.js'
 
 export interface FilePathLinkProps extends Omit<LinkProps, 'children'> {
   children?: string

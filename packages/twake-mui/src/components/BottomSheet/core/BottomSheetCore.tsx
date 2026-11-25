@@ -8,7 +8,7 @@ import { useDrag } from '@use-gesture/react'
 import React, { useEffect, useRef } from 'react'
 import useMeasure from 'react-use-measure'
 
-import { computeClosestStop, computeNextStop, isNodeInside } from './helpers'
+import { computeClosestStop, computeNextStop, isNodeInside } from './helpers.js'
 
 const HIDDEN_MARGIN = 30
 const HORIZONTAL_DRAG_RATIO = 0.8

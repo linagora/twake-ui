@@ -2,9 +2,9 @@ import { Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import AlertProvider from '../../providers/AlertProvider'
-import InstallFlagshipAppDialog from './InstallFlagshipAppDialog'
-import ShortcutDialog from './ShortcutDialog'
+import AlertProvider from '../../providers/AlertProvider/index.js'
+import InstallFlagshipAppDialog from './InstallFlagshipAppDialog.js'
+import ShortcutDialog from './ShortcutDialog.js'
 
 const noop = (): void => undefined
 

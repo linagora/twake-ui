@@ -1,7 +1,7 @@
 import React, { cloneElement, isValidElement } from 'react'
 
-import BottomSheetHeader from './BottomSheetHeader'
-import { getSafeAreaInset } from './safeArea'
+import BottomSheetHeader from './BottomSheetHeader.js'
+import { getSafeAreaInset } from './safeArea.js'
 import {
   BottomPositionParams,
   BottomSheetToolbarProps,
@@ -10,7 +10,7 @@ import {
   MinHeightParams,
   MinimizeAndCloseParams,
   TopPositionParams
-} from './types'
+} from './types.js'
 
 export const ANIMATION_DURATION = 250
 

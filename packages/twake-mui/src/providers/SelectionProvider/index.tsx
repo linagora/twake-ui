@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react'
 
-import { SelectionContext } from './useSelection'
+import { SelectionContext } from './useSelection.js'
 
 export interface SelectionProviderProps {
   children?: ReactNode

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { getComparator, stableSort } from './helpers'
+import { getComparator, stableSort } from './helpers.js'
 
 const values = (rows: Record<string, unknown>[], key: string): unknown[] =>
   rows.map(row => row[key])

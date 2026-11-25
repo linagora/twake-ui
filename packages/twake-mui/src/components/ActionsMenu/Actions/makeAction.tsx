@@ -3,14 +3,14 @@ import React, { forwardRef } from 'react'
 
 import { Icon } from '@linagora/twake-icons'
 
-import ListItemText from '../../ListItemText'
-import ActionsMenuItem from '../ActionsMenuItem'
+import ListItemText from '../../ListItemText/index.js'
+import ActionsMenuItem from '../ActionsMenuItem.js'
 import {
   Action,
   ActionComponent,
   ActionComponentProps,
   ActionComponentSlotProps
-} from '../types'
+} from '../types.js'
 
 export interface MakeActionComponentOptions {
   name: string

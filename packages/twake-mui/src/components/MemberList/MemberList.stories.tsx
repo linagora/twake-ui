@@ -2,8 +2,8 @@ import { Button, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import { Member } from '../MemberRow/types'
-import MemberList, { MemberListProps } from './index'
+import { Member } from '../MemberRow/types.js'
+import MemberList, { MemberListProps } from './index.js'
 
 const roles = [
   { value: 'viewer', label: 'Viewer' },

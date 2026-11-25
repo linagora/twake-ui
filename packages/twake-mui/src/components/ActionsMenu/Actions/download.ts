@@ -1,13 +1,13 @@
 import { Download } from '@linagora/twake-icons'
 
-import { getActionsI18n } from '../locales'
+import { getActionsI18n } from '../locales/index.js'
 import {
   Action,
   ActionCallbackOptions,
   ActionDocument,
   WebviewIntent
-} from '../types'
-import { makeAction } from './makeAction'
+} from '../types.js'
+import { makeAction } from './makeAction.js'
 
 export interface DownloadFileOptions<Client> {
   client: Client

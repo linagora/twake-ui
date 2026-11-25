@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles'
 import cx from 'classnames'
 import React from 'react'
 
-import { colorMapping, nameToColor } from './helpers'
+import { colorMapping, nameToColor } from './helpers.js'
 
 export type AvatarSize = 'xs' | 's' | 'm' | 'l' | 'xl'
 

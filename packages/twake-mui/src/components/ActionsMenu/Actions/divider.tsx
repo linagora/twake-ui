@@ -1,7 +1,7 @@
 import { Divider } from '@mui/material'
 import React, { forwardRef } from 'react'
 
-import { Action, ActionComponentProps } from '../types'
+import { Action, ActionComponentProps } from '../types.js'
 
 const DividerAction = forwardRef<HTMLElement, ActionComponentProps>(
   (_props, ref) => (

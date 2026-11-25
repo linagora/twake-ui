@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { computeClosestStop, computeNextStop } from './helpers'
+import { computeClosestStop, computeNextStop } from './helpers.js'
 
 const stops = [900, 700, 500, 50]
 

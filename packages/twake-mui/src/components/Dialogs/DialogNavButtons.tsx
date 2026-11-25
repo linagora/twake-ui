@@ -1,8 +1,8 @@
 import React from 'react'
 
-import DialogBackButton from './DialogBackButton'
-import DialogCloseButton from './DialogCloseButton'
-import type { DialogLayoutProps } from './useDialogLayout'
+import DialogBackButton from './DialogBackButton.js'
+import DialogCloseButton from './DialogCloseButton.js'
+import type { DialogLayoutProps } from './useDialogLayout.js'
 
 export interface DialogNavButtonsProps extends Pick<
   DialogLayoutProps,

@@ -2,14 +2,14 @@ import React, { forwardRef, useMemo } from 'react'
 
 import { useI18n } from 'twake-i18n'
 
-import { ListItemSize } from '../ListItem'
-import { getActionName, getOnlyNeededActions } from './helpers'
+import { ListItemSize } from '../ListItem/index.js'
+import { getActionName, getOnlyNeededActions } from './helpers.js'
 import {
   ActionComponent,
   ActionDocument,
   ActionObject,
   ActionOptions
-} from './types'
+} from './types.js'
 
 export interface ActionsItemsProps {
   docs: ActionDocument[]

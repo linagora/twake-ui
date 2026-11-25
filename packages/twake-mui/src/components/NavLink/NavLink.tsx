@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import { NavLinkBase, NavLinkBaseProps } from './NavLinkBase'
+import { NavLinkBase, NavLinkBaseProps } from './NavLinkBase.js'
 
 export type NavLinkProps = NavLinkBaseProps
 

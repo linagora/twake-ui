@@ -1,13 +1,13 @@
 import { ButtonProps, ListItemIcon, Radio } from '@mui/material'
 import React, { useRef, useState } from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import ActionsMenuItem from '../ActionsMenu/ActionsMenuItem'
-import ActionsMenuWrapper from '../ActionsMenu/ActionsMenuWrapper'
-import DropdownButton from '../DropdownButton'
-import ListItemText from '../ListItemText'
-import MemberRoleMenuHeader from './MemberRoleMenuHeader'
-import { Member, MemberRole } from './types'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import ActionsMenuItem from '../ActionsMenu/ActionsMenuItem.js'
+import ActionsMenuWrapper from '../ActionsMenu/ActionsMenuWrapper.js'
+import DropdownButton from '../DropdownButton/index.js'
+import ListItemText from '../ListItemText/index.js'
+import MemberRoleMenuHeader from './MemberRoleMenuHeader.js'
+import { Member, MemberRole } from './types.js'
 
 export interface MemberRoleMenuProps {
   /** Member shown in the header of the menu on mobile */

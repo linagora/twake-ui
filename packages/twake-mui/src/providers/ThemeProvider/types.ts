@@ -1,7 +1,7 @@
 import { ThemeOptions } from '@mui/material/styles'
 import { ReactNode } from 'react'
 
-import { PaletteJson } from '../../lib/types'
+import { PaletteJson } from '../../lib/types.js'
 
 export interface ThemeProviderProps {
   children: ReactNode

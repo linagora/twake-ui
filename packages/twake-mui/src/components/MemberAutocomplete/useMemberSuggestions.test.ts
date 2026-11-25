@@ -2,8 +2,8 @@
 import { act, renderHook } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { Member } from '../MemberRow/types'
-import { useMemberSuggestions } from './useMemberSuggestions'
+import { Member } from '../MemberRow/types.js'
+import { useMemberSuggestions } from './useMemberSuggestions.js'
 
 const alice = { id: 'alice', name: 'Alice' }
 const bob = { id: 'bob', name: 'Bob' }

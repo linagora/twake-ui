@@ -8,7 +8,7 @@ import {
   BackgroundPalette,
   GreyPalette,
   BorderPalette
-} from './types'
+} from './types.js'
 
 const paletteData: PaletteJson = paletteJson
 

@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 import { screen } from 'storybook/test'
 
-import ContactCard from './ContactCard'
-import ContactPopover from './index'
+import ContactCard from './ContactCard.js'
+import ContactPopover from './index.js'
 
 const meta: Meta<typeof ContactPopover> = {
   title: 'ContactPopover',

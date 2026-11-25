@@ -11,7 +11,7 @@ import React from 'react'
 
 import { Check } from '@linagora/twake-icons'
 
-import Switch, { SwitchProps } from './index'
+import Switch, { SwitchProps } from './index.js'
 
 const colors = ['primary', 'secondary', 'success', 'default'] as const
 

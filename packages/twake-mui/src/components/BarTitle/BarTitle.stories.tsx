@@ -2,7 +2,7 @@ import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import BarTitle from './index'
+import BarTitle from './index.js'
 
 const longTitle =
   'Ada Lovelace, born Augusta Ada Byron, was an English mathematician and writer chiefly known for her work on the Analytical Engine'

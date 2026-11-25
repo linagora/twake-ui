@@ -2,7 +2,7 @@ import { Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import IntentHeader from './index'
+import IntentHeader from './index.js'
 
 const appIcon = `data:image/svg+xml,${encodeURIComponent(
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="10" fill="#297EF2"/></svg>'

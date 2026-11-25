@@ -1,8 +1,8 @@
 import { AlertProps, Typography } from '@mui/material'
 import React from 'react'
 
-import ProgressionBannerProgress from './ProgressionBannerProgress'
-import ProgressionBannerRoot from './ProgressionBannerRoot'
+import ProgressionBannerProgress from './ProgressionBannerProgress.js'
+import ProgressionBannerRoot from './ProgressionBannerRoot.js'
 
 export interface ProgressionBannerProps extends Omit<
   AlertProps,

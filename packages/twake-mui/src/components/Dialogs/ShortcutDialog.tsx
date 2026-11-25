@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import { useAlert } from '../../providers/AlertProvider/useAlert'
-import ConfirmDialog from './ConfirmDialog'
-import { locales } from './locales'
+import { useAlert } from '../../providers/AlertProvider/useAlert.js'
+import ConfirmDialog from './ConfirmDialog.js'
+import { locales } from './locales/index.js'
 import {
   SaveShortcut,
   checkAndSaveShortcut,
   makeHumanReadableFileName
-} from './shortcutHelpers'
+} from './shortcutHelpers.js'
 
 export interface ShortcutDialogProps {
   /** Shortcut to edit, which prefills the fields */

@@ -10,8 +10,8 @@ import React, {
 
 import { Icon, IconProps } from '@linagora/twake-icons'
 
-import Label from './Label'
-import UnshrinkableFab from './UnshrinkableFab'
+import Label from './Label.js'
+import UnshrinkableFab from './UnshrinkableFab.js'
 
 export interface ScrollOptions {
   /** Time in ms without a scroll event after which the Fab unfolds */

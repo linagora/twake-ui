@@ -2,7 +2,7 @@ import { Box, Grid, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import DropdownText, { DropdownTextVariant } from './index'
+import DropdownText, { DropdownTextVariant } from './index.js'
 
 const variants: DropdownTextVariant[] = [
   'h1',

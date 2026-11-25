@@ -4,10 +4,10 @@ import React from 'react'
 
 import { Icon, Right } from '@linagora/twake-icons'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import ListItemButton from '../ListItemButton'
-import ListItemText from '../ListItemText'
-import type { NestedSelectItem, NestedSelectRadioPosition } from './types'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import ListItemButton from '../ListItemButton/index.js'
+import ListItemText from '../ListItemText/index.js'
+import type { NestedSelectItem, NestedSelectRadioPosition } from './types.js'
 
 export interface ItemRowProps {
   item: NestedSelectItem

@@ -1,8 +1,8 @@
 import { List } from '@mui/material'
 import React from 'react'
 
-import ListItemSkeleton from '../ListItemSkeleton'
-import ListSubheader from '../ListSubheader'
+import ListItemSkeleton from '../ListItemSkeleton/index.js'
+import ListSubheader from '../ListSubheader/index.js'
 
 export interface ListSkeletonProps {
   count?: number

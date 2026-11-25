@@ -2,7 +2,7 @@ import { DialogActions, DialogActionsProps } from '@mui/material'
 import cx from 'classnames'
 import React from 'react'
 
-import type { DialogSectionsProps } from './types'
+import type { DialogSectionsProps } from './types.js'
 
 export interface DialogFluidContentProps extends Omit<
   DialogSectionsProps,

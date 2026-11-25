@@ -4,7 +4,7 @@ import React from 'react'
 
 import { Cloud } from '@linagora/twake-icons'
 
-import SearchBar from './index'
+import SearchBar from './index.js'
 
 const sizes = ['small', 'medium', 'large', 'auto'] as const
 

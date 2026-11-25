@@ -2,7 +2,7 @@ import { List } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React, { useContext } from 'react'
 
-import { SidebarContext } from '../Sidebar/SidebarContext'
+import { SidebarContext } from '../Sidebar/SidebarContext.js'
 
 const NavRoot = styled(List, {
   shouldForwardProp: prop => prop !== 'disableMobileView'

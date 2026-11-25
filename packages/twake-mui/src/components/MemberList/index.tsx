@@ -2,9 +2,9 @@ import { List } from '@mui/material'
 import React from 'react'
 import { useGetIsMounted } from 'rooks'
 
-import MemberRow from '../MemberRow'
-import { Member, MemberRole } from '../MemberRow/types'
-import EmptyMembers from './EmptyMembers'
+import MemberRow from '../MemberRow/index.js'
+import { Member, MemberRole } from '../MemberRow/types.js'
+import EmptyMembers from './EmptyMembers.js'
 
 export interface MemberListProps {
   members: Member[]

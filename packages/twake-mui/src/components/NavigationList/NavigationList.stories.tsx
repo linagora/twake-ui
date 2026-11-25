@@ -11,12 +11,12 @@ import React, { useState } from 'react'
 
 import { Bank, Gear, Icon, People, Right, Trash } from '@linagora/twake-icons'
 
-import ListItem from '../ListItem'
-import ListItemText from '../ListItemText'
-import Tabs from '../Tabs'
-import NavigationListHeader from './NavigationListHeader'
-import NavigationListSection from './NavigationListSection'
-import NavigationList from './index'
+import ListItem from '../ListItem/index.js'
+import ListItemText from '../ListItemText/index.js'
+import Tabs from '../Tabs/index.js'
+import NavigationListHeader from './NavigationListHeader.js'
+import NavigationListSection from './NavigationListSection.js'
+import NavigationList from './index.js'
 
 const rightArrow = (
   <ListItemSecondaryAction>

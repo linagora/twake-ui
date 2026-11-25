@@ -1,8 +1,8 @@
 import { Divider } from '@mui/material'
 import React, { forwardRef } from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import ActionsMenuItem, { ActionsMenuItemProps } from './ActionsMenuItem'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import ActionsMenuItem, { ActionsMenuItemProps } from './ActionsMenuItem.js'
 
 export type ActionsMenuMobileHeaderProps = Omit<
   ActionsMenuItemProps,

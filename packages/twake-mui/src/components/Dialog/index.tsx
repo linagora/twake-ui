@@ -5,7 +5,7 @@ import {
 import cx from 'classnames'
 import React from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
 
 export type DialogSize = 'small' | 'medium' | 'large' | 'full'
 

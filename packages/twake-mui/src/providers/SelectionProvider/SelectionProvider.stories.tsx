@@ -2,8 +2,8 @@ import { Button, Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
-import SelectionProvider from './index'
-import { useSelection } from './useSelection'
+import SelectionProvider from './index.js'
+import { useSelection } from './useSelection.js'
 
 const meta: Meta<typeof SelectionProvider> = {
   title: 'SelectionProvider',

@@ -12,7 +12,7 @@ import React from 'react'
 
 import { Dots, Download, Icon } from '@linagora/twake-icons'
 
-import Alert from '../components/Alert'
+import Alert from '../components/Alert/index.js'
 
 const severities = [
   'primary',

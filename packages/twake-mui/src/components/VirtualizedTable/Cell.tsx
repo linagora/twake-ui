@@ -2,14 +2,14 @@ import { TableCell, Skeleton } from '@mui/material'
 import React, { useRef } from 'react'
 import { useOnLongPress } from 'rooks'
 
-import { getPath } from './helpers'
+import { getPath } from './helpers.js'
 import {
   _isLoading as _isLoadingSymbol,
   type CellChildProps,
   type Column,
   type Row,
   type RowContentProps
-} from './types'
+} from './types.js'
 
 const DOUBLE_CLICK_DELAY = 400
 const LONG_PRESS_DURATION = 300

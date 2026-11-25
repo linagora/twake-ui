@@ -5,7 +5,7 @@ import {
 import cx from 'classnames'
 import React, { forwardRef } from 'react'
 
-import { ListItemGutters } from '../ListItem/helpers'
+import { ListItemGutters } from '../ListItem/helpers.js'
 
 export interface ListSubheaderProps extends Omit<MuiListSubheaderProps, 'ref'> {
   gutters?: ListItemGutters

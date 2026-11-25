@@ -16,14 +16,14 @@ import React, { useRef, useState } from 'react'
 import { Camera, Icon, Pen, Spinner, Trash } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
-import { useAlert } from '../../providers/AlertProvider/useAlert'
-import de from './locales/de.json'
-import en from './locales/en.json'
-import es from './locales/es.json'
-import fr from './locales/fr.json'
-import it from './locales/it.json'
-import ru from './locales/ru.json'
-import vi from './locales/vi.json'
+import { useAlert } from '../../providers/AlertProvider/useAlert.js'
+import de from './locales/de.json' with { type: 'json' }
+import en from './locales/en.json' with { type: 'json' }
+import es from './locales/es.json' with { type: 'json' }
+import fr from './locales/fr.json' with { type: 'json' }
+import it from './locales/it.json' with { type: 'json' }
+import ru from './locales/ru.json' with { type: 'json' }
+import vi from './locales/vi.json' with { type: 'json' }
 
 const locales = { de, en, es, fr, it, ru, vi }
 

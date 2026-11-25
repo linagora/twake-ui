@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { AvatarSize } from '../Avatar'
-import MemberAvatar from './MemberAvatar'
-import MemberGroupAvatar from './MemberGroupAvatar'
-import { Member } from './types'
+import { AvatarSize } from '../Avatar/index.js'
+import MemberAvatar from './MemberAvatar.js'
+import MemberGroupAvatar from './MemberGroupAvatar.js'
+import { Member } from './types.js'
 
 interface MemberOrGroupAvatarProps {
   member: Member

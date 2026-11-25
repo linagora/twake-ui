@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 
 import { Icon, IconProps } from '@linagora/twake-icons'
 
-import { SidebarContext } from '../Sidebar/SidebarContext'
+import { SidebarContext } from '../Sidebar/SidebarContext.js'
 
 const NavIconRoot = styled(ListItemIcon, {
   shouldForwardProp: prop => prop !== 'disableMobileView'

@@ -5,7 +5,7 @@ import {
   overlayRegionMessage,
   parseOverlayRegion,
   parseOverlayRegionMessage
-} from './region'
+} from './region.js'
 
 describe('parseOverlayRegion', () => {
   it('takes the whole page or a list of boxes', () => {

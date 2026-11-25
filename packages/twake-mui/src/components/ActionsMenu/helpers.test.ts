@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
-import { getOnlyNeededActions } from './helpers'
-import { Action, ActionDocument, ActionObject } from './types'
+import { getOnlyNeededActions } from './helpers.js'
+import { Action, ActionDocument, ActionObject } from './types.js'
 
 const Component = (): null => null
 

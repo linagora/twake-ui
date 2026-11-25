@@ -8,9 +8,9 @@ import {
   TableVirtuosoProps
 } from 'react-virtuoso'
 
-import { FixedHeaderContent } from './FixedHeaderContent'
-import { RowContent } from './RowContent'
-import { getComparator, stableSort } from './helpers'
+import { FixedHeaderContent } from './FixedHeaderContent.js'
+import { RowContent } from './RowContent.js'
+import { getComparator, stableSort } from './helpers.js'
 import {
   _isLoading,
   type Column,
@@ -18,13 +18,13 @@ import {
   type Row,
   type RowContentProps,
   type TableContext
-} from './types'
-import { virtuosoComponents } from './virtuosoComponents'
+} from './types.js'
+import { virtuosoComponents } from './virtuosoComponents.js'
 
 export type {
   Column as VirtualizedTableColumn,
   Row as VirtualizedTableRow
-} from './types'
+} from './types.js'
 
 export interface VirtualizedTableProps extends Omit<
   TableVirtuosoProps<Row, TableContext>,

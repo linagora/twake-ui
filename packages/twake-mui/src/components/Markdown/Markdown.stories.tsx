@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import React from 'react'
 
 import mountains from '../../stories/images/mountains.png'
-import { getPlainTextFromMarkdown } from './helpers'
-import Markdown from './index'
+import { getPlainTextFromMarkdown } from './helpers.js'
+import Markdown from './index.js'
 
 const content = `
 # Demo

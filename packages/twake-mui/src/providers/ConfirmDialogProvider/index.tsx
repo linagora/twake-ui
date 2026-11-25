@@ -1,11 +1,11 @@
 import React, { ReactNode, useMemo, useState } from 'react'
 
-import ConfirmDialog from '../../components/Dialogs/ConfirmDialog'
+import ConfirmDialog from '../../components/Dialogs/ConfirmDialog.js'
 import {
   ConfirmDialogContext,
   ConfirmDialogContextValue,
   ShowConfirmDialogOptions
-} from './useConfirmDialog'
+} from './useConfirmDialog.js'
 
 export interface ConfirmDialogProviderProps {
   children?: ReactNode

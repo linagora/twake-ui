@@ -4,8 +4,8 @@ import React from 'react'
 import { CrossCircleOutline, Icon, Spinner } from '@linagora/twake-icons'
 import { useI18n } from 'twake-i18n'
 
-import MemberRoleMenu from './MemberRoleMenu'
-import { Member, MemberRole } from './types'
+import MemberRoleMenu from './MemberRoleMenu.js'
+import { Member, MemberRole } from './types.js'
 
 interface MemberRowActionsProps {
   member: Member

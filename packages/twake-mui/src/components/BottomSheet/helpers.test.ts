@@ -9,7 +9,7 @@ import {
   minimizeAndClose,
   computeToolbarHeight,
   computeBottomSpacer
-} from './helpers'
+} from './helpers.js'
 
 vi.mock('./safeArea', () => ({
   getSafeAreaInset: vi.fn().mockReturnValue(15)

@@ -5,7 +5,7 @@ import React from 'react'
 
 import { CloudSync2, Icon } from '@linagora/twake-icons'
 
-import ProgressionBanner from './index'
+import ProgressionBanner from './index.js'
 
 const icon = <Icon icon={CloudSync2} />
 const errorLight = 'var(--twake-palette-error-light)'

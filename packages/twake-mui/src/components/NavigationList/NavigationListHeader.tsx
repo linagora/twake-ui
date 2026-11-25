@@ -1,8 +1,8 @@
 import { Typography } from '@mui/material'
 import React, { ReactNode } from 'react'
 
-import { useBreakpoints } from '../../hooks/useBreakpoints'
-import ListSubheader from '../ListSubheader'
+import { useBreakpoints } from '../../hooks/useBreakpoints.js'
+import ListSubheader from '../ListSubheader/index.js'
 
 export interface NavigationListHeaderProps {
   children?: ReactNode

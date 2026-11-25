@@ -2,8 +2,8 @@ import { Box, Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import { COLORS } from './helpers'
-import ColorList, { ColorListProps } from './index'
+import { COLORS } from './helpers.js'
+import ColorList, { ColorListProps } from './index.js'
 
 const meta: Meta<typeof ColorList> = {
   title: 'ColorList',

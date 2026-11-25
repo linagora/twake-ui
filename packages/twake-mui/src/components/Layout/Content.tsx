@@ -2,7 +2,7 @@ import { SxProps } from '@mui/material'
 import { styled, Theme } from '@mui/material/styles'
 import React, { useContext } from 'react'
 
-import { LayoutContext, TwoPanesProps } from './Layout'
+import { LayoutContext, TwoPanesProps } from './Layout.js'
 
 const ContentRoot = styled('div', {
   shouldForwardProp: prop => prop !== 'monoColumn'

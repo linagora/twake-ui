@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles'
 import React, { forwardRef } from 'react'
 
-import BottomSheetItem, { BottomSheetItemProps } from './BottomSheetItem'
+import BottomSheetItem, { BottomSheetItemProps } from './BottomSheetItem.js'
 
 export type BottomSheetHeaderProps = Omit<
   BottomSheetItemProps,

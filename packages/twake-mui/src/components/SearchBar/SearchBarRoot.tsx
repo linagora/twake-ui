@@ -1,6 +1,6 @@
 import { Paper, styled } from '@mui/material'
 
-import { SearchBarProps } from './types'
+import { SearchBarProps } from './types.js'
 
 const sizeToPixel = { small: 40, medium: 48, large: 56, auto: 'auto' }
 const radiusBySize = { small: 20, medium: 24, large: 28, auto: 24 }

@@ -2,7 +2,7 @@ import { Stack } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import MemberRoleMenu, { MemberRoleMenuProps } from './MemberRoleMenu'
+import MemberRoleMenu, { MemberRoleMenuProps } from './MemberRoleMenu.js'
 
 const roles = [
   { value: 'viewer', label: 'Viewer' },

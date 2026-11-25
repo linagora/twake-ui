@@ -4,8 +4,8 @@ import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
-import ColorList, { ColorListProps } from './index'
-import { theme } from '../../lib/theme'
+import ColorList, { ColorListProps } from './index.js'
+import { theme } from '../../lib/theme.js'
 
 afterEach(cleanup)
 

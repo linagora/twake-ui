@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import React, { useState } from 'react'
 
-import LoadMore, { LoadMoreProps } from './index'
+import LoadMore, { LoadMoreProps } from './index.js'
 
 const sleep = (timeout: number): Promise<void> =>
   new Promise(resolve => setTimeout(resolve, timeout))
