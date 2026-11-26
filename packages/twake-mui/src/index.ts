@@ -132,6 +132,7 @@ export { default as ProgressionBanner } from './components/ProgressionBanner/ind
 export { default as Tabs } from './components/Tabs/index.js'
 export { default as Switch } from './components/Switch/index.js'
 export { default as SearchBar } from './components/SearchBar/index.js'
+export { default as SaveToDriveButton } from './components/SaveToDriveButton/index.js'
 export { default as SpotModal } from './components/SpotModal/index.js'
 export { default as SpotModalSection } from './components/SpotModal/SpotModalSection.js'
 export { Sidebar, SIDEBAR_MOBILE_HEIGHT } from './components/Sidebar/index.js'
@@ -368,6 +369,10 @@ export type { NestedSelectResponsiveProps } from './components/NestedSelect/Nest
 export type { TabsProps } from './components/Tabs/index.js'
 export type { SwitchProps } from './components/Switch/index.js'
 export type { SearchBarProps } from './components/SearchBar/types.js'
+export type {
+  SaveToDriveButtonProps,
+  SaveToDriveStatus
+} from './components/SaveToDriveButton/index.js'
 export type {
   SpotModalProps,
   SpotModalHint
