@@ -43,6 +43,7 @@
     "build": "npm run clean && tsc -p tsconfig.build.json && node scripts/copyAssets.mjs",
     "build:doc": "storybook build --output-dir storybook-static",
     "start": "tsc -p tsconfig.build.json --watch",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run -c vitest.unit.config.ts",
     "test:browser": "vitest run -c test/browser/vitest.config.ts",
     "test:bundle": "npm run build && vitest run -c vitest.bundle.config.ts",
