@@ -24,3 +24,17 @@ Categories: UX, UI, Product, Architecture, Infra, Tech.
 - Decided by: JF-Cozy (front-end developer), 2026-11-26, [linagora/twake-drive#4660](https://github.com/linagora/twake-drive/issues/4660)
 - Why: the `components` prop replaces the whole default set, and the default row sets its own `selected` and `className` and takes no `ref`, so a drag and drop row cannot build on it.
 - Scope: `VirtualizedTable`.
+
+## 2026-11-26, [UX] A saved file opens in Drive when the app can open it
+
+- Decision: in `SaveToDriveButton`, `saved` is a "See in Drive" button when the app passes `onOpen`, and a status ("File saved to your Drive", not clickable) without it.
+- Decided by: Crash-- (CTO), 2026-11-26, [Crash--/twake-mail-frontend#1203](https://github.com/Crash--/twake-mail-frontend/pull/1203)
+- Why: Twake Mail opens the saved file in Drive; Twake Calendar only shows that it is saved.
+- Scope: `SaveToDriveButton`.
+
+## 2026-11-26, [UX] SaveToDriveButton keeps the focus while it saves
+
+- Decision: while it saves, `SaveToDriveButton` is `aria-disabled` and ignores clicks, instead of using the `loading` of MUI's `IconButton`.
+- Decided by: Crash-- (CTO), 2026-11-26, [Crash--/twake-ui#47](https://github.com/Crash--/twake-ui/pull/47)
+- Why: MUI 9.6 renders `disabled={disabled || loading}` ([`IconButton.js#L209`](https://github.com/mui/material-ui/blob/v9.6.0/packages/mui-material/src/IconButton/IconButton.js#L209)), and a disabled button loses the focus the user just put on it.
+- Scope: `SaveToDriveButton`.

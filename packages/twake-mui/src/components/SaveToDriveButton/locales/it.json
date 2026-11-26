@@ -1,0 +1,8 @@
+{
+  "SaveToDriveButton": {
+    "idle": "Salva nel mio Drive",
+    "saving": "Salvataggio su Drive…",
+    "saved": "File salvato nel tuo Drive",
+    "open": "Vedi in Drive"
+  }
+}
