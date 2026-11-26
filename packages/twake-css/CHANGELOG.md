@@ -1,3 +1,10 @@
+# @linagora/twake-css [1.3.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-css@1.2.2...@linagora/twake-css@1.3.0) (2026-11-26)
+
+
+### Features
+
+* **twake-css:** Add a high-contrast colour scheme ([170513c](https://github.com/linagora/twake-ui/commit/170513c03308309eea6acfcbc150f208d2b67ca8)), closes [hi#contrast](https://github.com/hi/issues/contrast) [#b5672c](https://github.com/linagora/twake-ui/issues/b5672c) [#ac622a](https://github.com/linagora/twake-ui/issues/ac622a) [#281c07](https://github.com/linagora/twake-ui/issues/281c07) [#7a461e](https://github.com/linagora/twake-ui/issues/7a461e) [#08250b](https://github.com/linagora/twake-ui/issues/08250b) [#256](https://github.com/linagora/twake-ui/issues/256)
+
 ## @linagora/twake-css [1.2.2](https://github.com/linagora/twake-ui/compare/@linagora/twake-css@1.2.1...@linagora/twake-css@1.2.2) (2026-11-24)
 
 
