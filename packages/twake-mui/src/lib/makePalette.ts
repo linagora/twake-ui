@@ -19,6 +19,7 @@ export const makePalette = (
   background: BackgroundPalette
   grey: GreyPalette
   border: BorderPalette
+  Chip: { defaultAvatarColor: string }
 } => {
   const palette = deepmerge(paletteData, overrides)
 
@@ -78,6 +79,7 @@ export const makePalette = (
         A700: palette.Grey.A700,
         A900: palette.Grey.A900
       },
+      Chip: { defaultAvatarColor: 'var(--twake-palette-grey-300)' },
       text: {
         primary: palette.Common.white,
         secondary: alpha(palette.Common.white, 0.64),
@@ -171,6 +173,7 @@ export const makePalette = (
       A700: palette.Grey.A700,
       A900: palette.Grey.A900
     },
+    Chip: { defaultAvatarColor: 'var(--twake-palette-grey-700)' },
     text: {
       primary: alpha(palette.Grey[900], 0.9),
       secondary: alpha(palette.Grey[900], 0.64),
