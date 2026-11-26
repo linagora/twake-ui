@@ -155,6 +155,7 @@ export {
 export { COLORS } from './components/ColorList/helpers.js'
 export { default as AccordionExpandIcon } from './components/AccordionExpandIcon/index.js'
 export { default as VirtualizedTable } from './components/VirtualizedTable/index.js'
+export { default as VirtualizedGridList } from './components/VirtualizedGridList/index.js'
 export { VirtuosoMockContext } from 'react-virtuoso'
 export { useBreakpoints } from './hooks/useBreakpoints.js'
 export {
@@ -392,4 +393,5 @@ export type {
   VirtualizedTableColumn,
   VirtualizedTableRow
 } from './components/VirtualizedTable/index.js'
+export type { VirtualizedGridListProps } from './components/VirtualizedGridList/index.js'
 export type { Breakpoints } from './hooks/useBreakpoints.js'
