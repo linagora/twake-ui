@@ -28,10 +28,10 @@ export const Code: FC<{ children: ReactNode; tone?: 'class' | 'var' }> = ({
   )
 }
 
-export const Swatch: FC<{ color: string; mode?: 'light' | 'dark' }> = ({
-  color,
-  mode
-}) => (
+export const Swatch: FC<{
+  color: string
+  mode?: 'light' | 'dark' | 'contrast'
+}> = ({ color, mode }) => (
   <Box
     data-theme={mode}
     sx={{

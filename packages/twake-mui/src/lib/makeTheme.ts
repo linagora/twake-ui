@@ -1,4 +1,9 @@
-import { createTheme, Overlays, ThemeOptions } from '@mui/material/styles'
+import {
+  createColorScheme,
+  createTheme,
+  Overlays,
+  ThemeOptions
+} from '@mui/material/styles'
 import { deepmerge } from '@mui/utils'
 
 import { makePalette } from './makePalette.js'
@@ -31,6 +36,8 @@ export const makeTheme = (
   paletteOverrides?: Partial<PaletteJson>,
   themeOptions?: ThemeOptions
 ): ReturnType<typeof createTheme> => {
+  const lightScheme = themeOptions?.colorSchemes?.light
+
   const baseOptions: ThemeOptions = {
     ...themesCommonConfig,
     cssVariables: { colorSchemeSelector: 'data-theme', cssVarPrefix: 'twake' },
@@ -44,7 +51,17 @@ export const makeTheme = (
         palette: makePalette('dark', paletteOverrides),
         shadows: makeShadows('dark'),
         overlays: Array<string>(25).fill('none') as Overlays
-      }
+      },
+      // MUI completes only the light and dark schemes: this one must come
+      // complete, or its palette lacks common, the channels, etc. It is a
+      // light scheme, so it takes the light additions of themeOptions, but
+      // keeps every value it defines.
+      contrast: createColorScheme(
+        deepmerge(typeof lightScheme === 'object' ? lightScheme : {}, {
+          palette: makePalette('contrast', paletteOverrides),
+          shadows: makeShadows('light')
+        })
+      )
     },
     typography: makeTypography(),
     shadows: makeShadows(mode),

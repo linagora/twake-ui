@@ -31,22 +31,35 @@ describe('twake-css/dist/vars.css', () => {
     readFileSync(require.resolve('@linagora/twake-css/dist/vars.css'), 'utf8')
   )
 
-  const emitted: Record<'light' | 'dark', Declarations> = {
+  const schemes = ['light', 'dark', 'contrast'] as const
+  type Scheme = (typeof schemes)[number]
+
+  const emitted: Record<Scheme, Declarations> = {
     light: {},
-    dark: {}
+    dark: {},
+    contrast: {}
   }
+  // A scheme takes every block that names no other scheme, `:root` included.
   for (const sheet of makeTheme().generateStyleSheets()) {
     for (const [selector, decls] of Object.entries(sheet)) {
-      if (!selector.includes('dark')) Object.assign(emitted.light, decls)
-      if (!selector.includes('light')) Object.assign(emitted.dark, decls)
+      for (const scheme of schemes) {
+        const others = schemes.filter(other => other !== scheme)
+        if (!others.some(other => selector.includes(other)))
+          Object.assign(emitted[scheme], decls)
+      }
     }
   }
 
   it('declares every variable with the value TwakeMuiThemeProvider emits', () => {
     let checked = 0
     for (const [selector, decls] of vars) {
-      // Sass drops the quotes: [data-theme=dark] and :root:not([data-theme=light]).
-      const mode = /dark|:not\(/.test(selector) ? 'dark' : 'light'
+      // Sass drops the quotes: [data-theme=dark] and :root:not([data-theme=light], …).
+      // The light block also starts contrast, which overrides it later.
+      const mode: Scheme = /dark|:not\(/.test(selector)
+        ? 'dark'
+        : selector.includes('light')
+          ? 'light'
+          : 'contrast'
       for (const [name, value] of Object.entries(decls)) {
         expect(normalize(emitted[mode][name]), `${name} in ${mode} mode`).toBe(
           normalize(value)
@@ -55,5 +68,19 @@ describe('twake-css/dist/vars.css', () => {
       }
     }
     expect(checked).toBeGreaterThan(200)
+  })
+
+  it('overrides in [data-theme=contrast] every light variable the contrast scheme changes', () => {
+    const block = (match: (selector: string) => boolean): Declarations =>
+      Object.assign({}, ...vars.filter(([s]) => match(s)).map(([, d]) => d))
+    const light = block(s => s.includes('light') && !s.includes(':not('))
+    const contrast = block(s => s === '[data-theme=contrast]')
+
+    expect(Object.keys(contrast).length).toBeGreaterThan(30)
+    for (const name of Object.keys(light)) {
+      expect(normalize(contrast[name] ?? light[name]), name).toBe(
+        normalize(emitted.contrast[name])
+      )
+    }
   })
 })

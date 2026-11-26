@@ -1,9 +1,27 @@
-import { TwakeMuiThemeProvider } from '@linagora/twake-mui'
+import {
+  TwakeMuiThemeProvider,
+  useApplyColorScheme,
+  type TwakeColorScheme
+} from '@linagora/twake-mui'
 import type { Preview } from '@storybook/react-vite'
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 
 import '../src/vars.scss'
 import '../src/utils.scss'
+
+/**
+ * MUI maps the light mode to the `light` scheme: the `contrast` scheme is
+ * reached at runtime, the way an app switches it on.
+ */
+const ColorSchemeSync = ({ scheme }: { scheme: TwakeColorScheme }): null => {
+  const applyColorScheme = useApplyColorScheme()
+
+  useLayoutEffect(() => {
+    applyColorScheme(scheme)
+  }, [scheme, applyColorScheme])
+
+  return null
+}
 
 const preview: Preview = {
   parameters: {
@@ -18,7 +36,7 @@ const preview: Preview = {
       defaultValue: 'light',
       toolbar: {
         icon: 'circlehollow',
-        items: ['light', 'dark'],
+        items: ['light', 'dark', 'contrast'],
         showName: true
       }
     }
@@ -28,8 +46,9 @@ const preview: Preview = {
     (Story, context) => (
       <TwakeMuiThemeProvider
         key={context.globals.theme}
-        mode={context.globals.theme}
+        mode={context.globals.theme === 'dark' ? 'dark' : 'light'}
       >
+        <ColorSchemeSync scheme={context.globals.theme} />
         <Story />
       </TwakeMuiThemeProvider>
     )

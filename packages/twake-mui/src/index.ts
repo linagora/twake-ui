@@ -158,6 +158,7 @@ export { default as VirtualizedTable } from './components/VirtualizedTable/index
 export { default as VirtualizedGridList } from './components/VirtualizedGridList/index.js'
 export { VirtuosoMockContext } from 'react-virtuoso'
 export { useBreakpoints } from './hooks/useBreakpoints.js'
+export { useApplyColorScheme } from './hooks/useApplyColorScheme.js'
 export {
   connectSpaceOverlay,
   computeOverlayRegion
@@ -177,7 +178,7 @@ export {
 export { OverlayFrame } from './components/SpaceOverlay/OverlayFrame.js'
 // TYPES
 export type { TwakeTheme } from './lib/theme.js'
-export type { PaletteJson } from './lib/types.js'
+export type { PaletteJson, TwakeColorScheme } from './lib/types.js'
 export type { ActionsBarProps } from './components/ActionsBar/index.js'
 export type {
   ActionsMenuProps,

@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import type { Preview, StoryContext } from '@storybook/react-vite'
 import { Box, CssBaseline, ThemeProvider } from '@mui/material'
 import type { ThemeOptions } from '@mui/material/styles'
 import { I18n } from 'twake-i18n'
+import { useApplyColorScheme } from '../src/hooks/useApplyColorScheme'
+import type { TwakeColorScheme } from '../src/lib/types'
 import { makeTheme } from '../src/lib/makeTheme'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
@@ -46,6 +48,20 @@ const instantTransitions: ThemeOptions = {
   }
 }
 
+/**
+ * MUI maps the light mode to the `light` scheme: the `contrast` scheme is
+ * reached at runtime, the way an app switches it on.
+ */
+const ColorSchemeSync = ({ scheme }: { scheme: TwakeColorScheme }): null => {
+  const applyColorScheme = useApplyColorScheme()
+
+  useLayoutEffect(() => {
+    applyColorScheme(scheme)
+  }, [scheme, applyColorScheme])
+
+  return null
+}
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -82,7 +98,9 @@ const preview: Preview = {
         'desktop-light': { viewport: 'desktop' },
         'mobile-light': { viewport: 'mobile' },
         'desktop-dark': { viewport: 'desktop', theme: 'dark' },
-        'mobile-dark': { viewport: 'mobile', theme: 'dark' }
+        'mobile-dark': { viewport: 'mobile', theme: 'dark' },
+        'desktop-contrast': { viewport: 'desktop', theme: 'contrast' },
+        'mobile-contrast': { viewport: 'mobile', theme: 'contrast' }
       }
     }
   },
@@ -94,7 +112,7 @@ const preview: Preview = {
       defaultValue: 'light',
       toolbar: {
         icon: 'circlehollow',
-        items: ['light', 'dark'],
+        items: ['light', 'dark', 'contrast'],
         showName: true
       }
     }
@@ -106,7 +124,7 @@ const preview: Preview = {
     (Story, context) => {
       const themeMode = context.globals.theme
       const theme = makeTheme(
-        themeMode,
+        themeMode === 'dark' ? 'dark' : 'light',
         undefined,
         context.tags.includes('argos') ? instantTransitions : undefined
       )
@@ -115,7 +133,12 @@ const preview: Preview = {
 
       return (
         <I18n lang="en" dictRequire={() => ({})}>
-          <ThemeProvider key={themeMode} theme={theme} defaultMode={themeMode}>
+          <ThemeProvider
+            key={themeMode}
+            theme={theme}
+            defaultMode={themeMode === 'dark' ? 'dark' : 'light'}
+          >
+            <ColorSchemeSync scheme={themeMode} />
             <CssBaseline />
             <Box
               sx={{
