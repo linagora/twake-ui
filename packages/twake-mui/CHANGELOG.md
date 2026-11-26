@@ -1,3 +1,16 @@
+# @linagora/twake-mui [21.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@21.1.0...@linagora/twake-mui@21.2.0) (2026-11-26)
+
+
+### Bug Fixes
+
+* **twake-mui:** Bump MUI to 9.6 ([82e8e17](https://github.com/linagora/twake-ui/commit/82e8e178be9112277704b28e03c8e7172cc28cd3)), closes [mui/material-ui#49678](https://github.com/mui/material-ui/issues/49678)
+* **twake-mui:** Load the published ES modules in Node ([22cfcd5](https://github.com/linagora/twake-ui/commit/22cfcd5d40ad0ba7b68c51219745240ec4cc440e))
+
+
+### Features
+
+* **twake-mui:** Migrate VirtualizedGridList from cozy-ui ([e4e3be8](https://github.com/linagora/twake-ui/commit/e4e3be841f7a29fe66fda879b263ff907f0232d8))
+
 # @linagora/twake-mui [21.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@21.0.1...@linagora/twake-mui@21.1.0) (2026-11-25)
 
 
