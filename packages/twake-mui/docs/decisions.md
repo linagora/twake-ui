@@ -17,3 +17,10 @@ Categories: UX, UI, Product, Architecture, Infra, Tech.
 - Decided by: Crash-- (CTO), 2026-11-25, [linagora/twake-ui#274](https://github.com/linagora/twake-ui/issues/274)
 - Why: Node refuses an ES module import without its extension, so each app and each package built on twake-mui had to transform it in its tests.
 - Scope: the build output of the package, `InstallFlagshipAppDialog`.
+
+## 2026-11-26, [Architecture] VirtualizedTable exports its default virtuoso components, not its row
+
+- Decision: the package exports the default `components` of `VirtualizedTable` as `virtualizedTableComponents`, so an app replaces one of them (`{ ...virtualizedTableComponents, Scroller, TableRow }`) without rewriting the others; the row of the table is not exported, a custom row renders the `TableRow` of MUI, styled by the `new` and `disabled` classes of the theme.
+- Decided by: JF-Cozy (front-end developer), 2026-11-26, [linagora/twake-drive#4660](https://github.com/linagora/twake-drive/issues/4660)
+- Why: the `components` prop replaces the whole default set, and the default row sets its own `selected` and `className` and takes no `ref`, so a drag and drop row cannot build on it.
+- Scope: `VirtualizedTable`.
