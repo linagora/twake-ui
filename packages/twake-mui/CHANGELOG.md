@@ -1,3 +1,19 @@
+# @linagora/twake-mui [22.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@21.2.0...@linagora/twake-mui@22.0.0) (2026-11-26)
+
+
+### Features
+
+* **twake-mui:** Add a high-contrast colour scheme ([84e7739](https://github.com/linagora/twake-ui/commit/84e7739002b38fea05fc3ffb5757962c12375fc5)), closes [hi#contrast](https://github.com/hi/issues/contrast) [#256](https://github.com/linagora/twake-ui/issues/256)
+
+
+### BREAKING CHANGES
+
+* **twake-mui:** `useColorScheme().colorScheme` and `SupportedColorScheme`
+now include `contrast`. Where only light or dark matters, map `contrast`
+to `light`.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
 # @linagora/twake-mui [21.2.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@21.1.0...@linagora/twake-mui@21.2.0) (2026-11-26)
 
 
