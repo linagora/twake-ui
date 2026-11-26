@@ -23,7 +23,8 @@ import { virtuosoComponents } from './virtuosoComponents.js'
 
 export type {
   Column as VirtualizedTableColumn,
-  Row as VirtualizedTableRow
+  Row as VirtualizedTableRow,
+  TableContext as VirtualizedTableContext
 } from './types.js'
 
 export interface VirtualizedTableProps extends Omit<
