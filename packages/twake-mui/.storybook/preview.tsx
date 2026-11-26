@@ -4,6 +4,9 @@ import { Box, CssBaseline, ThemeProvider } from '@mui/material'
 import type { ThemeOptions } from '@mui/material/styles'
 import { I18n } from 'twake-i18n'
 import { makeTheme } from '../src/lib/makeTheme'
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
 import '@linagora/twake-css/dist/utils.css'
 
 /**
