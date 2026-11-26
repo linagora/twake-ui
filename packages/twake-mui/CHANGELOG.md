@@ -1,3 +1,10 @@
+# @linagora/twake-mui [22.1.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@22.0.0...@linagora/twake-mui@22.1.0) (2026-11-26)
+
+
+### Features
+
+* **twake-mui:** Export the default virtuoso components of VirtualizedTable ([6ab9971](https://github.com/linagora/twake-ui/commit/6ab99714ac6ed984b44a95be50ae71244eff0bea))
+
 # @linagora/twake-mui [22.0.0](https://github.com/linagora/twake-ui/compare/@linagora/twake-mui@21.2.0...@linagora/twake-mui@22.0.0) (2026-11-26)
 
 
