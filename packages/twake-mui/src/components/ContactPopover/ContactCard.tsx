@@ -1,10 +1,11 @@
-import { Box, IconButton, Popover, PopoverOrigin, styled } from '@mui/material'
+import { Box, IconButton, PopoverOrigin, styled } from '@mui/material'
 import React, { useId } from 'react'
 
 import { Icon } from '@linagora/twake-icons'
 import { Cross } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
+import Popover from '../Popover/index.js'
 import { AttendeeInfo } from './AttendeeInfo.js'
 import de from './locales/de.json' with { type: 'json' }
 import en from './locales/en.json' with { type: 'json' }

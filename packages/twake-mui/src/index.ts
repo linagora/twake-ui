@@ -77,6 +77,8 @@ export { default as BottomSheetTitle } from './components/BottomSheet/BottomShee
 export { default as Chip } from './components/Chip/index.js'
 export { default as ColorList } from './components/ColorList/index.js'
 export { default as Dialog } from './components/Dialog/index.js'
+export { default as Menu } from './components/Menu/index.js'
+export { default as Popover } from './components/Popover/index.js'
 export { default as StandardDialog } from './components/Dialogs/StandardDialog.js'
 export { default as DialogCloseButton } from './components/Dialogs/DialogCloseButton.js'
 export { default as DialogBackButton } from './components/Dialogs/DialogBackButton.js'
@@ -276,6 +278,8 @@ export type {
   ColorListSize
 } from './components/ColorList/index.js'
 export type { DialogProps, DialogSize } from './components/Dialog/index.js'
+export type { MenuProps } from './components/Menu/index.js'
+export type { PopoverProps } from './components/Popover/index.js'
 export type { StandardDialogProps } from './components/Dialogs/StandardDialog.js'
 export type { DialogSectionsProps } from './components/Dialogs/types.js'
 export type { ShortcutDialogProps } from './components/Dialogs/ShortcutDialog.js'

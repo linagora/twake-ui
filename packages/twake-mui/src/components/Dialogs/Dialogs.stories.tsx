@@ -2,7 +2,6 @@ import {
   Button,
   IconButton,
   ListItemIcon,
-  Menu,
   MenuItem,
   Stack,
   Typography
@@ -25,6 +24,7 @@ import BottomSheet from '../BottomSheet/index.js'
 import BottomSheetItem from '../BottomSheet/BottomSheetItem.js'
 import type { DialogSize } from '../Dialog/index.js'
 import ListItemText from '../ListItemText/index.js'
+import Menu from '../Menu/index.js'
 import ConfirmDialog from './ConfirmDialog.js'
 import FixedActionsDialog from './FixedActionsDialog.js'
 import FixedDialog from './FixedDialog.js'

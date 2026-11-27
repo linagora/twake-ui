@@ -24,3 +24,10 @@ Categories: UX, UI, Product, Architecture, Infra, Tech.
 - Decided by: JF-Cozy (front-end developer), 2026-11-26, [linagora/twake-drive#4660](https://github.com/linagora/twake-drive/issues/4660)
 - Why: the `components` prop replaces the whole default set, and the default row sets its own `selected` and `className` and takes no `ref`, so a drag and drop row cannot build on it.
 - Scope: `VirtualizedTable`.
+
+## 2026-11-27, [Tech] Menu and Popover follow the size of their content
+
+- Decision: the package exports its own `Menu` and `Popover`, the ones of MUI placed again (`updatePosition`) each time their paper changes size, and its components use them.
+- Decided by: Crash-- (CTO), 2026-11-27, from the reading menu of Twake Mail ([Crash--/twake-mail-frontend#1208](https://github.com/Crash--/twake-mail-frontend/issues/1208))
+- Why: MUI places a popover when it opens or renders, so a label that grows afterwards without a render (a page translated by the browser) pushes a menu opened near the right edge past the screen.
+- Scope: `Menu`, `Popover`, and `ActionsMenu`, `EditBadge`, `ContactPopover` that render them. Not `Select` nor `TextField` `select`: MUI opens its own `Menu` inside them, so covering them would take a twake-mui wrapper of each.
