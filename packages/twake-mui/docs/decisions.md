@@ -24,3 +24,10 @@ Categories: UX, UI, Product, Architecture, Infra, Tech.
 - Decided by: JF-Cozy (front-end developer), 2026-11-26, [linagora/twake-drive#4660](https://github.com/linagora/twake-drive/issues/4660)
 - Why: the `components` prop replaces the whole default set, and the default row sets its own `selected` and `className` and takes no `ref`, so a drag and drop row cannot build on it.
 - Scope: `VirtualizedTable`.
+
+## 2026-11-27, [UX] A cut list text shows in full on hover
+
+- Decision: when `ellipsis` cuts the primary or secondary text of `ListItemText`, hovering it shows the whole text as the native title; a text that fits gets no title.
+- Decided by: Crash-- (CTO), 2026-11-27, from the reading menu of Twake Mail ([Crash--/twake-mail-frontend#1208](https://github.com/Crash--/twake-mail-frontend/issues/1208))
+- Why: a cut label, in a menu capped at 320 px for example, could not be read in full anywhere. A native title rather than the `Tooltip` of twake-mui: it costs nothing on a long list, where a `Tooltip` per row would mount a component each.
+- Scope: `ListItemText`, and the menus and lists that render it.
