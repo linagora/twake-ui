@@ -6,7 +6,6 @@ import {
   ButtonProps,
   ListItemIcon,
   ListItemText,
-  Menu,
   MenuItem
 } from '@mui/material'
 import { styled } from '@mui/material/styles'
@@ -17,6 +16,7 @@ import { Camera, Icon, Pen, Spinner, Trash } from '@linagora/twake-icons'
 import { useExtendI18n, useI18n } from 'twake-i18n'
 
 import { useAlert } from '../../providers/AlertProvider/useAlert.js'
+import Menu from '../Menu/index.js'
 import de from './locales/de.json' with { type: 'json' }
 import en from './locales/en.json' with { type: 'json' }
 import es from './locales/es.json' with { type: 'json' }

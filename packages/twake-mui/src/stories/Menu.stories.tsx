@@ -3,9 +3,7 @@ import {
   Divider,
   ListItemIcon,
   ListItemText,
-  Menu,
   MenuItem,
-  MenuProps,
   Typography
 } from '@mui/material'
 import type { Meta, StoryObj } from '@storybook/react-vite'
@@ -23,6 +21,7 @@ import {
 } from '@linagora/twake-icons'
 
 import DropdownButton from '../components/DropdownButton/index.js'
+import Menu, { MenuProps } from '../components/Menu/index.js'
 
 const items = [
   <MenuItem key="modify">
@@ -126,7 +125,8 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  render: args => <ExampleMenu {...args} />
+  // ExampleMenu takes no ref, and the React 18 types give args a legacy one
+  render: ({ ref, ...args }) => <ExampleMenu {...args} />
 }
 
 // Visual Regression - The cozy-ui Menu doc example, opened

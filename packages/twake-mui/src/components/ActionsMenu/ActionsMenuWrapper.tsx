@@ -1,9 +1,10 @@
-import { Menu, MenuProps, Paper } from '@mui/material'
+import { Paper } from '@mui/material'
 import React, { Children, cloneElement, isValidElement } from 'react'
 
 import { useBreakpoints } from '../../hooks/useBreakpoints.js'
 import BottomSheet from '../BottomSheet/index.js'
 import { ListItemSize } from '../ListItem/index.js'
+import Menu, { MenuProps } from '../Menu/index.js'
 
 interface ItemProps {
   isListItem?: boolean
